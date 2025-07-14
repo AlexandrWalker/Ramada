@@ -1,0 +1,87 @@
+@use './../mixins' as *;
+
+h1 {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 8rem;
+  line-height: 90%;
+
+  @include xxl {
+    font-size: 6rem;
+    line-height: 110%;
+  }
+
+  @include md {
+    font-size: 4rem;
+  }
+
+  @include sm {
+    font-size: 3.5rem;
+  }
+}
+
+h2 {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 5rem;
+  line-height: 90%;
+
+  @include xxl {
+    font-size: 3.5rem;
+    line-height: 110%;
+  }
+
+  @include md {
+    font-size: 2.5rem;
+  }
+}
+
+h3 {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 3.5rem;
+  line-height: 90%;
+
+  @include xxl {
+    font-size: 2.5rem;
+    line-height: 110%;
+  }
+
+  @include md {
+    font-size: 1.6rem;
+  }
+}
+
+p {
+  font-family: var(--font-family);
+  font-weight: 350;
+  font-size: 1.6rem;
+  line-height: 120%;
+
+  @include xxl {
+    font-size: 1.4rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  span {
+    color: var(--accent);
+  }
+}
+
+.suptitle {
+  font-weight: 700;
+  line-height: 110%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+
+  padding: 1rem 0;
+  border-top: 0.1rem solid var(--accent);
+  border-bottom: 0.1rem solid var(--accent);
+}

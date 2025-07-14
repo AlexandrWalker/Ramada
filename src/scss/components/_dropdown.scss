@@ -1,0 +1,159 @@
+@use './../mixins' as *;
+
+.dropdown {
+  background: transparent;
+  position: relative;
+  user-select: none;
+  transition: all 0.2s ease;
+  width: 100%;
+
+  &__selected {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 130%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--black-50);
+    cursor: pointer;
+
+    width: 100%;
+    padding: 0 1rem 2rem 0;
+    border-bottom: 0.1rem solid var(--gray-20);
+    transition: all 0.2s ease;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include md {
+      font-size: 1.4rem;
+    }
+
+    @include sm {
+      font-size: 1.2rem;
+    }
+
+    .dropdown.check & {
+      color: var(--black);
+      border-color: var(--black);
+    }
+
+    .dropdown.is-active & {
+      color: var(--black);
+      border-color: var(--black);
+
+      i {
+        transform: scale(-1, -1);
+        color: var(--accent);
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--black);
+      border-color: var(--black);
+    }
+
+    span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-right: 1rem;
+
+      &::after {
+        content: " *";
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 130%;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+
+        .dropdown.check & {
+          display: none;
+        }
+      }
+    }
+
+    i {
+      color: var(--black);
+    }
+  }
+
+  &:hover {
+
+    i {
+      transform: scale(-1, -1);
+      color: var(--accent);
+    }
+  }
+
+  &__container {
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    overflow: hidden;
+    pointer-events: none;
+
+    .dropdown.is-active & {
+      pointer-events: all;
+    }
+  }
+
+  &__content {
+    padding: 4rem 6rem 3rem 3rem;
+    will-change: transform;
+    transform: translateY(-101%);
+    transition: transform 0.2s ease;
+    background-color: var(--black);
+    width: calc(100% - 0.1rem);
+
+    .dropdown.is-active & {
+      transform: translateY(0);
+    }
+
+    @include md {
+      padding: 2rem;
+    }
+  }
+
+  &__option {
+
+    &:not(:last-child) {
+      display: block;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__label {
+    display: block;
+    transition: all 0.3s ease;
+
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 120%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--accent);
+    }
+
+    :checked+& {
+      color: var(--accent);
+    }
+
+    @include sm {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__radio {
+    display: none;
+  }
+}

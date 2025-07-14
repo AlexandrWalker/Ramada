@@ -1,0 +1,15 @@
+@use './../mixins' as *;
+
+.swiper {}
+
+[class^="swiper-button-"],
+[class*=" swiper-button-"] {
+  --swiper-button-size: 6rem;
+
+  width: var(--swiper-button-size);
+  height: var(--swiper-button-size);
+
+  @include md {
+    --swiper-button-size: 5rem;
+  }
+}

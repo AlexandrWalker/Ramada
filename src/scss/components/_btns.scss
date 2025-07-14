@@ -1,0 +1,135 @@
+@use './../mixins' as *;
+
+.btn {
+  --width: fit-content;
+  --height: 5rem;
+  --padding-x: 2.2rem;
+  --padding-y: 1rem;
+  --button-color: var(--white);
+  --border-radius: 2.8rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+
+  width: var(--width);
+  height: var(--height);
+  padding: 0 var(--padding-x);
+  margin: 0.3rem;
+
+  background: var(--button-background);
+  border-radius: var(--border-radius);
+
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 120%;
+  text-align: center;
+  color: var(--button-color);
+  white-space: nowrap;
+  transition: all 0.4s ease;
+
+  position: relative;
+
+  @include xxl {
+    --height: 4.4rem;
+
+    font-size: 1.2rem;
+  }
+
+  &:hover {
+
+    &::before {
+      animation: pulse 2s linear infinite;
+    }
+
+    // &::after {
+    //   animation: pulse 2s linear infinite;
+    //   border-color: var(--button-background);
+    // }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -0.3rem;
+    right: -0.3rem;
+    bottom: -0.3rem;
+    left: -0.3rem;
+    border: 0.1rem solid var(--button-background);
+    border-radius: var(--border-radius);
+    transition: border-color 0.3s ease;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0.3rem;
+    right: 0.4rem;
+    bottom: 0.3rem;
+    left: 0.4rem;
+    border: 0.1rem solid var(--white-50);
+    border-radius: var(--border-radius);
+    transition: border-color 0.3s ease;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &--accent {
+    --button-background: var(--accent);
+
+    &:hover {
+      --button-background: var(--black);
+    }
+  }
+
+  &--white {
+    --button-color: var(--accent);
+    --button-background: var(--white);
+
+    &:hover {
+      --button-color: var(--white);
+      --button-background: var(--gray);
+    }
+  }
+
+  &--black {
+    --button-background: var(--black);
+    border-color: var(--black-50);
+
+    &:hover {
+      --button-background: var(--accent);
+    }
+  }
+
+  &--outline {
+    --button-color: var(--black);
+    --button-background: var(--gray-light);
+
+    &:hover {
+      --button-color: var(--white);
+      --button-background: var(--gray);
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: .5;
+  }
+
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}

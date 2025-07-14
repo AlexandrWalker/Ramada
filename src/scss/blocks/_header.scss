@@ -1,0 +1,10 @@
+@use './../mixins' as *;
+
+.header {
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}

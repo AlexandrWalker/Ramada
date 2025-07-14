@@ -1,0 +1,33 @@
+@use './../mixins' as *;
+
+:root {
+  --font-family: "Gotham", sans-serif;
+  --second-family: "TTTricks", sans-serif;
+
+  --container-padding: 20rem;
+  --container-width: 152rem;
+  --header-height: 16.7rem;
+
+  --white: #ffffff;
+  --white-50: rgba(255, 255, 255, 0.5);
+  --black: #1A1919;
+  --black-50: rgba(26, 25, 25,0.5);
+  --gray: #636463;
+  --gray-light: #E8E8E8;
+  --accent: #C40D3C;
+  --page-bg: #F4F4F4;
+
+  @include xxl {
+    --container-padding: 14rem;
+    --container-width: 116rem;
+  }
+
+  @include md {
+    --container-padding: 8rem;
+    --container-width: 67.4rem;
+  }
+
+  @include sm {
+    --container-padding: 2rem;
+  }
+}

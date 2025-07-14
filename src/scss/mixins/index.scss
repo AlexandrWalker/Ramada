@@ -1,0 +1,43 @@
+@use 'sass:math';
+
+@mixin xxl() {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin xl() {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin lg() {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin md() {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin sm() {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin xs() {
+  @media (max-width: 420px) {
+    @content;
+  }
+}
+
+@mixin xxs() {
+  @media (max-width: 380px) {
+    @content;
+  }
+}

@@ -1,0 +1,536 @@
+@use './../mixins' as *;
+
+.burger-btn {
+  --time: 0.3s;
+  --width: 10rem;
+  --height: 10rem;
+  --background-color: var(--white);
+  --hover-background-color: var(--accent);
+
+  /* Fixed height and width */
+  height: var(--height);
+  width: var(--width);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: var(--background-color);
+  transition: all var(--time) ease;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  .innerPage & {
+    --background-color: var(--black);
+  }
+
+  &:hover {
+    --background-color: var(--accent);
+
+    .burger-icon {
+      --background-color: var(--white);
+    }
+  }
+
+  @include md {
+    --width: 6rem;
+    --height: 6rem;
+  }
+}
+
+.burger-icon {
+  --width: 2rem;
+  --height: 0.1rem;
+  --background-color: var(--black);
+
+  width: var(--width);
+  height: var(--height);
+  background-color: var(--background-color);
+  position: relative;
+  margin-right: 1rem;
+  transition: all var(--time) ease;
+
+  @include md {
+    --width: 1.6rem;
+  }
+
+  .innerPage & {
+    --background-color: var(--white);
+  }
+
+  &::before,
+  &::after {
+    --width: 3rem;
+
+    content: '';
+    display: block;
+
+    position: absolute;
+    left: 0;
+
+    width: var(--width);
+    height: var(--height);
+
+    background-color: var(--background-color);
+    transition: all var(--time) ease;
+
+    @include md {
+      --width: 2.4rem;
+    }
+  }
+
+  &::before {
+    top: -1rem;
+
+    @include md {
+      top: -0.8rem;
+    }
+  }
+
+  &::after {
+    top: 1rem;
+
+    @include md {
+      top: 0.8rem;
+    }
+  }
+}
+
+.burger-close {
+  --burger-btn-color: var(--black);
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  position: absolute;
+  // bottom: 50%;
+  // right: 3rem;
+
+  // writing-mode: vertical-rl;
+  // transform: scale(-1, -1) translateY(-50%);
+  transition: all 0.3s ease;
+
+  color: var(--burger-btn-color);
+
+  bottom: 50%;
+  right: -10rem;
+  transform: rotate(-90deg);
+
+  &:hover {
+    --burger-btn-color: var(--accent);
+  }
+
+  @include xxl {
+    right: -7rem;
+  }
+
+  @include md {
+    top: 2rem;
+    bottom: unset;
+    right: 2rem;
+    transform: unset;
+  }
+
+  @include sm {
+    top: 1rem;
+  }
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.6rem;
+    height: 3.6rem;
+    position: relative;
+
+    @include md {
+      width: 5rem;
+      height: 5rem;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 2.6rem;
+      height: 0.2rem;
+      position: absolute;
+      border: 0.2rem solid var(--burger-btn-color);
+      border-radius: 0.1rem;
+      transform: rotate(-45deg);
+      transition: all 0.3s ease;
+
+      @include md {
+        width: 3.6rem;
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 2.6rem;
+      height: 0.2rem;
+      position: absolute;
+      border: 0.2rem solid var(--burger-btn-color);
+      border-radius: 0.1rem;
+      transform: rotate(45deg);
+      transition: all 0.3s ease;
+
+      @include md {
+        width: 3.6rem;
+      }
+    }
+  }
+
+  h3 {
+    margin-left: 0;
+
+    &::before {
+      display: none;
+    }
+
+    @include md {
+      display: none;
+    }
+  }
+}
+
+.burger-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--black-90);
+  z-index: 1;
+  transition: 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.burger-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -100%;
+  z-index: 200;
+  pointer-events: none;
+  transition: all 0.3s ease;
+
+  width: 100%;
+  height: 100dvh;
+
+  @include sm {
+    top: -100%;
+    bottom: 100%;
+    right: 0;
+  }
+
+  &--opened {
+    right: 0;
+    pointer-events: all;
+
+    @include sm {
+      top: 0;
+      bottom: 0;
+    }
+
+    .burger-overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: unset;
+    gap: 2rem;
+
+    max-width: 136rem;
+    width: 100%;
+    height: 100%;
+    padding: 8rem 13rem 10rem;
+    background-color: var(--page-bg-90);
+
+    position: relative;
+    z-index: 2;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    margin-left: auto;
+
+    @include xxl {
+      padding: 8rem 10rem 10rem;
+    }
+
+    @include md {
+      max-width: calc(100% - 2rem);
+      padding: 4rem 5rem 4rem 9rem;
+    }
+
+    @include sm {
+      flex-direction: column;
+      padding: 4rem 2rem 3rem;
+      max-width: 100%;
+      background-color: var(--white);
+    }
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    width: 42rem;
+    height: fit-content;
+
+    @include md {
+      width: 26rem;
+      gap: 3rem;
+    }
+
+    @include sm {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+
+    h3 {
+      margin-left: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    @include sm {
+      display: none;
+    }
+  }
+
+  &__list {
+
+    li {
+      margin-bottom: 3rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include md {
+        margin-bottom: 2rem;
+      }
+
+      @include sm {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    a {
+      font-weight: 500;
+      font-size: 2.5rem;
+      line-height: 130%;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      position: relative;
+
+      @include md {
+        font-size: 1.5rem;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        // bottom: 0.2rem;
+        bottom: 0;
+        width: 0;
+        height: 0.1rem;
+        background-color: var(--accent);
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        color: var(--accent);
+
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__foot {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    width: calc(100% - 42rem - 2rem);
+    height: fit-content;
+
+    @include md {
+      width: calc(100% - 26rem - 2rem);
+      gap: 3rem;
+    }
+
+    @include sm {
+      width: 100%;
+    }
+
+    &-items {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+
+      @include md {
+        gap: 2rem;
+      }
+    }
+
+    &-tel {
+      font-family: var(--second-family);
+      font-weight: 700;
+      font-size: 5rem;
+      line-height: 120%;
+      text-transform: uppercase;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      white-space: nowrap;
+
+      position: relative;
+      width: fit-content;
+
+      @include md {
+        font-size: 2.5rem;
+      }
+
+      @include sm {
+        margin-bottom: 0.6rem;
+      }
+
+      @include xxs {
+        font-size: 2rem;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0.2rem;
+        width: 0;
+        height: 0.3rem;
+        background: var(--gradient);
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: fit-content;
+
+      @include md {
+        gap: 1.5rem;
+      }
+
+      @include sm {
+        gap: 1rem;
+      }
+    }
+
+    &-suptitle {
+
+      p {
+
+        @include md {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    &-text {
+      font-weight: 500;
+      font-size: 2.5rem;
+      line-height: 120%;
+
+      @include md {
+        font-size: 1.5rem;
+      }
+
+      @include sm {
+        font-size: 2rem;
+      }
+
+      a {
+        font-weight: inherit;
+        font-size: inherit;
+        line-height: inherit;
+
+        color: var(--accent);
+        text-decoration: underline;
+
+        &:hover {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+
+      p {
+        font-weight: inherit;
+        font-size: inherit;
+        line-height: inherit;
+      }
+
+      span {
+        white-space: nowrap;
+      }
+    }
+
+    &-btns {
+
+      @include sm {
+        flex-direction: row;
+        width: 100%;
+      }
+
+      @include xxs {
+        flex-direction: column;
+      }
+    }
+
+    &-btn {
+      --button-color: var(--accent);
+      --button-border-color: var(--gray);
+
+      justify-content: flex-start;
+      width: 100%;
+
+      &:hover {
+        --button-color: var(--white);
+      }
+
+      @include sm {
+        --padding: 1rem;
+
+        gap: 1rem;
+        text-align: left;
+        white-space: unset;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@use './../mixins' as *;
+
+[class^="icon-"],
+[class*=" icon-"] {
+  --font-size: 2.4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--font-size);
+  height: var(--font-size);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+
+  font-size: var(--font-size);
+  color: var(--accent);
+}
+
+.icon {
+
+  &-play {
+    --font-size: 1.6rem;
+
+    @include sm {
+      --font-size: 1.2rem;
+    }
+  }
+
+  &-link {
+
+    svg {
+      width: 3.4rem;
+      height: 3.4rem;
+      fill: transparent;
+    }
+  }
+}

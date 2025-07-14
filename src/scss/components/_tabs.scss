@@ -1,0 +1,109 @@
+@use './../mixins' as *;
+
+.tabs {
+  position: relative;
+
+  &__btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+
+    cursor: pointer;
+
+    h2 {
+      transition: all 0.3s ease;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0.3rem;
+        left: 0;
+        width: 0;
+        height: 0.3rem;
+        background-color: var(--accent);
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+
+        @include sm {
+          bottom: 0;
+          height: 0.2rem;
+        }
+      }
+    }
+
+    &--active {
+
+      h2 {
+        color: var(--accent);
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+
+    &:hover {
+
+      h2 {
+        color: var(--accent);
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+
+    &:not(:first-child) {
+
+      @include md {
+        gap: 1rem;
+        margin-left: 4rem;
+      }
+
+      &::before {
+        content: "/";
+        font-family: var(--second-family);
+        font-weight: 400;
+        font-size: 4.5rem;
+        line-height: 120%;
+        width: fit-content;
+
+        @include md {
+          font-size: 3rem;
+        }
+
+        @include sm {
+          font-size: 2rem;
+        }
+      }
+
+      h2 {
+        margin-left: 0;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__panel {
+    // display: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease, height 0s;
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+      height: auto;
+      // display: block;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@use './../mixins' as *;
+
+.logo {
+  width: auto;
+  height: 4.6rem;
+  flex-shrink: 0;
+
+  img {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  @include xxl {
+    height: 3.57rem;
+  }
+
+  @include md {
+    height: 2.45rem;
+  }
+
+  @include sm {
+    height: 3.77rem;
+  }
+}

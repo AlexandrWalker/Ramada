@@ -1,0 +1,11 @@
+.timeline {
+
+  &-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &-item {
+    flex-shrink: 0;
+  }
+}
