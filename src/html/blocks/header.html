@@ -1,53 +1,73 @@
-<header class="header" id="header">
-  <div class="container">
+<header id="header" class="header">
+  <div class="container container--fluid">
     <div class="header__inner">
-      <div class="header__wrap accordion-parent">
 
-        <!-- <button class="burger-btn">
-          <div class="burger-icon"></div>
-        </button> -->
+      <div class="header__content">
+        <div class="header__container container">
+          <div class="header__left">
+            <button class="btn btn--black">
+              <i class="icon-burger"></i>
+              <i class="icon-menu"></i>
+              <i class="pulse"></i>
+              Меню
+            </button>
+            <button class="btn btn--accent btn--icon">
+              <i class="icon-3d"></i>
+              <i class="pulse"></i>
+            </button>
+            <button class="btn btn--accent btn--icon">
+              <i class="icon-play"></i>
+              <i class="pulse"></i>
+            </button>
+          </div>
 
-        <a class="logo" href="/Leader">
-          <img src="./images/logo/logo.svg" alt="">
-        </a>
+          <div class="header__wrap">
+            <div class="header__img">
+              <img src="./images/logo/since.svg" alt="">
+            </div>
 
+            <a class="logo" href="/Ramada">
+              <img src="./images/logo/logo.svg" alt="Ramada">
+            </a>
+
+            <div class="header__img">
+              <img src="./images/logo/stars.svg" alt="">
+            </div>
+          </div>
+
+          <div class="header__right">
+            <div class="header__lang">
+              <div class="header__lang-btn btn btn--gray btn--icon">
+                <i class="pulse"></i>
+                RU
+
+                <ul>
+                  <li>
+                    <a href="/">
+                      EN
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/">
+                      Ch
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <button class="header__btn btn btn--accent">
+              <i class="icon-book"></i>
+              Забронировать номер
+              <i class="pulse"></i>
+              <span>
+                Забронировать
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
 
-      <button class="btn btn--white">
-        Белая кнопка
-      </button>
-
-      <button class="btn btn--black">
-        Черная кнопка
-      </button>
-
-      <button class="btn btn--accent">
-        Красная кнопка
-      </button>
-
-      <button class="btn btn--outline">
-        Серая кнопка
-      </button>
-
-      <h1>
-        H1 Заголовок на внутренней 1920
-      </h1>
-
-      <h2>
-        H2 Подзаголовок на внутренней 1920
-      </h2>
-
-      <h3>
-        H3 Подзаголовок на внутренней 1920
-      </h3>
-
-      <p>
-        1.1.Настоящие Правила проживания (далее – Правила) в Апарт-отеле «Рамада Новосибирск Жуковка» (далее – Отель)
-        разработаны на основании Гражданского кодекса РФ, Закона РФ «О защите прав потребителей» № 2300-1 от 07.02.1992
-        года и «Правил предоставления гостиничных услуг в РФ», утвержденных Постановлением Правительства РФ № 490 от 25
-        апреля 1997 года, а так же иными нормативно-правовыми актами. и регулируют отношения в области предоставления
-        гостиничных услуг и иных дополнительных услуг (далее при совместном упоминании – гостиничные услуги).
-      </p>
+      @@include('./nav.html')
 
     </div>
   </div>

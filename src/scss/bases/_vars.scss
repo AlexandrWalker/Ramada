@@ -9,22 +9,29 @@
   --header-height: 16.7rem;
 
   --white: #ffffff;
+  --white-30: rgba(255, 255, 255, 0.3);
   --white-50: rgba(255, 255, 255, 0.5);
+  --white-gray: #F4F4F4;
   --black: #1A1919;
-  --black-50: rgba(26, 25, 25,0.5);
+  --black-50: rgba(26, 25, 25, 0.5);
   --gray: #636463;
+  --gray-30: rgba(99, 100, 99, 30);
+  --gray-50: rgba(99, 100, 99, 50);
   --gray-light: #E8E8E8;
   --accent: #C40D3C;
-  --page-bg: #F4F4F4;
 
   @include xxl {
-    --container-padding: 14rem;
-    --container-width: 116rem;
+    // --container-padding: 14rem;
+    // --container-width: 116rem;
   }
 
   @include md {
     --container-padding: 8rem;
     --container-width: 67.4rem;
+  }
+
+  @include xmd {
+    --container-padding: 3rem;
   }
 
   @include sm {

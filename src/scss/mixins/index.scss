@@ -19,6 +19,12 @@
 }
 
 @mixin md() {
+  @media (max-width: 834px) {
+    @content;
+  }
+}
+
+@mixin xmd() {
   @media (max-width: 768px) {
     @content;
   }

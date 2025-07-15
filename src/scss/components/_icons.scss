@@ -2,7 +2,7 @@
 
 [class^="icon-"],
 [class*=" icon-"] {
-  --font-size: 2.4rem;
+  --font-size: 2rem;
 
   display: flex;
   justify-content: center;
@@ -13,25 +13,70 @@
   flex-shrink: 0;
 
   font-size: var(--font-size);
-  color: var(--accent);
+  color: inherit;
 }
+
 
 .icon {
 
+  &-3d {
+    --font-size: 5rem;
+  }
+
   &-play {
-    --font-size: 1.6rem;
+    --font-size: 5rem;
+  }
+
+  &-book {
+    --font-size: 2.4rem;
 
     @include sm {
-      --font-size: 1.2rem;
+      display: none;
     }
   }
 
-  &-link {
+  &-burger {
+    --font-size: 5rem;
 
-    svg {
-      width: 3.4rem;
-      height: 3.4rem;
-      fill: transparent;
+    display: none;
+
+    @include md {
+      display: block;
     }
+  }
+
+  &-menu {
+
+    @include md {
+      display: none;
+    }
+  }
+}
+
+.pulse {
+  position: absolute;
+  top: -0.3rem;
+  right: -0.3rem;
+  bottom: -0.3rem;
+  left: -0.3rem;
+  z-index: -1;
+  pointer-events: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    transform-origin: center center;
+    pointer-events: none;
+    opacity: 0;
+    border: 0.1rem solid var(--btn-background);
+    border-radius: var(--btn-border-radius);
+    background-color: transparent;
+    transition: all 0.3s ease;
   }
 }
