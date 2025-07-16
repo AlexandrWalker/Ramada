@@ -7,8 +7,8 @@ h1 {
   line-height: 90%;
 
   @include xxl {
-    font-size: 6rem;
-    line-height: 110%;
+    // font-size: 6rem;
+    // line-height: 110%;
   }
 
   @include md {
@@ -27,8 +27,8 @@ h2 {
   line-height: 90%;
 
   @include xxl {
-    font-size: 3.5rem;
-    line-height: 110%;
+    // font-size: 3.5rem;
+    // line-height: 110%;
   }
 
   @include md {
@@ -43,8 +43,8 @@ h3 {
   line-height: 90%;
 
   @include xxl {
-    font-size: 2.5rem;
-    line-height: 110%;
+    // font-size: 2.5rem;
+    // line-height: 110%;
   }
 
   @include md {
@@ -52,14 +52,46 @@ h3 {
   }
 }
 
+/* Стили текста внутри блоков */
+h4 {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 8rem;
+  line-height: 90%;
+
+  @include xxl {
+    // font-size: 5rem;
+  }
+
+  @include md {
+    font-size: 4rem;
+  }
+}
+
+h5 {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 5rem;
+  line-height: 110%;
+
+  @include xxl {
+    // font-size: 3.5rem;
+  }
+
+  @include md {
+    font-size: 2.5rem;
+  }
+}
+/* /Стили текста внутри блоков */
+
 p {
   font-family: var(--font-family);
   font-weight: 350;
   font-size: 1.6rem;
-  line-height: 120%;
+  line-height: 100%;
 
   @include xxl {
-    font-size: 1.4rem;
+    // font-size: 1.4rem;
   }
 }
 

@@ -1,393 +1,393 @@
 @use './../mixins' as *;
 
-.form {
-  display: flex;
-  flex-direction: column;
-
-  &-content {
-
-    @include md {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 0 1rem;
-    }
-  }
-
-  &-group {
-    margin-bottom: 5rem;
-    width: 100%;
-
-    position: relative;
-
-    &:last-child {
-      margin-bottom: 3rem;
-    }
-
-    @include md {
-      margin-bottom: 3rem;
-
-      &:nth-child(1):not(.form-group--file, .popup .form-group),
-      &:nth-child(2):not(.form-group--file, .popup .form-group) {
-        width: calc(50% - 0.5rem);
-      }
-    }
-
-    @include sm {
-      margin-bottom: 4rem;
-
-      &:nth-child(1):not(.form-group--file),
-      &:nth-child(2):not(.form-group--file) {
-        width: 100%;
-      }
-
-      &:last-child {
-        margin-bottom: 2rem;
-      }
-    }
-
-    &--file {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-
-      @include md {
-        gap: 0.5rem;
-      }
-
-      label {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-
-        @include md {
-          gap: 0.5rem;
-        }
-
-        p {
-          color: var(--accent);
-          text-decoration: underline;
-          transition: all 0.3s ease;
-
-          @include md {
-            font-size: 1.2rem;
-          }
-        }
-
-        &:hover {
-
-          p {
-            color: var(--accent);
-          }
-        }
-      }
-    }
-  }
-
-  &-input {
-    font-weight: 700;
-    font-size: 1.4rem;
-    line-height: 120%;
-    color: var(--black);
-
-    background: transparent;
-
-    width: 100%;
-    height: 100%;
-    padding: 1rem;
-    border: 0.1rem solid var(--gray);
-    transition: all 0.2s ease;
-    opacity: 0.3;
-
-    @include md {
-      font-size: 1.4rem;
-
-      padding: 0 1rem 2rem 0;
-    }
-
-    @include sm {
-      font-size: 1.2rem;
-
-      padding: 0 1rem 1.5rem 0;
-    }
-
-    &:hover {
-      opacity: 1;
-
-      &+.form-label {
-        color: var(--accent);
-
-        span {
-          color: var(--accent);
-        }
-      }
-    }
-
-    &.filled,
-    &:active,
-    &:focus {
-      opacity: 1;
-    }
-
-    &.invalid {
-      color: var(--accent);
-      border-color: var(--accent);
-
-      &+.form-label {
-        color: var(--accent);
-      }
-
-      &~.form-invalid {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-  }
-
-  &-invalid {
-    font-weight: 400;
-    font-size: 1.2rem;
-    line-height: 120%;
-    color: var(--accent);
-    transition: all 0.3s ease;
-
-    position: absolute;
-    top: calc(100% + 1rem);
-    left: 0;
-
-    opacity: 0;
-    visibility: hidden;
-
-    @include md {
-      top: calc(100% + 0.5rem);
-    }
-  }
-
-  &-label {
-    font-weight: 350;
-    font-size: 1.4rem;
-    line-height: 120%;
-    color: var(--accent);
-    background-color: var(--white);
-    padding: 0 0.7rem;
-
-    transition: all 0.2s ease;
-
-    position: absolute;
-    top: -1rem;
-    left: 2rem;
-
-    pointer-events: none;
-
-    span {
-      color: var(--accent);
-      transition: all 0.2s ease;
-    }
-
-    @include md {
-      font-size: 1.4rem;
-    }
-
-    @include sm {
-      font-size: 1.2rem;
-    }
-  }
-
-  &-textarea {
-    font-weight: 700;
-    font-size: 1.4rem;
-    line-height: 120%;
-    text-transform: uppercase;
-    color: var(--black);
-
-    background: transparent;
-    resize: none;
-
-    width: 100%;
-    padding: 1rem;
-    border: 0.1rem solid var(--gray);
-    transition: all 0.2s ease;
-
-    opacity: 0.3;
-
-    @include md {
-      font-size: 1.4rem;
-
-      padding: 0 1rem 2rem 0;
-    }
-
-    @include sm {
-      font-size: 1.2rem;
-    }
-
-    &::placeholder {
-      font-weight: 500;
-      font-size: 1.6rem;
-      line-height: 130%;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-
-      transition: all 0.2s ease;
-
-      @include md {
-        font-size: 1.4rem;
-      }
-
-      @include sm {
-        font-size: 1.2rem;
-      }
-    }
-
-    &:hover {
-      opacity: 1;
-
-      &::placeholder {
-        color: var(--accent);
-      }
-
-      &+.form-label {
-        color: var(--accent);
-
-        span {
-          color: var(--accent);
-        }
-      }
-    }
-
-    &.filled,
-    &:active,
-    &:focus,
-    &:target {
-      opacity: 1;
-
-      &::placeholder {
-        opacity: 0;
-        visibility: hidden;
-      }
-    }
-  }
-
-  &-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
-    @include md {
-      gap: 1.5rem;
-    }
-  }
-
-  &-btn {
-    width: 100%;
-
-    i {
-      color: var(--accent);
-    }
-  }
-
-  &-text {
-    font-weight: 500;
-    font-size: 1.4rem;
-    line-height: 120%;
-    color: var(--accent);
-
-    a {
-      text-decoration: underline;
-
-      &:hover {
-        color: var(--white);
-        text-decoration: none;
-      }
-    }
-  }
-
-  &-file {
-    display: none;
-
-    &--text {
-      color: var(--accent);
-
-      p {
-        font-weight: 300;
-
-        @include md {
-          font-size: 1.2rem;
-        }
-      }
-    }
-
-    &--clear {
-      font-weight: 700;
-      color: var(--accent);
-      transition: all 0.3s ease;
-
-      &:hover {
-        color: var(--white);
-      }
-
-      span {
-        text-decoration: underline;
-      }
-
-      @include md {
-        font-size: 1.2rem;
-      }
-    }
-  }
-
-  &-bottom {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-
-    @include md {
-      // gap: 0.5rem;
-    }
-  }
-
-  &-checkbox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 2.4rem;
-    height: 2.4rem;
-    flex-shrink: 0;
-    padding: 0;
-    border: 0.4rem solid var(--accent);
-    border-radius: 50%;
-    background: var(--black);
-    appearance: none;
-    position: relative;
-    cursor: pointer;
-
-    &:hover {
-
-      &::before {
-        background: var(--accent);
-      }
-    }
-
-    &:checked {
-
-      &::before {
-        background: var(--accent);
-      }
-    }
-
-    &::before {
-      content: "";
-      width: 1.2rem;
-      height: 1.2rem;
-      background: transparent;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      transition: all 0.3s ease;
-      flex-shrink: 0;
-    }
-  }
-}
+// .form {
+//   display: flex;
+//   flex-direction: column;
+
+//   &-content {
+
+//     @include md {
+//       display: flex;
+//       flex-direction: row;
+//       flex-wrap: wrap;
+//       gap: 0 1rem;
+//     }
+//   }
+
+//   &-group {
+//     margin-bottom: 5rem;
+//     width: 100%;
+
+//     position: relative;
+
+//     &:last-child {
+//       margin-bottom: 3rem;
+//     }
+
+//     @include md {
+//       margin-bottom: 3rem;
+
+//       &:nth-child(1):not(.form-group--file, .popup .form-group),
+//       &:nth-child(2):not(.form-group--file, .popup .form-group) {
+//         width: calc(50% - 0.5rem);
+//       }
+//     }
+
+//     @include sm {
+//       margin-bottom: 4rem;
+
+//       &:nth-child(1):not(.form-group--file),
+//       &:nth-child(2):not(.form-group--file) {
+//         width: 100%;
+//       }
+
+//       &:last-child {
+//         margin-bottom: 2rem;
+//       }
+//     }
+
+//     &--file {
+//       display: flex;
+//       align-items: center;
+//       flex-wrap: wrap;
+//       gap: 1rem;
+
+//       @include md {
+//         gap: 0.5rem;
+//       }
+
+//       label {
+//         display: flex;
+//         align-items: center;
+//         gap: 1rem;
+
+//         @include md {
+//           gap: 0.5rem;
+//         }
+
+//         p {
+//           color: var(--accent);
+//           text-decoration: underline;
+//           transition: all 0.3s ease;
+
+//           @include md {
+//             font-size: 1.2rem;
+//           }
+//         }
+
+//         &:hover {
+
+//           p {
+//             color: var(--accent);
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   &-input {
+//     font-weight: 700;
+//     font-size: 1.4rem;
+//     line-height: 120%;
+//     color: var(--black);
+
+//     background: transparent;
+
+//     width: 100%;
+//     height: 100%;
+//     padding: 1rem;
+//     border: 0.1rem solid var(--gray);
+//     transition: all 0.2s ease;
+//     opacity: 0.3;
+
+//     @include md {
+//       font-size: 1.4rem;
+
+//       padding: 0 1rem 2rem 0;
+//     }
+
+//     @include sm {
+//       font-size: 1.2rem;
+
+//       padding: 0 1rem 1.5rem 0;
+//     }
+
+//     &:hover {
+//       opacity: 1;
+
+//       &+.form-label {
+//         color: var(--accent);
+
+//         span {
+//           color: var(--accent);
+//         }
+//       }
+//     }
+
+//     &.filled,
+//     &:active,
+//     &:focus {
+//       opacity: 1;
+//     }
+
+//     &.invalid {
+//       color: var(--accent);
+//       border-color: var(--accent);
+
+//       &+.form-label {
+//         color: var(--accent);
+//       }
+
+//       &~.form-invalid {
+//         opacity: 1;
+//         visibility: visible;
+//       }
+//     }
+//   }
+
+//   &-invalid {
+//     font-weight: 400;
+//     font-size: 1.2rem;
+//     line-height: 120%;
+//     color: var(--accent);
+//     transition: all 0.3s ease;
+
+//     position: absolute;
+//     top: calc(100% + 1rem);
+//     left: 0;
+
+//     opacity: 0;
+//     visibility: hidden;
+
+//     @include md {
+//       top: calc(100% + 0.5rem);
+//     }
+//   }
+
+//   &-label {
+//     font-weight: 350;
+//     font-size: 1.4rem;
+//     line-height: 120%;
+//     color: var(--accent);
+//     background-color: var(--white);
+//     padding: 0 0.7rem;
+
+//     transition: all 0.2s ease;
+
+//     position: absolute;
+//     top: -1rem;
+//     left: 2rem;
+
+//     pointer-events: none;
+
+//     span {
+//       color: var(--accent);
+//       transition: all 0.2s ease;
+//     }
+
+//     @include md {
+//       font-size: 1.4rem;
+//     }
+
+//     @include sm {
+//       font-size: 1.2rem;
+//     }
+//   }
+
+//   &-textarea {
+//     font-weight: 700;
+//     font-size: 1.4rem;
+//     line-height: 120%;
+//     text-transform: uppercase;
+//     color: var(--black);
+
+//     background: transparent;
+//     resize: none;
+
+//     width: 100%;
+//     padding: 1rem;
+//     border: 0.1rem solid var(--gray);
+//     transition: all 0.2s ease;
+
+//     opacity: 0.3;
+
+//     @include md {
+//       font-size: 1.4rem;
+
+//       padding: 0 1rem 2rem 0;
+//     }
+
+//     @include sm {
+//       font-size: 1.2rem;
+//     }
+
+//     &::placeholder {
+//       font-weight: 500;
+//       font-size: 1.6rem;
+//       line-height: 130%;
+//       letter-spacing: 0.1em;
+//       text-transform: uppercase;
+//       color: var(--accent);
+
+//       transition: all 0.2s ease;
+
+//       @include md {
+//         font-size: 1.4rem;
+//       }
+
+//       @include sm {
+//         font-size: 1.2rem;
+//       }
+//     }
+
+//     &:hover {
+//       opacity: 1;
+
+//       &::placeholder {
+//         color: var(--accent);
+//       }
+
+//       &+.form-label {
+//         color: var(--accent);
+
+//         span {
+//           color: var(--accent);
+//         }
+//       }
+//     }
+
+//     &.filled,
+//     &:active,
+//     &:focus,
+//     &:target {
+//       opacity: 1;
+
+//       &::placeholder {
+//         opacity: 0;
+//         visibility: hidden;
+//       }
+//     }
+//   }
+
+//   &-wrap {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 2rem;
+
+//     @include md {
+//       gap: 1.5rem;
+//     }
+//   }
+
+//   &-btn {
+//     width: 100%;
+
+//     i {
+//       color: var(--accent);
+//     }
+//   }
+
+//   &-text {
+//     font-weight: 500;
+//     font-size: 1.4rem;
+//     line-height: 120%;
+//     color: var(--accent);
+
+//     a {
+//       text-decoration: underline;
+
+//       &:hover {
+//         color: var(--white);
+//         text-decoration: none;
+//       }
+//     }
+//   }
+
+//   &-file {
+//     display: none;
+
+//     &--text {
+//       color: var(--accent);
+
+//       p {
+//         font-weight: 300;
+
+//         @include md {
+//           font-size: 1.2rem;
+//         }
+//       }
+//     }
+
+//     &--clear {
+//       font-weight: 700;
+//       color: var(--accent);
+//       transition: all 0.3s ease;
+
+//       &:hover {
+//         color: var(--white);
+//       }
+
+//       span {
+//         text-decoration: underline;
+//       }
+
+//       @include md {
+//         font-size: 1.2rem;
+//       }
+//     }
+//   }
+
+//   &-bottom {
+//     display: flex;
+//     align-items: center;
+//     gap: 1rem;
+
+//     @include md {
+//       // gap: 0.5rem;
+//     }
+//   }
+
+//   &-checkbox {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 2.4rem;
+//     height: 2.4rem;
+//     flex-shrink: 0;
+//     padding: 0;
+//     border: 0.4rem solid var(--accent);
+//     border-radius: 50%;
+//     background: var(--black);
+//     appearance: none;
+//     position: relative;
+//     cursor: pointer;
+
+//     &:hover {
+
+//       &::before {
+//         background: var(--accent);
+//       }
+//     }
+
+//     &:checked {
+
+//       &::before {
+//         background: var(--accent);
+//       }
+//     }
+
+//     &::before {
+//       content: "";
+//       width: 1.2rem;
+//       height: 1.2rem;
+//       background: transparent;
+//       position: absolute;
+//       top: 50%;
+//       left: 50%;
+//       border-radius: 50%;
+//       transform: translate(-50%, -50%);
+//       transition: all 0.3s ease;
+//       flex-shrink: 0;
+//     }
+//   }
+// }

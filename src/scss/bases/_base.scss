@@ -1,17 +1,16 @@
 @use './../mixins' as *;
 
 html {
-  scroll-behavior: smooth;
-
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   -webkit-tap-highlight-color: transparent;
   --refRes: 1920;
+
   font-size: calc(100vw / var(--refRes) * 10);
+  scroll-behavior: smooth;
 
   @include md {
     font-size: 62.5%;
   }
-
 }
 
 body {
@@ -41,7 +40,8 @@ body {
 
 section {
   height: clamp(93rem, 100dvh, 150dvh);
-  padding: 7rem 0 6rem;
+  margin-bottom: 7rem;
+  
   overflow-x: hidden;
   overflow-y: hidden;
 }

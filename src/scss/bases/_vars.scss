@@ -11,13 +11,20 @@
   --white: #ffffff;
   --white-30: rgba(255, 255, 255, 0.3);
   --white-50: rgba(255, 255, 255, 0.5);
+  --white-80: rgba(255, 255, 255, 0.8);
+
   --white-gray: #F4F4F4;
+
   --black: #1A1919;
   --black-50: rgba(26, 25, 25, 0.5);
+
   --gray: #636463;
+  --gray-005: rgba(99, 100, 99, 0.05);
   --gray-30: rgba(99, 100, 99, 30);
   --gray-50: rgba(99, 100, 99, 50);
+
   --gray-light: #E8E8E8;
+
   --accent: #C40D3C;
 
   @include xxl {

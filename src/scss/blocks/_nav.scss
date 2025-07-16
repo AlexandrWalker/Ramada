@@ -9,16 +9,16 @@
 
   &__container {
 
-    @include md {
-      overflow-x: auto;
-      padding: 0;
-    }
-
     &::-webkit-scrollbar {
       width: 0;
       height: 0;
       padding: 0;
       margin: 0;
+    }
+
+    @include md {
+      overflow-x: auto;
+      padding: 0;
     }
   }
 
@@ -30,7 +30,7 @@
     gap: 6rem;
 
     @include xxl {
-      gap: 4rem;
+      // gap: 4rem;
     }
 
     @include md {

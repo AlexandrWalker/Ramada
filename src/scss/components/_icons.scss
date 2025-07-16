@@ -20,11 +20,15 @@
 .icon {
 
   &-3d {
-    --font-size: 5rem;
+    --font-size: var(--btn-height);
+
+    margin-top: 0.3rem;
   }
 
   &-play {
     --font-size: 5rem;
+
+    margin-left: -0.3rem;
   }
 
   &-book {

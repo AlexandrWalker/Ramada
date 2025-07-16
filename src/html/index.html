@@ -4,70 +4,24 @@
 
 <body>
   <div class="wrapper">
+    <!-- Шапка -->
     @@include('./blocks/header.html')
     <main class="main">
       <!-- Главный блок -->
       <section id="hero" class="hero">
         <div class="hero__container container">
           <div class="hero__inner">
-            <form class="form none" action="#">
-              <div class="form-content">
-                <div class="form-group">
-                  <input class="form-input" id="names" name="initials" type="text">
-                  <label class="form-label" for="names">
-                    Ваше имя <span>*</span>
-                  </label>
-                  <span class="form-invalid">Данное поле неверно заполнено</span>
-                </div>
-                <div class="form-group">
-                  <input class="form-input" id="phone" name="tel" type="tel">
-                  <label class="form-label" for="phone">
-                    Телефон <span>*</span>
-                  </label>
-                  <span class="form-invalid">Данное поле неверно заполнено</span>
-                </div>
-                <div class="form-group">
-                  <input class="form-input" id="mail" name="mail" type="email">
-                  <label class="form-label" for="mail">
-                    Эл. почта <span>*</span>
-                  </label>
-                  <span class="form-invalid">Данное поле неверно заполнено</span>
-                </div>
-                <div class="form-group">
-                  <textarea class="form-textarea" id="comments" rows="1" name="comment"></textarea>
-                  <label class="form-label" for="comments">
-                    Комментарий <span>*</span>
-                  </label>
-                  <span class="form-invalid">Данное поле неверно заполнено</span>
-                </div>
-              </div>
-              <div class="form-wrap">
-                <button class="form-btn btn btn--accent" type="button">
-                  <i class="icon-arrow"></i>
-                  Отправить
-                </button>
-                <div class="form-bottom none">
-                  <input class="form-checkbox" name="checkbox" type="checkbox" required>
-                  <div class="form-text">
-                    <p>
-                      Нажимая кнопку «Отправить, я соглашаюсь с <a href="/Leader/policy.html">обработкой персональных
-                        данных</a>
-                      и с <a href="/Leader/agreement.html">пользовательским соглашением</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </form>
+
           </div>
         </div>
       </section>
     </main>
     <!-- Подвал -->
-    @@include('blocks/footer.html')
+    <!-- @@include('blocks/footer.html') -->
     <!-- Попапы -->
-    @@include('blocks/popup.html')
+    <!-- @@include('blocks/popup.html') -->
     <!-- Плашки -->
-    @@include('blocks/plate.html')
+    <!-- @@include('blocks/plate.html') -->
   </div>
   <!-- libs -->
   <script src="./libs/gsap/gsap.min.js"></script>
