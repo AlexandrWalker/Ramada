@@ -19,11 +19,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+  /**
+   * Расчёт ширины скроллбара старницы и добавление отступа в body при октрытии попапов
+   */
+  function getScrollbarWidth() {
+    const div = document.createElement('div');
+
+    div.style.overflowY = 'scroll';
+    div.style.width = '100px';
+    div.style.height = '100px';
+    div.style.visibility = 'hidden';
+
+    document.body.appendChild(div);
+
+    const scrollbarWidth = div.offsetWidth - div.clientWidth;
+
+    document.body.removeChild(div);
+
+    return scrollbarWidth;
+  }
+
+
 
   /**
    * Управляет поведением меню-бургера.
    */
   function burgerNav() {
+    const header = document.getElementById('header');
     const burgerBtn = document.querySelector('.burger-btn');
     const burgerMenu = document.querySelector('.burger-menu');
     const burgerClose = document.querySelector('.burger-close');
@@ -37,6 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const isOpened = burgerBtn.classList.toggle('burger-btn--opened');
       burgerMenu.classList.toggle('burger-menu--opened', isOpened);
       lenis.stop();
+      header.classList.toggle('show');
+
+      const width = getScrollbarWidth();
+      document.body.style.paddingRight = width + 'px';
     };
 
     /**
@@ -45,7 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeMenu = () => {
       burgerBtn.classList.remove('burger-btn--opened');
       burgerMenu.classList.remove('burger-menu--opened');
+      header.classList.remove('show');
       lenis.start();
+
+      document.body.style.paddingRight = 0;
     };
 
     // Открытие/закрытие меню по клику на бургер
@@ -74,6 +103,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+  /**
+   * Управляет аккардионом
+   */
   function accordionFunc() {
     if (document.querySelector('.accordion-parent')) {
       document.querySelectorAll('.accordion-parent').forEach((accordionContainer) => {
@@ -120,6 +152,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   accordionFunc();
 
+
+
   /**
    * Кнопка куки
    */
@@ -132,28 +166,63 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  const inputElements = document.querySelectorAll('.form-input');
-  const textareaElements = document.querySelectorAll('.form-textarea');
-  const className = 'filled';
 
-  inputElements.forEach(element => {
-    element.addEventListener('input', function () {
-      if (this.value.trim() !== '') {
-        element.classList.add(className);
-      } else {
-        element.classList.remove(className);
-      }
-    });
-  });
+  /**
+   * Инициализация формы набора символов
+   */
+  const form = document.querySelector('.form');
+  if (form) {
+    const inputElements = document.querySelectorAll('.form-input');
+    const textareaElements = document.querySelectorAll('.form-textarea');
+    const className = 'filled';
 
-  textareaElements.forEach(element => {
-    element.addEventListener('input', function () {
-      if (this.value.trim() !== '') {
-        element.classList.add(className);
-      } else {
-        element.classList.remove(className);
-      }
+    inputElements.forEach(element => {
+      element.addEventListener('input', function () {
+        if (this.value.trim() !== '') {
+          element.classList.add(className);
+        } else {
+          element.classList.remove(className);
+        }
+      });
     });
+
+    textareaElements.forEach(element => {
+      element.addEventListener('input', function () {
+        if (this.value.trim() !== '') {
+          element.classList.add(className);
+        } else {
+          element.classList.remove(className);
+        }
+      });
+    });
+  }
+
+
+
+  /**
+   * Инициализация TransferElements
+   */
+  if (document.querySelector('.menu')) {
+    new TransferElements(
+      {
+        sourceElement: document.querySelector('.menu__head-social'),
+        breakpoints: {
+          600: {
+            targetElement: document.querySelector('.menu')
+          }
+        },
+      }
+    );
+  }
+
+
+
+  $(window).on('resize load', function () {
+    if (window.innerWidth < '600' && window.innerWidth != '600') {
+      const burgerClose = document.querySelector('.burger-close');
+      burgerClose.classList.add('btn');
+      burgerClose.classList.add('btn--black');
+    }
   });
 
 });

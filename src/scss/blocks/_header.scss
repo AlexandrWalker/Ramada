@@ -146,6 +146,10 @@
       height: 5rem;
     }
 
+    @include sm {
+      display: none;
+    }
+
     &-btn {
       display: flex;
       flex-direction: column;
