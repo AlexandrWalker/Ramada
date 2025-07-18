@@ -225,6 +225,247 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+
+
+  /**
+   * GSAP
+   */
+  // $(window).on('resize load', function () {
+  //   if (window.innerWidth > '1440' && window.innerWidth != '1440') {
+  //     const paddingTop = '170px';
+  //     heroAnimation()
+  //   }
+  // });
+
+
+  // function heroAnimation() {
+
+    const hero = document.querySelector('.hero')
+    const smoothImg = document.querySelector('[data-animation="smooth-img"]')
+
+    const heroHeight = hero.offsetWidth;
+
+    gsap.fromTo(smoothImg, {
+      scale: 1,
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: "clamp(top 170px)",
+        end: () => `+=${1.5 * heroHeight}`,
+        pin: true,
+        scrub: true,
+      },
+      // onStart: function () {
+      onComplete: function () {
+        hero.classList.add('animatedClass');
+      },
+    }, {
+      y: '-50%',
+      scale: 1.3,
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: "clamp(top 170px)",
+        end: () => `+=${1.5 * heroHeight}`,
+        pin: true,
+        scrub: true,
+      }
+    });
+
+    // const heroTitle = document.querySelector('[data-animation="hero-title"]');
+    // const heroText = document.querySelector('[data-animation="hero-text"]');
+    // if (heroTitle) {
+    //   gsap.fromTo(heroTitle,
+    //     { y: '15%' },
+    //     {
+    //       y: '-35%',
+    //       scrollTrigger: {
+    //         trigger: hero,
+    //         start: 'top 90%',
+    //         end: 'bottom top',
+    //         scrub: true,
+    //       },
+    //     }
+    //   );
+    // }
+
+
+    const title = document.querySelector('[data-animation="hero-title"]');
+    const h1Title = title.querySelector('h1');
+    const pSubtitle = title.querySelector('p');
+    const spanSubtitle = title.querySelector('span');
+    const heroHead = document.querySelector('.hero__head');
+    const heroBtn = document.querySelector('.hero__btn');
+
+    gsap.fromTo(h1Title, {
+      "--h1-fontsize": "20rem",
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        pin: true,
+        // start: "top top",
+        start: "clamp(top 170px)",
+        // end: () => "+=" + h1Title.clientHeight,
+        end: () => `+=${1.5 * heroHeight}`,
+        scrub: true,
+        invalidateOnRefresh: true
+      }
+    }, {
+      "--h1-fontsize": "14rem",
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        pin: true,
+        // start: "top top",
+        start: "clamp(top 170px)",
+        // end: () => "+=" + h1Title.clientHeight,
+        end: () => `+=${1.5 * heroHeight}`,
+        scrub: true,
+        invalidateOnRefresh: true
+      }
+    });
+
+    gsap.fromTo(pSubtitle, {
+      "--p-fontsize": "10rem",
+      "--p-left-pos": "82.5rem",
+      "--p-top-pos": "6.8rem",
+      "--p-color": "#1A1919",
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        pin: true,
+        // start: "top top",
+        start: "clamp(top 170px)",
+        // end: () => "+=" + h1Title.clientHeight,
+        end: () => `+=${1.5 * heroHeight}`,
+        scrub: true,
+        invalidateOnRefresh: true
+      }
+    }, {
+      "--p-fontsize": "6rem",
+      "--p-left-pos": "55.5rem",
+      "--p-top-pos": "5.7rem",
+      "--p-color": "#ffffff",
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        pin: true,
+        // start: "top top",
+        start: "clamp(top 170px)",
+        // end: () => "+=" + h1Title.clientHeight,
+        end: () => `+=${1.5 * heroHeight}`,
+        scrub: true,
+        invalidateOnRefresh: true
+      }
+    });
+
+    gsap.fromTo(spanSubtitle, {
+      "--span-color": "#C40D3C",
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        pin: true,
+        // start: "top top",
+        start: "clamp(top 170px)",
+        // end: () => "+=" + h1Title.clientHeight,
+        end: () => `+=${1.5 * heroHeight}`,
+        scrub: true,
+        invalidateOnRefresh: true
+      }
+    }, {
+      "--span-color": "#ffffff",
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        pin: true,
+        // start: "top top",
+        start: "clamp(top 170px)",
+        // end: () => "+=" + h1Title.clientHeight,
+        end: () => `+=${1.5 * heroHeight}`,
+        scrub: true,
+        invalidateOnRefresh: true
+      }
+    });
+
+    gsap.fromTo(heroHead, {
+      "--heroHead-gap": "3rem",
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        pin: true,
+        // start: "top top",
+        start: "clamp(top 170px)",
+        // end: () => "+=" + h1Title.clientHeight,
+        end: () => `+=${1.5 * heroHeight}`,
+        scrub: true,
+        invalidateOnRefresh: true
+      }
+    }, {
+      "--heroHead-gap": "8rem",
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        pin: true,
+        // start: "top top",
+        start: "clamp(top 170px)",
+        // end: () => "+=" + h1Title.clientHeight,
+        end: () => `+=${1.5 * heroHeight}`,
+        scrub: true,
+        invalidateOnRefresh: true
+      }
+    });
+
+    gsap.fromTo(heroBtn, {
+      "--hero-btn-bottom": "-3rem",
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        pin: true,
+        // start: "top top",
+        start: "clamp(top 170px)",
+        // end: () => "+=" + h1Title.clientHeight,
+        end: () => `+=${1.5 * heroHeight}`,
+        scrub: true,
+        invalidateOnRefresh: true
+      }
+    }, {
+      "--hero-btn-bottom": "1.3rem",
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        pin: true,
+        // start: "top top",
+        start: "clamp(top 170px)",
+        // end: () => "+=" + h1Title.clientHeight,
+        end: () => `+=${1.5 * heroHeight}`,
+        scrub: true,
+        invalidateOnRefresh: true
+      }
+    });
+  // }
+
+  // function createST() {
+  //   gsap.to(smoothImg, { // animate all .smooth-img
+  //     // scale: 1.176,
+  //     scale: 1.2,
+  //     ease: "none", // no easing for scroll 
+  //     scrollTrigger: {
+  //       trigger: hero,
+  //       start: "clamp(top 80%)", // clamp() animaton so that it only starts when user starts scrolling
+  //       end: "bottom 20%",
+  //       scrub: true,
+  //       markers: true
+  //     }
+  //   });
+  // }
+
+  // // Page load animation
+  // gsap.to(smoothImg, {
+  //   // scale: 0.8,
+  //   scale: 0.8,
+  //   onComplete: () => createST() // on complete call function
+  // });
+
 });
 
 function checkCookies() {

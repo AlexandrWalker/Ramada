@@ -1,3 +1,207 @@
 @use './../mixins' as *;
 
-.hero {}
+.hero {
+  height: 77rem;
+  margin-bottom: 0;
+
+  @include md {
+    display: none;
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    // gap: 3rem;
+    gap: var(--heroHead-gap);
+    width: 100%;
+
+    // position: absolute;
+    position: relative;
+    top: 10.6rem;
+    left: 0;
+
+    .title {
+      position: relative;
+
+      h1 {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        font-family: var(--second-family);
+        font-weight: 300;
+        // font-size: 20rem;
+        font-size: var(--h1-fontsize);
+        line-height: 90%;
+        color: var(--white);
+
+        span {
+          color: var(--span-color);
+        }
+      }
+
+      p {
+        font-family: var(--second-family);
+        font-weight: 300;
+        // font-size: 10rem;
+        font-size: var(--p-fontsize);
+        line-height: 110%;
+        text-transform: uppercase;
+        color: var(--p-color);
+
+        position: absolute;
+        // top: 6.8rem;
+        top: var(--p-top-pos);
+        // right: 0;
+        // left: 53.95%;
+        left: var(--p-left-pos);
+      }
+    }
+
+    .text {
+      padding-left: 13rem;
+      max-width: 86rem;
+
+      h2 {
+        -webkit-line-clamp: 3;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -o-text-overflow: clip;
+        text-overflow: clip;
+        overflow: hidden;
+
+        font-family: var(--second-family);
+        font-weight: 300;
+        // font-size: 5rem;
+        font-size: 5rem;
+        line-height: 120%;
+        color: var(--white);
+      }
+    }
+  }
+
+  &__bg {
+    aspect-ratio: 1920/930;
+
+    position: absolute;
+    top: 26rem;
+    right: 0;
+    left: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__btn {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15.4rem;
+    height: 15.4rem;
+    border-radius: 50%;
+    background-color: var(--white);
+
+    position: absolute;
+    left: -7.7rem;
+    // bottom: -3rem;
+    bottom: var(--hero-btn-bottom);
+
+    &::before {
+      content: "";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: absolute;
+      top: -0.8rem;
+      right: -0.8rem;
+      bottom: -0.8rem;
+      left: -0.8rem;
+      border: 0.1rem solid var(--white-30);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    &::after {
+      content: "";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: absolute;
+      top: 0.8rem;
+      right: 0.8rem;
+      bottom: 0.8rem;
+      left: 0.8rem;
+      border: 0.1rem solid var(--accent-30);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    i {
+      --font-size: 8rem;
+      color: var(--accent);
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.component {
+  width: 207.2rem;
+  height: 207.4rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+
+  &--one {
+    stroke: var(--gray);
+    stroke-dasharray: 6000;
+    stroke-dashoffset: 6000;
+    animation: one 6s linear forwards;
+  }
+
+  &--two {
+    stroke: var(--gray);
+    stroke-dasharray: 6000;
+    stroke-dashoffset: 6000;
+    animation: two 6s linear forwards;
+  }
+
+  &--three {
+    stroke: var(--gray);
+    stroke-dasharray: 6000;
+    stroke-dashoffset: 6000;
+    animation: three 6s linear forwards;
+  }
+
+  @keyframes one {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes two {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes three {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+}

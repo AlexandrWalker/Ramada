@@ -6,7 +6,7 @@
 
   --container-padding: 20rem;
   --container-width: 152rem;
-  --header-height: 16.7rem;
+  --header-height: 17rem;
 
   --white: #ffffff;
   --white-30: rgba(255, 255, 255, 0.3);
@@ -26,6 +26,7 @@
   --gray-light: #E8E8E8;
 
   --accent: #C40D3C;
+  --accent-30: rgba(196, 13, 60, 30);
 
   @include xxl {
     // --container-padding: 14rem;

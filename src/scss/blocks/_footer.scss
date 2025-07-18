@@ -4,11 +4,25 @@
   background-color: var(--white);
   border-top: 0.1rem solid var(--gray-30);
 
+  position: relative;
+  overflow: hidden;
+
+  .component {
+    z-index: 1;
+    
+    @include md {
+      display: none;
+    }
+  }
+
   &__inner {
     display: grid;
     // grid-template-columns: 135.5rem 56.5rem;
     grid-template-columns: 70.573% 29.427%;
     grid-template-rows: auto 1fr;
+
+    position: relative;
+    z-index: 2;
 
     @include md {
       display: flex;
