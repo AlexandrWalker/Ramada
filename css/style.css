@@ -864,7 +864,7 @@ h6 span {
 
 .footer__inner {
   display: grid;
-  grid-template-columns: 135.5rem 56.5rem;
+  grid-template-columns: 70.573% 29.427%;
   grid-template-rows: auto 1fr;
 }
 
