@@ -19,6 +19,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+  const offerBodySlider = new Swiper(".offer__body--slider", {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    speed: 600,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    mousewheel: {
+      forceToAxis: true,
+    },
+    navigation: {
+      nextEl: ".offer__slider-btn--next",
+      prevEl: ".offer__slider-btn--prev",
+    },
+  });
+
+  const offerContentSlider = new Swiper(".offer__content--slider", {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    speed: 600,
+    autoHeight: true,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    grabCursor: false,
+    mousewheel: false,
+    allowTouchMove: false,
+  });
+
+  offerBodySlider.controller.control = offerContentSlider;
+  offerContentSlider.controller.control = offerBodySlider;
+
+
+
   /**
    * Расчёт ширины скроллбара старницы и добавление отступа в body при октрытии попапов
    */
@@ -29,13 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
     div.style.width = '100px';
     div.style.height = '100px';
     div.style.visibility = 'hidden';
-
     document.body.appendChild(div);
-
     const scrollbarWidth = div.offsetWidth - div.clientWidth;
-
     document.body.removeChild(div);
-
     return scrollbarWidth;
   }
 
@@ -230,241 +266,373 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * GSAP
    */
-  // $(window).on('resize load', function () {
-  //   if (window.innerWidth > '1440' && window.innerWidth != '1440') {
-  //     const paddingTop = '170px';
-  //     heroAnimation()
-  //   }
-  // });
+  const hero = document.querySelector('.hero')
+  if (hero) {
 
+    $(window).on('resize load', function () {
+      // if (window.innerWidth > '834' && window.innerWidth != '834') {
 
-  // function heroAnimation() {
+      //   const smoothImgY = '-50%';
 
-    const hero = document.querySelector('.hero')
-    const smoothImg = document.querySelector('[data-animation="smooth-img"]')
+      //   const smoothImgTopBefore = '26rem';
+      //   const smoothImgTopAfter = '26rem';
 
-    const heroHeight = hero.offsetWidth;
+      //   const heroTop = 4.53;
+
+      //   const h1TitleFsBefore = '20rem';
+      //   const h1TitleFsAfter = '14rem';
+
+      //   const pTitleFontSizeBefore = '10rem';
+      //   const pTitleLeftPosBefore = '82.5rem';
+      //   const pTitleTopPosBefore = '6.8rem';
+      //   const pTitleColorBefore = '#1A1919';
+
+      //   const pTitleFontSizeAfter = '6rem';
+      //   const pTitleLeftPosAfter = '55.5rem';
+      //   const pTitleTopPosAfter = '5.7rem';
+      //   const pTitleColorAfter = '#ffffff';
+
+      //   const heroHeadGapBefore = '3rem';
+      //   const heroHeadGapAfter = '8rem';
+
+      //   const heroBtnBottomBefore = '-3rem';
+      //   const heroBtnBottomAfter = '1.3rem';
+
+      //   heroAnimate(smoothImgY,
+      //     smoothImgTopBefore,
+      //     smoothImgTopAfter,
+      //     heroTop,
+      //     h1TitleFsBefore,
+      //     h1TitleFsAfter,
+      //     pTitleFontSizeBefore,
+      //     pTitleLeftPosBefore,
+      //     pTitleTopPosBefore,
+      //     pTitleColorBefore,
+      //     pTitleFontSizeAfter,
+      //     pTitleLeftPosAfter,
+      //     pTitleTopPosAfter,
+      //     pTitleColorAfter,
+      //     heroHeadGapBefore,
+      //     heroHeadGapAfter,
+      //     heroBtnBottomBefore,
+      //     heroBtnBottomAfter
+      //   );
+      // } else if (window.innerWidth < '834' && window.innerWidth > '600') {
+
+      //   const smoothImgY = '-30%';
+
+      //   const smoothImgTopBefore = '11.8rem';
+      //   const smoothImgTopAfter = '13.9rem';
+
+      //   const heroTop = 3.2;
+
+      //   const h1TitleFsBefore = '8rem';
+      //   const h1TitleFsAfter = '5.6rem';
+
+      //   const pTitleFontSizeBefore = '4rem';
+      //   const pTitleLeftPosBefore = '39rem';
+      //   const pTitleTopPosBefore = '2.7rem';
+      //   const pTitleColorBefore = '#1A1919';
+
+      //   const pTitleFontSizeAfter = '2.4rem';
+      //   const pTitleLeftPosAfter = '24rem';
+      //   const pTitleTopPosAfter = '2.2rem';
+      //   const pTitleColorAfter = '#ffffff';
+
+      //   const heroHeadGapBefore = '2rem';
+      //   const heroHeadGapAfter = '6rem';
+
+      //   const heroBtnBottomBefore = '-3.7rem';
+      //   const heroBtnBottomAfter = '-1.2rem';
+
+      //   heroAnimate(smoothImgY,
+      //     smoothImgTopBefore,
+      //     smoothImgTopAfter,
+      //     heroTop,
+      //     h1TitleFsBefore,
+      //     h1TitleFsAfter,
+      //     pTitleFontSizeBefore,
+      //     pTitleLeftPosBefore,
+      //     pTitleTopPosBefore,
+      //     pTitleColorBefore,
+      //     pTitleFontSizeAfter,
+      //     pTitleLeftPosAfter,
+      //     pTitleTopPosAfter,
+      //     pTitleColorAfter,
+      //     heroHeadGapBefore,
+      //     heroHeadGapAfter,
+      //     heroBtnBottomBefore,
+      //     heroBtnBottomAfter
+      //   );
+      // } else if (window.innerWidth <= '600') {
+
+      //   const smoothImgY = '-36%';
+
+      //   const smoothImgTopBefore = '11.8rem';
+      //   const smoothImgTopAfter = '13.9rem';
+
+      //   const heroTop = 3.2;
+
+      //   const h1TitleFsBefore = '6rem';
+      //   const h1TitleFsAfter = '4.2rem';
+
+      //   const pTitleFontSizeBefore = '10rem';
+      //   const pTitleLeftPosBefore = '82.5rem';
+      //   const pTitleTopPosBefore = '6.8rem';
+      //   const pTitleColorBefore = '#1A1919';
+
+      //   const pTitleFontSizeAfter = '6rem';
+      //   const pTitleLeftPosAfter = '55.5rem';
+      //   const pTitleTopPosAfter = '5.7rem';
+      //   const pTitleColorAfter = '#ffffff';
+
+      //   const heroHeadGapBefore = '3rem';
+      //   const heroHeadGapAfter = '8rem';
+
+      //   const heroBtnBottomBefore = '-3rem';
+      //   const heroBtnBottomAfter = '1.3rem';
+
+      //   heroAnimate(smoothImgY,
+      //     smoothImgTopBefore,
+      //     smoothImgTopAfter,
+      //     heroTop,
+      //     h1TitleFsBefore,
+      //     h1TitleFsAfter,
+      //     pTitleFontSizeBefore,
+      //     pTitleLeftPosBefore,
+      //     pTitleTopPosBefore,
+      //     pTitleColorBefore,
+      //     pTitleFontSizeAfter,
+      //     pTitleLeftPosAfter,
+      //     pTitleTopPosAfter,
+      //     pTitleColorAfter,
+      //     heroHeadGapBefore,
+      //     heroHeadGapAfter,
+      //     heroBtnBottomBefore,
+      //     heroBtnBottomAfter
+      //   );
+      // }
+
+      if (window.innerWidth > '834' && window.innerWidth != '834') {
+
+        const smoothImgY = '-50%';
+
+        const smoothImgTopBefore = '26rem';
+        const smoothImgTopAfter = '26rem';
+
+        const heroTop = 4.53;
+
+        const h1TitleFsBefore = '20rem';
+        const h1TitleFsAfter = '14rem';
+
+        const pTitleFontSizeBefore = '10rem';
+        const pTitleLeftPosBefore = '82.5rem';
+        const pTitleTopPosBefore = '6.8rem';
+        const pTitleColorBefore = '#1A1919';
+
+        const pTitleFontSizeAfter = '6rem';
+        const pTitleLeftPosAfter = '55.5rem';
+        const pTitleTopPosAfter = '5.7rem';
+        const pTitleColorAfter = '#ffffff';
+
+        const heroHeadGapBefore = '3rem';
+        const heroHeadGapAfter = '8rem';
+
+        const heroBtnBottomBefore = '-3rem';
+        const heroBtnBottomAfter = '1.3rem';
+
+        heroAnimate(smoothImgY,
+          smoothImgTopBefore,
+          smoothImgTopAfter,
+          heroTop,
+          h1TitleFsBefore,
+          h1TitleFsAfter,
+          pTitleFontSizeBefore,
+          pTitleLeftPosBefore,
+          pTitleTopPosBefore,
+          pTitleColorBefore,
+          pTitleFontSizeAfter,
+          pTitleLeftPosAfter,
+          pTitleTopPosAfter,
+          pTitleColorAfter,
+          heroHeadGapBefore,
+          heroHeadGapAfter,
+          heroBtnBottomBefore,
+          heroBtnBottomAfter
+        );
+      } else {
+        return;
+      }
+    });
+  }
+
+  function heroAnimate(smoothImgY, smoothImgTopBefore, smoothImgTopAfter, heroTop, h1TitleFsBefore, h1TitleFsAfter, pTitleFontSizeBefore, pTitleLeftPosBefore, pTitleTopPosBefore, pTitleColorBefore, pTitleFontSizeAfter, pTitleLeftPosAfter, pTitleTopPosAfter, pTitleColorAfter, heroHeadGapBefore, heroHeadGapAfter, heroBtnBottomBefore, heroBtnBottomAfter
+  ) {
+    const heroHead = hero.querySelector('.hero__head')
+    const heroHeight = hero.offsetHeight
+
+    const smoothImg = hero.querySelector('[data-animation="smooth-img"]')
+    const heroTitle = hero.querySelector('[data-animation="hero-title"]')
+    const heroBtn = hero.querySelector('[data-animation="hero-btn"]')
+
+    const h1Title = heroTitle.querySelector('h1')
+    const pTitle = heroTitle.querySelector('p')
+    const spanTitle = heroTitle.querySelector('span')
 
     gsap.fromTo(smoothImg, {
+      "--top": smoothImgTopBefore,
       scale: 1,
       ease: "none",
       scrollTrigger: {
         trigger: hero,
-        start: "clamp(top 170px)",
-        end: () => `+=${1.5 * heroHeight}`,
+        start: `top +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
         pin: true,
         scrub: true,
       },
-      // onStart: function () {
       onComplete: function () {
         hero.classList.add('animatedClass');
       },
     }, {
-      y: '-50%',
+      "--top": smoothImgTopAfter,
+      y: smoothImgY,
       scale: 1.3,
       ease: "none",
       scrollTrigger: {
         trigger: hero,
-        start: "clamp(top 170px)",
-        end: () => `+=${1.5 * heroHeight}`,
+        start: `top +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
         pin: true,
         scrub: true,
       }
     });
-
-    // const heroTitle = document.querySelector('[data-animation="hero-title"]');
-    // const heroText = document.querySelector('[data-animation="hero-text"]');
-    // if (heroTitle) {
-    //   gsap.fromTo(heroTitle,
-    //     { y: '15%' },
-    //     {
-    //       y: '-35%',
-    //       scrollTrigger: {
-    //         trigger: hero,
-    //         start: 'top 90%',
-    //         end: 'bottom top',
-    //         scrub: true,
-    //       },
-    //     }
-    //   );
-    // }
-
-
-    const title = document.querySelector('[data-animation="hero-title"]');
-    const h1Title = title.querySelector('h1');
-    const pSubtitle = title.querySelector('p');
-    const spanSubtitle = title.querySelector('span');
-    const heroHead = document.querySelector('.hero__head');
-    const heroBtn = document.querySelector('.hero__btn');
 
     gsap.fromTo(h1Title, {
-      "--h1-fontsize": "20rem",
+      "--fontsize": h1TitleFsBefore,
       ease: "none",
       scrollTrigger: {
         trigger: hero,
+        start: `top +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
         pin: true,
-        // start: "top top",
-        start: "clamp(top 170px)",
-        // end: () => "+=" + h1Title.clientHeight,
-        end: () => `+=${1.5 * heroHeight}`,
         scrub: true,
         invalidateOnRefresh: true
       }
     }, {
-      "--h1-fontsize": "14rem",
+      "--fontsize": h1TitleFsAfter,
       ease: "none",
       scrollTrigger: {
         trigger: hero,
+        start: `top +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
         pin: true,
-        // start: "top top",
-        start: "clamp(top 170px)",
-        // end: () => "+=" + h1Title.clientHeight,
-        end: () => `+=${1.5 * heroHeight}`,
         scrub: true,
         invalidateOnRefresh: true
       }
     });
 
-    gsap.fromTo(pSubtitle, {
-      "--p-fontsize": "10rem",
-      "--p-left-pos": "82.5rem",
-      "--p-top-pos": "6.8rem",
-      "--p-color": "#1A1919",
+    gsap.fromTo(pTitle, {
+      "--fontsize": pTitleFontSizeBefore,
+      "--left-pos": pTitleLeftPosBefore,
+      "--top-pos": pTitleTopPosBefore,
+      "--color": pTitleColorBefore,
       ease: "none",
       scrollTrigger: {
         trigger: hero,
+        start: `top +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
         pin: true,
-        // start: "top top",
-        start: "clamp(top 170px)",
-        // end: () => "+=" + h1Title.clientHeight,
-        end: () => `+=${1.5 * heroHeight}`,
         scrub: true,
         invalidateOnRefresh: true
       }
     }, {
-      "--p-fontsize": "6rem",
-      "--p-left-pos": "55.5rem",
-      "--p-top-pos": "5.7rem",
-      "--p-color": "#ffffff",
+      "--fontsize": pTitleFontSizeAfter,
+      "--left-pos": pTitleLeftPosAfter,
+      "--top-pos": pTitleTopPosAfter,
+      "--color": pTitleColorAfter,
       ease: "none",
       scrollTrigger: {
         trigger: hero,
+        start: `top +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
         pin: true,
-        // start: "top top",
-        start: "clamp(top 170px)",
-        // end: () => "+=" + h1Title.clientHeight,
-        end: () => `+=${1.5 * heroHeight}`,
         scrub: true,
         invalidateOnRefresh: true
       }
     });
 
-    gsap.fromTo(spanSubtitle, {
-      "--span-color": "#C40D3C",
+    gsap.fromTo(spanTitle, {
+      "--color": "#C40D3C",
       ease: "none",
       scrollTrigger: {
         trigger: hero,
+        start: `top +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
         pin: true,
-        // start: "top top",
-        start: "clamp(top 170px)",
-        // end: () => "+=" + h1Title.clientHeight,
-        end: () => `+=${1.5 * heroHeight}`,
         scrub: true,
         invalidateOnRefresh: true
       }
     }, {
-      "--span-color": "#ffffff",
+      "--color": "#ffffff",
       ease: "none",
       scrollTrigger: {
         trigger: hero,
+        start: `top +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
         pin: true,
-        // start: "top top",
-        start: "clamp(top 170px)",
-        // end: () => "+=" + h1Title.clientHeight,
-        end: () => `+=${1.5 * heroHeight}`,
         scrub: true,
         invalidateOnRefresh: true
       }
     });
 
     gsap.fromTo(heroHead, {
-      "--heroHead-gap": "3rem",
+      "--gap": heroHeadGapBefore,
       ease: "none",
       scrollTrigger: {
         trigger: hero,
+        start: `top +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
         pin: true,
-        // start: "top top",
-        start: "clamp(top 170px)",
-        // end: () => "+=" + h1Title.clientHeight,
-        end: () => `+=${1.5 * heroHeight}`,
         scrub: true,
         invalidateOnRefresh: true
       }
     }, {
-      "--heroHead-gap": "8rem",
+      "--gap": heroHeadGapAfter,
       ease: "none",
       scrollTrigger: {
         trigger: hero,
+        start: `top +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
         pin: true,
-        // start: "top top",
-        start: "clamp(top 170px)",
-        // end: () => "+=" + h1Title.clientHeight,
-        end: () => `+=${1.5 * heroHeight}`,
         scrub: true,
         invalidateOnRefresh: true
       }
     });
 
     gsap.fromTo(heroBtn, {
-      "--hero-btn-bottom": "-3rem",
+      "--btn-bottom": heroBtnBottomBefore,
       ease: "none",
       scrollTrigger: {
         trigger: hero,
+        start: `top +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
         pin: true,
-        // start: "top top",
-        start: "clamp(top 170px)",
-        // end: () => "+=" + h1Title.clientHeight,
-        end: () => `+=${1.5 * heroHeight}`,
         scrub: true,
         invalidateOnRefresh: true
       }
     }, {
-      "--hero-btn-bottom": "1.3rem",
+      "--btn-bottom": heroBtnBottomAfter,
       ease: "none",
       scrollTrigger: {
         trigger: hero,
+        start: `top +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
         pin: true,
-        // start: "top top",
-        start: "clamp(top 170px)",
-        // end: () => "+=" + h1Title.clientHeight,
-        end: () => `+=${1.5 * heroHeight}`,
         scrub: true,
         invalidateOnRefresh: true
       }
     });
-  // }
-
-  // function createST() {
-  //   gsap.to(smoothImg, { // animate all .smooth-img
-  //     // scale: 1.176,
-  //     scale: 1.2,
-  //     ease: "none", // no easing for scroll 
-  //     scrollTrigger: {
-  //       trigger: hero,
-  //       start: "clamp(top 80%)", // clamp() animaton so that it only starts when user starts scrolling
-  //       end: "bottom 20%",
-  //       scrub: true,
-  //       markers: true
-  //     }
-  //   });
-  // }
-
-  // // Page load animation
-  // gsap.to(smoothImg, {
-  //   // scale: 0.8,
-  //   scale: 0.8,
-  //   onComplete: () => createST() // on complete call function
-  // });
+  }
 
 });
 
