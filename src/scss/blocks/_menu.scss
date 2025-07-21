@@ -9,11 +9,12 @@
   // grid-template-columns: 18rem 115.5rem 58.5rem;
   grid-template-columns: 0rem 0rem 0rem;
   background-color: var(--white-gray);
-  background-image: url(./../images/menu/bg-full.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  // background-image: url(./../images/menu/bg-full.png);
+  // background-image: url(./../images/menu/bg.png);
+  // background-repeat: no-repeat;
+  // background-size: 100% 100%;
 
-  transition: all var(--menu-transition-time) ease;
+  transition: all var(--menu-transition-time) ease-in-out;
   overflow: hidden;
 
   min-height: 100%;
@@ -38,8 +39,10 @@
     min-width: 18rem;
 
     background-color: var(--accent);
-    transition: all var(--menu-transition-time) ease;
+    transition: all var(--menu-transition-time) ease-in-out;
     overflow: hidden;
+
+    z-index: 3;
 
     @include md {
       flex-direction: row-reverse;
@@ -134,11 +137,18 @@
     display: flex;
     align-items: center;
     background: linear-gradient(to right, var(--white-gray) var(--menu-head-width), transparent var(--menu-body-width));
-    transition: all var(--menu-transition-time) ease;
+    background-color: var(--white-gray);
+    transition: all var(--menu-transition-time) ease-in-out;
     overflow: hidden;
     min-width: 115.5rem;
 
     position: relative;
+    z-index: 2;
+
+    background-image: url(./../images/menu/bg.png);
+    background-repeat: no-repeat;
+    background-size: var(--menu-body-width) 100%;
+    background-position: var(--menu-head-width) center;
 
     @include md {
       min-width: unset;
@@ -166,7 +176,7 @@
       backdrop-filter: blur(1.3rem);
       opacity: 0;
       pointer-events: none;
-      transition: all var(--menu-transition-time) ease;
+      transition: all var(--menu-transition-time) ease-in-out;
 
       position: absolute;
       top: 0;
@@ -233,7 +243,7 @@
       transition: 0s;
 
       @include md {
-        transition: all var(--menu-transition-time) ease;
+        transition: all var(--menu-transition-time) ease-in-out;
       }
     }
 
@@ -244,7 +254,7 @@
       width: 100%;
       height: 8rem;
       padding: 0 8rem 0 8.8rem;
-      transition: all var(--menu-transition-time) ease;
+      transition: all var(--menu-transition-time) ease-in-out;
 
       color: var(--gray);
 
@@ -281,7 +291,7 @@
         }
 
         &+.accordion-body {
-          transition: all var(--menu-transition-time) ease;
+          transition: all var(--menu-transition-time) ease-in-out;
           /**/
           height: 100%;
 
@@ -298,7 +308,7 @@
         letter-spacing: 0.1em;
         text-transform: uppercase;
         color: inherit;
-        transition: all var(--menu-transition-time) ease;
+        transition: all var(--menu-transition-time) ease-in-out;
 
         @include md {
           font-size: 1.4rem;
@@ -312,7 +322,7 @@
 
       i {
         color: inherit;
-        transition: all var(--menu-transition-time) ease;
+        transition: all var(--menu-transition-time) ease-in-out;
 
         @include md {
           transform: rotate(90deg);
@@ -421,8 +431,10 @@
     min-width: 58.5rem;
     color: var(--gray);
 
-    transition: all var(--menu-transition-time) ease;
+    transition: all var(--menu-transition-time) ease-in-out;
     overflow: hidden;
+
+    z-index: 1;
 
     @include md {
       min-width: unset;
@@ -555,7 +567,7 @@
             bottom: -0.2rem;
             left: 50%;
             transform: translate(-50%);
-            transition: all var(--menu-transition-time) ease;
+            transition: all var(--menu-transition-time) ease-in-out;
           }
         }
       }

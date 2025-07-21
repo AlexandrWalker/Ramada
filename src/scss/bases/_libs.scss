@@ -1,6 +1,28 @@
 @use './../mixins' as *;
 
-.swiper {}
+.swiper {
+
+  &-button-prev {
+    left: calc((var(--swiper-button-size) / 2) * -1);
+
+    @include md {
+      left: -1rem;
+    }
+  }
+
+  &-button-next {
+    right: calc((var(--swiper-button-size) / 2) * -1);
+
+    @include md {
+      right: -1rem;
+    }
+  }
+
+  &-slide {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
 
 [class^="swiper-button-"],
 [class*=" swiper-button-"] {
@@ -8,8 +30,34 @@
 
   width: var(--swiper-button-size);
   height: var(--swiper-button-size);
+  padding: 0.4rem;
+  border-radius: 50%;
+  border: 0.05rem solid var(--white-30);
+  opacity: 1;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
 
   @include md {
     --swiper-button-size: 5rem;
+  }
+
+  i {
+    --font-size: 4rem;
+
+    width: calc(100% - 0.8rem);
+    height: calc(100% - 0.8rem);
+    border-radius: 50%;
+    border: 0.05rem solid var(--white);
+    background-color: var(--white-50);
+    color: var(--accent);
+
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    bottom: 0.4rem;
+    left: 0.4rem;
   }
 }

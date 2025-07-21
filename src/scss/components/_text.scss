@@ -90,8 +90,8 @@ p {
   font-size: 1.6rem;
   line-height: 100%;
 
-  @include xxl {
-    // font-size: 1.4rem;
+  @include md {
+    font-size: 1.4rem;
   }
 }
 

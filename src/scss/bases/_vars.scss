@@ -10,7 +10,8 @@
 
   --white: #ffffff;
   --white-30: rgba(255, 255, 255, 0.3);
-  --white-50: rgba(255, 255, 255, 0.5);
+  // --white-50: rgba(255, 255, 255, 0.5);
+  --white-50: #dbe9f7;
   --white-80: rgba(255, 255, 255, 0.8);
 
   --white-gray: #F4F4F4;
@@ -36,13 +37,16 @@
   @include md {
     --container-padding: 8rem;
     --container-width: 67.4rem;
+    --header-height: 13.9rem;
   }
 
   @include xmd {
     --container-padding: 3rem;
+    --container-width: 70.8rem;
   }
 
   @include sm {
     --container-padding: 2rem;
+    --header-height: 8rem;
   }
 }

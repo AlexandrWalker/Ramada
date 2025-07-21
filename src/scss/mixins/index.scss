@@ -43,7 +43,7 @@
 }
 
 @mixin xxs() {
-  @media (max-width: 380px) {
+  @media (max-width: 372px) {
     @content;
   }
 }

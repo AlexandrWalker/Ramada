@@ -1,0 +1,90 @@
+@use './../mixins' as *;
+
+.offer {
+  --offer-padding-top: 5rem;
+  --offer-padding-bottom: 5rem;
+  --offer-padding-left: 13rem;
+
+  @include md {
+    --offer-padding-top: 0;
+    --offer-padding-bottom: 0;
+    --offer-padding-left: 0;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 5rem 2rem;
+
+    @include md {
+      grid-template-columns: 54.15% 42.88%;
+      gap: 2rem;
+    }
+
+    @include sm {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__head {
+    grid-column: 2/3;
+    grid-row: 1/2;
+
+    padding: var(--offer-padding-top) 0 0 var(--offer-padding-left);
+
+    @include sm {
+      grid-column: 1/2;
+    }
+
+    br {
+
+      @include sm {
+        display: none;
+      }
+    }
+  }
+
+  &__body {
+    grid-column: 1/2;
+    grid-row: 1/3;
+
+    position: relative;
+
+    @include sm {
+      grid-row: 2/3;
+    }
+
+    &--slider {
+      overflow: visible;
+    }
+
+    &-slide {}
+
+    &-item {
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__content {
+    grid-column: 2/3;
+    grid-row: 2/3;
+
+    padding: 0 0 var(--offer-padding-bottom) var(--offer-padding-left);
+
+    @include sm {
+      grid-column: 1/2;
+      grid-row: 3/4;
+    }
+
+    &--slider {}
+
+    &-slide {}
+  }
+}

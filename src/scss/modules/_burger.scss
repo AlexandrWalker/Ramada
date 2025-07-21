@@ -161,7 +161,8 @@
   position: fixed;
   top: 0;
   bottom: 0;
-  right: -100%;
+  // left: -100%;
+  left: 0;
   z-index: 200;
   pointer-events: none;
 
@@ -175,7 +176,7 @@
   }
 
   &--opened {
-    right: 0;
+    left: 0;
     pointer-events: all;
 
     @include md {
@@ -196,6 +197,10 @@
 
       &__foot {
         padding: 5rem 5.6rem;
+
+        @include md {
+          padding: 3rem 8rem 4rem;
+        }
 
         @include sm {
           padding: 3rem 2rem;

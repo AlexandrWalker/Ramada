@@ -22,6 +22,10 @@ body {
   font-size: 1.6rem;
   line-height: 120%;
   color: var(--black);
+
+  @include md {
+    font-size: 1.4rem;
+  }
 }
 
 .wrapper {
@@ -41,11 +45,17 @@ body {
 }
 
 section {
-  height: clamp(93rem, 100dvh, 150dvh);
+  // height: clamp(93rem, 100dvh, 150dvh);
+  min-height: clamp(93rem, 100dvh, 150dvh);
   margin-bottom: 7rem;
   
   overflow-x: hidden;
   overflow-y: hidden;
+
+  @include md {
+    height: fit-content;
+    min-height: unset;
+  }
 }
 
 a {

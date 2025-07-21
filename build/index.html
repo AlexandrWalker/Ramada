@@ -608,7 +608,6 @@
     <main class="main">
       <!-- Главный блок -->
       <section id="hero" class="hero">
-
         <svg class="component" viewBox="0 0 2078 2093" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path class="component--one"
             d="M0.200177 1035.86C0.200218 464.206 464.245 0.201218 1035.95 0.201127C1292.1 0.201115 1530.93 104.14 1675.71 222.921C1723.93 262.486 1738.76 303.275 1742.47 344.068C1745.56 381.791 1741.85 428.771 1716.35 471.264C1690.86 513.751 1643.57 551.779 1559.45 571.57C1480.24 590.134 1401.33 609.009 1330 631.907C1258.67 654.805 1194.9 681.731 1145.99 716.4L1145.99 716.401L1143.5 718.209C1039.39 794.714 1001.4 915.029 992.562 971.888C992.51 971.728 992.451 971.545 992.383 971.339C992.091 970.456 991.652 969.15 991.064 967.457C989.889 964.071 988.118 959.137 985.738 952.947C980.979 940.567 973.784 923.158 964.034 903.042C944.536 862.81 914.82 811.74 873.957 768.404L873.956 768.405C793.784 683.307 658.316 606.801 476.131 653.931L473.985 654.491C264.729 710.205 153.294 871.159 112.437 1027.15L112.437 1027.15C63.2348 1210.41 72.6989 1366.78 92.2549 1459.85C33.3287 1330.37 0.200183 1187.41 0.200177 1035.86Z"
@@ -620,16 +619,19 @@
             d="M1318.23 813.732C1047.23 860.509 1000.23 1146.23 1000.23 1146.23C1000.23 1146.23 984.207 1075.73 945.235 1025.73C945.235 1025.73 898.207 944.234 807.735 899.232C807.735 899.232 704.707 834.734 567.235 849.232C567.235 849.232 426.707 859.234 332.207 929.234C332.207 929.234 245.707 990.734 196.707 1084.73C196.707 1084.73 152.11 1172.23 135.227 1256.23C118.344 1340.23 121.235 1425.73 121.235 1425.73C139.333 1569.73 200.235 1658.73 200.235 1658.73C171.235 1573.23 143.235 1465.73 224.735 1299.73C306.235 1133.73 438.235 1093.73 438.235 1093.73C526.235 1064.23 586.235 1064.23 586.235 1064.23C683.235 1064.23 759.573 1077.27 835.235 1146.23C965.235 1264.73 996.735 1390.73 996.735 1390.73C1000.23 1362.23 1011.23 1257.23 1123.23 1161.73C1235.23 1066.23 1402.23 1046.23 1402.23 1046.23C1668.73 970.234 1743.73 881.732 1743.73 881.732C1743.73 881.732 1933.73 727.736 1841.73 436.736C1841.73 436.736 1836.73 415.236 1817.73 385.736C1798.73 356.236 1781.73 336.734 1781.73 336.734C1837.18 464.237 1774.73 607.235 1774.73 607.235C1774.73 607.235 1726.73 738.764 1583.23 768.732C1458.73 794.732 1426.4 795.061 1318.23 813.732Z"
             stroke="#13110C" stroke-width="0.1" />
         </svg>
-
         <div class="hero__container container">
           <div class="hero__inner">
 
             <div class="hero__bg" data-animation="smooth-img">
-              <img src="./images/hero/bg.png" alt="">
+              <picture>
+                <source media="(min-width: 421px)" srcset="./images/hero/bg.png" type="image/png">
+                <source media="(max-width: 420)" srcset="./images/hero/bg-mob.png" type="image/png">
+                <img src="./images/hero/bg.png" alt="">
+              </picture>
             </div>
 
             <div class="hero__head">
-              <div class="title" data-animation="hero-title">
+              <div class="hero__title" data-animation="hero-title">
                 <h1>
                   <span>
                     Ramada
@@ -640,13 +642,13 @@
                   Апарт-отель
                 </p>
               </div>
-              <div class="text" data-animation="hero-text">
+              <div class="hero__text">
                 <h2>
                   Ощутите полную релаксацию
                   в нашем роскошном оазисе покоя...
                 </h2>
               </div>
-              <a class="hero__btn" href="#about">
+              <a class="hero__btn" href="#about" data-animation="hero-btn">
                 <i class="icon-arrow-right"></i>
               </a>
             </div>
@@ -655,8 +657,215 @@
         </div>
       </section>
 
-      <section id="about" style="height: 100dvh;"></section>
-      <section style="height: 100dvh;"></section>
+      <section id="offer" class="offer">
+        <div class="container">
+          <div class="offer__inner">
+            <div class="offer__head">
+              <h2>
+                <span>
+                  Пребывание в нашем <br> отеле означает <br> наслаждение <br> каждым моментом. <br> Расслабьтесь. <br>
+                  Найдите <br> вдохновение. <br> Будьте очарованы.
+                </span>
+              </h2>
+            </div>
+            <div class="offer__body">
+              <div class="swiper offer__body--slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide offer__body-slide">
+                    <div class="offer__body-item border">
+                      <img src="./images/offer/offer-1.png" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide offer__body-slide">
+                    <div class="offer__body-item border">
+                      <img src="./images/offer/offer-1.png" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide offer__body-slide">
+                    <div class="offer__body-item border">
+                      <img src="./images/offer/offer-1.png" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-button-prev offer__slider-btn--prev">
+                  <i class="icon-arrow-left"></i>
+                </div>
+                <div class="swiper-button-next offer__slider-btn--next">
+                  <i class="icon-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+            <div class="offer__content">
+              <div class="swiper offer__content--slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide offer__content-slide">
+                    <div class="general__block">
+                      <div class="general__block-title">
+                        <h6>
+                          Примерный заголовок торгового предложения в две строки
+                        </h6>
+                      </div>
+                      <div class="general__block-text">
+                        <p>
+                          Товарищи! начало повседневной работы по формированию позиции позволяет выполнять важные
+                          задания
+                          по разработке дальнейших направлений развития. Идейные соображения высшего порядка, а также
+                          реализация намеченных плановых заданий в значительной степени обуславливает создание
+                          соответствующий условий активизации.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide offer__content-slide">
+                    <div class="general__block">
+                      <div class="general__block-title">
+                        <h6>
+                          Примерный заголовок торгового предложения в две строки
+                        </h6>
+                      </div>
+                      <div class="general__block-text">
+                        <p>
+                          Товарищи! начало повседневной работы по формированию позиции позволяет выполнять важные
+                          задания
+                          по разработке дальнейших направлений развития. Идейные соображения высшего порядка, а также
+                          реализация намеченных плановых заданий в значительной степени обуславливает создание
+                          соответствующий условий активизации.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide offer__content-slide">
+                    <div class="general__block">
+                      <div class="general__block-title">
+                        <h6>
+                          Примерный заголовок торгового предложения в две строки
+                        </h6>
+                      </div>
+                      <div class="general__block-text">
+                        <p>
+                          Товарищи! начало повседневной работы по формированию позиции позволяет выполнять важные
+                          задания
+                          по разработке дальнейших направлений развития. Идейные соображения высшего порядка, а также
+                          реализация намеченных плановых заданий в значительной степени обуславливает создание
+                          соответствующий условий активизации.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="rest">
+        <div class="container">
+          <div class="rest__inner">
+            <div class="rest__head">
+              <div class="general__head">
+                <div class="general__suptitle">
+                  <h6>
+                    отдых с комфортом
+                  </h6>
+                </div>
+                <div class="general__title">
+                  <h2>
+                    Номера
+                  </h2>
+                </div>
+                <div class="general__text">
+                  <p>
+                    Товарищи! начало повседневной работы
+                    по формированию позиции позволяет выполнять важные задания по разработке дальнейших направлений
+                    развития.
+                  </p>
+                </div>
+              </div>
+              <div class="rest__img rest__img--1 border">
+                <img src="./images/rest/rest-1.png" alt="">
+              </div>
+              <div class="rest__img rest__img--2 border">
+                <img src="./images/rest/rest-2.png" alt="">
+              </div>
+              <div class="rest__img rest__img--3 border">
+                <img src="./images/rest/rest-3.png" alt="">
+              </div>
+            </div>
+            <div class="rest__body">
+              <div class="general__block">
+                <div class="general__block-title">
+                  <h6>
+                    Примерный заголовок торгового предложения в две строки
+                  </h6>
+                </div>
+                <div class="general__block-text">
+                  <p>
+                    Товарищи! начало повседневной работы
+                    по формированию позиции позволяет выполнять важные задания по разработке дальнейших направлений
+                    развития.
+                  </p>
+                  <p>
+                    Идейные соображения высшего порядка, а также реализация намеченных плановых заданий в значительной
+                    степени обуславливает создание соответствующий условий активизации.
+                  </p>
+                </div>
+              </div>
+              <div class="rest__feat">
+                <div class="rest__feat-items">
+                  <div class="rest__feat-item">
+                    <div class="rest__feat-count">
+                      <h5>01</h5>
+                    </div>
+                    <div class="rest__feat-text">
+                      <p>
+                        Первый оффер
+                        или преимущество
+                      </p>
+                    </div>
+                  </div>
+                  <div class="rest__feat-item">
+                    <div class="rest__feat-count">
+                      <h5>02</h5>
+                    </div>
+                    <div class="rest__feat-text">
+                      <p>
+                        Первый оффер
+                        или преимущество
+                      </p>
+                    </div>
+                  </div>
+                  <div class="rest__feat-item">
+                    <div class="rest__feat-count">
+                      <h5>03</h5>
+                    </div>
+                    <div class="rest__feat-text">
+                      <p>
+                        Первый оффер
+                        или преимущество
+                      </p>
+                    </div>
+                  </div>
+                  <div class="rest__feat-item">
+                    <div class="rest__feat-count">
+                      <h5>04</h5>
+                    </div>
+                    <div class="rest__feat-text">
+                      <p>
+                        Первый оффер
+                        или преимущество
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="rest__btn btn btn--accent" href="/">
+                Все номера
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- Подвал -->
     <footer id="footer" class="footer">

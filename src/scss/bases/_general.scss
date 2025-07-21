@@ -1,3 +1,125 @@
 @use './../mixins' as *;
 
-.general {}
+.general {
+
+  &__suptitle {
+    font-weight: 700;
+    line-height: 110%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+
+    padding: 1rem 0;
+    border-top: 0.1rem solid var(--accent);
+    border-bottom: 0.1rem solid var(--accent);
+    width: fit-content;
+    margin-bottom: 3rem;
+
+    @include md {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__title {
+    margin-bottom: 4rem;
+
+    @include md {
+      margin-bottom: 3rem;
+    }
+
+    @include sm {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-family: var(--second-family);
+      font-weight: 300;
+      font-size: 6rem;
+      line-height: 110%;
+      text-transform: uppercase;
+
+      @include md {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  &__text {}
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include md {
+      gap: 2rem;
+    }
+
+    &-title {
+      padding: 3rem 0;
+      border-top: 0.1rem solid var(--black);
+      border-bottom: 0.1rem solid var(--black);
+
+      font-weight: 900;
+      font-size: 2.4rem;
+      line-height: 120%;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+
+      @include md {
+        padding: 2rem 0;
+
+        font-size: 2rem;
+      }
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      color: var(--gray);
+
+      @include md {
+        gap: 1.7rem;
+      }
+
+      p {}
+    }
+  }
+}
+
+.border {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    bottom: 3rem;
+    left: 3rem;
+    border: 0.1rem solid var(--white-30);
+
+    @include md {
+      top: 1.5rem;
+      right: 1.5rem;
+      bottom: 1.5rem;
+      left: 1.5rem;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 2rem solid var(--white-30);
+
+    @include md {
+      border-width: 1rem;
+    }
+  }
+}
