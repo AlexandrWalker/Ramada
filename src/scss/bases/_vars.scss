@@ -21,13 +21,13 @@
 
   --gray: #636463;
   --gray-005: rgba(99, 100, 99, 0.05);
-  --gray-30: rgba(99, 100, 99, 30);
-  --gray-50: rgba(99, 100, 99, 50);
+  --gray-30: rgba(99, 100, 99, 0.3);
+  --gray-50: rgba(99, 100, 99, 0.5);
 
   --gray-light: #E8E8E8;
 
   --accent: #C40D3C;
-  --accent-30: rgba(196, 13, 60, 30);
+  --accent-30: rgba(196, 13, 60, 0.3);
 
   @include xxl {
     // --container-padding: 14rem;

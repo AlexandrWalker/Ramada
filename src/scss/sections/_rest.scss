@@ -3,6 +3,10 @@
 .rest {
   overflow: visible;
 
+  @include md {
+    margin-bottom: 3rem;
+  }
+
   &__inner {
     display: grid;
     grid-template-columns: 66.12% 24.01%;

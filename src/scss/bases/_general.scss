@@ -2,49 +2,52 @@
 
 .general {
 
-  &__suptitle {
-    font-weight: 700;
-    line-height: 110%;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent);
+  &__head {
 
-    padding: 1rem 0;
-    border-top: 0.1rem solid var(--accent);
-    border-bottom: 0.1rem solid var(--accent);
-    width: fit-content;
-    margin-bottom: 3rem;
-
-    @include md {
-      margin-bottom: 2rem;
-    }
-  }
-
-  &__title {
-    margin-bottom: 4rem;
-
-    @include md {
-      margin-bottom: 3rem;
-    }
-
-    @include sm {
-      margin-bottom: 2rem;
-    }
-
-    h2 {
-      font-family: var(--second-family);
-      font-weight: 300;
-      font-size: 6rem;
+    &-suptitle {
+      font-weight: 700;
       line-height: 110%;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
+      color: var(--accent);
+
+      padding: 1rem 0;
+      border-top: 0.1rem solid var(--accent);
+      border-bottom: 0.1rem solid var(--accent);
+      width: fit-content;
+      margin-bottom: 3rem;
 
       @include md {
-        font-size: 4rem;
+        margin-bottom: 2rem;
       }
     }
-  }
 
-  &__text {}
+    &-title {
+      margin-bottom: 4rem;
+
+      @include md {
+        margin-bottom: 3rem;
+      }
+
+      @include sm {
+        margin-bottom: 2rem;
+      }
+
+      h2 {
+        font-family: var(--second-family);
+        font-weight: 300;
+        font-size: 6rem;
+        line-height: 110%;
+        text-transform: uppercase;
+
+        @include md {
+          font-size: 4rem;
+        }
+      }
+    }
+
+    &-text {}
+  }
 
   &__block {
     display: flex;
@@ -101,6 +104,8 @@
     left: 3rem;
     border: 0.1rem solid var(--white-30);
 
+    transition: all 0.5s ease;
+
     @include md {
       top: 1.5rem;
       right: 1.5rem;
@@ -118,8 +123,14 @@
     left: 0;
     border: 2rem solid var(--white-30);
 
+    transition: all 0.5s ease;
+
     @include md {
       border-width: 1rem;
     }
+  }
+
+  img {
+    height: 100%;
   }
 }

@@ -1,0 +1,277 @@
+@use './../mixins' as *;
+
+.diversity {
+  --diversity-head-width: 49.3rem;
+
+  margin-bottom: 0;
+
+  @include md {
+    --diversity-head-width: 28.6rem;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    height: 93rem;
+
+    position: relative;
+
+    @include md {
+      height: 70.3rem;
+    }
+
+    @include sm {
+      flex-direction: column;
+      height: fit-content;
+      gap: 3rem;
+    }
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: var(--diversity-head-width);
+    height: 100%;
+    padding: 7rem 3rem;
+    background-color: var(--accent);
+
+    color: var(--white);
+
+    position: relative;
+    z-index: 2;
+
+    @include md {
+      padding: 4rem 1.5rem;
+    }
+
+    @include sm {
+      width: 100%;
+      padding: 3rem 0 calc((100vw * 0.8) / 2) 0;
+    }
+
+    &::before {
+      content: "";
+      width: calc(100% + (var(--container-padding) * 2));
+      height: 100%;
+      background-color: var(--accent);
+
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: calc(var(--container-padding) * -1);
+      z-index: -1;
+
+      display: none;
+
+      @include sm {
+        display: block;
+      }
+    }
+
+    br {
+
+      @include sm {
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+
+    &-title {
+      margin-bottom: 4rem;
+
+      @include md {
+        width: 75%;
+        margin-bottom: 2rem;
+      }
+
+      @include sm {
+        margin-bottom: 3rem;
+      }
+
+      h3 {
+
+        @include md {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    &-subtitle {
+      text-transform: uppercase;
+
+      border-top: 0.1rem solid var(--white);
+      border-bottom: 0.1rem solid var(--white);
+      padding: 3rem 0;
+      margin-bottom: 3rem;
+
+      @include md {
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+      }
+
+      p {
+        font-weight: 900;
+      }
+    }
+
+    &-text {
+      margin-bottom: 4rem;
+
+      @include md {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &-btn {
+      --btn-color: var(--black);
+    }
+  }
+
+  &__body {
+    width: 100%;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    @include sm {
+      margin-top: calc(100vw * -0.4);
+
+      position: relative;
+      z-index: 3;
+    }
+
+    &--slider {
+      overflow: visible;
+      height: 100%;
+
+      @include md {
+        height: 100%;
+      }
+    }
+
+    &-slide {
+      height: auto;
+      padding-left: calc(var(--diversity-head-width) + 2rem);
+      opacity: 0.5;
+      transition: all 1s ease;
+
+      position: relative;
+
+      @include sm {
+        aspect-ratio: 353/284;
+        padding-left: 0;
+        opacity: 1;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));
+        opacity: 1;
+        visibility: visible;
+        transition: all 1s ease;
+      }
+
+      .border {
+
+        &::before {
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        &::after {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    }
+
+    .swiper-slide-active {
+      opacity: 1;
+
+      &::before {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .border {
+
+        &::before {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        &::after {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+
+    .swiper-slide-next {
+      padding-right: calc(var(--diversity-head-width) + 2rem);
+      padding-left: 0;
+
+      @include sm {
+        padding-right: 0;
+      }
+    }
+
+    &-item {
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .general__head-title {
+
+    @include sm {
+      margin-bottom: 4rem;
+    }
+  }
+
+  .btn-arrow {
+    --btn-arrow-width: 17rem;
+    --btn-arrow-height: 17rem;
+
+    @include md {
+      --btn-arrow-width: 10rem;
+      --btn-arrow-height: 10rem;
+    }
+  }
+
+  .swiper-button-next {
+    left: unset;
+    right: calc(var(--btn-arrow-width) / 2 * -1);
+
+    @include xmd {
+      right: -2rem;
+    }
+
+    @include sm {
+      display: none;
+    }
+  }
+}

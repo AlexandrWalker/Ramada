@@ -22,18 +22,52 @@
     max-width: 100% !important;
     width: 100% !important;
   }
+
+  &-pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+
+    position: static;
+
+    &-bullet {
+      width: 0.4rem;
+      height: 0.4rem;
+      background: var(--gray);
+      opacity: 1;
+      transition: all 0.5s ease;
+
+      &-active {
+        width: 0.6rem;
+        height: 0.6rem;
+        background: var(--accent);
+      }
+    }
+  }
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 0.3rem;
 }
 
 [class^="swiper-button-"],
 [class*=" swiper-button-"] {
   --swiper-button-size: 6rem;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: var(--swiper-button-size);
   height: var(--swiper-button-size);
   padding: 0.4rem;
   border-radius: 50%;
   border: 0.05rem solid var(--white-30);
   opacity: 1;
+
+  cursor: pointer;
 
   position: absolute;
   top: 50%;
@@ -44,15 +78,21 @@
     --swiper-button-size: 5rem;
   }
 
+  &::after {
+    display: none;
+  }
+
   i {
     --font-size: 4rem;
 
     width: calc(100% - 0.8rem);
     height: calc(100% - 0.8rem);
     border-radius: 50%;
-    border: 0.05rem solid var(--white);
-    background-color: var(--white-50);
-    color: var(--accent);
+    // border: 0.05rem solid var(--white);
+    // background-color: var(--white-50);
+    // color: var(--accent);
+
+    background-color: var(--white);
 
     position: absolute;
     top: 0.4rem;

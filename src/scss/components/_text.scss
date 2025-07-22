@@ -56,15 +56,15 @@ h3 {
 h4 {
   font-family: var(--second-family);
   font-weight: 300;
-  font-size: 8rem;
-  line-height: 90%;
+  font-size: 6rem;
+  line-height: 110%;
 
   @include xxl {
     // font-size: 5rem;
   }
 
   @include md {
-    font-size: 4rem;
+    font-size: 5rem;
   }
 }
 

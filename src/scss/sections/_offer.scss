@@ -87,4 +87,14 @@
 
     &-slide {}
   }
+
+  &-button-prev,
+  &-button-next {
+
+    i {
+      border: 0.05rem solid var(--white);
+      background-color: var(--white-50);
+      color: var(--accent);
+    }
+  }
 }

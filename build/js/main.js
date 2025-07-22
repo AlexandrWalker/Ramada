@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   const lenis = new Lenis({
     anchors: {
-      offset: -60,
+      offset: -100,
     }
   });
 
@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
       forceToAxis: true,
     },
     navigation: {
-      nextEl: ".offer__slider-btn--next",
-      prevEl: ".offer__slider-btn--prev",
+      nextEl: ".offer-button-next",
+      prevEl: ".offer-button-prev",
     },
   });
 
@@ -56,6 +56,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   offerBodySlider.controller.control = offerContentSlider;
   offerContentSlider.controller.control = offerBodySlider;
+
+  const diversityHeadSlider = new Swiper(".diversity__head--slider", {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    speed: 1000,
+    autoHeight: true,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    grabCursor: false,
+    mousewheel: false,
+    allowTouchMove: false,
+  });
+
+  const diversityBodySlider = new Swiper(".diversity__body--slider", {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    speed: 1000,
+    mousewheel: {
+      forceToAxis: true,
+    },
+    navigation: {
+      nextEl: ".diversity-button-next",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+  });
+
+  diversityHeadSlider.controller.control = diversityBodySlider;
+  diversityBodySlider.controller.control = diversityHeadSlider;
 
 
 
@@ -418,7 +454,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const smoothImgY = '-50%';
 
         const smoothImgTopBefore = '26rem';
-        const smoothImgTopAfter = '26rem';
+        const smoothImgTopAfter = '29rem';
 
         const heroTop = 4.53;
 

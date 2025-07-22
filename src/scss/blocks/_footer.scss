@@ -8,8 +8,17 @@
   overflow: hidden;
 
   .component {
+    transform: unset;
+
+    top: -64.3rem;
+    right: -1.26rem;
+    left: unset;
+    // top: -31%;
+    // right: -6.075%;
+    // bottom: -23.82%;
+    // left: -1.4%;
     z-index: -1;
-    
+
     @include md {
       display: none;
     }

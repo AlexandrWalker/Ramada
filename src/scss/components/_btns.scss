@@ -19,7 +19,7 @@
   min-width: var(--btn-height);
   height: var(--btn-height);
   padding: var(--btn-padding-y) var(--btn-padding-x);
-  margin: 0.3rem;
+  margin: var(--btn-margin);
 
   background: var(--btn-background);
   border-radius: var(--btn-border-radius);
@@ -168,6 +168,97 @@
         animation: pulse-round 3s linear infinite;
         animation-delay: 1.5s;
       }
+    }
+  }
+}
+
+.btn-arrow {
+  --btn-arrow-width: 15.4rem;
+  --btn-arrow-height: 15.4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--btn-arrow-width);
+  height: var(--btn-arrow-height);
+  border-radius: 50%;
+  background-color: var(--white);
+
+  position: absolute;
+  left: -7.7rem;
+  bottom: var(--btn-bottom);
+
+  will-change: bottom;
+
+  @include md {
+    width: 9rem;
+    height: 9rem;
+
+    left: -4.5rem;
+    bottom: -3.2rem
+  }
+
+  &::before {
+    content: "";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: -0.8rem;
+    right: -0.8rem;
+    bottom: -0.8rem;
+    left: -0.8rem;
+    border: 0.1rem solid var(--white-30);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    pointer-events: none;
+
+    @include md {
+      top: -0.47rem;
+      right: -0.47rem;
+      bottom: -0.47rem;
+      left: -0.47rem;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    bottom: 0.8rem;
+    left: 0.8rem;
+    border: 0.1rem solid var(--accent-30);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    pointer-events: none;
+
+    @include md {
+      top: 0.47rem;
+      right: 0.47rem;
+      bottom: 0.47rem;
+      left: 0.47rem;
+    }
+  }
+
+  i {
+    --font-size: 8rem;
+    color: var(--accent);
+
+    @include md {
+      --font-size: 6rem;
+    }
+  }
+
+  &--down {
+
+    i {
+      transform: rotate(90deg);
     }
   }
 }

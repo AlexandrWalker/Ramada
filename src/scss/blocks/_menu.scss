@@ -134,6 +134,8 @@
   }
 
   &__body {
+    --menu-transition-time: 0.5s;
+
     display: flex;
     align-items: center;
     background: linear-gradient(to right, var(--white-gray) var(--menu-head-width), transparent var(--menu-body-width));

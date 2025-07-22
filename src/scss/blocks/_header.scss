@@ -38,6 +38,7 @@
     @include sm {
       grid-template-columns: 1fr auto auto;
       gap: 0.5rem;
+      height: 5rem;
     }
   }
 
