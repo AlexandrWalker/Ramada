@@ -532,7 +532,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, {
       "--top": smoothImgTopAfter,
       y: smoothImgY,
-      scale: 1.3,
+      scale: 1.263,
       ease: "none",
       scrollTrigger: {
         trigger: hero,
