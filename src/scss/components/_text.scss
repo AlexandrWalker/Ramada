@@ -117,3 +117,19 @@ h6 {
   border-top: 0.1rem solid var(--accent);
   border-bottom: 0.1rem solid var(--accent);
 }
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--white);
+    
+    font-size: 2.4rem;
+  }
+}

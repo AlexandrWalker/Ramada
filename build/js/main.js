@@ -87,11 +87,25 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     pagination: {
       el: ".swiper-pagination",
+      clickable: true,
     },
   });
 
   diversityHeadSlider.controller.control = diversityBodySlider;
   diversityBodySlider.controller.control = diversityHeadSlider;
+
+  const eventsCalendarSlider = new Swiper(".events__calendar--slider", {
+    slidesPerGroup: 1,
+    slidesPerView: 2,
+    spaceBetween: 20,
+    speed: 1000,
+    mousewheel: {
+      forceToAxis: true,
+    },
+    navigation: {
+      nextEl: ".events-button-next",
+    },
+  });
 
 
 
