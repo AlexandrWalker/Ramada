@@ -19,8 +19,8 @@
   }
 
   &-slide {
-    max-width: 100% !important;
-    width: 100% !important;
+    // max-width: 100% !important;
+    // width: 100% !important;
   }
 
   &-pagination {
@@ -72,7 +72,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 1;
+  z-index: 10;
 
   @include md {
     --swiper-button-size: 5rem;
@@ -90,7 +90,7 @@
     border-radius: 50%;
     // border: 0.05rem solid var(--white);
     // background-color: var(--white-50);
-    // color: var(--accent);
+    color: var(--accent);
 
     background-color: var(--white);
 

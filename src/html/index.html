@@ -469,7 +469,7 @@
         </div>
       </section>
 
-      <section class="hall">
+      <section id="hall" class="hall">
         <div class="container">
           <div class="hall__inner">
 
@@ -487,7 +487,8 @@
                 </div>
               </div>
               <div class="hall__items">
-                <div class="hall__item">
+                <div class="hall__item active" data-index="1">
+                  <div class="over"></div>
                   <div class="hall__item-img border">
                     <img src="./images/hall/hall-1.png" alt="">
                   </div>
@@ -506,7 +507,8 @@
                     Подробнее
                   </a>
                 </div>
-                <div class="hall__item">
+                <div class="hall__item" data-index="2">
+                  <div class="over"></div>
                   <div class="hall__item-img border">
                     <img src="./images/hall/hall-2.png" alt="">
                   </div>
@@ -525,7 +527,8 @@
                     Подробнее
                   </a>
                 </div>
-                <div class="hall__item">
+                <div class="hall__item" data-index="3">
+                  <div class="over"></div>
                   <div class="hall__item-img border">
                     <img src="./images/hall/hall-3.png" alt="">
                   </div>
@@ -555,6 +558,64 @@
         </div>
       </section>
 
+      <section class="resta">
+        <div class="resta__container container--fluid">
+          <div class="resta__inner">
+
+            <div class="resta__title">
+              <h4>
+                Рестораны
+              </h4>
+            </div>
+
+            <div class="resta__block border">
+              <div class="resta__block-img">
+                <img src="./images/restaurants/leto-bg.png" alt="">
+              </div>
+              <div class="resta__block-logo">
+                <img src="./images/restaurants/leto.svg" alt="">
+              </div>
+              <div class="resta__block-wrap">
+                <div class="resta__block-content">
+                  <h5>
+                    Лето
+                  </h5>
+                  <p>
+                    Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
+                  </p>
+                </div>
+                <div class="btn btn--gray">
+                  Подробнее
+                </div>
+              </div>
+            </div>
+
+            <div class="resta__block border">
+              <div class="resta__block-img">
+                <img src="./images/restaurants/seasons-bg.png" alt="">
+              </div>
+              <div class="resta__block-logo">
+                <img src="./images/restaurants/seasons.svg" alt="">
+              </div>
+              <div class="resta__block-wrap">
+                <div class="resta__block-content">
+                  <h5>
+                    Сезоны
+                  </h5>
+                  <p>
+                    Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
+                  </p>
+                </div>
+                <div class="btn btn--gray">
+                  Подробнее
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <section class="events">
         <div class="container">
           <div class="events__inner">
@@ -570,8 +631,17 @@
             <div class="events__body">
 
               <div class="events__block">
-                <div class="events__block-img border">
-                  <img src="./images/events/block-bg.png" alt="">
+
+                <div class="events__block-wrap">
+                  <div class="events__block-img border">
+                    <img src="./images/events/block-bg.png" alt="">
+                  </div>
+                  <div class="events__block-head">
+                    19 мая
+                    <span>
+                      в понедельник
+                    </span>
+                  </div>
                 </div>
                 <div class="events__block-content">
                   <h3>
@@ -596,7 +666,7 @@
                             Май
                           </h6>
                         </div>
-                        <div class="events__calendar-block">
+                        <div class="events__calendar-block calendar--js">
                           <table>
                             <tr>
                               <th>
@@ -637,7 +707,7 @@
                               <td>9</td>
                               <td>10</td>
                               <td>11</td>
-                              <td class="active">12</td>
+                              <td class="today">12</td>
                             </tr>
                             <tr>
                               <td class="target">13</td>
@@ -718,16 +788,16 @@
                               <td>9</td>
                               <td>10</td>
                               <td>11</td>
-                              <td class="active">12</td>
+                              <td>12</td>
                             </tr>
                             <tr>
-                              <td class="target">13</td>
+                              <td>13</td>
                               <td>14</td>
                               <td>15</td>
                               <td>16</td>
-                              <td class="target">17</td>
+                              <td>17</td>
                               <td>18</td>
-                              <td class="target">19</td>
+                              <td>19</td>
                             </tr>
                             <tr>
                               <td>20</td>
@@ -799,16 +869,16 @@
                               <td>9</td>
                               <td>10</td>
                               <td>11</td>
-                              <td class="active">12</td>
+                              <td>12</td>
                             </tr>
                             <tr>
-                              <td class="target">13</td>
+                              <td>13</td>
                               <td>14</td>
                               <td>15</td>
                               <td>16</td>
-                              <td class="target">17</td>
+                              <td>17</td>
                               <td>18</td>
-                              <td class="target">19</td>
+                              <td>19</td>
                             </tr>
                             <tr>
                               <td>20</td>
@@ -880,16 +950,16 @@
                               <td>9</td>
                               <td>10</td>
                               <td>11</td>
-                              <td class="active">12</td>
+                              <td>12</td>
                             </tr>
                             <tr>
-                              <td class="target">13</td>
+                              <td>13</td>
                               <td>14</td>
                               <td>15</td>
                               <td>16</td>
-                              <td class="target">17</td>
+                              <td>17</td>
                               <td>18</td>
-                              <td class="target">19</td>
+                              <td>19</td>
                             </tr>
                             <tr>
                               <td>20</td>
@@ -915,44 +985,463 @@
                     </div>
                   </div>
                 </div>
-                <div class="events__box">
-                  <h6>
-                    Примерный заголовок
-                  </h6>
-                  <p>
-                    Товарищи! начало повседневной работы по формированию позиции позволяет выполнять важные задания по
-                    разработке дальнейших направлений развития. Идейные соображения высшего порядка, а также реализация
-                    намеченных плановых заданий в значительной степени обуславливает создание соответствующий условий
-                    активизации.
-                  </p>
+              </div>
+
+              <div class="events__box">
+                <h6>
+                  Примерный заголовок
+                </h6>
+                <p>
+                  Товарищи! начало повседневной работы по формированию позиции позволяет выполнять важные задания по
+                  разработке дальнейших направлений развития. Идейные соображения высшего порядка, а также реализация
+                  намеченных плановых заданий в значительной степени обуславливает создание соответствующий условий
+                  активизации.
+                </p>
+              </div>
+            </div>
+
+            <div class="events__other">
+              <div class="general__head">
+                <div class="general__head-title">
+                  <h3>
+                    Другие события
+                  </h3>
+                </div>
+              </div>
+              <div class="events__other-body">
+                <div class="swiper events__other--slider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="events__other-item">
+                        <div class="events__other-content">
+                          <div class="events__other-suptitle">
+                            <p>
+                              с 10 мая по 25 июня
+                            </p>
+                          </div>
+                          <div class="events__other-title">
+                            <p>
+                              Примерный длинный заголовок на обложке в три строки
+                            </p>
+                          </div>
+                          <a class="btn btn--gray" href="/">
+                            Подробнее
+                          </a>
+                        </div>
+                        <div class="events__other-img">
+                          <img src="./images/events/other-1.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="events__other-item">
+                        <div class="events__other-content">
+                          <div class="events__other-suptitle">
+                            <p>
+                              с 10 мая по 25 июня
+                            </p>
+                          </div>
+                          <div class="events__other-title">
+                            <p>
+                              Примерный длинный заголовок на обложке в три строки
+                            </p>
+                          </div>
+                          <a class="btn btn--gray" href="/">
+                            Подробнее
+                          </a>
+                        </div>
+                        <div class="events__other-img">
+                          <img src="./images/events/other-1.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="events__other-item">
+                        <div class="events__other-content">
+                          <div class="events__other-suptitle">
+                            <p>
+                              с 10 мая по 25 июня
+                            </p>
+                          </div>
+                          <div class="events__other-title">
+                            <p>
+                              Примерный длинный заголовок на обложке в три строки
+                            </p>
+                          </div>
+                          <a class="btn btn--gray" href="/">
+                            Подробнее
+                          </a>
+                        </div>
+                        <div class="events__other-img">
+                          <img src="./images/events/other-1.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="events__other-item">
+                        <div class="events__other-content">
+                          <div class="events__other-suptitle">
+                            <p>
+                              с 10 мая по 25 июня
+                            </p>
+                          </div>
+                          <div class="events__other-title">
+                            <p>
+                              Примерный длинный заголовок на обложке в три строки
+                            </p>
+                          </div>
+                          <a class="btn btn--gray" href="/">
+                            Подробнее
+                          </a>
+                        </div>
+                        <div class="events__other-img">
+                          <img src="./images/events/other-1.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="events__other-item">
+                        <div class="events__other-content">
+                          <div class="events__other-suptitle">
+                            <p>
+                              с 10 мая по 25 июня
+                            </p>
+                          </div>
+                          <div class="events__other-title">
+                            <p>
+                              Примерный длинный заголовок на обложке в три строки
+                            </p>
+                          </div>
+                          <a class="btn btn--gray" href="/">
+                            Подробнее
+                          </a>
+                        </div>
+                        <div class="events__other-img">
+                          <img src="./images/events/other-1.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="events__other-item">
+                        <div class="events__other-content">
+                          <div class="events__other-suptitle">
+                            <p>
+                              с 10 мая по 25 июня
+                            </p>
+                          </div>
+                          <div class="events__other-title">
+                            <p>
+                              Примерный длинный заголовок на обложке в три строки
+                            </p>
+                          </div>
+                          <a class="btn btn--gray" href="/">
+                            Подробнее
+                          </a>
+                        </div>
+                        <div class="events__other-img">
+                          <img src="./images/events/other-1.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-button-prev events-button-prev">
+                  <i class="icon-arrow-left"></i>
+                </div>
+                <div class="swiper-button-next events-button-next">
+                  <i class="icon-arrow-right"></i>
                 </div>
               </div>
             </div>
 
-            <div class="events__other none">
-              <div class="swiper events__other--slider">
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews">
+        <div class="container">
+          <div class="reviews__inner">
+
+            <div class="reviews__head">
+              <div class="reviews__head-title">
+                <h2>
+                  Отзывы
+                </h2>
+              </div>
+              <a class="btn btn--accent" href="/">
+                Все отзывы
+              </a>
+            </div>
+
+            <div class="reviews__body">
+              <div class="swiper reviews__body--slider">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <div class="events__other-item border">
-                      <div class="events__other-suptitle">
-                        <p>
-                          с 10 мая по 25 июня
-                        </p>
+                    <div class="reviews__item border">
+
+                      <div class="reviews__item-icon">
+                        <i class="icon-caplya"></i>
                       </div>
-                      <div class="events__other-title">
-                        <p>
-                          Примерный длинный заголовок на обложке в три строки
-                        </p>
+
+                      <div class="reviews__item-content">
+                        <div class="reviews__item-date">
+                          <p>
+                            12.05.2025
+                          </p>
+                        </div>
+
+                        <div class="reviews__item-wrap">
+                          <div class="reviews__item-name">
+                            <h6>
+                              Наталья петрова
+                            </h6>
+                          </div>
+                          <div class="reviews__item-rating">
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                          </div>
+                        </div>
+
+                        <div class="reviews__item-text">
+                          <p>
+                            Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
+                          </p>
+                        </div>
                       </div>
+
                       <a class="btn btn--gray" href="/">
-                        Подробнее
+                        Весь отзыв
                       </a>
-                      <img class="events__other-img" src="./images/events/other-1.png" alt="">
+
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="reviews__item border">
+
+                      <div class="reviews__item-icon">
+                        <i class="icon-caplya"></i>
+                      </div>
+
+                      <div class="reviews__item-content">
+                        <div class="reviews__item-date">
+                          <p>
+                            12.05.2025
+                          </p>
+                        </div>
+
+                        <div class="reviews__item-wrap">
+                          <div class="reviews__item-name">
+                            <h6>
+                              Наталья петрова
+                            </h6>
+                          </div>
+                          <div class="reviews__item-rating">
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                          </div>
+                        </div>
+
+                        <div class="reviews__item-text">
+                          <p>
+                            Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
+                          </p>
+                        </div>
+                      </div>
+
+                      <a class="btn btn--gray" href="/">
+                        Весь отзыв
+                      </a>
+
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="reviews__item border">
+
+                      <div class="reviews__item-icon">
+                        <i class="icon-caplya"></i>
+                      </div>
+
+                      <div class="reviews__item-content">
+                        <div class="reviews__item-date">
+                          <p>
+                            12.05.2025
+                          </p>
+                        </div>
+
+                        <div class="reviews__item-wrap">
+                          <div class="reviews__item-name">
+                            <h6>
+                              Наталья петрова
+                            </h6>
+                          </div>
+                          <div class="reviews__item-rating">
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                          </div>
+                        </div>
+
+                        <div class="reviews__item-text">
+                          <p>
+                            Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
+                          </p>
+                        </div>
+                      </div>
+
+                      <a class="btn btn--gray" href="/">
+                        Весь отзыв
+                      </a>
+
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="reviews__item border">
+
+                      <div class="reviews__item-icon">
+                        <i class="icon-caplya"></i>
+                      </div>
+
+                      <div class="reviews__item-content">
+                        <div class="reviews__item-date">
+                          <p>
+                            12.05.2025
+                          </p>
+                        </div>
+
+                        <div class="reviews__item-wrap">
+                          <div class="reviews__item-name">
+                            <h6>
+                              Наталья петрова
+                            </h6>
+                          </div>
+                          <div class="reviews__item-rating">
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                          </div>
+                        </div>
+
+                        <div class="reviews__item-text">
+                          <p>
+                            Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
+                          </p>
+                        </div>
+                      </div>
+
+                      <a class="btn btn--gray" href="/">
+                        Весь отзыв
+                      </a>
+
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="reviews__item border">
+
+                      <div class="reviews__item-icon">
+                        <i class="icon-caplya"></i>
+                      </div>
+
+                      <div class="reviews__item-content">
+                        <div class="reviews__item-date">
+                          <p>
+                            12.05.2025
+                          </p>
+                        </div>
+
+                        <div class="reviews__item-wrap">
+                          <div class="reviews__item-name">
+                            <h6>
+                              Наталья петрова
+                            </h6>
+                          </div>
+                          <div class="reviews__item-rating">
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                          </div>
+                        </div>
+
+                        <div class="reviews__item-text">
+                          <p>
+                            Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
+                          </p>
+                        </div>
+                      </div>
+
+                      <a class="btn btn--gray" href="/">
+                        Весь отзыв
+                      </a>
+
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="reviews__item border">
+
+                      <div class="reviews__item-icon">
+                        <i class="icon-caplya"></i>
+                      </div>
+
+                      <div class="reviews__item-content">
+                        <div class="reviews__item-date">
+                          <p>
+                            12.05.2025
+                          </p>
+                        </div>
+
+                        <div class="reviews__item-wrap">
+                          <div class="reviews__item-name">
+                            <h6>
+                              Наталья петрова
+                            </h6>
+                          </div>
+                          <div class="reviews__item-rating">
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                          </div>
+                        </div>
+
+                        <div class="reviews__item-text">
+                          <p>
+                            Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
+                          </p>
+                        </div>
+                      </div>
+
+                      <a class="btn btn--gray" href="/">
+                        Весь отзыв
+                      </a>
+
                     </div>
                   </div>
                 </div>
+                <div class="swiper-pagination"></div>
+              </div>
+              <div class="swiper-button-prev reviews-button-prev">
+                <i class="icon-arrow-left"></i>
+              </div>
+              <div class="swiper-button-next reviews-button-next">
+                <i class="icon-arrow-right"></i>
               </div>
             </div>
+
+            <a class="reviews__btn btn btn--accent" href="/">
+              Все отзывы
+            </a>
 
           </div>
         </div>

@@ -1,0 +1,223 @@
+@use './../mixins' as *;
+
+.reviews {
+
+  @include md {
+
+    [class^=swiper-button-],
+    [class*=" swiper-button-"] {
+      display: none;
+    }
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 5rem;
+
+    @include md {
+      justify-content: center;
+      text-align: center;
+
+      margin-bottom: 3rem;
+    }
+
+    @include sm {
+      margin-bottom: 2.5rem;
+    }
+
+    &-title {
+      text-transform: uppercase;
+    }
+
+    .btn {
+
+      @include md {
+        display: none;
+      }
+    }
+  }
+
+  &__body {
+    position: relative;
+
+    @include md {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    padding: 8rem 5rem 12rem;
+    border: 0.05rem solid var(--gray-30);
+
+    text-align: center;
+
+    @include md {
+      gap: 2rem;
+      padding: 5rem 4rem 4.5rem;
+    }
+
+    @include sm {
+      gap: 1.5rem;
+      padding: 2rem 1rem 2.5rem;
+    }
+
+    &-icon {
+      width: 5.6rem;
+      height: 5.6rem;
+      padding: 0.4rem;
+      border-radius: 50%;
+      border: 0.05rem solid var(--black-30);
+
+      @include md {
+        width: 5rem;
+      }
+
+      @include sm {
+        width: 3rem;
+        padding: 0.2rem;
+      }
+
+      i {
+        --font-size: 4.8rem;
+
+        color: var(--accent);
+        border-radius: 50%;
+        background: var(--white);
+
+        @include md {
+          --font-size: 4.2rem;
+        }
+
+        @include sm {
+          --font-size: 2.6rem;
+        }
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
+      @include md {
+        gap: 2rem;
+      }
+
+      @include sm {
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    &-date {
+      color: var(--accent);
+    }
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      @include sm {
+        gap: 1.5rem;
+      }
+    }
+
+    &-name {
+      font-weight: 900;
+      font-size: 2.4rem;
+      line-height: 120%;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+
+      @include md {
+        font-size: 2rem;
+      }
+
+      @include sm {
+        font-size: 1.2rem;
+        padding: 0 0.5rem;
+      }
+    }
+
+    &-rating {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+      @include sm {
+        gap: 0.5rem;
+      }
+
+      i {
+        --font-size: 1.6rem;
+        color: var(--accent);
+
+        @include sm {
+          --font-size: 1.2rem;
+        }
+      }
+    }
+
+    &-text {
+      color: var(--gray);
+
+      p {
+
+        @include sm {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    display: none;
+    width: 100%;
+
+    @include md {
+      display: flex;
+    }
+  }
+
+  .border::before {
+    border-color: var(--gray-20);
+    z-index: -1;
+
+    @include sm {
+      top: 0.5rem;
+      right: 0.5rem;
+      bottom: 0.5rem;
+      left: 0.5rem;
+    }
+  }
+
+  .border::after {
+    z-index: -1;
+
+    @include sm {
+      display: none;
+    }
+  }
+
+  .swiper-pagination {
+    margin-top: 4rem;
+
+    @include md {
+      margin-top: 2rem;
+    }
+
+    @include sm {
+      margin-top: 1rem;
+    }
+  }
+}

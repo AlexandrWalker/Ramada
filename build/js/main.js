@@ -17,8 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   gsap.ticker.lagSmoothing(0);
 
-
-
   const offerBodySlider = new Swiper(".offer__body--slider", {
     slidesPerGroup: 1,
     slidesPerView: 1,
@@ -96,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const eventsCalendarSlider = new Swiper(".events__calendar--slider", {
     slidesPerGroup: 1,
-    slidesPerView: 2,
+    slidesPerView: 1,
     spaceBetween: 20,
     speed: 1000,
     mousewheel: {
@@ -104,6 +102,65 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     navigation: {
       nextEl: ".events-button-next",
+    },
+    breakpoints: {
+      835: {
+        slidesPerView: 2,
+      },
+    },
+  });
+
+  const eventsOtherSlider = new Swiper(".events__other--slider", {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loop: true,
+    speed: 1000,
+    mousewheel: {
+      forceToAxis: true,
+    },
+    navigation: {
+      prevEl: ".events-button-prev",
+      nextEl: ".events-button-next",
+    },
+    breakpoints: {
+      601: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      835: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+    },
+  });
+
+  const reviewsBodySlider = new Swiper(".reviews__body--slider", {
+    slidesPerGroup: 1,
+    slidesPerView: 2,
+    spaceBetween: 10,
+    loop: true,
+    speed: 1000,
+    mousewheel: {
+      forceToAxis: true,
+    },
+    navigation: {
+      prevEl: ".reviews-button-prev",
+      nextEl: ".reviews-button-next",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      601: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      835: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
     },
   });
 
@@ -680,6 +737,242 @@ document.addEventListener('DOMContentLoaded', () => {
         pin: true,
         scrub: true,
         invalidateOnRefresh: true
+      }
+    });
+  }
+
+
+
+  window.addEventListener('resize', function () { ScrollTrigger.refresh() });
+
+
+
+  /**
+   * Анимация блока задач
+   */
+  window.addEventListener('scroll', function () {
+    const reasons = document.querySelector('.reasons');
+    if (reasons) {
+      const reasonsItems = document.querySelectorAll('.task__item');
+      const reasonsRect = reasons.getBoundingClientRect();
+      // Проверяем, достиг ли блок reasons верхнего края окна
+      if (reasonsRect.top <= 0) {
+        reasons.classList.add('fixed'); // Закрепляем блок
+        // Уменьшаем и перекрываем блоки reasons__items при прокрутке
+        reasonsItems.forEach((item, index) => {
+          const offset = window.scrollY - reasons.offsetHeight;
+          const scale = Math.max(0.5, 1 - (offset / 500) + (index * 0.1)); // Уменьшаем размер
+          item.style.transform = `scale(${scale}) translateY(${index * 20}px)`; // Перекрытие
+        });
+      } else {
+        reasons.classList.remove('fixed'); // Сбрасываем закрепление
+        reasonsItems.forEach(item => {
+          item.style.transform = 'scale(1) translateY(0)'; // Возвращаем в исходное состояние
+        });
+      }
+    }
+  });
+
+
+
+  /**
+   * =================Скрипт для блока со скролом=====================
+   */
+  const reasons = document.querySelector('.hall');
+
+  if (reasons) {
+    var len = $('.hall__item').length;
+    $(window).on('resize load', function () {
+
+      if (window.innerWidth < "600") {
+        scroll = 0;
+        inc = 0.06; // speed down
+        inc2 = 0.06; // speed up
+        scale = 1;
+        var wH = document.documentElement.clientWidth
+
+
+        $(window).on('scroll', function () {
+          // Find the active element
+          var $activeBlock = $('.active');
+          var element = document.querySelector('.active');
+          var h = element.clientHeight / 200;
+          var distanceToTop = $activeBlock.offset().top - $(window).scrollTop();
+          var top = window.pageYOffset;
+
+          // Scroll direction checks
+          if (scroll > top) {
+            // Scrolling up
+            if ($activeBlock.attr('data-index') != 1) {
+              h = h * 200;
+              if (distanceToTop > h) {
+                var $prevBlock = $activeBlock.prev();
+                $activeBlock.removeClass('active');
+                $prevBlock.addClass('active');
+                $($prevBlock).css('transform', 'scale(1)');
+                scale = 0.90; // set initial scale
+              }
+            }
+          } else if (scroll < top) {
+            // Scrolling down
+
+            if (distanceToTop < 200 && $activeBlock.attr('data-index') != len) {
+              var $nextBlock = $activeBlock.next();
+              $activeBlock.removeClass('active');
+              $nextBlock.addClass('active');
+            }
+
+            if ($activeBlock.attr('data-index') == len && distanceToTop <= 0) {
+              var $prevBlock = $activeBlock.prev();
+              $($prevBlock).css('transform', 'scale(0.90)');
+              scale = 0.90;
+            }
+          }
+
+          // Scaling effect
+          if (scroll > top) {
+            // Scrolling up
+            if (distanceToTop > 200) {
+              var $activeBlock = $('.active');
+              var prevCurrentBlock = $($activeBlock).prev();
+
+              scale += inc2 / 0.006; // Increase scale on scroll up
+              scale = Math.min(scale, 1); // Ensure max scale is 1
+
+              $(prevCurrentBlock).css('transform', 'scale(' + Math.max(1, scale) + ')');
+
+              // Adjust opacity of the over block
+              var $overBlock = $(prevCurrentBlock).find('.over');
+              var newOpacity = Math.max(0, 1 - (distanceToTop / h)); // Calculate new opacity
+              $overBlock.css('opacity', newOpacity);
+            }
+          } else if (scroll < top) {
+            // Scrolling down
+            var $activeBlock = $('.active');
+            var prevCurrentBlock = $($activeBlock).prev();
+
+            scale -= inc * 0.06; // Decrease scale on scroll down
+            if ($(prevCurrentBlock).attr('data-index') == 1) {
+              $(prevCurrentBlock).css('transform', 'scale(' + Math.max(0.89, scale) + ')');
+            }
+            if ($(prevCurrentBlock).attr('data-index') == 2) {
+              $(prevCurrentBlock).css('transform', 'scale(' + Math.max(0.92, scale) + ')');
+            }
+
+            // Adjust opacity of the over block
+            var $overBlock = $(prevCurrentBlock).find('.over');
+            var newOpacity = Math.min(0.6, (distanceToTop / h + 0.02)); // Calculate new opacity
+            $overBlock.css('opacity', newOpacity);
+          }
+
+          if (distanceToTop < 0) {
+            var $prevBlock = $activeBlock.prev();
+            $($prevBlock).css('transform', 'scale(0.90)');
+            scale = 0.90;
+          }
+
+          scroll = top; // Update scroll position
+        });
+      } else {
+
+        scroll = 0;
+        inc = 0.006; // speed down
+        inc2 = 0.008; // speed up
+        scale = 1;
+        var wH = document.documentElement.clientWidth
+
+        $(window).on('scroll', function () {
+          // Find the active element
+          var $activeBlock = $('.active');
+          var element = reasons.querySelector('.active');
+          var h = element.clientHeight / 200;
+          var distanceToTop = $activeBlock.offset().top - $(window).scrollTop() - 160;
+          var top = window.pageYOffset;
+
+          const reasonsHead = $('.hall__cover');
+
+          if (reasonsHead) {
+
+            const dataIndexImg = $activeBlock.find('img');
+            const dataIndex = dataIndexImg.attr('src');
+
+            setTimeout(() => {
+              reasonsHead.find('img').attr('src', dataIndex); // Изменяем картинку
+            }, 200); // Задержка должна соответствовать длительности transition
+
+          }
+
+          // Scroll direction checks
+          if (scroll > top) {
+            // Scrolling up
+            if ($activeBlock.attr('data-index') != 1) {
+              h = h * 200;
+              if (distanceToTop > h) {
+                var $prevBlock = $activeBlock.prev();
+                $activeBlock.removeClass('active');
+                $prevBlock.addClass('active');
+                $($prevBlock).css('transform', 'scale(1)');
+                scale = 0.92; // set initial scale
+              }
+            }
+          } else if (scroll < top) {
+
+            // Scrolling down
+            if (distanceToTop < h && $activeBlock.attr('data-index') != len) {
+              var $nextBlock = $activeBlock.next();
+              $activeBlock.removeClass('active');
+              $nextBlock.addClass('active');
+              if (scale !== 1) {
+                scale = 1; // set to 1 when scrolling down
+              }
+            }
+
+            if ($activeBlock.attr('data-index') == len && distanceToTop <= 0) {
+              var $prevBlock = $activeBlock.prev();
+              $($prevBlock).css('transform', 'scale(0.92)');
+              scale = 0.92;
+            }
+          }
+
+          // Scaling effect
+          if (scroll > top) {
+            // Scrolling up
+            var $activeBlock = $('.active');
+            var prevCurrentBlock = $($activeBlock).prev();
+
+            scale += inc2; // Increase scale on scroll up
+            scale = Math.min(scale, 1); // Ensure max scale is 1
+
+            $(prevCurrentBlock).css('transform', 'scale(' + Math.max(1, scale) + ')');
+
+            // Adjust opacity of the over block
+            var $overBlock = $(prevCurrentBlock).find('.over');
+            var newOpacity = Math.max(0, 1 - (distanceToTop / h)); // Calculate new opacity
+            $overBlock.css('opacity', newOpacity);
+          } else if (scroll < top) {
+            // Scrolling down
+            var $activeBlock = $('.active');
+            var prevCurrentBlock = $($activeBlock).prev();
+
+            scale -= inc; // Decrease scale on scroll down
+
+            $(prevCurrentBlock).css('transform', 'scale(' + Math.max(0.90, scale) + ')');
+
+            // Adjust opacity of the over block
+            var $overBlock = $(prevCurrentBlock).find('.over');
+            var newOpacity = Math.min(0.6, (distanceToTop / h)); // Calculate new opacity
+            $overBlock.css('opacity', newOpacity);
+          }
+
+          if (distanceToTop < 0) {
+            var $prevBlock = $activeBlock.prev();
+            $($prevBlock).css('transform', 'scale(0.92)');
+            scale = 0.92;
+          }
+
+          scroll = top; // Update scroll position
+        });
+
       }
     });
   }
