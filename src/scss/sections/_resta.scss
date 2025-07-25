@@ -3,8 +3,11 @@
 .resta {
   position: relative;
 
-  .border::after {
-    border-color: var(--white-13);
+  .border {
+
+    &::after {
+      border-color: var(--white-13);
+    }
   }
 
   &__container {}
@@ -41,7 +44,7 @@
       text-transform: uppercase;
     }
 
-    h4 {
+    h3 {
 
       @include md {
         font-size: 4rem;
@@ -86,6 +89,22 @@
       bottom: 0;
       left: 0;
       z-index: -1;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        backdrop-filter: blur(7.35px);
+        transition: all 0.5s ease;
+
+        .resta__block:hover & {
+          backdrop-filter: blur(0);
+        }
+      }
     }
 
     &-logo {
@@ -128,6 +147,32 @@
       @include md {
         gap: 2rem;
         max-width: 100%;
+      }
+
+      h4 {
+        line-height: 120%;
+      }
+
+      p {
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.5s ease;
+
+        .resta__block:hover & {
+          opacity: 1;
+          pointer-events: all;
+        }
+      }
+    }
+
+    &-btn {
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.5s ease;
+
+      .resta__block:hover & {
+        opacity: 1;
+        pointer-events: all;
       }
     }
   }

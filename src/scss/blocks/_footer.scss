@@ -73,16 +73,33 @@
       }
     }
 
+    .menu__foot-suptitle {
+      font-size: 1.2rem;
+      color: var(--gray);
+
+      @include md {
+        font-size: 1rem;
+      }
+    }
+
     .menu__foot-title {
 
-      h6 {
+      span {
         font-size: 1.6rem;
         color: var(--black);
+
+        @include md {
+          font-size: 1.4rem;
+        }
       }
 
       &.menu__foot-title--mail {
         font-size: 1.6rem;
         color: var(--black);
+
+        @include md {
+          font-size: 1.4rem;
+        }
 
         &:hover {
           color: var(--accent);

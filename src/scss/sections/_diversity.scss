@@ -93,13 +93,18 @@
       }
 
       @include sm {
+        width: 100%;
         margin-bottom: 3rem;
       }
 
-      h3 {
+      h5 {
 
         @include md {
           font-size: 2.5rem;
+        }
+
+        @include sm {
+          font-size: 3.5rem;
         }
       }
     }
@@ -249,6 +254,13 @@
 
     @include sm {
       margin-bottom: 4rem;
+    }
+
+    h3 {
+
+      @include md {
+        font-size: 5rem;
+      }
     }
   }
 

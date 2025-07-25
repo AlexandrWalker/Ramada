@@ -174,7 +174,7 @@
       max-width: 25.4rem;
     }
 
-    h2 {
+    h4 {
       -webkit-line-clamp: 3;
       display: -webkit-box;
       -webkit-box-orient: vertical;
@@ -182,9 +182,6 @@
       text-overflow: clip;
       overflow: hidden;
 
-      font-family: var(--second-family);
-      font-weight: 300;
-      font-size: 5rem;
       line-height: 120%;
       color: var(--white);
 

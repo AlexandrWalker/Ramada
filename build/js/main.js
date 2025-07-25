@@ -123,6 +123,10 @@ document.addEventListener('DOMContentLoaded', () => {
       prevEl: ".events-button-prev",
       nextEl: ".events-button-next",
     },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
     breakpoints: {
       601: {
         slidesPerView: 2,
@@ -147,6 +151,35 @@ document.addEventListener('DOMContentLoaded', () => {
     navigation: {
       prevEl: ".reviews-button-prev",
       nextEl: ".reviews-button-next",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      601: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      835: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+    },
+  });
+
+  const entertBodySlider = new Swiper(".entert__body--slider", {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    speed: 1000,
+    loop: true,
+    mousewheel: {
+      forceToAxis: true,
+    },
+    navigation: {
+      prevEl: ".entert-button-prev",
+      nextEl: ".entert-button-next",
     },
     pagination: {
       el: ".swiper-pagination",

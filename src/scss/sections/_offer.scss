@@ -32,8 +32,9 @@
   &__head {
     grid-column: 2/3;
     grid-row: 1/2;
-
     padding: var(--offer-padding-top) 0 0 var(--offer-padding-left);
+
+    text-transform: uppercase;
 
     @include sm {
       grid-column: 1/2;

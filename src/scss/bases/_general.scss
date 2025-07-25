@@ -18,11 +18,18 @@
       margin-bottom: 3rem;
 
       @include md {
+        font-weight: 900;
+
         margin-bottom: 2rem;
+      }
+
+      p {
+        font-weight: inherit;
       }
     }
 
     &-title {
+      text-transform: uppercase;
       margin-bottom: 4rem;
 
       @include md {
@@ -33,12 +40,7 @@
         margin-bottom: 2rem;
       }
 
-      h2 {
-        font-family: var(--second-family);
-        font-weight: 300;
-        font-size: 6rem;
-        line-height: 110%;
-        text-transform: uppercase;
+      h3 {
 
         @include md {
           font-size: 4rem;
@@ -63,16 +65,10 @@
       border-top: 0.1rem solid var(--black);
       border-bottom: 0.1rem solid var(--black);
 
-      font-weight: 900;
-      font-size: 2.4rem;
-      line-height: 120%;
-      letter-spacing: 0.1em;
       text-transform: uppercase;
 
       @include md {
         padding: 2rem 0;
-
-        font-size: 2rem;
       }
     }
 

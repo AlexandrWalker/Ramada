@@ -4,7 +4,7 @@
 
   .general__head-title {
 
-    h2 {
+    h4 {
 
       @include sm {
         font-size: 3rem;
@@ -111,7 +111,7 @@
         padding: 3rem 2rem 2rem 2rem;
       }
 
-      h3 {
+      h5 {
 
         @include md {
           font-size: 2.4rem;
@@ -181,6 +181,13 @@
       @include md {
         font-size: 2rem;
       }
+
+      h6 {
+
+        @include sm {
+          font-weight: 700;
+        }
+      }
     }
 
     &-block {}
@@ -221,6 +228,7 @@
       line-height: 120%;
       text-align: center;
       text-transform: uppercase;
+      cursor: pointer;
 
       @include md {
 
@@ -248,14 +256,17 @@
       line-height: 100%;
       text-align: center;
       color: var(--gray);
-      cursor: pointer;
+
+      &:not(:empty) {
+        cursor: pointer;
+      }
 
       @include md {
         font-size: 1.4rem;
         border-radius: 0.5rem;
       }
 
-      &:hover {
+      &:not(:empty):hover {
         font-weight: 700;
         color: var(--accent);
         border-color: var(--black);
@@ -318,10 +329,14 @@
 
     .general__head-title {
 
-      h3 {
+      h5 {
 
         @include md {
           font-size: 4rem;
+        }
+
+        @include sm {
+          font-size: 2.5rem;
         }
       }
     }
