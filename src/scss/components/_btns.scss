@@ -1,9 +1,11 @@
 @use './../mixins' as *;
 
+/* Кнопки */
 .btn {
   --btn-width: fit-content;
   --btn-height: 5rem;
-  --btn-margin: 0.3;
+  --btn-margin-x: 0.3rem;
+  --btn-margin-y: 0.3rem;
   --btn-padding-x: 2.2rem;
   --btn-padding-y: 1.5rem;
   --btn-color: var(--white);
@@ -19,7 +21,7 @@
   min-width: var(--btn-height);
   height: var(--btn-height);
   padding: var(--btn-padding-y) var(--btn-padding-x);
-  margin: var(--btn-margin);
+  margin: var(--btn-margin-y) var(--btn-margin-x);
 
   background: var(--btn-background);
   border-radius: var(--btn-border-radius);
@@ -34,12 +36,6 @@
   transition: all 0.3s ease;
 
   position: relative;
-
-  @include xxl {
-    // --btn-height: 5.86rem;
-
-    // font-size: 1.2rem;
-  }
 
   @include md {
     --btn-height: 4.4rem;
@@ -172,93 +168,158 @@
   }
 }
 
-.btn-arrow {
-  --btn-arrow-width: 15.4rem;
-  --btn-arrow-height: 15.4rem;
+.btn {
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: var(--btn-arrow-width);
-  height: var(--btn-arrow-height);
-  border-radius: 50%;
-  background-color: var(--white);
+  /* Большая кнопка со стрелкой */
+  &-arrow {
+    --btn-arrow-width: 17rem;
+    --btn-arrow-height: 17rem;
+    --btn-arrow-padding: 0.8rem;
 
-  position: absolute;
-  left: -7.7rem;
-  bottom: var(--btn-bottom);
-
-  will-change: bottom;
-
-  @include md {
-    width: 9rem;
-    height: 9rem;
-
-    left: -4.5rem;
-    bottom: -3.2rem
-  }
-
-  &::before {
-    content: "";
     display: flex;
     justify-content: center;
     align-items: center;
-
-    position: absolute;
-    top: -0.8rem;
-    right: -0.8rem;
-    bottom: -0.8rem;
-    left: -0.8rem;
+    width: var(--btn-arrow-width);
+    height: var(--btn-arrow-height);
+    border-radius: 50%;
     border: 0.1rem solid var(--white-30);
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    pointer-events: none;
-
-    @include md {
-      top: -0.47rem;
-      right: -0.47rem;
-      bottom: -0.47rem;
-      left: -0.47rem;
-    }
-  }
-
-  &::after {
-    content: "";
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: transparent;
 
     position: absolute;
-    top: 0.8rem;
-    right: 0.8rem;
-    bottom: 0.8rem;
-    left: 0.8rem;
-    border: 0.1rem solid var(--accent-30);
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    pointer-events: none;
+    left: -7.7rem;
+    bottom: var(--btn-bottom);
+
+    will-change: bottom;
 
     @include md {
-      top: 0.47rem;
-      right: 0.47rem;
-      bottom: 0.47rem;
-      left: 0.47rem;
+      --btn-arrow-width: 10rem;
+      --btn-arrow-height: 10rem;
+      --btn-arrow-padding: 0.47rem;
+
+      left: -4.5rem;
+      bottom: -3.2rem
     }
-  }
 
-  i {
-    --font-size: 8rem;
-    color: var(--accent);
+    &::before {
+      content: "";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 0.1rem solid var(--white-30);
+      background-color: var(--white);
+      transition: all 0.3s ease;
+      pointer-events: none;
 
-    @include md {
-      --font-size: 6rem;
+      position: absolute;
+      top: var(--btn-arrow-padding);
+      right: var(--btn-arrow-padding);
+      bottom: var(--btn-arrow-padding);
+      left: var(--btn-arrow-padding);
     }
-  }
 
-  &--down {
+    &::after {
+      content: "";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 0.1rem solid var(--accent-30);
+      transition: all 0.3s ease;
+      pointer-events: none;
+
+      position: absolute;
+      top: calc(var(--btn-arrow-padding) * 2);
+      right: calc(var(--btn-arrow-padding) * 2);
+      bottom: calc(var(--btn-arrow-padding) * 2);
+      left: calc(var(--btn-arrow-padding) * 2);
+    }
 
     i {
-      transform: rotate(90deg);
+      --font-size: 8.33rem;
+
+      color: var(--accent);
+
+      @include md {
+        --font-size: 5.5rem;
+      }
+    }
+
+    &--down {
+
+      i {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  /* Кнопка вопспроизведения видео */
+  &-play {
+    --btn-play-width: 7rem;
+    --btn-play-height: 7rem;
+    --btn-play-padding: 0.375rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--btn-play-width);
+    height: var(--btn-play-height);
+    border-radius: 50%;
+    border: 0.05rem solid var(--accent-30);
+    background-color: transparent;
+
+    position: relative;
+
+    @include md {
+      --btn-play-width: 5rem;
+      --btn-play-height: 5rem;
+      --btn-play-padding: 0.268rem;
+    }
+
+    &::before {
+      content: "";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 0.05rem solid var(--accent);
+      background-color: var(--accent);
+      transition: all 0.3s ease;
+      pointer-events: none;
+
+      position: absolute;
+      top: var(--btn-play-padding);
+      right: var(--btn-play-padding);
+      bottom: var(--btn-play-padding);
+      left: var(--btn-play-padding);
+    }
+
+    &::after {
+      content: "";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 0.05rem solid var(--white-50);
+      transition: all 0.3s ease;
+      pointer-events: none;
+
+      position: absolute;
+      top: calc(var(--btn-play-padding) * 2);
+      right: calc(var(--btn-play-padding) * 2);
+      bottom: calc(var(--btn-play-padding) * 2);
+      left: calc(var(--btn-play-padding) * 2);
+    }
+
+    i {
+      --font-size: 6.25rem;
+
+      color: var(--white);
+
+      @include md {
+        --font-size: 4.46rem;
+        --font-size: 5rem;
+      }
     }
   }
 }

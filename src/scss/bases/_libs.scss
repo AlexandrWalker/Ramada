@@ -1,49 +1,26 @@
 @use './../mixins' as *;
 
-.swiper {
+/* Пагинация слайдера */
+.swiper-pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
 
-  &-button-prev {
-    left: calc((var(--swiper-button-size) / 2) * -1);
+  position: static;
 
-    @include md {
-      left: -1rem;
-    }
-  }
+  &-bullet {
+    width: 0.4rem;
+    height: 0.4rem;
+    background: var(--gray);
+    opacity: 1;
+    transition: all 0.3s ease;
 
-  &-button-next {
-    right: calc((var(--swiper-button-size) / 2) * -1);
-
-    @include md {
-      right: -1rem;
-    }
-  }
-
-  &-slide {
-    // max-width: 100% !important;
-    // width: 100% !important;
-  }
-
-  &-pagination {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-
-    position: static;
-
-    &-bullet {
-      width: 0.4rem;
-      height: 0.4rem;
-      background: var(--gray);
-      opacity: 1;
-      transition: all 0.5s ease;
-
-      &-active {
-        width: 0.6rem;
-        height: 0.6rem;
-        background: var(--accent);
-      }
+    &-active {
+      width: 0.6rem;
+      height: 0.6rem;
+      background: var(--accent);
     }
   }
 }
@@ -53,21 +30,26 @@
   margin: 0 0.3rem;
 }
 
+/* Кнопка слайдера */
 [class^="swiper-button-"],
 [class*=" swiper-button-"] {
   --swiper-button-size: 6rem;
+  --swiper-button-padding: 0.4rem;
+  --swiper-button-bg: var(--white);
+  --swiper-font-size: 5rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
   width: var(--swiper-button-size);
   height: var(--swiper-button-size);
-  padding: 0.4rem;
+  margin: 0;
+  background-color: var(--swiper-button-bg);
   border-radius: 50%;
-  border: 0.05rem solid var(--white-30);
+  border: 0.05rem solid var(--black-30);
   opacity: 1;
-  transition: all 0.5s ease;
-
+  transition: all 0.3s ease;
+  color: var(--accent);
   cursor: pointer;
 
   position: absolute;
@@ -77,6 +59,32 @@
 
   @include md {
     --swiper-button-size: 5rem;
+    --swiper-button-padding: 0.33rem;
+    --swiper-font-size: 4.34rem;
+  }
+
+  &:not(.diversity-button-next):hover {
+    border-color: var(--accent);
+    color: var(--white);
+
+    &::before {
+      border-color: var(--accent);
+      background-color: var(--accent);
+    }
+  }
+
+  &::before {
+    content: "";
+    border-radius: 50%;
+    border: 0.05rem solid var(--black);
+    background-color: var(--white);
+    transition: all 0.3s ease;
+
+    position: absolute;
+    top: var(--swiper-button-padding);
+    right: var(--swiper-button-padding);
+    bottom: var(--swiper-button-padding);
+    left: var(--swiper-button-padding);
   }
 
   &::after {
@@ -84,21 +92,44 @@
   }
 
   i {
-    --font-size: 4rem;
+    font-size: var(--swiper-font-size);
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+}
 
-    width: calc(100% - 0.8rem);
-    height: calc(100% - 0.8rem);
-    border-radius: 50%;
-    // border: 0.05rem solid var(--white);
-    // background-color: var(--white-50);
-    color: var(--accent);
+.swiper-button-prev {
+  left: calc((var(--swiper-button-size) / 2) * -1);
 
-    background-color: var(--white);
+  @include md {
+    left: -1rem;
+  }
+}
 
-    position: absolute;
-    top: 0.4rem;
-    right: 0.4rem;
-    bottom: 0.4rem;
-    left: 0.4rem;
+.swiper-button-next {
+  right: calc((var(--swiper-button-size) / 2) * -1);
+
+  @include md {
+    right: -1rem;
+  }
+}
+
+/* Альтернативная кнопка слайдера */
+.swiper-button-alt {
+  --swiper-button-bg: transparent;
+
+  border-color: var(--white-50);
+
+  &:hover {
+    border-color: var(--gray);
+  }
+
+  i {
+    --font-size: var(--swiper-font-size);
+  }
+
+  &::before {
+    border-color: var(--white);
+    background-color: var(--white-50);
   }
 }

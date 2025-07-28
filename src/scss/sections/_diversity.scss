@@ -265,12 +265,13 @@
   }
 
   .btn-arrow {
-    --btn-arrow-width: 17rem;
-    --btn-arrow-height: 17rem;
+
+    i {
+      --swiper-font-size: 8.33rem;
+    }
 
     @include md {
-      --btn-arrow-width: 10rem;
-      --btn-arrow-height: 10rem;
+      --swiper-font-size: 5.5rem;
     }
   }
 

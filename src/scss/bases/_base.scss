@@ -15,7 +15,6 @@ html {
 
 body {
   min-width: 320px;
-  // background-color: var(--white);
   background-color: var(--white-gray);
 
   font-family: var(--font-family);
@@ -70,4 +69,18 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+[data-animation="parallax-img"] {
+
+  img {
+    width: auto;
+    height: 120% !important;
+    margin-top: -10%;
+
+    @include md {
+      height: 100% !important;
+      margin-top: unset;
+    }
+  }
 }

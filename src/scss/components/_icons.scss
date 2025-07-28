@@ -1,5 +1,5 @@
 @use './../mixins' as *;
-
+/* Стили для иконок */
 [class^="icon-"],
 [class*=" icon-"] {
   --font-size: 2rem;
@@ -14,9 +14,12 @@
 
   font-size: var(--font-size);
   color: inherit;
+
+  position: relative;
+  z-index: 1;
 }
 
-
+/* Уникальные иконки */
 .icon {
 
   &-3d {
@@ -57,6 +60,7 @@
   }
 }
 
+/* Пульсация кнопки */
 .pulse {
   position: absolute;
   top: -0.3rem;

@@ -1,5 +1,6 @@
 @use './../mixins' as *;
 
+/* Главный заголовок страницы */
 h1 {
   font-family: var(--second-family);
   font-weight: 300;
@@ -15,6 +16,7 @@ h1 {
   }
 }
 
+/* Повторяет стиль главного заголовка */
 h2 {
   font-family: var(--second-family);
   font-weight: 300;
@@ -30,6 +32,7 @@ h2 {
   }
 }
 
+/* Заголовок */
 h3 {
   font-family: var(--second-family);
   font-weight: 300;
@@ -41,6 +44,7 @@ h3 {
   }
 }
 
+/* Второй заголовок */
 h4 {
   font-family: var(--second-family);
   font-weight: 300;
@@ -52,6 +56,7 @@ h4 {
   }
 }
 
+/* Подзаголовки и заголовки дочерних блоков */
 h5 {
   font-family: var(--second-family);
   font-weight: 300;
@@ -63,6 +68,7 @@ h5 {
   }
 }
 
+/* Выделенный текст, надзаголовок и подзаголовок */
 h6 {
   font-weight: 900;
   font-size: 2.4rem;
@@ -74,8 +80,7 @@ h6 {
   }
 }
 
-/* /Стили текста внутри блоков */
-
+/* Текст внутри блока */
 p {
   font-family: var(--font-family);
   font-weight: 350;
@@ -87,6 +92,7 @@ p {
   }
 }
 
+/* Акцентирование текста цветом фуксия */
 h1,
 h2,
 h3,
@@ -98,6 +104,7 @@ h6 {
   }
 }
 
+/* Надзаголовок с обводкой */
 .suptitle {
   font-weight: 700;
   line-height: 110%;
@@ -108,20 +115,4 @@ h6 {
   padding: 1rem 0;
   border-top: 0.1rem solid var(--accent);
   border-bottom: 0.1rem solid var(--accent);
-}
-
-.link {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  i {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color: var(--white);
-
-    font-size: 2.4rem;
-  }
 }

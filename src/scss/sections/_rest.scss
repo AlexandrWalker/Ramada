@@ -3,6 +3,8 @@
 .rest {
   overflow: visible;
 
+  position: relative;
+
   @include md {
     margin-bottom: 3rem;
   }

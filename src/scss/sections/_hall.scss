@@ -4,8 +4,9 @@
   padding: 7rem 0;
   margin-bottom: 0;
   overflow: visible;
-
   background: linear-gradient(to right, transparent 50%, var(--accent) 50%);
+
+  position: relative;
 
   @include sm {
     padding: 3rem 0;
@@ -48,6 +49,9 @@
     flex-direction: row;
     gap: 2rem;
 
+    position: relative;
+    z-index: 2;
+
     @include md {
       --hall-item-width: 28.8rem;
     }
@@ -66,6 +70,7 @@
     overflow: visible;
     position: sticky;
     top: calc(var(--header-height) + 3rem);
+    top: 200px;
   }
 
   &__items {
@@ -90,6 +95,7 @@
 
     position: sticky;
     top: calc(var(--header-height) + 3rem);
+    top: 200px;
 
     @include sm {
       padding: 2rem 2rem 3rem;
@@ -146,6 +152,7 @@
 
     position: sticky;
     top: calc(var(--header-height) + 3rem);
+    top: 200px;
 
     @include md {
       aspect-ratio: 366/295;
