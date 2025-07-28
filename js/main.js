@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   const lenis = new Lenis({
     anchors: {
-      offset: -100,
+      offset: -180,
     }
   });
 
@@ -96,12 +96,13 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerGroup: 1,
     slidesPerView: 1,
     spaceBetween: 20,
+    loop: true,
     speed: 1000,
     mousewheel: {
       forceToAxis: true,
     },
     navigation: {
-      nextEl: ".events-button-next",
+      nextEl: ".calendar-button-next",
     },
     breakpoints: {
       835: {
@@ -346,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * Инициализация формы набора символов
    */
-  const form = document.querySelector('.form');
+  const form = document.querySelector('form');
   if (form) {
     const inputElements = document.querySelectorAll('.form-input');
     const textareaElements = document.querySelectorAll('.form-textarea');
@@ -558,7 +559,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const smoothImgY = '-50%';
 
         const smoothImgTopBefore = '26rem';
-        const smoothImgTopAfter = '29rem';
+        const smoothImgTopAfter = '31rem';
 
         const heroTop = 4.53;
 
@@ -776,6 +777,85 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+  $(window).on('resize load', function () {
+    if (window.innerWidth > '834' && window.innerWidth != '834') {
+      const parallaxItem = document.querySelector('[data-animation="parallax-img"]');
+      if (parallaxItem) {
+        const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
+        parallaxImgContainers.forEach(parallaxImgContainer => {
+          const image = parallaxImgContainer.querySelector('img');
+          gsap.fromTo(image,
+            { y: '-10%' },
+            {
+              y: '10%',
+              scrollTrigger: {
+                trigger: parallaxImgContainer,
+                start: 'top 90%',
+                end: 'bottom top',
+                scrub: true,
+              },
+            }
+          );
+        });
+      }
+
+      const parallaxBlock = document.querySelector('[data-animation="parallax-block"]');
+      if (parallaxBlock) {
+        const parallaxImgBlocks = document.querySelectorAll('[data-animation="parallax-block"]');
+        parallaxImgBlocks.forEach(parallaxImgBlock => {
+          gsap.fromTo(parallaxImgBlock,
+            { y: '-8%' },
+            {
+              y: '8%',
+              scrollTrigger: {
+                trigger: parallaxImgBlock,
+                start: 'top 90%',
+                end: 'bottom top',
+                scrub: true,
+              },
+            }
+          );
+        });
+      }
+
+      const parallaxImgBoxes = document.querySelectorAll('[data-animation="parallax-box"]');
+      if (parallaxImgBoxes != 0) {
+        parallaxImgBoxes.forEach(parallaxImgBox => {
+
+          if (parallaxImgBox.classList.contains('leaf--2')) {
+            gsap.fromTo(parallaxImgBox,
+              { y: '15%' },
+              {
+                y: '60%',
+                scrollTrigger: {
+                  trigger: parallaxImgBox,
+                  start: 'top 90%',
+                  end: 'bottom top',
+                  scrub: true,
+                },
+              }
+            );
+          } else {
+            gsap.fromTo(parallaxImgBox,
+              { y: '20%' },
+              {
+                y: '-35%',
+                scrollTrigger: {
+                  trigger: parallaxImgBox,
+                  start: 'top 90%',
+                  end: 'bottom top',
+                  scrub: true,
+                },
+              }
+            );
+          }
+
+        });
+      }
+    }
+  });
+
+
   window.addEventListener('resize', function () { ScrollTrigger.refresh() });
 
 
@@ -783,28 +863,28 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * Анимация блока задач
    */
-  window.addEventListener('scroll', function () {
-    const reasons = document.querySelector('.reasons');
-    if (reasons) {
-      const reasonsItems = document.querySelectorAll('.task__item');
-      const reasonsRect = reasons.getBoundingClientRect();
-      // Проверяем, достиг ли блок reasons верхнего края окна
-      if (reasonsRect.top <= 0) {
-        reasons.classList.add('fixed'); // Закрепляем блок
-        // Уменьшаем и перекрываем блоки reasons__items при прокрутке
-        reasonsItems.forEach((item, index) => {
-          const offset = window.scrollY - reasons.offsetHeight;
-          const scale = Math.max(0.5, 1 - (offset / 500) + (index * 0.1)); // Уменьшаем размер
-          item.style.transform = `scale(${scale}) translateY(${index * 20}px)`; // Перекрытие
-        });
-      } else {
-        reasons.classList.remove('fixed'); // Сбрасываем закрепление
-        reasonsItems.forEach(item => {
-          item.style.transform = 'scale(1) translateY(0)'; // Возвращаем в исходное состояние
-        });
-      }
-    }
-  });
+  // window.addEventListener('scroll', function () {
+  //   const reasons = document.querySelector('.hall');
+  //   if (reasons) {
+  //     const reasonsItems = document.querySelectorAll('.hall__item');
+  //     const reasonsRect = reasons.getBoundingClientRect();
+  //     // Проверяем, достиг ли блок reasons верхнего края окна
+  //     if (reasonsRect.top <= 0) {
+  //       reasons.classList.add('fixed'); // Закрепляем блок
+  //       // Уменьшаем и перекрываем блоки reasons__items при прокрутке
+  //       reasonsItems.forEach((item, index) => {
+  //         const offset = window.scrollY - reasons.offsetHeight;
+  //         const scale = Math.max(0.5, 1 - (offset / 500) + (index * 0.1)); // Уменьшаем размер
+  //         item.style.transform = `scale(${scale}) translateY(${index * 20}px)`; // Перекрытие
+  //       });
+  //     } else {
+  //       reasons.classList.remove('fixed'); // Сбрасываем закрепление
+  //       reasonsItems.forEach(item => {
+  //         item.style.transform = 'scale(1) translateY(0)'; // Возвращаем в исходное состояние
+  //       });
+  //     }
+  //   }
+  // });
 
 
 
@@ -817,7 +897,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var len = $('.hall__item').length;
     $(window).on('resize load', function () {
 
-      if (window.innerWidth < "600") {
+      if (window.innerWidth < "834") {
         scroll = 0;
         inc = 0.06; // speed down
         inc2 = 0.06; // speed up
@@ -865,7 +945,7 @@ document.addEventListener('DOMContentLoaded', () => {
           // Scaling effect
           if (scroll > top) {
             // Scrolling up
-            if (distanceToTop > 200) {
+            if (distanceToTop > 199) {
               var $activeBlock = $('.active');
               var prevCurrentBlock = $($activeBlock).prev();
 
@@ -919,18 +999,18 @@ document.addEventListener('DOMContentLoaded', () => {
           var $activeBlock = $('.active');
           var element = reasons.querySelector('.active');
           var h = element.clientHeight / 200;
-          var distanceToTop = $activeBlock.offset().top - $(window).scrollTop() - 160;
+          var distanceToTop = $activeBlock.offset().top - $(window).scrollTop() - 199;
           var top = window.pageYOffset;
 
-          const reasonsHead = $('.hall__cover');
+          const hallCover = $('.hall__cover');
 
-          if (reasonsHead) {
+          if (hallCover) {
 
             const dataIndexImg = $activeBlock.find('img');
             const dataIndex = dataIndexImg.attr('src');
 
             setTimeout(() => {
-              reasonsHead.find('img').attr('src', dataIndex); // Изменяем картинку
+              hallCover.find('img').attr('src', dataIndex); // Изменяем картинку
             }, 200); // Задержка должна соответствовать длительности transition
 
           }

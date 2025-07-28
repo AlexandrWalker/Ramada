@@ -1,17 +1,18 @@
+/* Стили для установки иконок */
 @font-face {
   font-family: 'RamadaIcons';
-  src:  url('./fonts/RamadaIcons.eot?xi5s3b');
-  src:  url('./fonts/RamadaIcons.eot?xi5s3b#iefix') format('embedded-opentype'),
-    url('./fonts/RamadaIcons.ttf?xi5s3b') format('truetype'),
-    url('./fonts/RamadaIcons.woff?xi5s3b') format('woff'),
-    url('./fonts/RamadaIcons.svg?xi5s3b#RamadaIcons') format('svg');
+  src: url('fonts/RamadaIcons.eot?lh1dah');
+  src: url('fonts/RamadaIcons.eot?lh1dah#iefix') format('embedded-opentype'),
+    url('fonts/RamadaIcons.ttf?lh1dah') format('truetype'),
+    url('fonts/RamadaIcons.woff?lh1dah') format('woff'),
+    url('fonts/RamadaIcons.svg?lh1dah#RamadaIcons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
+[class^="icon-"],
+[class*=" icon-"] {
   font-family: 'RamadaIcons' !important;
   speak: never;
   font-style: normal;
@@ -20,137 +21,197 @@
   text-transform: none;
   line-height: 1;
 
-  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-elem-pool:before {
+.icon-chevron-link:before {
   content: "\e900";
 }
-.icon-elem-tablichka:before {
+
+.icon-route:before {
   content: "\e901";
 }
-.icon-elem-bed:before {
+
+.icon-elem-pool:before {
   content: "\e902";
 }
-.icon-elem-phen:before {
+
+.icon-elem-tablichka:before {
   content: "\e903";
 }
-.icon-geo:before {
+
+.icon-elem-bed:before {
   content: "\e904";
 }
-.icon-mail:before {
+
+.icon-elem-phen:before {
   content: "\e905";
 }
-.icon-arrow-right:before {
+
+.icon-geo:before {
   content: "\e906";
 }
-.icon-arrow-left:before {
+
+.icon-mail:before {
   content: "\e907";
 }
-.icon-chevron-right:before {
+
+.icon-arrow-right:before {
   content: "\e908";
 }
-.icon-chevron-left:before {
+
+.icon-arrow-left:before {
   content: "\e909";
 }
-.icon-chevron-top:before {
+
+.icon-chevron-right:before {
   content: "\e90a";
+  color: #c40d3c;
 }
-.icon-chevron-down:before {
+
+.icon-chevron-left:before {
   content: "\e90b";
+  color: #c40d3c;
 }
-.icon-services-kids-bedroom:before {
+
+.icon-chevron-top:before {
   content: "\e90c";
 }
-.icon-services-places:before {
+
+.icon-chevron-down:before {
   content: "\e90d";
 }
-.icon-services-master-bedroom:before {
+
+.icon-services-kids-bedroom:before {
   content: "\e90e";
 }
-.icon-services-coffee-machine:before {
+
+.icon-services-places:before {
   content: "\e90f";
 }
-.icon-services-board:before {
+
+.icon-services-master-bedroom:before {
   content: "\e910";
 }
-.icon-services-holodilnik:before {
+
+.icon-services-coffee-machine:before {
   content: "\e911";
 }
-.icon-services-condicioner:before {
+
+.icon-services-board:before {
   content: "\e912";
 }
-.icon-services-garderob:before {
+
+.icon-services-holodilnik:before {
   content: "\e913";
 }
-.icon-services-electric-kettle:before {
+
+.icon-services-condicioner:before {
   content: "\e914";
 }
-.icon-services-tv:before {
+
+.icon-services-garderob:before {
   content: "\e915";
 }
-.icon-services-microwave:before {
+
+.icon-services-electric-kettle:before {
   content: "\e916";
 }
-.icon-services-wifi:before {
+
+.icon-services-tv:before {
   content: "\e917";
 }
-.icon-area:before {
+
+.icon-services-microwave:before {
   content: "\e918";
 }
-.icon-places:before {
+
+.icon-services-wifi:before {
   content: "\e919";
 }
-.icon-star:before {
+
+.icon-area:before {
   content: "\e91a";
 }
-.icon-burger:before {
+
+.icon-places:before {
   content: "\e91b";
 }
-.icon-caplya:before {
+
+.icon-star:before {
   content: "\e91c";
 }
-.icon-solo:before {
+
+.icon-burger:before {
+  content: "\e91d";
+}
+
+.icon-caplya .path1:before {
   content: "\e91e";
+  color: rgb(196, 13, 60);
 }
-.icon-friends:before {
+
+.icon-caplya .path2:before {
   content: "\e91f";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
 }
-.icon-para:before {
+
+.icon-solo:before {
   content: "\e920";
 }
-.icon-family:before {
+
+.icon-friends:before {
   content: "\e921";
 }
-.icon-delovoy:before {
+
+.icon-para:before {
   content: "\e922";
 }
-.icon-close:before {
+
+.icon-family:before {
   content: "\e923";
 }
-.icon-book:before {
+
+.icon-delovoy:before {
   content: "\e924";
 }
-.icon-menu:before {
+
+.icon-close:before {
   content: "\e925";
 }
-.icon-pdf:before {
+
+.icon-book:before {
   content: "\e926";
 }
-.icon-play:before {
+
+.icon-menu:before {
   content: "\e927";
 }
-.icon-3d:before {
+
+.icon-pdf:before {
   content: "\e928";
 }
-.icon-vk:before {
+
+.icon-play:before {
   content: "\e929";
 }
-.icon-telegram:before {
+
+.icon-3d:before {
   content: "\e92a";
 }
-.icon-whatsapp:before {
+
+.icon-vk:before {
   content: "\e92b";
 }
+
+.icon-telegram:before {
+  content: "\e92c";
+}
+
+.icon-whatsapp:before {
+  content: "\e92d";
+}
+
+/* ./Стили для иконок */
