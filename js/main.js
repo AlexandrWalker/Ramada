@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const reviewsBodySlider = new Swiper(".reviews__body--slider", {
     slidesPerGroup: 1,
-    slidesPerView: 2,
+    slidesPerView: 'auto',
     spaceBetween: 10,
     loop: true,
     speed: 1000,
@@ -158,6 +158,10 @@ document.addEventListener('DOMContentLoaded', () => {
       clickable: true,
     },
     breakpoints: {
+      381: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
       601: {
         slidesPerView: 2,
         spaceBetween: 20,
@@ -573,7 +577,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const smoothImgTopBefore = '26rem';
         const smoothImgTopAfter = '31rem';
 
-        const heroTop = 4.53;
+        // const heroTop = 4.53;
+        const heroTop = 4.7;
 
         const h1TitleFsBefore = '20rem';
         const h1TitleFsAfter = '14rem';
@@ -1026,6 +1031,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   window.addEventListener('resize', function () { ScrollTrigger.refresh() });
+
+
+
+  /**
+   * Смена текста внутри кнопки блока Отзывов
+   */
+  $(window).on('resize load', function () {
+    if (window.innerWidth <= '1440') {
+
+      const reviews = document.getElementById("reviews");
+      if (reviews) {
+        const reviewsBtns = reviews.querySelectorAll('.reviews__item-btn');
+
+        reviewsBtns.forEach(reviewsBtn => {
+          reviewsBtn.innerHTML = 'Подробнее';
+        });
+      }
+
+    }
+  });
+
+
+
+  /**
+   * Смена класса кнопки блока Отзывов
+   */
+  $(window).on('resize load', function () {
+    if (window.innerWidth <= '600') {
+
+      const reviews = document.getElementById("reviews");
+      if (reviews) {
+        const reviewsBtns = reviews.querySelectorAll('.reviews__item-btn');
+
+        reviewsBtns.forEach(reviewsBtn => {
+          reviewsBtn.setAttribute('class', 'link');
+
+          reviewsBtn.innerHTML = '<i class="icon-chevron-link"></i><p>Подробнее</p>';
+        });
+      }
+
+    }
+  });
 
 
 
