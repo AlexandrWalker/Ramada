@@ -3,28 +3,27 @@
 /* Кнопки */
 .btn {
   --btn-width: fit-content;
-  --btn-height: 5rem;
-  --btn-margin-x: 0.3rem;
-  --btn-margin-y: 0.3rem;
+  --btn-height: 5.6rem;
+  --btn-first-padding: 0.3rem;
+  --btn-second-padding: 0.4rem;
   --btn-padding-x: 2.2rem;
-  --btn-padding-y: 1.5rem;
   --btn-color: var(--white);
-  --btn-border-radius: calc(var(--btn-height) / 2);
+  --btn-background: var(--accent);
+  --btn-border-radius: 10rem;
+  --btn-border-color: var(--accent);
 
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0 1rem;
   flex-shrink: 0;
-
   width: var(--btn-width);
   min-width: var(--btn-height);
   height: var(--btn-height);
-  padding: var(--btn-padding-y) var(--btn-padding-x);
-  margin: var(--btn-margin-y) var(--btn-margin-x);
-
-  background: var(--btn-background);
+  padding: 0 var(--btn-padding-x);
   border-radius: var(--btn-border-radius);
+  border: 0.1rem solid var(--btn-border-color);
+  transition: all 0.3s ease;
 
   font-family: var(--font-family);
   font-weight: 700;
@@ -33,56 +32,56 @@
   text-align: center;
   color: var(--btn-color);
   white-space: nowrap;
-  transition: all 0.3s ease;
 
   position: relative;
+  z-index: 1;
 
   @include md {
-    --btn-height: 4.4rem;
+    --btn-height: 5rem;
   }
 
   @include sm {
     --btn-padding-x: 1.5rem;
   }
 
-  &:hover {
-
-    .pulse::before {
-      animation: pulse 3s linear infinite;
-      animation-delay: 0s;
-    }
-
-    .pulse::after {
-      animation: pulse 3s linear infinite;
-      animation-delay: 1.5s;
-    }
-  }
-
   &::before {
     content: "";
-    position: absolute;
-    top: -0.3rem;
-    right: -0.3rem;
-    bottom: -0.3rem;
-    left: -0.3rem;
-    z-index: -1;
-    border: 0.1rem solid var(--btn-background);
     border-radius: var(--btn-border-radius);
+    background: var(--btn-background);
     transition: all 0.3s ease;
     pointer-events: none;
+
+    position: absolute;
+    top: var(--btn-first-padding);
+    right: var(--btn-first-padding);
+    bottom: var(--btn-first-padding);
+    left: var(--btn-first-padding);
+    z-index: -1;
+
+    @include md {
+      right: var(--btn-second-padding);
+      left: var(--btn-second-padding);
+    }
   }
 
   &::after {
     content: "";
-    position: absolute;
-    top: 0.3rem;
-    right: 0.3rem;
-    bottom: 0.3rem;
-    left: 0.3rem;
     border: 0.1rem solid var(--white-50);
     border-radius: var(--btn-border-radius);
     transition: all 0.3s ease;
     pointer-events: none;
+
+    position: absolute;
+    top: calc(var(--btn-first-padding) + var(--btn-first-padding));
+    right: calc(var(--btn-first-padding) + var(--btn-second-padding));
+    bottom: calc(var(--btn-first-padding) + var(--btn-first-padding));
+    left: calc(var(--btn-first-padding) + var(--btn-second-padding));
+    z-index: -1;
+
+    @include md {
+      right: calc(var(--btn-second-padding) * 2);
+      left: calc(var(--btn-second-padding) * 2);
+    }
   }
 
   &:disabled {
@@ -91,79 +90,213 @@
   }
 
   &--accent {
-    --btn-background: var(--accent);
 
+    .offer__body-link:hover &,
     &:hover {
       --btn-background: var(--black);
+      --btn-border-color: var(--black);
+    }
+
+    &.btn--icon {
+      --btn-border-color: var(--accent-30);
+
+      &::after {
+        border-color: var(--white-o-50);
+      }
     }
   }
 
   &--white {
-    --btn-color: var(--accent);
+    --btn-color: var(--black);
     --btn-background: var(--white);
+    --btn-border-color: var(--black-10);
+
+    &::after {
+      border-color: var(--black-30);
+    }
 
     &:hover {
       --btn-color: var(--white);
       --btn-background: var(--gray);
+      --btn-border-color: var(--gray);
+
+      &::after {
+        border-color: var(--white-30);
+      }
+    }
+
+    &.btn--icon {
+      --btn-color: var(--black);
+      --btn-border-color: var(--gray-30);
+
+      &::after {
+        border-color: var(--gray-10);
+      }
+
+      &:hover {
+
+        --btn-color: var(--white);
+        --btn-background: var(--accent);
+        --btn-border-color: var(--accent);
+
+        &::after {
+          border-color: var(--white-o-50);
+        }
+      }
+    }
+  }
+
+  &--white-gray {
+    --btn-color: var(--accent);
+    --btn-background: var(--white-gray);
+    --btn-border-color: var(--black-10);
+
+    &::after {
+      border-color: var(--black-30);
+    }
+
+    .entert__item:hover &,
+    .events__other-item:hover &,
+    &:hover {
+      --btn-color: var(--white);
+      --btn-background: var(--gray);
+      --btn-border-color: var(--gray);
+
+      &::after {
+        border-color: var(--white-30);
+      }
+    }
+
+    &.btn--icon {
+      --btn-color: var(--black);
+      --btn-border-color: var(--gray-30);
+
+      &::after {
+        border-color: var(--gray-10);
+      }
+
+      &:hover {
+
+        --btn-color: var(--white);
+        --btn-background: var(--accent);
+        --btn-border-color: var(--accent);
+
+        &::after {
+          border-color: var(--white-o-50);
+        }
+      }
+    }
+  }
+
+  &--white-alt {
+    --btn-color: var(--black);
+    --btn-background: var(--white);
+    --btn-border-color: var(--white);
+
+    &::after {
+      border-color: var(--accent-50);
+    }
+
+    &:hover {
+      --btn-color: var(--white);
+      --btn-background: var(--black);
+
+      &::after {
+        border-color: var(--gray-50);
+      }
     }
   }
 
   &--black {
     --btn-background: var(--black);
-
-    border-color: var(--black-50);
+    --btn-border-color: var(--black);
 
     &:hover {
       --btn-background: var(--accent);
+      --btn-border-color: var(--accent);
     }
   }
 
   &--gray {
     --btn-color: var(--black);
-    --btn-background: var(--white-gray);
-
-    &:hover {
-      --btn-color: var(--white);
-      --btn-background: var(--accent);
-    }
-  }
-
-  &--outline {
-    --btn-color: var(--black);
     --btn-background: var(--gray-light);
+    --btn-border-color: var(--black-10);
+
+    &::after {
+      opacity: 0.5;
+      border-color: var(--black-30);
+    }
 
     &:hover {
       --btn-color: var(--white);
       --btn-background: var(--gray);
+      --btn-border-color: var(--gray);
     }
   }
 
+  // &--outline {
+  //   --btn-color: var(--black);
+  //   --btn-background: var(--gray-light);
+
+  //   &:hover {
+  //     --btn-color: var(--white);
+  //     --btn-background: var(--gray);
+  //   }
+  // }
+
   &--blur {
+    --btn-color: var(--white);
     --btn-background: rgba(255, 255, 255, 0.24);
+    --btn-border-color: var(--white-30);
 
-    backdrop-filter: blur(7.8px);
 
-    &:hover {
-      --btn-background: var(--accent);
+    &::before {
+      backdrop-filter: blur(7.8px);
+    }
+
+    &::after {
+      border-color: var(--white-o-50);
     }
   }
 
   &--icon {
     --btn-width: var(--btn-height);
-    --btn-height: 5rem;
     --btn-border-radius: 50%;
 
+    &::before {
+
+      @include md {
+        right: var(--btn-first-padding);
+        left: var(--btn-first-padding);
+      }
+    }
+
+    &::after {
+      right: calc(var(--btn-first-padding) * 2);
+      left: calc(var(--btn-first-padding) * 2);
+
+      @include md {
+        right: calc(var(--btn-first-padding) * 2);
+        left: calc(var(--btn-first-padding) * 2);
+      }
+    }
+
     &:hover {
+      --btn-border-color: var(--black-50);
 
-      .pulse::before {
-        animation: pulse-round 3s linear infinite;
-        animation-delay: 0s;
+      &::after {
+        border-color: var(--gray);
       }
 
-      .pulse::after {
-        animation: pulse-round 3s linear infinite;
-        animation-delay: 1.5s;
-      }
+      // .pulse::before {
+      //   animation: pulse-round 3s linear infinite;
+      //   animation-delay: 0s;
+      // }
+
+      // .pulse::after {
+      //   animation: pulse-round 3s linear infinite;
+      //   animation-delay: 1.5s;
+      // }
     }
   }
 }
@@ -321,39 +454,5 @@
         --font-size: 5rem;
       }
     }
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scaleX(1) scaleY(1);
-    opacity: 0.1;
-  }
-
-  50% {
-    transform: scaleX(1.1) scaleY(1.3);
-    opacity: .4;
-  }
-
-  100% {
-    transform: scaleX(1.2) scaleY(1.4);
-    opacity: 0;
-  }
-}
-
-@keyframes pulse-round {
-  0% {
-    transform: scale(1);
-    opacity: 0.1;
-  }
-
-  50% {
-    transform: scale(1.2);
-    opacity: .4;
-  }
-
-  100% {
-    transform: scale(1.4);
-    opacity: 0;
   }
 }

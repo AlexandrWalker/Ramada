@@ -1,3 +1,32 @@
 @use './../mixins' as *;
 
-.plate {}
+.plate {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+
+  transform: translateX(100%);
+  transition: transform 0.5s linear;
+  transition-delay: 0.3s;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 56.5rem;
+    width: 100%;
+    height: fit-content;
+    padding: 3rem 7.5rem 3rem 2.5rem;
+    background-color: var(--accent);
+  }
+
+  &__text {
+    color: var(--white);
+
+    a {
+      font-weight: 700;
+      text-decoration: underline;
+    }
+  }
+}

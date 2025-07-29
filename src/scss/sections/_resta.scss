@@ -27,6 +27,9 @@
     z-index: 1;
     transform: translate(-50%, -50%);
 
+    /* Для анимации fadeIn */
+    overflow: hidden;
+
     text-transform: uppercase;
     color: var(--white);
 

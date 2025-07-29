@@ -3,6 +3,22 @@
 .burger-btn {
 
   @include md {}
+
+  &::before {
+
+    @include sm {
+      right: var(--btn-first-padding);
+      left: var(--btn-first-padding);
+    }
+  }
+
+  &::after {
+
+    @include sm {
+      right: calc(var(--btn-first-padding) * 2);
+      left: calc(var(--btn-first-padding) * 2);
+    }
+  }
 }
 
 // .burger-icon {
@@ -75,30 +91,65 @@
   transition: all 0.3s ease;
 
   @include md {
+    --burger-close-width: 5rem;
     --burger-close-color: var(--black);
+
+    width: var(--burger-close-width);
+
+    &:hover {
+      border-color: var(--accent);
+
+      &::after {
+        border-color: var(--white-o-50);
+      }
+    }
   }
 
   @include sm {
     display: flex;
-    width: 4.4rem;
-    height: 4.4rem;
-
     position: relative;
   }
 
-  &:hover {
-    // --burger-close-color: var(--accent);
-  }
-
-  i {
-    --font-size: 4.4rem;
-
-    display: none;
+  &::before {
 
     @include sm {
+      right: var(--btn-first-padding);
+      left: var(--btn-first-padding);
+    }
+  }
+
+  &::after {
+
+    @include sm {
+      right: calc(var(--btn-first-padding) * 2);
+      left: calc(var(--btn-first-padding) * 2);
+    }
+  }
+
+  .icon-close {
+    --font-size: 9rem;
+
+    font-weight: 900;
+    color: var(--white);
+
+    @include md {
+      --font-size: 5rem;
+
+      font-weight: 400;
       display: flex;
       width: var(--font-size);
       height: var(--font-size);
+    }
+
+    @include sm {
+      display: none;
+    }
+  }
+
+  .icon-burger {
+
+    @include sm {
+      display: flex;
     }
   }
 

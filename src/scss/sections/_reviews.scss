@@ -40,6 +40,9 @@
     &-title {
       text-transform: uppercase;
 
+      /* Для анимации fadeIn */
+      overflow: hidden;
+
       h4 {
 
         @include md {

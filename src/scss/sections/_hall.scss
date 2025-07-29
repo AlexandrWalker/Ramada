@@ -71,6 +71,10 @@
     position: sticky;
     top: calc(var(--header-height) + 3rem);
     top: 200px;
+
+    @include sm {
+      top: 100px;
+    }
   }
 
   &__items {
@@ -100,6 +104,8 @@
     @include sm {
       padding: 2rem 2rem 3rem;
       gap: 2rem;
+
+      top: 100px;
     }
 
     .over {

@@ -2,10 +2,28 @@
 
 .footer {
   background-color: var(--white);
-  border-top: 0.1rem solid var(--gray-30);
 
   position: relative;
   overflow: hidden;
+
+  &::before {
+    content: "";
+    width: 0;
+    height: 0.1rem;
+    background-color: var(--gray-30);
+    transition: all 3s linear;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &.animatedClass {
+
+    &::before {
+      width: 100%;
+    }
+  }
 
   .component {
     transform: unset;

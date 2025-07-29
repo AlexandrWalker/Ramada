@@ -16,6 +16,7 @@
     background: var(--gray);
     opacity: 1;
     transition: all 0.3s ease;
+    flex-shrink: 0;
 
     &-active {
       width: 0.6rem;

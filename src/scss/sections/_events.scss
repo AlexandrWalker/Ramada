@@ -72,7 +72,7 @@
       flex-direction: column;
 
       font-family: var(--second-family);
-      font-weight: 400;
+      font-weight: 350;
       font-size: 5rem;
       line-height: 90%;
       text-transform: uppercase;
@@ -291,7 +291,7 @@
       border: 0.1rem solid transparent;
       transition: all 0.3s ease;
 
-      font-weight: 400;
+      font-weight: 350;
       font-size: 1.6rem;
       line-height: 100%;
       text-align: center;
@@ -327,7 +327,7 @@
         border-color: var(--accent);
 
         &:hover {
-          font-weight: 400;
+          font-weight: 350;
           border-color: var(--black);
         }
       }
@@ -338,7 +338,7 @@
         border-color: var(--accent);
 
         @include xxl {
-          font-weight: 400;
+          font-weight: 350;
           border-color: transparent;
         }
 
@@ -429,8 +429,9 @@
     }
 
     &-item {
+      display: block;
       border: 0.1rem solid var(--gray-50);
-      transition: all 0.5s ease;
+      transition: all 0.3s ease;
 
       position: relative;
 
@@ -448,7 +449,7 @@
       padding: 8rem 3rem 6rem;
       background-color: var(--white);
       border: 2rem solid var(--white-gray);
-      transition: all 0.5s ease;
+      transition: all 0.3s ease;
 
       position: relative;
       z-index: 2;
@@ -472,7 +473,7 @@
     &-suptitle {
       text-transform: uppercase;
       margin-bottom: 8rem;
-      transition: all 0.5s ease;
+      transition: all 0.3s ease;
 
       @include md {
         margin-bottom: 5rem;
@@ -486,7 +487,7 @@
       border-bottom: 0.1rem solid var(--accent);
       padding: 3rem 0;
       margin-bottom: 6rem;
-      transition: all 0.5s ease;
+      transition: all 0.3s ease;
 
       @include md {
         padding: 2rem 0;
@@ -508,7 +509,7 @@
       height: 100%;
       opacity: 0;
       pointer-events: none;
-      transition: all 0.5s ease;
+      transition: all 0.3s ease;
 
       position: absolute;
       top: 0;

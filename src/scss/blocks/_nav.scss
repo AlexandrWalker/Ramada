@@ -29,15 +29,18 @@
     align-items: center;
     gap: 6rem;
 
-    @include xxl {
-      // gap: 4rem;
-    }
-
     @include md {
       justify-content: flex-start;
       gap: 2rem;
       width: fit-content;
       padding: 0 var(--container-padding);
+    }
+  }
+
+  li {
+
+    i {
+      --font-size: 1.4rem;
     }
   }
 
@@ -55,13 +58,15 @@
     color: var(--accent);
     white-space: nowrap;
 
+    @include md {
+      padding: 1.6rem 0;
+      height: fit-content;
+
+      font-size: 1.2rem;
+    }
+
     &:hover {
       color: var(--black);
     }
-
-    // @include xxl {
-    //   font-size: 1.2rem;
-    //   padding: 1.35rem 0 1.25rem;
-    // }
   }
 }

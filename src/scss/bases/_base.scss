@@ -70,17 +70,3 @@ img {
   height: 100%;
   object-fit: cover;
 }
-
-[data-animation="parallax-img"] {
-
-  img {
-    width: auto;
-    height: 120% !important;
-    margin-top: -10%;
-
-    @include md {
-      height: 100% !important;
-      margin-top: unset;
-    }
-  }
-}

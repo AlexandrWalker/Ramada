@@ -13,10 +13,6 @@
     padding: 2.8rem 0 2.7rem;
     border-bottom: 0.1rem solid var(--accent);
 
-    @include xxl {
-      // padding: 2rem 0;
-    }
-
     @include md {
       padding: 1.5rem 0;
     }
@@ -66,10 +62,6 @@
     width: 9.5rem;
     height: fit-content;
     flex-shrink: 0;
-
-    @include xxl {
-      // width: 9.85rem;
-    }
 
     @include md {
       width: 5rem;
@@ -159,22 +151,25 @@
     }
 
     &-btn {
-      display: flex;
+      --btn-padding-y: 1.8rem;
+
       flex-direction: column;
+      padding: var(--btn-padding-y) var(--btn-padding-x);
 
       position: absolute;
       top: 0;
       right: 0;
       left: 0;
 
+      // transition: all 0.3s ease, height 0s, padding 0s;
       transition: all 0.3s ease, height 0s, padding 0s;
 
       &:hover {
-        --btn-padding-y: 1.8rem;
         --btn-border-radius: calc(var(--btn-height) / 2);
 
         height: fit-content;
-        border-radius: calc(var(--btn-height) / 2);
+        padding: 1.8rem 0;
+        border-radius: var(--btn-border-radius);
 
         ul {
           visibility: visible;

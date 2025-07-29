@@ -19,11 +19,13 @@
   --white-gray-second: #FAFAFA;
 
   --black: #1A1919;
+  --black-10: rgba(26, 25, 25, 0.1);
   --black-30: rgba(26, 25, 25, 0.3);
   --black-50: rgba(26, 25, 25, 0.5);
 
   --gray: #636463;
   --gray-005: rgba(99, 100, 99, 0.05);
+  --gray-10: rgba(99, 100, 99, 0.1);
   --gray-20: rgba(99, 100, 99, 0.2);
   --gray-30: rgba(99, 100, 99, 0.3);
   --gray-50: rgba(99, 100, 99, 0.5);
@@ -32,11 +34,12 @@
 
   --accent: #C40D3C;
   --accent-30: rgba(196, 13, 60, 0.3);
+  --accent-50: rgba(196, 13, 60, 0.5);
 
   @include md {
     --container-padding: 8rem;
     --container-width: 67.4rem;
-    --header-height: 13.9rem;
+    --header-height: 12.8rem;
   }
 
   @include xmd {

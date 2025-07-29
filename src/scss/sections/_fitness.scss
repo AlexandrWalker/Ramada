@@ -1,6 +1,7 @@
 @use './../mixins' as *;
 
 .fitness {
+  margin-bottom: 0;
 
   &__inner {
     display: flex;
@@ -27,10 +28,15 @@
       transform: none;
     }
 
-    h1 {
+    &-title {
+      /* Для анимации fadeIn */
+      overflow: hidden;
 
-      @include md {
-        font-size: 3rem;
+      h2 {
+
+        @include md {
+          font-size: 3rem;
+        }
       }
     }
   }

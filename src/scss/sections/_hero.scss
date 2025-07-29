@@ -76,6 +76,9 @@
   }
 
   &__title {
+    /* Для анимации fadeIn */
+    overflow: hidden;
+
     position: relative;
 
     @include sm {
@@ -115,6 +118,9 @@
 
       span {
         color: var(--color);
+
+        /* Для анимации fadeIn */
+        overflow: hidden;
 
         @include md {
           color: var(--accent);
@@ -237,56 +243,6 @@
       position: relative;
       left: unset;
       bottom: unset;
-    }
-  }
-}
-
-.component {
-  width: 207.2rem;
-  height: 207.4rem;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-
-  &--one {
-    stroke: var(--black);
-    stroke-dasharray: 6000;
-    stroke-dashoffset: 6000;
-    animation: one 6s linear forwards;
-  }
-
-  &--two {
-    stroke: var(--black);
-    stroke-dasharray: 6000;
-    stroke-dashoffset: 6000;
-    animation: two 6s linear forwards;
-  }
-
-  &--three {
-    stroke: var(--black);
-    stroke-dasharray: 6000;
-    stroke-dashoffset: 6000;
-    animation: three 6s linear forwards;
-  }
-
-  @keyframes one {
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
-
-  @keyframes two {
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
-
-  @keyframes three {
-    100% {
-      stroke-dashoffset: 0;
     }
   }
 }
