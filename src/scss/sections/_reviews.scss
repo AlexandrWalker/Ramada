@@ -69,6 +69,22 @@
     @include md {
       margin-bottom: 3rem;
     }
+
+    &--slider {
+      
+      @include sm {
+        width: calc(100% + var(--container-padding) + var(--container-padding));
+        padding: 0 var(--container-padding);
+        margin-left: calc(var(--container-padding) * -1);
+      }
+    }
+  }
+
+  &__slide {
+    
+    @include sm {
+      max-width: 17.2rem;
+    }
   }
 
   &__item {
@@ -252,6 +268,36 @@
 
         @include sm {
           font-size: 1.2rem;
+        }
+      }
+    }
+
+    &-btn {}
+
+    .link {
+
+      @include sm {
+        gap: 0.3rem;
+        
+        color: var(--accent);
+      }
+
+      i {
+
+        @include sm {
+          --font-size: 1.2rem;
+
+          background-color: var(--accent);
+
+          font-size: 1.2rem;
+          color: var(--white);
+        }
+      }
+
+      p {
+       
+        @include sm {
+          font-size: 1rem;
         }
       }
     }

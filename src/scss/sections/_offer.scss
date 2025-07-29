@@ -96,6 +96,13 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+
+      @include md {
+        --btn-width: 5rem;
+        --btn-height: 5rem;
+        --btn-first-padding: 0.268rem;
+        --btn-second-padding: 0.268rem;
+      }
     }
   }
 

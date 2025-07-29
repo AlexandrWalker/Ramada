@@ -19,6 +19,11 @@
     height: fit-content;
     padding: 3rem 7.5rem 3rem 2.5rem;
     background-color: var(--accent);
+
+    @include md {
+      gap: 1.5rem;
+      padding: 1.5rem 3rem 1.5rem 2rem;
+    }
   }
 
   &__text {
@@ -27,6 +32,37 @@
     a {
       font-weight: 700;
       text-decoration: underline;
+    }
+  }
+
+  .btn {
+
+    @include md {
+      --btn-height: 3rem;
+      --btn-first-padding: 0.2rem;
+      --btn-second-padding: 0.1rem;
+
+      font-size: 1rem;
+    }
+
+    &::before {
+
+      @include md {
+        top: var(--btn-first-padding);
+        right: var(--btn-first-padding);
+        bottom: var(--btn-first-padding);
+        left: var(--btn-first-padding);
+      }
+    }
+
+    &::after {
+
+      @include md {
+        top: calc(var(--btn-first-padding) + var(--btn-second-padding));
+        right: calc(var(--btn-first-padding) + var(--btn-second-padding));
+        bottom: calc(var(--btn-first-padding) + var(--btn-second-padding));
+        left: calc(var(--btn-first-padding) + var(--btn-second-padding));
+      }
     }
   }
 }

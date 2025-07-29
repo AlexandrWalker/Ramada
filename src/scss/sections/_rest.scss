@@ -90,10 +90,17 @@
   .general__head-title {
 
     h3 {
-      
+
       @include sm {
         font-size: 3.5rem;
       }
+    }
+  }
+
+  .general__head-text {
+
+    @include sm {
+      color: var(--white);
     }
   }
 

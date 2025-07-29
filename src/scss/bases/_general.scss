@@ -150,6 +150,10 @@
     gap: 0.5rem;
   }
 
+  &:hover {
+    color: var(--accent);
+  }
+
   i {
     display: flex;
     justify-content: center;
