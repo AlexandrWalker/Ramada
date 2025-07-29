@@ -9,6 +9,10 @@
     --diversity-head-width: 28.6rem;
   }
 
+  @include sm {
+    position: relative;
+  }
+
   &__inner {
     display: flex;
     flex-direction: row;

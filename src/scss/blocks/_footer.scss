@@ -284,6 +284,10 @@
           width: 0.4rem;
           height: 0.4rem;
           background-color: var(--gray);
+
+          @include md {
+            top: 0.6rem;
+          }
         }
       }
     }

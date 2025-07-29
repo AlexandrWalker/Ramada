@@ -87,24 +87,8 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
   font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
-  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
-  font-weight: 500;
   font-style: normal;
 }
 
@@ -119,8 +103,24 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
+  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
   src: url("../fonts/Gotham-Thin.woff2") format("woff2"), url("../fonts/Gotham-Thin.woff") format("woff");
   font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -159,14 +159,6 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Regular.woff2") format("woff2"), url("../fonts/TTTricks-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: TTTricks;
-  font-display: swap;
   src: url("../fonts/TTTricks-ExtraBold.woff2") format("woff2"), url("../fonts/TTTricks-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -177,6 +169,14 @@ img {
   font-display: swap;
   src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
   font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TTTricks;
+  font-display: swap;
+  src: url("../fonts/TTTricks-Regular.woff2") format("woff2"), url("../fonts/TTTricks-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -343,11 +343,26 @@ img {
   right: 0;
 }
 
+.leaf--4 {
+  display: none;
+  height: 39.1rem;
+  bottom: -1.5rem;
+  left: 0;
+}
+
+.leaf--5 {
+  display: none;
+  height: 22.1rem;
+  top: 30.5rem;
+  right: calc(var(--container-padding) * -1);
+  z-index: 1;
+}
+
 .leaf img {
   height: 100%;
 }
 
-/* Стил для параллакс картинок */
+/* Стиль для параллакс картинок */
 
 [data-animation=parallax-img] img {
   width: auto;
@@ -355,6 +370,8 @@ img {
   height: 120% !important;
   margin-top: -10%;
 }
+
+/* Стиль для зарисовки компонента */
 
 .component {
   width: 207.2rem;
@@ -2422,12 +2439,12 @@ h6 span {
 }
 
 .menu__foot-icon {
-  --icon-width: 2.68rem;
-  --icon-height: 2.68rem;
-  --icon-margin: 0.16rem;
-  --icon-color: var(--white);
-  --icon-border-radius: 50%;
-  --icon-background: var(--accent);
+  --menu-icon-width: 3rem;
+  --menu-icon-height: 3rem;
+  --menu-icon-padding: 0.16rem;
+  --menu-icon-color: var(--white);
+  --menu-icon-background: var(--accent);
+  --menu-icon-border-color: var(--accent-30);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2439,53 +2456,53 @@ h6 span {
   align-items: center;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  width: var(--icon-width);
-  height: var(--icon-height);
-  margin: var(--icon-margin);
-  background: var(--icon-background);
-  border-radius: var(--icon-border-radius);
-  text-align: center;
-  color: var(--icon-color);
+  width: var(--menu-icon-width);
+  height: var(--menu-icon-height);
+  border-radius: 50%;
+  border: 0.05rem solid var(--menu-icon-border-color);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  text-align: center;
+  color: var(--menu-icon-color);
   position: relative;
-}
-
-.menu__foot-icon i {
-  --font-size: var(--icon-height);
-}
-
-.menu__foot-icon--geo i {
-  font-size: calc(var(--icon-height) / 1.7);
 }
 
 .menu__foot-icon::before {
   content: "";
-  border: 0.05rem solid var(--icon-background);
-  border-radius: var(--icon-border-radius);
-  position: absolute;
-  top: calc(var(--icon-margin) * -1);
-  right: calc(var(--icon-margin) * -1);
-  bottom: calc(var(--icon-margin) * -1);
-  left: calc(var(--icon-margin) * -1);
-  z-index: -1;
+  background: var(--menu-icon-background);
+  border-radius: 50%;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   pointer-events: none;
+  position: absolute;
+  top: var(--menu-icon-padding);
+  right: var(--menu-icon-padding);
+  bottom: var(--menu-icon-padding);
+  left: var(--menu-icon-padding);
+  z-index: -1;
 }
 
 .menu__foot-icon::after {
   content: "";
+  border-radius: 50%;
   border: 0.1rem solid var(--white-50);
-  border-radius: var(--icon-border-radius);
-  position: absolute;
-  top: var(--icon-margin);
-  right: var(--icon-margin);
-  bottom: var(--icon-margin);
-  left: var(--icon-margin);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   pointer-events: none;
+  position: absolute;
+  top: calc(var(--menu-icon-padding) * 2);
+  right: calc(var(--menu-icon-padding) * 2);
+  bottom: calc(var(--menu-icon-padding) * 2);
+  left: calc(var(--menu-icon-padding) * 2);
+}
+
+.menu__foot-icon i {
+  --font-size: 2.4rem;
+}
+
+.menu__foot-icon--geo i {
+  --font-size: 1.4rem;
+  margin-top: -0.2rem;
 }
 
 .menu__foot-social {
@@ -3355,6 +3372,7 @@ h6 span {
   align-items: center;
   gap: 9rem;
   width: 25%;
+  height: calc(100dvh - var(--header-height));
   padding: 29rem 5rem 17rem;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
@@ -3678,6 +3696,7 @@ h6 span {
   --offer-padding-top: 5rem;
   --offer-padding-bottom: 5rem;
   --offer-padding-left: 13rem;
+  position: relative;
 }
 
 .offer__inner {
@@ -3705,7 +3724,7 @@ h6 span {
 }
 
 .offer__body--slider {
-  overflow: visible;
+  overflow: hidden;
 }
 
 .offer__body-item {
@@ -4232,13 +4251,16 @@ h6 span {
     gap: 0.5rem;
   }
 
-  .leaf {
+  .leaf--1 {
     display: none;
   }
 
-  [data-animation=parallax-img] img {
-    height: 100% !important;
-    margin-top: unset;
+  .leaf--3 {
+    display: none;
+  }
+
+  .leaf--4 {
+    display: block;
   }
 
   [class^=swiper-button-],
@@ -4494,6 +4516,10 @@ h6 span {
 
   .footer__item-list li::before {
     display: block;
+  }
+
+  .footer__item-list li::before {
+    top: 0.6rem;
   }
 
   .footer__foot {
@@ -4982,6 +5008,7 @@ h6 span {
   .fitness__item {
     gap: 1rem;
     width: 100%;
+    height: auto;
     padding: 5rem 0 6rem;
   }
 
@@ -5070,6 +5097,12 @@ h6 span {
   .offer__inner {
     grid-template-columns: 54.15% 42.88%;
     gap: 2rem;
+  }
+
+  .offer__body {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
 
   .offer__body .btn {
@@ -5259,6 +5292,32 @@ h6 span {
 @media (max-width: 600px) {
   .general__head-title {
     margin-bottom: 2rem;
+  }
+
+  .leaf--1 {
+    display: block;
+    height: 21.5rem;
+    top: -7.6rem;
+    right: 0;
+    left: unset;
+  }
+
+  .leaf--1 img {
+    -webkit-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+  }
+
+  .leaf--2 {
+    display: none;
+  }
+
+  .leaf--4 {
+    display: none;
+  }
+
+  .leaf--5 {
+    display: block;
   }
 
   :root {
@@ -5514,6 +5573,10 @@ h6 span {
 
   .nav {
     display: none;
+  }
+
+  .diversity {
+    position: relative;
   }
 
   .diversity__inner {

@@ -5,6 +5,8 @@
   --offer-padding-bottom: 5rem;
   --offer-padding-left: 13rem;
 
+  position: relative;
+
   @include md {
     --offer-padding-top: 0;
     --offer-padding-bottom: 0;
@@ -58,12 +60,16 @@
 
     position: relative;
 
+    @include md {
+      height: fit-content;
+    }
+
     @include sm {
       grid-row: 2/3;
     }
 
     &--slider {
-      overflow: visible;
+      overflow: hidden;
     }
 
     &-item {

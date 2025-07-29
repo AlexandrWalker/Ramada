@@ -635,71 +635,69 @@
     }
 
     &-icon {
-      --icon-width: 2.68rem;
-      --icon-height: 2.68rem;
-      --icon-margin: 0.16rem;
-      --icon-color: var(--white);
-      --icon-border-radius: 50%;
-      --icon-background: var(--accent);
+      --menu-icon-width: 3rem;
+      --menu-icon-height: 3rem;
+      --menu-icon-padding: 0.16rem;
+      --menu-icon-color: var(--white);
+      --menu-icon-background: var(--accent);
+      --menu-icon-border-color: var(--accent-30);
 
       display: flex;
       justify-content: center;
       align-items: center;
       flex-shrink: 0;
-
-      width: var(--icon-width);
-      height: var(--icon-height);
-      margin: var(--icon-margin);
-
-      background: var(--icon-background);
-      border-radius: var(--icon-border-radius);
+      width: var(--menu-icon-width);
+      height: var(--menu-icon-height);
+      border-radius: 50%;
+      border: 0.05rem solid var(--menu-icon-border-color);
+      transition: all 0.3s ease;
 
       text-align: center;
-      color: var(--icon-color);
+      color: var(--menu-icon-color);
 
-      transition: all 0.3s ease;
       position: relative;
 
+      &::before {
+        content: "";
+        background: var(--menu-icon-background);
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        pointer-events: none;
+
+        position: absolute;
+        top: var(--menu-icon-padding);
+        right: var(--menu-icon-padding);
+        bottom: var(--menu-icon-padding);
+        left: var(--menu-icon-padding);
+        z-index: -1;
+      }
+
+      &::after {
+        content: "";
+        border-radius: 50%;
+        border: 0.1rem solid var(--white-50);
+        transition: all 0.3s ease;
+        pointer-events: none;
+
+        position: absolute;
+        top: calc(var(--menu-icon-padding) * 2);
+        right: calc(var(--menu-icon-padding) * 2);
+        bottom: calc(var(--menu-icon-padding) * 2);
+        left: calc(var(--menu-icon-padding) * 2);
+      }
+
       i {
-        --font-size: var(--icon-height);
+        // --font-size: var(--menu-icon-height);
+        --font-size: 2.4rem;
       }
 
       &--geo {
 
         i {
-          font-size: calc(var(--icon-height) / 1.7);
+          --font-size: 1.4rem;
+
+          margin-top: -0.2rem;
         }
-      }
-
-      &::before {
-        content: "";
-        border: 0.05rem solid var(--icon-background);
-        border-radius: var(--icon-border-radius);
-
-        position: absolute;
-        top: calc(var(--icon-margin) * -1);
-        right: calc(var(--icon-margin) * -1);
-        bottom: calc(var(--icon-margin) * -1);
-        left: calc(var(--icon-margin) * -1);
-        z-index: -1;
-
-        transition: all 0.3s ease;
-        pointer-events: none;
-      }
-
-      &::after {
-        content: "";
-        border: 0.1rem solid var(--white-50);
-        border-radius: var(--icon-border-radius);
-
-        position: absolute;
-        top: var(--icon-margin);
-        right: var(--icon-margin);
-        bottom: var(--icon-margin);
-        left: var(--icon-margin);
-
-        transition: all 0.3s ease;
-        pointer-events: none;
       }
     }
 
