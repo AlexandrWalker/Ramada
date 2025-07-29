@@ -27,6 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeEffect: {
       crossFade: true
     },
+    // grabCursor: true,
+    // effect: "creative",
+    // creativeEffect: {
+    //   prev: {
+    //     shadow: true,
+    //     translate: ["-20%", 0, -1],
+    //   },
+    //   next: {
+    //     translate: ["100%", 0, 0],
+    //   },
+    // },
     mousewheel: {
       forceToAxis: true,
     },
@@ -792,243 +803,270 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
-
   $(window).on('resize load', function () {
-    if (window.innerWidth > '834' && window.innerWidth != '834') {
-      const parallaxItem = document.querySelector('[data-animation="parallax-img"]');
-      if (parallaxItem) {
-        const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
-        parallaxImgContainers.forEach(parallaxImgContainer => {
-          const image = parallaxImgContainer.querySelector('img');
-          gsap.fromTo(image,
-            { y: '-10%' },
-            {
-              y: '10%',
-              scrollTrigger: {
-                trigger: parallaxImgContainer,
-                start: 'top 90%',
-                end: 'bottom top',
-                scrub: true,
-              },
-            }
-          );
-        });
-      }
+    // if (window.innerWidth > '834' && window.innerWidth != '834') {
 
-      const parallaxBlock = document.querySelector('[data-animation="parallax-block"]');
-      if (parallaxBlock) {
-        const parallaxImgBlocks = document.querySelectorAll('[data-animation="parallax-block"]');
-        parallaxImgBlocks.forEach(parallaxImgBlock => {
-          gsap.fromTo(parallaxImgBlock,
-            { y: '-8%' },
-            {
-              y: '8%',
-              scrollTrigger: {
-                trigger: parallaxImgBlock,
-                start: 'top 90%',
-                end: 'bottom top',
-                scrub: true,
-              },
-            }
-          );
-        });
-      }
-
-      const parallaxImgBoxes = document.querySelectorAll('[data-animation="parallax-box"]');
-      if (parallaxImgBoxes != 0) {
-        parallaxImgBoxes.forEach(parallaxImgBox => {
-
-          if (parallaxImgBox.classList.contains('leaf--2')) {
-            gsap.fromTo(parallaxImgBox,
-              { y: '15%' },
-              {
-                y: '60%',
-                scrollTrigger: {
-                  trigger: parallaxImgBox,
-                  start: 'top 90%',
-                  end: 'bottom top',
-                  scrub: true,
-                },
-              }
-            );
-          } else {
-            gsap.fromTo(parallaxImgBox,
-              { y: '20%' },
-              {
-                y: '-35%',
-                scrollTrigger: {
-                  trigger: parallaxImgBox,
-                  start: 'top 90%',
-                  end: 'bottom top',
-                  scrub: true,
-                },
-              }
-            );
+    const parallaxItem = document.querySelector('[data-animation="parallax-img"]');
+    if (parallaxItem) {
+      const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
+      parallaxImgContainers.forEach(parallaxImgContainer => {
+        const image = parallaxImgContainer.querySelector('img');
+        gsap.fromTo(image,
+          { y: '-10%' },
+          {
+            y: '10%',
+            scrollTrigger: {
+              trigger: parallaxImgContainer,
+              start: 'top 90%',
+              end: 'bottom top',
+              scrub: true,
+            },
           }
-
-        });
-      }
-
-      /**
-       * Разбиение текста по буквам
-       */
-      const titleChars = document.querySelectorAll('[data-splitting="chars"]');
-      titleChars.forEach(titleChar => {
-        const char = new SplitType(titleChar, { types: 'words, chars' });
+        );
       });
-      /**
-       * Разбиение текста по словам
-       */
-      const titleWords = document.querySelectorAll('[data-splitting="words"]');
-      titleWords.forEach(titleWord => {
-        const word1 = new SplitType(titleWord.querySelector('h1'), { types: 'words, words' });
-        const word2 = new SplitType(titleWord.querySelector('h2'), { types: 'words, words' });
-        const word3 = new SplitType(titleWord.querySelector('h3'), { types: 'words, words' });
-        const word4 = new SplitType(titleWord.querySelector('h4'), { types: 'words, words' });
-        const word5 = new SplitType(titleWord.querySelector('h5'), { types: 'words, words' });
-      });
-      /**
-       * Разбиение текста по строкам
-       */
-      const titleLines = document.querySelectorAll('[data-splitting="lines"]');
-      titleLines.forEach(titleLine => {
-        const line = new SplitType(titleLine, { types: 'words, lines' });
-      });
-
-      /**
-       * Анимация главного блока
-       */
-      const hero = document.getElementById("hero");
-      if (hero) {
-
-      }
-
-      const revealItems = document.querySelectorAll('[data-transform="reveal"]');
-      revealItems.forEach(revealItem => {
-        const revealItemTags = revealItem.querySelector("h1");
-        const word = revealItemTags.querySelectorAll("div.word");
-        const tl = gsap.timeline({
-          paused: true
-        });
-        tl.from(word, {
-          opacity: 0,
-          y: "100",
-          duration: .5,
-          ease: "ease",
-          stagger: {
-            amount: .3
-          }
-        });
-        scrollTriggerPlayer(revealItem, tl)
-      });
-
-      const revealRotateItems = document.querySelectorAll('[data-transform="revealRotate"]');
-      revealRotateItems.forEach(revealRotateItem => {
-        const word = revealRotateItem.querySelectorAll("div.word");
-        const tl = gsap.timeline({
-          paused: true
-        });
-        tl.from(word, {
-          opacity: 0,
-          y: "100",
-          rotationZ: 15,
-          duration: .5,
-          ease: "ease",
-          stagger: {
-            amount: .4
-          }
-        });
-        scrollTriggerPlayer(revealRotateItem, tl)
-      });
-
-      const fadeInItems = document.querySelectorAll('[data-transform="fadeIn"]');
-      fadeInItems.forEach(fadeInItem => {
-        const chars = fadeInItem.querySelectorAll("div.char");
-        const tl = gsap.timeline({
-          paused: true
-        });
-        tl.from(chars, {
-          opacity: 0,
-          duration: .3,
-          ease: "power1.out",
-          stagger: {
-            amount: .3
-          }
-        });
-        scrollTriggerPlayer(fadeInItem, tl)
-      });
-
-      const fadeItems = document.querySelectorAll('[data-transform="fade"]');
-      fadeItems.forEach(fadeItem => {
-        const tl = gsap.timeline({
-          paused: true
-        });
-        tl.from(fadeItem, {
-          opacity: 0,
-          duration: .5,
-          delay: .3,
-          ease: "ease",
-          stagger: {
-            amount: .8
-          }
-        });
-        scrollTriggerPlayer(fadeItem, tl)
-      });
-
-      const footer = document.getElementById("footer");
-      gsap.from(footer, {
-        scrollTrigger: {
-          trigger: footer,
-        },
-        onStart: function () {
-          footer.classList.add('animatedClass');
-        },
-      });
-
-      // const footer = document.getElementById("footer");
-      // const tl = gsap.timeline({
-      //   paused: true
-      // });
-      // tl.from(footer, {
-      //   opacity: 0,
-      //   y: "100",
-      //   duration: .8,
-      //   ease: "power1.out",
-      //   stagger: {
-      //     amount: .5
-      //   },
-      //   onStart: function () {
-      //     revealItem.classList.add('animatedClass');
-      //   },
-      // });
-      // scrollTriggerPlayer(footer, tl)
-
-      /**
-       * 
-       * @param {Элемент от которого начинается Анимация} triggerElement 
-       * @param {*} timeline 
-       * @param {*} onEnterStart 
-       */
-      function scrollTriggerPlayer(triggerElement, timeline, onEnterStart = "top 95%") {
-        ScrollTrigger.create({
-          trigger: triggerElement,
-          start: "top bottom",
-          onLeaveBack: () => {
-            timeline.progress(1);
-            timeline.pause()
-          }
-        });
-        ScrollTrigger.create({
-          trigger: triggerElement,
-          start: onEnterStart,
-          onEnter: () => timeline.play()
-        })
-      }
-      gsap.registerPlugin(ScrollTrigger);
     }
-  });
 
+    const parallaxBlock = document.querySelector('[data-animation="parallax-block"]');
+    if (parallaxBlock) {
+      const parallaxImgBlocks = document.querySelectorAll('[data-animation="parallax-block"]');
+      parallaxImgBlocks.forEach(parallaxImgBlock => {
+        gsap.fromTo(parallaxImgBlock,
+          { y: '-8%' },
+          {
+            y: '8%',
+            scrollTrigger: {
+              trigger: parallaxImgBlock,
+              start: 'top 90%',
+              end: 'bottom top',
+              scrub: true,
+            },
+          }
+        );
+      });
+    }
+
+    const parallaxImgBoxes = document.querySelectorAll('[data-animation="parallax-box"]');
+    if (parallaxImgBoxes != 0) {
+      parallaxImgBoxes.forEach(parallaxImgBox => {
+
+        if (parallaxImgBox.classList.contains('leaf--2')) {
+          gsap.fromTo(parallaxImgBox,
+            { y: '15%' },
+            {
+              y: '60%',
+              scrollTrigger: {
+                trigger: parallaxImgBox,
+                start: 'top 90%',
+                end: 'bottom top',
+                scrub: true,
+              },
+            }
+          );
+        } else {
+          gsap.fromTo(parallaxImgBox,
+            { y: '20%' },
+            {
+              y: '-35%',
+              scrollTrigger: {
+                trigger: parallaxImgBox,
+                start: 'top 90%',
+                end: 'bottom top',
+                scrub: true,
+              },
+            }
+          );
+        }
+
+      });
+    }
+
+    /**
+     * Разбиение текста по буквам
+     */
+    const titleChars = document.querySelectorAll('[data-splitting="chars"]');
+    titleChars.forEach(titleChar => {
+      const char = new SplitType(titleChar, { types: 'words, chars' });
+    });
+    /**
+     * Разбиение текста по словам
+     */
+    const titleWords = document.querySelectorAll('[data-splitting="words"]');
+    titleWords.forEach(titleWord => {
+      const word1 = new SplitType(titleWord.querySelector('h1'), { types: 'words, words' });
+      const word2 = new SplitType(titleWord.querySelector('h2'), { types: 'words, words' });
+      const word3 = new SplitType(titleWord.querySelector('h3'), { types: 'words, words' });
+      const word4 = new SplitType(titleWord.querySelector('h4'), { types: 'words, words' });
+      const word5 = new SplitType(titleWord.querySelector('h5'), { types: 'words, words' });
+    });
+    /**
+     * Разбиение текста по строкам
+     */
+    const titleLines = document.querySelectorAll('[data-splitting="lines"]');
+    titleLines.forEach(titleLine => {
+      const line = new SplitType(titleLine, { types: 'words, lines' });
+    });
+
+    /**
+     * Анимация главного блока
+     */
+    const hero = document.getElementById("hero");
+    if (hero) {
+
+    }
+
+    const revealItems = document.querySelectorAll('[data-transform="reveal"]');
+    revealItems.forEach(revealItem => {
+      const revealItemTags = revealItem.querySelector("h1");
+      const word = revealItemTags.querySelectorAll("div.word");
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(word, {
+        opacity: 0,
+        y: "50",
+        duration: .5,
+        ease: "ease",
+        stagger: {
+          amount: .3
+        }
+      });
+      scrollTriggerPlayer(revealItem, tl)
+    });
+
+    const revealRotateItems = document.querySelectorAll('[data-transform="revealRotate"]');
+    revealRotateItems.forEach(revealRotateItem => {
+      const word = revealRotateItem.querySelectorAll("div.word");
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(word, {
+        opacity: 0,
+        y: "100",
+        rotationZ: 15,
+        duration: .5,
+        ease: "ease",
+        stagger: {
+          amount: .4
+        }
+      });
+      scrollTriggerPlayer(revealRotateItem, tl)
+    });
+
+    const fadeInItems = document.querySelectorAll('[data-transform="fadeIn"]');
+    fadeInItems.forEach(fadeInItem => {
+      const chars = fadeInItem.querySelectorAll("div.char");
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(chars, {
+        opacity: 0,
+        duration: .3,
+        ease: "power1.out",
+        stagger: {
+          amount: .3
+        }
+      });
+      scrollTriggerPlayer(fadeInItem, tl)
+    });
+
+    const fadeItems = document.querySelectorAll('[data-transform="fade"]');
+    fadeItems.forEach(fadeItem => {
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(fadeItem, {
+        opacity: 0,
+        y: "20",
+        duration: .8,
+        delay: .3,
+        ease: "ease",
+        stagger: {
+          amount: .8
+        }
+      });
+      scrollTriggerPlayer(fadeItem, tl)
+    });
+
+    const scaleItems = document.querySelectorAll('[data-transform="scale"]');
+    scaleItems.forEach(scaleItem => {
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(scaleItem, {
+        opacity: 0,
+        scale: 0.8,
+        duration: .5,
+        ease: "ease",
+        stagger: {
+          amount: .8
+        }
+      });
+      scrollTriggerPlayer(scaleItem, tl)
+    });
+
+    const footer = document.getElementById("footer");
+    gsap.from(footer, {
+      scrollTrigger: {
+        trigger: footer,
+      },
+      onStart: function () {
+        footer.classList.add('animatedClass');
+      },
+    });
+
+    // const footer = document.getElementById("footer");
+    // const tl = gsap.timeline({
+    //   paused: true
+    // });
+    // tl.from(footer, {
+    //   opacity: 0,
+    //   y: "100",
+    //   duration: .8,
+    //   ease: "power1.out",
+    //   stagger: {
+    //     amount: .5
+    //   },
+    //   onStart: function () {
+    //     revealItem.classList.add('animatedClass');
+    //   },
+    // });
+    // scrollTriggerPlayer(footer, tl)
+
+    /**
+     * 
+     * @param {Элемент от которого начинается Анимация} triggerElement 
+     * @param {*} timeline 
+     * @param {*} onEnterStart 
+     */
+    function scrollTriggerPlayer(triggerElement, timeline, onEnterStart = "top 95%") {
+      ScrollTrigger.create({
+        trigger: triggerElement,
+        start: "top bottom",
+        onLeaveBack: () => {
+          timeline.progress(1);
+          timeline.pause()
+        }
+      });
+      ScrollTrigger.create({
+        trigger: triggerElement,
+        start: onEnterStart,
+        onEnter: () => timeline.play()
+      })
+    }
+    gsap.registerPlugin(ScrollTrigger);
+
+    // if (window.innerWidth <= '834') {
+    //   const fitnessItems = document.querySelectorAll('.fitness__item');
+
+    //   fitnessItems.forEach(fitnessItem => {
+    //   const fitnessItemImg = fitnessItem.querySelector('.fitness__item-img');
+
+    //   fitnessItemImg.setAttribute('data-animation', 'parallax-img');
+    //   });
+    // }
+
+    // }
+  });
 
   window.addEventListener('resize', function () { ScrollTrigger.refresh() });
 
@@ -1107,9 +1145,9 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * =================Скрипт для блока со скролом=====================
    */
-  const reasons = document.querySelector('.hall');
+  const hall = document.querySelector('.hall');
 
-  if (reasons) {
+  if (hall) {
     var len = $('.hall__item').length;
     $(window).on('resize load', function () {
 
@@ -1213,7 +1251,7 @@ document.addEventListener('DOMContentLoaded', () => {
         $(window).on('scroll', function () {
           // Find the active element
           var $activeBlock = $('.active');
-          var element = reasons.querySelector('.active');
+          var element = hall.querySelector('.active');
           var h = element.clientHeight / 200;
           var distanceToTop = $activeBlock.offset().top - $(window).scrollTop() - 199;
           var top = window.pageYOffset;
