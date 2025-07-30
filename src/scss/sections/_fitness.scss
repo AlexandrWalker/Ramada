@@ -57,7 +57,7 @@
     align-items: center;
     gap: 9rem;
     width: 25%;
-    height: calc(100dvh - var(--header-height));
+    min-height: calc(100dvh - var(--header-height));
     padding: 29rem 5rem 17rem;
     transition: all 1s ease;
 
@@ -153,6 +153,7 @@
 
       .fitness__item:hover & {
         opacity: 1;
+        pointer-events: all;
       }
     }
 
@@ -166,7 +167,7 @@
       bottom: 0;
       left: 0;
       z-index: -2;
-      
+
       img {
         height: 100%;
       }
