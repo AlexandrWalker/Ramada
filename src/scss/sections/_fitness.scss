@@ -69,7 +69,7 @@
     @include md {
       gap: 1rem;
       width: 100%;
-      height: auto;
+      min-height: auto;
       padding: 5rem 0 6rem;
     }
 
