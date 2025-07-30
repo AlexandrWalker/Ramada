@@ -67,12 +67,10 @@
 
 .icon-chevron-right:before {
   content: "\e90a";
-  color: #c40d3c;
 }
 
 .icon-chevron-left:before {
   content: "\e90b";
-  color: #c40d3c;
 }
 
 .icon-chevron-top:before {
