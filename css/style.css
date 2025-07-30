@@ -87,16 +87,24 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -113,14 +121,6 @@ img {
   font-display: swap;
   src: url("../fonts/Gotham-Thin.woff2") format("woff2"), url("../fonts/Gotham-Thin.woff") format("woff");
   font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
   font-style: normal;
 }
 
@@ -167,16 +167,16 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/TTTricks-Regular.woff2") format("woff2"), url("../fonts/TTTricks-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Regular.woff2") format("woff2"), url("../fonts/TTTricks-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -3372,7 +3372,7 @@ h6 span {
   align-items: center;
   gap: 9rem;
   width: 25%;
-  height: calc(100dvh - var(--header-height));
+  min-height: calc(100dvh - var(--header-height));
   padding: 29rem 5rem 17rem;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
@@ -3442,6 +3442,7 @@ h6 span {
 
 .fitness__item:hover .fitness__item-wrap {
   opacity: 1;
+  pointer-events: all;
 }
 
 .fitness__item-img {
