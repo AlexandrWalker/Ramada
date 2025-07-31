@@ -117,6 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     breakpoints: {
       835: {
+        slidesPerGroup: 1,
         slidesPerView: 2,
       },
     },
