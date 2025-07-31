@@ -3,6 +3,14 @@
 .entert {
   padding: 7rem 0 4.5rem;
 
+  @include md {
+    padding: 3rem 0 4rem;
+  }
+
+  @include sm {
+    padding: 3rem 0;
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;

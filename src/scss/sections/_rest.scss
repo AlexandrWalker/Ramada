@@ -7,7 +7,11 @@
   z-index: 1;
 
   @include md {
-    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  @include sm {
+    padding-top: 3rem;
   }
 
   &__inner {

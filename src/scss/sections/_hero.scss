@@ -1,8 +1,7 @@
 @use './../mixins' as *;
 
 .hero {
-  min-height: 100dvh;
-
+  padding-bottom: 0;
   height: 77rem;
   min-height: unset;
   background-color: var(--white);
@@ -35,7 +34,6 @@
     right: 0 !important;
     left: 0 !important;
     z-index: -10;
-    pointer-events: none;
     transform: unset !important;
   }
 
@@ -245,7 +243,6 @@
 
       @include xs {
         width: 100%;
-        height: auto;
       }
     }
   }

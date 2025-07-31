@@ -5,6 +5,10 @@
   
   position: relative;
 
+  @include md {
+    padding-bottom: 3rem;
+  }
+
   .general__head-title {
 
     h4 {
@@ -314,7 +318,7 @@
 
       a {
         width: 100%;
-        height: 100%;
+        // height: 100%;
         align-content: center;
       }
 

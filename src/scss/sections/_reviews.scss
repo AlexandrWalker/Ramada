@@ -71,7 +71,7 @@
 
     &--slider {
 
-      @include sm {
+      @include md {
         width: calc(100% + var(--container-padding) + var(--container-padding));
         padding: 0 var(--container-padding);
         margin-left: calc(var(--container-padding) * -1);

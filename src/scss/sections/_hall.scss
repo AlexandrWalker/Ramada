@@ -7,12 +7,13 @@
 
   position: relative;
 
-  @include sm {
-    padding: 3rem 0;
+  @include md {
+    padding: 4rem 0 3rem;
   }
 
   @include sm {
     background: unset;
+    padding: 3rem 0;
   }
 
   .general__head {

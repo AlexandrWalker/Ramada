@@ -129,6 +129,10 @@
       }
     }
 
+    .menu__foot-title:not(.menu__foot-title--mail) a {
+      font-family: var(--second-family);
+    }
+
     .menu__foot-btn--presentation {
 
       @include sm {
