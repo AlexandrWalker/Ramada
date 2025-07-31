@@ -177,19 +177,19 @@
 
     &-slide {
       // width: calc(50% - 1rem) !important;
-      max-width: 100%;
-      width: calc(50% - 1rem) !important;
-      // width: fit-content !important;
+      width: 49.4rem !important;
       height: auto;
       aspect-ratio: 493/456;
 
       @include md {
+        width: 36.6rem !important;
         aspect-ratio: unset;
       }
-    }
 
-    .swiper-wrapper {
-      width: unset;
+      @include sm {
+        width: 100% !important;
+        aspect-ratio: unset;
+      }
     }
 
     .swiper-button-next {
@@ -205,7 +205,6 @@
       gap: 3rem;
       background-color: var(--white);
       padding: 3rem 5rem 4rem;
-      width: 100%;
       height: 100%;
 
       @include md {

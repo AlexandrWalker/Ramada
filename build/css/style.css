@@ -87,14 +87,6 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -105,6 +97,14 @@ img {
   font-display: swap;
   src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -1262,6 +1262,7 @@ body {
   background-color: transparent;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  will-change: top, right, bottom, left;
 }
 
 .btn:hover .pulse::before {
@@ -1320,52 +1321,40 @@ body {
 
 @-webkit-keyframes pulse-round {
   0% {
-    top: -0.5rem;
-    right: -0.5rem;
-    bottom: -0.5rem;
-    left: -0.5rem;
+    -webkit-transform: scale(1);
+    transform: scale(1);
     opacity: 0.1;
   }
 
   50% {
-    top: -1rem;
-    right: -1rem;
-    bottom: -1rem;
-    left: -1rem;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 0.4;
   }
 
   100% {
-    top: -1.5rem;
-    right: -1.5rem;
-    bottom: -1.5rem;
-    left: -1.5rem;
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
     opacity: 0;
   }
 }
 
 @keyframes pulse-round {
   0% {
-    top: -0.5rem;
-    right: -0.5rem;
-    bottom: -0.5rem;
-    left: -0.5rem;
+    -webkit-transform: scale(1);
+    transform: scale(1);
     opacity: 0.1;
   }
 
   50% {
-    top: -1rem;
-    right: -1rem;
-    bottom: -1rem;
-    left: -1rem;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 0.4;
   }
 
   100% {
-    top: -1.5rem;
-    right: -1.5rem;
-    bottom: -1.5rem;
-    left: -1.5rem;
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
     opacity: 0;
   }
 }
@@ -3020,14 +3009,9 @@ h6 span {
 }
 
 .events__calendar-slide {
-  max-width: 100%;
-  width: calc(50% - 1rem) !important;
+  width: 49.4rem !important;
   height: auto;
   aspect-ratio: 493/456;
-}
-
-.events__calendar .swiper-wrapper {
-  width: unset;
 }
 
 .events__calendar-item {
@@ -3041,7 +3025,6 @@ h6 span {
   gap: 3rem;
   background-color: var(--white);
   padding: 3rem 5rem 4rem;
-  width: 100%;
   height: 100%;
 }
 
@@ -4906,6 +4889,7 @@ h6 span {
   }
 
   .events__calendar-slide {
+    width: 36.6rem !important;
     aspect-ratio: unset;
   }
 
@@ -5669,6 +5653,11 @@ h6 span {
 
   .events__calendar {
     margin-bottom: 2rem;
+  }
+
+  .events__calendar-slide {
+    width: 100% !important;
+    aspect-ratio: unset;
   }
 
   .events__calendar-item {
