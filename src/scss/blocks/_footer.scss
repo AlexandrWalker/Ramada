@@ -11,11 +11,15 @@
     width: 0;
     height: 0.1rem;
     background-color: var(--gray-30);
-    transition: all 3s linear;
+    transition: all 2s linear;
 
     position: absolute;
     top: 0;
     left: 0;
+
+    @include md {
+      width: 100%;
+    }
   }
 
   &.animatedClass {

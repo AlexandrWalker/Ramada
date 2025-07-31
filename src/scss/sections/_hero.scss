@@ -1,9 +1,10 @@
 @use './../mixins' as *;
 
 .hero {
+  min-height: 100dvh;
+
   height: 77rem;
   min-height: unset;
-  margin-bottom: 7rem;
   background-color: var(--white);
   overflow: visible;
 
@@ -14,7 +15,6 @@
 
   @include md {
     height: 44.7rem;
-    margin-bottom: 4rem;
   }
 
   @include xmd {
@@ -27,7 +27,16 @@
 
   @include xs {
     height: 68rem;
-    margin-bottom: 3rem;
+  }
+
+  &.animatedClass {
+    position: fixed;
+    top: var(--header-height) !important;
+    right: 0 !important;
+    left: 0 !important;
+    z-index: -10;
+    pointer-events: none;
+    transform: unset !important;
   }
 
   &__container {
@@ -232,6 +241,11 @@
 
       @include sm {
         width: auto;
+      }
+
+      @include xs {
+        width: 100%;
+        height: auto;
       }
     }
   }

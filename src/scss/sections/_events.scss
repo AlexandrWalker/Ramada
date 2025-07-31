@@ -1,6 +1,8 @@
 @use './../mixins' as *;
 
 .events {
+  padding-bottom: 4.5rem;
+  
   position: relative;
 
   .general__head-title {

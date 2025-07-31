@@ -1,10 +1,9 @@
 @use './../mixins' as *;
 
 .hall {
-  padding: 7rem 0;
-  margin-bottom: 0;
+  padding: 7rem 0 6rem;
   overflow: visible;
-  background: linear-gradient(to right, transparent 50%, var(--accent) 50%);
+  background: linear-gradient(to right, var(--white-gray) 50%, var(--accent) 50%);
 
   position: relative;
 
@@ -167,6 +166,16 @@
 
     @include sm {
       display: none;
+    }
+
+    &-img {
+      transition: all 0.3s ease;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
     }
   }
 }

@@ -125,12 +125,18 @@
       gap: 0;
     }
 
-    span {
-      display: none;
+    @include sm {
       font-size: 1.2rem;
+    }
 
-      @include sm {
-        display: block;
+    span {
+
+      &::before {
+        content: attr(data-text);
+
+        @include sm {
+          content: attr(data-text-mob);
+        }
       }
     }
   }
@@ -163,7 +169,12 @@
       left: 0;
 
       // transition: all 0.3s ease, height 0s, padding 0s;
-      transition: all 0.3s ease, height 0s, padding 0s;
+      transition: all 0.3s ease, border-radius 0s;
+
+      &::before,
+      &::after {
+        transition: border-radius 0s;
+      }
 
       &:hover {
         --btn-border-radius: calc(var(--btn-height) / 2);

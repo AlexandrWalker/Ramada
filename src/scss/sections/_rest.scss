@@ -4,6 +4,7 @@
   overflow: visible;
 
   position: relative;
+  z-index: 1;
 
   @include md {
     margin-bottom: 3rem;
