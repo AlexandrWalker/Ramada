@@ -653,17 +653,6 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.fromTo(smoothImg, {
       "--top": smoothImgTopBefore,
       scale: 1,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: `top +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
-        pin: true,
-        scrub: true,
-      },
-      onComplete: function () {
-        hero.classList.add('animatedClass');
-      },
     }, {
       "--top": smoothImgTopAfter,
       y: smoothImgY,
@@ -675,20 +664,14 @@ document.addEventListener('DOMContentLoaded', () => {
         end: () => `+=${heroHeight}`,
         pin: true,
         scrub: true,
-      }
+      },
+      onComplete: function () {
+        hero.classList.add('animatedClass');
+      },
     });
 
     gsap.fromTo(h1Title, {
       "--fontsize": h1TitleFsBefore,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: `top +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
-        pin: true,
-        scrub: true,
-        invalidateOnRefresh: true
-      }
     }, {
       "--fontsize": h1TitleFsAfter,
       ease: "none",
@@ -707,15 +690,6 @@ document.addEventListener('DOMContentLoaded', () => {
       "--left-pos": pTitleLeftPosBefore,
       "--top-pos": pTitleTopPosBefore,
       "--color": pTitleColorBefore,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: `top +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
-        pin: true,
-        scrub: true,
-        invalidateOnRefresh: true
-      }
     }, {
       "--fontsize": pTitleFontSizeAfter,
       "--left-pos": pTitleLeftPosAfter,
@@ -734,15 +708,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     gsap.fromTo(spanTitle, {
       "--color": "#C40D3C",
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: `top +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
-        pin: true,
-        scrub: true,
-        invalidateOnRefresh: true
-      }
     }, {
       "--color": "#ffffff",
       ease: "none",
@@ -758,15 +723,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     gsap.fromTo(heroHead, {
       "--gap": heroHeadGapBefore,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: `top +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
-        pin: true,
-        scrub: true,
-        invalidateOnRefresh: true
-      }
     }, {
       "--gap": heroHeadGapAfter,
       ease: "none",
@@ -782,15 +738,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     gsap.fromTo(heroBtn, {
       "--btn-bottom": heroBtnBottomBefore,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: `top +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
-        pin: true,
-        scrub: true,
-        invalidateOnRefresh: true
-      }
     }, {
       "--btn-bottom": heroBtnBottomAfter,
       ease: "none",
@@ -1067,7 +1014,7 @@ document.addEventListener('DOMContentLoaded', () => {
       //   });
       // }
 
-    } else if (window.innerWidth < '834' && window.innerWidth != '834' && window.innerWidth > '600' && window.innerWidth != '600') {
+    } else if (window.innerWidth <= '834' && window.innerWidth > '600' && window.innerWidth != '600') {
       const parallaxImgBoxes = document.querySelectorAll('[data-animation="parallax-box"]');
       if (parallaxImgBoxes != 0) {
         parallaxImgBoxes.forEach(parallaxImgBox => {
@@ -1100,82 +1047,32 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       }
+    } else if (window.innerWidth <= '600') {
+      const parallaxItem = document.querySelector('[data-animation="parallax-img"]');
+      if (parallaxItem) {
+        const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
+        parallaxImgContainers.forEach(parallaxImgContainer => {
+          const image = parallaxImgContainer.querySelector('img');
+          gsap.fromTo(image,
+            { y: '-10%' },
+            {
+              y: '10%',
+              scrollTrigger: {
+                trigger: parallaxImgContainer,
+                start: 'top 90%',
+                end: 'bottom top',
+                scrub: true,
+              },
+            }
+          );
+        });
+      }
     }
   });
 
   window.addEventListener('resize', function () { ScrollTrigger.refresh() });
 
-
-
-  /**
-   * Смена текста внутри кнопки блока Отзывов
-   */
-  $(window).on('resize load', function () {
-    if (window.innerWidth <= '1440') {
-
-      const reviews = document.getElementById("reviews");
-      if (reviews) {
-        const reviewsBtns = reviews.querySelectorAll('.reviews__item-btn');
-
-        reviewsBtns.forEach(reviewsBtn => {
-          reviewsBtn.innerHTML = 'Подробнее';
-        });
-      }
-
-    }
-  });
-
-
-
-  /**
-   * Смена класса кнопки блока Отзывов
-   */
-  $(window).on('resize load', function () {
-    if (window.innerWidth <= '600') {
-
-      const reviews = document.getElementById("reviews");
-      if (reviews) {
-        const reviewsBtns = reviews.querySelectorAll('.reviews__item-btn');
-
-        reviewsBtns.forEach(reviewsBtn => {
-          reviewsBtn.setAttribute('class', 'link');
-
-          reviewsBtn.innerHTML = '<i class="icon-chevron-link"></i><p>Подробнее</p>';
-        });
-      }
-
-    }
-  });
-
-
-
-  /**
-   * Анимация блока задач
-   */
-  // window.addEventListener('scroll', function () {
-  //   const reasons = document.querySelector('.hall');
-  //   if (reasons) {
-  //     const reasonsItems = document.querySelectorAll('.hall__item');
-  //     const reasonsRect = reasons.getBoundingClientRect();
-  //     // Проверяем, достиг ли блок reasons верхнего края окна
-  //     if (reasonsRect.top <= 0) {
-  //       reasons.classList.add('fixed'); // Закрепляем блок
-  //       // Уменьшаем и перекрываем блоки reasons__items при прокрутке
-  //       reasonsItems.forEach((item, index) => {
-  //         const offset = window.scrollY - reasons.offsetHeight;
-  //         const scale = Math.max(0.5, 1 - (offset / 500) + (index * 0.1)); // Уменьшаем размер
-  //         item.style.transform = `scale(${scale}) translateY(${index * 20}px)`; // Перекрытие
-  //       });
-  //     } else {
-  //       reasons.classList.remove('fixed'); // Сбрасываем закрепление
-  //       reasonsItems.forEach(item => {
-  //         item.style.transform = 'scale(1) translateY(0)'; // Возвращаем в исходное состояние
-  //       });
-  //     }
-  //   }
-  // });
-
-
+  
 
   /**
    * =================Скрипт для блока со скролом=====================
@@ -1295,11 +1192,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
           if (hallCover) {
 
-            const dataIndexImg = $activeBlock.find('img');
-            const dataIndex = dataIndexImg.attr('src');
-
+            const dataIndexItem = $activeBlock.attr('data-index');
+            
             setTimeout(() => {
-              hallCover.find('img').attr('src', dataIndex); // Изменяем картинку
+              const hallCoverImgs = document.querySelectorAll(".hall__cover-img");
+              hallCoverImgs.forEach(hallCoverImg => {
+                if(dataIndexItem == hallCoverImg.getAttribute('data-index')) {
+                  hallCoverImg.style.opacity = '1';
+                } else {
+                  hallCoverImg.style.opacity = '0';
+                }
+              });
+              // console.log(hallCover.find('img').attr('data-index')); // Изменяем картинку
             }, 200); // Задержка должна соответствовать длительности transition
 
           }
