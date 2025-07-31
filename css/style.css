@@ -87,16 +87,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -1266,17 +1266,17 @@ body {
 }
 
 .btn:hover .pulse::before {
-  -webkit-animation: pulse-round 3s linear infinite;
-  animation: pulse-round 3s linear infinite;
+  -webkit-animation: pulse-round 2s linear infinite;
+  animation: pulse-round 2s linear infinite;
   -webkit-animation-delay: 0s;
   animation-delay: 0s;
 }
 
 .btn:hover .pulse::after {
-  -webkit-animation: pulse-round 3s linear infinite;
-  animation: pulse-round 3s linear infinite;
-  -webkit-animation-delay: 1.5s;
-  animation-delay: 1.5s;
+  -webkit-animation: pulse-round 2s linear infinite;
+  animation: pulse-round 2s linear infinite;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
 }
 
 @-webkit-keyframes pulse {
@@ -1321,40 +1321,52 @@ body {
 
 @-webkit-keyframes pulse-round {
   0% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    top: 0rem;
+    right: 0rem;
+    bottom: 0rem;
+    left: 0rem;
     opacity: 0.1;
   }
 
   50% {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
+    top: -0.5rem;
+    right: -0.5rem;
+    bottom: -0.5rem;
+    left: -0.5rem;
     opacity: 0.4;
   }
 
   100% {
-    -webkit-transform: scale(1.4);
-    transform: scale(1.4);
+    top: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    left: -1rem;
     opacity: 0;
   }
 }
 
 @keyframes pulse-round {
   0% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    top: 0rem;
+    right: 0rem;
+    bottom: 0rem;
+    left: 0rem;
     opacity: 0.1;
   }
 
   50% {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
+    top: -0.5rem;
+    right: -0.5rem;
+    bottom: -0.5rem;
+    left: -0.5rem;
     opacity: 0.4;
   }
 
   100% {
-    -webkit-transform: scale(1.4);
-    transform: scale(1.4);
+    top: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    left: -1rem;
     opacity: 0;
   }
 }
@@ -3000,6 +3012,7 @@ h6 span {
   gap: 4rem;
   grid-row: 1/2;
   grid-column: 2/4;
+  max-width: 100%;
   position: relative;
 }
 
@@ -3009,7 +3022,7 @@ h6 span {
 }
 
 .events__calendar-slide {
-  width: 49.4rem !important;
+  max-width: 100%;
   height: auto;
   aspect-ratio: 493/456;
 }
@@ -3025,6 +3038,7 @@ h6 span {
   gap: 3rem;
   background-color: var(--white);
   padding: 3rem 5rem 4rem;
+  width: 100%;
   height: 100%;
 }
 
@@ -4889,7 +4903,6 @@ h6 span {
   }
 
   .events__calendar-slide {
-    width: 36.6rem !important;
     aspect-ratio: unset;
   }
 
@@ -5653,11 +5666,6 @@ h6 span {
 
   .events__calendar {
     margin-bottom: 2rem;
-  }
-
-  .events__calendar-slide {
-    width: 100% !important;
-    aspect-ratio: unset;
   }
 
   .events__calendar-item {
