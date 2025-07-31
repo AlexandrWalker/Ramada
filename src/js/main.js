@@ -581,7 +581,7 @@ document.addEventListener('DOMContentLoaded', () => {
       //   );
       // }
 
-      if (window.innerWidth > '834' && window.innerWidth != '834'  && !(~['Android', 'iPhone', 'iPod', 'iPad', 'BlackBerry'].indexOf(navigator.platform))) {
+      if (window.innerWidth > '834' && window.innerWidth != '834') {
 
         const smoothImgY = '-50%';
 
@@ -1066,7 +1066,7 @@ document.addEventListener('DOMContentLoaded', () => {
       //   });
       // }
 
-    } else {
+    } else if (window.innerWidth < '834' && window.innerWidth != '834' && window.innerWidth > '600' && window.innerWidth != '600') {
       const parallaxImgBoxes = document.querySelectorAll('[data-animation="parallax-box"]');
       if (parallaxImgBoxes != 0) {
         parallaxImgBoxes.forEach(parallaxImgBox => {
