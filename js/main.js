@@ -1047,32 +1047,33 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       }
-    } else if (window.innerWidth <= '600') {
-      const parallaxItem = document.querySelector('[data-animation="parallax-img"]');
-      if (parallaxItem) {
-        const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
-        parallaxImgContainers.forEach(parallaxImgContainer => {
-          const image = parallaxImgContainer.querySelector('img');
-          gsap.fromTo(image,
-            { y: '-10%' },
-            {
-              y: '10%',
-              scrollTrigger: {
-                trigger: parallaxImgContainer,
-                start: 'top 90%',
-                end: 'bottom top',
-                scrub: true,
-              },
-            }
-          );
-        });
-      }
     }
+    // else if (window.innerWidth <= '600') {
+    //   const parallaxItem = document.querySelector('[data-animation="parallax-img"]');
+    //   if (parallaxItem) {
+    //     const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
+    //     parallaxImgContainers.forEach(parallaxImgContainer => {
+    //       const image = parallaxImgContainer.querySelector('img');
+    //       gsap.fromTo(image,
+    //         { y: '-10%' },
+    //         {
+    //           y: '10%',
+    //           scrollTrigger: {
+    //             trigger: parallaxImgContainer,
+    //             start: 'top 90%',
+    //             end: 'bottom top',
+    //             scrub: true,
+    //           },
+    //         }
+    //       );
+    //     });
+    //   }
+    // }
   });
 
   window.addEventListener('resize', function () { ScrollTrigger.refresh() });
 
-  
+
 
   /**
    * =================Скрипт для блока со скролом=====================
@@ -1193,11 +1194,11 @@ document.addEventListener('DOMContentLoaded', () => {
           if (hallCover) {
 
             const dataIndexItem = $activeBlock.attr('data-index');
-            
+
             setTimeout(() => {
               const hallCoverImgs = document.querySelectorAll(".hall__cover-img");
               hallCoverImgs.forEach(hallCoverImg => {
-                if(dataIndexItem == hallCoverImg.getAttribute('data-index')) {
+                if (dataIndexItem == hallCoverImg.getAttribute('data-index')) {
                   hallCoverImg.style.opacity = '1';
                 } else {
                   hallCoverImg.style.opacity = '0';
