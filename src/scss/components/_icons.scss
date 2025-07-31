@@ -102,7 +102,7 @@
   }
 
   &::after {
-    
+
     .btn:hover & {
       animation: pulse-round 3s linear infinite;
       animation-delay: 1.5s;
@@ -129,17 +129,29 @@
 
 @keyframes pulse-round {
   0% {
-    transform: scale(1);
+    // transform: scale(1);
+    top: -0.5rem;
+    right: -0.5rem;
+    bottom: -0.5rem;
+    left: -0.5rem;
     opacity: 0.1;
   }
 
   50% {
-    transform: scale(1.2);
+    // transform: scale(1.2);
+    top: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    left: -1rem;
     opacity: .4;
   }
 
   100% {
-    transform: scale(1.4);
+    // transform: scale(1.4);
+    top: -1.5rem;
+    right: -1.5rem;
+    bottom: -1.5rem;
+    left: -1.5rem;
     opacity: 0;
   }
 }
