@@ -140,6 +140,7 @@
     height: 5.6rem;
 
     position: relative;
+    z-index: 1;
 
     @include md {
       width: 5rem;

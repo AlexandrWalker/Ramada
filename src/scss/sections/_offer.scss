@@ -11,6 +11,8 @@
     --offer-padding-top: 0;
     --offer-padding-bottom: 0;
     --offer-padding-left: 0;
+    
+    overflow: visible;
   }
 
   &__inner {
@@ -70,6 +72,8 @@
 
     &--slider {
       overflow: hidden;
+      position: relative;
+      z-index: 1;
     }
 
     &-item {

@@ -95,16 +95,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -317,8 +317,6 @@ img {
 
 .leaf {
   width: auto;
-  -o-object-fit: contain;
-  object-fit: contain;
   pointer-events: none;
   position: absolute;
   z-index: 1;
@@ -359,7 +357,10 @@ img {
 }
 
 .leaf img {
+  width: auto;
   height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
 /* Стиль для параллакс картинок */
@@ -1769,7 +1770,7 @@ h6 span {
 }
 
 .footer__foot-text {
-  font-weight: 400;
+  font-weight: 350;
   font-size: 1.2rem;
   line-height: 167%;
 }
@@ -1784,7 +1785,7 @@ h6 span {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font-weight: 400;
+  font-weight: 350;
   font-size: 1.2rem;
   line-height: 167%;
 }
@@ -1898,6 +1899,7 @@ h6 span {
   width: 5.6rem;
   height: 5.6rem;
   position: relative;
+  z-index: 1;
 }
 
 .header__lang-btn {
@@ -3006,6 +3008,7 @@ h6 span {
 }
 
 .events__calendar-slide {
+  max-width: 100%;
   height: auto;
   aspect-ratio: 493/456;
 }
@@ -3588,6 +3591,7 @@ h6 span {
   -ms-flex-direction: column;
   flex-direction: column;
   gap: 0.5rem;
+  margin-left: -1.4rem;
   font-family: var(--second-family);
   font-weight: 300;
   font-size: var(--fontsize);
@@ -3679,6 +3683,8 @@ h6 span {
 
 .offer__body--slider {
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .offer__body-item {
@@ -5050,6 +5056,7 @@ h6 span {
     --offer-padding-top: 0;
     --offer-padding-bottom: 0;
     --offer-padding-left: 0;
+    overflow: visible;
   }
 
   .offer__inner {
