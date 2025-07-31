@@ -581,7 +581,7 @@ document.addEventListener('DOMContentLoaded', () => {
       //   );
       // }
 
-      if (window.innerWidth > '834' && window.innerWidth != '834') {
+      if (window.innerWidth > '834' && window.innerWidth != '834'  && !(~['Android', 'iPhone', 'iPod', 'iPad', 'BlackBerry'].indexOf(navigator.platform))) {
 
         const smoothImgY = '-50%';
 
