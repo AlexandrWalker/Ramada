@@ -220,8 +220,8 @@
   transition: all var(--burger-transition) ease;
 
   @include md {
-    top: -100%;
-    bottom: 100%;
+    top: -100dvh;
+    bottom: 100dvh;
     right: 0;
     left: 0;
   }
