@@ -57,6 +57,7 @@
     }
 
     &-wrap {
+      max-width: 100%;
       aspect-ratio: 493/456;
 
       position: relative;
@@ -178,13 +179,14 @@
 
     &-slide {
       // width: calc(50% - 1rem) !important;
-      min-width: 0;
-      height: auto;
-      aspect-ratio: 493/456;
+      // max-width: 49.4rem;
+      // min-width: 0;
+      // height: auto;
+      // aspect-ratio: 493/456;
 
-      @include md {
-        aspect-ratio: unset;
-      }
+      // @include md {
+      //   aspect-ratio: unset;
+      // }
     }
 
     .swiper-button-next {
@@ -210,6 +212,10 @@
       @include sm {
         padding: 2rem 1.5rem 1.5rem;
         height: fit-content;
+      }
+
+      @include xxs {
+        padding: 2rem 1rem 1.5rem;
       }
     }
 
@@ -253,6 +259,11 @@
       @include sm {
         justify-content: center;
         gap: 1.5rem;
+      }
+
+      @include xs {
+        justify-content: space-between;
+        gap: 0.5rem;
       }
 
       &:last-child {
