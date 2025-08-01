@@ -48,11 +48,13 @@ section {
   // height: clamp(93rem, 100dvh, 150dvh);
   // min-height: clamp(93rem, 100dvh, 150dvh);
   padding-bottom: 7rem;
+  background-color: var(--white-gray);
 
   overflow-x: hidden;
   overflow-y: hidden;
 
-  background-color: var(--white-gray);
+  position: relative;
+  z-index: 2;
 
   @include md {
     height: fit-content;

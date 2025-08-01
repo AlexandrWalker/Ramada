@@ -4,6 +4,7 @@
   background-color: var(--white);
 
   position: relative;
+  z-index: 2;
   overflow: hidden;
 
   &::before {
