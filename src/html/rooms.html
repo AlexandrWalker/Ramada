@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('blocks/head.html', {"title": "RAMADA"})
+
+<body>
+  <div class="wrapper">
+    <!-- Шапка -->
+    @@include('./blocks/header.html')
+    <main class="main">
+      <!-- Главный блок -->
+      <section class="template">
+
+        <div class="breadcrumbs">
+          <div class="container">
+            <div class="breadcrumbs__inner">
+              <ul>
+                <li>
+                  <a href="/">
+                    Главная страница
+                  </a>
+                </li>
+                <li>
+                  Список номеров
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="template__inner">
+            <div class="template__head">
+              <div class="template__head-title">
+                <h1>
+                  Номера
+                </h1>
+              </div>
+            </div>
+
+            <div class="template__plugin">
+              <picture>
+                <source media="(min-width: 801px)" srcset="./images/temp/plugin.png" type="image/png">
+                <source media="((max-width: 800px) and (min-width: 601px))" srcset="./images/temp/plugin-planshet.png"
+                  type="image/png">
+                <source media="(max-width: 600px)" srcset="./images/temp/plugin-mob.png" type="image/png">
+                <img src="./images/temp/plugin.png" alt="">
+              </picture>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="rooms">
+        <div class="container">
+          <div class="rooms__inner">
+            <div class="rooms__items">
+              @@loop('./elements/rooms-item.html', './data/rooms-items.json')
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+    <!-- Подвал -->
+    @@include('blocks/footer.html')
+    <!-- Попапы -->
+    <!-- @@include('blocks/popup.html') -->
+    <!-- Плашки -->
+    @@include('blocks/plate.html')
+  </div>
+  <!-- libs -->
+  <script src="./libs/gsap/gsap.min.js"></script>
+  <script src="./libs/gsap/tweenmax.min.js"></script>
+  <script src="./libs/gsap/ScrollToPlugin.min.js"></script>
+  <script src="./libs/gsap/ScrollTrigger.min.js"></script>
+  <script src="./libs/gsap/ScrollSmoother.min.js"></script>
+  <script src="./libs/lenis/lenis.min.js"></script>
+  <script src="./libs/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/transfer-elements@1.0.7/dist/transfer-elements.min.js"></script>
+  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <!-- scripts -->
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

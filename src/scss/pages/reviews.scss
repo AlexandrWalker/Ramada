@@ -1,0 +1,40 @@
+@use './../mixins' as *;
+
+.reviews {
+
+  &-page {
+
+    .reviews {
+      padding-top: 0;
+      background-image: none;
+      background-color: unset;
+
+      &__item {
+        width: calc(33.33333% - 1.33333rem);
+
+        @include md {
+          width: calc(50% - 1rem);
+        }
+
+        @include sm {
+          width: calc(50% - 0.5rem);
+        }
+
+        @include xxs {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    @include sm {
+      gap: 1rem;
+    }
+  }
+}

@@ -106,8 +106,9 @@
     right: 3rem;
     bottom: 3rem;
     left: 3rem;
+    z-index: 1;
     border: 0.1rem solid var(--white-30);
-
+    pointer-events: none;
     transition: all 0.5s ease;
 
     @include md {
@@ -125,8 +126,9 @@
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 2;
     border: 2rem solid var(--white-30);
-
+    pointer-events: none;
     transition: all 0.5s ease;
 
     @include md {
@@ -332,6 +334,60 @@
   }
 }
 
-// div.word {
-//   overflow: hidden;
-// }
+.breadcrumbs {
+  --breadcrumbs-gap: 1rem;
+
+  background-color: var(--accent);
+
+  &__inner {
+    padding: 1.7rem 0 1.8rem;
+
+    @include md {
+      padding: 1.1rem 0 1.2rem;
+    }
+
+    @include sm {
+      padding: 0.8rem 0;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--breadcrumbs-gap);
+  }
+
+  li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--breadcrumbs-gap);
+
+    font-weight: 350;
+    font-size: 1.6rem;
+    color: var(--white);
+
+    @include md {
+      font-size: 1.4rem;
+    }
+
+    @include sm {
+      font-size: 1.2rem;
+    }
+
+    &:not(:last-child) {
+
+      &::after {
+        content: "|";
+      }
+    }
+  }
+
+  a {
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

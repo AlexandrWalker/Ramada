@@ -214,6 +214,22 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
+  const roomsItemSlider = new Swiper(".rooms__item--slider", {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    speed: 1000,
+    loop: true,
+    grabCursor: true,
+    mousewheel: {
+      forceToAxis: true,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
 
 
   /**

@@ -115,7 +115,7 @@ gulp.task('clean', function (done) {
 
 gulp.task('html', function () {
   return gulp
-    .src([`${srcFolder}html/**/*.html`, `!${srcFolder}html/blocks/*.html`, `!${srcFolder}html/elements/*.html`])
+    .src([`${srcFolder}html/**/*.html`, `!${srcFolder}html/blocks/*.html`, `!${srcFolder}html/elements/*.html`, `!${srcFolder}html/privacy/*.html`])
     .pipe(plumber(plumberNotify('HTML')))
     .pipe(
       fileInclude({
