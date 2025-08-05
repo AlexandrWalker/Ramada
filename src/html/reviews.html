@@ -43,12 +43,24 @@
       <section class="reviews">
         <div class="container">
           <div class="reviews__inner">
+            <div class="filter">
+              <div class="filter__items">
+                <div class="filter__item">
+                  Корпоративные клиенты
+                </div>
+                <div class="filter__item">
+                  Гости отеля
+                </div>
+              </div>
+            </div>
             <div class="reviews__items">
               @@loop('./elements/reviews-page-item.html', './data/reviews-items.json')
             </div>
           </div>
         </div>
       </section>
+
+      @@include('blocks/callback.html', {"title": "Оставьте отзыв"})
 
     </main>
     <!-- Подвал -->

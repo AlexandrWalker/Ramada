@@ -391,3 +391,70 @@
     }
   }
 }
+
+.filter {
+  margin-bottom: 3rem;
+
+  @include sm {
+    margin-bottom: 2rem;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+
+    @include md {
+      gap: 1rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+
+    font-weight: 900;
+    font-size: 1.6rem;
+    line-height: 120%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+
+    @include md {
+      gap: 1rem;
+
+      font-size: 1.2rem;
+      color: var(--black);
+    }
+
+    @include sm {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      color: var(--accent);
+    }
+
+    &::after {
+      content: "|";
+      color: var(--gray);
+
+      @include md {
+        color: var(--black);
+      }
+    }
+
+    &:last-child {
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

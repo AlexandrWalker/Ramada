@@ -2,6 +2,11 @@
 
 .rooms {
 
+  &__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__items {
     display: flex;
     flex-direction: row;
@@ -21,6 +26,8 @@
     height: 100%;
     padding: 2rem 2rem 4rem;
     background-color: var(--white);
+    border: 0.1rem solid transparent;
+    transition: all 0.3s ease;
 
     @include md {
       gap: 0;
@@ -33,6 +40,24 @@
 
     @include xxs {
       width: 100%;
+    }
+
+    &:hover {
+      border-color: var(--accent);
+    }
+
+    .border {
+
+      &::before {
+        top: 2rem;
+        right: 2rem;
+        bottom: 2rem;
+        left: 2rem;
+      }
+
+      &::after {
+        border-width: 1rem;
+      }
     }
 
     &-slider {

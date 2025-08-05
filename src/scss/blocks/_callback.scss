@@ -1,0 +1,31 @@
+@use './../mixins' as *;
+
+.callback {
+
+  @include md {
+    display: none;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 5rem;
+    background-color: var(--white);
+    width: calc(100% - 2rem - 62.2rem);
+  }
+
+  &__cover {
+    width: 62.2rem;
+  }
+
+  .form-label {
+    background-color: var(--white);
+  }
+}

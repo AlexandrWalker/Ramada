@@ -50,15 +50,36 @@
         </div>
       </section>
 
-      <div class="rooms">
+      <section class="rooms">
         <div class="container">
           <div class="rooms__inner">
+
+            <div class="filter">
+              <div class="filter__items">
+                <div class="filter__item">
+                  Все номера
+                </div>
+                <div class="filter__item">
+                  Для бизнес-поездок
+                </div>
+                <div class="filter__item">
+                  Для особенных вечеров
+                </div>
+                <div class="filter__item">
+                  Для свадебных поводов
+                </div>
+                <div class="filter__item">
+                  Для семейного отдыха
+                </div>
+              </div>
+            </div>
+
             <div class="rooms__items">
               @@loop('./elements/rooms-item.html', './data/rooms-items.json')
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
     </main>
     <!-- Подвал -->
