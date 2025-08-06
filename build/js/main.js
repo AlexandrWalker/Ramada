@@ -438,6 +438,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+  const btns = $('.filter__item');
+
+  btns.on('click', function () {
+    btns.removeClass('filter__item--active')
+    $(this).addClass('filter__item--active')
+    const attr = $(this).data('reviews');
+    $.get('./ajax/reviews-' + attr + '.html', function (data) {
+      $('.reviews__items').html(data)
+    })
+  })
+
+
   $(window).on('resize load', function () {
     if (window.innerWidth < '600' && window.innerWidth != '600') {
       const burgerClose = document.querySelector('.burger-close');

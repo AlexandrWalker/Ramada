@@ -437,6 +437,10 @@
       font-size: 1rem;
     }
 
+    &--active {
+      color: var(--accent);
+    }
+
     &:hover {
       color: var(--accent);
     }
