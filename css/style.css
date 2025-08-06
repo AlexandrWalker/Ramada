@@ -90,32 +90,8 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
-  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
   font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
   font-style: normal;
 }
 
@@ -130,8 +106,32 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
+  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
   src: url("../fonts/Gotham-Ultra.woff2") format("woff2"), url("../fonts/Gotham-Ultra.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -162,16 +162,16 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-ExtraBold.woff2") format("woff2"), url("../fonts/TTTricks-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/TTTricks-ExtraBold.woff2") format("woff2"), url("../fonts/TTTricks-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -543,9 +543,10 @@ img {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--gray);
+  cursor: pointer;
 }
 
-.filter__item--active {
+.filter__item.filter__item--active {
   color: var(--accent);
 }
 
@@ -1354,6 +1355,7 @@ body {
   padding: 2rem 2.7rem 1.8rem;
   background: transparent;
   border: 0.1rem solid var(--gray-30);
+  resize: none;
   font-weight: 700;
   font-size: 1.4rem;
   line-height: 100%;
@@ -1375,6 +1377,10 @@ body {
   font-weight: 400;
   font-size: 1.2rem;
   color: var(--gray);
+}
+
+.form-text p {
+  font-size: inherit;
 }
 
 .form-text a {
@@ -1819,6 +1825,10 @@ h6 span {
   padding: 5rem;
   background-color: var(--white);
   width: calc(100% - 2rem - 62.2rem);
+}
+
+.callback__head {
+  text-transform: uppercase;
 }
 
 .callback__cover {
@@ -2872,6 +2882,31 @@ h6 span {
   padding-bottom: 4rem;
 }
 
+.template--primary {
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: visible;
+  margin-bottom: 8.5rem;
+  position: relative;
+  z-index: 3;
+}
+
+.template--primary .template__inner {
+  gap: 6rem;
+}
+
+.template--primary .template__plugin {
+  margin-bottom: -10.5rem;
+}
+
+.template--primary .template__body-suptitle {
+  margin-bottom: 15rem;
+}
+
+.template--primary .template__body-title {
+  margin-bottom: 10rem;
+}
+
 .template__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2881,6 +2916,70 @@ h6 span {
   -ms-flex-direction: column;
   flex-direction: column;
   gap: 4rem;
+}
+
+.template__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  color: var(--white);
+}
+
+.template__body-suptitle {
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding: 2rem 0;
+  border-top: 0.1rem solid var(--white-30);
+  border-bottom: 0.1rem solid var(--white-30);
+}
+
+.template__body-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 8rem;
+}
+
+.template__body-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 2rem;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+.template__body-icon i {
+  --font-size: 7rem;
+  font-weight: 300;
+  border-radius: 50%;
+  border: 0.1rem solid var(--white-30);
+}
+
+.template__body-icon p {
+  text-align: center;
 }
 
 .template__plugin img {
@@ -3004,8 +3103,14 @@ h6 span {
   background-color: unset;
 }
 
+.reviews-page .reviews:has([data-reviews=corp].filter__item--active) ~ .callback {
+  display: none;
+}
+
 .reviews-page .reviews__item {
   width: calc(33.33333% - 1.33333rem);
+  -webkit-animation: opacity 0.5s forwards;
+  animation: opacity 0.5s forwards;
 }
 
 .reviews__items {
@@ -3019,6 +3124,58 @@ h6 span {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 2rem;
+}
+
+.reviews__items--corp .reviews__item {
+  width: calc(50% - 1rem);
+}
+
+.reviews__items--corp .reviews__item-content {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.reviews__items--corp .reviews__item-body {
+  padding: 6rem 1.5rem;
+}
+
+.reviews__items--corp .reviews__item-date {
+  max-width: 57.5rem;
+  text-transform: uppercase;
+}
+
+.reviews__items--corp .reviews__item-text {
+  max-width: 57.5rem;
+}
+
+.reviews__items--corp .reviews__item .link {
+  font-size: 1.2rem;
+}
+
+.reviews__items--corp .reviews__item .link i {
+  --font-size: 1.6rem;
+  font-size: var(--font-size);
+}
+
+@-webkit-keyframes opacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .rooms__inner {
@@ -3169,6 +3326,145 @@ h6 span {
   font-weight: 350;
   font-size: 1.4rem;
   line-height: 120%;
+}
+
+.studio__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 15rem;
+  padding: 6rem 13rem;
+  background-color: var(--white);
+}
+
+.studio__content {
+  width: calc(100% - 62rem - 15rem);
+}
+
+.studio__content-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 4rem;
+  margin-bottom: 5rem;
+}
+
+.studio__content-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 3rem 0;
+  margin-bottom: 3.5rem;
+  border-top: 0.1rem solid var(--gray-30);
+  border-bottom: 0.1rem solid var(--gray-30);
+}
+
+.studio__content-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.studio__content-item h5 {
+  color: var(--accent);
+}
+
+.studio__content-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.studio__content-btn {
+  width: 100%;
+}
+
+.studio__terms {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 4rem;
+  width: 62rem;
+  padding: 4rem;
+  background-color: var(--white-gray);
+}
+
+.studio__terms-items {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 3rem;
+  -moz-column-gap: 3rem;
+  column-gap: 3rem;
+}
+
+.studio__terms-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.studio__terms-item i {
+  --font-size: 5rem;
+  background-color: var(--white);
+  border-radius: 50%;
+}
+
+.room {
+  padding: 6rem 0;
+}
+
+.room__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.room__body {
+  position: relative;
+}
+
+.room .rooms__item {
+  width: 100%;
 }
 
 /* Sections */
@@ -4595,6 +4891,16 @@ h6 span {
   text-align: center;
 }
 
+.reviews__item-logo {
+  width: 13.7rem;
+  height: auto;
+}
+
+.reviews__item-logo img {
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
 .reviews__item-body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4899,6 +5205,31 @@ h6 span {
     --font-size: 5rem;
   }
 
+  .form {
+    gap: 1rem;
+  }
+
+  .form__inner {
+    gap: 2rem 1rem;
+  }
+
+  .form-group:nth-child(1),
+  .form-group:nth-child(2) {
+    width: calc(50% - 0.5rem);
+  }
+
+  .form-input {
+    padding: 1.6rem 2.7rem 1.6rem;
+  }
+
+  .form-foot {
+    gap: 0.5rem;
+  }
+
+  .form-text {
+    font-size: 1rem;
+  }
+
   .burger-btn .icon-burger {
     display: block;
   }
@@ -4979,7 +5310,13 @@ h6 span {
     padding: 3rem 8rem 4rem;
   }
 
-  .callback {
+  .callback__wrap {
+    gap: 4rem;
+    padding: 4rem 3rem 3rem;
+    width: 100%;
+  }
+
+  .callback__cover {
     display: none;
   }
 
@@ -5413,6 +5750,34 @@ h6 span {
     padding-bottom: 2rem;
   }
 
+  .template--primary {
+    margin-bottom: 15rem;
+  }
+
+  .template--primary .template__plugin {
+    margin-bottom: -15rem;
+  }
+
+  .template--primary .template__body-suptitle {
+    margin-bottom: 5rem;
+  }
+
+  .template--primary .template__body-title {
+    margin-bottom: 6rem;
+  }
+
+  .template__body-icons {
+    gap: 6rem;
+  }
+
+  .template__body-icon {
+    gap: 1rem;
+  }
+
+  .template__body-icon i {
+    --font-size: 5rem;
+  }
+
   .press__item {
     gap: 3rem;
     width: calc(50% - 1rem);
@@ -5435,8 +5800,41 @@ h6 span {
     margin-bottom: 3rem;
   }
 
+  .reviews-page .reviews {
+    padding-bottom: 4rem;
+  }
+
   .reviews-page .reviews__item {
     width: calc(50% - 1rem);
+  }
+
+  .reviews__items--corp .reviews__item {
+    padding: 0;
+    border: 0;
+  }
+
+  .reviews__items--corp .reviews__item-body {
+    gap: 3rem;
+    padding: 3.5rem 1.5rem;
+  }
+
+  .reviews__items--corp .reviews__item-body::before {
+    top: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
+  }
+
+  .reviews__items--corp .reviews__item-date br {
+    display: none;
+  }
+
+  .reviews__items--corp .reviews__item-date p {
+    font-size: 1.2rem;
+  }
+
+  .reviews__items--corp .reviews__item-name h6 {
+    font-size: 1.4rem;
   }
 
   .rooms__item {
@@ -5479,6 +5877,14 @@ h6 span {
 
   .rooms__item-text {
     font-size: 1.2rem;
+  }
+
+  .studio {
+    display: none;
+  }
+
+  .room {
+    display: none;
   }
 
   .diversity {
@@ -5908,6 +6314,10 @@ h6 span {
     padding: 1rem;
   }
 
+  .reviews__item-logo {
+    width: 10rem;
+  }
+
   .reviews__item-body {
     gap: 2rem;
     padding: 4rem 3rem 3.5rem;
@@ -6038,6 +6448,16 @@ h6 span {
     --btn-padding-x: 1.5rem;
   }
 
+  .form-group:nth-child(1),
+  .form-group:nth-child(2) {
+    width: 100%;
+  }
+
+  .form-label {
+    font-size: 1.2rem;
+    top: -0.6rem;
+  }
+
   .icon-book {
     display: none;
   }
@@ -6097,6 +6517,15 @@ h6 span {
 
   .burger-menu--opened .menu__foot {
     padding: 3rem 2rem;
+  }
+
+  .callback {
+    padding-bottom: 3rem;
+  }
+
+  .callback__wrap {
+    gap: 3rem;
+    padding: 3rem 1rem;
   }
 
   .footer__body {
@@ -6334,12 +6763,36 @@ h6 span {
     --font-size: 1.6rem;
   }
 
+  .reviews-page .reviews {
+    padding-bottom: 3rem;
+  }
+
   .reviews-page .reviews__item {
     width: calc(50% - 0.5rem);
   }
 
   .reviews__items {
     gap: 1rem;
+  }
+
+  .reviews__items--corp .reviews__item {
+    width: 100%;
+  }
+
+  .reviews__items--corp .reviews__item-body {
+    gap: 1.5rem;
+  }
+
+  .reviews__items--corp .reviews__item-date {
+    max-width: 29rem;
+  }
+
+  .reviews__items--corp .reviews__item-name h6 {
+    font-size: 1.2rem;
+  }
+
+  .reviews__items--corp .reviews__item-text {
+    max-width: 31rem;
   }
 
   .rooms__items {
