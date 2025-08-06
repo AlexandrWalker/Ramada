@@ -9,8 +9,21 @@
       background-image: none;
       background-color: unset;
 
+      @include md {
+        padding-bottom: 4rem;
+      }
+
+      @include sm {
+        padding-bottom: 3rem;
+      }
+
+      &:has([data-reviews="corp"].filter__item--active)~.callback {
+        display: none;
+      }
+
       &__item {
         width: calc(33.33333% - 1.33333rem);
+        animation: opacity 0.5s forwards;
 
         @include md {
           width: calc(50% - 1rem);
@@ -36,5 +49,114 @@
     @include sm {
       gap: 1rem;
     }
+
+    &--corp {
+
+      .reviews__item {
+        width: calc(50% - 1rem);
+
+        @include md {
+          padding: 0;
+          border: 0;
+        }
+
+        @include sm {
+          width: 100%;
+        }
+
+        &-content {
+          align-items: center;
+        }
+
+        &-body {
+          padding: 6rem 1.5rem;
+
+          @include md {
+            gap: 3rem;
+            padding: 3.5rem 1.5rem;
+          }
+
+          @include sm {
+            gap: 1.5rem;
+          }
+
+          &::before {
+
+            @include md {
+              top: 0.5rem;
+              right: 0.5rem;
+              bottom: 0.5rem;
+              left: 0.5rem;
+            }
+          }
+        }
+
+        &-date {
+          max-width: 57.5rem;
+          text-transform: uppercase;
+
+          @include sm {
+            max-width: 29rem;
+          }
+
+          br {
+
+            @include md {
+              display: none;
+            }
+          }
+
+          p {
+
+            @include md {
+              font-size: 1.2rem;
+            }
+          }
+        }
+
+        &-name {
+
+          h6 {
+
+            @include md {
+              font-size: 1.4rem;
+            }
+
+            @include sm {
+              font-size: 1.2rem;
+            }
+          }
+        }
+
+        &-text {
+          max-width: 57.5rem;
+
+          @include sm {
+            max-width: 31rem;
+          }
+        }
+
+        .link {
+          font-size: 1.2rem;
+
+          i {
+            --font-size: 1.6rem;
+
+            font-size: var(--font-size);
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes opacity {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

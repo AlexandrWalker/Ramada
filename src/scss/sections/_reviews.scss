@@ -100,6 +100,19 @@
       border: 0;
     }
 
+    &-logo {
+      width: 13.7rem;
+      height: auto;
+
+      @include md {
+        width: 10rem;
+      }
+
+      img {
+        object-fit: contain;
+      }
+    }
+
     &-body {
       display: flex;
       flex-direction: column;

@@ -2,8 +2,8 @@
 
 .callback {
 
-  @include md {
-    display: none;
+  @include sm {
+    padding-bottom: 3rem;
   }
 
   &__inner {
@@ -19,10 +19,29 @@
     padding: 5rem;
     background-color: var(--white);
     width: calc(100% - 2rem - 62.2rem);
+
+    @include md {
+      gap: 4rem;
+      padding: 4rem 3rem 3rem;
+      width: 100%;
+    }
+
+    @include sm {
+      gap: 3rem;
+      padding: 3rem 1rem;
+    }
+  }
+
+  &__head {
+    text-transform: uppercase;
   }
 
   &__cover {
     width: 62.2rem;
+
+    @include md {
+      display: none;
+    }
   }
 
   .form-label {

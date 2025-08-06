@@ -1095,7 +1095,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (filter) {
     const btns = $('.filter__item');
 
-    btns.on('click', function () {
+    btns.on('click', function filterFunc() {
       btns.removeClass('filter__item--active')
       $(this).addClass('filter__item--active')
       const attr = $(this).data('reviews');

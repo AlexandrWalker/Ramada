@@ -425,6 +425,7 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--gray);
+    cursor: pointer;
 
     @include md {
       gap: 1rem;
@@ -437,7 +438,7 @@
       font-size: 1rem;
     }
 
-    &--active {
+    &.filter__item--active {
       color: var(--accent);
     }
 

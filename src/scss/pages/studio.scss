@@ -1,0 +1,108 @@
+@use './../mixins' as *;
+
+.studio {
+
+  @include md {
+    display: none;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    gap: 15rem;
+    padding: 6rem 13rem;
+    background-color: var(--white);
+  }
+
+  &__content {
+    width: calc(100% - 62rem - 15rem);
+
+    &-head {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      margin-bottom: 5rem;
+    }
+
+    &-items {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      padding: 3rem 0;
+      margin-bottom: 3.5rem;
+      border-top: 0.1rem solid var(--gray-30);
+      border-bottom: 0.1rem solid var(--gray-30);
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      h5 {
+        color: var(--accent);
+      }
+    }
+
+    &-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    &-btn {
+      width: 100%;
+    }
+  }
+
+  &__terms {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: 62rem;
+    padding: 4rem;
+    background-color: var(--white-gray);
+
+    &-items {
+      column-count: 2;
+      column-gap: 3rem;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+
+      i {
+        --font-size: 5rem;
+
+        background-color: var(--white);
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.room {
+  padding: 6rem 0;
+
+  @include md {
+    display: none;
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+
+  &__body {
+    position: relative;
+  }
+
+  .rooms__item {
+    width: 100%;
+  }
+}

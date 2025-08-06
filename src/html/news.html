@@ -6,7 +6,7 @@
   <div class="wrapper">
     <!-- Шапка -->
     @@include('./blocks/header.html')
-    <main class="main reviews-page">
+    <main class="main">
       <!-- Главный блок -->
       <section class="template">
 
@@ -20,7 +20,7 @@
                   </a>
                 </li>
                 <li>
-                  Отзывы
+                  Заголовок новости в две строки о событии
                 </li>
               </ul>
             </div>
@@ -32,7 +32,8 @@
             <div class="template__head">
               <div class="template__head-title">
                 <h1>
-                  Отзывы
+                  Заголовок новости
+                  в две строки о событии
                 </h1>
               </div>
             </div>
@@ -40,26 +41,15 @@
         </div>
       </section>
 
-      <section class="reviews">
+      <section class="news">
         <div class="container">
-          <div class="reviews__inner">
-            <div class="filter">
-              <div class="filter__items">
-                <div class="filter__item" data-reviews="corp">
-                  Корпоративные клиенты
-                </div>
-                <div class="filter__item filter__item--active" data-reviews="gosti">
-                  Гости отеля
-                </div>
-              </div>
-            </div>
-            
-            @@include('ajax/reviews-gosti.html')
+          <div class="news__inner">
+
+
+
           </div>
         </div>
       </section>
-
-      @@include('blocks/callback.html', {"title": "Оставьте отзыв"})
 
     </main>
     <!-- Подвал -->
