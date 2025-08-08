@@ -1,5 +1,9 @@
 @use './../mixins' as *;
 
+.swiper-slide {
+  height: auto;
+}
+
 /* Пагинация слайдера */
 .swiper-pagination {
   display: flex;

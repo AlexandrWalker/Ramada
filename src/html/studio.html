@@ -265,19 +265,23 @@
             </div>
 
             <div class="room__body">
-              <div class="swiper reviews__body--slider">
+              <div class="swiper room__body--slider">
                 <div class="swiper-wrapper">
                   @@loop('./elements/rooms-item.html', './data/rooms-items.json')
                 </div>
                 <div class="swiper-pagination"></div>
               </div>
-              <div class="swiper-button-prev reviews-button-prev">
+              <div class="swiper-button-prev room-button-prev">
                 <i class="icon-arrow-left"></i>
               </div>
-              <div class="swiper-button-next reviews-button-next">
+              <div class="swiper-button-next room-button-next">
                 <i class="icon-arrow-right"></i>
               </div>
             </div>
+
+            <a class="room__btn btn btn--accent" href="/">
+              Все номера
+            </a>
 
           </div>
         </div>

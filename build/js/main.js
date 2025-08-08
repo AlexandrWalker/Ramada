@@ -230,6 +230,35 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
+    const roomBodySlider = new Swiper(".room__body--slider", {
+    slidesPerGroup: 1,
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    loop: true,
+    speed: 1000,
+    mousewheel: {
+      forceToAxis: true,
+    },
+    navigation: {
+      prevEl: ".room-button-prev",
+      nextEl: ".room-button-next",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      381: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      601: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      }
+    },
+  });
+
 
 
   /**
