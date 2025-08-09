@@ -1,0 +1,249 @@
+@use './../mixins' as *;
+
+.news {
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    gap: 15rem;
+
+    @include md {
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    @include sm {
+      gap: 3rem;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 87.8rem;
+
+    @include md {
+      gap: 2rem;
+      width: 100%;
+    }
+  }
+
+  &__share {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    a {
+      --news-share-size: 6rem;
+
+      width: var(--news-share-size);
+      height: var(--news-share-size);
+      border-radius: 50%;
+      border: 0.1rem solid var(--black-10);
+
+      @include md {
+        --news-share-size: 5rem;
+      }
+
+      &:hover {
+        color: var(--accent);
+      }
+
+      i {
+        --font-size: var(--news-share-size);
+      }
+    }
+  }
+
+  &__date {
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 120%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+
+    @include md {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__content {
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      line-height: 100%;
+      margin-bottom: 2rem;
+
+      @include md {
+        font-size: 2.5rem;
+      }
+
+      @include sm {
+        margin-bottom: 1rem;
+      }
+    }
+
+    p {
+      line-height: 100%;
+      margin-bottom: 2rem;
+
+      @include sm {
+        margin-bottom: 1rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    ul {
+      margin-bottom: 3rem;
+
+      @include sm {
+        margin: 2rem 0;
+      }
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+
+      @include sm {
+        margin-bottom: 1rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 50%;
+        background-color: var(--accent);
+        flex-shrink: 0;
+      }
+    }
+
+    &-img {
+      height: 38.1rem;
+      margin-bottom: 3rem;
+
+      @include md {
+        height: 29.2rem;
+      }
+
+      @include sm {
+        height: 15.1rem;
+        margin: 2rem 0;
+      }
+    }
+
+    &-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+
+      @include sm {
+        gap: 1rem;
+      }
+    }
+  }
+
+  &__side {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: calc(100% - 87.8rem - 15rem);
+    height: fit-content;
+    padding: 5rem 3rem 6rem;
+    background-color: var(--white);
+
+    @include md {
+      gap: 2rem;
+      width: 100%;
+      padding: 3rem 3rem 4rem;
+    }
+
+    @include sm {
+      padding: 3rem 2rem;
+    }
+
+    &-title {
+      color: var(--accent);
+
+      h5 {
+
+        @include md {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 0.1rem solid var(--gray-30);
+
+      &:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+    }
+
+    &-date {
+      font-weight: 700;
+      font-size: 1.6rem;
+      line-height: 120%;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+
+      @include md {
+        font-size: 1.4rem;
+      }
+    }
+
+    &-link {
+      font-family: var(--second-family);
+      font-weight: 400;
+      font-size: 2rem;
+      line-height: 120%;
+      max-width: 32rem;
+
+      @include md {
+        font-size: 1.6rem;
+        max-width: 100%;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+
+      &:hover {
+        color: var(--accent);
+
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

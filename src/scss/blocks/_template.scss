@@ -23,8 +23,17 @@
       margin-bottom: calc(13rem + 2rem);
     }
 
+    @include sm {
+      gap: 8rem;
+      margin-bottom: calc(9rem + 2rem);
+    }
+
     .template__inner {
       gap: 6rem;
+
+      @include sm {
+        gap: 7rem;
+      }
     }
 
     .template__plugin {
@@ -34,6 +43,10 @@
       @include md {
         margin-bottom: calc(-13rem - 2rem);
       }
+
+      @include sm {
+        margin-bottom: calc(-9rem - 2rem);
+      }
     }
 
     .template__body-suptitle {
@@ -42,9 +55,22 @@
       @include md {
         margin-bottom: 5rem;
       }
+
+      @include sm {
+        padding: 1.5rem 0;
+      }
+
+      h6 {
+        font-weight: 350;
+
+        @include sm {
+          font-size: 1.6rem;
+        }
+      }
     }
 
     .template__body-title {
+      text-transform: uppercase;
       margin-bottom: 10rem;
 
       @include md {

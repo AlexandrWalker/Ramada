@@ -265,6 +265,7 @@
 
 /* Стиль для параллакс картинок */
 [data-animation="parallax-img"] {
+  overflow: hidden;
 
   img {
     width: auto;
@@ -339,15 +340,30 @@
 
   background-color: var(--accent);
 
+  .container {
+
+    @include sm {
+      padding: 0;
+    }
+  }
+
   &__inner {
     padding: 1.7rem 0 1.8rem;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+      padding: 0;
+      margin: 0;
+    }
 
     @include md {
       padding: 1.1rem 0 1.2rem;
     }
 
     @include sm {
-      padding: 0.8rem 0;
+      padding: 0.8rem var(--container-padding);
     }
   }
 
@@ -356,6 +372,8 @@
     flex-direction: row;
     align-items: center;
     gap: var(--breadcrumbs-gap);
+
+    width: fit-content;
   }
 
   li {
@@ -367,6 +385,7 @@
     font-weight: 350;
     font-size: 1.6rem;
     color: var(--white);
+    white-space: nowrap;
 
     @include md {
       font-size: 1.4rem;
