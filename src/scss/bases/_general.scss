@@ -285,30 +285,13 @@
   width: 207.2rem;
   height: 207.4rem;
   pointer-events: none;
+  opacity: 0.3;
 
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
-
-  @keyframes one {
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
-
-  @keyframes two {
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
-
-  @keyframes three {
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
 }
 
 .animatedClass {
@@ -480,5 +463,23 @@
         display: none;
       }
     }
+  }
+}
+
+@keyframes one {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes two {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes three {
+  100% {
+    stroke-dashoffset: 0;
   }
 }

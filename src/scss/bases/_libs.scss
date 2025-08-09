@@ -135,6 +135,7 @@
 
   &::before {
     border-color: var(--white);
-    background-color: var(--white-50);
+    background-color: var(--white-o-50);
+    backdrop-filter: blur(20.75px);
   }
 }

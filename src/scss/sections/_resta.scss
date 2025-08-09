@@ -112,7 +112,7 @@
         left: 0;
         z-index: 1;
         backdrop-filter: blur(7.35px);
-        transition: all 0.5s ease;
+        transition: all 0.3s ease;
 
         .resta__block:hover & {
           backdrop-filter: blur(0);
@@ -169,7 +169,7 @@
       p {
         opacity: 0;
         pointer-events: none;
-        transition: all 0.5s ease;
+        transition: all 0.3s ease;
 
         .resta__block:hover & {
           opacity: 1;
@@ -181,7 +181,8 @@
     &-btn {
       opacity: 0;
       pointer-events: none;
-      transition: all 0.5s ease;
+      transition: all 0.3s ease;
+      transition-delay: 0s;
 
       .resta__block:hover & {
         opacity: 1;

@@ -2,7 +2,7 @@
 
 .events {
   padding-bottom: 4.5rem;
-  
+
   position: relative;
 
   @include md {
@@ -109,6 +109,13 @@
         @include md {
           font-size: 2rem;
         }
+      }
+    }
+
+    &-title {
+
+      h5 {
+        line-height: 110%;
       }
     }
 
@@ -487,6 +494,33 @@
         border-color: var(--white-30);
         color: var(--white);
       }
+
+      .btn {
+        --btn-background: transparent;
+
+        .events__other-item:hover & {
+          --btn-border-color: var(--white-30);
+
+          backdrop-filter: blur(7.8px);
+        }
+
+        &::before {
+          border: 0.1rem solid var(--black-30);
+
+          .events__other-item:hover & {
+            background: rgba(255, 255, 255, 0.24);
+            border-color: transparent;
+          }
+        }
+
+        &::after {
+          border-color: var(--black);
+
+          .events__other-item:hover & {
+            border-color: var(--white-o-50);
+          }
+        }
+      }
     }
 
     &-suptitle {
@@ -548,7 +582,7 @@
 
     [class^=swiper-button-],
     [class*=" swiper-button-"] {
-      top: 55%;
+      top: 50%;
     }
   }
 }

@@ -382,6 +382,7 @@
 
         font-weight: 700;
         font-size: 2rem;
+        line-height: 120%;
         text-transform: uppercase;
         color: var(--gray);
 
@@ -588,7 +589,9 @@
         text-decoration: underline;
 
         &:hover {
-          color: var(--accent);
+          // color: var(--accent);
+          color: var(--white);
+          text-decoration: none;
         }
       }
     }

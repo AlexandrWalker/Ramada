@@ -90,6 +90,10 @@
 
   transition: all 0.3s ease;
 
+  &:hover {
+    --burger-close-color: var(--black);
+  }
+
   @include md {
     --burger-close-width: 5rem;
     --burger-close-color: var(--black);
@@ -131,10 +135,12 @@
 
     font-weight: 900;
     color: var(--white);
+    display: none;
 
     @include md {
       --font-size: 5rem;
 
+      display: flex;
       font-weight: 400;
       display: flex;
       width: var(--font-size);
@@ -161,7 +167,7 @@
     height: 2rem;
     position: relative;
 
-    @include sm {
+    @include md {
       display: none;
     }
 
@@ -275,5 +281,12 @@
     overflow-x: hidden;
 
     transition: all var(--burger-transition) ease;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+      padding: 0;
+      margin: 0;
+    }
   }
 }

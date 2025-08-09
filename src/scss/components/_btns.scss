@@ -66,7 +66,7 @@
 
   &::after {
     content: "";
-    border: 0.1rem solid var(--white-50);
+    border: 0.1rem solid var(--white-o-50);
     border-radius: var(--btn-border-radius);
     transition: all 0.3s ease;
     pointer-events: none;
@@ -234,21 +234,12 @@
     }
   }
 
-  // &--outline {
-  //   --btn-color: var(--black);
-  //   --btn-background: var(--gray-light);
-
-  //   &:hover {
-  //     --btn-color: var(--white);
-  //     --btn-background: var(--gray);
-  //   }
-  // }
-
   &--blur {
     --btn-color: var(--white);
     --btn-background: rgba(255, 255, 255, 0.24);
     --btn-border-color: var(--white-30);
 
+    backdrop-filter: blur(7.8px);
 
     &::before {
       backdrop-filter: blur(7.8px);
@@ -433,7 +424,7 @@
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      border: 0.05rem solid var(--white-50);
+      border: 0.05rem solid var(--white-o-50);
       transition: all 0.3s ease;
       pointer-events: none;
 
