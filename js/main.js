@@ -1006,16 +1006,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const tl = gsap.timeline({
           paused: true
         });
-        tl.from(fadeItem, {
-          opacity: 0,
-          y: "20",
-          duration: .8,
-          delay: .3,
-          ease: "ease",
-          stagger: {
-            amount: .8
-          }
-        });
+        if (fadeItem.getAttribute('data-rotation')) {
+          tl.from(fadeItem, {
+            opacity: 0,
+            y: "100",
+            rotationZ: 20,
+            duration: .8,
+            delay: .3,
+            ease: "ease",
+            stagger: {
+              amount: .8
+            }
+          });
+        } else {
+          tl.from(fadeItem, {
+            opacity: 0,
+            y: "20",
+            duration: .8,
+            delay: .3,
+            ease: "ease",
+            stagger: {
+              amount: .8
+            }
+          });
+        }
         scrollTriggerPlayer(fadeItem, tl)
       });
 
