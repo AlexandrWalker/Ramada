@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
-    const roomBodySlider = new Swiper(".room__body--slider", {
+  const roomBodySlider = new Swiper(".room__body--slider", {
     slidesPerGroup: 1,
     slidesPerView: 'auto',
     spaceBetween: 10,
@@ -258,6 +258,44 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
   });
+
+  const studioSliderBig = new Swiper(".studio__slider--big", {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    speed: 1000,
+    mousewheel: {
+      forceToAxis: true,
+    },
+    navigation: {
+      prevEl: ".studio-button-prev",
+      nextEl: ".studio-button-next",
+    },
+  });
+
+  const studioSliderMin = new Swiper(".studio__slider--min", {
+    slidesPerGroup: 1,
+    slidesPerView: 2,
+    spaceBetween: 10,
+    direction: "horizontal",
+    loop: true,
+    speed: 1000,
+    mousewheel: false,
+    navigation: {
+      prevEl: ".studio-button-prev",
+      nextEl: ".studio-button-next",
+    },
+    breakpoints: {
+      601: {
+        direction: "vertical",
+        spaceBetween: 20,
+      }
+    },
+  });
+
+  studioSliderBig.controller.control = studioSliderMin;
+  studioSliderMin.controller.control = studioSliderBig;
 
 
 
@@ -1118,7 +1156,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('resize', function () { ScrollTrigger.refresh() });
 
-  
+
 
   const filter = document.querySelector('.filter');
   if (filter) {
