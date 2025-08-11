@@ -106,16 +106,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -303,6 +303,7 @@ img {
 }
 
 .link i {
+  --font-size: 2.4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -318,6 +319,23 @@ img {
   transition: all 0.3s ease;
   font-size: 2.4rem;
   color: var(--gray);
+}
+
+.link--accent {
+  color: var(--accent);
+}
+
+.link--accent:hover {
+  color: var(--black);
+}
+
+.link--accent:hover i {
+  background-color: var(--black);
+}
+
+.link--accent i {
+  background-color: var(--accent);
+  color: var(--white);
 }
 
 /* Листья */
@@ -729,6 +747,27 @@ img {
   border-color: var(--white);
   background-color: var(--white-o-50);
   backdrop-filter: blur(20.75px);
+}
+
+/* Прозрачная кнопка слайдера */
+
+.swiper-button-tran {
+  --swiper-button-bg: transparent;
+  border-color: var(--white-30);
+}
+
+.swiper-button-tran:hover {
+  border-color: var(--gray);
+}
+
+.swiper-button-tran i {
+  --font-size: var(--swiper-font-size);
+  color: var(--white);
+}
+
+.swiper-button-tran::before {
+  border-color: var(--white);
+  background-color: transparent;
 }
 
 /* Reset and base styles  */
@@ -1694,6 +1733,32 @@ h6 span {
   padding: 1rem 0;
   border-top: 0.1rem solid var(--accent);
   border-bottom: 0.1rem solid var(--accent);
+}
+
+main li:not(.breadcrumbs li) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+main li:not(.breadcrumbs li):last-child {
+  margin-bottom: 0;
+}
+
+main li:not(.breadcrumbs li)::before {
+  content: "";
+  display: block;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: var(--accent);
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 /* Modules */
@@ -2932,6 +2997,13 @@ h6 span {
   z-index: 3;
 }
 
+.offers-special-page .template--primary {
+  min-height: 72rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
 .template--primary .template__inner {
   gap: 6rem;
 }
@@ -3069,14 +3141,65 @@ h6 span {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  height: 69.4rem;
 }
 
 .afisha-inner__content-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 5rem 13rem;
   background-color: var(--white);
+  height: 100%;
+}
+
+.afisha-inner__content-block .wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.afisha-inner__content-block .wrap h5 {
+  font-size: 2.5rem;
+}
+
+.afisha-inner__content-block .wrap span {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 2.5rem;
+  line-height: 120%;
+  color: var(--accent);
+}
+
+.afisha-inner__content-block .wrap:first-child {
+  gap: 3rem;
+}
+
+.afisha-inner__content-block .wrap:first-child h5 {
+  font-size: 3.5rem;
+}
+
+.afisha-inner__content-block .wrap:last-child h5 {
+  font-size: 3.5rem;
+}
+
+.afisha-inner__content-block .line {
+  border-top: 0.1rem solid var(--gray-30);
 }
 
 .afisha-inner__content-wrap {
   position: relative;
+  height: 100%;
 }
 
 .afisha-inner__content-img {
@@ -3109,12 +3232,8 @@ h6 span {
   text-transform: lowercase;
 }
 
-.afisha-inner-page .room {
+.afisha-inner-page .booking {
   background-color: var(--white);
-}
-
-.afisha-inner-page .rooms__item {
-  border: 0.1rem solid var(--gray-10);
 }
 
 .afisha-block h4 {
@@ -3210,32 +3329,6 @@ h6 span {
   margin-bottom: 3rem;
 }
 
-.news__content li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.news__content li:last-child {
-  margin-bottom: 0;
-}
-
-.news__content li::before {
-  content: "";
-  display: block;
-  width: 0.8rem;
-  height: 0.8rem;
-  border-radius: 50%;
-  background-color: var(--accent);
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
 .news__content-img {
   height: 38.1rem;
   margin-bottom: 3rem;
@@ -3326,6 +3419,24 @@ h6 span {
   text-decoration: none;
 }
 
+.offers-special-page .template--primary {
+  background-position: 100% 47.5%;
+  margin-bottom: 6rem;
+}
+
+.offers-special__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.offers-special .offers__item {
+  width: calc(33.33333% - 1.33333rem);
+}
+
 .press__items {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3404,15 +3515,6 @@ h6 span {
 
 .press__item-text {
   margin-bottom: 4rem;
-}
-
-.press__item .link {
-  color: var(--accent);
-}
-
-.press__item .link i {
-  background-color: var(--accent);
-  color: var(--white);
 }
 
 .reviews-page .reviews {
@@ -3820,6 +3922,7 @@ h6 span {
 .studio__slider--min {
   width: 32.43%;
   height: 100%;
+  pointer-events: none;
 }
 
 .studio__slider .swiper-button-next {
@@ -3830,11 +3933,13 @@ h6 span {
   left: 5rem;
 }
 
-.room {
+/* Sections */
+
+.booking {
   padding: 6rem 0;
 }
 
-.room__head {
+.booking__head {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3847,29 +3952,29 @@ h6 span {
   margin-bottom: 5rem;
 }
 
-.room__body {
+.booking__body {
   position: relative;
 }
 
-.room__btn {
+.booking__btn {
   display: none;
 }
 
-.room .rooms__item {
+.booking .rooms__item {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 0.1rem solid var(--gray-10);
+}
+
+.booking .rooms__item--slider {
   width: 100%;
   height: 100%;
 }
 
-.room .rooms__item--slider {
-  width: 100%;
-  height: 100%;
-}
-
-.room .rooms__item-body .btn {
+.booking .rooms__item-body .btn {
   --btn-padding-x: 3.5rem;
 }
-
-/* Sections */
 
 .diversity {
   --diversity-head-width: 49.3rem;
@@ -5027,6 +5132,85 @@ h6 span {
   grid-column: 2/3;
   grid-row: 2/3;
   padding: 0 0 var(--offer-padding-bottom) var(--offer-padding-left);
+}
+
+.offers {
+  padding-top: 6rem;
+}
+
+.offers__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.offers__body {
+  position: relative;
+}
+
+.offers__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 2rem 2rem 4rem;
+  background-color: var(--white);
+}
+
+.offers__img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 453/293;
+}
+
+.offers__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.offers__content-title {
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.offers__content-title h6 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.offers__content-text {
+  max-width: 36.5rem;
+  margin-bottom: 4rem;
+}
+
+.offers__btn {
+  display: none;
+  width: 100%;
+}
+
+.offers .swiper-pagination {
+  margin-top: 4rem;
 }
 
 .rest {
@@ -6201,6 +6385,10 @@ h6 span {
     margin-bottom: 15rem;
   }
 
+  .offers-special-page .template--primary {
+    min-height: 53.8rem;
+  }
+
   .template--primary .template__plugin {
     margin-bottom: -15rem;
   }
@@ -6225,8 +6413,33 @@ h6 span {
     --font-size: 5rem;
   }
 
-  .afisha-inner {
-    display: none;
+  .afisha-inner__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 3rem;
+    height: auto;
+  }
+
+  .afisha-inner__content-block {
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .afisha-inner__content-block .wrap h5 {
+    font-size: 3.5rem;
+  }
+
+  .afisha-inner__content-block .wrap:first-child {
+    gap: 2rem;
+  }
+
+  .afisha-inner__content-img {
+    aspect-ratio: 1/1.08;
   }
 
   .afisha-inner__content-head {
@@ -6237,6 +6450,10 @@ h6 span {
 
   .afisha-inner__content-head span {
     font-size: 2rem;
+  }
+
+  .afisha-block {
+    display: none;
   }
 
   .news__inner {
@@ -6289,6 +6506,14 @@ h6 span {
   .news__side-link {
     font-size: 1.6rem;
     max-width: 100%;
+  }
+
+  .offers-special-page .template--primary {
+    margin-bottom: 3rem;
+  }
+
+  .offers-special .offers__item {
+    width: calc(50% - 1rem);
   }
 
   .press__item {
@@ -6470,25 +6695,29 @@ h6 span {
     --font-size: 4rem;
   }
 
-  .room {
+  .studio__slider {
+    height: 41.3rem;
+  }
+
+  .booking {
     padding: 4rem 0;
   }
 
-  .room__head {
+  .booking__head {
     margin-bottom: 3.5rem;
   }
 
-  .room__head-title h4 {
+  .booking__head-title h4 {
     font-size: 3.5rem;
   }
 
-  .room .rooms__item-slider {
+  .booking .rooms__item-slider {
     height: 13.6rem;
     min-height: 13.6rem;
   }
 
-  .room [class^=swiper-button-],
-  .room [class*=" swiper-button-"] {
+  .booking [class^=swiper-button-],
+  .booking [class*=" swiper-button-"] {
     display: none;
   }
 
@@ -6801,6 +7030,50 @@ h6 span {
     --btn-second-padding: 0.268rem;
   }
 
+  .offers {
+    padding-top: 3rem;
+  }
+
+  .offers__head {
+    margin-bottom: 3rem;
+  }
+
+  .offers__head .btn {
+    display: none;
+  }
+
+  .offers__body {
+    margin-bottom: 2rem;
+  }
+
+  .offers__item {
+    gap: 3rem;
+    padding: 1rem 1rem 3rem;
+  }
+
+  .offers__content-title h6 {
+    font-size: 1.6rem;
+  }
+
+  .offers__content-text {
+    margin-bottom: 3rem;
+  }
+
+  .offers__btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .offers [class^=swiper-button-],
+  .offers [class*=" swiper-button-"] {
+    display: none;
+  }
+
+  .offers .swiper-pagination {
+    margin-top: 2rem;
+  }
+
   .rest {
     padding-bottom: 3rem;
   }
@@ -6909,7 +7182,7 @@ h6 span {
     margin-bottom: 3rem;
   }
 
-  .reviews__body--slider {
+  .reviews__slider {
     width: calc(100% + var(--container-padding) + var(--container-padding));
     padding: 0 var(--container-padding);
     margin-left: calc(var(--container-padding) * -1);
@@ -6939,6 +7212,14 @@ h6 span {
 
   .reviews__item-content {
     gap: 2rem;
+  }
+
+  .reviews__item-date p {
+    font-size: 1.2rem;
+  }
+
+  .reviews__item-name h6 {
+    font-size: 1.4rem;
   }
 
   .reviews__btn {
@@ -7077,6 +7358,10 @@ h6 span {
 
   h2 {
     font-size: 3rem;
+  }
+
+  main li:not(.breadcrumbs li) {
+    margin-bottom: 1rem;
   }
 
   .burger-btn::before {
@@ -7331,6 +7616,10 @@ h6 span {
     margin-bottom: 11rem;
   }
 
+  .offers-special-page .template--primary {
+    min-height: 65rem;
+  }
+
   .template--primary .template__inner {
     gap: 7rem;
   }
@@ -7345,6 +7634,34 @@ h6 span {
 
   .template--primary .template__body-suptitle h6 {
     font-size: 1.6rem;
+  }
+
+  .afisha-inner__content-block {
+    gap: 2rem;
+  }
+
+  .afisha-inner__content-block .wrap h5 {
+    font-size: 2.5rem;
+  }
+
+  .afisha-inner__content-block .wrap span {
+    font-size: 2rem;
+  }
+
+  .afisha-inner__content-block .wrap:first-child {
+    gap: 1rem;
+  }
+
+  .afisha-inner__content-block .wrap:first-child h5 {
+    font-size: 2.5rem;
+  }
+
+  .afisha-inner__content-block .wrap:last-child {
+    gap: 1rem;
+  }
+
+  .afisha-inner__content-block .wrap:last-child h5 {
+    font-size: 2.5rem;
   }
 
   .afisha-inner__content-head {
@@ -7372,10 +7689,6 @@ h6 span {
     margin: 2rem 0;
   }
 
-  .news__content li {
-    margin-bottom: 1rem;
-  }
-
   .news__content-img {
     height: 15.1rem;
     margin: 2rem 0;
@@ -7387,6 +7700,18 @@ h6 span {
 
   .news__side {
     padding: 3rem 2rem;
+  }
+
+  .offers-special-page .template--primary {
+    margin-bottom: 2rem;
+  }
+
+  .offers-special__items {
+    gap: 1rem;
+  }
+
+  .offers-special .offers__item {
+    width: 100%;
   }
 
   .press__items {
@@ -7429,6 +7754,7 @@ h6 span {
 
   .press__item .link i {
     --font-size: 1.6rem;
+    font-size: var(--font-size);
   }
 
   .reviews-page .reviews {
@@ -7560,35 +7886,35 @@ h6 span {
     width: 100%;
   }
 
-  .room {
+  .booking {
     padding: 3rem 0 4rem;
   }
 
-  .room__head {
+  .booking__head {
     margin-bottom: 2rem;
   }
 
-  .room__head .btn {
+  .booking__head .btn {
     display: none;
   }
 
-  .room__body {
+  .booking__body {
     margin-bottom: 2rem;
   }
 
-  .room__btn {
+  .booking__btn {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     width: 100%;
   }
 
-  .room .rooms__item-slider {
+  .booking .rooms__item-slider {
     height: 11.1rem;
     min-height: 11.1rem;
   }
 
-  .room .rooms__item-title h5 {
+  .booking .rooms__item-title h5 {
     font-size: 1.6rem;
   }
 
@@ -7876,6 +8202,22 @@ h6 span {
     grid-row: 3/4;
   }
 
+  .offers {
+    padding-top: 2rem;
+  }
+
+  .offers__head {
+    margin-bottom: 2rem;
+  }
+
+  .offers__body {
+    margin-bottom: 1rem;
+  }
+
+  .offers .swiper-pagination {
+    margin-top: 1rem;
+  }
+
   .rest {
     padding-top: 3rem;
   }
@@ -8011,10 +8353,6 @@ h6 span {
   .reviews__item-content {
     gap: 1.5rem;
     margin-bottom: 1.5rem;
-  }
-
-  .reviews__item-date p {
-    font-size: 1.2rem;
   }
 
   .reviews__item-wrap {
