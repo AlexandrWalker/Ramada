@@ -19,13 +19,28 @@
     position: relative;
     z-index: 3;
 
+    .offers-special-page & {
+      min-height: 72rem;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+    }
+
     @include md {
       margin-bottom: calc(13rem + 2rem);
+
+      .offers-special-page & {
+        min-height: 53.8rem;
+      }
     }
 
     @include sm {
       gap: 8rem;
       margin-bottom: calc(9rem + 2rem);
+
+      .offers-special-page & {
+        min-height: 65rem;
+      }
     }
 
     .template__inner {

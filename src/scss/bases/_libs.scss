@@ -139,3 +139,24 @@
     backdrop-filter: blur(20.75px);
   }
 }
+
+/* Прозрачная кнопка слайдера */
+.swiper-button-tran {
+  --swiper-button-bg: transparent;
+
+  border-color: var(--white-30);
+
+  &:hover {
+    border-color: var(--gray);
+  }
+
+  i {
+    --font-size: var(--swiper-font-size);
+    color: var(--white);
+  }
+
+  &::before {
+    border-color: var(--white);
+    background-color: transparent;
+  }
+}

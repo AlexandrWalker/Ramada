@@ -1,0 +1,37 @@
+<section class="booking">
+  <div class="container">
+    <div class="booking__inner">
+
+      <div class="booking__head">
+        <div class="booking__head-title" data-transform="revealRotate" data-splitting="words">
+          <h4>
+            Забронируйте номер
+          </h4>
+        </div>
+        <a class="btn btn--accent" href="/">
+          Все номера
+        </a>
+      </div>
+
+      <div class="booking__body">
+        <div class="swiper booking__body--slider">
+          <div class="swiper-wrapper">
+            @@loop('./../elements/rooms-slide-item.html', './data/rooms-items.json')
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper-button-prev booking-button-prev">
+          <i class="icon-arrow-left"></i>
+        </div>
+        <div class="swiper-button-next booking-button-next">
+          <i class="icon-arrow-right"></i>
+        </div>
+      </div>
+
+      <a class="booking__btn btn btn--accent" href="/">
+        Все номера
+      </a>
+
+    </div>
+  </div>
+</section>

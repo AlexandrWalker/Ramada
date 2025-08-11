@@ -25,7 +25,7 @@
 </head>
 
 <body>
-  <div class="wrapper">
+  <div class="wrapper afisha-inner-page">
     <!-- Шапка -->
     <header id="header" class="header">
   <div class="container container--fluid">
@@ -602,7 +602,7 @@
   </div>
   <div class="burger-overlay"></div>
 </div>
-    <main class="main afisha-inner-page">
+    <main class="main">
       <!-- Главный блок -->
       <section class="template">
 
@@ -673,7 +673,45 @@
               </div>
 
               <div class="afisha-inner__content-block">
-                
+
+                <div class="wrap">
+                  <h5>
+                    Подзаголовок события
+                  </h5>
+                  <p>
+                    Не следует, однако забывать, что реализация намеченных плановых заданий играет важную роль в
+                    формировании систем массового участия.
+                  </p>
+                </div>
+
+                <div class="wrap">
+                  <h5>
+                    Вас ждёт
+                  </h5>
+                  <ul>
+                    <li>
+                      Не следует, однако забывать, что реализация намеченных
+                    </li>
+                    <li>
+                      Задача организации, в особенности же сложившаяся
+                    </li>
+                    <li>
+                      В формировании направлений прогрессивного развития.
+                    </li>
+                  </ul>
+                </div>
+
+                <span class="line"></span>
+
+                <div class="wrap">
+                  <span>
+                    Стоимость:
+                  </span>
+                  <h5>
+                    20 000 руб.
+                  </h5>
+                </div>
+
               </div>
 
             </div>
@@ -715,11 +753,6 @@
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
                     <div class="studio__slider-item border">
-                      <img src="./images/temp/rooms-item-3.png" alt="">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="studio__slider-item border">
                       <img src="./images/temp/rooms-item-1.png" alt="">
                     </div>
                   </div>
@@ -741,13 +774,18 @@
                   <div class="swiper-slide">
                     <div class="studio__slider-item border">
                       <img src="./images/temp/rooms-item-2.png" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="studio__slider-item border">
+                      <img src="./images/temp/rooms-item-3.png" alt="">
                     </div>
                   </div>
                 </div>
-                <div class="swiper-button-prev studio-button-prev">
+                <div class="swiper-button-tran swiper-button-prev studio-button-prev">
                   <i class="icon-arrow-left"></i>
                 </div>
-                <div class="swiper-button-next studio-button-next">
+                <div class="swiper-button-tran swiper-button-next studio-button-next">
                   <i class="icon-arrow-right"></i>
                 </div>
               </div>
@@ -755,11 +793,6 @@
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
                     <div class="studio__slider-item border">
-                      <img src="./images/temp/rooms-item-1.png" alt="">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="studio__slider-item border">
                       <img src="./images/temp/rooms-item-2.png" alt="">
                     </div>
                   </div>
@@ -781,6 +814,16 @@
                   <div class="swiper-slide">
                     <div class="studio__slider-item border">
                       <img src="./images/temp/rooms-item-3.png" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="studio__slider-item border">
+                      <img src="./images/temp/rooms-item-1.png" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="studio__slider-item border">
+                      <img src="./images/temp/rooms-item-2.png" alt="">
                     </div>
                   </div>
                 </div>
@@ -827,6 +870,14 @@
                   Комментарий
                 </label>
               </div>
+              <!-- @ @if(form-file === 'true'){
+              <div class="form-group">
+                <textarea id="form_comment" class="form-textarea" name="comment"></textarea>
+                <label for="form_comment" class="form-label">
+                  Комментарий
+                </label>
+              </div>
+              } -->
             </div>
             <div class="form-foot">
               <button class="form-btn btn btn--accent" type="button">
@@ -849,25 +900,25 @@
   </div>
 </section>
 
-      <section class="room">
-        <div class="container">
-          <div class="room__inner">
+      <section class="booking">
+  <div class="container">
+    <div class="booking__inner">
 
-            <div class="room__head">
-              <div class="room__head-title" data-transform="revealRotate" data-splitting="words">
-                <h4>
-                  Забронируйте номер
-                </h4>
-              </div>
-              <a class="btn btn--accent" href="/">
-                Все номера
-              </a>
-            </div>
+      <div class="booking__head">
+        <div class="booking__head-title" data-transform="revealRotate" data-splitting="words">
+          <h4>
+            Забронируйте номер
+          </h4>
+        </div>
+        <a class="btn btn--accent" href="/">
+          Все номера
+        </a>
+      </div>
 
-            <div class="room__body">
-              <div class="swiper room__body--slider">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
+      <div class="booking__body">
+        <div class="swiper booking__body--slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
   <div class="rooms__item">
     <div class="rooms__item-slider border">
       <div class="swiper rooms__item--slider">
@@ -1480,24 +1531,24 @@
     </div>
   </div>
 </div>
-                </div>
-                <div class="swiper-pagination"></div>
-              </div>
-              <div class="swiper-button-prev room-button-prev">
-                <i class="icon-arrow-left"></i>
-              </div>
-              <div class="swiper-button-next room-button-next">
-                <i class="icon-arrow-right"></i>
-              </div>
-            </div>
-
-            <a class="room__btn btn btn--accent" href="/">
-              Все номера
-            </a>
-
           </div>
+          <div class="swiper-pagination"></div>
         </div>
-      </section>
+        <div class="swiper-button-prev booking-button-prev">
+          <i class="icon-arrow-left"></i>
+        </div>
+        <div class="swiper-button-next booking-button-next">
+          <i class="icon-arrow-right"></i>
+        </div>
+      </div>
+
+      <a class="booking__btn btn btn--accent" href="/">
+        Все номера
+      </a>
+
+    </div>
+  </div>
+</section>
 
     </main>
     <!-- Подвал -->

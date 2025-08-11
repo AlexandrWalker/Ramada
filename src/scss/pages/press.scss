@@ -125,18 +125,17 @@
     }
 
     .link {
-      color: var(--accent);
 
       @include sm {
         font-size: 1.2rem;
       }
 
       i {
-        background-color: var(--accent);
-        color: var(--white);
 
         @include sm {
           --font-size: 1.6rem;
+
+          font-size: var(--font-size);
         }
       }
     }

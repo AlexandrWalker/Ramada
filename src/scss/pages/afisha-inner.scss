@@ -2,10 +2,6 @@
 
 .afisha-inner {
 
-  @include md {
-    display: none;
-  }
-
   &__inner {
     display: flex;
     flex-direction: column;
@@ -17,17 +13,114 @@
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
 
+    height: 69.4rem;
+
+    @include md {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      height: auto;
+    }
+
     &-block {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      padding: 5rem 13rem;
       background-color: var(--white);
+      height: 100%;
+
+      @include md {
+        background-color: transparent;
+        padding: 0;
+      }
+
+      @include sm {
+        gap: 2rem;
+      }
+
+      .wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        h5 {
+          font-size: 2.5rem;
+
+          @include md {
+            font-size: 3.5rem;
+          }
+
+          @include sm {
+            font-size: 2.5rem;
+          }
+        }
+
+        span {
+          font-family: var(--second-family);
+          font-weight: 300;
+          font-size: 2.5rem;
+          line-height: 120%;
+          color: var(--accent);
+
+          @include sm {
+            font-size: 2rem;
+          }
+        }
+
+        &:first-child {
+          gap: 3rem;
+
+          @include md {
+            gap: 2rem;
+          }
+
+          @include sm {
+            gap: 1rem;
+          }
+
+          h5 {
+            font-size: 3.5rem;
+
+            @include sm {
+              font-size: 2.5rem;
+            }
+          }
+        }
+
+        &:last-child {
+
+          @include sm {
+            gap: 1rem;
+          }
+
+          h5 {
+            font-size: 3.5rem;
+
+            @include sm {
+              font-size: 2.5rem;
+            }
+          }
+        }
+      }
+
+      .line {
+        border-top: 0.1rem solid var(--gray-30);
+      }
     }
 
     &-wrap {
       position: relative;
+      height: 100%;
     }
 
     &-img {
       width: 100%;
       height: 100%;
+
+      @include md {
+        aspect-ratio: 1/1.08;
+      }
     }
 
     &-head {
@@ -71,17 +164,17 @@
 
   &-page {
 
-    .room {
+    .booking {
       background-color: var(--white);
-    }
-
-    .rooms__item {
-      border: 0.1rem solid var(--gray-10);
     }
   }
 }
 
 .afisha-block {
+
+  @include md {
+    display: none;
+  }
 
   h4 {
     margin-bottom: 4rem;

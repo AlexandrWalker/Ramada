@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
-  const reviewsBodySlider = new Swiper(".reviews__body--slider", {
+  const reviewsSlider = new Swiper(".reviews__slider", {
     slidesPerGroup: 1,
     slidesPerView: 'auto',
     spaceBetween: 10,
@@ -182,6 +182,31 @@ document.addEventListener('DOMContentLoaded', () => {
         slidesPerView: 3,
         spaceBetween: 20,
       },
+    },
+  });
+
+  const reviewsBodySlider = new Swiper(".reviews__slider--corp", {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loop: true,
+    speed: 1000,
+    mousewheel: {
+      forceToAxis: true,
+    },
+    navigation: {
+      prevEl: ".reviews-button-prev",
+      nextEl: ".reviews-button-next",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      601: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      }
     },
   });
 
@@ -230,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
-  const roomBodySlider = new Swiper(".room__body--slider", {
+  const bookingBodySlider = new Swiper(".booking__body--slider", {
     slidesPerGroup: 1,
     slidesPerView: 'auto',
     spaceBetween: 10,
@@ -240,8 +265,8 @@ document.addEventListener('DOMContentLoaded', () => {
       forceToAxis: true,
     },
     navigation: {
-      prevEl: ".room-button-prev",
-      nextEl: ".room-button-next",
+      prevEl: ".booking-button-prev",
+      nextEl: ".booking-button-next",
     },
     pagination: {
       el: ".swiper-pagination",
@@ -263,7 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerGroup: 1,
     slidesPerView: 1,
     spaceBetween: 0,
-    loop: true,
+    // loop: true,
     speed: 1000,
     mousewheel: {
       forceToAxis: true,
@@ -279,13 +304,12 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 2,
     spaceBetween: 10,
     direction: "horizontal",
-    loop: true,
+    // loop: true,
     speed: 1000,
+    watchSlidesProgress: true,
+    grabCursor: false,
     mousewheel: false,
-    navigation: {
-      prevEl: ".studio-button-prev",
-      nextEl: ".studio-button-next",
-    },
+    allowTouchMove: false,
     breakpoints: {
       601: {
         direction: "vertical",
@@ -296,6 +320,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   studioSliderBig.controller.control = studioSliderMin;
   studioSliderMin.controller.control = studioSliderBig;
+
+  const offersSlider = new Swiper(".offers__slider", {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loop: true,
+    speed: 1000,
+    mousewheel: {
+      forceToAxis: true,
+    },
+    navigation: {
+      prevEl: ".offers-button-prev",
+      nextEl: ".offers-button-next",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      601: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      835: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      }
+    },
+  });
 
 
 

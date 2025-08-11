@@ -1,0 +1,129 @@
+@use './../mixins' as *;
+
+.offers {
+  padding-top: 6rem;
+
+  @include md {
+    padding-top: 3rem;
+  }
+
+  @include sm {
+    padding-top: 2rem;
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+
+    @include md {
+      margin-bottom: 3rem;
+    }
+
+    @include sm {
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+
+      @include md {
+        display: none;
+      }
+    }
+  }
+
+  &__body {
+    position: relative;
+
+    @include md {
+      margin-bottom: 2rem;
+    }
+
+    @include sm {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__slider {}
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 2rem 2rem 4rem;
+    background-color: var(--white);
+
+    @include md {
+      gap: 3rem;
+      padding: 1rem 1rem 3rem;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 453/293;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    &-title {
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+
+      h6 {
+        font-weight: 700;
+        font-size: 2rem;
+
+        @include md {
+          font-size: 1.6rem;
+        }
+      }
+    }
+
+    &-text {
+      max-width: 36.5rem;
+      margin-bottom: 4rem;
+
+      @include md {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  &__btn {
+    display: none;
+    width: 100%;
+
+    @include md {
+      display: flex;
+    }
+  }
+
+  [class^=swiper-button-],
+  [class*=" swiper-button-"] {
+
+    @include md {
+      display: none;
+    }
+  }
+
+  .swiper-pagination {
+    margin-top: 4rem;
+
+    @include md {
+      margin-top: 2rem;
+    }
+
+    @include sm {
+      margin-top: 1rem;
+    }
+  }
+}

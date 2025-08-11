@@ -1,0 +1,37 @@
+<section id="reviews" class="reviews">
+  <div class="container">
+    <div class="reviews__inner">
+
+      <div class="reviews__head">
+        <div class="reviews__head-title" data-transform="revealRotate" data-splitting="words">
+          <h4>
+            Отзывы
+          </h4>
+        </div>
+        <a class="btn btn--accent" href="/">
+          Все отзывы
+        </a>
+      </div>
+
+      <div class="reviews__body">
+        <div class="swiper reviews__slider">
+          <div class="swiper-wrapper">
+            @@loop('./../elements/reviews-gosti-slide-item.html', './data/reviews-gosti-items.json')
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper-button-prev reviews-button-prev">
+          <i class="icon-arrow-left"></i>
+        </div>
+        <div class="swiper-button-next reviews-button-next">
+          <i class="icon-arrow-right"></i>
+        </div>
+      </div>
+
+      <a class="reviews__btn btn btn--accent" href="/">
+        Все отзывы
+      </a>
+
+    </div>
+  </div>
+</section>

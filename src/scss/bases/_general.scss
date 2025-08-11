@@ -157,6 +157,8 @@
   }
 
   i {
+    --font-size: 2.4rem;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -166,6 +168,23 @@
 
     font-size: 2.4rem;
     color: var(--gray);
+  }
+
+  &--accent {
+    color: var(--accent);
+
+    &:hover {
+      color: var(--black);
+
+      i {
+        background-color: var(--black);
+      }
+    }
+
+    i {
+      background-color: var(--accent);
+      color: var(--white);
+    }
   }
 }
 

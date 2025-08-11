@@ -1,0 +1,43 @@
+@use './../mixins' as *;
+
+.offers-special {
+
+  &-page {
+
+    .template--primary {
+      background-position: 100% 47.5%;
+
+      margin-bottom: 6rem;
+
+      @include md {
+        margin-bottom: 3rem;
+      }
+
+      @include sm {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    @include sm {
+      gap: 1rem;
+    }
+  }
+
+  .offers__item {
+    width: calc(33.33333% - 1.33333rem);
+
+    @include md {
+      width: calc(50% - 1rem);
+    }
+
+    @include sm {
+      width: 100%;
+    }
+  }
+}

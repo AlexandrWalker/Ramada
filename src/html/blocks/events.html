@@ -1,0 +1,27 @@
+<section class="events">
+  <div class="container">
+    <div class="events__inner">
+      <div class="general__head">
+        <div class="general__head-title">
+          <h5>
+            Афиша мероприятий
+          </h5>
+        </div>
+      </div>
+      <div class="events__other-body">
+        <div class="swiper events__other--slider">
+          <div class="swiper-wrapper">
+            @@loop('./../elements/events-slide-item.html', './data/events-items.json')
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper-button-prev events-button-prev">
+          <i class="icon-arrow-left"></i>
+        </div>
+        <div class="swiper-button-next events-button-next">
+          <i class="icon-arrow-right"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
