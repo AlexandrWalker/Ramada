@@ -18,16 +18,9 @@
       }
     }
   }
+}
 
-  &__items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-
-    @include sm {
-      gap: 1rem;
-    }
-  }
+.template-block__items {
 
   .offers__item {
     width: calc(33.33333% - 1.33333rem);

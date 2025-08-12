@@ -1,0 +1,23 @@
+@use './../mixins' as *;
+
+.events {
+
+  &-page {
+
+    .booking {
+      background-color: var(--white);
+    }
+
+    .template--primary {
+      margin-bottom: 6rem;
+
+      @include md {
+        margin-bottom: 4rem;
+      }
+
+      @include sm {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}
