@@ -2,22 +2,8 @@
 
 .offers-special {
 
-  &-page {
+  &-page {}
 
-    .template--primary {
-      background-position: 100% 47.5%;
-
-      margin-bottom: 6rem;
-
-      @include md {
-        margin-bottom: 3rem;
-      }
-
-      @include sm {
-        margin-bottom: 2rem;
-      }
-    }
-  }
 }
 
 .template-block__items {

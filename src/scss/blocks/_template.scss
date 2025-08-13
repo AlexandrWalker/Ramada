@@ -9,6 +9,32 @@
     padding-bottom: 2rem;
   }
 
+  .afisha-page & {
+
+    @include md {
+      padding-bottom: 3rem;
+    }
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -64,7 +90,16 @@
     }
   }
 
-  &__title {}
+  &__title {
+
+    .news-page & {
+      max-width: 88rem;
+
+      @include md {
+        max-width: 44rem;
+      }
+    }
+  }
 
   &__body {
     display: flex;
@@ -149,27 +184,25 @@
   }
 
   &--primary {
+    display: grid;
+    grid-template-rows: auto 1fr;
+
     overflow: visible;
     min-height: calc(72rem + 5.4rem);
     padding-bottom: 0;
-    margin-bottom: calc(6.5rem + 2rem);
-
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    margin-bottom: 6rem;
 
     position: relative;
     z-index: 3;
 
     @include md {
+      margin-bottom: 3rem;
       padding-bottom: 0;
       min-height: calc(53.8rem + 4rem);
-      margin-bottom: calc(13rem + 2rem);
     }
 
     @include sm {
-      margin-bottom: calc(9rem + 2rem);
-
+      margin-bottom: 2rem;
       min-height: 65rem;
     }
 
@@ -190,7 +223,7 @@
 
         /* */
         gap: 0;
-        justify-content: space-between;
+        // justify-content: space-between;
         height: 100%;
         /* */
 
@@ -236,6 +269,18 @@
     }
   }
 
+  &--plugin {
+    margin-bottom: calc(6.5rem + 2rem);
+
+    @include md {
+      margin-bottom: calc(13rem + 2rem);
+    }
+
+    @include sm {
+      margin-bottom: calc(9rem + 2rem);
+    }
+  }
+
   &-block {
 
     &__items {
@@ -245,6 +290,272 @@
 
       @include sm {
         gap: 1rem;
+      }
+    }
+  }
+
+  &-product {
+
+    &__inner {
+      display: grid;
+      grid-template-columns: calc(50% - 7.5rem) calc(50% - 7.5rem);
+      gap: 3rem 15rem;
+      padding: 6rem 13rem;
+      background-color: var(--white);
+
+      @include md {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 4rem 8rem;
+      }
+
+      @include sm {
+        padding: 3rem 2rem 2rem;
+      }
+    }
+
+    &__head {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+
+      grid-column: 1/2;
+      grid-row: 1/2;
+
+      @include md {
+        gap: 2rem;
+        order: 1;
+        margin-bottom: 3rem;
+      }
+
+      @include md {
+        margin-bottom: 2rem;
+      }
+
+      h4 {
+
+        @include md {
+          font-size: 3.5rem;
+        }
+
+        @include sm {
+          font-size: 3rem;
+        }
+      }
+    }
+
+    &__body {
+      grid-column: 1/2;
+      grid-row: 2/3;
+
+      @include md {
+        order: 3;
+      }
+
+      &-title {
+        margin-bottom: 2rem;
+
+        @include md {
+          margin-bottom: 1.5rem;
+        }
+
+        h5 {
+
+          @include md {
+            font-size: 2.5rem;
+          }
+        }
+      }
+
+      &-price {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        width: 100%;
+        padding: 3rem;
+        border: 0.1rem solid var(--gray-30);
+        margin-bottom: 2rem;
+
+        @include md {
+          gap: 1.5rem;
+          padding: 2rem;
+        }
+
+        h6 {
+          font-weight: 350;
+          font-size: 5rem;
+          line-height: 100%;
+          letter-spacing: unset;
+          color: var(--accent);
+
+          @include md {
+            font-size: 3.5rem;
+          }
+
+          @include sm {
+            font-size: 3rem;
+          }
+        }
+
+        p {
+          color: var(--gray);
+        }
+      }
+
+      ul {
+        margin-bottom: 4rem;
+
+        @include md {
+          margin-bottom: 6rem;
+        }
+
+        @include sm {
+          margin-bottom: 2rem;
+        }
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+
+        @include sm {
+          margin-bottom: 1rem;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &::before {
+          content: "";
+          display: block;
+          width: 0.8rem;
+          height: 0.8rem;
+          border-radius: 50%;
+          background-color: var(--accent);
+          flex-shrink: 0;
+        }
+      }
+
+      .btn {
+        width: 100%;
+
+        span {
+          &::before {
+            content: attr(data-text);
+
+            @include xxl {
+              content: attr(data-text-mob);
+            }
+          }
+        }
+      }
+    }
+
+    &__content {
+      grid-column: 2/3;
+      grid-row: 1/3;
+
+      @include md {
+        order: 2;
+      }
+    }
+
+    &__slider {
+      position: relative;
+
+      &-item {
+
+        img {
+          height: 100%;
+        }
+
+        &--mini {
+          height: 100%;
+          border: 0.1rem solid transparent;
+
+          .swiper-slide-thumb-active & {
+            border-color: var(--accent);
+          }
+        }
+      }
+
+      &--big {
+        margin-bottom: 2rem;
+      }
+
+      &--mini {
+        height: 13.7rem;
+
+        @include md {
+          display: none;
+        }
+      }
+
+      .swiper-pagination {
+        display: none;
+
+        position: absolute;
+        bottom: 5rem;
+
+        @include md {
+          display: flex;
+        }
+
+        @include sm {
+          bottom: 2.5rem;
+        }
+
+        &-bullet:not(.swiper-pagination-bullet-active) {
+          background: var(--white);
+        }
+      }
+
+      .swiper-button-prev {
+        @include md {
+          left: calc(var(--swiper-button-size) / 2 * -1);
+        }
+      }
+
+      .swiper-button-next {
+        @include md {
+          right: calc(var(--swiper-button-size) / 2 * -1);
+        }
+      }
+
+      .border {
+
+        &::before {
+
+          @include md {
+            top: 3.3rem;
+            right: 3.3rem;
+            bottom: 3.3rem;
+            left: 3.3rem;
+          }
+
+          @include sm {
+            top: 1.5rem;
+            right: 1.5rem;
+            bottom: 1.5rem;
+            left: 1.5rem;
+          }
+        }
+
+        &::after {
+
+          @include md {
+            border-width: 2rem;
+          }
+
+          @include sm {
+            border-width: 1rem;
+          }
+        }
       }
     }
   }

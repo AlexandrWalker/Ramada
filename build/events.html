@@ -604,7 +604,7 @@
 </div>
     <main class="main">
       <!-- Главный блок -->
-      <section class="template template--primary" style="background-image: url(./images/temp/events-bg.png);">
+      <section class="template template--primary">
 
         <div class="breadcrumbs">
           <div class="container">
@@ -623,7 +623,16 @@
           </div>
         </div>
 
-        <div class="container">
+        <div class="container template__container">
+
+          <picture class="template__bg">
+            <source media="(min-width: 835px)" srcset="./images/temp/events-bg.png" type="image/png">
+            <source media="((max-width: 834px) and (min-width: 601px))"
+              srcset="./images/temp/events-planshet-bg.png" type="image/png">
+            <source media="(max-width: 600px)" srcset="./images/temp/events-mob-bg.png" type="image/png">
+            <img src="./images/temp/events-bg.png" alt="">
+          </picture>
+
           <div class="template__inner">
             <div class="template__suptitle">
               <h6>
@@ -635,7 +644,6 @@
                 Мероприятия
               </h1>
             </div>
-
             <div class="template__body">
               <a class="template__body-down" href="#templateBlock">
                 <i class="icon-chevron-down"></i>

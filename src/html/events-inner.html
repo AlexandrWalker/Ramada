@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('blocks/head.html', {"title": "RAMADA"})
+
+<body>
+  <div class="wrapper offers-special-page">
+    <!-- Шапка -->
+    @@include('./blocks/header.html')
+    <main class="main">
+      <!-- Главный блок -->
+      <section class="template template--primary">
+
+        <div class="breadcrumbs">
+          <div class="container">
+            <div class="breadcrumbs__inner">
+              <ul>
+                <li>
+                  <a href="/">
+                    Главная страница
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    Мероприятия
+                  </a>
+                </li>
+                <li>
+                  Детальная мероприятия
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="container template__container">
+
+          <picture class="template__bg">
+            <source media="(min-width: 835px)" srcset="./images/temp/events-inner-bg.png" type="image/png">
+            <source media="((max-width: 834px) and (min-width: 601px))"
+              srcset="./images/temp/events-inner-planshet-bg.png" type="image/png">
+            <source media="(max-width: 600px)" srcset="./images/temp/events-inner-mob-bg.png" type="image/png">
+            <img src="./images/temp/events-inner-bg.png" alt="">
+          </picture>
+
+          <div class="template__inner">
+            <div class="template__suptitle">
+              <h6>
+                праздники и не только
+              </h6>
+            </div>
+            <div class="template__title">
+              <h1>
+                детальная мероприятия
+              </h1>
+            </div>
+            <div class="template__body">
+              <a class="template__body-down" href="#templateBlock">
+                <i class="icon-chevron-down"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="template-product">
+        <div class="container">
+          <div class="template-product__inner">
+
+            <div class="template-product__head">
+              <h4>
+                Заголовок блока
+              </h4>
+              <p>
+                Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
+                войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные кровати, а
+                также диван-кровать.
+              </p>
+            </div>
+
+            <div class="template-product__body">
+              <div class="template-product__body-title">
+                <h5>
+                  Заголовок списка
+                </h5>
+              </div>
+              <ul>
+                <li>
+                  Не следует, однако забывать, что реализация
+                </li>
+                <li>
+                  Задача организации, в особенности же
+                </li>
+                <li>
+                  В формировании направлений прогрессивного развития.
+                </li>
+                <li>
+                  В формировании
+                </li>
+                <li>
+                  В формировании направлений
+                </li>
+                <li>
+                  В формировании направлений прогрессивного
+                </li>
+                <li>
+                  В формировании направлений
+                </li>
+              </ul>
+              <div class="template-product__body-price">
+                <h6>
+                  от 180 000 ₽
+                </h6>
+                <p>
+                  Что-то написано тут
+                </p>
+              </div>
+              <a class="btn btn--accent" href="/">
+                <span data-text="Узнать подробнее" data-text-mob="Подробнее"></span>
+              </a>
+            </div>
+
+            <div class="template-product__content">
+
+              <div class="template-product__slider">
+                <div class="swiper template-product__slider--big border">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="template-product__slider-item">
+                        <img src="./images/temp/events-inner-item-1.png" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="template-product__slider-item">
+                        <img src="./images/temp/events-inner-item-2.png" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="template-product__slider-item">
+                        <img src="./images/temp/events-inner-item-3.png" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="template-product__slider-item">
+                        <img src="./images/temp/events-inner-item-4.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
+                <div class="swiper-button-prev swiper-button-alt template-product-button-prev">
+                  <i class="icon-arrow-left"></i>
+                </div>
+                <div class="swiper-button-next swiper-button-alt template-product-button-next">
+                  <i class="icon-arrow-right"></i>
+                </div>
+              </div>
+
+              <div thumbsslider="" class="swiper template-product__slider--mini">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="template-product__slider-item template-product__slider-item--mini">
+                      <img src="./images/temp/events-inner-item-1.png" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="template-product__slider-item template-product__slider-item--mini">
+                      <img src="./images/temp/events-inner-item-2.png" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="template-product__slider-item template-product__slider-item--mini">
+                      <img src="./images/temp/events-inner-item-3.png" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="template-product__slider-item template-product__slider-item--mini">
+                      <img src="./images/temp/events-inner-item-4.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="events-desc">
+        <div class="container">
+          <div class="events-desc__inner">
+            <div class="events-desc__img border" data-animation="parallax-img">
+              <img src="./images/temp/events-inner-desc.png" alt="">
+            </div>
+            <div class="events-desc__block">
+              <div class="events-desc__head">
+                <h4>
+                  Есть что предложить
+                </h4>
+                <p>
+                  Товарищи! начало повседневной работы по формированию позиции позволяет выполнять важные задания по
+                  разработке дальнейших направлений развития.
+                </p>
+              </div>
+              <div class="events-desc__body">
+                <div class="events-desc__body-item">
+                  <i></i>
+                  <p>
+                    Загородная резиденция
+                  </p>
+                </div>
+                <div class="events-desc__body-item">
+                  <i></i>
+                  <p>
+                    Два ресторана
+                  </p>
+                </div>
+                <div class="events-desc__body-item">
+                  <i></i>
+                  <p>
+                    Три конференц зала
+                  </p>
+                </div>
+                <div class="events-desc__body-item">
+                  <i></i>
+                  <p>
+                    Кейтеринг
+                  </p>
+                </div>
+                <div class="events-desc__body-item">
+                  <i></i>
+                  <p>
+                    Мероприятий под ключ
+                  </p>
+                </div>
+                <div class="events-desc__body-item">
+                  <i></i>
+                  <p>
+                    Размещение гостей
+                  </p>
+                </div>
+              </div>
+              <div class="events-desc__img border" data-animation="parallax-img">
+                <img src="./images/temp/events-inner-desc.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      @@include('blocks/callback.html', {"title": "Забронировать"})
+
+      @@include('blocks/offers.html')
+
+    </main>
+    <!-- Подвал -->
+    @@include('blocks/footer.html')
+    <!-- Попапы -->
+    <!-- @@include('blocks/popup.html') -->
+    <!-- Плашки -->
+    @@include('blocks/plate.html')
+  </div>
+  <!-- libs -->
+  <script src="./libs/gsap/gsap.min.js"></script>
+  <script src="./libs/gsap/tweenmax.min.js"></script>
+  <script src="./libs/gsap/ScrollToPlugin.min.js"></script>
+  <script src="./libs/gsap/ScrollTrigger.min.js"></script>
+  <script src="./libs/gsap/ScrollSmoother.min.js"></script>
+  <script src="./libs/lenis/lenis.min.js"></script>
+  <script src="./libs/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/transfer-elements@1.0.7/dist/transfer-elements.min.js"></script>
+  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <!-- scripts -->
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

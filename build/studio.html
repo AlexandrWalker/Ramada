@@ -604,7 +604,8 @@
 </div>
     <main class="main">
       <!-- Главный блок -->
-      <section class="template template--primary" style="background-image: url(./images/temp/studio-bg.png);">
+      <!-- <section class="template template--primary" style="background-image: url(./images/temp/studio-bg.png);"> -->
+      <section class="template template--primary template--plugin">
 
         <div class="breadcrumbs">
           <div class="container">
@@ -624,6 +625,15 @@
         </div>
 
         <div class="container template__container">
+
+          <picture class="template__bg">
+            <source media="(min-width: 835px)" srcset="./images/temp/studio-bg.png" type="image/png">
+            <source media="((max-width: 834px) and (min-width: 601px))" srcset="./images/temp/studio-planshet-bg.png"
+              type="image/png">
+            <source media="(max-width: 600px)" srcset="./images/temp/studio-mob-bg.png" type="image/png">
+            <img src="./images/temp/studio-bg.png" alt="">
+          </picture>
+
           <div class="template__inner">
 
             <div class="template__suptitle">

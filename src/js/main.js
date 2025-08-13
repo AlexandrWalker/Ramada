@@ -350,6 +350,43 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
+  const templateProductSliderMini = new Swiper('.template-product__slider--mini', {
+    slidesPerView: 3,
+    spaceBetween: 10,
+    speed: 1000,
+    loop: true,
+    grabCursor: false,
+    mousewheel: false,
+    watchSlidesProgress: true,
+    breakpoints: {
+      769: {
+        spaceBetween: 20,
+      },
+    },
+  });
+
+  const templateProductSliderBig = new Swiper('.template-product__slider--big', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    speed: 1000,
+    loop: true,
+    grabCursor: true,
+    mousewheel: {
+      forceToAxis: true,
+    },
+    thumbs: {
+      swiper: templateProductSliderMini,
+    },
+    navigation: {
+      prevEl: ".template-product-button-prev",
+      nextEl: ".template-product-button-next",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
 
 
   /**

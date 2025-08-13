@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('blocks/head.html', {"title": "RAMADA"})
+
+<body>
+  <div class="wrapper">
+    <!-- Шапка -->
+    @@include('./blocks/header.html')
+    <main class="main">
+      <!-- Главный блок -->
+      <section class="template template--primary">
+
+        <div class="breadcrumbs">
+          <div class="container">
+            <div class="breadcrumbs__inner">
+              <ul>
+                <li>
+                  <a href="/">
+                    Главная страница
+                  </a>
+                </li>
+                <li>
+                  Сосновый
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="container template__container">
+          <picture class="template__bg">
+            <source media="(min-width: 835px)" srcset="./images/temp/hall-page-bg.png" type="image/png">
+            <source media="((max-width: 834px) and (min-width: 601px))" srcset="./images/temp/hall-page-planshet-bg.png"
+              type="image/png">
+            <source media="(max-width: 600px)" srcset="./images/temp/hall-page-mob-bg.png" type="image/png">
+            <img src="./images/temp/hall-page-bg.png" alt="">
+          </picture>
+          <div class="template__inner">
+            <div class="template__suptitle">
+              <h6>
+                конференц-зал
+              </h6>
+            </div>
+            <div class="template__title">
+              <h1>
+                Сосновый
+              </h1>
+            </div>
+            <div class="template__body">
+              <div class="template__body-icons">
+                <div class="template__body-icon">
+                  <i class="icon-area"></i>
+                  <p>
+                    Площадь
+                    55 м2
+                  </p>
+                </div>
+                <div class="template__body-icon">
+                  <i class="icon-solo"></i>
+                  <p>
+                    До 3х
+                    человек
+                  </p>
+                </div>
+                <div class="template__body-icon">
+                  <i class="icon-services-master-bedroom"></i>
+                  <p>
+                    Ванная
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      @@include('blocks/callback.html', {"title": "Оставить заявку"})
+
+    </main>
+    <!-- Подвал -->
+    @@include('blocks/footer.html')
+    <!-- Попапы -->
+    <!-- @@include('blocks/popup.html') -->
+    <!-- Плашки -->
+    @@include('blocks/plate.html')
+  </div>
+  <!-- libs -->
+  <script src="./libs/gsap/gsap.min.js"></script>
+  <script src="./libs/gsap/tweenmax.min.js"></script>
+  <script src="./libs/gsap/ScrollToPlugin.min.js"></script>
+  <script src="./libs/gsap/ScrollTrigger.min.js"></script>
+  <script src="./libs/gsap/ScrollSmoother.min.js"></script>
+  <script src="./libs/lenis/lenis.min.js"></script>
+  <script src="./libs/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/transfer-elements@1.0.7/dist/transfer-elements.min.js"></script>
+  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <!-- scripts -->
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

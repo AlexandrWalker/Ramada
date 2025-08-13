@@ -106,7 +106,7 @@
     right: 3rem;
     bottom: 3rem;
     left: 3rem;
-    z-index: 1;
+    z-index: 2;
     border: 0.1rem solid var(--white-30);
     pointer-events: none;
     transition: all 0.5s ease;
@@ -344,14 +344,12 @@
   background-color: var(--accent);
 
   .container {
-
-    @include sm {
-      padding: 0;
-    }
+    padding: 0;
   }
 
   &__inner {
-    padding: 1.7rem 0 1.8rem;
+    padding: 1.7rem var(--container-padding) 1.8rem;
+    width: 100vw;
     overflow-x: auto;
 
     &::-webkit-scrollbar {
@@ -362,7 +360,7 @@
     }
 
     @include md {
-      padding: 1.1rem 0 1.2rem;
+      padding: 1.1rem var(--container-padding) 1.2rem;
     }
 
     @include sm {
@@ -375,7 +373,6 @@
     flex-direction: row;
     align-items: center;
     gap: var(--breadcrumbs-gap);
-
     width: fit-content;
   }
 
@@ -483,6 +480,37 @@
       &::after {
         display: none;
       }
+    }
+  }
+}
+
+/* Стили для блока Поделиться */
+.share {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+
+  a {
+    --news-share-size: 6rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--news-share-size);
+    height: var(--news-share-size);
+    border-radius: 50%;
+    border: 0.1rem solid var(--black-10);
+
+    @include md {
+      --news-share-size: 5rem;
+    }
+
+    &:hover {
+      color: var(--accent);
+    }
+
+    i {
+      --font-size: var(--news-share-size);
     }
   }
 }

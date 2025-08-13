@@ -25,7 +25,7 @@
 </head>
 
 <body>
-  <div class="wrapper afisha-inner-page">
+  <div class="wrapper afisha-page">
     <!-- Шапка -->
     <header id="header" class="header">
   <div class="container container--fluid">
@@ -626,12 +626,10 @@
         <div class="container">
           <div class="template__inner">
 
-            <div class="template__head">
-              <div class="template__head-title">
-                <h1>
-                  Примерный длинный заголовок не на обложке в три строки
-                </h1>
-              </div>
+            <div class="template__title">
+              <h1>
+                Примерный длинный заголовок не на обложке в три строки
+              </h1>
             </div>
 
           </div>
@@ -639,11 +637,11 @@
 
       </section>
 
-      <section class="afisha-inner">
+      <section class="afisha">
         <div class="container">
-          <div class="afisha-inner__inner">
+          <div class="afisha__inner">
 
-            <div class="news__share">
+            <div class="share">
               <a href="/">
                 <i class="icon-whatsapp"></i>
               </a>
@@ -658,13 +656,13 @@
               </a>
             </div>
 
-            <div class="afisha-inner__content">
+            <div class="afisha__content">
 
-              <div class="afisha-inner__content-wrap">
-                <div class="afisha-inner__content-img border" data-animation="parallax-img">
+              <div class="afisha__box">
+                <div class="afisha__box-img border" data-animation="parallax-img">
                   <img src="./images/events/block-bg.png" alt="">
                 </div>
-                <div class="afisha-inner__content-head">
+                <div class="afisha__box-head">
                   19 мая
                   <span>
                     в понедельник
@@ -672,9 +670,9 @@
                 </div>
               </div>
 
-              <div class="afisha-inner__content-block">
+              <div class="afisha__block">
 
-                <div class="wrap">
+                <div class="afisha__block-head">
                   <h5>
                     Подзаголовок события
                   </h5>
@@ -684,7 +682,7 @@
                   </p>
                 </div>
 
-                <div class="wrap">
+                <div class="afisha__block-wrap">
                   <h5>
                     Вас ждёт
                   </h5>
@@ -701,9 +699,9 @@
                   </ul>
                 </div>
 
-                <span class="line"></span>
+                <span class="afisha__block-line"></span>
 
-                <div class="wrap">
+                <div class="afisha__block-wrap">
                   <span>
                     Стоимость:
                   </span>
@@ -714,31 +712,27 @@
 
               </div>
 
+              <div class="afisha__body">
+                <h4>
+                  Подзаголовок события
+                </h4>
+                <p>
+                  Не следует, однако забывать, что реализация намеченных плановых заданий играет важную роль в
+                  формировании
+                  систем массового участия. Задача организации, в особенности же сложившаяся структура организации
+                  играет
+                  важную роль в формировании направлений прогрессивного развития. 
+                </p>
+                <p>
+                  Не следует, однако забывать, что реализация намеченных плановых заданий играет важную роль в
+                  формировании
+                  систем массового участия. Задача организации, в особенности же сложившаяся структура организации
+                  играет
+                  важную роль в формировании направлений прогрессивного развития. 
+                </p>
+              </div>
+
             </div>
-
-          </div>
-        </div>
-      </section>
-
-      <section class="afisha-block">
-        <div class="container">
-          <div class="afisha-block__inner">
-
-            <h4>
-              Подзаголовок события
-            </h4>
-
-            <p>
-              Не следует, однако забывать, что реализация намеченных плановых заданий играет важную роль в формировании
-              систем массового участия. Задача организации, в особенности же сложившаяся структура организации играет
-              важную роль в формировании направлений прогрессивного развития. 
-            </p>
-
-            <p>
-              Не следует, однако забывать, что реализация намеченных плановых заданий играет важную роль в формировании
-              систем массового участия. Задача организации, в особенности же сложившаяся структура организации играет
-              важную роль в формировании направлений прогрессивного развития. 
-            </p>
 
           </div>
         </div>
@@ -865,7 +859,7 @@
                 </label>
               </div>
               <div class="form-group">
-                <textarea id="form_comment" class="form-textarea" name="comment"></textarea>
+                <textarea id="form_comment" class="form-textarea" name="comment" rows="8"></textarea>
                 <label for="form_comment" class="form-label">
                   Комментарий
                 </label>

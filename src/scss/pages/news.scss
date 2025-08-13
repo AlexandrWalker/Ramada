@@ -29,33 +29,6 @@
     }
   }
 
-  &__share {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-
-    a {
-      --news-share-size: 6rem;
-
-      width: var(--news-share-size);
-      height: var(--news-share-size);
-      border-radius: 50%;
-      border: 0.1rem solid var(--black-10);
-
-      @include md {
-        --news-share-size: 5rem;
-      }
-
-      &:hover {
-        color: var(--accent);
-      }
-
-      i {
-        --font-size: var(--news-share-size);
-      }
-    }
-  }
-
   &__date {
     font-weight: 900;
     font-size: 2rem;
