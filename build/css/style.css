@@ -245,6 +245,21 @@ img {
   color: var(--gray);
 }
 
+.general__block-subtext {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.general__block-subtext span {
+  color: var(--accent);
+}
+
 /* Рамка для картинки */
 
 .border {
@@ -4111,6 +4126,17 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   margin-bottom: 4rem;
 }
 
+.restaurant-page .hero {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-bottom: 9rem;
+}
+
+.restaurant-page .hero__head {
+  top: 5.3rem;
+}
+
 .restaurant-page .hero__head .btn-arrow {
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -4120,15 +4146,31 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .restaurant-page .hero__title span {
   text-align: left;
+  color: var(--accent);
 }
 
 .restaurant-page .hero__title h1 {
+  font-size: 20rem;
   text-align: right;
   gap: 55.5rem;
 }
 
+.restaurant-page .hero__bg {
+  top: 20.8rem;
+}
+
 .restaurant-page .events {
   padding-top: 6rem;
+}
+
+.concept__inner {
+  display: grid;
+  grid-template-columns: 50% calc(50% - 15rem);
+  gap: 15rem;
+}
+
+.concept__block {
+  padding-top: 4rem;
 }
 
 .equipment__inner {

@@ -656,7 +656,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * GSAP
    */
-  const hero = document.querySelector('.hero')
+  const hero = document.getElementById('hero')
   if (hero) {
 
     $(window).on('resize load', function () {

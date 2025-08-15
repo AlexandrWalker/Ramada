@@ -91,6 +91,16 @@
 
       p {}
     }
+
+    &-subtext {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      span {
+        color: var(--accent);
+      }
+    }
   }
 }
 

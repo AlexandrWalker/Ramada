@@ -4,7 +4,15 @@
 
   &-page {
 
+    .hero {
+      height: fit-content;
+      margin-bottom: 9rem;
+    }
+
+    .hero__inner {}
+
     .hero__head {
+      top: 5.3rem;
 
       .btn-arrow {
         top: 50%;
@@ -16,17 +24,36 @@
 
       span {
         text-align: left;
+        color: var(--accent);
       }
 
       h1 {
+        font-size: 20rem;
         text-align: right;
         gap: 55.5rem;
       }
     }
 
+    .hero__bg {
+      top: 20.8rem;
+    }
+
     .events {
       padding-top: 6rem;
     }
+  }
+}
+
+.concept {
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 50% calc(50% - 15rem);
+    gap: 15rem;
+  }
+
+  &__block {
+    padding-top: 4rem;
   }
 }
 
