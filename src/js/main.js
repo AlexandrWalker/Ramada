@@ -350,22 +350,56 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
-  const templateProductSliderMini = new Swiper('.template-product__slider--mini', {
-    slidesPerView: 3,
-    spaceBetween: 10,
-    speed: 1000,
-    loop: true,
-    grabCursor: false,
-    mousewheel: false,
-    watchSlidesProgress: true,
-    breakpoints: {
-      769: {
-        spaceBetween: 20,
-      },
-    },
-  });
+  const templateProducts = document.querySelectorAll('.template-product');
 
-  const templateProductSliderBig = new Swiper('.template-product__slider--big', {
+  if (templateProducts.length != 0) {
+    templateProducts.forEach(templateProduct => {
+
+      const templateProductSliderMini = templateProduct.querySelector('.template-product__slider--mini');
+      const templateProductSliderBig = templateProduct.querySelector('.template-product__slider--big');
+      const templateProductSliderPrev = templateProduct.querySelector('.template-product-button-prev');
+      const templateProductSliderNext = templateProduct.querySelector('.template-product-button-next');
+
+      const templateSliderMini = new Swiper(templateProductSliderMini, {
+        slidesPerView: 3,
+        spaceBetween: 10,
+        speed: 1000,
+        loop: true,
+        grabCursor: false,
+        mousewheel: false,
+        watchSlidesProgress: true,
+        breakpoints: {
+          769: {
+            spaceBetween: 20,
+          },
+        },
+      });
+
+      const templateSliderBig = new Swiper(templateProductSliderBig, {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        speed: 1000,
+        loop: true,
+        grabCursor: true,
+        mousewheel: {
+          forceToAxis: true,
+        },
+        thumbs: {
+          swiper: templateSliderMini,
+        },
+        navigation: {
+          prevEl: templateProductSliderPrev,
+          nextEl: templateProductSliderNext,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    });
+  }
+
+  const templateProductSliderSeating = new Swiper('.template-product__slider--seating', {
     slidesPerView: 1,
     spaceBetween: 0,
     speed: 1000,
@@ -374,17 +408,31 @@ document.addEventListener('DOMContentLoaded', () => {
     mousewheel: {
       forceToAxis: true,
     },
-    thumbs: {
-      swiper: templateProductSliderMini,
-    },
     navigation: {
-      prevEl: ".template-product-button-prev",
-      nextEl: ".template-product-button-next",
+      prevEl: '.seating-button-prev',
+      nextEl: '.seating-button-next',
     },
     pagination: {
-      el: ".swiper-pagination",
+      el: ".swiper-pagination--seating",
+      type: "fraction",
       clickable: true,
     },
+    // on: {
+    //    slideChange: function () {
+    //     const templateSeating = document.querySelector('.template-product--seating');
+    //     if (templateSeating) {
+    //       const templateSeatingItems = templateSeating.querySelectorAll('li');
+
+    //       for (let i = 0; templateSeatingItems[i]; i++) {
+    //         if (templateSeatingItems[i] === templateProductSliderSeating.activeIndex) {
+    //           templateSeatingItems[i].classList.add('seating-active')
+    //         } else {
+    //           templateSeatingItems[i].classList.remove('seating-active')
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
   });
 
 

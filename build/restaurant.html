@@ -25,7 +25,7 @@
 </head>
 
 <body>
-  <div class="wrapper hall-page">
+  <div class="wrapper restaurant-page">
     <!-- Шапка -->
     <header id="header" class="header">
   <div class="container container--fluid">
@@ -604,413 +604,830 @@
 </div>
     <main class="main">
       <!-- Главный блок -->
-      <section class="template template--primary">
+      <section id="hero" class="hero layer-section">
 
-        <div class="breadcrumbs">
-          <div class="container">
-            <div class="breadcrumbs__inner">
-              <ul>
-                <li>
-                  <a href="/">
-                    Главная страница
-                  </a>
-                </li>
-                <li>
-                  Конгресс - холл
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <div class="hero__container container">
+          <div class="hero__inner">
 
-        <div class="container template__container">
-          <picture class="template__bg">
-            <source media="(min-width: 835px)" srcset="./images/temp/hall-page-bg.png" type="image/png">
-            <source media="((max-width: 834px) and (min-width: 601px))" srcset="./images/temp/hall-page-planshet-bg.png"
-              type="image/png">
-            <source media="(max-width: 600px)" srcset="./images/temp/hall-page-mob-bg.png" type="image/png">
-            <img src="./images/temp/hall-page-bg.png" alt="">
-          </picture>
-          <div class="template__inner">
-            <div class="template__suptitle">
-              <h6>
-                три зала для вашего бизнеса
-              </h6>
+            <div class="hero__bg" data-animation="smooth-img">
+              <picture>
+                <source media="(min-width: 601px)" srcset="./images/temp/restaurant-bg.png" type="image/png">
+                <source media="(max-width: 600px)" srcset="./images/temp/restaurant-mob-bg.png" type="image/png">
+                <img src="./images/temp/restaurant-bg.png" alt="">
+              </picture>
             </div>
-            <div class="template__title">
-              <h1>
-                Конгресс - холл
-              </h1>
-            </div>
-            <div class="template__body">
-              <div class="template__body-icons">
-                <div class="template__body-icon">
-                  <i class="icon-area"></i>
-                  <p>
-                    Площадь
-                    55 м2
-                  </p>
-                </div>
-                <div class="template__body-icon">
-                  <i class="icon-solo"></i>
-                  <p>
-                    До 3х
-                    человек
-                  </p>
-                </div>
-                <div class="template__body-icon">
-                  <i class="icon-services-master-bedroom"></i>
-                  <p>
-                    Ванная
-                  </p>
-                </div>
+
+            <div class="hero__head">
+              <div class="hero__title" data-animation="hero-title" data-transform="reveal" data-splitting="words">
+                <h1>
+                  <span>
+                    Ресторан
+                  </span>
+                  Сезоны
+                </h1>
               </div>
+              <a class="btn-arrow btn-arrow--down" href="#offer" data-animation="resta-hero-btn">
+                <i class="icon-arrow-right"></i>
+              </a>
             </div>
+
           </div>
         </div>
-
       </section>
 
-      <section class="template-product">
+      <section class="events">
         <div class="container">
-          <div class="template-product__inner">
+          <div class="events__inner">
 
-            <div class="template-product__head">
-              <h4>
-                Сосновый
-              </h4>
-              <p>
-                Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
-                войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные кровати, а
-                также диван-кровать. Балкон, выходящий на северо-восток, позволяет наслаждаться утренним солнцем и
-                свежим воздухом Церматта. Современная ванная комната оснащена душем и ванной.
-              </p>
-            </div>
-
-            <div class="template-product__body">
-
-              <div class="template-product__body-items">
-                <div class="template-product__body-item">
-                  <h5>
-                    30 человек
-                  </h5>
-                  <p>
-                    Максимальная вместимость
-                  </p>
-                </div>
-                <div class="template-product__body-item">
-                  <h5>
-                    220м<sup>2</sup>
-                  </h5>
-                  <p>
-                    Общая площадь зала
-                  </p>
-                </div>
-              </div>
-              <div class="template-product__body-btns">
-                <a class="btn btn--black" href="/">
-                  Видео о зале
-                </a>
-                <a class="btn btn--accent" href="/">
-                  Подробнее
-                </a>
+            <div class="general__head">
+              <div class="general__head-title" data-transform="revealRotate" data-splitting="words">
+                <h4>
+                  ближайшие мероприятия
+                </h4>
               </div>
             </div>
 
-            <div class="template-product__content">
-
-              <div class="template-product__slider">
-                <div class="swiper template-product__slider--big border">
+            <div class="events__body">
+              <div class="events__block">
+                <div class="events__block-wrap">
+                  <div class="events__block-img border" data-animation="parallax-img">
+                    <img src="./images/events/block-bg.png" alt="">
+                  </div>
+                  <div class="events__block-head">
+                    19 мая
+                    <span>
+                      в понедельник
+                    </span>
+                  </div>
+                </div>
+                <a class="events__block-content" href="#!">
+                  <div class="events__block-title" data-transform="fade" data-rotation="true">
+                    <h5>
+                      Примерный длинный заголовок на обложке в три строки
+                    </h5>
+                  </div>
+                  <div class="link">
+                    <i class="icon-chevron-link"></i>
+                    <p>
+                      Подробнее
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="events__calendar">
+                <div class="swiper events__calendar--slider">
                   <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="template-product__slider-item">
-                        <img src="./images/temp/hall-page-item-1.png" alt="">
+                    <div class="swiper-slide events__calendar-slide">
+                      <div class="events__calendar-item" data-transform="fadeUp">
+                        <div class="events__calendar-month">
+                          <h6>
+                            Май
+                          </h6>
+                        </div>
+                        <div class="events__calendar-block calendar--js">
+                          <table>
+                            <tr>
+                              <th>
+                                Пн
+                              </th>
+                              <th>
+                                Вт
+                              </th>
+                              <th>
+                                Ср
+                              </th>
+                              <th>
+                                Чт
+                              </th>
+                              <th>
+                                Пт
+                              </th>
+                              <th>
+                                Сб
+                              </th>
+                              <th>
+                                Вс
+                              </th>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td>
+                                <span>1</span>
+                              </td>
+                              <td>
+                                <span>2</span>
+                              </td>
+                              <td>
+                                <span>3</span>
+                              </td>
+                              <td>
+                                <span>4</span>
+                              </td>
+                              <td>
+                                <span>5</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <span>6</span>
+                              </td>
+                              <td>
+                                <span>7</span>
+                              </td>
+                              <td>
+                                <span>8</span>
+                              </td>
+                              <td>
+                                <span>9</span>
+                              </td>
+                              <td>
+                                <span>10</span>
+                              </td>
+                              <td>
+                                <span>11</span>
+                              </td>
+                              <td class="today">
+                                <span>12</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="target">
+                                <a href="/">13</a>
+                              </td>
+                              <td>
+                                <span>14</span>
+                              </td>
+                              <td>
+                                <span>15</span>
+                              </td>
+                              <td>
+                                <span>16</span>
+                              </td>
+                              <td class="target">
+                                <a href="/">17</a>
+                              </td>
+                              <td>
+                                <span>18</span>
+                              </td>
+                              <td class="target">
+                                <a href="/">19</a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <span>20</span>
+                              </td>
+                              <td>
+                                <span>21</span>
+                              </td>
+                              <td>
+                                <span>22</span>
+                              </td>
+                              <td>
+                                <span>23</span>
+                              </td>
+                              <td>
+                                <span>24</span>
+                              </td>
+                              <td>
+                                <span>25</span>
+                              </td>
+                              <td>
+                                <span>26</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <span>27</span>
+                              </td>
+                              <td>
+                                <span>28</span>
+                              </td>
+                              <td>
+                                <span>29</span>
+                              </td>
+                              <td>
+                                <span>30</span>
+                              </td>
+                              <td>
+                                <span>31</span>
+                              </td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                          </table>
+                        </div>
                       </div>
                     </div>
-                    <div class="swiper-slide">
-                      <div class="template-product__slider-item">
-                        <img src="./images/temp/hall-page-item-1.png" alt="">
+                    <div class="swiper-slide events__calendar-slide">
+                      <div class="events__calendar-item" data-transform="fadeUp">
+                        <div class="events__calendar-month">
+                          <h6>
+                            Июнь
+                          </h6>
+                        </div>
+                        <div class="events__calendar-block">
+                          <table>
+                            <tr>
+                              <th>
+                                Пн
+                              </th>
+                              <th>
+                                Вт
+                              </th>
+                              <th>
+                                Ср
+                              </th>
+                              <th>
+                                Чт
+                              </th>
+                              <th>
+                                Пт
+                              </th>
+                              <th>
+                                Сб
+                              </th>
+                              <th>
+                                Вс
+                              </th>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td>
+                                <span>1</span>
+                              </td>
+                              <td>
+                                <span>2</span>
+                              </td>
+                              <td>
+                                <span>3</span>
+                              </td>
+                              <td>
+                                <span>4</span>
+                              </td>
+                              <td>
+                                <span>5</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <span>6</span>
+                              </td>
+                              <td>
+                                <span>7</span>
+                              </td>
+                              <td>
+                                <span>8</span>
+                              </td>
+                              <td>
+                                <span>9</span>
+                              </td>
+                              <td>
+                                <span>10</span>
+                              </td>
+                              <td>
+                                <span>11</span>
+                              </td>
+                              <td>
+                                <span>12</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <span>13</span>
+                              </td>
+                              <td>
+                                <span>14</span>
+                              </td>
+                              <td>
+                                <span>15</span>
+                              </td>
+                              <td>
+                                <span>16</span>
+                              </td>
+                              <td>
+                                <span>17</span>
+                              </td>
+                              <td>
+                                <span>18</span>
+                              </td>
+                              <td>
+                                <span>19</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <span>20</span>
+                              </td>
+                              <td>
+                                <span>21</span>
+                              </td>
+                              <td>
+                                <span>22</span>
+                              </td>
+                              <td>
+                                <span>23</span>
+                              </td>
+                              <td>
+                                <span>24</span>
+                              </td>
+                              <td>
+                                <span>25</span>
+                              </td>
+                              <td>
+                                <span>26</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <span>27</span>
+                              </td>
+                              <td>
+                                <span>28</span>
+                              </td>
+                              <td>
+                                <span>29</span>
+                              </td>
+                              <td>
+                                <span>30</span>
+                              </td>
+                              <td>
+                                <span>31</span>
+                              </td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                          </table>
+                        </div>
                       </div>
                     </div>
-                    <div class="swiper-slide">
-                      <div class="template-product__slider-item">
-                        <img src="./images/temp/hall-page-item-1.png" alt="">
+                    <div class="swiper-slide events__calendar-slide">
+                      <div class="events__calendar-item" data-transform="fadeUp">
+                        <div class="events__calendar-month">
+                          <h6>
+                            Июль
+                          </h6>
+                        </div>
+                        <div class="events__calendar-block">
+                          <table>
+                            <tr>
+                              <th>
+                                Пн
+                              </th>
+                              <th>
+                                Вт
+                              </th>
+                              <th>
+                                Ср
+                              </th>
+                              <th>
+                                Чт
+                              </th>
+                              <th>
+                                Пт
+                              </th>
+                              <th>
+                                Сб
+                              </th>
+                              <th>
+                                Вс
+                              </th>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td>
+                                <span>1</span>
+                              </td>
+                              <td>
+                                <span>2</span>
+                              </td>
+                              <td>
+                                <span>3</span>
+                              </td>
+                              <td>
+                                <span>4</span>
+                              </td>
+                              <td>
+                                <span>5</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <span>6</span>
+                              </td>
+                              <td>
+                                <span>7</span>
+                              </td>
+                              <td>
+                                <span>8</span>
+                              </td>
+                              <td>
+                                <span>9</span>
+                              </td>
+                              <td>
+                                <span>10</span>
+                              </td>
+                              <td>
+                                <span>11</span>
+                              </td>
+                              <td>
+                                <span>12</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <span>13</span>
+                              </td>
+                              <td>
+                                <span>14</span>
+                              </td>
+                              <td>
+                                <span>15</span>
+                              </td>
+                              <td>
+                                <span>16</span>
+                              </td>
+                              <td>
+                                <span>17</span>
+                              </td>
+                              <td>
+                                <span>18</span>
+                              </td>
+                              <td>
+                                <span>19</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <span>20</span>
+                              </td>
+                              <td>
+                                <span>21</span>
+                              </td>
+                              <td>
+                                <span>22</span>
+                              </td>
+                              <td>
+                                <span>23</span>
+                              </td>
+                              <td>
+                                <span>24</span>
+                              </td>
+                              <td>
+                                <span>25</span>
+                              </td>
+                              <td>
+                                <span>26</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <span>27</span>
+                              </td>
+                              <td>
+                                <span>28</span>
+                              </td>
+                              <td>
+                                <span>29</span>
+                              </td>
+                              <td>
+                                <span>30</span>
+                              </td>
+                              <td>
+                                <span>31</span>
+                              </td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                          </table>
+                        </div>
                       </div>
                     </div>
-                    <div class="swiper-slide">
-                      <div class="template-product__slider-item">
-                        <img src="./images/temp/hall-page-item-1.png" alt="">
+                    <div class="swiper-slide events__calendar-slide">
+                      <div class="events__calendar-item" data-transform="fadeUp">
+                        <div class="events__calendar-month">
+                          <h6>
+                            Август
+                          </h6>
+                        </div>
+                        <div class="events__calendar-block">
+                          <table>
+                            <tr>
+                              <th>
+                                Пн
+                              </th>
+                              <th>
+                                Вт
+                              </th>
+                              <th>
+                                Ср
+                              </th>
+                              <th>
+                                Чт
+                              </th>
+                              <th>
+                                Пт
+                              </th>
+                              <th>
+                                Сб
+                              </th>
+                              <th>
+                                Вс
+                              </th>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td>
+                                <span>1</span>
+                              </td>
+                              <td>
+                                <span>2</span>
+                              </td>
+                              <td>
+                                <span>3</span>
+                              </td>
+                              <td>
+                                <span>4</span>
+                              </td>
+                              <td>
+                                <span>5</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <span>6</span>
+                              </td>
+                              <td>
+                                <span>7</span>
+                              </td>
+                              <td>
+                                <span>8</span>
+                              </td>
+                              <td>
+                                <span>9</span>
+                              </td>
+                              <td>
+                                <span>10</span>
+                              </td>
+                              <td>
+                                <span>11</span>
+                              </td>
+                              <td>
+                                <span>12</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <span>13</span>
+                              </td>
+                              <td>
+                                <span>14</span>
+                              </td>
+                              <td>
+                                <span>15</span>
+                              </td>
+                              <td>
+                                <span>16</span>
+                              </td>
+                              <td>
+                                <span>17</span>
+                              </td>
+                              <td>
+                                <span>18</span>
+                              </td>
+                              <td>
+                                <span>19</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <span>20</span>
+                              </td>
+                              <td>
+                                <span>21</span>
+                              </td>
+                              <td>
+                                <span>22</span>
+                              </td>
+                              <td>
+                                <span>23</span>
+                              </td>
+                              <td>
+                                <span>24</span>
+                              </td>
+                              <td>
+                                <span>25</span>
+                              </td>
+                              <td>
+                                <span>26</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <span>27</span>
+                              </td>
+                              <td>
+                                <span>28</span>
+                              </td>
+                              <td>
+                                <span>29</span>
+                              </td>
+                              <td>
+                                <span>30</span>
+                              </td>
+                              <td>
+                                <span>31</span>
+                              </td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                          </table>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="swiper-pagination"></div>
                 </div>
-                <div class="swiper-button-prev swiper-button-alt template-product-button-prev">
-                  <i class="icon-arrow-left"></i>
-                </div>
-                <div class="swiper-button-next swiper-button-alt template-product-button-next">
+                <div class="swiper-button-next calendar-button-next">
                   <i class="icon-arrow-right"></i>
                 </div>
               </div>
-
-              <div thumbsslider="" class="swiper template-product__slider--mini">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="template-product__slider-item template-product__slider-item--mini">
-                      <img src="./images/temp/hall-page-item-1.png" alt="">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="template-product__slider-item template-product__slider-item--mini">
-                      <img src="./images/temp/hall-page-item-1.png" alt="">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="template-product__slider-item template-product__slider-item--mini">
-                      <img src="./images/temp/hall-page-item-1.png" alt="">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="template-product__slider-item template-product__slider-item--mini">
-                      <img src="./images/temp/hall-page-item-1.png" alt="">
-                    </div>
-                  </div>
-                </div>
+              <div class="events__box" data-transform="fade">
+                <h6>
+                  Примерный заголовок
+                </h6>
+                <p>
+                  Товарищи! начало повседневной работы по формированию позиции позволяет выполнять важные задания по
+                  разработке дальнейших направлений развития. Идейные соображения высшего порядка, а также реализация
+                  намеченных плановых заданий в значительной степени обуславливает создание соответствующий условий
+                  активизации.
+                </p>
               </div>
-
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      <section class="template-product template-product--reverse">
-        <div class="container">
-          <div class="template-product__inner">
-
-            <div class="template-product__head">
-              <h4>
-                Сосновый
-              </h4>
-              <p>
-                Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
-                войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные кровати, а
-                также диван-кровать. Балкон, выходящий на северо-восток, позволяет наслаждаться утренним солнцем и
-                свежим воздухом Церматта. Современная ванная комната оснащена душем и ванной.
-              </p>
-            </div>
-
-            <div class="template-product__body">
-
-              <div class="template-product__body-items">
-                <div class="template-product__body-item">
+            <div class="events__other">
+              <div class="general__head">
+                <div class="general__head-title">
                   <h5>
-                    30 человек
+                    Другие события
                   </h5>
-                  <p>
-                    Максимальная вместимость
-                  </p>
-                </div>
-                <div class="template-product__body-item">
-                  <h5>
-                    220м<sup>2</sup>
-                  </h5>
-                  <p>
-                    Общая площадь зала
-                  </p>
                 </div>
               </div>
-              <div class="template-product__body-btns">
-                <a class="btn btn--black" href="/">
-                  Видео о зале
-                </a>
-                <a class="btn btn--accent" href="/">
-                  Подробнее
-                </a>
-              </div>
-            </div>
-
-            <div class="template-product__content">
-
-              <div class="template-product__slider">
-                <div class="swiper template-product__slider--big border">
+              <div class="events__other-body">
+                <div class="swiper events__other--slider">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
-                        <img src="./images/temp/hall-page-item-2.png" alt="">
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="template-product__slider-item">
-                        <img src="./images/temp/hall-page-item-2.png" alt="">
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="template-product__slider-item">
-                        <img src="./images/temp/hall-page-item-2.png" alt="">
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="template-product__slider-item">
-                        <img src="./images/temp/hall-page-item-2.png" alt="">
-                      </div>
-                    </div>
+  <a class="events__other-item" href="/">
+    <div class="events__other-content">
+      <div class="events__other-suptitle">
+        <p>
+          с 10 мая по 25 июня
+        </p>
+      </div>
+      <div class="events__other-title">
+        <p>
+          Примерный длинный заголовок на обложке в три строки
+        </p>
+      </div>
+      <div class="btn btn--white-gray">
+        Подробнее
+      </div>
+    </div>
+    <div class="events__other-img">
+      <img src="./images/events/other-1.png" alt="">
+    </div>
+  </a>
+</div><div class="swiper-slide">
+  <a class="events__other-item" href="/">
+    <div class="events__other-content">
+      <div class="events__other-suptitle">
+        <p>
+          с 10 мая по 25 июня
+        </p>
+      </div>
+      <div class="events__other-title">
+        <p>
+          Примерный длинный заголовок на обложке в три строки
+        </p>
+      </div>
+      <div class="btn btn--white-gray">
+        Подробнее
+      </div>
+    </div>
+    <div class="events__other-img">
+      <img src="./images/events/other-1.png" alt="">
+    </div>
+  </a>
+</div><div class="swiper-slide">
+  <a class="events__other-item" href="/">
+    <div class="events__other-content">
+      <div class="events__other-suptitle">
+        <p>
+          с 10 мая по 25 июня
+        </p>
+      </div>
+      <div class="events__other-title">
+        <p>
+          Примерный длинный заголовок на обложке в три строки
+        </p>
+      </div>
+      <div class="btn btn--white-gray">
+        Подробнее
+      </div>
+    </div>
+    <div class="events__other-img">
+      <img src="./images/events/other-1.png" alt="">
+    </div>
+  </a>
+</div><div class="swiper-slide">
+  <a class="events__other-item" href="/">
+    <div class="events__other-content">
+      <div class="events__other-suptitle">
+        <p>
+          с 10 мая по 25 июня
+        </p>
+      </div>
+      <div class="events__other-title">
+        <p>
+          Примерный длинный заголовок на обложке в три строки
+        </p>
+      </div>
+      <div class="btn btn--white-gray">
+        Подробнее
+      </div>
+    </div>
+    <div class="events__other-img">
+      <img src="./images/events/other-1.png" alt="">
+    </div>
+  </a>
+</div><div class="swiper-slide">
+  <a class="events__other-item" href="/">
+    <div class="events__other-content">
+      <div class="events__other-suptitle">
+        <p>
+          с 10 мая по 25 июня
+        </p>
+      </div>
+      <div class="events__other-title">
+        <p>
+          Примерный длинный заголовок на обложке в три строки
+        </p>
+      </div>
+      <div class="btn btn--white-gray">
+        Подробнее
+      </div>
+    </div>
+    <div class="events__other-img">
+      <img src="./images/events/other-1.png" alt="">
+    </div>
+  </a>
+</div><div class="swiper-slide">
+  <a class="events__other-item" href="/">
+    <div class="events__other-content">
+      <div class="events__other-suptitle">
+        <p>
+          с 10 мая по 25 июня
+        </p>
+      </div>
+      <div class="events__other-title">
+        <p>
+          Примерный длинный заголовок на обложке в три строки
+        </p>
+      </div>
+      <div class="btn btn--white-gray">
+        Подробнее
+      </div>
+    </div>
+    <div class="events__other-img">
+      <img src="./images/events/other-1.png" alt="">
+    </div>
+  </a>
+</div>
                   </div>
                   <div class="swiper-pagination"></div>
                 </div>
-                <div class="swiper-button-prev swiper-button-alt template-product-button-prev">
+                <div class="swiper-button-prev events-button-prev">
                   <i class="icon-arrow-left"></i>
                 </div>
-                <div class="swiper-button-next swiper-button-alt template-product-button-next">
+                <div class="swiper-button-next events-button-next">
                   <i class="icon-arrow-right"></i>
                 </div>
               </div>
-
-              <div thumbsslider="" class="swiper template-product__slider--mini">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="template-product__slider-item template-product__slider-item--mini">
-                      <img src="./images/temp/hall-page-item-2.png" alt="">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="template-product__slider-item template-product__slider-item--mini">
-                      <img src="./images/temp/hall-page-item-2.png" alt="">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="template-product__slider-item template-product__slider-item--mini">
-                      <img src="./images/temp/hall-page-item-2.png" alt="">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="template-product__slider-item template-product__slider-item--mini">
-                      <img src="./images/temp/hall-page-item-2.png" alt="">
-                    </div>
-                  </div>
-                </div>
-              </div>
-
             </div>
 
           </div>
         </div>
-      </section>
 
-      <section class="template-product">
-        <div class="container">
-          <div class="template-product__inner">
-
-            <div class="template-product__head">
-              <h4>
-                Сосновый
-              </h4>
-              <p>
-                Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
-                войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные кровати, а
-                также диван-кровать. Балкон, выходящий на северо-восток, позволяет наслаждаться утренним солнцем и
-                свежим воздухом Церматта. Современная ванная комната оснащена душем и ванной.
-              </p>
-            </div>
-
-            <div class="template-product__body">
-
-              <div class="template-product__body-items">
-                <div class="template-product__body-item">
-                  <h5>
-                    30 человек
-                  </h5>
-                  <p>
-                    Максимальная вместимость
-                  </p>
-                </div>
-                <div class="template-product__body-item">
-                  <h5>
-                    220м<sup>2</sup>
-                  </h5>
-                  <p>
-                    Общая площадь зала
-                  </p>
-                </div>
-              </div>
-              <div class="template-product__body-btns">
-                <a class="btn btn--black" href="/">
-                  Видео о зале
-                </a>
-                <a class="btn btn--accent" href="/">
-                  Подробнее
-                </a>
-              </div>
-            </div>
-
-            <div class="template-product__content">
-
-              <div class="template-product__slider">
-                <div class="swiper template-product__slider--big border">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="template-product__slider-item">
-                        <img src="./images/temp/hall-page-item-3.png" alt="">
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="template-product__slider-item">
-                        <img src="./images/temp/hall-page-item-3.png" alt="">
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="template-product__slider-item">
-                        <img src="./images/temp/hall-page-item-3.png" alt="">
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="template-product__slider-item">
-                        <img src="./images/temp/hall-page-item-3.png" alt="">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-pagination"></div>
-                </div>
-                <div class="swiper-button-prev swiper-button-alt template-product-button-prev">
-                  <i class="icon-arrow-left"></i>
-                </div>
-                <div class="swiper-button-next swiper-button-alt template-product-button-next">
-                  <i class="icon-arrow-right"></i>
-                </div>
-              </div>
-
-              <div thumbsslider="" class="swiper template-product__slider--mini">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="template-product__slider-item template-product__slider-item--mini">
-                      <img src="./images/temp/hall-page-item-3.png" alt="">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="template-product__slider-item template-product__slider-item--mini">
-                      <img src="./images/temp/hall-page-item-3.png" alt="">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="template-product__slider-item template-product__slider-item--mini">
-                      <img src="./images/temp/hall-page-item-3.png" alt="">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="template-product__slider-item template-product__slider-item--mini">
-                      <img src="./images/temp/hall-page-item-3.png" alt="">
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
+        <div class="leaf leaf--3" data-animation="parallax-box">
+          <img src="./images/leaf/leaf-579.png" alt="">
         </div>
       </section>
 
-      <section id="reviews" class="reviews reviews--corp">
+      <!-- Отзывы - сквозной блок -->
+      <section id="reviews" class="reviews">
   <div class="container">
     <div class="reviews__inner">
 
@@ -1026,413 +1443,533 @@
       </div>
 
       <div class="reviews__body">
-        <div class="swiper reviews__slider--corp">
+        <div class="swiper reviews__slider">
           <div class="swiper-wrapper">
             <div class="swiper-slide reviews__slide">
   <div class="reviews__item">
     <div class="reviews__item-body">
-      <div class="reviews__item-logo">
-        <img src="./images/reviews/TSGroup.svg" alt="">
+      <div class="reviews__item-icon">
+        <i class="icon-caplya">
+          <span class="path1"></span>
+          <span class="path2"></span>
+        </i>
       </div>
       <div class="reviews__item-content">
         <div class="reviews__item-date">
           <p>
-            Директор АНО «ВК Зенит — Санкт-Петербург» <br> Хайбулкин А.Л.
+            12.05.2025
           </p>
         </div>
-        <div class="reviews__item-name">
-          <h6>
-            ФКУ «Центр по обеспечению деятельности Казначейства России»
-          </h6>
+        <div class="reviews__item-wrap">
+          <div class="reviews__item-name">
+            <h6>
+              Наталья петрова
+            </h6>
+          </div>
+          <div class="reviews__item-rating">
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+          </div>
         </div>
         <div class="reviews__item-text">
           <p>
-            Благодарственное письмо за богатый опыт и профессионализм в организации масштабных мероприятий
+            Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
           </p>
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
-        <span>
-          Смотреть оригинал отзыва
-        </span>
+        <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
         <i class="icon-chevron-link"></i>
-        Смотреть оригинал
+        Подробнее
       </a>
     </div>
   </div>
 </div><div class="swiper-slide reviews__slide">
   <div class="reviews__item">
     <div class="reviews__item-body">
-      <div class="reviews__item-logo">
-        <img src="./images/reviews/TSGroup.svg" alt="">
+      <div class="reviews__item-icon">
+        <i class="icon-caplya">
+          <span class="path1"></span>
+          <span class="path2"></span>
+        </i>
       </div>
       <div class="reviews__item-content">
         <div class="reviews__item-date">
           <p>
-            Директор АНО «ВК Зенит — Санкт-Петербург» <br> Хайбулкин А.Л.
+            12.05.2025
           </p>
         </div>
-        <div class="reviews__item-name">
-          <h6>
-            ФКУ «Центр по обеспечению деятельности Казначейства России»
-          </h6>
+        <div class="reviews__item-wrap">
+          <div class="reviews__item-name">
+            <h6>
+              Наталья петрова
+            </h6>
+          </div>
+          <div class="reviews__item-rating">
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+          </div>
         </div>
         <div class="reviews__item-text">
           <p>
-            Благодарственное письмо за богатый опыт и профессионализм в организации масштабных мероприятий
+            Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
           </p>
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
-        <span>
-          Смотреть оригинал отзыва
-        </span>
+        <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
         <i class="icon-chevron-link"></i>
-        Смотреть оригинал
+        Подробнее
       </a>
     </div>
   </div>
 </div><div class="swiper-slide reviews__slide">
   <div class="reviews__item">
     <div class="reviews__item-body">
-      <div class="reviews__item-logo">
-        <img src="./images/reviews/TSGroup.svg" alt="">
+      <div class="reviews__item-icon">
+        <i class="icon-caplya">
+          <span class="path1"></span>
+          <span class="path2"></span>
+        </i>
       </div>
       <div class="reviews__item-content">
         <div class="reviews__item-date">
           <p>
-            Директор АНО «ВК Зенит — Санкт-Петербург» <br> Хайбулкин А.Л.
+            12.05.2025
           </p>
         </div>
-        <div class="reviews__item-name">
-          <h6>
-            ФКУ «Центр по обеспечению деятельности Казначейства России»
-          </h6>
+        <div class="reviews__item-wrap">
+          <div class="reviews__item-name">
+            <h6>
+              Наталья петрова
+            </h6>
+          </div>
+          <div class="reviews__item-rating">
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+          </div>
         </div>
         <div class="reviews__item-text">
           <p>
-            Благодарственное письмо за богатый опыт и профессионализм в организации масштабных мероприятий
+            Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
           </p>
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
-        <span>
-          Смотреть оригинал отзыва
-        </span>
+        <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
         <i class="icon-chevron-link"></i>
-        Смотреть оригинал
+        Подробнее
       </a>
     </div>
   </div>
 </div><div class="swiper-slide reviews__slide">
   <div class="reviews__item">
     <div class="reviews__item-body">
-      <div class="reviews__item-logo">
-        <img src="./images/reviews/TSGroup.svg" alt="">
+      <div class="reviews__item-icon">
+        <i class="icon-caplya">
+          <span class="path1"></span>
+          <span class="path2"></span>
+        </i>
       </div>
       <div class="reviews__item-content">
         <div class="reviews__item-date">
           <p>
-            Директор АНО «ВК Зенит — Санкт-Петербург» <br> Хайбулкин А.Л.
+            12.05.2025
           </p>
         </div>
-        <div class="reviews__item-name">
-          <h6>
-            ФКУ «Центр по обеспечению деятельности Казначейства России»
-          </h6>
+        <div class="reviews__item-wrap">
+          <div class="reviews__item-name">
+            <h6>
+              Наталья петрова
+            </h6>
+          </div>
+          <div class="reviews__item-rating">
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+          </div>
         </div>
         <div class="reviews__item-text">
           <p>
-            Благодарственное письмо за богатый опыт и профессионализм в организации масштабных мероприятий
+            Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
           </p>
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
-        <span>
-          Смотреть оригинал отзыва
-        </span>
+        <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
         <i class="icon-chevron-link"></i>
-        Смотреть оригинал
+        Подробнее
       </a>
     </div>
   </div>
 </div><div class="swiper-slide reviews__slide">
   <div class="reviews__item">
     <div class="reviews__item-body">
-      <div class="reviews__item-logo">
-        <img src="./images/reviews/TSGroup.svg" alt="">
+      <div class="reviews__item-icon">
+        <i class="icon-caplya">
+          <span class="path1"></span>
+          <span class="path2"></span>
+        </i>
       </div>
       <div class="reviews__item-content">
         <div class="reviews__item-date">
           <p>
-            Директор АНО «ВК Зенит — Санкт-Петербург» <br> Хайбулкин А.Л.
+            12.05.2025
           </p>
         </div>
-        <div class="reviews__item-name">
-          <h6>
-            ФКУ «Центр по обеспечению деятельности Казначейства России»
-          </h6>
+        <div class="reviews__item-wrap">
+          <div class="reviews__item-name">
+            <h6>
+              Наталья петрова
+            </h6>
+          </div>
+          <div class="reviews__item-rating">
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+          </div>
         </div>
         <div class="reviews__item-text">
           <p>
-            Благодарственное письмо за богатый опыт и профессионализм в организации масштабных мероприятий
+            Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
           </p>
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
-        <span>
-          Смотреть оригинал отзыва
-        </span>
+        <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
         <i class="icon-chevron-link"></i>
-        Смотреть оригинал
+        Подробнее
       </a>
     </div>
   </div>
 </div><div class="swiper-slide reviews__slide">
   <div class="reviews__item">
     <div class="reviews__item-body">
-      <div class="reviews__item-logo">
-        <img src="./images/reviews/TSGroup.svg" alt="">
+      <div class="reviews__item-icon">
+        <i class="icon-caplya">
+          <span class="path1"></span>
+          <span class="path2"></span>
+        </i>
       </div>
       <div class="reviews__item-content">
         <div class="reviews__item-date">
           <p>
-            Директор АНО «ВК Зенит — Санкт-Петербург» <br> Хайбулкин А.Л.
+            12.05.2025
           </p>
         </div>
-        <div class="reviews__item-name">
-          <h6>
-            ФКУ «Центр по обеспечению деятельности Казначейства России»
-          </h6>
+        <div class="reviews__item-wrap">
+          <div class="reviews__item-name">
+            <h6>
+              Наталья петрова
+            </h6>
+          </div>
+          <div class="reviews__item-rating">
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+          </div>
         </div>
         <div class="reviews__item-text">
           <p>
-            Благодарственное письмо за богатый опыт и профессионализм в организации масштабных мероприятий
+            Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
           </p>
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
-        <span>
-          Смотреть оригинал отзыва
-        </span>
+        <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
         <i class="icon-chevron-link"></i>
-        Смотреть оригинал
+        Подробнее
       </a>
     </div>
   </div>
 </div><div class="swiper-slide reviews__slide">
   <div class="reviews__item">
     <div class="reviews__item-body">
-      <div class="reviews__item-logo">
-        <img src="./images/reviews/TSGroup.svg" alt="">
+      <div class="reviews__item-icon">
+        <i class="icon-caplya">
+          <span class="path1"></span>
+          <span class="path2"></span>
+        </i>
       </div>
       <div class="reviews__item-content">
         <div class="reviews__item-date">
           <p>
-            Директор АНО «ВК Зенит — Санкт-Петербург» <br> Хайбулкин А.Л.
+            12.05.2025
           </p>
         </div>
-        <div class="reviews__item-name">
-          <h6>
-            ФКУ «Центр по обеспечению деятельности Казначейства России»
-          </h6>
+        <div class="reviews__item-wrap">
+          <div class="reviews__item-name">
+            <h6>
+              Наталья петрова
+            </h6>
+          </div>
+          <div class="reviews__item-rating">
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+          </div>
         </div>
         <div class="reviews__item-text">
           <p>
-            Благодарственное письмо за богатый опыт и профессионализм в организации масштабных мероприятий
+            Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
           </p>
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
-        <span>
-          Смотреть оригинал отзыва
-        </span>
+        <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
         <i class="icon-chevron-link"></i>
-        Смотреть оригинал
+        Подробнее
       </a>
     </div>
   </div>
 </div><div class="swiper-slide reviews__slide">
   <div class="reviews__item">
     <div class="reviews__item-body">
-      <div class="reviews__item-logo">
-        <img src="./images/reviews/TSGroup.svg" alt="">
+      <div class="reviews__item-icon">
+        <i class="icon-caplya">
+          <span class="path1"></span>
+          <span class="path2"></span>
+        </i>
       </div>
       <div class="reviews__item-content">
         <div class="reviews__item-date">
           <p>
-            Директор АНО «ВК Зенит — Санкт-Петербург» <br> Хайбулкин А.Л.
+            12.05.2025
           </p>
         </div>
-        <div class="reviews__item-name">
-          <h6>
-            ФКУ «Центр по обеспечению деятельности Казначейства России»
-          </h6>
+        <div class="reviews__item-wrap">
+          <div class="reviews__item-name">
+            <h6>
+              Наталья петрова
+            </h6>
+          </div>
+          <div class="reviews__item-rating">
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+          </div>
         </div>
         <div class="reviews__item-text">
           <p>
-            Благодарственное письмо за богатый опыт и профессионализм в организации масштабных мероприятий
+            Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
           </p>
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
-        <span>
-          Смотреть оригинал отзыва
-        </span>
+        <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
         <i class="icon-chevron-link"></i>
-        Смотреть оригинал
+        Подробнее
       </a>
     </div>
   </div>
 </div><div class="swiper-slide reviews__slide">
   <div class="reviews__item">
     <div class="reviews__item-body">
-      <div class="reviews__item-logo">
-        <img src="./images/reviews/TSGroup.svg" alt="">
+      <div class="reviews__item-icon">
+        <i class="icon-caplya">
+          <span class="path1"></span>
+          <span class="path2"></span>
+        </i>
       </div>
       <div class="reviews__item-content">
         <div class="reviews__item-date">
           <p>
-            Директор АНО «ВК Зенит — Санкт-Петербург» <br> Хайбулкин А.Л.
+            12.05.2025
           </p>
         </div>
-        <div class="reviews__item-name">
-          <h6>
-            ФКУ «Центр по обеспечению деятельности Казначейства России»
-          </h6>
+        <div class="reviews__item-wrap">
+          <div class="reviews__item-name">
+            <h6>
+              Наталья петрова
+            </h6>
+          </div>
+          <div class="reviews__item-rating">
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+          </div>
         </div>
         <div class="reviews__item-text">
           <p>
-            Благодарственное письмо за богатый опыт и профессионализм в организации масштабных мероприятий
+            Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
           </p>
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
-        <span>
-          Смотреть оригинал отзыва
-        </span>
+        <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
         <i class="icon-chevron-link"></i>
-        Смотреть оригинал
+        Подробнее
       </a>
     </div>
   </div>
 </div><div class="swiper-slide reviews__slide">
   <div class="reviews__item">
     <div class="reviews__item-body">
-      <div class="reviews__item-logo">
-        <img src="./images/reviews/TSGroup.svg" alt="">
+      <div class="reviews__item-icon">
+        <i class="icon-caplya">
+          <span class="path1"></span>
+          <span class="path2"></span>
+        </i>
       </div>
       <div class="reviews__item-content">
         <div class="reviews__item-date">
           <p>
-            Директор АНО «ВК Зенит — Санкт-Петербург» <br> Хайбулкин А.Л.
+            12.05.2025
           </p>
         </div>
-        <div class="reviews__item-name">
-          <h6>
-            ФКУ «Центр по обеспечению деятельности Казначейства России»
-          </h6>
+        <div class="reviews__item-wrap">
+          <div class="reviews__item-name">
+            <h6>
+              Наталья петрова
+            </h6>
+          </div>
+          <div class="reviews__item-rating">
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+          </div>
         </div>
         <div class="reviews__item-text">
           <p>
-            Благодарственное письмо за богатый опыт и профессионализм в организации масштабных мероприятий
+            Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
           </p>
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
-        <span>
-          Смотреть оригинал отзыва
-        </span>
+        <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
         <i class="icon-chevron-link"></i>
-        Смотреть оригинал
+        Подробнее
       </a>
     </div>
   </div>
 </div><div class="swiper-slide reviews__slide">
   <div class="reviews__item">
     <div class="reviews__item-body">
-      <div class="reviews__item-logo">
-        <img src="./images/reviews/TSGroup.svg" alt="">
+      <div class="reviews__item-icon">
+        <i class="icon-caplya">
+          <span class="path1"></span>
+          <span class="path2"></span>
+        </i>
       </div>
       <div class="reviews__item-content">
         <div class="reviews__item-date">
           <p>
-            Директор АНО «ВК Зенит — Санкт-Петербург» <br> Хайбулкин А.Л.
+            12.05.2025
           </p>
         </div>
-        <div class="reviews__item-name">
-          <h6>
-            ФКУ «Центр по обеспечению деятельности Казначейства России»
-          </h6>
+        <div class="reviews__item-wrap">
+          <div class="reviews__item-name">
+            <h6>
+              Наталья петрова
+            </h6>
+          </div>
+          <div class="reviews__item-rating">
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+          </div>
         </div>
         <div class="reviews__item-text">
           <p>
-            Благодарственное письмо за богатый опыт и профессионализм в организации масштабных мероприятий
+            Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
           </p>
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
-        <span>
-          Смотреть оригинал отзыва
-        </span>
+        <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
         <i class="icon-chevron-link"></i>
-        Смотреть оригинал
+        Подробнее
       </a>
     </div>
   </div>
 </div><div class="swiper-slide reviews__slide">
   <div class="reviews__item">
     <div class="reviews__item-body">
-      <div class="reviews__item-logo">
-        <img src="./images/reviews/TSGroup.svg" alt="">
+      <div class="reviews__item-icon">
+        <i class="icon-caplya">
+          <span class="path1"></span>
+          <span class="path2"></span>
+        </i>
       </div>
       <div class="reviews__item-content">
         <div class="reviews__item-date">
           <p>
-            Директор АНО «ВК Зенит — Санкт-Петербург» <br> Хайбулкин А.Л.
+            12.05.2025
           </p>
         </div>
-        <div class="reviews__item-name">
-          <h6>
-            ФКУ «Центр по обеспечению деятельности Казначейства России»
-          </h6>
+        <div class="reviews__item-wrap">
+          <div class="reviews__item-name">
+            <h6>
+              Наталья петрова
+            </h6>
+          </div>
+          <div class="reviews__item-rating">
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+          </div>
         </div>
         <div class="reviews__item-text">
           <p>
-            Благодарственное письмо за богатый опыт и профессионализм в организации масштабных мероприятий
+            Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
           </p>
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
-        <span>
-          Смотреть оригинал отзыва
-        </span>
+        <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
         <i class="icon-chevron-link"></i>
-        Смотреть оригинал
+        Подробнее
       </a>
     </div>
   </div>

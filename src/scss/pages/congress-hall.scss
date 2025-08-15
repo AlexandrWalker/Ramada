@@ -1,0 +1,50 @@
+@use './../mixins' as *;
+
+.hall-page {
+
+  .template-product {
+
+    &__inner {
+      // grid-template-columns: calc(50% - 15rem) 50%;
+      gap: 5rem 15rem;
+
+      @include md {
+        gap: 0;
+      }
+    }
+
+    &__head {
+      padding-top: 2.5rem;
+
+      @include md {
+        padding-top: 0;
+      }
+    }
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+
+      @include md {
+        gap: 3rem;
+      }
+
+      @include sm {
+        gap: 2rem;
+      }
+
+      &-items {
+
+        @include md {
+          flex-direction: row;
+        }
+
+        @include md {
+          flex-direction: column;
+          gap: 2rem;
+        }
+      }
+    }
+  }
+}
