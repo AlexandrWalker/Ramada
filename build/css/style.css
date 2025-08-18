@@ -4127,10 +4127,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .restaurant-page .hero {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin-bottom: 9rem;
+  margin-bottom: 29rem;
 }
 
 .restaurant-page .hero__head {
@@ -4156,7 +4153,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .restaurant-page .hero__bg {
-  top: 20.8rem;
+  --top: 20.8rem;
 }
 
 .restaurant-page .events {
@@ -4171,6 +4168,104 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .concept__block {
   padding-top: 4rem;
+}
+
+.dishes__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.dishes__item {
+  text-align: center;
+  padding: 2rem;
+  border: 0.1rem solid var(--gray-30);
+  width: calc(33.3333333333% - 1.3333333333rem);
+}
+
+.dishes__item-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 5rem;
+  padding: 6rem 4rem;
+  background-color: var(--white);
+  position: relative;
+}
+
+.dishes__item-wrap::before {
+  content: "";
+  border: 0.1rem solid var(--gray-20);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  pointer-events: none;
+}
+
+.dishes__item-img {
+  max-width: 26rem;
+  width: 100%;
+  height: 24rem;
+}
+
+.dishes__item-img img {
+  width: auto;
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+.dishes__item .general__block {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.dishes__item .general__block-title {
+  padding: 2rem 0;
+  max-width: 17.2rem;
+  width: 100%;
+}
+
+.dishes__gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.dishes__gallery-item:nth-child(1) {
+  grid-column: 1/3;
+  grid-row: 1/3;
+}
+
+.dishes__gallery-item:nth-child(2) {
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+
+.dishes__gallery-item:nth-child(3) {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+.dishes .general__head-title {
+  text-transform: capitalize;
 }
 
 .equipment__inner {
@@ -4508,6 +4603,151 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   font-weight: 350;
   font-size: 1.4rem;
   line-height: 120%;
+}
+
+.gallery__inner {
+  display: grid;
+  grid-template-columns: calc(33.33334% - 1rem) calc(66.66666% - 1rem);
+  gap: 2rem;
+}
+
+.gallery__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 7rem;
+}
+
+.gallery__block {
+  height: 100%;
+}
+
+.gallery__block--slider {
+  height: 100%;
+}
+
+.gallery__block-title {
+  color: var(--accent);
+  margin-bottom: 3rem;
+}
+
+.gallery__block-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 0.8rem;
+}
+
+.gallery__block-name span {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.gallery__block-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.gallery__block-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 7.5rem;
+  margin-bottom: 4rem;
+}
+
+.gallery__block-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 2rem;
+  border-left: 0.1rem solid var(--gray-30);
+}
+
+.gallery__block-item h4 {
+  color: var(--accent);
+}
+
+.gallery__slide-item {
+  height: 100%;
+  background-color: var(--white);
+  padding: 4rem;
+}
+
+.gallery__slide-item .btn {
+  max-width: 32rem;
+  width: 100%;
+}
+
+.gallery__body {
+  position: relative;
+}
+
+.gallery__body .swiper-button-next {
+  right: calc(var(--btn-arrow-width) / 2 * -1);
+  left: unset;
+}
+
+.gallery__body .swiper-button-next:hover i {
+  color: var(--white);
+}
+
+.gallery__body .btn-arrow i {
+  --font-size: 10rem;
+  --swiper-font-size: 10rem;
+}
+
+.gallery__body .swiper-pagination {
+  font-family: var(--second-family);
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12rem;
+  line-height: 110%;
+  color: var(--white);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  right: 6rem;
+  bottom: 5rem;
+  left: unset;
+}
+
+.gallery__body--slider {
+  height: 100%;
+}
+
+.gallery__body-item {
+  height: 100%;
+}
+
+.gallery .general__head-title {
+  text-transform: unset;
 }
 
 .studio__inner {
@@ -7255,6 +7495,17 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 15rem;
   }
 
+  .sosnovyi-page .template-product--seating .template-product__slider-item {
+    gap: 3rem;
+  }
+
+  .sosnovyi-page .template-product--seating .template-product__slider-item::before {
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
   .template-product__inner {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -7267,6 +7518,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     padding: 4rem 8rem;
   }
 
+  .sosnovyi-page .template-product__inner {
+    gap: 3rem;
+  }
+
   .template-product__head {
     gap: 2rem;
     -webkit-box-ordinal-group: 2;
@@ -7277,6 +7532,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .template-product__head {
     margin-bottom: 2rem;
+  }
+
+  .sosnovyi-page .template-product__head {
+    margin-bottom: 0;
   }
 
   .template-product__head h4 {
@@ -7327,10 +7586,32 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 6rem;
   }
 
+  .sosnovyi-page .template-product__body ul {
+    margin-bottom: 0;
+  }
+
   .template-product__content {
     -webkit-box-ordinal-group: 3;
     -ms-flex-order: 2;
     order: 2;
+  }
+
+  .sosnovyi-page .template-product__slider-item {
+    padding: 4rem 3rem 3rem 3rem;
+  }
+
+  .sosnovyi-page .template-product__slider-item img {
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .sosnovyi-page .template-product__slider-title h5 {
+    font-size: 2.5rem;
+  }
+
+  .sosnovyi-page .template-product__slider-img {
+    width: auto;
+    height: 28.3rem;
   }
 
   .template-product__slider--mini {
@@ -7360,6 +7641,23 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .template-product__slider .border::after {
     border-width: 2rem;
+  }
+
+  .sosnovyi-page .template-product__control {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  .sosnovyi-page .template-product__control .swiper-pagination {
+    display: none;
   }
 
   .afisha__inner {
@@ -7623,6 +7921,155 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 3rem;
   }
 
+  .restaurant-page .hero {
+    height: 31.6rem;
+    margin-bottom: 15.5rem;
+  }
+
+  .restaurant-page .hero__head {
+    top: 3.8rem;
+  }
+
+  .restaurant-page .hero__head .btn-arrow {
+    margin-top: 3rem;
+  }
+
+  .restaurant-page .hero__title h1 {
+    font-size: 8rem;
+    gap: 25.7rem;
+  }
+
+  .restaurant-page .hero__bg {
+    --top: 10rem;
+    width: 100%;
+    height: 33rem;
+  }
+
+  .concept__inner {
+    grid-template-columns: repeat(9, 1fr);
+    gap: 2rem;
+  }
+
+  .concept__img {
+    height: 40.7rem;
+    grid-column: 1/6;
+  }
+
+  .concept__block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 1.5rem;
+    grid-column: 6/10;
+    padding-top: 0;
+  }
+
+  .concept__head {
+    color: var(--accent);
+  }
+
+  .concept__head h3 {
+    font-size: 2.5rem;
+    text-transform: unset;
+  }
+
+  .concept .general__block-title {
+    padding: 1rem 0;
+  }
+
+  .concept .general__block-title h6 {
+    font-size: 1.6rem;
+  }
+
+  .concept .general__block-subtext {
+    gap: 1rem;
+    font-size: 1.6rem;
+  }
+
+  .concept .general__block-subtext h5 {
+    font-size: 2rem;
+  }
+
+  .dishes__items {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  .dishes__item {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+  }
+
+  .dishes__item-wrap {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    gap: 4.4rem;
+    padding: 4rem;
+  }
+
+  .dishes__item-wrap::before {
+    top: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
+  }
+
+  .dishes__item-img {
+    max-width: 13.4rem;
+    height: 12.2rem;
+  }
+
+  .dishes__item .general__block {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+
+  .dishes__item .general__block-title {
+    padding: 0;
+    border: 0;
+  }
+
+  .dishes__gallery-item {
+    aspect-ratio: 444/413;
+  }
+
+  .equipment__inner {
+    padding: 4rem 8rem;
+    gap: 3rem;
+  }
+
+  .equipment__head {
+    gap: 2rem;
+  }
+
+  .equipment__items {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .equipment__item {
+    width: 100%;
+    padding: 3rem;
+  }
+
+  .equipment__item::before {
+    display: none;
+  }
+
+  .equipment__item-content {
+    gap: 1.5rem;
+  }
+
   .reviews-page .reviews {
     padding-bottom: 4rem;
   }
@@ -7711,6 +8158,49 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .rooms__item-text {
     font-size: 1.2rem;
+  }
+
+  .sosnovyi-page .template-product__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .sosnovyi-page .template-product__body-items {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .gallery__inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .gallery__head {
+    padding-top: 0;
+  }
+
+  .gallery__slide-item {
+    padding: 3rem;
+  }
+
+  .gallery__body .swiper-pagination {
+    font-size: 8rem;
+    right: 4rem;
+    bottom: 4rem;
   }
 
   .studio__inner {
@@ -8324,6 +8814,19 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     --container-width: 70.8rem;
   }
 
+  .restaurant-page .hero__head .btn-arrow {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: unset;
+    -ms-transform: unset;
+    transform: unset;
+    margin-top: 0;
+  }
+
+  .restaurant-page .hero__bg {
+    height: 33.8rem;
+  }
+
   .diversity .swiper-button-next {
     right: -2rem;
   }
@@ -8692,6 +9195,15 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     display: none;
   }
 
+  .template__body-icons {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 2rem 6rem;
+  }
+
   .template__plugin {
     -webkit-transform: translateY(calc(9rem + var(--template-padding-b)));
     -ms-transform: translateY(calc(9rem + var(--template-padding-b)));
@@ -8747,6 +9259,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 1rem;
   }
 
+  .sosnovyi-page .template-product__slider-item {
+    padding: 0;
+  }
+
   .template-product__slider .swiper-pagination {
     bottom: 2.5rem;
   }
@@ -8760,6 +9276,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .template-product__slider .border::after {
     border-width: 1rem;
+  }
+
+  .sosnovyi-page .template-product__control .swiper-pagination {
+    bottom: 2rem;
   }
 
   .afisha__content {
@@ -8955,6 +9475,46 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     font-size: var(--font-size);
   }
 
+  .restaurant-page .hero {
+    height: auto;
+    margin-bottom: 3rem;
+  }
+
+  .restaurant-page .hero__inner {
+    padding: 8.4rem 0 0;
+  }
+
+  .restaurant-page .hero__head {
+    gap: 12rem;
+    position: absolute;
+    right: var(--container-padding);
+    left: var(--container-padding);
+    width: calc(100% - var(--container-padding) * 2);
+  }
+
+  .restaurant-page .hero__head .btn-arrow {
+    position: relative;
+  }
+
+  .restaurant-page .hero__title h1 {
+    font-size: 6rem;
+    text-align: left;
+    gap: 1.4rem;
+    margin-left: 0;
+  }
+
+  .restaurant-page .hero__bg {
+    --top: 8.4rem;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    position: static;
+  }
+
+  .equipment__inner {
+    padding: 3rem 2rem;
+  }
+
   .reviews-page .reviews {
     padding-bottom: 3rem;
   }
@@ -9015,6 +9575,16 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .rooms__item-content {
     margin-bottom: 2rem;
+  }
+
+  .gallery__body .swiper-button-next {
+    display: none;
+  }
+
+  .gallery__body .swiper-pagination {
+    font-size: 5rem;
+    right: 2rem;
+    bottom: 2rem;
   }
 
   .studio__inner {

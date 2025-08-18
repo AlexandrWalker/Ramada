@@ -435,6 +435,43 @@ document.addEventListener('DOMContentLoaded', () => {
     // }
   });
 
+  const galleryBlockSlider = new Swiper(".gallery__block--slider", {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    speed: 1000,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    grabCursor: false,
+    mousewheel: false,
+    allowTouchMove: false,
+  });
+
+  const galleryBodySlider = new Swiper(".gallery__body--slider", {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    speed: 1000,
+    mousewheel: {
+      forceToAxis: true,
+    },
+    navigation: {
+      nextEl: ".gallery-button-next",
+    },
+    pagination: {
+      el: ".swiper-pagination--gallery",
+      clickable: true,
+      type: "fraction",
+    },
+  });
+
+  galleryBlockSlider.controller.control = galleryBodySlider;
+  galleryBodySlider.controller.control = galleryBlockSlider;
+
 
 
   /**
@@ -1322,6 +1359,31 @@ document.addEventListener('DOMContentLoaded', () => {
         $('.reviews__items').html(data)
       })
     })
+  }
+
+
+
+  /**
+ * Инициализация TransferElements
+ */
+  const transfer = document.querySelector('.transfer-elem-1');
+  if (transfer) {
+    $(window).on('resize load', function () {
+      if (window.innerWidth <= '834') {
+        if (document.querySelector('.transfer-pos-1')) {
+          new TransferElements(
+            {
+              sourceElement: document.querySelector('.transfer-elem-1'),
+              breakpoints: {
+                834: {
+                  targetElement: document.querySelector('.transfer-pos-1')
+                }
+              },
+            }
+          );
+        }
+      }
+    });
   }
 
 

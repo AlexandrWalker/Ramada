@@ -114,6 +114,12 @@
       @include md {
         gap: 6rem;
       }
+
+      @include sm {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem 6rem;
+      }
     }
 
     &-icon {
@@ -338,6 +344,13 @@
 
         position: relative;
 
+        .sosnovyi-page & {
+
+          @include md {
+            gap: 3rem;
+          }
+        }
+
         &::before {
           content: "";
           border: 0.1rem solid var(--gray-30);
@@ -347,6 +360,16 @@
           bottom: 2rem;
           left: 2rem;
           z-index: 1;
+
+          .sosnovyi-page & {
+
+            @include md {
+              top: 1rem;
+              right: 1rem;
+              bottom: 1rem;
+              left: 1rem;
+            }
+          }
         }
       }
 
@@ -379,6 +402,13 @@
       @include sm {
         padding: 3rem 2rem 2rem;
       }
+
+      .sosnovyi-page & {
+
+        @include md {
+          gap: 3rem;
+        }
+      }
     }
 
     &__head {
@@ -397,6 +427,13 @@
 
       @include md {
         margin-bottom: 2rem;
+      }
+
+      .sosnovyi-page & {
+
+        @include md {
+          margin-bottom: 0;
+        }
       }
 
       h4 {
@@ -526,6 +563,13 @@
         @include sm {
           margin-bottom: 2rem;
         }
+
+        .sosnovyi-page & {
+
+          @include md {
+            margin-bottom: 0;
+          }
+        }
       }
 
       li {
@@ -582,8 +626,27 @@
 
       &-item {
 
+        .sosnovyi-page & {
+
+          @include md {
+            padding: 4rem 3rem 3rem 3rem;
+          }
+
+          @include sm {
+            padding: 0;
+          }
+        }
+
         img {
           height: 100%;
+
+          .sosnovyi-page & {
+
+            @include md {
+              width: auto;
+              margin: 0 auto;
+            }
+          }
         }
 
         &--mini {
@@ -598,6 +661,25 @@
 
       &-title {
         text-align: center;
+
+        h5 {
+
+          @include md {
+            .sosnovyi-page & {
+              font-size: 2.5rem;
+            }
+          }
+        }
+      }
+
+      &-img {
+
+        @include md {
+          .sosnovyi-page & {
+            width: auto;
+            height: 28.3rem;
+          }
+        }
       }
 
       &--big {
@@ -682,6 +764,18 @@
       gap: 2rem;
       width: fit-content;
 
+      .sosnovyi-page & {
+
+        @include md {
+          position: absolute;
+          top: 50%;
+          z-index: 2;
+          transform: translateY(-50%);
+          width: 100%;
+          justify-content: space-between;
+        }
+      }
+
       .swiper-pagination {
         margin: 0;
 
@@ -691,6 +785,17 @@
         font-size: 3.5rem;
         line-height: 110%;
         color: var(--accent);
+
+        .sosnovyi-page & {
+
+          @include md {
+            display: none;
+          }
+
+          @include sm {
+            bottom: 2rem;
+          }
+        }
       }
 
       .swiper-button-prev {
