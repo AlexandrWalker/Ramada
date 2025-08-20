@@ -118,13 +118,16 @@ h6 {
 }
 
 main li:not(.breadcrumbs li, .template-product__body li) {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+  padding-left: 2.3rem;
   margin-bottom: 2rem;
+  position: relative;
 
   @include sm {
     margin-bottom: 1rem;
+  }
+
+  span {
+    display: block;
   }
 
   &:last-child {
@@ -139,5 +142,8 @@ main li:not(.breadcrumbs li, .template-product__body li) {
     border-radius: 50%;
     background-color: var(--accent);
     flex-shrink: 0;
+    position: absolute;
+    top: 0.6rem;
+    left: 0;
   }
 }

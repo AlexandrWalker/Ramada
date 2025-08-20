@@ -98,16 +98,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -226,6 +226,10 @@ img {
   gap: 3rem;
 }
 
+.general__block-suptitle {
+  color: var(--accent);
+}
+
 .general__block-title {
   padding: 3rem 0;
   border-top: 0.1rem solid var(--black);
@@ -258,6 +262,27 @@ img {
 
 .general__block-subtext span {
   color: var(--accent);
+}
+
+.general__block-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.general__block-wrap h5 {
+  color: var(--accent);
+  line-height: 110%;
+}
+
+.general__block .btn {
+  margin-top: 1rem;
+  width: 100%;
 }
 
 /* Рамка для картинки */
@@ -1801,14 +1826,13 @@ h6 span {
 }
 
 main li:not(.breadcrumbs li, .template-product__body li) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 1.5rem;
+  padding-left: 2.3rem;
   margin-bottom: 2rem;
+  position: relative;
+}
+
+main li:not(.breadcrumbs li, .template-product__body li) span {
+  display: block;
 }
 
 main li:not(.breadcrumbs li, .template-product__body li):last-child {
@@ -1824,6 +1848,9 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   background-color: var(--accent);
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  position: absolute;
+  top: 0.6rem;
+  left: 0;
 }
 
 /* Modules */
@@ -3573,6 +3600,51 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   transform: unset;
 }
 
+.template-box__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.template-box__img {
+  width: calc(50% - 1rem);
+}
+
+.template-box__block {
+  width: calc(50% - 1rem);
+  padding: 7rem 13rem;
+  background-color: var(--white);
+  position: relative;
+}
+
+.template-box__block::before {
+  content: "";
+  border: 0.1rem solid var(--gray-10);
+  pointer-events: none;
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  bottom: 3rem;
+  left: 3rem;
+}
+
+.template-box .general__block-suptitle {
+  text-transform: uppercase;
+}
+
+.template-box .template-product__content {
+  width: calc(50% - 1rem);
+}
+
+.template-box .template-product__slider--mini {
+  height: 16.5rem;
+}
+
 .timeline-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3751,6 +3823,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   -ms-flex-direction: column;
   flex-direction: column;
   gap: 5rem;
+}
+
+.entertainment-page .booking {
+  background-color: var(--white);
 }
 
 .events-desc__inner {
@@ -4124,6 +4200,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .press__item-text {
   margin-bottom: 4rem;
+}
+
+.residence-page .booking {
+  background-color: var(--white);
 }
 
 .restaurant-page .hero {
@@ -4603,6 +4683,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   font-weight: 350;
   font-size: 1.4rem;
   line-height: 120%;
+}
+
+.services-page .booking {
+  background-color: var(--white);
 }
 
 .gallery__inner {
@@ -6760,6 +6844,14 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 1.7rem;
   }
 
+  .general__block-wrap {
+    gap: 1rem;
+  }
+
+  .general__block-wrap h5 {
+    font-size: 2.5rem;
+  }
+
   .border::before {
     top: 1.5rem;
     right: 1.5rem;
@@ -7658,6 +7750,62 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .sosnovyi-page .template-product__control .swiper-pagination {
     display: none;
+  }
+
+  .template-box__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .template-box--reverse .template-box__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+
+  .template-box__img {
+    width: 100%;
+    aspect-ratio: 674/537;
+  }
+
+  .template-box__block {
+    width: 100%;
+    padding: 4rem 8rem 5rem;
+  }
+
+  .template-box__block::before {
+    display: none;
+  }
+
+  .template-box .general__block-suptitle h5 {
+    font-size: 2.5rem;
+  }
+
+  .template-box .general__block-title h6 {
+    font-size: 1.6rem;
+  }
+
+  .template-box .general__block-text {
+    color: var(--black);
+  }
+
+  .template-box .border::before {
+    top: 3rem;
+    right: 3rem;
+    bottom: 3rem;
+    left: 3rem;
+  }
+
+  .template-box .border::after {
+    border-width: 2rem;
+  }
+
+  .template-box .template-product__content {
+    width: 100%;
+    aspect-ratio: 674/537;
   }
 
   .afisha__inner {
@@ -8866,6 +9014,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 2rem;
   }
 
+  .general__block .btn {
+    margin-top: 0;
+  }
+
   .leaf--1 {
     display: block;
     height: 21.5rem;
@@ -9280,6 +9432,29 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .sosnovyi-page .template-product__control .swiper-pagination {
     bottom: 2rem;
+  }
+
+  .template-box__inner {
+    gap: 1rem;
+  }
+
+  .template-box__block {
+    padding: 3rem 2rem;
+  }
+
+  .template-box .general__block-title {
+    padding: 1.5rem 0;
+  }
+
+  .template-box .border::before {
+    top: 1.5rem;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    left: 1.5rem;
+  }
+
+  .template-box .border::after {
+    border-width: 1rem;
   }
 
   .afisha__content {

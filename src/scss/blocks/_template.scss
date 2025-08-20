@@ -813,4 +813,150 @@
       }
     }
   }
+
+  &-box {
+
+    &__inner {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+
+      @include md {
+        flex-direction: column;
+      }
+
+      @include sm {
+        gap: 1rem;
+      }
+
+      .template-box--reverse & {
+
+        @include md {
+          flex-direction: column-reverse;
+        }
+      }
+    }
+
+    &__img {
+      width: calc(50% - 1rem);
+
+      @include md {
+        width: 100%;
+        aspect-ratio: 674/537;
+      }
+    }
+
+    &__block {
+      width: calc(50% - 1rem);
+      padding: 7rem 13rem;
+      background-color: var(--white);
+      position: relative;
+
+      @include md {
+        width: 100%;
+        padding: 4rem 8rem 5rem;
+      }
+
+      @include sm {
+        padding: 3rem 2rem;
+      }
+
+      &::before {
+        content: "";
+        border: 0.1rem solid var(--gray-10);
+        pointer-events: none;
+        position: absolute;
+        top: 3rem;
+        right: 3rem;
+        bottom: 3rem;
+        left: 3rem;
+
+        @include md {
+          display: none;
+        }
+      }
+    }
+
+    .general {
+
+      &__block {
+
+        &-suptitle {
+          text-transform: uppercase;
+
+          h5 {
+
+            @include md {
+              font-size: 2.5rem;
+            }
+          }
+        }
+
+        &-title {
+
+          @include sm {
+            padding: 1.5rem 0;
+          }
+
+          h6 {
+
+            @include md {
+              font-size: 1.6rem;
+            }
+          }
+        }
+
+        &-text {
+
+          @include md {
+            color: var(--black);
+          }
+        }
+      }
+    }
+
+    .border {
+
+      &::before {
+
+        @include md {
+          top: 3rem;
+          right: 3rem;
+          bottom: 3rem;
+          left: 3rem;
+        }
+
+        @include sm {
+          top: 1.5rem;
+          right: 1.5rem;
+          bottom: 1.5rem;
+          left: 1.5rem;
+        }
+      }
+
+      &::after {
+
+        @include md {
+          border-width: 2rem;
+        }
+
+        @include sm {
+          border-width: 1rem;
+        }
+      }
+    }
+
+    .template-product__content {
+      width: calc(50% - 1rem);
+
+      @include md {
+        width: 100%;
+        aspect-ratio: 674/537;
+      }
+    }
+
+    .template-product__slider--mini {
+      height: 16.5rem;
+    }
+  }
 }

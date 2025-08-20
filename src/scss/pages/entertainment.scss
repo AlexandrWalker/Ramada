@@ -1,0 +1,11 @@
+@use './../mixins' as *;
+
+.entertainment {
+
+  &-page {
+
+    .booking {
+      background-color: var(--white);
+    }
+  }
+}

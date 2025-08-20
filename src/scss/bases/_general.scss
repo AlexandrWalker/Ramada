@@ -66,6 +66,10 @@
       gap: 2rem;
     }
 
+    &-suptitle {
+      color: var(--accent);
+    }
+
     &-title {
       padding: 3rem 0;
       border-top: 0.1rem solid var(--black);
@@ -99,6 +103,34 @@
 
       span {
         color: var(--accent);
+      }
+    }
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      @include md {
+        gap: 1rem;
+      }
+
+      h5 {
+        color: var(--accent);
+        line-height: 110%;
+
+        @include md {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    .btn {
+      margin-top: 1rem;
+      width: 100%;
+
+      @include sm {
+        margin-top: 0;
       }
     }
   }

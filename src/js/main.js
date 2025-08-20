@@ -1319,6 +1319,25 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       }
+      // const parallaxItem = document.querySelector('[data-animation="parallax-img"]');
+      // if (parallaxItem) {
+      //   const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
+      //   parallaxImgContainers.forEach(parallaxImgContainer => {
+      //     const image = parallaxImgContainer.querySelector('img');
+      //     gsap.fromTo(image,
+      //       { y: '-10%' },
+      //       {
+      //         y: '10%',
+      //         scrollTrigger: {
+      //           trigger: parallaxImgContainer,
+      //           start: 'top 90%',
+      //           end: 'bottom top',
+      //           scrub: true,
+      //         },
+      //       }
+      //     );
+      //   });
+      // }
     }
     // else if (window.innerWidth <= '600') {
     //   const parallaxItem = document.querySelector('[data-animation="parallax-img"]');
