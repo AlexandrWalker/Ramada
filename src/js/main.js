@@ -402,7 +402,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const templateProductSliderSeating = new Swiper('.template-product__slider--seating', {
     slidesPerView: 1,
     spaceBetween: 0,
-    speed: 1000,
+    speed: 600,
     loop: true,
     grabCursor: true,
     mousewheel: {
@@ -414,25 +414,33 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     pagination: {
       el: ".swiper-pagination--seating",
-      type: "fraction",
+      type: "bullets",
       clickable: true,
     },
-    // on: {
-    //    slideChange: function () {
-    //     const templateSeating = document.querySelector('.template-product--seating');
-    //     if (templateSeating) {
-    //       const templateSeatingItems = templateSeating.querySelectorAll('li');
+    breakpoints: {
+      601: {
+        pagination: {
+          el: ".swiper-pagination--seating",
+          type: "fraction",
+          clickable: true,
+        },
+      }
+    },
+    on: {
+      slideChange: function () {
 
-    //       for (let i = 0; templateSeatingItems[i]; i++) {
-    //         if (templateSeatingItems[i] === templateProductSliderSeating.activeIndex) {
-    //           templateSeatingItems[i].classList.add('seating-active')
-    //         } else {
-    //           templateSeatingItems[i].classList.remove('seating-active')
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
+        const realIndex = this.realIndex;
+        const seatingList = document.querySelector('.seating-list');
+        const seatingListItems = seatingList.querySelectorAll('li');
+
+        if (seatingListItems[realIndex]) {
+          for (let i = 0; seatingListItems[i]; i++) {
+            seatingListItems[i].classList.remove('seating-active')
+          }
+          seatingListItems[realIndex].classList.add('seating-active');
+        }
+      }
+    }
   });
 
   const galleryBlockSlider = new Swiper(".gallery__block--slider", {
@@ -453,8 +461,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const galleryBodySlider = new Swiper(".gallery__body--slider", {
     slidesPerGroup: 1,
     slidesPerView: 1,
-    spaceBetween: 20,
+    spaceBetween: 0,
     loop: true,
+    init: false,
     speed: 1000,
     mousewheel: {
       forceToAxis: true,
@@ -465,9 +474,30 @@ document.addEventListener('DOMContentLoaded', () => {
     pagination: {
       el: ".swiper-pagination--gallery",
       clickable: true,
-      type: "fraction",
+      // type: "fraction",
+    },
+    breakpoints: {
+      601: {
+        spaceBetween: 20,
+      }
     },
   });
+
+  galleryBodySlider.on("slideChange afterInit init", function () {
+
+    let currentSlide = this.realIndex + 1;
+
+    document.querySelector('.fraction').innerHTML = `
+      <span class="fraction-current">
+      ${currentSlide < 10 ? currentSlide : currentSlide}
+      </span> 
+      / 
+      <span class="fraction-total">
+        ${this.slides.length}
+      </span>`;
+  });
+
+  galleryBodySlider.init();
 
   galleryBlockSlider.controller.control = galleryBodySlider;
   galleryBodySlider.controller.control = galleryBlockSlider;

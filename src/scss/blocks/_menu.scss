@@ -258,6 +258,8 @@
       transition: all var(--menu-transition-time) ease-in-out;
 
       color: var(--gray);
+      position: relative;
+      overflow: hidden;
 
       @include md {
         height: fit-content;
@@ -266,9 +268,28 @@
         color: var(--black);
       }
 
-      &:hover {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
         background-color: var(--white);
+        transition: left .7s;
+
+        @include md {
+          display: none;
+        }
+      }
+
+      &:hover {
         color: var(--accent);
+
+        &::before {
+          left: 0;
+        }
 
         @include md {
           background-color: transparent;
@@ -276,8 +297,11 @@
       }
 
       &.accordion-active {
-        background-color: var(--white);
         color: var(--accent);
+
+        &::before {
+          left: 0;
+        }
 
         @include md {
           background-color: transparent;

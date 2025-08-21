@@ -330,6 +330,10 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        @include sm {
+          display: none;
+        }
       }
 
       .template-product__slider-item {
@@ -348,6 +352,10 @@
 
           @include md {
             gap: 3rem;
+          }
+
+          @include sm {
+            padding: 3rem 1.5rem 7rem;
           }
         }
 
@@ -373,9 +381,21 @@
         }
       }
 
+      ul {
+
+        @include md {
+          column-count: 2;
+          column-gap: 5rem;
+        }
+      }
+
       li {
         text-transform: lowercase;
         transition: all 0.3s ease;
+
+        @include md {
+          min-width: 19rem;
+        }
 
         &.seating-active {
           font-weight: 700;
@@ -407,6 +427,11 @@
 
         @include md {
           gap: 3rem;
+        }
+
+        @include sm {
+          gap: 2rem;
+          padding: 3rem 2rem;
         }
       }
     }
@@ -625,6 +650,7 @@
       position: relative;
 
       &-item {
+        height: 100%;
 
         .sosnovyi-page & {
 
@@ -672,12 +698,32 @@
         }
       }
 
-      &-img {
+      &-subtitle {
+        font-weight: 300;
+        font-size: 1.4rem;
+        line-height: 110%;
+        color: var(--white);
+        position: absolute;
+        bottom: 4.6rem;
+        left: 4.4rem;
 
         @include md {
-          .sosnovyi-page & {
+          display: none;
+        }
+      }
+
+      &-img {
+
+        .sosnovyi-page & {
+
+          @include md {
             width: auto;
             height: 28.3rem;
+          }
+
+          @include sm {
+            width: 100%;
+            height: auto;
           }
         }
       }
@@ -774,9 +820,16 @@
           width: 100%;
           justify-content: space-between;
         }
+
+        @include sm {
+          transform: unset;
+          top: unset;
+          bottom: 3rem;
+          justify-content: center;
+        }
       }
 
-      .swiper-pagination {
+      .swiper-pagination-fraction {
         margin: 0;
 
         font-family: var(--second-family);
@@ -803,6 +856,10 @@
         top: unset;
         left: unset;
         transform: unset;
+
+        @include sm {
+          display: none;
+        }
       }
 
       .swiper-button-next {
@@ -810,6 +867,26 @@
         top: unset;
         right: unset;
         transform: unset;
+
+        @include sm {
+          display: none;
+        }
+      }
+
+      .swiper-pagination {
+
+        &-bullet:not(.swiper-pagination-bullet-active) {
+          background-color: var(--gray);
+        }
+
+        &--seating {
+
+          @include sm {
+            display: flex;
+            align-items: center;
+            width: fit-content;
+          }
+        }
       }
     }
   }

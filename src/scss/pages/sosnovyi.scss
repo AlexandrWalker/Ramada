@@ -44,6 +44,7 @@
 
     @include md {
       padding-top: 0;
+      gap: 0;
     }
   }
 
@@ -57,6 +58,21 @@
     &-title {
       color: var(--accent);
       margin-bottom: 3rem;
+
+      @include md {
+        margin-bottom: 2rem;
+      }
+
+      @include sm {
+        margin-bottom: 1.5rem;
+      }
+
+      h5 {
+
+        @include md {
+          font-size: 2.5rem;
+        }
+      }
     }
 
     &-name {
@@ -75,6 +91,15 @@
       flex-direction: column;
       gap: 2rem;
       margin-bottom: 4rem;
+
+      @include md {
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+
+      @include sm {
+        margin-bottom: 2rem;
+      }
     }
 
     &-items {
@@ -82,6 +107,15 @@
       flex-direction: row;
       gap: 7.5rem;
       margin-bottom: 4rem;
+
+      @include md {
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      @include sm {
+        margin-bottom: 0;
+      }
     }
 
     &-item {
@@ -90,6 +124,10 @@
       gap: 1rem;
       padding-left: 2rem;
       border-left: 0.1rem solid var(--gray-30);
+
+      @include md {
+        padding-left: 1rem;
+      }
 
       h4 {
         color: var(--accent);
@@ -108,9 +146,21 @@
         padding: 3rem;
       }
 
+      @include sm {
+        padding: 2rem 1rem;
+      }
+
       .btn {
         max-width: 32rem;
         width: 100%;
+
+        @include md {
+          max-width: 100%;
+        }
+
+        @include sm {
+          display: none;
+        }
       }
     }
   }
@@ -134,12 +184,34 @@
       }
     }
 
-    .btn-arrow i {
-      --font-size: 10rem;
-      --swiper-font-size: 10rem;
+    .btn-arrow {
+
+      @include md {
+        --btn-arrow-width: 12rem;
+        --btn-arrow-height: 12rem;
+      }
+
+      i {
+        --font-size: 10rem;
+        --swiper-font-size: 10rem;
+
+        @include md {
+          --font-size: 8rem;
+          --swiper-font-size: 8rem;
+        }
+      }
     }
 
     .swiper-pagination {
+      display: none;
+
+      @include sm {
+        display: flex;
+        margin: 1rem 0;
+      }
+    }
+
+    .fraction {
       font-family: var(--second-family);
       font-style: normal;
       font-weight: 300;
@@ -152,6 +224,7 @@
       right: 6rem;
       bottom: 5rem;
       left: unset;
+      z-index: 1;
 
       @include md {
         font-size: 8rem;
@@ -166,6 +239,37 @@
       }
     }
 
+    .border {
+
+      &::before {
+
+        @include md {
+          top: 3rem;
+          right: 3rem;
+          bottom: 3rem;
+          left: 3rem;
+        }
+
+        @include sm {
+          top: 1.5rem;
+          right: 1.5rem;
+          bottom: 1.5rem;
+          left: 1.5rem;
+        }
+      }
+
+      &::after {
+
+        @include md {
+          border-width: 2rem;
+        }
+
+        @include sm {
+          border-width: 1rem;
+        }
+      }
+    }
+
     &--slider {
       height: 100%;
     }
@@ -175,7 +279,29 @@
     }
   }
 
-  .general__head-title {
-    text-transform: unset;
+  &__btn {
+    display: none;
+
+    @include sm {
+      display: flex;
+      width: 100%;
+    }
+  }
+
+  .general {
+
+    &__head {
+
+      &-title {
+        text-transform: unset;
+
+        h3 {
+
+          @include md {
+            font-size: 3.5rem;
+          }
+        }
+      }
+    }
   }
 }

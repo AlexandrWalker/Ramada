@@ -338,6 +338,10 @@
 
 .equipment {
 
+  @include sm {
+    padding-bottom: 2rem;
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -351,7 +355,7 @@
     }
 
     @include sm {
-      padding: 3rem 2rem;
+      padding: 3rem 2rem 2rem;
     }
   }
 
@@ -373,6 +377,10 @@
     @include md {
       flex-wrap: wrap;
     }
+
+    @include sm {
+      gap: 1rem;
+    }
   }
 
   &__item {
@@ -385,9 +393,17 @@
     padding: 5rem 5rem 6rem;
     position: relative;
 
+    transition: all 0.5s ease;
+
     @include md {
       width: 100%;
       padding: 3rem;
+
+      gap: 0;
+    }
+
+    @include sm {
+      padding: 2rem;
     }
 
     &::before {
@@ -404,6 +420,62 @@
       }
     }
 
+    &.accordion-active {
+
+      @include md {
+        gap: 3rem;
+      }
+
+      @include sm {
+        gap: 2rem;
+      }
+
+      .accordion-body {
+        grid-template-rows: 1fr;
+        transition: all 0.5s ease;
+      }
+    }
+
+    &-head {
+
+      @include md {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      h5 {
+
+        @include md {
+          font-size: 2.5rem;
+        }
+
+        @include sm {
+          font-size: 1.6rem;
+        }
+      }
+
+      i {
+        display: none;
+        color: var(--accent);
+
+        .accordion-active & {
+          transform: scale(-1, -1);
+          color: var(--black);
+        }
+
+        @include md {
+          display: block;
+        }
+
+        @include sm {
+          --font-size: 1.6rem;
+        }
+      }
+    }
+
+    &-body {}
+
     &-content {
       display: flex;
       flex-direction: column;
@@ -411,6 +483,7 @@
 
       @include md {
         gap: 1.5rem;
+        overflow: hidden;
       }
     }
 
@@ -420,8 +493,17 @@
       align-items: center;
       gap: 2rem;
 
+      @include sm {
+        gap: 1rem;
+      }
+
       i {
         --font-size: 3rem;
+
+        background-color: var(--white);
+        border-radius: 50%;
+
+        color: var(--accent);
       }
 
       p {
