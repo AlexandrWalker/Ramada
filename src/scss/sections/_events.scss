@@ -463,6 +463,40 @@
 
       &:hover & {
         border-color: transparent;
+
+        @include md {
+          border-color: var(--gray-50);
+        }
+      }
+
+      &:hover::before {
+        clip-path: ellipse(10% 10% at -10% 110%);
+
+        @include md {
+          clip-path: ellipse(160% 160% at -10% 110%);
+        }
+      }
+
+      &::before {
+        --border-width: 2rem;
+
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: var(--white);
+        clip-path: ellipse(160% 160% at -10% 110%);
+
+        transition-property: clip-path;
+        transition-duration: .8s;
+        transition-timing-function: cubic-bezier(.7, 0, .4, 1);
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
       }
     }
 
@@ -473,12 +507,12 @@
       align-items: center;
       text-align: center;
       padding: 8rem 3rem 6rem;
-      background-color: var(--white);
+      // background-color: var(--white);
       border: 2rem solid var(--white-gray);
-      transition: all 0.3s ease;
+      transition: all 0.8s ease;
 
       position: relative;
-      z-index: 2;
+      z-index: 3;
 
       @include md {
         padding: 4rem 1.6rem 3rem;
@@ -490,34 +524,61 @@
       }
 
       .events__other-item:hover & {
-        background-color: transparent;
+        // background-color: transparent;
         border-color: var(--white-30);
         color: var(--white);
+
+        @include md {
+          border-color: var(--white-gray);
+          color: var(--black);
+        }
       }
 
       .btn {
         --btn-background: transparent;
 
+        transition: all 0.5s ease;
+        transition-delay: 0.2s;
+
         .events__other-item:hover & {
           --btn-border-color: var(--white-30);
 
           backdrop-filter: blur(7.8px);
+
+          @include md {
+            --btn-color: var(--accent);
+          }
         }
 
         &::before {
           border: 0.1rem solid var(--black-30);
 
+          transition: all 0.5s ease;
+          transition-delay: 0.2s;
+
           .events__other-item:hover & {
             background: rgba(255, 255, 255, 0.24);
             border-color: transparent;
+
+            @include md {
+              background: transparent;
+              border-color: var(--black-30);
+            }
           }
         }
 
         &::after {
           border-color: var(--black);
 
+          transition: all 0.5s ease;
+          transition-delay: 0.2s;
+
           .events__other-item:hover & {
             border-color: var(--white-o-50);
+
+            @include md {
+              border-color: var(--black);
+            }
           }
         }
       }
@@ -526,7 +587,9 @@
     &-suptitle {
       text-transform: uppercase;
       margin-bottom: 8rem;
-      transition: all 0.3s ease;
+      transition: all 0.5s ease;
+
+      transition-delay: 0.2s;
 
       @include md {
         margin-bottom: 5rem;
@@ -540,7 +603,9 @@
       border-bottom: 0.1rem solid var(--accent);
       padding: 3rem 0;
       margin-bottom: 6rem;
-      transition: all 0.3s ease;
+      transition: all 0.5s ease;
+
+      transition-delay: 0.3s;
 
       @include md {
         padding: 2rem 0;
@@ -554,13 +619,18 @@
       .events__other-item:hover & {
         color: var(--white);
         border-color: var(--white-o-50);
+
+         @include md {
+          color: inherit;
+          border-color: var(--accent);
+         }
       }
     }
 
     &-img {
       width: 100%;
       height: 100%;
-      opacity: 0;
+      // opacity: 0;
       pointer-events: none;
       transition: all 0.3s ease;
 
@@ -576,7 +646,11 @@
       }
 
       .events__other-item:hover & {
-        opacity: 1;
+        // opacity: 1;
+      }
+
+      @include md {
+        display: none;
       }
     }
 

@@ -24,6 +24,7 @@
     --menu-transition-time: 0.5s;
 
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
     background-image: unset;
 
     height: fit-content;
@@ -48,6 +49,7 @@
       flex-direction: row;
       padding: 2.5rem 8rem 3rem;
       min-width: unset;
+      height: fit-content;
 
       background-color: transparent;
     }
@@ -499,7 +501,7 @@
     &-body {
       display: flex;
       flex-direction: column;
-      gap: 5rem;
+      gap: 3rem;
 
       @include md {
         display: grid;
@@ -610,12 +612,24 @@
       }
 
       &--mail {
-        text-decoration: underline;
 
-        &:hover {
-          // color: var(--accent);
-          color: var(--white);
-          text-decoration: none;
+        a {
+          transition: all 0.3s ease;
+          border-bottom: 0.1rem solid var(--accent);
+          line-height: 100%;
+
+          @include md {
+            border-color: var(--black);
+          }
+
+          &:hover {
+            color: var(--white);
+            border-color: transparent;
+
+            @include md {
+              color: var(--accent);
+            }
+          }
         }
       }
     }
@@ -624,6 +638,7 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
+      margin-left: -0.5rem;
 
       @include md {
         grid-column: 2/3;
@@ -638,9 +653,15 @@
       border: 0.05rem solid var(--gray);
       border-radius: 10rem;
       padding: 1rem;
+      transition: all 0.5s ease;
 
       @include md {
         display: none;
+      }
+
+      &:hover:not(.menu__route) {
+        background-color: var(--white);
+        border-color: var(--white);
       }
 
       &--presentation {
@@ -683,6 +704,7 @@
       color: var(--menu-icon-color);
 
       position: relative;
+      z-index: 1;
 
       &::before {
         content: "";
@@ -702,7 +724,7 @@
       &::after {
         content: "";
         border-radius: 50%;
-        border: 0.1rem solid var(--white-50);
+        border: 0.1rem solid var(--white-o-50);
         transition: all 0.3s ease;
         pointer-events: none;
 
@@ -751,6 +773,58 @@
 
       i {
         font-size: 5rem;
+      }
+    }
+  }
+
+  &__route {
+    border-radius: 2.5rem;
+    height: fit-content;
+    min-height: 5rem;
+
+    &.accordion-active {
+
+      .icon-chevron-down {
+        transform: scale(-1, -1);
+      }
+    }
+
+    &-items {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 0 0 0 0.8rem;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+
+      font-weight: 400;
+      font-size: 1.4rem;
+      color: var(--white);
+
+      &:first-child {
+        margin-top: 2rem;
+      }
+
+      img {
+        width: auto;
+        height: 1.5rem;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+
+      a {
+        border-bottom: 0.1rem solid transparent;
+        line-height: 100%;
+
+        &:hover {
+          border-color: var(--white);
+        }
       }
     }
   }

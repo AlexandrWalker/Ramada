@@ -12,6 +12,10 @@
   background-size: 100% 100%;
   background-position: center center;
 
+  margin-bottom: -100%;
+  will-change: transform;
+  transition: all 0s;
+
   &::before {
     content: "";
     width: 0;
@@ -127,6 +131,14 @@
 
         @include md {
           font-size: 1.4rem;
+        }
+
+        a {
+          border: 0;
+
+          &:hover {
+            color: inherit;
+          }
         }
 
         &:hover {
@@ -287,10 +299,11 @@
         font-size: 1.2rem;
         text-transform: uppercase;
         color: var(--gray);
+        border-bottom: 0.1rem solid transparent;
 
         &:hover {
           color: var(--black);
-          text-decoration: underline;
+          border-color: var(--black);
         }
       }
 
@@ -388,10 +401,12 @@
       }
 
       a {
+        font-weight: 400;
         color: var(--accent);
+        border-bottom: 0.1rem solid transparent;
 
         &:hover {
-          text-decoration: underline;
+          border-color: var(--accent);
         }
       }
     }

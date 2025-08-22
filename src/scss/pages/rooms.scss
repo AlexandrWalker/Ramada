@@ -121,6 +121,13 @@
       }
 
       .btn {
+        --btn-padding-x: 3rem;
+
+        &:hover {
+          --btn-color: var(--white);
+          --btn-background: var(--accent);
+          --btn-border-color: var(--accent);
+        }
 
         @include sm {
           display: none;

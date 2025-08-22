@@ -597,6 +597,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /**
+   * Управляет поведением меню-бургера.
+   */
+  function headerFunc() {
+
+    const header = document.getElementById('header');
+    const firstSection = document.querySelector('section');
+    let lastScrollTop = 1;
+    const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop;
+
+    window.addEventListener('scroll', () => {
+      if (scrollPosition() > lastScrollTop && scrollPosition() > firstSection.offsetHeight) {
+        header.classList.add('out');
+      } else {
+        header.classList.remove('out');
+      }
+
+      lastScrollTop = scrollPosition();
+    })
+  }
+
+  headerFunc();
+
+
+
+  /**
    * Управляет аккардионом
    */
   function accordionFunc() {
@@ -875,7 +900,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const smoothImgY = '-50%';
 
         const smoothImgTopBefore = '26rem';
-        const smoothImgTopAfter = '31rem';
+        // const smoothImgTopAfter = '31rem';
+        const smoothImgTopAfter = '30rem';
 
         // const heroTop = 4.53;
         const heroTop = 4.7;
@@ -1041,7 +1067,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   $(window).on('resize load', function () {
-    if (window.innerWidth > '834' && window.innerWidth != '834') {
+    if (window.innerWidth > '834') {
 
       const parallaxItem = document.querySelector('[data-animation="parallax-img"]');
       if (parallaxItem) {
@@ -1151,6 +1177,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
       }
 
+      const footer = document.getElementById('footer');
+      if (footer) {
+        gsap.fromTo(footer, {
+          "y": 0,
+        }, {
+          "y": '-100%',
+          ease: "none",
+          scrollTrigger: {
+            trigger: footer,
+            start: `top 90%`,
+            end: `top top`,
+            scrub: true,
+            invalidateOnRefresh: true,
+          },
+          onStart: function () {
+            footer.classList.add('animatedClass');
+          },
+        });
+      }
+
       const revealItems = document.querySelectorAll('[data-transform="reveal"]');
       revealItems.forEach(revealItem => {
         const revealItemTags = revealItem.querySelector("h1");
@@ -1255,33 +1301,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollTriggerPlayer(scaleItem, tl)
       });
 
-      const footer = document.getElementById("footer");
-      gsap.from(footer, {
-        scrollTrigger: {
-          trigger: footer,
-        },
-        onStart: function () {
-          footer.classList.add('animatedClass');
-        },
-      });
 
-      // const footer = document.getElementById("footer");
-      // const tl = gsap.timeline({
-      //   paused: true
-      // });
-      // tl.from(footer, {
-      //   opacity: 0,
-      //   y: "100",
-      //   duration: .8,
-      //   ease: "power1.out",
-      //   stagger: {
-      //     amount: .5
-      //   },
-      //   onStart: function () {
-      //     revealItem.classList.add('animatedClass');
-      //   },
-      // });
-      // scrollTriggerPlayer(footer, tl)
 
       /**
        * 

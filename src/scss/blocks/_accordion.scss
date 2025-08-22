@@ -5,6 +5,7 @@
 
   &-active {
 
+    .accordion-body,
     &+.accordion-body {
       grid-template-rows: 1fr;
     }

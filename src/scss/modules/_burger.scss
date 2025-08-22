@@ -87,6 +87,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
+  margin-top: -1rem;
 
   transition: all 0.3s ease;
 
@@ -99,6 +101,8 @@
     --burger-close-color: var(--black);
 
     width: var(--burger-close-width);
+    padding: 0;
+    margin-top: 0;
 
     &:hover {
       border-color: var(--accent);

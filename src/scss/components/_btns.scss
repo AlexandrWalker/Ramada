@@ -11,6 +11,7 @@
   --btn-background: var(--accent);
   --btn-border-radius: 10rem;
   --btn-border-color: var(--accent);
+  --btn-border-width: 0.5px;
 
   display: flex;
   justify-content: center;
@@ -22,7 +23,7 @@
   height: var(--btn-height);
   padding: 0 var(--btn-padding-x);
   border-radius: var(--btn-border-radius);
-  border: 0.1rem solid var(--btn-border-color);
+  border: var(--btn-border-width) solid var(--btn-border-color);
   transition: all 0.3s ease;
 
   font-family: var(--font-family);
@@ -66,7 +67,7 @@
 
   &::after {
     content: "";
-    border: 0.1rem solid var(--white-o-50);
+    border: var(--btn-border-width) solid var(--white-o-50);
     border-radius: var(--btn-border-radius);
     transition: all 0.3s ease;
     pointer-events: none;
@@ -299,6 +300,7 @@
     --btn-arrow-width: 17rem;
     --btn-arrow-height: 17rem;
     --btn-arrow-padding: 0.8rem;
+    --btn-border-width: 0.1rem;
 
     display: flex;
     justify-content: center;
@@ -306,7 +308,7 @@
     width: var(--btn-arrow-width);
     height: var(--btn-arrow-height);
     border-radius: 50%;
-    border: 0.1rem solid var(--white-30);
+    border: var(--btn-border-width) solid var(--white-30);
     background-color: transparent;
 
     position: absolute;
@@ -330,7 +332,7 @@
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      border: 0.1rem solid var(--white-30);
+      border: var(--btn-border-width) solid var(--white-30);
       background-color: var(--white);
       transition: all 0.3s ease;
       pointer-events: none;
@@ -348,7 +350,7 @@
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      border: 0.1rem solid var(--accent-30);
+      border: var(--btn-border-width) solid var(--accent-30);
       transition: all 0.3s ease;
       pointer-events: none;
 
@@ -389,7 +391,7 @@
     width: var(--btn-play-width);
     height: var(--btn-play-height);
     border-radius: 50%;
-    border: 0.05rem solid var(--accent-30);
+    border: var(--btn-border-width) solid var(--accent-30);
     background-color: transparent;
 
     position: relative;
@@ -406,7 +408,7 @@
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      border: 0.05rem solid var(--accent);
+      border: var(--btn-border-width) solid var(--accent);
       background-color: var(--accent);
       transition: all 0.3s ease;
       pointer-events: none;
@@ -424,7 +426,7 @@
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      border: 0.05rem solid var(--white-o-50);
+      border: var(--btn-border-width) solid var(--white-o-50);
       transition: all 0.3s ease;
       pointer-events: none;
 

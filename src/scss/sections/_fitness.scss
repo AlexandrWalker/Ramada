@@ -153,10 +153,20 @@
       gap: 5rem;
       max-width: 30rem;
       transition: all 1s ease;
-      opacity: 0;
-      pointer-events: none;
 
       .btn {
+        opacity: 0;
+        pointer-events: none;
+        transition: all 1s ease;
+
+        .fitness__item:hover & {
+          opacity: 1;
+          pointer-events: all;
+
+          @include md {
+            opacity: 0;
+          }
+        }
 
         @include md {
           width: 100%;
@@ -170,17 +180,31 @@
           z-index: 2;
         }
       }
+    }
+
+    &-text {
+      opacity: 0;
+      pointer-events: none;
+      transition: all 1s ease;
 
       .fitness__item:hover & {
         opacity: 1;
         pointer-events: all;
       }
-    }
-
-    &-text {
 
       @include md {
         display: none;
+      }
+
+      p {
+
+        &:not(:last-child) {
+          margin-bottom: 2rem;
+
+          @include md {
+            margin-bottom: 1.6rem;
+          }
+        }
       }
     }
 
