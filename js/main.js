@@ -1179,10 +1179,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const footer = document.getElementById('footer');
       if (footer) {
-        gsap.fromTo(footer, {
-          "y": 0,
-        }, {
-          "y": '-100%',
+        gsap.from(footer, {
+        // gsap.fromTo(footer, {
+        //   "y": 0,
+        // }, {
+        //   "y": '-100%',
           ease: "none",
           scrollTrigger: {
             trigger: footer,
