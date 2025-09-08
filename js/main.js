@@ -1,4 +1,4 @@
-gsap.registerPlugin(ScrollToPlugin, ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -350,52 +350,85 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
+  const residenceSliderDesc = new Swiper(".residence__slider", {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    speed: 1000,
+    navigation: {
+      nextEl: ".residence-button-next",
+    },
+    // effect: 'fade',
+    // fadeEffect: {
+    //   crossFade: false
+    // },
+    mousewheel: false,
+    grabCursor: false,
+  });
+
   const templateProducts = document.querySelectorAll('.template-product');
 
   if (templateProducts.length != 0) {
     templateProducts.forEach(templateProduct => {
 
-      const templateProductSliderMini = templateProduct.querySelector('.template-product__slider--mini');
-      const templateProductSliderBig = templateProduct.querySelector('.template-product__slider--big');
-      const templateProductSliderPrev = templateProduct.querySelector('.template-product-button-prev');
-      const templateProductSliderNext = templateProduct.querySelector('.template-product-button-next');
+      const templateProductSliders = templateProduct.querySelectorAll('.template-product__content');
 
-      const templateSliderMini = new Swiper(templateProductSliderMini, {
-        slidesPerView: 3,
-        spaceBetween: 10,
-        speed: 1000,
-        loop: true,
-        grabCursor: false,
-        mousewheel: false,
-        watchSlidesProgress: true,
-        breakpoints: {
-          769: {
-            spaceBetween: 20,
+      if (templateProductSliders.length > 1) {
+        templateProductSliders.forEach(templateProductSlider => {
+          const templateProductSliderMini = templateProductSlider.querySelector('.template-product__slider--mini');
+          const templateProductSliderBig = templateProductSlider.querySelector('.template-product__slider--big');
+          const templateProductSliderPrev = templateProductSlider.querySelector('.template-product-button-prev');
+          const templateProductSliderNext = templateProductSlider.querySelector('.template-product-button-next');
+          templateSlider(templateProductSliderMini, templateProductSliderBig);
+        });
+      } else {
+        const templateProductSliderMini = templateProduct.querySelector('.template-product__slider--mini');
+        const templateProductSliderBig = templateProduct.querySelector('.template-product__slider--big');
+        const templateProductSliderPrev = templateProduct.querySelector('.template-product-button-prev');
+        const templateProductSliderNext = templateProduct.querySelector('.template-product-button-next');
+        templateSlider(templateProductSliderMini, templateProductSliderBig);
+      }
+
+      function templateSlider(slider1, slider2, prev, next) {
+        const templateSliderMini = new Swiper(slider1, {
+          slidesPerView: 3,
+          spaceBetween: 10,
+          speed: 1000,
+          loop: true,
+          grabCursor: false,
+          mousewheel: false,
+          watchSlidesProgress: true,
+          breakpoints: {
+            769: {
+              spaceBetween: 20,
+            },
           },
-        },
-      });
+        });
 
-      const templateSliderBig = new Swiper(templateProductSliderBig, {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        speed: 1000,
-        loop: true,
-        grabCursor: true,
-        mousewheel: {
-          forceToAxis: true,
-        },
-        thumbs: {
-          swiper: templateSliderMini,
-        },
-        navigation: {
-          prevEl: templateProductSliderPrev,
-          nextEl: templateProductSliderNext,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-      });
+        const templateSliderBig = new Swiper(slider2, {
+          slidesPerView: 1,
+          spaceBetween: 0,
+          speed: 1000,
+          loop: true,
+          grabCursor: true,
+          mousewheel: {
+            forceToAxis: true,
+          },
+          thumbs: {
+            swiper: templateSliderMini,
+          },
+          navigation: {
+            prevEl: prev,
+            nextEl: next,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      }
+
     });
   }
 
@@ -1180,10 +1213,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const footer = document.getElementById('footer');
       if (footer) {
         gsap.from(footer, {
-        // gsap.fromTo(footer, {
-        //   "y": 0,
-        // }, {
-        //   "y": '-100%',
+          // gsap.fromTo(footer, {
+          //   "y": 0,
+          // }, {
+          //   "y": '-100%',
           ease: "none",
           scrollTrigger: {
             trigger: footer,
