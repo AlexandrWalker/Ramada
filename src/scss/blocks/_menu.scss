@@ -212,6 +212,13 @@
     @include sm {
       gap: 1.5rem;
     }
+
+    &:hover {
+
+      .menu__item .menu__item-head {
+        opacity: 0.5;
+      }
+    }
   }
 
   &__item {
@@ -288,6 +295,7 @@
 
       &:hover {
         color: var(--accent);
+        opacity: 1 !important;
 
         &::before {
           left: 0;
@@ -300,6 +308,7 @@
 
       &.accordion-active {
         color: var(--accent);
+        opacity: 1 !important;
 
         &::before {
           left: 0;
@@ -803,7 +812,8 @@
       gap: 1rem;
       margin-bottom: 2rem;
 
-      font-weight: 400;
+      // font-weight: 400;
+      font-weight: 350;
       font-size: 1.4rem;
       color: var(--white);
 

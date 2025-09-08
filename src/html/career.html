@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('blocks/head.html', {"title": "RAMADA"})
+
+<body>
+  <div class="wrapper career-page">
+    <!-- Шапка -->
+    @@include('./blocks/header.html')
+    <main class="main">
+      <!-- Главный блок -->
+      <section class="template">
+
+        <div class="breadcrumbs">
+          <div class="container">
+            <div class="breadcrumbs__inner">
+              <ul>
+                <li>
+                  <a href="/">
+                    Главная страница
+                  </a>
+                </li>
+                <li>
+                  Карьера
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="template__inner">
+
+            <div class="template__title">
+              <h1>
+                Карьера
+              </h1>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <section class="career">
+        <div class="container">
+          <div class="career__inner">
+
+            <div class="career__content">
+              <h5>
+                Высокие стандарты
+              </h5>
+              <p>
+                Не следует, однако забывать, что реализация намеченных плановых заданий играет важную роль в
+                формировании
+                систем массового участия. Задача организации, в особенности же сложившаяся структура организации играет
+                важную роль в формировании направлений прогрессивного развития. 
+              </p>
+              <p>
+                Не следует, однако забывать, что реализация намеченных плановых заданий играет важную роль
+                в формировании систем массового участия. Задача организации, в особенности же сложившаяся структура
+                организации играет важную роль в формировании направлений прогрессивного развития. 
+              </p>
+            </div>
+
+            <div class="career__cover" data-animation="parallax-img">
+              <img src="./images/temp/career-cover.png" alt="">
+            </div>
+
+            <div class="career__items">
+              <div class="career__item">
+                <h6>
+                  Белая зарплата
+                </h6>
+                <p>
+                  Всё прозрачно и понятно. Вся зарплата белая. Наши сотрудники точно знают сколько получат в конце
+                  месяца.
+                </p>
+              </div>
+              <div class="career__item">
+                <h6>
+                  ДМС и льготы
+                </h6>
+                <p>
+                  Мы заботимся о здоровье своих сотрудников. Вы сможете позволить себе услуги качественной медицины.
+                </p>
+              </div>
+              <div class="career__item">
+                <h6>
+                  Внутреннее обучение
+                </h6>
+                <p>
+                  Мы хотим, чтобы наши специалисты постоянно развивались. Оплачиваем до 100% стоимости курсов для наших
+                  сотрудников.
+                </p>
+              </div>
+              <div class="career__item">
+                <h6>
+                  Корпоративные мероприятия
+                </h6>
+                <p>
+                  У нас принято отмечать праздники всей компанией. В офисе собираются все — программисты, инженеры,
+                  менеджеры, бухгалтеры.
+                </p>
+              </div>
+            </div>
+
+            <div class="career__body">
+              <h5>
+                Нам нужны в команду
+              </h5>
+              <div class="career__body-items">
+                <div class="career__body-item">
+                  <h6>
+                    Администрация
+                  </h6>
+                  <a class="career__body-link" href="/">
+                    <p>
+                      Менеджер по продажам
+                    </p>
+                    <span>
+                      <i class="icon-chevron-down"></i>
+                    </span>
+                  </a>
+                  <a class="career__body-link" href="/">
+                    <p>
+                      Секретарь
+                    </p>
+                    <span>
+                      <i class="icon-chevron-down"></i>
+                    </span>
+                  </a>
+                  <a class="career__body-link" href="/">
+                    <p>
+                      Переводчик со знанием английского языка
+                    </p>
+                    <span>
+                      <i class="icon-chevron-down"></i>
+                    </span>
+                  </a>
+                </div>
+                <div class="career__body-item">
+                  <h6>
+                    Обслуживающий персонал
+                  </h6>
+                  <a class="career__body-link" href="/">
+                    <p>
+                      Садовник
+                    </p>
+                    <span>
+                      <i class="icon-chevron-down"></i>
+                    </span>
+                  </a>
+                  <a class="career__body-link" href="/">
+                    <p>
+                      Водитель
+                    </p>
+                    <span>
+                      <i class="icon-chevron-down"></i>
+                    </span>
+                  </a>
+                  <a class="career__body-link" href="/">
+                    <p>
+                      Работник склада
+                    </p>
+                    <span>
+                      <i class="icon-chevron-down"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      @@include('blocks/callback.html', {"title": "Отправьте своё резюме", "cover":
+      "./images/temp/residence-callback-cover.png"})
+
+    </main>
+    <!-- Подвал -->
+    @@include('blocks/footer.html')
+    <!-- Попапы -->
+    <!-- @@include('blocks/popup.html') -->
+    <!-- Плашки -->
+    @@include('blocks/plate.html')
+  </div>
+  <!-- libs -->
+  <script src="./libs/gsap/gsap.min.js"></script>
+  <script src="./libs/gsap/tweenmax.min.js"></script>
+  <script src="./libs/gsap/ScrollToPlugin.min.js"></script>
+  <script src="./libs/gsap/ScrollTrigger.min.js"></script>
+  <script src="./libs/gsap/ScrollSmoother.min.js"></script>
+  <script src="./libs/lenis/lenis.min.js"></script>
+  <script src="./libs/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/transfer-elements@1.0.7/dist/transfer-elements.min.js"></script>
+  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <!-- scripts -->
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

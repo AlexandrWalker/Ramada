@@ -889,6 +889,10 @@
         }
       }
     }
+
+    .template-box__inner {
+      position: relative;
+    }
   }
 
   &-box {
@@ -950,6 +954,93 @@
 
         @include md {
           display: none;
+        }
+      }
+    }
+
+    &__attr {
+      width: 100%;
+      padding: 4rem;
+      background-color: var(--white);
+      order: 3;
+
+      @include md {
+        padding: 3rem 7rem;
+      }
+
+      @include sm {
+        padding: 2rem;
+        transition: all 0.5s ease-in-out;
+      }
+
+      &-head {
+        display: none;
+
+        @include sm {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          transition: all 0.5s ease;
+          min-height: 4rem;
+        }
+
+        &.accordion-active {
+          margin-bottom: 2rem;
+        }
+      }
+
+      &-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+        overflow: hidden;
+
+        @include md {
+          gap: 2rem;
+        }
+      }
+
+      &-wrap {
+
+        @include sm {
+          display: grid;
+          grid-template-rows: 0fr;
+          overflow: hidden;
+          transition: all 0.3s ease;
+        }
+      }
+
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        width: calc((100%/4) - (3rem * 3)/4);
+
+        font-weight: 350;
+        font-size: 1.4rem;
+        line-height: 120%;
+
+        @include md {
+          gap: 1.5rem;
+          width: calc((100%/2) - 2rem/2);
+        }
+
+        @include sm {
+          width: 100%;
+        }
+
+        i {
+          --font-size: 5rem;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          background-color: var(--white-gray);
+
+          @include md {
+            --font-size: 3rem;
+          }
         }
       }
     }

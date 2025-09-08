@@ -12,7 +12,7 @@
   }
 }
 
-.accordion-body {
+.accordion-body:not(.template-box__attr-wrap) {
   display: grid;
   grid-template-rows: 0fr;
   overflow: hidden;

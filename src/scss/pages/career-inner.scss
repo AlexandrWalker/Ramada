@@ -1,0 +1,50 @@
+@use './../mixins' as *;
+
+.career {
+
+  &-inner-page {
+
+    .career__body {
+      margin-bottom: 3rem;
+
+      @include md {
+        gap: 2rem;
+      }
+      @include sm {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include sm {
+      gap: 1rem;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      padding: 4rem;
+      border: 0.1rem solid var(--gray-30);
+
+      @include md {
+        gap: 2rem;
+        padding: 3rem;
+      }
+
+      @include sm {
+        padding: 2rem;
+      }
+
+      &--primary {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+    }
+  }
+}

@@ -1,0 +1,167 @@
+@use './../mixins' as *;
+
+.career {
+
+  &-inner-page {
+
+    .career__inner {
+      max-width: 100rem;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+
+    h5 {
+
+      @include md {
+        font-size: 2.5rem;
+      }
+    }
+
+    h6 {
+      font-family: var(--second-family);
+      font-weight: 300;
+      font-size: 2.5rem;
+
+      @include md {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    margin-bottom: 3rem;
+
+    @include sm {
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__cover {
+    aspect-ratio: 1520/491;
+    margin-bottom: 2rem;
+
+    @include md {
+      aspect-ratio: 674/292;
+    }
+
+    @include sm {
+      aspect-ratio: 353/153;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    margin-bottom: 4rem;
+
+    @include sm {
+      gap: 1rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: calc(25% - (6rem/4));
+    padding: 4rem 3rem 4rem 4rem;
+    background-color: var(--white);
+
+    @include md {
+      width: calc(50% - 1rem);
+      padding: 3rem;
+    }
+
+    @include sm {
+      gap: 1.5rem;
+      width: 100%;
+      padding: 2rem;
+    }
+
+    p {
+      color: var(--gray);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    &-items {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    &-item {
+      padding: 4rem;
+      background-color: var(--white);
+
+      @include md {
+        padding: 3rem;
+      }
+
+      @include sm {
+        padding: 2rem 2rem 3rem;
+      }
+
+      h6 {
+        color: var(--accent);
+        margin-bottom: 2.5rem;
+
+        @include sm {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+
+    &-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &:not(:last-child) {
+        border-bottom: 0.1rem solid var(--gray-10);
+        padding-bottom: 1.5rem;
+        margin-bottom: 2rem;
+
+        @include sm {
+          padding-bottom: 1.2rem;
+        }
+      }
+
+      p {
+        font-weight: 700;
+      }
+
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        border: 0.1rem solid var(--gray-30);
+      }
+
+      i {
+        --font-size: 2rem;
+        color: var(--accent);
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}

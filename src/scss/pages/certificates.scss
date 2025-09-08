@@ -1,0 +1,263 @@
+@use './../mixins' as *;
+
+.certificates {
+
+  h5 {
+
+    @include md {
+      font-size: 2.5rem;
+    }
+  }
+
+  h6:not(.certificates__item h6) {
+    font-family: var(--second-family);
+    font-weight: 300;
+    font-size: 2.5rem;
+
+    @include md {
+      font-size: 2rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    margin-bottom: 3rem;
+
+    @include sm {
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__cover {
+    aspect-ratio: 1520/491;
+    margin-bottom: 2rem;
+
+    @include md {
+      aspect-ratio: 674/292;
+    }
+
+    @include sm {
+      aspect-ratio: 353/153;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    @include sm {
+      gap: 1rem;
+    }
+  }
+
+  &__item {
+    padding: 2rem;
+    border: 0.05rem solid var(--gray-30);
+    text-align: center;
+    width: calc((100% / 3) - (2rem * 2) / 3);
+
+    @include md {
+      padding: 1rem;
+      width: calc(50% - 1rem);
+    }
+
+    @include sm {
+      padding: 0;
+      border: 0;
+      width: calc(50% - 0.5rem);
+    }
+
+    &-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5rem;
+      padding: 6rem 3rem 10rem;
+      background-color: var(--white-gray-second);
+
+      position: relative;
+
+      @include md {
+        gap: 2rem;
+        padding: 4rem 3rem 3.5rem;
+      }
+
+      @include sm {
+        gap: 1.5rem;
+        padding: 2.5rem 1rem 3rem;
+      }
+
+      &::before {
+        content: "";
+        border: 0.05rem solid var(--gray-20);
+        pointer-events: none;
+
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        left: 1rem;
+
+        @include sm {
+          top: 0.5rem;
+          right: 0.5rem;
+          bottom: 0.5rem;
+          left: 0.5rem;
+        }
+      }
+    }
+
+    &-icon {
+      --reviews-icon-size: 5.6rem;
+      --reviews-icon-padding: 0.4rem;
+
+      width: var(--reviews-icon-size);
+      height: var(--reviews-icon-size);
+      border-radius: 50%;
+      border: 0.05rem solid var(--black-30);
+      flex-shrink: 0;
+
+      position: relative;
+
+      @include md {
+        --reviews-icon-size: 5rem;
+        --reviews-icon-padding: 0.357rem;
+      }
+
+      @include sm {
+        --reviews-icon-size: 3rem;
+        --reviews-icon-padding: 0.2rem;
+      }
+
+      &::before {
+        content: "";
+        background-color: var(--white);
+        border-radius: 50%;
+        position: absolute;
+        top: var(--reviews-icon-padding);
+        right: var(--reviews-icon-padding);
+        bottom: var(--reviews-icon-padding);
+        left: var(--reviews-icon-padding);
+      }
+
+      i {
+        --reviews-icon-size: 5.4rem;
+
+        --font-size: var(--reviews-icon-size);
+        color: var(--accent);
+
+        @include md {
+          --reviews-icon-size: 4.8rem;
+        }
+
+        @include sm {
+          --reviews-icon-size: 2.8rem;
+        }
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
+      @include md {
+        gap: 2rem;
+      }
+
+      @include sm {
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      @include sm {
+        gap: 1.5rem;
+      }
+    }
+
+    &-name {
+      text-transform: uppercase;
+
+      @include sm {
+        padding: 0 0.5rem;
+      }
+
+      h6 {
+
+        @include md {
+          font-size: 1.4rem;
+        }
+
+        @include sm {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    &-text {
+      color: var(--gray);
+
+      p {
+
+        @include sm {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    &-btn {
+
+      @include sm {
+        display: none;
+      }
+
+      span {
+
+        &::before {
+          content: attr(data-text);
+
+          @include xxl {
+            content: attr(data-text-mob);
+          }
+        }
+      }
+    }
+
+    .link {
+      display: none;
+
+      @include sm {
+        display: flex;
+        gap: 0.3rem;
+
+        font-size: 1rem;
+        color: var(--accent);
+      }
+
+      i {
+
+        @include sm {
+          --font-size: 1.2rem;
+
+          background-color: var(--accent);
+
+          font-size: 1.2rem;
+          color: var(--white);
+        }
+      }
+    }
+  }
+}

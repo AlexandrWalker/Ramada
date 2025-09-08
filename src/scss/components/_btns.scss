@@ -373,6 +373,17 @@
 
     &--down {
 
+      &:hover {
+
+        i {
+          color: var(--white);
+        }
+
+        .scale {
+          transform: scale(101%);
+        }
+      }
+
       i {
         transform: rotate(90deg);
       }

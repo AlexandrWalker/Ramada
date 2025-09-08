@@ -453,7 +453,8 @@
 
   &__inner {
     padding: 1.7rem var(--container-padding) 1.8rem;
-    width: 100vw;
+    // width: 100vw;
+    width: 100%;
     overflow-x: auto;
 
     &::-webkit-scrollbar {
@@ -617,6 +618,19 @@
       --font-size: var(--news-share-size);
     }
   }
+}
+
+.scale {
+  content: "";
+  position: absolute;
+  top: var(--btn-arrow-padding);
+  right: var(--btn-arrow-padding);
+  bottom: var(--btn-arrow-padding);
+  left: var(--btn-arrow-padding);
+  transform: scale(0);
+  transition: all 1s ease;
+  background-color: var(--accent);
+  border-radius: 50%;
 }
 
 /* Фракция слайдера */
