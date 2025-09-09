@@ -1467,8 +1467,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /**
- * Инициализация TransferElements
- */
+   * Инициализация TransferElements
+   */
   const transfer = document.querySelector('.transfer-elem-1');
   if (transfer) {
     $(window).on('resize load', function () {
@@ -1486,6 +1486,23 @@ document.addEventListener('DOMContentLoaded', () => {
           );
         }
       }
+    });
+  }
+
+
+
+  /**
+   *  Copyboard
+   */
+  const copyButton = document.querySelector(".contacts__item-copy");
+  const copyText = document.querySelector(".contacts__item-text");
+  if (copyButton && copyText) {
+    copyButton.addEventListener("click", function () {
+      navigator.clipboard.writeText(copyText.innerText).then(function () {
+        console.log('Text copied to clipboard');
+      }).catch(function (error) {
+        console.error('Error:', error);
+      });
     });
   }
 
