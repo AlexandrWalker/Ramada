@@ -1,0 +1,190 @@
+@use './../mixins' as *;
+
+.programm {
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    &-title {
+      color: var(--accent);
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+
+    @include sm {
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__item {
+    width: calc(100% / 3 - (4rem / 3));
+    padding: 4.4rem 2rem 2rem;
+    background-color: var(--white);
+    min-height: 64rem;
+
+    @include md {
+      width: calc(100% / 2 - (2rem / 1));
+      padding: 1.6rem 1rem 1rem;
+      min-height: 48.4rem;
+    }
+
+    @include sm {
+      width: 100%;
+      padding: 2rem 2rem 3rem;
+      min-height: unset;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      height: 100%;
+      padding: 4.4rem 2rem 3rem;
+      border: 0.1rem solid var(--black-20);
+      position: relative;
+
+      @include md {
+        gap: 1.5rem;
+        padding: 3.7rem 2rem 2rem;
+      }
+
+      @include sm {
+        border: 0;
+        padding: 0;
+      }
+    }
+
+    &-level {
+      font-family: var(--second-family);
+      font-weight: 300;
+      font-size: 2rem;
+      line-height: 110%;
+      text-transform: uppercase;
+      color: var(--black-50);
+      padding: 0 2.15rem;
+      background-color: var(--white);
+      position: absolute;
+      top: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include md {
+        font-size: 1.2rem;
+        top: -0.6rem;
+      }
+
+      @include sm {
+        position: static;
+        transform: unset;
+        padding: 0;
+        background: none;
+      }
+    }
+
+    &-title {
+      color: var(--accent);
+
+      h5 {
+
+        @include md {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    &-btn {
+      --btn-color: var(--black);
+      width: 100%;
+      margin-top: auto;
+
+      &:hover {
+        --btn-color: var(--white);
+        --btn-background: var(--accent);
+        --btn-border-color: var(--accent);
+      }
+    }
+
+    li {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 0.5ch;
+
+      span {
+        color: var(--accent);
+      }
+    }
+
+    li:not(.breadcrumbs li, .template-product__body li) {
+
+      @include md {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  &__ps {
+    display: flex;
+    flex-direction: column;
+    gap: 2ch;
+    margin-bottom: 4rem;
+    font-size: 1.4rem;
+    color: var(--black-30);
+
+    @include md {
+      margin-bottom: 3rem;
+    }
+
+    @include sm {
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    h5 {
+      color: var(--accent);
+      margin-bottom: 3rem;
+
+      @include md {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    p {
+      margin-bottom: 2rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    ul {
+      margin-bottom: 2rem;
+    }
+  }
+}

@@ -273,18 +273,21 @@
 
       &.accordion-active {
 
-        color: var(--accent);
+        @include md {
 
-        p {
           color: var(--accent);
-        }
 
-        i {
-          transform: rotate(180deg);
-        }
+          p {
+            color: var(--accent);
+          }
 
-        &+.accordion-body {
-          padding-top: 2rem;
+          i {
+            transform: rotate(180deg);
+          }
+
+          &+.accordion-body {
+            padding-top: 2rem;
+          }
         }
       }
     }

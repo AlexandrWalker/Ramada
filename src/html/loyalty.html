@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('blocks/head.html', {"title": "RAMADA"})
+
+<body>
+  <div class="wrapper loyalty-page">
+    <!-- Шапка -->
+    @@include('./blocks/header.html')
+    <main class="main">
+      <!-- Главный блок -->
+      <section class="template template--primary">
+
+        <div class="breadcrumbs">
+          <div class="container">
+            <div class="breadcrumbs__inner">
+              <ul>
+                <li>
+                  <a href="/">
+                    Главная страница
+                  </a>
+                </li>
+                <li>
+                  Программа лояльности
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="container template__container">
+          <picture class="template__bg">
+            <source media="(min-width: 835px)" srcset="./images/temp/loyalty-bg.png" type="image/png">
+            <source media="((max-width: 834px) and (min-width: 601px))" srcset="./images/temp/loyalty-planshet-bg.png"
+              type="image/png">
+            <source media="(max-width: 600px)" srcset="./images/temp/loyalty-mob-bg.png" type="image/png">
+            <img src="./images/loyalty-bg.png" alt="">
+          </picture>
+          <div class="template__inner">
+            <div class="template__suptitle">
+              <h6>
+                ценим ваше внимание
+              </h6>
+            </div>
+            <div class="template__title">
+              <h1>
+                Программа лояльности
+              </h1>
+            </div>
+            <div class="template__body">
+              <a class="template__body-down" href="#templateBlock">
+                <i class="icon-chevron-down"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="programm">
+        <div class="container">
+          <div class="programm__inner">
+            <div class="programm__head">
+              <div class="programm__head-title">
+                <h3>
+                  О программе
+                </h3>
+              </div>
+              <div class="programm__head-text">
+                <p>
+                  Бронируйте номера на нашем официальном сайте или по телефону через Отдел бронирования отеля,
+                  накапливайте ночи, получайте скидки и привилегии!
+                </p>
+                <p>
+                  Сохраните свои данные в Личном Кабинете на нашем сайте и получите свой собственный номер участника.
+                </p>
+              </div>
+            </div>
+            <div class="programm__body">
+              <div class="programm__items">
+                @@loop('./elements/programm-item.html', './data/programm-items.json')
+              </div>
+              <div class="programm__ps">
+                <span>
+                  * Считаются только ночи, прожитые по бронированиям, совершенным на официальном сайте
+                  <a href="https://ramadanovosibirsk.com/">https://ramadanovosibirsk.com/</a> или через отдел
+                  бронирования
+                  отеля.
+                </span>
+                <span>
+                  ** Повышение категории номера и предоставление позднего выезда напрямую зависит от загрузки
+                  гостиницы и
+                  наличия свободных номеров в день заезда гостя. Сотрудники Службы Приема и Размещения гостей сделают
+                  все
+                  возможное, чтобы улучшить категорию номера на более высокую.
+                </span>
+                <span>
+                  *** Процент, который гости могут оплатить баллами – 20%.
+                </span>
+              </div>
+              <div class="programm__content">
+                <h5>
+                  Правила и условия программы лояльности
+                </h5>
+                <p>
+                  Бронирования, сделанные на сторонних сайтах, не входят в зачет накопленных ночей.
+                  Статусные привилегии участника программы лояльности распространяются только на самого участника, без
+                  права передачи третьим лицам, вне зависимости от количества забронированных им номеров, и доступны
+                  только при условии, если бронирование совершено на официальном сайте https://ramadanovosibirsk.com
+                </p>
+                <p>
+                  Для получения статуса и его продления учитываются только сутки пребывания в отеле, использованные и
+                  оплаченные лично участником со статусом.
+                </p>
+                <p>
+                  Для подтверждения статуса и его продления необходимо набрать необходимое количество ночей в течение 1
+                  (одного) календарного года с момента перехода на новый статусный уровень. Если в течение этого времени
+                  не будет накоплено достаточное количество ночей, то статус автоматически снижается на один уровень.
+                </p>
+                <p>
+                  Для учета прожитых ночей гостю необходимо лично проживать в отеле и оплатить свое проживание любым
+                  доступным методом платежа.
+                  Ночи, забронированные по групповым и корпоративным тарифам, не учитываются при накоплении в счет
+                  повышения статуса.
+                  Вне зависимости от количества номеров, забронированных и оплаченных гостем — участником нашей
+                  программы
+                  лояльности, для подсчета ночей, влияющих на его статус в дальнейшем, учитывается лишь тот номер, где
+                  проживает этот гость – участник программы.
+                </p>
+                <p>
+                  <b>
+                    Аннулирование или приостановление членства участника программы лояльности по инициативе Компании
+                    может
+                    быть совершенно немедленно в одностороннем порядке без письменного уведомления гостя, если есть
+                    причины
+                    или подозрения, что:
+                  </b>
+                </p>
+                <ul>
+                  <li>
+                    гость совершил поступок, противоречащий действующему законодательству;
+                  </li>
+                  <li>
+                    не оплатил в срок какой-либо счет, выставленный Компанией или Участвующим отелем;
+                  </li>
+                  <li>
+                    вел себя неподобающим, оскорбительным или угрожающим образом либо занимался мошенничеством;
+                  </li>
+                  <li>
+                    сообщил ложную информацию, чтобы получить привилегии;
+                  </li>
+                  <li>
+                    участвовал в какой-либо мошеннической или неправомерной деятельности, касающейся Программы
+                    лояльности.
+                  </li>
+                </ul>
+                <p>
+                  Все привилегии, предложения и услуги Программы лояльности обусловлены их доступностью и могут
+                  изменяться
+                  Компанией в любое время без уведомления. Компания может завершить Программу лояльности частично или
+                  полностью по своему усмотрению.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      @@include('blocks/callback.html', {"title": "Оставьте заявку", "cover":
+      "./images/temp/residence-callback-cover.png"})
+
+    </main>
+    <!-- Подвал -->
+    @@include('blocks/footer.html')
+    <!-- Попапы -->
+    <!-- @@include('blocks/popup.html') -->
+    <!-- Плашки -->
+    @@include('blocks/plate.html')
+  </div>
+  <!-- libs -->
+  <script src="./libs/gsap/gsap.min.js"></script>
+  <script src="./libs/gsap/tweenmax.min.js"></script>
+  <script src="./libs/gsap/ScrollToPlugin.min.js"></script>
+  <script src="./libs/gsap/ScrollTrigger.min.js"></script>
+  <script src="./libs/gsap/ScrollSmoother.min.js"></script>
+  <script src="./libs/lenis/lenis.min.js"></script>
+  <script src="./libs/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/transfer-elements@1.0.7/dist/transfer-elements.min.js"></script>
+  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <!-- scripts -->
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

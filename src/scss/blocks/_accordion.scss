@@ -5,8 +5,8 @@
 
   &-active {
 
-    .accordion-body,
-    &+.accordion-body {
+    .accordion-body:not(.template-box__attr-wrap),
+    &+.accordion-body:not(.template-box__attr-wrap) {
       grid-template-rows: 1fr;
     }
   }
