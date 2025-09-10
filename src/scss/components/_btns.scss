@@ -151,6 +151,15 @@
     --btn-color: var(--accent);
     --btn-background: var(--white-gray);
     --btn-border-color: var(--black-10);
+    --btn-padding-x: 4rem;
+
+    @include md {
+      --btn-padding-x: 2.5rem;
+    }
+
+    @include sm {
+      --btn-padding-x: 2.5rem;
+    }
 
     &::after {
       border-color: var(--black-30);
@@ -372,8 +381,12 @@
     }
 
     &--down {
+      --btn-background: var(--accent);
+      // --btn-background: var(--white-30);
+      --btn-border-radius: 50%;
 
       &:hover {
+        border-color: var(--accent-30);
 
         i {
           color: var(--white);
@@ -386,6 +399,10 @@
 
       i {
         transform: rotate(90deg);
+      }
+
+      .pulse {
+        z-index: 1;
       }
     }
   }

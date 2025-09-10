@@ -410,6 +410,7 @@
     .general__head-title {
 
       h5 {
+        text-transform: none;
 
         @include md {
           font-size: 4rem;
@@ -620,10 +621,10 @@
         color: var(--white);
         border-color: var(--white-o-50);
 
-         @include md {
+        @include md {
           color: inherit;
           border-color: var(--accent);
-         }
+        }
       }
     }
 

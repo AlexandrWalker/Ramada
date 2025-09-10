@@ -24,6 +24,12 @@
   }
 }
 
+@mixin domd() {
+  @media (min-width: 834px) {
+    @content;
+  }
+}
+
 @mixin xmd() {
   @media (max-width: 768px) {
     @content;

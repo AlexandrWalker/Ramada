@@ -780,8 +780,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /**
    * GSAP
+   * 
+   * Анимация главного блока
    */
-  const hero = document.getElementById('hero')
+  const hero = document.getElementById('hero');
   if (hero) {
 
     $(window).on('resize load', function () {
@@ -936,7 +938,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // const smoothImgTopAfter = '31rem';
         const smoothImgTopAfter = '30rem';
 
+        const heroHeight = hero.offsetHeight;
         // const heroTop = 4.53;
+        // const heroTop = 4.7;
         const heroTop = 4.7;
 
         const h1TitleFsBefore = '20rem';
@@ -962,6 +966,7 @@ document.addEventListener('DOMContentLoaded', () => {
         heroAnimate(smoothImgY,
           smoothImgTopBefore,
           smoothImgTopAfter,
+          heroHeight,
           heroTop,
           h1TitleFsBefore,
           h1TitleFsAfter,
@@ -984,18 +989,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function heroAnimate(smoothImgY, smoothImgTopBefore, smoothImgTopAfter, heroTop, h1TitleFsBefore, h1TitleFsAfter, pTitleFontSizeBefore, pTitleLeftPosBefore, pTitleTopPosBefore, pTitleColorBefore, pTitleFontSizeAfter, pTitleLeftPosAfter, pTitleTopPosAfter, pTitleColorAfter, heroHeadGapBefore, heroHeadGapAfter, heroBtnBottomBefore, heroBtnBottomAfter
+  function heroAnimate(smoothImgY, smoothImgTopBefore, smoothImgTopAfter, heroHeight, heroTop, h1TitleFsBefore, h1TitleFsAfter, pTitleFontSizeBefore, pTitleLeftPosBefore, pTitleTopPosBefore, pTitleColorBefore, pTitleFontSizeAfter, pTitleLeftPosAfter, pTitleTopPosAfter, pTitleColorAfter, heroHeadGapBefore, heroHeadGapAfter, heroBtnBottomBefore, heroBtnBottomAfter
   ) {
-    const heroHead = hero.querySelector('.hero__head')
-    const heroHeight = hero.offsetHeight
+    const hero = document.getElementById('hero');
+    const heroHead = hero.querySelector('.hero__head');
 
-    const smoothImg = hero.querySelector('[data-animation="smooth-img"]')
-    const heroTitle = hero.querySelector('[data-animation="hero-title"]')
-    const heroBtn = hero.querySelector('[data-animation="hero-btn"]')
+    const smoothImg = hero.querySelector('[data-animation="smooth-img"]');
+    const heroTitle = hero.querySelector('[data-animation="hero-title"]');
+    const heroBtn = hero.querySelector('[data-animation="hero-btn"]');
 
-    const h1Title = heroTitle.querySelector('h1')
-    const pTitle = heroTitle.querySelector('p')
-    const spanTitle = heroTitle.querySelector('span')
+    const h1Title = heroTitle.querySelector('h1');
+    const pTitle = heroTitle.querySelector('p');
+    const spanTitle = heroTitle.querySelector('span');
+
+    gsap.from(hero, {
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `top +=${heroHeight / heroTop} `,
+        end: () => `+=${heroHeight}`,
+        pin: true,
+        scrub: true,
+        invalidateOnRefresh: true,
+      },
+      onComplete: function () {
+        hero.classList.add('animatedClass');
+      },
+    });
 
     gsap.fromTo(smoothImg, {
       "--top": smoothImgTopBefore,
@@ -1007,13 +1027,10 @@ document.addEventListener('DOMContentLoaded', () => {
       ease: "none",
       scrollTrigger: {
         trigger: hero,
-        start: `top +=${heroHeight / heroTop}`,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
         end: () => `+=${heroHeight}`,
-        pin: true,
         scrub: true,
-      },
-      onComplete: function () {
-        hero.classList.add('animatedClass');
+        invalidateOnRefresh: true
       },
     });
 
@@ -1024,12 +1041,11 @@ document.addEventListener('DOMContentLoaded', () => {
       ease: "none",
       scrollTrigger: {
         trigger: hero,
-        start: `top +=${heroHeight / heroTop}`,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
         end: () => `+=${heroHeight}`,
-        pin: true,
         scrub: true,
         invalidateOnRefresh: true
-      }
+      },
     });
 
     gsap.fromTo(pTitle, {
@@ -1045,12 +1061,11 @@ document.addEventListener('DOMContentLoaded', () => {
       ease: "none",
       scrollTrigger: {
         trigger: hero,
-        start: `top +=${heroHeight / heroTop}`,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
         end: () => `+=${heroHeight}`,
-        pin: true,
         scrub: true,
         invalidateOnRefresh: true
-      }
+      },
     });
 
     gsap.fromTo(spanTitle, {
@@ -1060,12 +1075,11 @@ document.addEventListener('DOMContentLoaded', () => {
       ease: "none",
       scrollTrigger: {
         trigger: hero,
-        start: `top +=${heroHeight / heroTop}`,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
         end: () => `+=${heroHeight}`,
-        pin: true,
         scrub: true,
         invalidateOnRefresh: true
-      }
+      },
     });
 
     gsap.fromTo(heroHead, {
@@ -1075,12 +1089,11 @@ document.addEventListener('DOMContentLoaded', () => {
       ease: "none",
       scrollTrigger: {
         trigger: hero,
-        start: `top +=${heroHeight / heroTop}`,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
         end: () => `+=${heroHeight}`,
-        pin: true,
         scrub: true,
         invalidateOnRefresh: true
-      }
+      },
     });
 
     gsap.fromTo(heroBtn, {
@@ -1090,12 +1103,11 @@ document.addEventListener('DOMContentLoaded', () => {
       ease: "none",
       scrollTrigger: {
         trigger: hero,
-        start: `top +=${heroHeight / heroTop}`,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
         end: () => `+=${heroHeight}`,
-        pin: true,
         scrub: true,
         invalidateOnRefresh: true
-      }
+      },
     });
   }
 
@@ -1202,14 +1214,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const line = new SplitType(titleLine, { types: 'words, lines' });
       });
 
-      /**
-       * Анимация главного блока
-       */
-      const hero = document.getElementById("hero");
-      if (hero) {
-
-      }
-
       const footer = document.getElementById('footer');
       if (footer) {
         gsap.from(footer, {
@@ -1230,6 +1234,31 @@ document.addEventListener('DOMContentLoaded', () => {
           },
         });
       }
+
+      // const layoutsDown = document.querySelectorAll('.layoutDown');
+      // if (layoutsDown.length > 0) {
+      //   layoutsDown.forEach(layoutDown => {
+
+      //     const hall = document.querySelector('.hall');
+      //     const tl = gsap.timeline();
+
+      //     tl.fromTo(layoutDown, {
+      //       y: '0',
+      //     }, {
+      //       y: '-100%',
+      //       scrollTrigger: {
+      //         animation: tl,
+      //         trigger: hall,
+      //         start: `top bottom`,
+      //         end: `bottom`,
+      //         scrub: true,
+      //         pin: true,
+      //         invalidateOnRefresh: true,
+      //       },
+      //     });
+      //   });
+      // }
+
 
       const revealItems = document.querySelectorAll('[data-transform="reveal"]');
       revealItems.forEach(revealItem => {
@@ -1450,18 +1479,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  const filter = document.querySelector('.filter');
+  let filter = document.querySelector('.filter');
   if (filter) {
-    const btns = $('.filter__item');
-
-    btns.on('click', function filterFunc() {
-      btns.removeClass('filter__item--active')
-      $(this).addClass('filter__item--active')
-      const attr = $(this).data('reviews');
-      $.get('./ajax/reviews-' + attr + '.html', function (data) {
-        $('.reviews__items').html(data)
+    const reviewsPage = document.querySelector('.reviews-page');
+    if (reviewsPage) {
+      let filter = reviewsPage.querySelector('.filter');
+      const btns = $(filter).find('.filter__item');
+      btns.on('click', function filterFunc() {
+        btns.removeClass('filter__item--active')
+        $(this).addClass('filter__item--active')
+        const attr = $(this).data('reviews');
+        $.get('./ajax/reviews-' + attr + '.html', function (data) {
+          $('.reviews__items').html(data)
+        })
       })
-    })
+    } else {
+      const btns = $('.filter__item');
+      btns.on('click', function filterFunc() {
+        btns.removeClass('filter__item--active')
+        $(this).addClass('filter__item--active')
+      })
+    }
   }
 
 
@@ -1505,6 +1543,26 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+
+
+  // var $grid = $('.rooms__items').isotope({
+  //   itemSelector: '.rooms__item',
+  //   layoutMode: 'fitRows',
+  //   duration: '1',
+  // });
+  // var filterFns = {
+  //   ium: function () {
+  //     var name = $(this).data.value();
+  //     console.log(name);
+  //     return name.match(/ium$/);
+  //   }
+  // };
+  // $('.filter__items').on('click', '.filter__item', function () {
+  //   var filterValue = $(this).attr('data-filter');
+  //   filterValue = filterFns[filterValue] || filterValue;
+  //   $grid.isotope({ filter: filterValue });
+  // });
 
 
 
@@ -1565,7 +1623,8 @@ document.addEventListener('DOMContentLoaded', () => {
           // Scaling effect
           if (scroll > top) {
             // Scrolling up
-            if (distanceToTop > 199) {
+            // if (distanceToTop > 199) {
+            if (distanceToTop > 69) {
               var $activeBlock = $('.active');
               var prevCurrentBlock = $($activeBlock).prev();
 
@@ -1619,7 +1678,8 @@ document.addEventListener('DOMContentLoaded', () => {
           var $activeBlock = $('.active');
           var element = hall.querySelector('.active');
           var h = element.clientHeight / 200;
-          var distanceToTop = $activeBlock.offset().top - $(window).scrollTop() - 199;
+          // var distanceToTop = $activeBlock.offset().top - $(window).scrollTop() - 199;
+          var distanceToTop = $activeBlock.offset().top - $(window).scrollTop() - 69;
           var top = window.pageYOffset;
 
           const hallCover = $('.hall__cover');

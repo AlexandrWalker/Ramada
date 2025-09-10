@@ -1,5 +1,6 @@
 [
     {
+        "category": "business",
         "img1": "./images/temp/rooms-item-1.png",
         "img2": "./images/temp/rooms-item-2.png",
         "img3": "./images/temp/rooms-item-3.png",
@@ -9,6 +10,7 @@
         "link": "/"
     },
     {
+        "category": "special",
         "img1": "./images/temp/rooms-item-2.png",
         "img2": "./images/temp/rooms-item-3.png",
         "img3": "./images/temp/rooms-item-1.png",
@@ -18,6 +20,7 @@
         "link": "/"
     },
     {
+        "category": "wedding",
         "img1": "./images/temp/rooms-item-3.png",
         "img2": "./images/temp/rooms-item-1.png",
         "img3": "./images/temp/rooms-item-2.png",
@@ -27,6 +30,7 @@
         "link": "/"
     },
     {
+        "category": "otdyh",
         "img1": "./images/temp/rooms-item-3.png",
         "img2": "./images/temp/rooms-item-1.png",
         "img3": "./images/temp/rooms-item-2.png",
@@ -35,7 +39,8 @@
         "text2": "53 м²",
         "link": "/"
     },
-        {
+    {
+        "category": "business",
         "img1": "./images/temp/rooms-item-1.png",
         "img2": "./images/temp/rooms-item-2.png",
         "img3": "./images/temp/rooms-item-3.png",
@@ -45,6 +50,7 @@
         "link": "/"
     },
     {
+        "category": "special",
         "img1": "./images/temp/rooms-item-2.png",
         "img2": "./images/temp/rooms-item-3.png",
         "img3": "./images/temp/rooms-item-1.png",
@@ -54,6 +60,7 @@
         "link": "/"
     },
     {
+        "category": "wedding",
         "img1": "./images/temp/rooms-item-1.png",
         "img2": "./images/temp/rooms-item-2.png",
         "img3": "./images/temp/rooms-item-3.png",
@@ -63,6 +70,7 @@
         "link": "/"
     },
     {
+        "category": "otdyh",
         "img1": "./images/temp/rooms-item-2.png",
         "img2": "./images/temp/rooms-item-3.png",
         "img3": "./images/temp/rooms-item-1.png",
@@ -72,6 +80,7 @@
         "link": "/"
     },
     {
+        "category": "business",
         "img1": "./images/temp/rooms-item-3.png",
         "img2": "./images/temp/rooms-item-1.png",
         "img3": "./images/temp/rooms-item-2.png",
@@ -81,6 +90,7 @@
         "link": "/"
     },
     {
+        "category": "special",
         "img1": "./images/temp/rooms-item-3.png",
         "img2": "./images/temp/rooms-item-1.png",
         "img3": "./images/temp/rooms-item-2.png",
@@ -89,7 +99,8 @@
         "text2": "53 м²",
         "link": "/"
     },
-        {
+    {
+        "category": "wedding",
         "img1": "./images/temp/rooms-item-1.png",
         "img2": "./images/temp/rooms-item-2.png",
         "img3": "./images/temp/rooms-item-3.png",
@@ -99,6 +110,7 @@
         "link": "/"
     },
     {
+        "category": "otdyh",
         "img1": "./images/temp/rooms-item-2.png",
         "img2": "./images/temp/rooms-item-3.png",
         "img3": "./images/temp/rooms-item-1.png",

@@ -51,7 +51,8 @@
     }
 
     @include sm {
-      top: 50%;
+      // top: 50%;
+      top: 48%;
       transform: translate(-50%, -50%);
 
       text-transform: uppercase;
@@ -95,6 +96,7 @@
     &-img {
       width: 100%;
       height: 100%;
+      transition: all 3s linear;
 
       position: absolute;
       top: 0;
@@ -102,6 +104,13 @@
       bottom: 0;
       left: 0;
       z-index: -1;
+
+      .resta__block:hover & {
+
+        @include domd {
+          transform: scale(1.1);
+        }
+      }
 
       &::before {
         content: "";
@@ -111,8 +120,11 @@
         bottom: 0;
         left: 0;
         z-index: 1;
-        backdrop-filter: blur(7.35px);
-        transition: all 0.3s ease;
+        transition: all 0.5s ease;
+
+        @include domd {
+          backdrop-filter: blur(7.35px);
+        }
 
         .resta__block:hover & {
           backdrop-filter: blur(0);
@@ -167,9 +179,12 @@
       }
 
       p {
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.3s ease;
+        transition: all 0.5s ease;
+
+        @include domd {
+          opacity: 0;
+          pointer-events: none;
+        }
 
         .resta__block:hover & {
           opacity: 1;
@@ -179,10 +194,24 @@
     }
 
     &-btn {
-      opacity: 0;
-      pointer-events: none;
-      transition: all 0.3s ease;
+      --btn-padding-x: 4rem;
+
+      transition: all 0.5s ease;
       transition-delay: 0s;
+
+      @include domd {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      @include md {
+        --btn-padding-x: 4.5rem;
+        font-size: 1.2rem;
+      }
+
+      @include sm {
+        --btn-padding-x: 4.5rem;
+      }
 
       .resta__block:hover & {
         opacity: 1;

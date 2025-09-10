@@ -97,6 +97,7 @@
 
   &::before {
 
+    .btn-arrow:hover &,
     .btn:hover & {
       animation: pulse-round 2s linear infinite;
       animation-delay: 0s;
@@ -105,6 +106,7 @@
 
   &::after {
 
+    .btn-arrow:hover &,
     .btn:hover & {
       animation: pulse-round 2s linear infinite;
       animation-delay: 1s;

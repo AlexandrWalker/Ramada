@@ -54,24 +54,25 @@
 
             <div class="filter">
               <div class="filter__items">
-                <div class="filter__item filter__item--active">
+                <div class="filter__item filter__item--active" data-filter="*">
                   Все номера
                 </div>
-                <div class="filter__item">
+                <div class="filter__item" data-filter=".business">
                   Для бизнес-поездок
                 </div>
-                <div class="filter__item">
+                <div class="filter__item" data-filter=".special">
                   Для особенных вечеров
                 </div>
-                <div class="filter__item">
+                <div class="filter__item" data-filter=".wedding">
                   Для свадебных поводов
                 </div>
-                <div class="filter__item">
+                <div class="filter__item" data-filter=".otdyh">
                   Для семейного отдыха
                 </div>
               </div>
             </div>
 
+            <!-- <div class="rooms__items" data-isotope='{ "itemSelector": ".rooms__item", "layoutMode": "fitRows" }'> -->
             <div class="rooms__items">
               @@loop('./elements/rooms-item.html', './data/rooms-items.json')
             </div>
@@ -82,25 +83,3 @@
     </main>
     <!-- Подвал -->
     @@include('blocks/footer.html')
-    <!-- Попапы -->
-    <!-- @@include('blocks/popup.html') -->
-    <!-- Плашки -->
-    @@include('blocks/plate.html')
-  </div>
-  <!-- libs -->
-  <script src="./libs/gsap/gsap.min.js"></script>
-  <script src="./libs/gsap/tweenmax.min.js"></script>
-  <script src="./libs/gsap/ScrollToPlugin.min.js"></script>
-  <script src="./libs/gsap/ScrollTrigger.min.js"></script>
-  <script src="./libs/gsap/ScrollSmoother.min.js"></script>
-  <script src="./libs/lenis/lenis.min.js"></script>
-  <script src="./libs/swiper/swiper-bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/transfer-elements@1.0.7/dist/transfer-elements.min.js"></script>
-  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
-  <script src="https://unpkg.com/split-type"></script>
-  <!-- scripts -->
-  <script src="./js/main.js"></script>
-</body>
-
-</html>

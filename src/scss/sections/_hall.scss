@@ -70,10 +70,10 @@
     overflow: visible;
     position: sticky;
     top: calc(var(--header-height) + 3rem);
-    top: 200px;
+    top: 70px;
 
     @include sm {
-      top: 100px;
+      top: 30px;
     }
   }
 
@@ -99,13 +99,13 @@
 
     position: sticky;
     top: calc(var(--header-height) + 3rem);
-    top: 200px;
+    top: 70px;
 
     @include sm {
       padding: 2rem 2rem 3rem;
       gap: 2rem;
 
-      top: 100px;
+      top: 30px;
     }
 
     .over {
@@ -136,6 +136,19 @@
       gap: 1rem;
       max-width: 36.5rem;
       text-align: center;
+    }
+
+    &-suptitle {
+
+      p {
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--gray);
+      }
+    }
+
+    &-title {
 
       h5 {
         line-height: 120%;
@@ -159,7 +172,7 @@
 
     position: sticky;
     top: calc(var(--header-height) + 3rem);
-    top: 200px;
+    top: 70px;
 
     @include md {
       aspect-ratio: 366/295;
