@@ -1,7 +1,7 @@
 @use './../mixins' as *;
 
 .events {
-  padding-bottom: 4.5rem;
+  padding-bottom: 5rem;
 
   position: relative;
 
@@ -444,6 +444,10 @@
       }
     }
 
+    .swiper-pagination {
+      margin-top: 3rem;
+    }
+
     &-body {
       position: relative;
     }
@@ -536,10 +540,18 @@
       }
 
       .btn {
-        --btn-background: transparent;
+        --btn-padding-x: 4rem;
 
         transition: all 0.5s ease;
         transition-delay: 0.2s;
+
+        @include md {
+          --btn-padding-x: 2.5rem;
+        }
+
+        @include sm {
+          --btn-padding-x: 2.5rem;
+        }
 
         .events__other-item:hover & {
           --btn-border-color: var(--white-30);
@@ -552,8 +564,6 @@
         }
 
         &::before {
-          border: 0.1rem solid var(--black-30);
-
           transition: all 0.5s ease;
           transition-delay: 0.2s;
 
@@ -569,8 +579,6 @@
         }
 
         &::after {
-          border-color: var(--black);
-
           transition: all 0.5s ease;
           transition-delay: 0.2s;
 

@@ -81,6 +81,16 @@
     @include md {
       padding: 4rem var(--container-padding) 3rem var(--container-padding);
     }
+
+    &.activated {
+
+      @include md {
+
+        .footer__item-head:not(.accordion-active) {
+          opacity: 0.5;
+        }
+      }
+    }
   }
 
   &__body {
@@ -235,10 +245,13 @@
         align-items: center;
         cursor: pointer;
 
+        transition: opacity 0.3s ease;
+
         &:hover {
           color: var(--accent);
 
-          p {
+          p,
+          a {
             color: var(--accent);
           }
         }

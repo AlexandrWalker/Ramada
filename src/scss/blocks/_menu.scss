@@ -138,7 +138,7 @@
     --menu-transition-time: 0.5s;
 
     display: flex;
-    align-items: center;
+    // align-items: center;
     background: linear-gradient(to right, var(--white-gray) var(--menu-head-width), transparent var(--menu-body-width));
     background-color: var(--white-gray);
     transition: all var(--menu-transition-time) ease-in-out;
@@ -153,11 +153,14 @@
     background-size: var(--menu-body-width) 100%;
     background-position: var(--menu-head-width) center;
 
+    padding: 7.6rem 0;
+
     @include md {
       min-width: unset;
 
       background: none;
-      padding-bottom: 3rem;
+      // padding-bottom: 3rem;
+      padding: 0 0 3rem;
     }
 
     @include sm {
@@ -484,6 +487,8 @@
 
     z-index: 1;
 
+    padding: 10.6rem 0;
+
     @include md {
       min-width: unset;
 
@@ -510,7 +515,7 @@
     &-body {
       display: flex;
       flex-direction: column;
-      gap: 3rem;
+      gap: 4rem;
 
       @include md {
         display: grid;
@@ -775,9 +780,10 @@
       border: 0.05rem solid var(--black);
 
       &:hover {
-        color: var(--white);
-        border-color: var(--accent);
-        background-color: var(--accent);
+        color: var(--accent);
+        // color: var(--white);
+        // border-color: var(--accent);
+        // background-color: var(--accent);
       }
 
       i {

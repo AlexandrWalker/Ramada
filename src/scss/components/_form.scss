@@ -51,11 +51,20 @@
     @include md {
       padding: 1.6rem 2.7rem 1.6rem;
     }
+
+    &:hover {
+
+      &+.form-label {
+        color: var(--gray);
+      }
+    }
   }
 
   &-label {
     padding: 0 0.4rem 0 0.7rem;
     background-color: var(--white-gray);
+    transition: all 0.3s ease;
+
     font-weight: 350;
     font-size: 1.4rem;
     line-height: 100%;
@@ -83,6 +92,33 @@
     font-size: 1.4rem;
     line-height: 100%;
     color: var(--black);
+
+    &:hover {
+
+      &+.form-label {
+        color: var(--gray);
+      }
+    }
+  }
+
+  &-error {
+    display: none;
+    font-weight: 350;
+    font-size: 1rem;
+    line-height: 100%;
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    bottom: -1.2rem;
+  }
+
+  .invalid {
+    border-color: var(--accent);
+    color: var(--accent);
+
+    &+.form-error {
+      display: block;
+    }
   }
 
   &-foot {

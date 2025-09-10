@@ -130,6 +130,10 @@
 
   &__img {
 
+    img {
+      object-fit: contain;
+    }
+
     @include md {
       height: 40.7rem;
       grid-column: 1/6;
