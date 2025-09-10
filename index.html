@@ -670,6 +670,7 @@
               <a class="btn-arrow btn-arrow--down" href="#offer" data-animation="hero-btn">
                 <i class="icon-arrow-right"></i>
                 <span class="scale"></span>
+                <i class="pulse"></i>
               </a>
             </div>
 
@@ -1141,15 +1142,21 @@
                     <img src="./images/hall/hall-1.png" alt="">
                   </div>
                   <div class="hall__item-content">
-                    <p>
-                      Конференц-зал
-                    </p>
-                    <h5>
-                      Сосновый
-                    </h5>
-                    <p>
-                      Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
-                    </p>
+                    <div class="hall__item-suptitle">
+                      <p>
+                        Конференц-зал
+                      </p>
+                    </div>
+                    <div class="hall__item-title">
+                      <h5>
+                        Сосновый
+                      </h5>
+                    </div>
+                    <div class="hall__item-text">
+                      <p>
+                        Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
+                      </p>
+                    </div>
                   </div>
                   <a class="hall__item-btn btn btn--white-gray" href="/">
                     Подробнее
@@ -1161,15 +1168,21 @@
                     <img src="./images/hall/hall-2.png" alt="">
                   </div>
                   <div class="hall__item-content">
-                    <p>
-                      Конференц-зал
-                    </p>
-                    <h5>
-                      Шишкин
-                    </h5>
-                    <p>
-                      Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
-                    </p>
+                    <div class="hall__item-suptitle">
+                      <p>
+                        Конференц-зал
+                      </p>
+                    </div>
+                    <div class="hall__item-title">
+                      <h5>
+                        Шишкин
+                      </h5>
+                    </div>
+                    <div class="hall__item-text">
+                      <p>
+                        Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
+                      </p>
+                    </div>
                   </div>
                   <a class="hall__item-btn btn btn--white-gray" href="/">
                     Подробнее
@@ -1181,15 +1194,21 @@
                     <img src="./images/hall/hall-3.png" alt="">
                   </div>
                   <div class="hall__item-content">
-                    <p>
-                      Конференц-зал
-                    </p>
-                    <h5>
-                      Кедровый
-                    </h5>
-                    <p>
-                      Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
-                    </p>
+                    <div class="hall__item-suptitle">
+                      <p>
+                        Конференц-зал
+                      </p>
+                    </div>
+                    <div class="hall__item-title">
+                      <h5>
+                        Кедровый
+                      </h5>
+                    </div>
+                    <div class="hall__item-text">
+                      <p>
+                        Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
+                      </p>
+                    </div>
                   </div>
                   <a class="hall__item-btn btn btn--white-gray" href="/">
                     Подробнее
@@ -1211,7 +1230,7 @@
         </div>
       </section>
 
-      <section class="resta">
+      <section class="resta layoutDown">
         <div class="resta__container container container--fluid">
           <div class="resta__inner">
 
@@ -1223,7 +1242,14 @@
 
             <div class="resta__block border">
               <div class="resta__block-img" data-animation="parallax-img">
-                <img src="./images/restaurants/leto-bg.png" alt="">
+                <!-- <img src="./images/restaurants/leto-bg.png" alt=""> -->
+
+                <picture>
+                  <source media="(min-width: 601px)" srcset="./images/restaurants/leto-bg.png" type="image/png">
+                  <source media="(max-width: 600px)" srcset="./images/restaurants/leto-mob-bg.png" type="image/png">
+                  <img src="./images/restaurants/leto-bg.png" alt="">
+                </picture>
+
               </div>
               <div class="resta__block-logo">
                 <img src="./images/restaurants/leto.svg" alt="">
@@ -1245,7 +1271,14 @@
 
             <div class="resta__block border">
               <div class="resta__block-img" data-animation="parallax-img">
-                <img src="./images/restaurants/seasons-bg.png" alt="">
+                <!-- <img src="./images/restaurants/seasons-bg.png" alt=""> -->
+
+                <picture>
+                  <source media="(min-width: 601px)" srcset="./images/restaurants/seasons-bg.png" type="image/png">
+                  <source media="(max-width: 600px)" srcset="./images/restaurants/seasons-mob-bg.png" type="image/png">
+                  <img src="./images/restaurants/seasons-bg.png" alt="">
+                </picture>
+
               </div>
               <div class="resta__block-logo">
                 <img src="./images/restaurants/seasons.svg" alt="">
@@ -1926,7 +1959,8 @@
           Примерный длинный заголовок на обложке в три строки
         </p>
       </div>
-      <div class="btn btn--white-gray">
+      <!-- btn--white-gray -->
+      <div class="btn  btn--blur">
         Подробнее
       </div>
     </div>
@@ -1947,7 +1981,8 @@
           Примерный длинный заголовок на обложке в три строки
         </p>
       </div>
-      <div class="btn btn--white-gray">
+      <!-- btn--white-gray -->
+      <div class="btn  btn--blur">
         Подробнее
       </div>
     </div>
@@ -1968,7 +2003,8 @@
           Примерный длинный заголовок на обложке в три строки
         </p>
       </div>
-      <div class="btn btn--white-gray">
+      <!-- btn--white-gray -->
+      <div class="btn  btn--blur">
         Подробнее
       </div>
     </div>
@@ -1989,7 +2025,8 @@
           Примерный длинный заголовок на обложке в три строки
         </p>
       </div>
-      <div class="btn btn--white-gray">
+      <!-- btn--white-gray -->
+      <div class="btn  btn--blur">
         Подробнее
       </div>
     </div>
@@ -2010,7 +2047,8 @@
           Примерный длинный заголовок на обложке в три строки
         </p>
       </div>
-      <div class="btn btn--white-gray">
+      <!-- btn--white-gray -->
+      <div class="btn  btn--blur">
         Подробнее
       </div>
     </div>
@@ -2031,7 +2069,8 @@
           Примерный длинный заголовок на обложке в три строки
         </p>
       </div>
-      <div class="btn btn--white-gray">
+      <!-- btn--white-gray -->
+      <div class="btn  btn--blur">
         Подробнее
       </div>
     </div>
@@ -3471,10 +3510,8 @@
 
   </div>
 </footer>
-    <!-- Попапы -->
-    
-    <!-- Плашки -->
-    <!-- Плашка Куки -->
+<!-- Плашки -->
+<!-- Плашка Куки -->
 <div id="plate-cookie" class="plate plate--cookie">
   <div class="plate__body">
     <div class="plate__text">
@@ -3488,19 +3525,21 @@
     </button>
   </div>
 </div>
-  </div>
-  <!-- libs -->
-  <script src="./libs/gsap/gsap.min.js"></script>
-  <script src="./libs/gsap/ScrollToPlugin.min.js"></script>
-  <script src="./libs/gsap/ScrollTrigger.min.js"></script>
-  <script src="./libs/lenis/lenis.min.js"></script>
-  <script src="./libs/swiper/swiper-bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/transfer-elements@1.0.7/dist/transfer-elements.min.js"></script>
-  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
-  <script src="https://unpkg.com/split-type"></script>
-  <!-- scripts -->
-  <script src="./js/main.js"></script>
+</div>
+<!-- libs -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/transfer-elements@1.0.7/dist/transfer-elements.min.js"></script>
+<script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
+<script src="./libs/gsap/gsap.min.js"></script>
+<script src="./libs/gsap/ScrollToPlugin.min.js"></script>
+<script src="./libs/gsap/ScrollTrigger.min.js"></script>
+<script src="./libs/lenis/lenis.min.js"></script>
+<script src="./libs/swiper/swiper-bundle.min.js"></script>
+<script src="./libs/filter&sort/isotope.pkgd.min.js"></script>
+<!-- scripts -->
+<script src="./js/main.js"></script>
 </body>
 
 </html>

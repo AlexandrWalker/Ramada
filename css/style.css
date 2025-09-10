@@ -106,6 +106,14 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
   src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
@@ -116,14 +124,6 @@ img {
   font-display: swap;
   src: url("../fonts/Gotham-Thin.woff2") format("woff2"), url("../fonts/Gotham-Thin.woff") format("woff");
   font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 400;
   font-style: normal;
 }
 
@@ -162,14 +162,6 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: TTTricks;
-  font-display: swap;
   src: url("../fonts/TTTricks-ExtraBold.woff2") format("woff2"), url("../fonts/TTTricks-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -180,6 +172,14 @@ img {
   font-display: swap;
   src: url("../fonts/TTTricks-Regular.woff2") format("woff2"), url("../fonts/TTTricks-Regular.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TTTricks;
+  font-display: swap;
+  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -501,6 +501,8 @@ img {
   z-index: -1;
 }
 
+/* Стиль запуска анимации отрисовки фонового вектора */
+
 .animatedClass .component--one {
   stroke: var(--black);
   stroke-dasharray: 6000;
@@ -692,6 +694,8 @@ img {
 .share a i {
   --font-size: var(--news-share-size);
 }
+
+/* Стиль увеличения фона при наведении у кнопок */
 
 .scale {
   content: "";
@@ -1234,6 +1238,7 @@ body {
   --btn-color: var(--accent);
   --btn-background: var(--white-gray);
   --btn-border-color: var(--black-10);
+  --btn-padding-x: 4rem;
 }
 
 .btn--white-gray::after {
@@ -1434,6 +1439,15 @@ body {
   color: var(--accent);
 }
 
+.btn-arrow--down {
+  --btn-background: var(--accent);
+  --btn-border-radius: 50%;
+}
+
+.btn-arrow--down:hover {
+  border-color: var(--accent-30);
+}
+
 .btn-arrow--down:hover i {
   color: var(--white);
 }
@@ -1448,6 +1462,10 @@ body {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+}
+
+.btn-arrow--down .pulse {
+  z-index: 1;
 }
 
 .btn-play {
@@ -1706,6 +1724,7 @@ body {
   will-change: top, right, bottom, left;
 }
 
+.btn-arrow:hover .pulse::before,
 .btn:hover .pulse::before {
   -webkit-animation: pulse-round 2s linear infinite;
   animation: pulse-round 2s linear infinite;
@@ -1713,6 +1732,7 @@ body {
   animation-delay: 0s;
 }
 
+.btn-arrow:hover .pulse::after,
 .btn:hover .pulse::after {
   -webkit-animation: pulse-round 2s linear infinite;
   animation: pulse-round 2s linear infinite;
@@ -6997,6 +7017,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   color: var(--gray);
 }
 
+.events__other .general__head-title h5 {
+  text-transform: none;
+}
+
 .events__other-body {
   position: relative;
 }
@@ -7365,7 +7389,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   overflow: visible;
   position: sticky;
   top: calc(var(--header-height) + 3rem);
-  top: 200px;
+  top: 70px;
 }
 
 .hall__items {
@@ -7398,7 +7422,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   transition: all 0.5s ease;
   position: sticky;
   top: calc(var(--header-height) + 3rem);
-  top: 200px;
+  top: 70px;
 }
 
 .hall__item .over {
@@ -7437,7 +7461,14 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   text-align: center;
 }
 
-.hall__item-content h5 {
+.hall__item-suptitle p {
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.hall__item-title h5 {
   line-height: 120%;
   color: var(--accent);
 }
@@ -7454,7 +7485,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   aspect-ratio: 1006/936;
   position: sticky;
   top: calc(var(--header-height) + 3rem);
-  top: 200px;
+  top: 70px;
 }
 
 .hall__cover-img {
@@ -7902,6 +7933,8 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 .resta__block-img {
   width: 100%;
   height: 100%;
+  -webkit-transition: all 3s linear;
+  transition: all 3s linear;
   position: absolute;
   top: 0;
   right: 0;
@@ -7918,9 +7951,8 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   bottom: 0;
   left: 0;
   z-index: 1;
-  backdrop-filter: blur(7.35px);
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .resta__block:hover .resta__block-img::before {
@@ -7973,10 +8005,8 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .resta__block-content p {
-  opacity: 0;
-  pointer-events: none;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .resta__block:hover .resta__block-content p {
@@ -7985,10 +8015,9 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .resta__block-btn {
-  opacity: 0;
-  pointer-events: none;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  --btn-padding-x: 4rem;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
@@ -8178,6 +8207,28 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .reviews .swiper-pagination {
   margin-top: 4rem;
+}
+
+@media (min-width: 834px) {
+  .resta__block:hover .resta__block-img {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  .resta__block-img::before {
+    backdrop-filter: blur(7.35px);
+  }
+
+  .resta__block-content p {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .resta__block-btn {
+    opacity: 0;
+    pointer-events: none;
+  }
 }
 
 @media (max-width: 1440px) {
@@ -8403,6 +8454,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   .btn::after {
     right: calc(var(--btn-second-padding) * 2);
     left: calc(var(--btn-second-padding) * 2);
+  }
+
+  .btn--white-gray {
+    --btn-padding-x: 2.5rem;
   }
 
   .btn--icon::before {
@@ -8864,7 +8919,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   .menu__item-head h6,
   .menu__item-head a {
     font-size: 1.4rem;
-    line-height: 100%;
+    line-height: 2rem;
   }
 
   .menu__item-head i {
@@ -10577,7 +10632,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     --hall-item-width: 28.8rem;
   }
 
-  .hall__item-content h5 {
+  .hall__item-title h5 {
     font-size: 2.5rem;
   }
 
@@ -10771,6 +10826,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   .resta__block-content {
     gap: 2rem;
     max-width: 100%;
+  }
+
+  .resta__block-btn {
+    --btn-padding-x: 4.5rem;
+    font-size: 1.2rem;
   }
 
   .reviews {
@@ -10986,6 +11046,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .btn {
     --btn-padding-x: 1.5rem;
+  }
+
+  .btn--white-gray {
+    --btn-padding-x: 2.5rem;
   }
 
   .form-group:nth-child(1),
@@ -12343,7 +12407,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   }
 
   .hall__body {
-    top: 100px;
+    top: 30px;
   }
 
   .hall__items {
@@ -12353,7 +12417,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   .hall__item {
     padding: 2rem 2rem 3rem;
     gap: 2rem;
-    top: 100px;
+    top: 30px;
   }
 
   .hall__item-img {
@@ -12528,7 +12592,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   }
 
   .resta__title {
-    top: 50%;
+    top: 48%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -12547,6 +12611,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .resta__block-wrap {
     gap: 3rem;
+  }
+
+  .resta__block-btn {
+    --btn-padding-x: 4.5rem;
   }
 
   .reviews__head {
