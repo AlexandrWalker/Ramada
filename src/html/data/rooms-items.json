@@ -7,17 +7,17 @@
         "title": "Студия Бизнес 2 кровати",
         "text1": "до 3-х мест",
         "text2": "53 м²",
-        "link": "/"
+        "link": "/Ramada/studio.html"
     },
     {
         "category": "special",
         "img1": "./images/temp/rooms-item-2.png",
         "img2": "./images/temp/rooms-item-3.png",
         "img3": "./images/temp/rooms-item-1.png",
-        "title": "Студия Бизнес 2 кровати",
+        "title": "Студия Бизнес 2 кровати и два стола",
         "text1": "до 3-х мест",
         "text2": "53 м²",
-        "link": "/"
+        "link": "/Ramada/studio.html"
     },
     {
         "category": "wedding",
@@ -27,7 +27,7 @@
         "title": "Студия Делюкс с балконом",
         "text1": "до 3-х мест",
         "text2": "53 м²",
-        "link": "/"
+        "link": "/Ramada/studio.html"
     },
     {
         "category": "otdyh",
@@ -37,7 +37,7 @@
         "title": "Студия Делюкс с балконом",
         "text1": "до 3-х мест",
         "text2": "53 м²",
-        "link": "/"
+        "link": "/Ramada/studio.html"
     },
     {
         "category": "business",
@@ -47,7 +47,7 @@
         "title": "Студия Бизнес 2 кровати",
         "text1": "до 3-х мест",
         "text2": "53 м²",
-        "link": "/"
+        "link": "/Ramada/studio.html"
     },
     {
         "category": "special",
@@ -57,7 +57,7 @@
         "title": "Студия Бизнес 2 кровати",
         "text1": "до 3-х мест",
         "text2": "53 м²",
-        "link": "/"
+        "link": "/Ramada/studio.html"
     },
     {
         "category": "wedding",
@@ -67,7 +67,7 @@
         "title": "Студия Бизнес 2 кровати",
         "text1": "до 3-х мест",
         "text2": "53 м²",
-        "link": "/"
+        "link": "/Ramada/studio.html"
     },
     {
         "category": "otdyh",
@@ -77,7 +77,7 @@
         "title": "Студия Бизнес 2 кровати",
         "text1": "до 3-х мест",
         "text2": "53 м²",
-        "link": "/"
+        "link": "/Ramada/studio.html"
     },
     {
         "category": "business",
@@ -87,7 +87,7 @@
         "title": "Студия Делюкс с балконом",
         "text1": "до 3-х мест",
         "text2": "53 м²",
-        "link": "/"
+        "link": "/Ramada/studio.html"
     },
     {
         "category": "special",
@@ -97,7 +97,7 @@
         "title": "Студия Делюкс с балконом",
         "text1": "до 3-х мест",
         "text2": "53 м²",
-        "link": "/"
+        "link": "/Ramada/studio.html"
     },
     {
         "category": "wedding",
@@ -107,7 +107,7 @@
         "title": "Студия Бизнес 2 кровати",
         "text1": "до 3-х мест",
         "text2": "53 м²",
-        "link": "/"
+        "link": "/Ramada/studio.html"
     },
     {
         "category": "otdyh",
@@ -117,6 +117,6 @@
         "title": "Студия Бизнес 2 кровати",
         "text1": "до 3-х мест",
         "text2": "53 м²",
-        "link": "/"
+        "link": "/Ramada/studio.html"
     }
 ]

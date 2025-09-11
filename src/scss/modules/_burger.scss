@@ -4,6 +4,10 @@
 
   @include md {}
 
+  .icon-menu {
+    --font-size: 1.6rem;
+  }
+
   &::before {
 
     @include sm {

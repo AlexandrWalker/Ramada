@@ -337,6 +337,10 @@
           @include md {
             padding-top: 2rem;
           }
+
+          @include sm {
+            height: auto;
+          }
         }
       }
 
@@ -521,7 +525,8 @@
         display: grid;
         // grid-template-columns: repeat(9, 1fr);
         grid-template-columns: 1fr 1fr;
-        gap: 3rem;
+        // gap: 3rem;
+        gap: 3rem 10rem;
       }
 
       @include sm {
@@ -694,6 +699,7 @@
       font-weight: 700;
       font-size: 1.2rem;
       color: var(--accent);
+      white-space: nowrap;
     }
 
     &-icon {

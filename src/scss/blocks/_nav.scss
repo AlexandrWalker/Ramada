@@ -3,6 +3,10 @@
 .nav {
   border-bottom: 0.1rem solid var(--accent);
 
+  @include md {
+    border-bottom: none;
+  }
+
   @include sm {
     display: none;
   }
@@ -75,6 +79,7 @@
         &+.clone--text {
           clip-path: polygon(-100% -25%, 200% -25%, 200% 125%, -100% 125%);
           transform: translateY(0);
+          color: var(--black);
         }
       }
     }

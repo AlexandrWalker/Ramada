@@ -265,5 +265,26 @@
     .booking {
       background-color: var(--white);
     }
+
+    .studio .swiper-pagination {
+      display: none;
+
+      @include md {
+        display: flex;
+        position: absolute;
+        bottom: 3rem;
+      }
+    }
+
+    .studio .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+      background-color: var(--white);
+    }
+
+    .studio__slider--min {
+
+      @include sm {
+        display: none;
+      }
+    }
   }
 }

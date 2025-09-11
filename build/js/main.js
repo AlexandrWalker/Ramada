@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     spaceBetween: 0,
     loop: true,
     speed: 600,
-    autoHeight: true,
+    // autoHeight: true,
     effect: 'fade',
     fadeEffect: {
       crossFade: true
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     spaceBetween: 0,
     loop: true,
     speed: 1000,
-    autoHeight: true,
+    // autoHeight: true,
     effect: 'fade',
     fadeEffect: {
       crossFade: true
@@ -303,6 +303,10 @@ document.addEventListener('DOMContentLoaded', () => {
       prevEl: ".studio-button-prev",
       nextEl: ".studio-button-next",
     },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
   });
 
   const studioSliderMin = new Swiper(".studio__slider--min", {
@@ -362,8 +366,10 @@ document.addEventListener('DOMContentLoaded', () => {
     spaceBetween: 20,
     loop: true,
     speed: 1000,
+    // autoHeight: true,
     navigation: {
       nextEl: ".residence-button-next",
+      prevEl: ".residence-button-prev",
     },
     // effect: 'fade',
     // fadeEffect: {
@@ -371,6 +377,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // },
     mousewheel: false,
     grabCursor: false,
+    // breakpoints: {
+    //   601: {
+    //     autoHeight: false,
+    //   },
+    // },
   });
 
   const templateProducts = document.querySelectorAll('.template-product');

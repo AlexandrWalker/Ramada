@@ -2,6 +2,49 @@
 
 .press {
 
+  &-page {
+
+    .template {
+      padding-bottom: 5rem;
+
+      @include md {
+        padding-bottom: 3rem;
+      }
+
+      @include sm {
+        padding-bottom: 2rem;
+      }
+    }
+
+    .filter {
+      margin-bottom: 4rem;
+
+      @include md {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .border {
+
+      &::after {
+
+        @include sm {
+          border-width: 0.5rem;
+        }
+      }
+
+      &::before {
+
+        @include sm {
+          top: 1rem;
+          right: 1rem;
+          bottom: 1rem;
+          left: 1rem;
+        }
+      }
+    }
+  }
+
   &__items {
     display: flex;
     flex-direction: row;
@@ -88,8 +131,10 @@
     &-title {
       color: var(--accent);
       margin-bottom: 2rem;
+      text-transform: uppercase;
 
       h6 {
+        font-weight: 700;
         font-size: 2rem;
 
         @include md {
@@ -97,6 +142,7 @@
         }
 
         @include sm {
+          font-weight: 900;
           font-size: 1.2rem;
         }
       }

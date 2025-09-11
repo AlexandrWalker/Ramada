@@ -99,6 +99,11 @@
     a {
       font-weight: 700;
       color: var(--accent);
+      border-bottom: 0.1rem solid transparent;
+
+      &:hover {
+        border-color: var(--accent);
+      }
     }
   }
 
@@ -115,7 +120,8 @@
     position: sticky;
     // position: fixed;
     // top: 6rem;
-    top: calc(var(--header-height) + 1rem);
+    // top: calc(var(--header-height) + 1rem);
+    top: 1rem;
     // top: calc(var(--header-height) + 11.3rem);
     // right: var(--container-padding);
     // left: auto;

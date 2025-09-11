@@ -42,6 +42,8 @@
     height: 100%;
     padding-top: 4rem;
 
+    position: relative;
+
     @include md {
       padding-top: 3rem;
     }
@@ -66,6 +68,10 @@
     text-transform: uppercase;
 
     position: relative;
+
+    @include md {
+      gap: 1.5rem;
+    }
 
     &::before {
       content: "";
@@ -170,16 +176,32 @@
 
   &__plugin {
     // margin-bottom: calc(-6.5rem - var(--template-padding-b));
-    transform: translateY(calc(6.5rem + var(--template-padding-b)));
+    // transform: translateY(calc(6.5rem + var(--template-padding-b)));
+
+    width: 100%;
+    height: 13rem;
+
+    position: absolute;
+    right: 0;
+    bottom: -6.5rem;
+    left: 0;
 
     @include md {
       // margin-bottom: calc(-13rem - var(--template-padding-b));
-      transform: translateY(calc(13rem + var(--template-padding-b)));
+      // transform: translateY(calc(13rem + var(--template-padding-b)));
+
+      height: 21rem;
+
+      bottom: -13rem;
     }
 
     @include sm {
       // margin-bottom: calc(-9rem - var(--template-padding-b));
-      transform: translateY(calc(9rem + var(--template-padding-b)));
+      // transform: translateY(calc(9rem + var(--template-padding-b)));
+
+      height: 31rem;
+
+      bottom: -11rem;
     }
 
     img {
@@ -209,7 +231,7 @@
 
     @include sm {
       margin-bottom: 2rem;
-      min-height: 65rem;
+      min-height: 68rem;
     }
 
     .template {
@@ -266,8 +288,8 @@
         text-transform: uppercase;
         margin-bottom: 10rem;
 
-        @include md {
-          margin-bottom: 6rem;
+        @include sm {
+          margin-bottom: 14rem;
         }
       }
 
@@ -279,11 +301,11 @@
     margin-bottom: calc(6.5rem + 2rem);
 
     @include md {
-      margin-bottom: calc(13rem + 2rem);
+      margin-bottom: calc(13rem + 3rem);
     }
 
     @include sm {
-      margin-bottom: calc(9rem + 2rem);
+      margin-bottom: calc(9rem + 4rem);
     }
   }
 
@@ -377,6 +399,10 @@
               bottom: 1rem;
               left: 1rem;
             }
+
+            @include sm {
+              display: none;
+            }
           }
         }
       }
@@ -408,7 +434,7 @@
       display: grid;
       grid-template-columns: calc(50% - 15rem) 50%;
       grid-template-rows: auto 1fr;
-      gap: 3rem 15rem;
+      gap: 5rem 15rem;
       padding: 6rem 13rem;
       background-color: var(--white);
 
@@ -450,7 +476,7 @@
         margin-bottom: 3rem;
       }
 
-      @include md {
+      @include sm {
         margin-bottom: 2rem;
       }
 
@@ -474,11 +500,16 @@
     }
 
     &__body {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+
       grid-column: 1/2;
       grid-row: 2/3;
 
       @include md {
         order: 3;
+        gap: 0;
       }
 
       &-title {
@@ -576,6 +607,62 @@
         @include md {
           gap: 1rem;
         }
+
+        .btn {
+
+          @include md {
+            gap: 0.5rem;
+          }
+
+          .menu__foot-icon {
+            flex-shrink: 0;
+
+            @include md {
+              --menu-icon-width: 2.4rem;
+              --menu-icon-height: 2.4rem;
+            }
+
+            i {
+
+              @include md {
+                --font-size: 1.6rem;
+              }
+            }
+          }
+
+          .icon-play {
+            width: 1.5rem;
+            color: var(--accent);
+          }
+
+          &:hover {
+
+            .icon-play {
+              color: var(--white);
+            }
+
+            .menu__foot-icon {
+              border-color: var(--white);
+
+              @include md {
+                --menu-icon-width: 2.4rem;
+                --menu-icon-height: 2.4rem;
+              }
+
+              &::before {
+                background-color: var(--white);
+              }
+
+              &::after {
+                border-color: var(--gray-30);
+              }
+            }
+
+            .icon-3d {
+              color: var(--accent);
+            }
+          }
+        }
       }
 
       ul {
@@ -652,14 +739,14 @@
       &-item {
         height: 100%;
 
-        .sosnovyi-page & {
+        .sosnovyi-page .template-product--seating & {
 
           @include md {
             padding: 4rem 3rem 3rem 3rem;
           }
 
           @include sm {
-            padding: 0;
+            // padding: 0;
           }
         }
 
@@ -730,6 +817,10 @@
 
       &--big {
         margin-bottom: 2rem;
+
+        @include md {
+          margin-bottom: 3rem;
+        }
       }
 
       &--mini {
@@ -956,6 +1047,18 @@
           display: none;
         }
       }
+
+      .general__block-suptitle {
+        max-width: 30rem;
+
+        @include md {
+          max-width: 100%;
+        }
+
+        h5 {
+          line-height: 110%;
+        }
+      }
     }
 
     &__attr {
@@ -1007,6 +1110,10 @@
           grid-template-rows: 0fr;
           overflow: hidden;
           transition: all 0.3s ease;
+
+          .accordion-active + & {
+            grid-template-rows: 1fr;
+          }
         }
       }
 

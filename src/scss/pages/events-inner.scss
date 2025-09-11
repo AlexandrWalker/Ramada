@@ -105,12 +105,10 @@
         width: 100%;
       }
 
-      i {
-        --font-size: 5rem;
-
+      img {
         width: 5rem;
         height: 5rem;
-        background-color: var(--gray);
+        // background-color: var(--gray);
       }
     }
   }

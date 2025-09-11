@@ -68,6 +68,10 @@
       background-color: transparent;
       border: 0.1rem solid var(--gray-10);
 
+      @include md {
+        background-color: var(--white);
+      }
+
       &--slider {
         width: 100%;
         height: 100%;

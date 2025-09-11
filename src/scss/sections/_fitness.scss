@@ -107,8 +107,12 @@
     &-count {
       width: 5.5rem;
       padding: 1.5rem 0;
-      border-top: 0.1rem solid var(--white-50);
-      border-bottom: 0.1rem solid var(--white-50);
+      border-top: 0.1rem solid var(--white-o-50);
+      border-bottom: 0.1rem solid var(--white-o-50);
+
+      h6 {
+        font-weight: 700;
+      }
 
       @include md {
         padding: 1rem 0;
@@ -157,7 +161,19 @@
       .btn {
         opacity: 0;
         pointer-events: none;
-        transition: all 1s ease;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: var(--black);
+
+          &::before {
+            background-color: var(--white);
+          }
+
+          &::after {
+            border-color: var(--black-50);
+          }
+        }
 
         .fitness__item:hover & {
           opacity: 1;

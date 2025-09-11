@@ -53,7 +53,7 @@
 
     @include sm {
       width: 100%;
-      padding: 3rem 0 calc((100vw * 0.8) / 2) 0;
+      padding: 4rem 0 calc((100vw * 0.8) / 2) 0;
     }
 
     &::before {
@@ -128,6 +128,7 @@
 
       p {
         font-weight: 900;
+        letter-spacing: 0.1em;
       }
     }
 
@@ -141,6 +142,10 @@
 
     &-btn {
       --btn-color: var(--black);
+
+      @include md {
+        font-size: 1.2rem;
+      }
     }
   }
 
@@ -218,26 +223,26 @@
           visibility: hidden;
         }
       }
-    }
 
-    .swiper-slide-active {
-      opacity: 1;
-
-      &::before {
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      .border {
+      &.swiper-slide-active {
+        opacity: 1;
 
         &::before {
-          opacity: 1;
-          visibility: visible;
+          opacity: 0;
+          visibility: hidden;
         }
 
-        &::after {
-          opacity: 1;
-          visibility: visible;
+        .border {
+
+          &::before {
+            opacity: 1;
+            visibility: visible;
+          }
+
+          &::after {
+            opacity: 1;
+            visibility: visible;
+          }
         }
       }
     }
@@ -263,6 +268,7 @@
   }
 
   .general__head-title {
+    text-transform: none;
 
     @include sm {
       margin-bottom: 4rem;
@@ -280,10 +286,10 @@
 
     i {
       --swiper-font-size: 8.33rem;
-    }
 
-    @include md {
-      --swiper-font-size: 5.5rem;
+      @include md {
+        --swiper-font-size: 5.5rem;
+      }
     }
   }
 

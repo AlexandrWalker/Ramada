@@ -69,7 +69,7 @@
     --swiper-font-size: 4.34rem;
   }
 
-  &:not(.diversity-button-next):hover {
+  &:not(.diversity-button-next, .residence-button-next):hover {
     border-color: var(--accent);
     color: var(--white);
 

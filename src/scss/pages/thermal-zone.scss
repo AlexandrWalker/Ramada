@@ -7,5 +7,43 @@
     .booking {
       background-color: var(--white);
     }
+
+    .template-product {
+
+      @include md {
+        padding-bottom: 2rem;
+      }
+
+      @include sm {
+        padding-bottom: 1rem;
+      }
+    }
+
+    .template-product__body-items {
+      flex-direction: row;
+      gap: 3rem;
+
+      @include sm {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 0;
+        border-top: 0.1rem solid var(--gray-30);
+        border-bottom: 0.1rem solid var(--gray-30);
+      }
+    }
+
+    .template-product__body {
+
+      @include md {
+        gap: 3rem;
+      }
+    }
+
+    .callback {
+
+      @include md {
+        margin-top: 2rem;
+      }
+    }
   }
 }

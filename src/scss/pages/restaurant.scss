@@ -116,6 +116,7 @@
 }
 
 .concept {
+  overflow: visible;
 
   &__inner {
     display: grid;
@@ -130,10 +131,6 @@
 
   &__img {
 
-    img {
-      object-fit: contain;
-    }
-
     @include md {
       height: 40.7rem;
       grid-column: 1/6;
@@ -143,9 +140,11 @@
   &__block {
     padding-top: 4rem;
 
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
     @include md {
-      display: flex;
-      flex-direction: column;
       gap: 1.5rem;
       grid-column: 6/10;
       padding-top: 0;
@@ -153,10 +152,7 @@
   }
 
   &__head {
-
-    @include md {
-      color: var(--accent);
-    }
+    color: var(--accent);
 
     h3 {
 
@@ -198,6 +194,7 @@
 }
 
 .dishes {
+  background: transparent;
 
   &__inner {}
 

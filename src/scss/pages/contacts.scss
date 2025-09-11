@@ -16,6 +16,7 @@
     .template {
       background: transparent;
       z-index: 2;
+      padding-bottom: 5rem;
 
       @include md {
         padding-bottom: 3rem;
@@ -62,6 +63,10 @@
       border-bottom: 0.1rem solid var(--accent);
       width: fit-content;
       margin-bottom: 0.75rem;
+
+      &:hover {
+        border-color: transparent;
+      }
 
       @include md {
         font-size: 2rem;

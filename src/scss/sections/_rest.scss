@@ -10,7 +10,7 @@
   }
 
   @include sm {
-    padding-top: 3rem;
+    padding-top: 4rem;
   }
 
   &__inner {
@@ -43,7 +43,7 @@
     &::before {
       content: "";
       position: absolute;
-      top: -3rem;
+      top: -4rem;
       right: 0;
       left: calc(var(--container-padding) * -1);
       z-index: -1;

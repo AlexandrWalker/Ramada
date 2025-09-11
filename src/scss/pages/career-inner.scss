@@ -4,12 +4,28 @@
 
   &-inner-page {
 
+    .template {
+
+      @include md {
+        padding-bottom: 3rem;
+      }
+
+      @include sm {
+        padding-bottom: 2rem;
+      }
+    }
+
+    .career__inner {
+      max-width: 100rem;
+    }
+
     .career__body {
       margin-bottom: 3rem;
 
       @include md {
         gap: 2rem;
       }
+
       @include sm {
         margin-bottom: 2rem;
       }

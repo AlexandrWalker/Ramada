@@ -43,6 +43,7 @@
 
   @include sm {
     --btn-padding-x: 1.5rem;
+    --btn-padding-x: 2.8rem;
   }
 
   &::before {
@@ -91,6 +92,15 @@
   }
 
   &--accent {
+    // --btn-padding-x: 3.6rem;
+
+    &:not(.btn--icon) {
+      --btn-padding-x: 3.6rem;
+
+      @include md {
+        --btn-padding-x: 2.4rem;
+      }
+    }
 
     .offer__body-link:hover &,
     &:hover {
@@ -152,6 +162,15 @@
     --btn-background: var(--white-gray);
     --btn-border-color: var(--black-10);
 
+    &:not(.header__lang-btn) {
+      --btn-padding-x: 4rem;
+
+      @include md {
+        --btn-padding-x: 2.5rem;
+        font-size: 1.2rem;
+      }
+    }
+
     &::after {
       border-color: var(--black-30);
     }
@@ -193,6 +212,11 @@
     --btn-color: var(--black);
     --btn-background: var(--white);
     --btn-border-color: var(--white);
+    --btn-padding-x: 4rem;
+
+    @include md {
+      --btn-padding-x: 2.8rem;
+    }
 
     &::after {
       border-color: var(--accent-50);
@@ -254,6 +278,10 @@
   &--icon {
     --btn-width: var(--btn-height);
     --btn-border-radius: 50%;
+
+    @include sm {
+      --btn-padding-x: 1rem;
+    }
 
     &::before {
 
@@ -361,6 +389,18 @@
       left: calc(var(--btn-arrow-padding) * 2);
     }
 
+    &:hover {
+      border-color: var(--accent-30);
+
+      i {
+        color: var(--white);
+      }
+
+      .scale {
+        transform: scale(101%);
+      }
+    }
+
     i {
       --font-size: 8.33rem;
 
@@ -369,6 +409,13 @@
       @include md {
         --font-size: 5.5rem;
       }
+    }
+
+    .pulse {
+      z-index: 1;
+
+      --btn-background: var(--accent);
+      --btn-border-radius: 50%;
     }
 
     &--down {

@@ -6,12 +6,16 @@
   position: relative;
 
   @include md {
-    padding-bottom: 3rem;
+    padding-bottom: 4rem;
   }
 
   .general__head-title {
 
     h4 {
+
+      @include md {
+        font-size: 4rem;
+      }
 
       @include sm {
         font-size: 3rem;
@@ -554,12 +558,16 @@
         }
 
         .events__other-item:hover & {
-          --btn-border-color: var(--white-30);
 
-          backdrop-filter: blur(7.8px);
+          @include domd {
+            --btn-border-color: var(--white-30);
+
+            backdrop-filter: blur(7.8px);
+          }
 
           @include md {
-            --btn-color: var(--accent);
+            --btn-border-color: var(--gray-10);
+            color: var(--accent);
           }
         }
 
@@ -568,12 +576,14 @@
           transition-delay: 0.2s;
 
           .events__other-item:hover & {
-            background: rgba(255, 255, 255, 0.24);
-            border-color: transparent;
+
+            @include domd {
+              background: rgba(255, 255, 255, 0.24);
+              border-color: transparent;
+            }
 
             @include md {
-              background: transparent;
-              border-color: var(--black-30);
+              background: var(--white-gray);
             }
           }
         }
@@ -583,10 +593,13 @@
           transition-delay: 0.2s;
 
           .events__other-item:hover & {
-            border-color: var(--white-o-50);
+
+            @include domd {
+              border-color: var(--white-o-50);
+            }
 
             @include md {
-              border-color: var(--black);
+              border-color: var(--black-30);
             }
           }
         }
@@ -630,7 +643,8 @@
         border-color: var(--white-o-50);
 
         @include md {
-          color: inherit;
+          // color: inherit;
+          color: var(--accent);
           border-color: var(--accent);
         }
       }

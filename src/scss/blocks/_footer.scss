@@ -14,8 +14,8 @@
 
   margin-bottom: -100%;
   will-change: transform;
-  // transition: all 0s;
   transition: all 0.3s;
+  transition: all 0s;
 
   &::before {
     content: "";
@@ -80,6 +80,10 @@
 
     @include md {
       padding: 4rem var(--container-padding) 3rem var(--container-padding);
+    }
+
+    @include sm {
+      padding: 3rem var(--container-padding) 4rem var(--container-padding);
     }
 
     &.activated {
@@ -167,6 +171,10 @@
       @include sm {
         display: none;
       }
+    }
+
+    .menu__foot-body {
+      gap: 3rem 10rem;
     }
   }
 

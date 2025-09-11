@@ -13,7 +13,7 @@
 
   @include sm {
     background: unset;
-    padding: 3rem 0;
+    padding: 4rem 0;
   }
 
   .general__head {
@@ -28,6 +28,7 @@
 
       @include sm {
         width: 100%;
+        margin-bottom: 3rem;
       }
     }
 
@@ -160,8 +161,16 @@
       }
     }
 
+    &-text {
+      color: var(--gray);
+    }
+
     &-btn {
       z-index: 2;
+
+      @include md {
+        --btn-height: 5.6rem;
+      }
     }
   }
 

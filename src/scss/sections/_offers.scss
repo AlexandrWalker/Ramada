@@ -53,6 +53,11 @@
     gap: 4rem;
     padding: 2rem 2rem 4rem;
     background-color: var(--white);
+    border: 0.1rem solid transparent;
+
+    &:hover {
+      border-color: var(--accent);
+    }
 
     @include md {
       gap: 3rem;

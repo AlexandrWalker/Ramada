@@ -20,7 +20,7 @@
       }
     }
 
-    .general__block-btn {
+    .general__block-foot {
       max-width: 36rem;
 
       @include md {
@@ -37,6 +37,11 @@
     }
 
     .template-product {
+
+      // @include sm {
+      //   overflow: visible;
+      //   z-index: 3;
+      // }
 
       .template-box__inner {
 
@@ -75,6 +80,10 @@
       &__slider--big {
         aspect-ratio: 750/652;
 
+        @include md {
+          margin-bottom: 0;
+        }
+
         @include sm {
           margin-bottom: 1rem;
         }
@@ -109,6 +118,10 @@
 
   &__slider {
     width: 100%;
+
+    @include md {
+      overflow: visible;
+    }
   }
 
   &__slide {
@@ -116,6 +129,60 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2rem;
+
+    @include md {
+      position: relative;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    &.swiper-slide-active {
+      opacity: 1;
+    }
+
+    .template-product__slider--big {
+
+      @include md {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    .template-box__block {}
+
+    &-btns {
+      display: none;
+
+      @include md {
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .swiper-button-prev {
+        left: -15.5rem;
+
+        @include sm {
+          position: relative;
+          top: unset;
+          left: unset;
+          right: unset;
+          transform: none;
+        }
+      }
+
+      .swiper-button-next {
+        right: -15.5rem;
+
+        @include sm {
+          position: relative;
+          top: unset;
+          left: unset;
+          right: unset;
+          transform: none;
+        }
+      }
+    }
   }
 
   &__items {
@@ -245,15 +312,19 @@
   &-button-next {
     top: calc(50% - (31rem / 2));
 
-    @include sm {
-      display: none;
+    @include md {
+      top: 50%;
+
+      &:not(.swiper-button-alt) {
+        display: none;
+      }
     }
 
     &:hover {
 
-      i {
-        color: var(--white);
-      }
+      // i {
+      //   color: var(--white);
+      // }
     }
   }
 }

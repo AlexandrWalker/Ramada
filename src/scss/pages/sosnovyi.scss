@@ -4,7 +4,28 @@
 
   &-page {
 
+    .template-product__inner {
+
+      &:not(.template-product--seating .template-product__inner) {
+        gap: 4rem 15rem;
+
+        @include md {
+          gap: 3rem;
+        }
+      }
+    }
+
     .template-product__body {
+
+      &:not(.template-product--seating .template-product__body) {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+
+        @include md {
+          gap: 3rem;
+        }
+      }
 
       @include md {
         display: flex;
@@ -65,6 +86,7 @@
 
       @include sm {
         margin-bottom: 1.5rem;
+        max-width: 24rem;
       }
 
       h5 {
@@ -131,6 +153,7 @@
 
       h4 {
         color: var(--accent);
+        white-space: nowrap;
       }
     }
   }
@@ -172,7 +195,7 @@
       right: calc(var(--btn-arrow-width) / 2 * -1);
       left: unset;
 
-      @include sm {
+      @include xmd {
         display: none;
       }
 
@@ -205,7 +228,7 @@
     .swiper-pagination {
       display: none;
 
-      @include sm {
+      @include xmd {
         display: flex;
         margin: 1rem 0;
       }
