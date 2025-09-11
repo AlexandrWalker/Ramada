@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add((time) => {
-    lenis.raf(time * 500);
+    lenis.raf(time * 1000);
   });
   gsap.ticker.lagSmoothing(0);
 
@@ -255,6 +255,10 @@ document.addEventListener('DOMContentLoaded', () => {
       el: ".swiper-pagination",
       clickable: true,
     },
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
   });
 
   const bookingBodySlider = new Swiper(".booking__body--slider", {
@@ -382,14 +386,14 @@ document.addEventListener('DOMContentLoaded', () => {
           const templateProductSliderBig = templateProductSlider.querySelector('.template-product__slider--big');
           const templateProductSliderPrev = templateProductSlider.querySelector('.template-product-button-prev');
           const templateProductSliderNext = templateProductSlider.querySelector('.template-product-button-next');
-          templateSlider(templateProductSliderMini, templateProductSliderBig);
+          templateSlider(templateProductSliderMini, templateProductSliderBig, templateProductSliderPrev, templateProductSliderNext);
         });
       } else {
         const templateProductSliderMini = templateProduct.querySelector('.template-product__slider--mini');
         const templateProductSliderBig = templateProduct.querySelector('.template-product__slider--big');
         const templateProductSliderPrev = templateProduct.querySelector('.template-product-button-prev');
         const templateProductSliderNext = templateProduct.querySelector('.template-product-button-next');
-        templateSlider(templateProductSliderMini, templateProductSliderBig);
+        templateSlider(templateProductSliderMini, templateProductSliderBig, templateProductSliderPrev, templateProductSliderNext);
       }
 
       function templateSlider(slider1, slider2, prev, next) {
@@ -1322,26 +1326,54 @@ document.addEventListener('DOMContentLoaded', () => {
       const line = new SplitType(titleLine, { types: 'words, lines' });
     });
 
-    // const layoutsDown = document.querySelectorAll('.layoutDown');
-    // if (layoutsDown.length > 0) {
-    //   layoutsDown.forEach(layoutDown => {
+    // const layoutsUp = document.querySelectorAll('.layoutUp');
+    // if (layoutsUp.length > 0) {
+    //   layoutsUp.forEach(layoutUp => {
 
-    //     const hall = document.querySelector('.hall');
     //     const tl = gsap.timeline();
+    //     const hall = document.querySelector('.hall');
+    //     const main = document.querySelector('.main');
 
-    //     tl.fromTo(layoutDown, {
-    //       y: '0',
-    //     }, {
-    //       y: '-100%',
-    //       scrollTrigger: {
-    //         animation: tl,
-    //         trigger: hall,
-    //         start: `top bottom`,
-    //         end: `bottom`,
-    //         scrub: true,
-    //         pin: true,
-    //         invalidateOnRefresh: true,
-    //       },
+    //     // const layoutUpHeight = layoutUp.querySelector('.resta__block').offsetHeight;
+    //     const layoutUpHeight = layoutUp.offsetHeight;
+
+    //     tl.fromTo(layoutUp, { y: 0, }, { y: '-100%' })
+    //     ScrollTrigger.create({
+    //       animation: tl,
+    //       trigger: layoutUp,
+    //       start: `top bottom`,
+    //       // end: () => main.offsetWidth / 2,
+    //       // end: `bottom bottom`,
+    //       end: () => `+=${layoutUpHeight}`,
+    //       scrub: true,
+    //       // pin: true,
+    //       markers: true
+    //     });
+    //   });
+    // }
+
+    // const layoutsUp = document.querySelectorAll('.layoutUp');
+    // if (layoutsUp.length > 0) {
+    //   layoutsUp.forEach(layoutUp => {
+
+    //     const tl = gsap.timeline();
+    //     const hall = document.querySelector('.hall');
+    //     const main = document.querySelector('.main');
+
+    //     // const layoutUpHeight = layoutUp.querySelector('.resta__block').offsetHeight;
+    //     const layoutUpHeight = layoutUp.offsetHeight;
+
+    //     tl.from(layoutUp, { y: '150%' })
+    //     ScrollTrigger.create({
+    //       animation: tl,
+    //       trigger: layoutUp,
+    //       start: `-200% bottom`,
+    //       // end: () => main.offsetWidth / 2,
+    //       end: `-100% bottom`,
+    //       // end: () => `+=${layoutUpHeight}`,
+    //       scrub: true,
+    //       // pin: true,
+    //       markers: true
     //     });
     //   });
     // }
@@ -1472,7 +1504,7 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     }
     gsap.registerPlugin(ScrollTrigger);
-    
+
   });
 
   window.addEventListener('resize', function () { ScrollTrigger.refresh() });
