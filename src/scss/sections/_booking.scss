@@ -75,15 +75,15 @@
 
       &-slider {
 
-        @include md {
-          height: 13.6rem;
-          min-height: 13.6rem;
-        }
+        // @include md {
+        //   height: 13.6rem;
+        //   min-height: 13.6rem;
+        // }
 
-        @include sm {
-          height: 11.1rem;
-          min-height: 11.1rem;
-        }
+        // @include sm {
+        //   height: 11.1rem;
+        //   min-height: 11.1rem;
+        // }
       }
 
       &-body {
@@ -107,6 +107,13 @@
 
   [class^=swiper-button-],
   [class*=" swiper-button-"] {
+    --swiper-button-bg: var(--white-o-50);
+
+    backdrop-filter: blur(20.75px);
+
+    &::before {
+      border-color: var(--accent-50);
+    }
 
     @include md {
       display: none;

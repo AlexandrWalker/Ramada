@@ -124,6 +124,33 @@
 
     &-btn {
       width: 100%;
+
+      .icon-play {
+        width: 1.5rem;
+        color: var(--accent);
+      }
+
+      &:hover {
+        .icon-play {
+          color: var(--white);
+        }
+
+        .menu__foot-icon {
+          border-color: var(--white);
+
+          &::before {
+            background-color: var(--white);
+          }
+
+          &::after {
+            border-color: var(--gray-30);
+          }
+        }
+
+        .icon-3d {
+          color: var(--accent);
+        }
+      }
     }
   }
 

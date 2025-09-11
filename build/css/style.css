@@ -114,16 +114,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Gotham-Thin.woff2") format("woff2"), url("../fonts/Gotham-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Thin.woff2") format("woff2"), url("../fonts/Gotham-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -170,16 +170,16 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Regular.woff2") format("woff2"), url("../fonts/TTTricks-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/TTTricks-Regular.woff2") format("woff2"), url("../fonts/TTTricks-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -483,6 +483,8 @@ img {
   min-width: 100%;
   height: 120% !important;
   margin-top: -10%;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
 /* Стиль для зарисовки компонента */
@@ -3299,6 +3301,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
 }
 
 .nav a .clone--text {
@@ -4925,6 +4928,52 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   position: relative;
 }
 
+.programm__item-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.programm__item-chevron {
+  display: none;
+}
+
+.accordion-active .programm__item-chevron {
+  background-color: var(--gray);
+}
+
+.programm__item-chevron i {
+  --font-size: 1.2rem;
+  color: var(--white);
+}
+
+.programm__item-chevron i::before {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.accordion-active .programm__item-chevron i::before {
+  -webkit-transform: scale(-1, -1);
+  -ms-transform: scale(-1, -1);
+  transform: scale(-1, -1);
+}
+
+.programm__item-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 3rem;
+}
+
 .programm__item-level {
   font-family: var(--second-family);
   font-weight: 300;
@@ -5010,6 +5059,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .programm__content ul {
   margin-bottom: 2rem;
+}
+
+.programm__content a {
+  color: var(--accent);
 }
 
 .news__inner {
@@ -5856,8 +5909,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .rooms__item-slider {
   width: 100%;
-  height: 100%;
+  height: auto;
   aspect-ratio: 453/293;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .rooms__item--slider {
@@ -6367,6 +6422,31 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   width: 100%;
 }
 
+.studio__content-btn .icon-play {
+  width: 1.5rem;
+  color: var(--accent);
+}
+
+.studio__content-btn:hover .icon-play {
+  color: var(--white);
+}
+
+.studio__content-btn:hover .menu__foot-icon {
+  border-color: var(--white);
+}
+
+.studio__content-btn:hover .menu__foot-icon::before {
+  background-color: var(--white);
+}
+
+.studio__content-btn:hover .menu__foot-icon::after {
+  border-color: var(--gray-30);
+}
+
+.studio__content-btn:hover .icon-3d {
+  color: var(--accent);
+}
+
 .studio__terms {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6455,6 +6535,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   left: 5rem;
 }
 
+.thermal-zone-page .booking {
+  background-color: var(--white);
+}
+
 /* Sections */
 
 .booking {
@@ -6496,6 +6580,17 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .booking .rooms__item-body .btn {
   --btn-padding-x: 3.5rem;
+}
+
+.booking [class^=swiper-button-],
+.booking [class*=" swiper-button-"] {
+  --swiper-button-bg: var(--white-o-50);
+  backdrop-filter: blur(20.75px);
+}
+
+.booking [class^=swiper-button-]::before,
+.booking [class*=" swiper-button-"]::before {
+  border-color: var(--accent-50);
 }
 
 .diversity {
@@ -9691,6 +9786,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     padding: 3.7rem 2rem 2rem;
   }
 
+  .programm__item-wrap {
+    gap: 1.5rem;
+  }
+
   .programm__item-level {
     font-size: 1.2rem;
     top: -0.6rem;
@@ -10379,11 +10478,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     font-size: 3.5rem;
   }
 
-  .booking .rooms__item-slider {
-    height: 13.6rem;
-    min-height: 13.6rem;
-  }
-
   .booking [class^=swiper-button-],
   .booking [class*=" swiper-button-"] {
     display: none;
@@ -11056,11 +11150,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .leaf--5 {
     display: block;
-  }
-
-  [data-animation=parallax-img] img {
-    height: 100% !important;
-    margin-top: unset;
   }
 
   .breadcrumbs__inner {
@@ -11784,13 +11873,45 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .programm__item {
     width: 100%;
-    padding: 2rem 2rem 3rem;
+    padding: 2rem 2rem 1.5rem;
     min-height: unset;
   }
 
   .programm__item-content {
+    gap: 0;
     border: 0;
     padding: 0;
+  }
+
+  .programm__item-head {
+    position: relative;
+  }
+
+  .programm__item-chevron {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background-color: var(--accent);
+    position: absolute;
+    right: 0;
+    bottom: 0.5rem;
+  }
+
+  .accordion-active + .programm__item-body {
+    padding: 1.5rem 0;
+  }
+
+  .programm__item-wrap {
+    overflow: hidden;
   }
 
   .programm__item-level {
@@ -11800,6 +11921,16 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     transform: unset;
     padding: 0;
     background: none;
+  }
+
+  .programm__item-title {
+    color: inherit;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+
+  .accordion-active .programm__item-title {
+    color: var(--accent);
   }
 
   .programm__ps {
@@ -12244,11 +12375,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     display: -ms-flexbox;
     display: flex;
     width: 100%;
-  }
-
-  .booking .rooms__item-slider {
-    height: 11.1rem;
-    min-height: 11.1rem;
   }
 
   .booking .rooms__item-title h5 {

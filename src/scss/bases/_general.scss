@@ -396,9 +396,11 @@
     height: 120% !important;
     margin-top: -10%;
 
+    object-fit: contain;
+
     @include sm {
-      height: 100% !important;
-      margin-top: unset;
+      // height: 100% !important;
+      // margin-top: unset;
     }
   }
 }
