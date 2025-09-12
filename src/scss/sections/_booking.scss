@@ -113,7 +113,7 @@
   [class*=" swiper-button-"] {
     --swiper-button-bg: var(--white-o-50);
 
-    backdrop-filter: blur(20.75px);
+    backdrop-filter: blur(2.1rem);
 
     &::before {
       border-color: var(--accent-50);

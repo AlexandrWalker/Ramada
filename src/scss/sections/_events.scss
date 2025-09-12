@@ -562,7 +562,7 @@
           @include domd {
             --btn-border-color: var(--white-30);
 
-            backdrop-filter: blur(7.8px);
+            backdrop-filter: blur(0.8rem);
           }
 
           @include md {

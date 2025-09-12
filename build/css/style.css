@@ -90,14 +90,6 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
@@ -116,6 +108,14 @@ img {
   font-display: swap;
   src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
   font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -991,7 +991,7 @@ sup {
 .swiper-button-alt::before {
   border-color: var(--white);
   background-color: var(--white-o-50);
-  backdrop-filter: blur(20.75px);
+  backdrop-filter: blur(2.1rem);
 }
 
 /* Прозрачная кнопка слайдера */
@@ -1426,11 +1426,11 @@ body {
   --btn-color: var(--white);
   --btn-background: rgba(255, 255, 255, 0.24);
   --btn-border-color: var(--white-30);
-  backdrop-filter: blur(7.8px);
+  backdrop-filter: blur(0.8rem);
 }
 
 .btn--blur::before {
-  backdrop-filter: blur(7.8px);
+  backdrop-filter: blur(0.8rem);
 }
 
 .btn--blur::after {
@@ -4836,6 +4836,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   -ms-flex-direction: column;
   flex-direction: column;
   gap: 3rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  z-index: 2;
 }
 
 .contacts__item {
@@ -4940,9 +4945,84 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .contacts__map {
   position: absolute;
-  top: -13.2rem;
+  top: -18.2rem;
   bottom: 0;
-  z-index: -1;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.contacts__map-pic {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.contacts__map-items {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.contacts__map-item {
+  display: block;
+  width: 5.6rem;
+  height: 5.6rem;
+  -webkit-transition: all 1s linear;
+  transition: all 1s linear;
+  position: absolute;
+}
+
+.contacts__map-item:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.contacts__map-item--retro {
+  top: 1.6rem;
+  right: 77.2rem;
+}
+
+.contacts__map-item--leto {
+  top: 39.3rem;
+  right: 102rem;
+}
+
+.contacts__map-item--ramada {
+  top: 35.5rem;
+  right: 108.6rem;
+}
+
+.contacts__map-item--dendropark {
+  top: 55.5rem;
+  right: 108.5rem;
+}
+
+.contacts__map-item--square {
+  top: 62.2rem;
+  right: 62.3rem;
+}
+
+.contacts__map-item--delph {
+  top: 62.1rem;
+  right: 87.3rem;
+}
+
+.contacts__map-item--zoo {
+  top: 68.9rem;
+  right: 89rem;
+}
+
+.contacts__map-item--metro {
+  top: 63.3rem;
+  right: 35.6rem;
 }
 
 .route {
@@ -6972,7 +7052,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 .booking [class^=swiper-button-],
 .booking [class*=" swiper-button-"] {
   --swiper-button-bg: var(--white-o-50);
-  backdrop-filter: blur(20.75px);
+  backdrop-filter: blur(2.1rem);
 }
 
 .booking [class^=swiper-button-]::before,
@@ -8759,7 +8839,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 @media (min-width: 835px) {
   .events__other-item:hover .events__other-content .btn {
     --btn-border-color: var(--white-30);
-    backdrop-filter: blur(7.8px);
+    backdrop-filter: blur(0.8rem);
   }
 
   .events__other-item:hover .events__other-content .btn::before {
@@ -8778,7 +8858,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   }
 
   .resta__block-img::before {
-    backdrop-filter: blur(7.35px);
+    backdrop-filter: blur(0.7rem);
   }
 
   .resta__block-content p {
@@ -10277,6 +10357,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     width: calc(100% + var(--container-padding) * 2);
     margin-left: calc(var(--container-padding) * -1);
     position: static;
+  }
+
+  .contacts__map-items {
+    display: none;
   }
 
   .route {

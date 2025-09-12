@@ -264,10 +264,10 @@
     --btn-background: rgba(255, 255, 255, 0.24);
     --btn-border-color: var(--white-30);
 
-    backdrop-filter: blur(7.8px);
+    backdrop-filter: blur(0.8rem);
 
     &::before {
-      backdrop-filter: blur(7.8px);
+      backdrop-filter: blur(0.8rem);
     }
 
     &::after {

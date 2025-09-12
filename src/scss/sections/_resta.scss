@@ -128,7 +128,7 @@
         transition: all 0.5s ease;
 
         @include domd {
-          backdrop-filter: blur(7.35px);
+          backdrop-filter: blur(0.7rem);
         }
 
         .resta__block:hover & {
