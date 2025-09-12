@@ -814,7 +814,7 @@
           <form class="form" action="#">
             <div class="form__inner">
               <div class="form-group">
-                <input id="form_name" class="form-input" type="text" required>
+                <input id="form_name" class="form-input invalid" type="text" required>
                 <label for="form_name" class="form-label">
                   Ваше имя*
                 </label>
@@ -846,14 +846,33 @@
                   Комментарий
                 </label>
               </div>
-              <!-- @ @if(form-file === 'true'){
-              <div class="form-group">
-                <textarea id="form_comment" class="form-textarea" name="comment"></textarea>
-                <label for="form_comment" class="form-label">
-                  Комментарий
+              
+              <div class="form-group form-group--file">
+                <input id="form_file" class="form-file" type="file">
+                <label for="form_file" class="form-label">
+                  <i class="icon-link">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M8.60053 5.02291L9.99264 3.63079C10.2799 3.34329 10.6209 3.1152 10.9963 2.95954C11.3718 2.80389 11.7742 2.72373 12.1806 2.72363C12.587 2.72354 12.9894 2.80351 13.3649 2.95899C13.7404 3.11447 14.0815 3.3424 14.3689 3.62977C14.6563 3.91714 14.8842 4.25831 15.0397 4.63379C15.1951 5.00927 15.2751 5.4117 15.275 5.8181C15.2749 6.2245 15.1948 6.6269 15.0391 7.00231C14.8835 7.37772 14.6554 7.71878 14.3679 8.00601L12.3791 9.99475C12.0918 10.282 11.7508 10.5099 11.3754 10.6654C11.0001 10.8209 10.5978 10.9009 10.1915 10.9009C9.78524 10.9009 9.38294 10.8209 9.00759 10.6654C8.63224 10.5099 8.29119 10.282 8.00391 9.99475"
+                        stroke="#1A1919" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M9.39715 12.9776L8.00504 14.3697C7.7178 14.6572 7.37674 14.8853 7.00133 15.041C6.62592 15.1966 6.22352 15.2768 5.81713 15.2769C5.41073 15.277 5.00829 15.197 4.63281 15.0415C4.25733 14.886 3.91616 14.6581 3.62879 14.3707C3.34143 14.0834 3.11349 13.7422 2.95802 13.3667C2.80254 12.9912 2.72256 12.5888 2.72266 12.1824C2.72275 11.776 2.80291 11.3736 2.95857 10.9982C3.11422 10.6228 3.34231 10.2817 3.62981 9.99449L5.61855 8.00575C5.90583 7.71847 6.24688 7.49058 6.62224 7.33511C6.99759 7.17963 7.39989 7.09961 7.80616 7.09961C8.21244 7.09961 8.61474 7.17963 8.99009 7.33511C9.36544 7.49058 9.70649 7.71847 9.99378 8.00575"
+                        stroke="#1A1919" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </i>
+                  <span>
+                    Прикрепить резюме
+                  </span>
+                  <p>
+                    (не более 20 мегабайт)
+                  </p>
                 </label>
+                <button id="clear" class="form-file--clear">
+                  Х
+                  <span>Удалить</span>
+                </button>
               </div>
-              } -->
+              
             </div>
             <div class="form-foot">
               <button class="form-btn btn btn--accent" type="button">

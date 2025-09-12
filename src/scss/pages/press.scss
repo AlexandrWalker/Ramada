@@ -17,10 +17,10 @@
     }
 
     .filter {
-      margin-bottom: 4rem;
+      margin-bottom: 0;
 
       @include md {
-        margin-bottom: 2rem;
+        margin-bottom: 0;
       }
     }
 
@@ -42,6 +42,21 @@
           left: 1rem;
         }
       }
+    }
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 4rem;
+
+    @include md {
+      margin-bottom: 2rem;
+
+      flex-wrap: wrap;
+      gap: 1rem;
     }
   }
 
