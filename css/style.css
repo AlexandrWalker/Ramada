@@ -90,6 +90,30 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
   src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
@@ -136,26 +160,10 @@ img {
 }
 
 @font-face {
-  font-family: Gotham;
-  font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
   font-family: TTTricks;
   font-display: swap;
   src: url("../fonts/TTTricks-ExtraBold.woff2") format("woff2"), url("../fonts/TTTricks-ExtraBold.woff") format("woff");
   font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
-  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
-  font-weight: 300;
   font-style: normal;
 }
 
@@ -171,14 +179,6 @@ img {
   font-family: TTTricks;
   font-display: swap;
   src: url("../fonts/TTTricks-Regular.woff2") format("woff2"), url("../fonts/TTTricks-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -671,6 +671,72 @@ img {
 
 .filter__item:last-child::after {
   display: none;
+}
+
+/* Стили сортировки */
+
+.sort {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sort__text {
+  font-weight: 350;
+  font-size: 2rem;
+  line-height: 120%;
+  color: var(--gray);
+}
+
+.sort__text div {
+  display: inline;
+}
+
+.sort__text div::before {
+  content: attr(data-text);
+}
+
+.sort__text span {
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.sort__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+
+.sort__icon i {
+  --font-size: 3rem;
+  color: var(--accent);
+  width: 1rem;
+  height: 1rem;
+}
+
+.sort__icon i:first-child {
+  -webkit-transform: scale(-1, -1);
+  -ms-transform: scale(-1, -1);
+  transform: scale(-1, -1);
 }
 
 /* Стили для блока Поделиться */
@@ -1623,6 +1689,18 @@ body {
   width: calc(50% - 1rem);
 }
 
+.form-group--file {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1rem;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
 .form-input {
   width: 100%;
   padding: 2rem 2.7rem 1.8rem;
@@ -1634,7 +1712,12 @@ body {
   color: var(--black);
 }
 
-.form-input:hover + .form-label {
+.form-input:not(.invalid):hover + .form-label,
+.form-input.filled + .form-label {
+  color: var(--gray);
+}
+
+.form-input.filled:not(:focus, :hover, :target) {
   color: var(--gray);
 }
 
@@ -1666,6 +1749,69 @@ body {
 
 .form-textarea:hover + .form-label {
   color: var(--gray);
+}
+
+.form-textarea.filled:not(:focus, :hover, :target) {
+  color: var(--gray);
+}
+
+.form-file {
+  display: none;
+}
+
+.form-file + .form-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.7rem;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0;
+  color: inherit;
+  position: static;
+}
+
+.form-file + .form-label:hover span {
+  color: inherit;
+  text-decoration: none;
+}
+
+.form-file + .form-label span {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.form-file + .form-label p {
+  font-size: 1.4rem;
+}
+
+.form-file + .form-label i {
+  --font-size: 3.4rem;
+  background-color: var(--gray-10);
+  border-radius: 50%;
+}
+
+.form-file + .form-label i svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.form-file--clear {
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: var(--black);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.form-file--clear:hover {
+  color: var(--accent);
+  text-decoration: underline;
 }
 
 .form-error {
@@ -3598,17 +3744,24 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 .template__plugin {
   width: 100%;
   height: 13rem;
+  height: auto;
+  aspect-ratio: 1520/130;
   position: absolute;
   right: 0;
   bottom: -6.5rem;
   left: 0;
 }
 
+.template:not(.template--plugin) .template__plugin {
+  position: static;
+}
+
 .template__plugin img {
   width: 100%;
-  height: auto;
-  -o-object-fit: contain;
-  object-fit: contain;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  aspect-ratio: 1520/130;
 }
 
 .template--primary {
@@ -5435,6 +5588,19 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .press-page .filter {
+  margin-bottom: 0;
+}
+
+.press__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-bottom: 4rem;
 }
 
@@ -8822,6 +8988,14 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     color: var(--black);
   }
 
+  .sort {
+    gap: 0;
+  }
+
+  .sort__text {
+    font-size: 1.4rem;
+  }
+
   .share a {
     --news-share-size: 5rem;
   }
@@ -8920,8 +9094,33 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     width: calc(50% - 0.5rem);
   }
 
+  .form-group--file {
+    margin-top: -1rem;
+  }
+
   .form-input {
     padding: 1.6rem 2.7rem 1.6rem;
+  }
+
+  .form-file + .form-label {
+    font-size: 1.2rem;
+  }
+
+  .form-file + .form-label p {
+    font-size: 1.2rem;
+  }
+
+  .form-file + .form-label i {
+    --font-size: 2.4rem;
+  }
+
+  .form-file + .form-label i svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .form-file--clear {
+    font-size: 1.2rem;
   }
 
   .form-foot {
@@ -9554,7 +9753,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .template__plugin {
     height: 21rem;
+    height: auto;
+    aspect-ratio: 674/210;
     bottom: -13rem;
+  }
+
+  .template__plugin img {
+    aspect-ratio: 674/210;
   }
 
   .template--primary {
@@ -10258,7 +10463,14 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   }
 
   .press-page .filter {
+    margin-bottom: 0;
+  }
+
+  .press__head {
     margin-bottom: 2rem;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
   .press__item {
@@ -11612,8 +11824,26 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 2rem;
   }
 
+  .filter__items {
+    gap: 0.5rem;
+  }
+
   .filter__item {
+    gap: 0.5rem;
     font-size: 1rem;
+  }
+
+  .sort__text {
+    font-size: 1.2rem;
+  }
+
+  .sort__text div::before {
+    content: attr(data-text-mob);
+  }
+
+  .sort__icon i {
+    --font-size: 2rem;
+    width: 0.7rem;
   }
 
   sup {
@@ -11928,7 +12158,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .template__plugin {
     height: 31rem;
+    height: auto;
+    aspect-ratio: 353/309;
     bottom: -11rem;
+  }
+
+  .template__plugin img {
+    aspect-ratio: 353/309;
   }
 
   .template--primary {
