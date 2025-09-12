@@ -90,8 +90,8 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -106,8 +106,8 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -5907,6 +5907,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .dishes {
   background: transparent;
+  padding-bottom: 0;
 }
 
 .dishes__items {
@@ -10623,6 +10624,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     height: 33rem;
   }
 
+  .restaurant-page .events {
+    padding-top: 4rem;
+  }
+
   .concept__inner {
     grid-template-columns: repeat(9, 1fr);
     gap: 2rem;
@@ -12886,6 +12891,74 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     height: -moz-fit-content;
     height: fit-content;
     position: static;
+  }
+
+  .restaurant-page .events {
+    padding-top: 3rem;
+  }
+
+  .concept__inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .concept__block {
+    gap: 2rem;
+  }
+
+  .concept__head h3 {
+    font-size: 3.5rem;
+  }
+
+  .concept__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .concept .general__block-title {
+    padding: 2rem 0;
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+
+  .concept .general__block-subtext {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+
+  .concept .general__block-text {
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+  }
+
+  .dishes__gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .dishes__gallery-item:nth-child(2) {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+
+  .dishes__gallery-item:nth-child(3) {
+    grid-column: 2/3;
+    grid-row: 3/4;
   }
 
   .equipment {

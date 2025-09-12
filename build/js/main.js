@@ -782,6 +782,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     );
   }
+  if (document.querySelector('.concept')) {
+    new TransferElements(
+      {
+        sourceElement: document.querySelector('.concept__img'),
+        breakpoints: {
+          600: {
+            targetElement: document.querySelector('.concept__body')
+          }
+        },
+      }
+    );
+  }
 
 
 
