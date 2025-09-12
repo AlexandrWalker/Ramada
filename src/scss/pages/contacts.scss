@@ -171,6 +171,10 @@
       right: 0;
       left: 0;
       z-index: -2;
+
+      @include md {
+        position: static;
+      }
     }
 
     &-items {
