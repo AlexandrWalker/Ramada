@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
-    speed: 1000,
+    speed: 600,
     // autoHeight: true,
     effect: 'fade',
     fadeEffect: {
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     spaceBetween: 20,
     loop: true,
     centeredSlides: true,
-    speed: 1000,
+    speed: 600,
     mousewheel: {
       forceToAxis: true,
     },
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 1,
     spaceBetween: 20,
     loop: true,
-    speed: 1000,
+    speed: 600,
     mousewheel: {
       forceToAxis: true,
     },
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 1,
     spaceBetween: 10,
     loop: true,
-    speed: 1000,
+    speed: 600,
     mousewheel: {
       forceToAxis: true,
     },
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 'auto',
     spaceBetween: 10,
     loop: true,
-    speed: 1000,
+    speed: 600,
     mousewheel: {
       forceToAxis: true,
     },
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 1,
     spaceBetween: 10,
     loop: true,
-    speed: 1000,
+    speed: 600,
     mousewheel: {
       forceToAxis: true,
     },
@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerGroup: 1,
     slidesPerView: 1,
     spaceBetween: 10,
-    speed: 1000,
+    speed: 600,
     loop: true,
     mousewheel: {
       forceToAxis: true,
@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerGroup: 1,
     slidesPerView: 1,
     spaceBetween: 0,
-    speed: 1000,
+    speed: 600,
     loop: true,
     grabCursor: true,
     mousewheel: {
@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 'auto',
     spaceBetween: 10,
     loop: true,
-    speed: 1000,
+    speed: 600,
     mousewheel: {
       forceToAxis: true,
     },
@@ -295,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 1,
     spaceBetween: 0,
     // loop: true,
-    speed: 1000,
+    speed: 600,
     mousewheel: {
       forceToAxis: true,
     },
@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
     spaceBetween: 10,
     direction: "horizontal",
     // loop: true,
-    speed: 1000,
+    speed: 600,
     watchSlidesProgress: true,
     grabCursor: false,
     mousewheel: false,
@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 1,
     spaceBetween: 10,
     loop: true,
-    speed: 1000,
+    speed: 600,
     mousewheel: {
       forceToAxis: true,
     },
@@ -365,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 1,
     spaceBetween: 20,
     loop: true,
-    speed: 1000,
+    speed: 600,
     // autoHeight: true,
     navigation: {
       nextEl: ".residence-button-next",
@@ -411,7 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const templateSliderMini = new Swiper(slider1, {
           slidesPerView: 3,
           spaceBetween: 10,
-          speed: 1000,
+          speed: 600,
           loop: true,
           grabCursor: false,
           mousewheel: false,
@@ -426,7 +426,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const templateSliderBig = new Swiper(slider2, {
           slidesPerView: 1,
           spaceBetween: 0,
-          speed: 1000,
+          speed: 600,
           loop: true,
           grabCursor: true,
           mousewheel: {
@@ -498,7 +498,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 1,
     spaceBetween: 20,
     loop: true,
-    speed: 1000,
+    speed: 600,
     effect: 'fade',
     fadeEffect: {
       crossFade: true
@@ -514,7 +514,7 @@ document.addEventListener('DOMContentLoaded', () => {
     spaceBetween: 0,
     loop: true,
     init: false,
-    speed: 1000,
+    speed: 600,
     mousewheel: {
       forceToAxis: true,
     },
@@ -1174,136 +1174,6 @@ document.addEventListener('DOMContentLoaded', () => {
       //   });
       // }
 
-      /**
-       * Разбиение текста по буквам
-       */
-      const titleChars = document.querySelectorAll('[data-splitting="chars"]');
-      titleChars.forEach(titleChar => {
-        const char = new SplitType(titleChar, { types: 'words, chars' });
-      });
-      /**
-       * Разбиение текста по словам
-       */
-      const titleWords = document.querySelectorAll('[data-splitting="words"]');
-      titleWords.forEach(titleWord => {
-        const word1 = new SplitType(titleWord.querySelector('h1'), { types: 'words, words' });
-        const word2 = new SplitType(titleWord.querySelector('h2'), { types: 'words, words' });
-        const word3 = new SplitType(titleWord.querySelector('h3'), { types: 'words, words' });
-        const word4 = new SplitType(titleWord.querySelector('h4'), { types: 'words, words' });
-        const word5 = new SplitType(titleWord.querySelector('h5'), { types: 'words, words' });
-      });
-      /**
-       * Разбиение текста по строкам
-       */
-      const titleLines = document.querySelectorAll('[data-splitting="lines"]');
-      titleLines.forEach(titleLine => {
-        const line = new SplitType(titleLine, { types: 'words, lines' });
-      });
-
-      const revealItems = document.querySelectorAll('[data-transform="reveal"]');
-      revealItems.forEach(revealItem => {
-        const revealItemTags = revealItem.querySelector("h1");
-        const word = revealItemTags.querySelectorAll("div.word");
-        const tl = gsap.timeline({
-          paused: true
-        });
-        tl.from(word, {
-          opacity: 0,
-          y: "50",
-          duration: .5,
-          ease: "ease",
-          stagger: {
-            amount: .3
-          }
-        });
-        scrollTriggerPlayer(revealItem, tl)
-      });
-
-      const revealRotateItems = document.querySelectorAll('[data-transform="revealRotate"]');
-      revealRotateItems.forEach(revealRotateItem => {
-        const word = revealRotateItem.querySelectorAll("div.word");
-        const tl = gsap.timeline({
-          paused: true
-        });
-        tl.from(word, {
-          opacity: 0,
-          y: "100",
-          rotationZ: 15,
-          duration: .5,
-          ease: "ease",
-          stagger: {
-            amount: .4
-          }
-        });
-        scrollTriggerPlayer(revealRotateItem, tl)
-      });
-
-      const fadeInItems = document.querySelectorAll('[data-transform="fadeIn"]');
-      fadeInItems.forEach(fadeInItem => {
-        const chars = fadeInItem.querySelectorAll("div.char");
-        const tl = gsap.timeline({
-          paused: true
-        });
-        tl.from(chars, {
-          opacity: 0,
-          duration: .3,
-          ease: "power1.out",
-          stagger: {
-            amount: .3
-          }
-        });
-        scrollTriggerPlayer(fadeInItem, tl)
-      });
-
-      const fadeItems = document.querySelectorAll('[data-transform="fade"]');
-      fadeItems.forEach(fadeItem => {
-        const tl = gsap.timeline({
-          paused: true
-        });
-        if (fadeItem.getAttribute('data-rotation')) {
-          tl.from(fadeItem, {
-            opacity: 0,
-            y: "100",
-            rotationZ: 10,
-            duration: .8,
-            delay: .3,
-            ease: "ease",
-            stagger: {
-              amount: .8
-            }
-          });
-        } else {
-          tl.from(fadeItem, {
-            opacity: 0,
-            y: "20",
-            duration: .8,
-            delay: .3,
-            ease: "ease",
-            stagger: {
-              amount: .8
-            }
-          });
-        }
-        scrollTriggerPlayer(fadeItem, tl)
-      });
-
-      const scaleItems = document.querySelectorAll('[data-transform="scale"]');
-      scaleItems.forEach(scaleItem => {
-        const tl = gsap.timeline({
-          paused: true
-        });
-        tl.from(scaleItem, {
-          opacity: 0,
-          scale: 0.8,
-          duration: .5,
-          ease: "ease",
-          stagger: {
-            amount: .8
-          }
-        });
-        scrollTriggerPlayer(scaleItem, tl)
-      });
-
     } else if (window.innerWidth <= '834' && window.innerWidth > '600' && window.innerWidth != '600') {
       const parallaxImgBoxes = document.querySelectorAll('[data-animation="parallax-box"]');
       if (parallaxImgBoxes != 0) {
@@ -1379,6 +1249,136 @@ document.addEventListener('DOMContentLoaded', () => {
     //   }
     // }
 
+    /**
+     * Разбиение текста по буквам
+     */
+    const titleChars = document.querySelectorAll('[data-splitting="chars"]');
+    titleChars.forEach(titleChar => {
+      const char = new SplitType(titleChar, { types: 'words, chars' });
+    });
+    /**
+     * Разбиение текста по словам
+     */
+    const titleWords = document.querySelectorAll('[data-splitting="words"]');
+    titleWords.forEach(titleWord => {
+      const word1 = new SplitType(titleWord.querySelector('h1'), { types: 'words, words' });
+      const word2 = new SplitType(titleWord.querySelector('h2'), { types: 'words, words' });
+      const word3 = new SplitType(titleWord.querySelector('h3'), { types: 'words, words' });
+      const word4 = new SplitType(titleWord.querySelector('h4'), { types: 'words, words' });
+      const word5 = new SplitType(titleWord.querySelector('h5'), { types: 'words, words' });
+    });
+    /**
+     * Разбиение текста по строкам
+     */
+    const titleLines = document.querySelectorAll('[data-splitting="lines"]');
+    titleLines.forEach(titleLine => {
+      const line = new SplitType(titleLine, { types: 'words, lines' });
+    });
+
+    const revealItems = document.querySelectorAll('[data-transform="reveal"]');
+    revealItems.forEach(revealItem => {
+      const revealItemTags = revealItem.querySelector("h1");
+      const word = revealItemTags.querySelectorAll("div.word");
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(word, {
+        opacity: 0,
+        y: "50",
+        duration: .5,
+        ease: "ease",
+        stagger: {
+          amount: .3
+        }
+      });
+      scrollTriggerPlayer(revealItem, tl)
+    });
+
+    const revealRotateItems = document.querySelectorAll('[data-transform="revealRotate"]');
+    revealRotateItems.forEach(revealRotateItem => {
+      const word = revealRotateItem.querySelectorAll("div.word");
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(word, {
+        opacity: 0,
+        y: "100",
+        rotationZ: 15,
+        duration: .5,
+        ease: "ease",
+        stagger: {
+          amount: .4
+        }
+      });
+      scrollTriggerPlayer(revealRotateItem, tl)
+    });
+
+    const fadeInItems = document.querySelectorAll('[data-transform="fadeIn"]');
+    fadeInItems.forEach(fadeInItem => {
+      const chars = fadeInItem.querySelectorAll("div.char");
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(chars, {
+        opacity: 0,
+        duration: .3,
+        ease: "power1.out",
+        stagger: {
+          amount: .3
+        }
+      });
+      scrollTriggerPlayer(fadeInItem, tl)
+    });
+
+    const fadeItems = document.querySelectorAll('[data-transform="fade"]');
+    fadeItems.forEach(fadeItem => {
+      const tl = gsap.timeline({
+        paused: true
+      });
+      if (fadeItem.getAttribute('data-rotation')) {
+        tl.from(fadeItem, {
+          opacity: 0,
+          y: "100",
+          rotationZ: 10,
+          duration: .8,
+          delay: .3,
+          ease: "ease",
+          stagger: {
+            amount: .8
+          }
+        });
+      } else {
+        tl.from(fadeItem, {
+          opacity: 0,
+          y: "20",
+          duration: .8,
+          delay: .3,
+          ease: "ease",
+          stagger: {
+            amount: .8
+          }
+        });
+      }
+      scrollTriggerPlayer(fadeItem, tl)
+    });
+
+    const scaleItems = document.querySelectorAll('[data-transform="scale"]');
+    scaleItems.forEach(scaleItem => {
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(scaleItem, {
+        opacity: 0,
+        scale: 0.8,
+        duration: .5,
+        ease: "ease",
+        stagger: {
+          amount: .8
+        }
+      });
+      scrollTriggerPlayer(scaleItem, tl)
+    });
+
     const parallaxItem = document.querySelector('[data-animation="parallax-img"]');
     if (parallaxItem) {
       const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
@@ -1417,6 +1417,31 @@ document.addEventListener('DOMContentLoaded', () => {
         );
       });
     }
+
+    // const creepingBlock = document.querySelector('[data-animation="creeping"]');
+    // if (creepingBlock) {
+    //   const wrapper = document.querySelector('.wrapper');
+    //   creepingAnim(creepingBlock, wrapper)
+    // }
+
+    // function creepingAnim(creepingBlock, wrapper) {
+    //   const trigger = document.querySelector(`.${creepingBlock.getAttribute('data-creeping-trigger')}`);
+    //   wrapper.style.marginBottom = (creepingBlock.offsetHeight / 2.5) + 'px';
+    //   console.log(wrapper.offsetHeight)
+    //   console.log(creepingBlock.offsetHeight)
+    //   gsap.to(creepingBlock, {
+    //     bottom: 0,
+    //     ease: 'none',
+    //     scrollTrigger: {
+    //       trigger: trigger,
+    //       start: `+=${(wrapper.offsetHeight - creepingBlock.offsetHeight) - (window.innerHeight - creepingBlock.offsetHeight)*2.5} bottom`,
+    //       end: () => `${wrapper.offsetHeight - (window.innerHeight - creepingBlock.offsetHeight)*2.5}`,
+    //       scrub: true,
+    //       pinSpacing: true,
+    //       markers: true
+    //     }
+    //   });
+    // }
 
     const parallaxImgBoxes = document.querySelectorAll('[data-animation="parallax-box"]');
     if (parallaxImgBoxes != 0) {

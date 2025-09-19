@@ -12,10 +12,9 @@
   background-size: 100% 100%;
   background-position: center center;
 
-  margin-bottom: -100%;
+  margin-top: -0.1rem;
   will-change: transform;
   transition: all 0.3s;
-  transition: all 0s;
 
   &::before {
     content: "";
@@ -25,7 +24,7 @@
     transition: all 2s linear;
 
     position: absolute;
-    top: 0;
+    top: 0.1rem;
     left: 0;
 
     @include md {
@@ -174,7 +173,7 @@
     }
 
     .menu__foot-body {
-      gap: 3rem 10rem;
+      gap: 5rem 10rem;
     }
   }
 
@@ -223,7 +222,7 @@
   &__item {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
 
     @include md {
       gap: 0;
@@ -317,14 +316,21 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
+      gap: 0;
       overflow: hidden;
 
       a {
         font-weight: 700;
         font-size: 1.2rem;
+        line-height: 1.4rem;
         text-transform: uppercase;
         color: var(--gray);
         position: relative;
+
+        display: block;
+        width: fit-content;
+        height: fit-content;
+        padding: 1rem 0;
 
         &:hover {
           color: var(--black);
@@ -342,10 +348,10 @@
           border-radius: 0.1rem;
           background-color: var(--black);
           position: absolute;
-          bottom: -0.2rem;
+          bottom: 1rem;
           left: 50%;
           transform: translate(-50%);
-          transition: all 0.5s ease-in-out;
+          transition: all 0.3s ease-in-out;
         }
       }
 
@@ -443,7 +449,7 @@
       }
 
       a {
-        font-weight: 400;
+        font-weight: 350;
         color: var(--accent);
         border-bottom: 0.1rem solid transparent;
 

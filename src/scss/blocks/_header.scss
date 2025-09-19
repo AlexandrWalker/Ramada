@@ -204,7 +204,8 @@
 
       &::before,
       &::after {
-        transition: border-radius 0s;
+        transition: background-color 0.5s ease, border-radius 0s;
+        border-radius: 2.8rem;
       }
 
       &:hover {
