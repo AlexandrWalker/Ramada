@@ -87,7 +87,7 @@
 
     &.activated {
 
-      @include md {
+      @include dosm {
 
         .footer__item-head:not(.accordion-active) {
           opacity: 0.5;
@@ -380,7 +380,7 @@
           background-color: var(--gray);
 
           @include md {
-            top: 0.6rem;
+            top: 1.4rem;
           }
         }
       }

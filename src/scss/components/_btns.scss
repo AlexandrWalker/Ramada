@@ -104,8 +104,11 @@
 
     .offer__body-link:hover &,
     &:hover {
-      --btn-background: var(--black);
-      --btn-border-color: var(--black);
+
+      @include dosm {
+        --btn-background: var(--black);
+        --btn-border-color: var(--black);
+      }
     }
 
     &.btn--icon {
@@ -127,12 +130,15 @@
     }
 
     &:hover {
-      --btn-color: var(--white);
-      --btn-background: var(--gray);
-      --btn-border-color: var(--gray);
 
-      &::after {
-        border-color: var(--white-30);
+      @include dosm {
+        --btn-color: var(--white);
+        --btn-background: var(--gray);
+        --btn-border-color: var(--gray);
+
+        &::after {
+          border-color: var(--white-30);
+        }
       }
     }
 
@@ -146,12 +152,14 @@
 
       &:hover {
 
-        --btn-color: var(--white);
-        --btn-background: var(--accent);
-        --btn-border-color: var(--accent);
+        @include dosm {
+          --btn-color: var(--white);
+          --btn-background: var(--accent);
+          --btn-border-color: var(--accent);
 
-        &::after {
-          border-color: var(--white-o-50);
+          &::after {
+            border-color: var(--white-o-50);
+          }
         }
       }
     }
@@ -178,12 +186,15 @@
     .entert__item:hover &,
     .events__other-item:hover &,
     &:hover {
-      --btn-color: var(--white);
-      --btn-background: var(--gray);
-      --btn-border-color: var(--gray);
 
-      &::after {
-        border-color: var(--white-30);
+      @include dosm {
+        --btn-color: var(--white);
+        --btn-background: var(--gray);
+        --btn-border-color: var(--gray);
+
+        &::after {
+          border-color: var(--white-30);
+        }
       }
     }
 
@@ -197,12 +208,14 @@
 
       &:hover {
 
-        --btn-color: var(--white);
-        --btn-background: var(--accent);
-        --btn-border-color: var(--accent);
+        @include dosm {
+          --btn-color: var(--white);
+          --btn-background: var(--accent);
+          --btn-border-color: var(--accent);
 
-        &::after {
-          border-color: var(--white-o-50);
+          &::after {
+            border-color: var(--white-o-50);
+          }
         }
       }
     }
@@ -223,11 +236,14 @@
     }
 
     &:hover {
-      --btn-color: var(--white);
-      --btn-background: var(--black);
 
-      &::after {
-        border-color: var(--gray-50);
+      @include dosm {
+        --btn-color: var(--white);
+        --btn-background: var(--black);
+
+        &::after {
+          border-color: var(--gray-50);
+        }
       }
     }
   }
@@ -237,8 +253,11 @@
     --btn-border-color: var(--black);
 
     &:hover {
-      --btn-background: var(--accent);
-      --btn-border-color: var(--accent);
+
+      @include dosm {
+        --btn-background: var(--accent);
+        --btn-border-color: var(--accent);
+      }
     }
   }
 
@@ -253,9 +272,12 @@
     }
 
     &:hover {
-      --btn-color: var(--white);
-      --btn-background: var(--gray);
-      --btn-border-color: var(--gray);
+
+      @include dosm {
+        --btn-color: var(--white);
+        --btn-background: var(--gray);
+        --btn-border-color: var(--gray);
+      }
     }
   }
 
@@ -302,21 +324,24 @@
     }
 
     &:hover {
-      --btn-border-color: var(--black-50);
 
-      &::after {
-        border-color: var(--gray);
+      @include dosm {
+        --btn-border-color: var(--black-50);
+
+        &::after {
+          border-color: var(--gray);
+        }
+
+        // .pulse::before {
+        //   animation: pulse-round 3s linear infinite;
+        //   animation-delay: 0s;
+        // }
+
+        // .pulse::after {
+        //   animation: pulse-round 3s linear infinite;
+        //   animation-delay: 1.5s;
+        // }
       }
-
-      // .pulse::before {
-      //   animation: pulse-round 3s linear infinite;
-      //   animation-delay: 0s;
-      // }
-
-      // .pulse::after {
-      //   animation: pulse-round 3s linear infinite;
-      //   animation-delay: 1.5s;
-      // }
     }
   }
 }
@@ -390,14 +415,17 @@
     }
 
     &:hover {
-      border-color: var(--accent-30);
 
-      i {
-        color: var(--white);
-      }
+      @include dosm {
+        border-color: var(--accent-30);
 
-      .scale {
-        transform: scale(101%);
+        i {
+          color: var(--white);
+        }
+
+        .scale {
+          transform: scale(101%);
+        }
       }
     }
 
@@ -424,14 +452,17 @@
       --btn-border-radius: 50%;
 
       &:hover {
-        border-color: var(--accent-30);
 
-        i {
-          color: var(--white);
-        }
+        @include dosm {
+          border-color: var(--accent-30);
 
-        .scale {
-          transform: scale(101%);
+          i {
+            color: var(--white);
+          }
+
+          .scale {
+            transform: scale(101%);
+          }
         }
       }
 

@@ -70,12 +70,15 @@
   }
 
   &:not(.diversity-button-next, .residence-button-next):hover {
-    border-color: var(--accent);
-    color: var(--white);
 
-    &::before {
+    @include dosm {
       border-color: var(--accent);
-      background-color: var(--accent);
+      color: var(--white);
+
+      &::before {
+        border-color: var(--accent);
+        background-color: var(--accent);
+      }
     }
   }
 
@@ -127,7 +130,10 @@
   border-color: var(--white-50);
 
   &:hover {
-    border-color: var(--gray);
+
+    @include dosm {
+      border-color: var(--gray);
+    }
   }
 
   i {
@@ -148,7 +154,10 @@
   border-color: var(--white-30);
 
   &:hover {
-    border-color: var(--gray);
+
+    @include dosm {
+      border-color: var(--gray);
+    }
   }
 
   i {

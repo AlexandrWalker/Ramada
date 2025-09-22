@@ -775,6 +775,60 @@ sup {
   }
 }
 
+.clone {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+
+  &--text {
+    transform: translateY(0);
+    transition: all 0.8s cubic-bezier(.6, 0, .4, 1);
+    will-change: transform, clip-path;
+    position: relative;
+    clip-path: polygon(-100% -25%, 200% -25%, 200% 125%, -100% 125%);
+
+    &+.clone--text {
+      clip-path: polygon(-100% -175%, 200% -175%, 200% -25%, -100% -25%);
+      transform: translateY(150%) rotate(2deg);
+      position: absolute;
+    }
+  }
+
+  .nav a:hover & {
+
+    @include dosm {
+      .clone--text {
+        clip-path: polygon(-100% 125%, 200% 125%, 200% 275%, -100% 275%);
+        transform: translateY(-150%) rotate(2deg);
+
+        &+.clone--text {
+          clip-path: polygon(-100% -25%, 200% -25%, 200% 125%, -100% 125%);
+          transform: translateY(0);
+          color: var(--black);
+        }
+      }
+    }
+  }
+
+  .filter__item--active &,
+  .filter__item:not(.filter__item-active):hover & {
+
+    @include dosm {
+      .clone--text {
+        clip-path: polygon(-100% 125%, 200% 125%, 200% 275%, -100% 275%);
+        transform: translateY(-150%) rotate(2deg);
+
+        &+.clone--text {
+          clip-path: polygon(-100% -25%, 200% -25%, 200% 125%, -100% 125%);
+          transform: translateY(0);
+          color: var(--accent);
+        }
+      }
+    }
+  }
+}
+
 /* Фракция слайдера */
 // .fraction {
 //   display: flex;

@@ -67,9 +67,14 @@
       height: 100%;
       background-color: transparent;
       border: 0.1rem solid var(--gray-10);
+      transition: all 0.3s ease;
 
       @include md {
         background-color: var(--white);
+      }
+
+      &:hover {
+        border-color: var(--gray);
       }
 
       &--slider {

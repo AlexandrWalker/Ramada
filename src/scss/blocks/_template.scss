@@ -655,29 +655,31 @@
 
           &:hover {
 
-            .icon-play {
-              color: var(--white);
-            }
-
-            .menu__foot-icon {
-              border-color: var(--white);
-
-              @include md {
-                --menu-icon-width: 2.4rem;
-                --menu-icon-height: 2.4rem;
+            @include dosm {
+              .icon-play {
+                color: var(--white);
               }
 
-              &::before {
-                background-color: var(--white);
+              .menu__foot-icon {
+                border-color: var(--white);
+
+                @include md {
+                  --menu-icon-width: 2.4rem;
+                  --menu-icon-height: 2.4rem;
+                }
+
+                &::before {
+                  background-color: var(--white);
+                }
+
+                &::after {
+                  border-color: var(--gray-30);
+                }
               }
 
-              &::after {
-                border-color: var(--gray-30);
+              .icon-3d {
+                color: var(--accent);
               }
-            }
-
-            .icon-3d {
-              color: var(--accent);
             }
           }
         }

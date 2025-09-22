@@ -44,10 +44,16 @@
             <div class="filter">
               <div class="filter__items">
                 <div class="filter__item" data-reviews="corp">
-                  Корпоративные клиенты
+                  <span class="clone">
+                    <span class="clone--text">Корпоративные клиенты</span>
+                    <span class="clone--text">Корпоративные клиенты</span>
+                  </span>
                 </div>
                 <div class="filter__item filter__item--active" data-reviews="gosti">
-                  Гости отеля
+                  <span class="clone">
+                    <span class="clone--text">Гости отеля</span>
+                    <span class="clone--text">Гости отеля</span>
+                  </span>
                 </div>
               </div>
             </div>
@@ -57,7 +63,8 @@
         </div>
       </section>
 
-      @@include('blocks/callback.html', {"title": "Оставьте отзыв", "cover": "./images/temp/callback-cover.png", "formFile": "false"})
+      @@include('blocks/callback.html', {"title": "Оставьте отзыв", "cover": "./images/temp/callback-cover.png",
+      "formFile": "false"})
       <!-- , "form-file": 'false' -->
 
     </main>

@@ -97,7 +97,10 @@
   transition: all 0.3s ease;
 
   &:hover {
-    --burger-close-color: var(--black);
+
+    @include dosm {
+      --burger-close-color: var(--black);
+    }
   }
 
   @include md {
@@ -109,10 +112,13 @@
     margin-top: 0;
 
     &:hover {
-      border-color: var(--accent);
 
-      &::after {
-        border-color: var(--white-o-50);
+      @include dosm {
+        border-color: var(--accent);
+
+        &::after {
+          border-color: var(--white-o-50);
+        }
       }
     }
   }

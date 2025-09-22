@@ -99,8 +99,11 @@
 
     .btn-arrow:hover &,
     .btn:hover & {
-      animation: pulse-round 2s linear infinite;
-      animation-delay: 0s;
+
+      @include dosm {
+        animation: pulse-round 2s linear infinite;
+        animation-delay: 0s;
+      }
     }
   }
 
@@ -108,8 +111,11 @@
 
     .btn-arrow:hover &,
     .btn:hover & {
-      animation: pulse-round 2s linear infinite;
-      animation-delay: 1s;
+
+      @include dosm {
+        animation: pulse-round 2s linear infinite;
+        animation-delay: 1s;
+      }
     }
   }
 }

@@ -218,8 +218,11 @@
 
     &:hover {
 
-      .menu__item .menu__item-head {
-        opacity: 0.5;
+      @include dosm {
+        
+        .menu__item .menu__item-head {
+          opacity: 0.5;
+        }
       }
     }
   }
@@ -339,7 +342,7 @@
           }
 
           @include sm {
-            height: auto;
+            // height: auto;
           }
         }
       }
@@ -800,13 +803,27 @@
 
   &__route {
     border-radius: 2.5rem;
-    height: fit-content;
-    min-height: 5rem;
+    height: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
 
-    &.accordion-active {
+    &-wrap {
+      position: relative;
+      width: fit-content;
+      height: fit-content;
+      min-height: 5rem;
+    }
+
+    &:hover {
 
       .icon-chevron-down {
         transform: scale(-1, -1);
+      }
+
+      .menu__route-list {
+        grid-template-rows: 1fr;
       }
     }
 
@@ -848,6 +865,13 @@
           border-color: var(--white);
         }
       }
+    }
+
+    &-list {
+      display: grid;
+      grid-template-rows: 0fr;
+      overflow: hidden;
+      transition: all 0.5s ease;
     }
   }
 }

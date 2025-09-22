@@ -10,13 +10,35 @@
 
     .template-product {
 
+      /**/
+      position: sticky;
+      top: 4rem;
+      right: 0;
+      left: 0;
+      overflow: visible;
+      /**/
+
       @include md {
         padding-bottom: 2rem;
+
+        /**/
+        position: static;
+        /**/
       }
 
       @include sm {
         padding-bottom: 1rem;
       }
+
+      /**/
+      &__inner {
+        box-shadow: 0px 0px 2rem 0.5rem var(--white-gray);
+
+        @include md {
+          box-shadow: none;
+        }
+      }
+      /**/
     }
 
     .template-product__body-items {
