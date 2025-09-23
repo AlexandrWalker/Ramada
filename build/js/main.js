@@ -54,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
     spaceBetween: 0,
     loop: true,
     speed: 600,
-    // autoHeight: true,
     effect: 'fade',
     fadeEffect: {
       crossFade: true
@@ -73,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
     spaceBetween: 0,
     loop: true,
     speed: 600,
-    // autoHeight: true,
     effect: 'fade',
     fadeEffect: {
       crossFade: true
@@ -366,7 +364,6 @@ document.addEventListener('DOMContentLoaded', () => {
     spaceBetween: 20,
     loop: true,
     speed: 600,
-    // autoHeight: true,
     navigation: {
       nextEl: ".residence-button-next",
       prevEl: ".residence-button-prev",
@@ -377,11 +374,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // },
     mousewheel: false,
     grabCursor: false,
-    // breakpoints: {
-    //   601: {
-    //     autoHeight: false,
-    //   },
-    // },
   });
 
   const templateProducts = document.querySelectorAll('.template-product');
@@ -582,6 +574,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const burgerClose = document.querySelector('.burger-close');
     const overlay = document.querySelector('.burger-overlay');
     const elements = document.querySelectorAll('.burger-menu__list a');
+    const html = document.documentElement;
 
     /**
      * Переключает видимость меню.
@@ -591,6 +584,7 @@ document.addEventListener('DOMContentLoaded', () => {
       burgerMenu.classList.toggle('burger-menu--opened', isOpened);
       lenis.stop();
       header.classList.toggle('show');
+      menuItemAnim();
 
       const width = getScrollbarWidth();
       document.body.style.paddingRight = width + 'px';
@@ -609,7 +603,12 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Открытие/закрытие меню по клику на бургер
-    burgerBtn.addEventListener('click', toggleMenu);
+    burgerBtn.addEventListener('click', () => {
+      toggleMenu();
+      if (html.classList.contains('lenis-stopped')) {
+        lenis.start();
+      }
+    });
 
     // Закрытие меню по клику на кнопку закрытия или на overlay
     [burgerClose, overlay].forEach((element) => element.addEventListener('click', closeMenu));
@@ -631,6 +630,9 @@ document.addEventListener('DOMContentLoaded', () => {
     elements.forEach((element) => element.addEventListener('click', closeMenu));
   }
   burgerNav();
+
+
+
   /**
    * Добавляет класс для бургер кнопки для смены стиля
    */
@@ -650,7 +652,6 @@ document.addEventListener('DOMContentLoaded', () => {
    * Управляет поведением меню-бургера.
    */
   function headerFunc() {
-
     const header = document.getElementById('header');
     const firstSection = document.querySelector('section');
     let lastScrollTop = 1;
@@ -662,11 +663,9 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         header.classList.remove('out');
       }
-
       lastScrollTop = scrollPosition();
     })
   }
-
   headerFunc();
 
 
@@ -814,7 +813,6 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   const hero = document.getElementById('hero');
   if (hero) {
-
     $(window).on('resize load', function () {
       // if (window.innerWidth > '834' && window.innerWidth != '834') {
 
@@ -959,7 +957,7 @@ document.addEventListener('DOMContentLoaded', () => {
       //   );
       // }
 
-      if (window.innerWidth > '834' && window.innerWidth != '834') {
+      if (window.innerWidth > 834) {
 
         const smoothImgY = '-50%';
 
@@ -1007,6 +1005,50 @@ document.addEventListener('DOMContentLoaded', () => {
           pTitleLeftPosAfter,
           pTitleTopPosAfter,
           pTitleColorAfter,
+          heroHeadGapBefore,
+          heroHeadGapAfter,
+          heroBtnBottomBefore,
+          heroBtnBottomAfter
+        );
+      } else {
+        return;
+      }
+    });
+  }
+
+  const restaurant = document.getElementById('restaurant');
+  if (restaurant) {
+    $(window).on('resize load', function () {
+      if (window.innerWidth > '834' && window.innerWidth != '834') {
+
+        const smoothImgY = '-50%';
+
+        const smoothImgTopBefore = '20.8rem';
+        const smoothImgTopAfter = '30rem';
+
+        const heroHeight = restaurant.offsetHeight;
+        const heroTop = 4.7;
+
+        const h1TitleFsBefore = '20rem';
+        const h1TitleFsAfter = '14rem';
+        const h1TitleGapBefore = '55.5rem';
+        const h1TitleGapAfter = '37.5rem';
+
+        const heroHeadGapBefore = '3rem';
+        const heroHeadGapAfter = '8rem';
+
+        const heroBtnBottomBefore = '-3rem';
+        const heroBtnBottomAfter = '1.3rem';
+
+        restaurantAnimate(smoothImgY,
+          smoothImgTopBefore,
+          smoothImgTopAfter,
+          heroHeight,
+          heroTop,
+          h1TitleFsBefore,
+          h1TitleFsAfter,
+          h1TitleGapBefore,
+          h1TitleGapAfter,
           heroHeadGapBefore,
           heroHeadGapAfter,
           heroBtnBottomBefore,
@@ -1087,6 +1129,109 @@ document.addEventListener('DOMContentLoaded', () => {
       "--left-pos": pTitleLeftPosAfter,
       "--top-pos": pTitleTopPosAfter,
       "--color": pTitleColorAfter,
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
+        scrub: true,
+        invalidateOnRefresh: true
+      },
+    });
+
+    gsap.fromTo(spanTitle, {
+      "--color": "#C40D3C",
+    }, {
+      "--color": "#ffffff",
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
+        scrub: true,
+        invalidateOnRefresh: true
+      },
+    });
+
+    gsap.fromTo(heroHead, {
+      "--gap": heroHeadGapBefore,
+    }, {
+      "--gap": heroHeadGapAfter,
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
+        scrub: true,
+        invalidateOnRefresh: true
+      },
+    });
+
+    gsap.fromTo(heroBtn, {
+      "--btn-bottom": heroBtnBottomBefore,
+    }, {
+      "--btn-bottom": heroBtnBottomAfter,
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
+        scrub: true,
+        invalidateOnRefresh: true
+      },
+    });
+  }
+
+  function restaurantAnimate(smoothImgY, smoothImgTopBefore, smoothImgTopAfter, heroHeight, heroTop, h1TitleFsBefore, h1TitleFsAfter, h1TitleGapBefore, h1TitleGapAfter, heroHeadGapBefore, heroHeadGapAfter, heroBtnBottomBefore, heroBtnBottomAfter
+  ) {
+    const hero = document.getElementById('restaurant');
+    const heroHead = restaurant.querySelector('.hero__head');
+
+    const smoothImg = restaurant.querySelector('[data-animation="smooth-img"]');
+    const heroTitle = restaurant.querySelector('[data-animation="hero-title"]');
+    const heroBtn = restaurant.querySelector('[data-animation="hero-btn"]');
+
+    const h1Title = heroTitle.querySelector('h1');
+    const spanTitle = heroTitle.querySelector('span');
+
+    gsap.from(hero, {
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `top +=${heroHeight / heroTop} `,
+        end: () => `+=${heroHeight}`,
+        pin: true,
+        scrub: true,
+        invalidateOnRefresh: true,
+      },
+      onComplete: function () {
+        hero.classList.add('animatedClass');
+      },
+    });
+
+    gsap.fromTo(smoothImg, {
+      "--top": smoothImgTopBefore,
+      scale: 1,
+    }, {
+      "--top": smoothImgTopAfter,
+      y: smoothImgY,
+      scale: 1.263,
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
+        scrub: true,
+        invalidateOnRefresh: true
+      },
+    });
+
+    gsap.fromTo(h1Title, {
+      "--fontsize": h1TitleFsBefore,
+      "--gap": h1TitleGapBefore,
+    }, {
+      "--fontsize": h1TitleFsAfter,
+      "--gap": h1TitleGapAfter,
       ease: "none",
       scrollTrigger: {
         trigger: hero,
@@ -1385,9 +1530,12 @@ document.addEventListener('DOMContentLoaded', () => {
       parallaxImgContainers.forEach(parallaxImgContainer => {
         const image = parallaxImgContainer.querySelector('img');
         gsap.fromTo(image,
-          { y: '-10%' },
+          { y: '-10%',
+            scale: 0.9,
+           },
           {
             y: '10%',
+            scale: 0.9,
             scrollTrigger: {
               trigger: parallaxImgContainer,
               start: 'top 90%',
@@ -1530,6 +1678,133 @@ document.addEventListener('DOMContentLoaded', () => {
     //   });
     // }
 
+    const fadeUps = document.querySelectorAll('[data-transform="fadeUp"]');
+    if (fadeUps.length > 0) {
+      fadeUps.forEach(fadeUp => {
+        const tl = gsap.timeline({
+          paused: true
+        });
+        tl.from(fadeUp, {
+          opacity: 0,
+          y: "100",
+          duration: .5,
+          ease: "ease",
+          stagger: {
+            amount: .3
+          },
+          onComplete: function () {
+            fadeUp.classList.add('sticky');
+          },
+        });
+        scrollTriggerPlayer(fadeUp, tl)
+      });
+    }
+
+    const templatePrimary = document.querySelector('.template--primary');
+    if (templatePrimary) {
+      const templateBg = templatePrimary.querySelector('.template__bg');
+      const templateSuptitle = templatePrimary.querySelector('.template__suptitle');
+      const templateTitle = templatePrimary.querySelector('.template__title');
+      const templateBodyIcons = templatePrimary.querySelector('.template__body-icons');
+      const templateBodyDown = templatePrimary.querySelector('.template__body-down');
+
+      const tl = gsap.timeline({
+        paused: true
+      });
+
+      if (templateBg) {
+        tl.from(templateBg, {
+          opacity: 0,
+          duration: .5,
+          ease: "ease",
+          stagger: {
+            amount: .3
+          }
+        });
+        scrollTriggerPlayer(templateBg, tl)
+      }
+
+      if (templateSuptitle) {
+        tl.from(templateSuptitle, {
+          opacity: 0,
+          y: '-50',
+          duration: .5,
+          ease: "ease",
+          stagger: {
+            amount: .3
+          }
+        });
+        scrollTriggerPlayer(templateSuptitle, tl)
+      }
+
+      if (templateTitle) {
+        tl.from(templateTitle, {
+          opacity: 0,
+          y: '-50',
+          duration: .5,
+          ease: "ease",
+          stagger: {
+            amount: .3
+          }
+        });
+        scrollTriggerPlayer(templateTitle, tl)
+      }
+
+      if (templateBodyIcons) {
+        tl.from(templateBodyIcons, {
+          opacity: 0,
+          y: '-50',
+          duration: .5,
+          ease: "ease",
+          stagger: {
+            amount: .3
+          }
+        });
+        scrollTriggerPlayer(templateBodyIcons, tl)
+      }
+
+      if (templateBodyDown) {
+        tl.fromTo(templateBodyDown, {
+          opacity: 0,
+          y: '-50',
+        }, {
+          opacity: 1,
+          y: '0',
+          duration: .3,
+          ease: "ease",
+          stagger: {
+            amount: .3
+          }
+        });
+        scrollTriggerPlayer(templateBodyDown, tl)
+      }
+    }
+
+    const foreachItem = document.querySelector('.foreach-items');
+    if (foreachItem) {
+      const items = foreachItem.querySelectorAll('.foreach-items>a.offers__item')
+      items.forEach(item => {
+        const tl = gsap.timeline({
+          paused: true
+        });
+        tl.fromTo(item, {
+          opacity: 0,
+          y: '-50',
+        }, {
+          opacity: 1,
+          y: '0',
+          duration: .3,
+          ease: "power1.out",
+          stagger: {
+            amount: .3,
+          }
+        });
+        scrollTriggerPlayer(item, tl)
+      });
+    }
+
+
+
     /**
      * 
      * @param {Элемент от которого начинается Анимация} triggerElement 
@@ -1555,8 +1830,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   });
 
-  window.addEventListener('resize scroll', function () { ScrollTrigger.refresh() });
+  window.addEventListener('resize scroll load', function () { ScrollTrigger.refresh() });
 
+
+
+  // function menuItemAnim() {
+  //   const asd = document.querySelectorAll('.menu__item');
+  //   for (let i = 0; asd.length != asd[i]; i++) {
+  //     const a = asd[i].querySelector('.menu__item-head');
+  //     gsap.fromTo(a,
+  //       {
+  //         y: '-5rem',
+  //         opacity: 0,
+  //       },
+  //       {
+  //         y: '0',
+  //         opacity: 1,
+  //         duration: 1,
+  //         delay: 0.1 * i,
+  //         ease: "power4.out",
+  //         scrollTrigger: {
+  //           trigger: '.burger-menu--opened',
+  //           start: 'top 100%',
+  //           end: 'bottom top',
+  //         }
+  //       }
+  //     );
+  //   }
+  // }
+  
 
 
   let filter = document.querySelector('.filter');
@@ -1624,7 +1926,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
+  // templateProducts.forEach(templateProduct => {
+  //   gsap.fromTo(templateProduct, {
+  //     y: '100',
+  //     // scale: 1,
+  //     opacity: 0,
+  //   }, {
+  //     y: '0',
+  //     // scale: 0.8,
+  //     opacity: 1,
+  //     scrollTrigger: {
+  //       trigger: templateProduct,
+  //       start: `top bottom`,
+  //       end: `50% 50%`,
+  //       scrub: true,
+  //       markers: true,
+  //       invalidateOnRefresh: true,
+  //     },
+  //     onEnter: function () {
+  //       templateProduct.classList.toggle('animatedClass');
+  //     },
+  //   });
+  // });
 
   // var $grid = $('.rooms__items').isotope({
   //   itemSelector: '.rooms__item',

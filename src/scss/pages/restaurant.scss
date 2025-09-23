@@ -10,11 +10,17 @@
       @include md {
         height: 31.6rem;
         margin-bottom: 15.5rem;
+        margin-bottom: 11.5rem;
+      }
+
+      @include xmd {
+        margin-bottom: 12.2rem;
       }
 
       @include sm {
         height: auto;
-        margin-bottom: 3rem;
+        // margin-bottom: 3rem;
+        margin-bottom: 0;
       }
 
       &__inner {
@@ -49,7 +55,8 @@
 
           @include xmd {
             position: absolute;
-            top: 50%;
+            // top: 50%;
+            top: 43.5%;
             transform: unset;
             margin-top: 0;
           }
@@ -70,11 +77,15 @@
         h1 {
           font-size: 20rem;
           text-align: right;
-          gap: 55.5rem;
+          gap: var(--gap);
 
           @include md {
             font-size: 8rem;
             gap: 25.7rem;
+          }
+
+          @include xmd {
+            gap: 26.6rem;
           }
 
           @include sm {
@@ -104,9 +115,17 @@
           --top: 8.4rem;
           height: fit-content;
           position: static;
+
+          height: 56.6rem;
+        }
+
+        img {
+
+          @include sm {
+            width: 100%;
+          }
         }
       }
-
     }
 
     .events {
@@ -124,7 +143,17 @@
 }
 
 .concept {
+  padding-top: 6rem;
   overflow: visible;
+  z-index: 3;
+
+  @include md {
+    padding-top: 4rem;
+  }
+
+  @include sm {
+    padding-top: 3rem;
+  }
 
   &__inner {
     display: grid;
@@ -240,7 +269,7 @@
 }
 
 .dishes {
-  background: transparent;
+  background: var(--white-gray);
   padding-bottom: 0;
 
   &__inner {}

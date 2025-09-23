@@ -2,10 +2,19 @@
 
 .burger-btn {
 
-  @include md {}
+  @include sm {
+    margin-left: auto;
+  }
 
   .icon-menu {
     --font-size: 1.6rem;
+  }
+
+  .icon-burger {
+
+    @include sm {
+      display: none;
+    }
   }
 
   &::before {
@@ -21,6 +30,56 @@
     @include sm {
       right: calc(var(--btn-first-padding) * 2);
       left: calc(var(--btn-first-padding) * 2);
+    }
+  }
+
+  span {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 1.2rem;
+    transition: all 0.3s linear;
+
+    @include sm {
+      display: flex;
+    }
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 0.1rem;
+      background-color: var(--white);
+      transition: all 0.3s linear;
+      position: absolute;
+      top: -0.4rem;
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 0.1rem;
+      background-color: var(--white);
+      transition: all 0.3s linear;
+      position: absolute;
+      bottom: -0.4rem;
+    }
+  }
+
+  &.burger-btn--opened {
+
+    span {
+
+      &::before {
+        transform: rotate(-45deg);
+        top: -0.05rem;
+      }
+
+      &::after {
+        transform: rotate(45deg);
+        bottom: -0.05rem;
+      }
     }
   }
 }

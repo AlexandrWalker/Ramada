@@ -10,20 +10,20 @@
 
     .template-product {
 
-      /**/
-      position: sticky;
-      top: 4rem;
-      right: 0;
-      left: 0;
-      overflow: visible;
-      /**/
+      // /**/
+      // position: sticky;
+      // top: 4rem;
+      // right: 0;
+      // left: 0;
+      // overflow: visible;
+      // /**/
 
       @include md {
         padding-bottom: 2rem;
 
-        /**/
-        position: static;
-        /**/
+        // /**/
+        // position: static;
+        // /**/
       }
 
       @include sm {

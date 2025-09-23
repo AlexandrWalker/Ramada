@@ -93,6 +93,10 @@
       order: 3;
     }
 
+    @include sm {
+      gap: 1rem;
+    }
+
     &-item {
       display: flex;
       flex-direction: column;
@@ -102,13 +106,17 @@
       border: 0.1rem solid var(--black-20);
 
       @include sm {
-        width: 100%;
+        gap: 2rem;
+        width: calc(50% - 0.5rem);
+        padding: 1rem;
       }
 
       img {
         width: 5rem;
         height: 5rem;
         // background-color: var(--gray);
+
+        @include sm {}
       }
     }
   }

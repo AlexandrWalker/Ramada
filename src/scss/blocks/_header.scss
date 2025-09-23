@@ -2,7 +2,7 @@
 
 .header {
   background-color: var(--white);
-  transition: transform 0.8s ease;
+  transition: transform 0.8s ease, background-color 0.3s ease;
 
   position: fixed;
   top: 0;
@@ -12,13 +12,23 @@
 
   will-change: transform;
 
+  @include sm {
+    z-index: 201;
+  }
+
   &.out {
     transform: translateY(calc(-100% - 0.1rem));
+  }
+
+  &.show {
+    background-color: var(--white-gray);
+    pointer-events: none;
   }
 
   &__content {
     padding: 2.8rem 0 2.7rem;
     border-bottom: 0.1rem solid var(--accent);
+    transition: all 0.3s ease;
 
     @include md {
       padding: 1.5rem 0;
@@ -26,8 +36,19 @@
 
     @include sm {
 
+      .header.show & {
+        border-color: transparent;
+      }
+
       .btn--icon {
-        display: none;
+        opacity: 0;
+        pointer-events: none;
+
+        .header.show & {
+          opacity: 1;
+          pointer-events: all;
+          transition-delay: 0.5s;
+        }
       }
     }
   }
@@ -60,8 +81,16 @@
     @include sm {
       grid-column: 1/2;
       grid-row: 1/2;
-
       justify-content: flex-start;
+
+      /**/
+      transition: all 0.3s ease;
+      /**/
+
+      .header.show & {
+        opacity: 0;
+        pointer-events: none;
+      }
     }
   }
 
@@ -106,6 +135,13 @@
       grid-column: 3/4;
       grid-row: 1/2;
 
+      /**/
+      grid-column: 1/4;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      pointer-events: all;
+      /**/
+
       .btn {
         --btn-width: var(--btn-height);
       }
@@ -130,6 +166,13 @@
     @include sm {
       grid-column: 2/3;
       grid-row: 1/2;
+
+      transition: all 0.3s ease;
+
+      .header.show & {
+        opacity: 0;
+        pointer-events: none;
+      }
     }
   }
 
@@ -144,6 +187,11 @@
       --btn-padding-x: 2rem !important;
 
       font-size: 1.2rem;
+
+      /**/
+      margin-right: calc(var(--btn-height) + 0.5rem);
+      margin-right: var(--btn-height);
+      /**/
     }
 
     .icon-book {

@@ -160,10 +160,27 @@
 
       &:hover {
         color: var(--accent);
+
+        p {
+          transform: translateX(2rem);
+
+          @include md {
+            transform: unset;
+          }
+        }
+
+        span {
+          transform: translateX(-2rem);
+
+          @include md {
+            transform: unset;
+          }
+        }
       }
 
       p {
         font-weight: 700;
+        transition: transform 0.3s ease;
       }
 
       span {
@@ -175,6 +192,7 @@
         border-radius: 50%;
         border: 0.1rem solid var(--gray-30);
         flex-shrink: 0;
+        transition: transform 0.3s ease;
       }
 
       i {

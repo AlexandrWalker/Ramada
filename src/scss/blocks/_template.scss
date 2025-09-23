@@ -232,7 +232,7 @@
   &--primary {
     display: grid;
     grid-template-rows: auto 1fr;
-
+    background-color: var(--gray);
     overflow: visible;
     min-height: calc(72rem + 5.4rem);
     padding-bottom: 0;
@@ -240,6 +240,12 @@
 
     position: relative;
     z-index: 3;
+
+    /**/
+    // position: sticky;
+    // top: var(--header-height);
+    // z-index: -1;
+    /**/
 
     @include md {
       margin-bottom: 3rem;
