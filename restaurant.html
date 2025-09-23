@@ -35,6 +35,7 @@
         <div class="header__container container">
           <div class="header__left">
             <button class="burger-btn btn btn--black">
+              <span></span>
               <i class="icon-burger"></i>
               <i class="icon-menu"></i>
               <i class="pulse"></i>
@@ -637,22 +638,19 @@
   <div class="burger-overlay"></div>
 </div>
     <main class="main">
-      <!-- Главный блок -->
-      <section class="hero layer-section">
 
+      <section id="restaurant" class="hero layer-section">
         <div class="hero__container container">
           <div class="hero__inner">
-
-            <div class="hero__bg" data-animation="parallax-img">
+            <div class="hero__bg" data-animation="smooth-img">
               <picture>
                 <source media="(min-width: 601px)" srcset="./images/temp/restaurant-bg.png" type="image/png">
                 <source media="(max-width: 600px)" srcset="./images/temp/restaurant-mob-bg.png" type="image/png">
                 <img src="./images/temp/restaurant-bg.png" alt="">
               </picture>
             </div>
-
             <div class="hero__head">
-              <div class="hero__title" data-transform="reveal" data-splitting="words">
+              <div class="hero__title" data-animation="hero-title" data-transform="reveal" data-splitting="words">
                 <h1>
                   <span>
                     Ресторан
@@ -660,18 +658,17 @@
                   Сезоны
                 </h1>
               </div>
-              <a class="btn-arrow btn-arrow--down" href="#offer">
+              <a class="btn-arrow btn-arrow--down" href="#concept" data-animation="hero-btn">
                 <i class="icon-arrow-right"></i>
                 <span class="scale"></span>
                 <i class="pulse"></i>
               </a>
             </div>
-
           </div>
         </div>
       </section>
 
-      <section class="concept">
+      <section id="concept" class="concept">
         <div class="container">
           <div class="concept__inner">
             <div class="concept__img border" data-animation="parallax-img">
@@ -735,7 +732,7 @@
               </div>
             </div>
 
-            <div class="dishes__items" data-transform="fade">
+            <div class="dishes__items" data-transform="fadeUp">
               <div class="dishes__item">
                 <div class="dishes__item-wrap">
                   <div class="dishes__item-img">
@@ -795,7 +792,7 @@
               </div>
             </div>
 
-            <div class="dishes__gallery">
+            <div class="dishes__gallery" data-transform="fadeUp">
               <div class="dishes__gallery-item border" data-animation="parallax-img">
                 <img src="./images/temp/dishes-gallery-1.png" alt="">
               </div>
@@ -823,7 +820,7 @@
               </div>
             </div>
 
-            <div class="events__body">
+            <div class="events__body" data-transform="fadeUp">
               <div class="events__block">
                 <div class="events__block-wrap">
                   <div class="events__block-img border" data-animation="parallax-img">
@@ -1444,7 +1441,7 @@
               </div>
             </div>
 
-            <div class="events__other">
+            <div class="events__other" data-transform="fadeUp">
               <div class="general__head">
                 <div class="general__head-title">
                   <h5>

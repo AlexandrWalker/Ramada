@@ -47,6 +47,7 @@ body {
 section {
   padding-bottom: 7rem;
   background-color: var(--white-gray);
+  margin-top: -0.1rem;
   overflow-x: hidden;
   overflow-y: hidden;
   position: relative;
@@ -90,14 +91,6 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -130,6 +123,14 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
   src: url("../fonts/Gotham-Ultra.woff2") format("woff2"), url("../fonts/Gotham-Ultra.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -146,16 +147,16 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Bold.woff2") format("woff2"), url("../fonts/TTTricks-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/TTTricks-Bold.woff2") format("woff2"), url("../fonts/TTTricks-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -472,6 +473,7 @@ img {
   top: 51rem;
   right: 0;
   z-index: -1;
+  z-index: 0;
 }
 
 .leaf--concept-planshet {
@@ -493,9 +495,10 @@ img {
 
 [data-animation=parallax-img] img {
   width: 100%;
-  min-width: 100%;
+  min-width: 120%;
   height: 120% !important;
   margin-top: -10%;
+  margin-left: -10%;
   -o-object-fit: cover;
   object-fit: cover;
 }
@@ -2092,6 +2095,60 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   --font-size: 1.6rem;
 }
 
+.burger-btn span {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  width: 1.2rem;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.burger-btn span::before {
+  content: "";
+  width: 100%;
+  height: 0.1rem;
+  background-color: var(--white);
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  position: absolute;
+  top: -0.4rem;
+}
+
+.burger-btn span::after {
+  content: "";
+  width: 100%;
+  height: 0.1rem;
+  background-color: var(--white);
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  position: absolute;
+  bottom: -0.4rem;
+}
+
+.burger-btn.burger-btn--opened span::before {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: -0.05rem;
+}
+
+.burger-btn.burger-btn--opened span::after {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  bottom: -0.05rem;
+}
+
 .burger-close {
   --burger-close-width: 2.5rem;
   --burger-close-height: 0.35rem;
@@ -2534,10 +2591,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .header {
   background-color: var(--white);
-  -webkit-transition: -webkit-transform 0.8s ease;
-  transition: -webkit-transform 0.8s ease;
-  transition: transform 0.8s ease;
-  transition: transform 0.8s ease, -webkit-transform 0.8s ease;
+  -webkit-transition: background-color 0.3s ease, -webkit-transform 0.8s ease;
+  transition: background-color 0.3s ease, -webkit-transform 0.8s ease;
+  transition: transform 0.8s ease, background-color 0.3s ease;
+  transition: transform 0.8s ease, background-color 0.3s ease, -webkit-transform 0.8s ease;
   position: fixed;
   top: 0;
   left: 0;
@@ -2552,9 +2609,16 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   transform: translateY(calc(-100% - 0.1rem));
 }
 
+.header.show {
+  background-color: var(--white-gray);
+  pointer-events: none;
+}
+
 .header__content {
   padding: 2.8rem 0 2.7rem;
   border-bottom: 0.1rem solid var(--accent);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .header__container {
@@ -3657,12 +3721,15 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 .template--primary {
   display: grid;
   grid-template-rows: auto 1fr;
+  background-color: var(--gray);
   overflow: visible;
   min-height: 77.4rem;
   padding-bottom: 0;
   margin-bottom: 6rem;
   position: relative;
   z-index: 3;
+  /**/
+  /**/
 }
 
 .template--primary .template__inner {
@@ -4494,8 +4561,24 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   color: var(--accent);
 }
 
+.career__body-link:hover p {
+  -webkit-transform: translateX(2rem);
+  -ms-transform: translateX(2rem);
+  transform: translateX(2rem);
+}
+
+.career__body-link:hover span {
+  -webkit-transform: translateX(-2rem);
+  -ms-transform: translateX(-2rem);
+  transform: translateX(-2rem);
+}
+
 .career__body-link p {
   font-weight: 700;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 .career__body-link span {
@@ -4514,6 +4597,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   border: 0.1rem solid var(--gray-30);
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 .career__body-link i {
@@ -5830,7 +5917,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 .restaurant-page .hero__title h1 {
   font-size: 20rem;
   text-align: right;
-  gap: 55.5rem;
+  gap: var(--gap);
 }
 
 .restaurant-page .hero__bg {
@@ -5842,7 +5929,9 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .concept {
+  padding-top: 6rem;
   overflow: visible;
+  z-index: 3;
 }
 
 .concept__inner {
@@ -5868,7 +5957,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .dishes {
-  background: transparent;
+  background: var(--white-gray);
   padding-bottom: 0;
 }
 
@@ -6881,13 +6970,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .thermal-zone-page .template-product {
-  /**/
-  position: sticky;
-  top: 4rem;
-  right: 0;
-  left: 0;
-  overflow: visible;
-  /**/
   /**/
   /**/
 }
@@ -9705,6 +9787,9 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin: 0 8rem;
     padding: 0 0 2rem 0;
     border-bottom: 0.1rem dashed var(--gray);
+    /**/
+    overflow: hidden;
+    /**/
   }
 
   .menu__item:last-child {
@@ -9723,6 +9808,8 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     height: fit-content;
     padding: 0;
     color: var(--black);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   .menu__item-head::before {
@@ -10369,6 +10456,18 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     padding: 3rem;
   }
 
+  .career__body-link:hover p {
+    -webkit-transform: unset;
+    -ms-transform: unset;
+    transform: unset;
+  }
+
+  .career__body-link:hover span {
+    -webkit-transform: unset;
+    -ms-transform: unset;
+    transform: unset;
+  }
+
   .certificates h5 {
     font-size: 2.5rem;
   }
@@ -10808,6 +10907,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   .restaurant-page .hero {
     height: 31.6rem;
     margin-bottom: 15.5rem;
+    margin-bottom: 11.5rem;
   }
 
   .restaurant-page .hero__head {
@@ -10830,6 +10930,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   }
 
   .restaurant-page .events {
+    padding-top: 4rem;
+  }
+
+  .concept {
     padding-top: 4rem;
   }
 
@@ -11272,9 +11376,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .thermal-zone-page .template-product {
     padding-bottom: 2rem;
-    /**/
-    position: static;
-    /**/
   }
 
   .thermal-zone-page .template-product__inner {
@@ -11900,13 +12001,21 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     --container-width: 70.8rem;
   }
 
+  .restaurant-page .hero {
+    margin-bottom: 12.2rem;
+  }
+
   .restaurant-page .hero__head .btn-arrow {
     position: absolute;
-    top: 50%;
+    top: 43.5%;
     -webkit-transform: unset;
     -ms-transform: unset;
     transform: unset;
     margin-top: 0;
+  }
+
+  .restaurant-page .hero__title h1 {
+    gap: 26.6rem;
   }
 
   .restaurant-page .hero__bg {
@@ -12109,6 +12218,14 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 1rem;
   }
 
+  .burger-btn {
+    margin-left: auto;
+  }
+
+  .burger-btn .icon-burger {
+    display: none;
+  }
+
   .burger-btn::before {
     right: var(--btn-first-padding);
     left: var(--btn-first-padding);
@@ -12117,6 +12234,12 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   .burger-btn::after {
     right: calc(var(--btn-first-padding) * 2);
     left: calc(var(--btn-first-padding) * 2);
+  }
+
+  .burger-btn span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 
   .burger-close {
@@ -12207,8 +12330,24 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 0.7rem;
   }
 
+  .header {
+    z-index: 201;
+  }
+
+  .header.show .header__content {
+    border-color: transparent;
+  }
+
   .header__content .btn--icon {
-    display: none;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .header.show .header__content .btn--icon {
+    opacity: 1;
+    pointer-events: all;
+    -webkit-transition-delay: 0.5s;
+    transition-delay: 0.5s;
   }
 
   .header__container {
@@ -12223,6 +12362,15 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
+    /**/
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    /**/
+  }
+
+  .header.show .header__wrap {
+    opacity: 0;
+    pointer-events: none;
   }
 
   .header__img {
@@ -12232,6 +12380,17 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   .header__left {
     grid-column: 3/4;
     grid-row: 1/2;
+    /**/
+    grid-column: 1/4;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    pointer-events: all;
+    /**/
   }
 
   .header__left .btn {
@@ -12241,11 +12400,22 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   .header__right {
     grid-column: 2/3;
     grid-row: 1/2;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+
+  .header.show .header__right {
+    opacity: 0;
+    pointer-events: none;
   }
 
   .header__btn {
     --btn-padding-x: 2rem !important;
     font-size: 1.2rem;
+    /**/
+    margin-right: calc(var(--btn-height) + 0.5rem);
+    margin-right: var(--btn-height);
+    /**/
   }
 
   .header__btn span::before {
@@ -12260,8 +12430,20 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     height: 3.77rem;
   }
 
+  .menu {
+    padding-top: 9.5rem;
+  }
+
   .menu__head {
     padding: 1.5rem 1.5rem 3rem 1.5rem;
+    padding: 1.5rem 2rem 3rem 2rem;
+    /**/
+    display: none;
+    /**/
+  }
+
+  .menu__head-btns {
+    display: none;
   }
 
   .menu__head-social {
@@ -12798,8 +12980,14 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 2rem;
   }
 
+  .events-desc__body {
+    gap: 1rem;
+  }
+
   .events-desc__body-item {
-    width: 100%;
+    gap: 2rem;
+    width: calc(50% - 0.5rem);
+    padding: 1rem;
   }
 
   .events-page .template--primary {
@@ -13068,7 +13256,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .restaurant-page .hero {
     height: auto;
-    margin-bottom: 3rem;
+    margin-bottom: 0;
   }
 
   .restaurant-page .hero__inner {
@@ -13100,9 +13288,18 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     height: -moz-fit-content;
     height: fit-content;
     position: static;
+    height: 56.6rem;
+  }
+
+  .restaurant-page .hero__bg img {
+    width: 100%;
   }
 
   .restaurant-page .events {
+    padding-top: 3rem;
+  }
+
+  .concept {
     padding-top: 3rem;
   }
 
