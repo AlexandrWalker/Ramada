@@ -91,14 +91,6 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -109,6 +101,14 @@ img {
   font-display: swap;
   src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
   font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -155,16 +155,16 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-ExtraBold.woff2") format("woff2"), url("../fonts/TTTricks-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/TTTricks-ExtraBold.woff2") format("woff2"), url("../fonts/TTTricks-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -2503,6 +2503,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   height: -moz-fit-content;
   height: fit-content;
   padding: 1rem 0;
+  white-space: nowrap;
 }
 
 .footer__item-list a:hover {
@@ -3356,9 +3357,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .menu__route-wrap {
   position: relative;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -3541,6 +3539,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   background-color: var(--white);
   max-width: 71.4rem;
   width: 100%;
+  display: none;
 }
 
 .popup__head {
@@ -9607,6 +9606,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     font-size: 1.4rem;
   }
 
+  .footer__body .menu__foot-body {
+    gap: 3rem 10rem;
+  }
+
   .footer__items {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -9690,6 +9693,14 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .footer__item-head.accordion-active + .accordion-body {
     padding-top: 2rem;
+  }
+
+  .footer__item-list a {
+    white-space: unset;
+  }
+
+  .footer__item-list a::before {
+    display: none;
   }
 
   .footer__item-list li {
@@ -12354,6 +12365,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .footer__body .menu__foot-btn--presentation {
     display: none;
+  }
+
+  .footer__body .menu__foot-body {
+    gap: 2rem;
   }
 
   .footer__items {

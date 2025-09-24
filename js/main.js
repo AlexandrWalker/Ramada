@@ -584,7 +584,7 @@ document.addEventListener('DOMContentLoaded', () => {
       burgerMenu.classList.toggle('burger-menu--opened', isOpened);
       lenis.stop();
       header.classList.toggle('show');
-      menuItemAnim();
+      // menuItemAnim();
 
       const width = getScrollbarWidth();
       document.body.style.paddingRight = width + 'px';
