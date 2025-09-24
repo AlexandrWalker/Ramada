@@ -9,6 +9,8 @@
   max-width: 71.4rem;
   width: 100%;
 
+  display: none;
+
   @include md {
     gap: 2rem;
     padding: 5rem 1rem 2rem;
