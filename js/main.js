@@ -1530,9 +1530,10 @@ document.addEventListener('DOMContentLoaded', () => {
       parallaxImgContainers.forEach(parallaxImgContainer => {
         const image = parallaxImgContainer.querySelector('img');
         gsap.fromTo(image,
-          { y: '-10%',
+          {
+            y: '-10%',
             scale: 0.9,
-           },
+          },
           {
             y: '10%',
             scale: 0.9,
@@ -1858,7 +1859,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //     );
   //   }
   // }
-  
+
 
 
   let filter = document.querySelector('.filter');
@@ -1967,6 +1968,19 @@ document.addEventListener('DOMContentLoaded', () => {
   //   $grid.isotope({ filter: filterValue });
   // });
 
+  Fancybox.bind('[data-fancybox]', {
+    Html: {
+      autoSize: false,
+    },
+    on: {
+      'Carousel.ready': () => {
+        lenis.stop();
+      },
+      destroy: () => {
+        lenis.start();
+      }
+    }
+  });
 
 
   /**

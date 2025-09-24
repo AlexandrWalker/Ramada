@@ -91,6 +91,14 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
   src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -123,14 +131,6 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Ultra.woff2") format("woff2"), url("../fonts/Gotham-Ultra.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -147,14 +147,6 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: TTTricks;
-  font-display: swap;
   src: url("../fonts/TTTricks-Bold.woff2") format("woff2"), url("../fonts/TTTricks-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -165,6 +157,14 @@ img {
   font-display: swap;
   src: url("../fonts/TTTricks-ExtraBold.woff2") format("woff2"), url("../fonts/TTTricks-ExtraBold.woff") format("woff");
   font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TTTricks;
+  font-display: swap;
+  src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -3528,6 +3528,45 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   text-decoration: underline;
 }
 
+.popup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 4rem 5rem 3rem;
+  background-color: var(--white);
+  max-width: 71.4rem;
+  width: 100%;
+}
+
+.popup__head {
+  text-transform: uppercase;
+}
+
+.popup .form-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.popup .form-group:nth-child(1),
+.popup .form-group:nth-child(2) {
+  width: 100%;
+}
+
+.popup .form-label {
+  background-color: var(--white);
+}
+
 .template {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4779,10 +4818,15 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   background: transparent;
   z-index: 2;
   padding-bottom: 5rem;
+  pointer-events: none;
 }
 
 .contacts-page .template__inner {
   padding-top: 6rem;
+}
+
+.contacts-page .breadcrumbs {
+  pointer-events: all;
 }
 
 .contacts__content {
@@ -4932,8 +4976,8 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   display: block;
   width: 5.6rem;
   height: 5.6rem;
-  -webkit-transition: all 1s linear;
-  transition: all 1s linear;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
   position: absolute;
 }
 
@@ -5114,6 +5158,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 .route__item a {
   font-weight: 350;
   font-size: 1.4rem;
+}
+
+.route__item a:hover {
+  text-decoration: underline;
 }
 
 .entertainment-page .booking {
@@ -9994,6 +10042,16 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     right: calc(var(--btn-first-padding) + var(--btn-second-padding));
     bottom: calc(var(--btn-first-padding) + var(--btn-second-padding));
     left: calc(var(--btn-first-padding) + var(--btn-second-padding));
+  }
+
+  .popup {
+    gap: 2rem;
+    padding: 5rem 1rem 2rem;
+    max-width: 35.3rem;
+  }
+
+  .popup .form-content {
+    gap: 1rem;
   }
 
   .template {
