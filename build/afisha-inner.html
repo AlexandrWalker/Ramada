@@ -17,6 +17,7 @@
   <!-- icons -->
   <link rel="stylesheet" href="icons/ramadaIconsStyle.css">
   <!-- styles -->
+  <link rel="stylesheet" href="./libs/fancybox/fancybox.css">
   <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="./libs/lenis/lenis.min.css">
   <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
@@ -84,7 +85,7 @@
                 </ul>
               </div>
             </div>
-            <button class="header__btn btn btn--accent">
+            <button class="header__btn btn btn--accent" data-fancybox href="#feedback">
               <i class="icon-book"></i>
               <i class="pulse"></i>
               <span data-text="Забронировать номер" data-text-mob="Забронировать"></span>
@@ -2033,8 +2034,51 @@
     </button>
   </div>
 </div>
+<!-- Попап -->
+<div class="popup" id="feedback">
+  <div class="popup__head">
+    <h5>Отправьте заявку и наш менеджер свяжется с вами</h5>
+  </div>
+  <div class="popup__body">
+    <form class="form" action="#">
+      <div class="form-content">
+        <div class="form-group">
+          <input class="form-input" id="names" name="initials" type="text">
+          <label class="form-label" for="names">
+            Ваше имя <span>*</span>
+          </label>
+        </div>
+        <div class="form-group">
+          <input class="form-input" id="phone" name="tel" type="tel">
+          <label class="form-label" for="phone">
+            Телефон <span>*</span>
+          </label>
+        </div>
+        <div class="form-group">
+          <input class="form-input" id="mail" name="mail" type="email">
+          <label class="form-label" for="mail">
+            Эл. почта <span>*</span>
+          </label>
+        </div>
+      </div>
+      <div class="form-foot">
+        <button class="form-btn btn btn--accent" type="button">
+          Отправить
+        </button>
+        <div class="form-text">
+          <p>
+            Нажимая кнопку «Забронировать», <a href="/">вы принимаете условия обработки пользовательских
+              данных</a>
+          </p>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
 </div>
 <!-- libs -->
+<script src="./libs/jquery/jquery.v3.7.1.min.js"></script>
+<script src="./libs/fancybox/fancybox.umd.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
   integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/transfer-elements@1.0.7/dist/transfer-elements.min.js"></script>

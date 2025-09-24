@@ -1,153 +1,48 @@
 @use './../mixins' as *;
 
-// .popup {
-//   position: fixed;
-//   left: 0;
-//   top: 0;
-//   width: 100%;
-//   height: 100vh;
-//   z-index: 300;
-//   background-color: var(--black-90);
-//   display: grid;
-//   align-items: center;
-//   justify-content: center;
-//   overflow-y: auto;
-//   visibility: hidden;
-//   opacity: 0;
-//   transition: opacity .2s, visibility .2s;
+.popup {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 4rem 5rem 3rem;
+  background-color: var(--white);
+  max-width: 71.4rem;
+  width: 100%;
 
-//   &__content {
-//     display: flex;
-//     flex-direction: column;
-//     gap: 5rem;
+  @include md {
+    gap: 2rem;
+    padding: 5rem 1rem 2rem;
+    max-width: 35.3rem;
+  }
 
-//     @include md {
-//       gap: 3rem;
-//     }
-//   }
+  &__head {
+    text-transform: uppercase;
+  }
 
-//   &__box {
-//     background-color: var(--white);
-//     padding: 7rem 3rem 4rem;
-//     position: relative;
-//     max-width: 52.5rem;
-//     width: 90vw;
-//     height: fit-content;
-//     overflow: hidden;
-//     z-index: 1;
-//     margin: 3rem 1.5rem;
-//     box-shadow: 0px 0px 17px -7px rgba(34, 60, 80, 0.2);
-//     transform: scale(0);
-//     transition: transform .2s;
+  &__body {}
 
-//     @include md {
-//       padding: 5rem 2rem 3rem;
-//     }
+  .form {
 
-//     @include xxs {
-//       padding: 5rem 1rem 2rem;
-//     }
-//   }
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
 
-//   &__close {
+      @include md {
+        gap: 1rem;
+      }
+    }
 
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     width: 5rem;
-//     height: 5rem;
-//     border: none;
-//     background-color: transparent;
-//     position: absolute;
-//     top: 1rem;
-//     right: 1rem;
-//     cursor: pointer;
+    &-group {
 
-//     @include sm {
-//       width: 3rem;
-//       height: 3rem;
-//     }
+      &:nth-child(1),
+      &:nth-child(2) {
+        width: 100%;
+      }
+    }
 
-//     &::before {
-//       content: "";
-//       display: block;
-//       width: 3.6rem;
-//       height: 0.2rem;
-//       border-radius: 0.1rem;
-//       background-color: var(--black);
-//       position: absolute;
-//       top: 50%;
-//       left: 50%;
-//       transform: translate(-50%, -50%) rotate(-45deg);
-//       transition: all 0.3s ease;
-
-//       @include sm {
-//         width: 2.4rem;
-//       }
-//     }
-
-//     &::after {
-//       content: "";
-//       display: block;
-//       width: 3.6rem;
-//       height: 0.2rem;
-//       border-radius: 0.1rem;
-//       background-color: var(--black);
-//       position: absolute;
-//       top: 50%;
-//       left: 50%;
-//       transform: translate(-50%, -50%) rotate(-135deg);
-//       transition: all 0.3s ease;
-
-//       @include sm {
-//         width: 2.4rem;
-//       }
-//     }
-
-//     &:hover::before,
-//     &:hover::after {
-//       background-color: var(--accent);
-//     }
-//   }
-
-//   &.open {
-//     visibility: visible;
-//     opacity: 1;
-
-//     .popup__box {
-//       transform: scale(1);
-//       max-height: 100%;
-//       height: fit-content;
-//       // overflow-y: auto;
-//       overflow: visible;
-//     }
-//   }
-
-//   &__wrap {
-//     position: relative;
-//   }
-
-//   .general__head-title {
-
-//     h1,
-//     h2,
-//     h3,
-//     h4,
-//     h5,
-//     h6 {
-//       margin-left: 0;
-
-//       @include xxs {
-//         font-size: 2rem;
-//       }
-
-//       &::before {
-//         display: none;
-//       }
-//     }
-//   }
-
-//   .general__head-text {
-//     margin-left: 0;
-//   }
-// }
+    &-label {
+      background-color: var(--white);
+    }
+  }
+}

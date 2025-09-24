@@ -17,6 +17,7 @@
       background: transparent;
       z-index: 2;
       padding-bottom: 5rem;
+      pointer-events: none;
 
       @include md {
         padding-bottom: 3rem;
@@ -29,6 +30,10 @@
       @include md {
         padding-top: 4rem;
       }
+    }
+
+    .breadcrumbs {
+      pointer-events: all;
     }
   }
 
@@ -194,7 +199,7 @@
       display: block;
       width: 5.6rem;
       height: 5.6rem;
-      transition: all 1s linear;
+      transition: all 0.5s linear;
       position: absolute;
 
       &:hover {
@@ -352,6 +357,10 @@
     a {
       font-weight: 350;
       font-size: 1.4rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

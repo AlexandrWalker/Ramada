@@ -1,48 +1,40 @@
-<form class="form none" action="#">
-  <div class="form-content">
-    <div class="form-group">
-      <input class="form-input" id="names" name="initials" type="text">
-      <label class="form-label" for="names">
-        Ваше имя <span>*</span>
-      </label>
-      <span class="form-invalid">Данное поле неверно заполнено</span>
-    </div>
-    <div class="form-group">
-      <input class="form-input" id="phone" name="tel" type="tel">
-      <label class="form-label" for="phone">
-        Телефон <span>*</span>
-      </label>
-      <span class="form-invalid">Данное поле неверно заполнено</span>
-    </div>
-    <div class="form-group">
-      <input class="form-input" id="mail" name="mail" type="email">
-      <label class="form-label" for="mail">
-        Эл. почта <span>*</span>
-      </label>
-      <span class="form-invalid">Данное поле неверно заполнено</span>
-    </div>
-    <div class="form-group">
-      <textarea class="form-textarea" id="comments" rows="1" name="comment"></textarea>
-      <label class="form-label" for="comments">
-        Комментарий <span>*</span>
-      </label>
-      <span class="form-invalid">Данное поле неверно заполнено</span>
-    </div>
+<div class="popup" id="feedback">
+  <div class="popup__head">
+    <h5>Отправьте заявку и наш менеджер свяжется с вами</h5>
   </div>
-  <div class="form-wrap">
-    <button class="form-btn btn btn--accent" type="button">
-      <i class="icon-arrow"></i>
-      Отправить
-    </button>
-    <div class="form-bottom none">
-      <input class="form-checkbox" name="checkbox" type="checkbox" required>
-      <div class="form-text">
-        <p>
-          Нажимая кнопку «Отправить, я соглашаюсь с <a href="/Leader/policy.html">обработкой персональных
-            данных</a>
-          и с <a href="/Leader/agreement.html">пользовательским соглашением</a>
-        </p>
+  <div class="popup__body">
+    <form class="form" action="#">
+      <div class="form-content">
+        <div class="form-group">
+          <input class="form-input" id="names" name="initials" type="text">
+          <label class="form-label" for="names">
+            Ваше имя <span>*</span>
+          </label>
+        </div>
+        <div class="form-group">
+          <input class="form-input" id="phone" name="tel" type="tel">
+          <label class="form-label" for="phone">
+            Телефон <span>*</span>
+          </label>
+        </div>
+        <div class="form-group">
+          <input class="form-input" id="mail" name="mail" type="email">
+          <label class="form-label" for="mail">
+            Эл. почта <span>*</span>
+          </label>
+        </div>
       </div>
-    </div>
+      <div class="form-foot">
+        <button class="form-btn btn btn--accent" type="button">
+          Отправить
+        </button>
+        <div class="form-text">
+          <p>
+            Нажимая кнопку «Забронировать», <a href="/">вы принимаете условия обработки пользовательских
+              данных</a>
+          </p>
+        </div>
+      </div>
+    </form>
   </div>
-</form>
+</div>
