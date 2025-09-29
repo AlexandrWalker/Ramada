@@ -1982,6 +1982,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  const calendarTargets = document.querySelectorAll('.target');
+  if (calendarTargets.length > 0) {
+    calendarTargets.forEach(calendarTarget => {
+      const tooltip = calendarTarget.querySelector('.tooltip')
+      const tooltipClose = calendarTarget.querySelector('.tooltip__close')
+
+      calendarTarget.addEventListener('click', () => {
+        calendarTarget.classList.add('show');
+      })
+
+      document.addEventListener('click', (event) => {
+        if (!tooltip.contains(event.target) && !calendarTarget.contains(event.target)) {
+          calendarTarget.classList.remove('show');
+        }
+      });
+
+      // tooltipClose.addEventListener('click', function () {
+      //   if (calendarTarget.classList.contains('show')) {
+      //     calendarTarget.classList.remove('show');
+      //   }
+      // });
+    });
+  }
+
 
   /**
    * =================Скрипт для блока со скролом=====================

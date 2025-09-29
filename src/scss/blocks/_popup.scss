@@ -12,13 +12,21 @@
   display: none;
 
   @include md {
-    gap: 2rem;
+    gap: 3rem;
     padding: 5rem 1rem 2rem;
     max-width: 35.3rem;
   }
 
   &__head {
     text-transform: uppercase;
+
+    h5 {
+      line-height: 100%;
+
+      @include md {
+        font-size: 2.5rem;
+      }
+    }
   }
 
   &__body {}
@@ -31,7 +39,7 @@
       gap: 2rem;
 
       @include md {
-        gap: 1rem;
+        // gap: 1rem;
       }
     }
 
@@ -45,6 +53,25 @@
 
     &-label {
       background-color: var(--white);
+
+      @include md {
+        font-size: 1.2rem;
+        top: -0.5rem;
+      }
+    }
+
+    &-foot {
+
+      @include md {
+        gap: 1rem;
+      }
+
+      .btn {
+
+        @include md {
+          font-size: 1.2rem;
+        }
+      }
     }
   }
 }

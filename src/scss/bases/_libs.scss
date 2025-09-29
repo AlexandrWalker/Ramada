@@ -170,3 +170,17 @@
     background-color: transparent;
   }
 }
+
+/* Fancybox */
+.fancybox__container {
+
+  .is-close-button {
+    top: 2rem;
+    right: 2rem;
+
+    svg {
+      transform: scale(1.1);
+      stroke: var(--black);
+    }
+  }
+}

@@ -1,0 +1,453 @@
+@use './../mixins' as *;
+
+.care {
+
+  &-page {
+
+    .template {
+      padding: 0;
+
+      &__inner {
+        padding: 6rem 13rem 4rem;
+        background-color: var(--white);
+
+        @include md {
+          padding: 4rem 0 3rem;
+          background-color: transparent;
+        }
+
+        @include sm {
+          padding: 3rem 0 2rem;
+        }
+      }
+    }
+  }
+
+  &__inner {
+    padding: 0 13rem 5rem;
+    background-color: var(--white);
+
+    @include md {
+      padding: 0;
+      background-color: transparent;
+    }
+  }
+
+  &__wrap {
+    max-width: 87.7rem;
+    width: 100%;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 3rem;
+
+    @include md {
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    h4 {
+      color: var(--accent);
+    }
+  }
+
+  &__body {}
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include md {
+      gap: 2rem;
+    }
+
+    h5 {
+      line-height: 110%;
+      color: var(--accent);
+
+      @include md {
+        font-size: 2.5rem;
+      }
+    }
+
+    &:nth-child(3) {
+      max-width: 74.7rem;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include md {
+      gap: 3rem;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include md {
+      gap: 2rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &--type {}
+
+    h6 {
+      letter-spacing: normal;
+      font-weight: 700;
+      font-size: 2.5rem;
+
+      @include md {
+        font-size: 1.6rem;
+      }
+    }
+
+    .form {
+
+      &-radio {
+        display: none;
+
+        &:hover:not(.care__radio-head .form-radio) {
+
+          &+label {
+            color: var(--white);
+            background-color: var(--black);
+          }
+        }
+
+        &+label {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 5rem;
+          height: 5rem;
+          background-color: var(--white-gray);
+          transition: all 0.3s ease;
+
+          text-align: center;
+          font-weight: 700;
+          font-size: 2rem;
+          line-height: 120%;
+
+          @include md {
+            background-color: var(--white);
+
+            font-size: 1.6rem;
+          }
+        }
+
+
+        &:checked {
+
+          &+label {
+            color: var(--white);
+            background-color: var(--accent);
+          }
+        }
+      }
+
+      &-textarea {
+
+        &+label {
+
+          @include sm {
+            font-size: 1.4rem;
+          }
+        }
+      }
+
+      &-label {
+        background-color: var(--white);
+
+        @include md {
+          background-color: var(--white-gray);
+        }
+      }
+
+      &-group {
+        flex-shrink: 0;
+        width: fit-content;
+
+        @include md {
+          width: 100%;
+        }
+
+        p {
+          font-weight: 350;
+          font-size: 1.4rem;
+          line-height: 120%;
+          color: var(--accent);
+          margin-top: 1rem;
+          max-width: 56.2rem;
+        }
+      }
+    }
+
+    &--type {
+
+      .care__radio-items {
+        gap: 1rem;
+      }
+
+      label {
+
+        @include sm {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  &__radio {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: fit-content;
+
+    &-head {
+
+      .form-group {
+        width: fit-content;
+
+        &-radio {
+          display: flex;
+          width: 2.4rem;
+          height: 2.4rem;
+          background: none;
+          flex-shrink: 0;
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            border: 0.3rem solid var(--accent);
+            border-radius: 50%;
+            flex-shrink: 0;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            bottom: 0.5rem;
+            left: 0.5rem;
+            z-index: 2;
+            width: calc(100% - 1rem);
+            height: calc(100% - 1rem);
+            background-color: var(--accent);
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+          }
+        }
+
+        input {
+
+          &:checked {
+
+            &+label {
+              background-color: unset;
+              color: var(--accent);
+
+              .form-group-radio::after {
+                opacity: 1;
+              }
+            }
+          }
+        }
+
+        label {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 1rem;
+          background-color: transparent;
+          width: fit-content;
+          height: unset;
+          font-weight: 350;
+          font-size: 1.6rem;
+          line-height: 120%;
+          color: var(--accent);
+
+          @include md {
+            background-color: transparent;
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+
+    &-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+
+      span {
+
+        &:first-child {
+
+          @include md {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &-items {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+
+      @include md {
+        flex-wrap: wrap;
+
+        &:not(.care__item--type .care__radio-items) {
+          gap: 1rem;
+        }
+      }
+
+      .form-group {
+
+        @include md {
+          width: fit-content;
+        }
+
+        @include sm {
+          width: fit-content;
+        }
+      }
+    }
+
+    &-item {
+
+      input {
+        display: none;
+
+        &:hover {
+
+          &+label {
+
+            i {
+              border-color: var(--black);
+            }
+          }
+        }
+
+        &:checked {
+
+          &+label {
+
+            i {
+              background-color: var(--accent);
+              color: var(--white);
+              border-color: var(--accent);
+            }
+          }
+        }
+      }
+
+      label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        @include sm {
+          gap: 2rem;
+        }
+      }
+
+      i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10rem;
+        height: 10rem;
+        background-color: var(--white);
+        border-radius: 50%;
+        border: 0.1rem solid var(--white);
+        transition: all 0.3s ease;
+
+        font-size: 10rem;
+        color: var(--black);
+
+        @include sm {
+          width: 6rem;
+          height: 6rem;
+          font-size: 6rem;
+        }
+      }
+    }
+  }
+
+  .callback__wrap {
+    max-width: 74.7rem;
+    width: 100%;
+    gap: 3rem;
+
+    @include domd {
+      padding: 0;
+    }
+
+    @include sm {
+      gap: 2rem;
+    }
+  }
+
+  .callback__head {
+
+    h5 {
+      text-transform: none;
+      color: var(--accent);
+
+      @include md {
+        font-size: 3.5rem;
+      }
+
+      @include sm {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  .callback__body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include md {
+      gap: 1rem;
+    }
+
+    .form {
+
+      &-label {
+        background-color: var(--white);
+      }
+    }
+  }
+}

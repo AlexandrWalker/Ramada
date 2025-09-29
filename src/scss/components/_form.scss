@@ -271,4 +271,62 @@
   &-btn {
     width: 100%;
   }
+
+  &-checkbox {
+    display: none;
+
+    &:checked {
+
+      &+label {
+
+        .form-checkbox--item {
+
+          &::after {
+            background-color: var(--accent);
+          }
+        }
+      }
+    }
+
+    &+label {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+    }
+
+    &--item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      border: 0.1rem solid var(--accent);
+      position: relative;
+      flex-shrink: 0;
+
+      &::before {
+        content: "";
+        width: 1.6rem;
+        height: 1.6rem;
+        border-radius: 50%;
+        background-color: var(--black);
+        flex-shrink: 0;
+      }
+
+      &::after {
+        content: "";
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: var(--white);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+      }
+    }
+  }
 }
