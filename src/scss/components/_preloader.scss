@@ -1,0 +1,27 @@
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100000;
+  background: var(--white);
+
+  &.hidden {
+    opacity: 0;
+    transition: opacity 2s;
+  }
+
+  &.none {
+    display: none;
+  }
+
+  &__img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+  }
+}

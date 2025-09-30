@@ -3,7 +3,7 @@
 @@include('blocks/head.html', {"title": "RAMADA"})
 
 <body>
-  <div class="wrapper thermal-zone-page">
+  <div class="wrapper inner-page thermal-zone-page">
     <!-- Шапка -->
     @@include('./blocks/header.html')
     <main class="main">
@@ -79,15 +79,15 @@
 
       </section>
 
-      <section class="template-product" data-transform="fadeUp">
-        <div class="container">
+      <section class="template-product">
+        <div class="container" data-transform="fadeUp">
           <div class="template-product__inner">
 
-            <div class="template-product__head">
+            <div class="template-product__head" data-transform="revealRotate" data-splitting="words">
               <h4>
                 Бассейн
               </h4>
-              <p>
+              <p data-transform="fade">
                 Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
                 войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные кровати, а
                 также диван-кровать. Балкон, выходящий на северо-восток, позволяет наслаждаться утренним солнцем и
@@ -98,7 +98,7 @@
             <div class="template-product__body">
 
               <div class="template-product__body-items">
-                <div class="template-product__body-item">
+                <div class="template-product__body-item" data-transform="fade">
                   <h5>
                     30 человек
                   </h5>
@@ -106,7 +106,7 @@
                     Максимальная вместимость
                   </p>
                 </div>
-                <div class="template-product__body-item">
+                <div class="template-product__body-item" data-transform="fade">
                   <h5>
                     220м<sup>2</sup>
                   </h5>
@@ -115,12 +115,14 @@
                   </p>
                 </div>
               </div>
-              <div class="template-product__body-btns">
+              <div class="template-product__body-btns" data-transform="fade">
                 <a class="btn btn--black" href="/">
+                  <span class="scale"></span>
                   <i class="icon-play"></i>
                   Видео о бассейне
                 </a>
                 <a class="btn btn--gray" href="/">
+                  <span class="scale"></span>
                   <span class="menu__foot-icon">
                     <i class="icon-3d"></i>
                   </span>
@@ -135,22 +137,22 @@
                 <div class="swiper template-product__slider--big border">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/pool-item-1.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/pool-item-2.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/pool-item-3.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/pool-item-4.png" alt="">
                       </div>
                     </div>
@@ -158,9 +160,11 @@
                   <div class="swiper-pagination"></div>
                 </div>
                 <div class="swiper-button-prev swiper-button-alt template-product-button-prev">
+                  <span class="scale"></span>
                   <i class="icon-arrow-left"></i>
                 </div>
                 <div class="swiper-button-next swiper-button-alt template-product-button-next">
+                  <span class="scale"></span>
                   <i class="icon-arrow-right"></i>
                 </div>
               </div>
@@ -196,15 +200,15 @@
         </div>
       </section>
 
-      <section class="template-product template-product--reverse" data-transform="fadeUp">
-        <div class="container">
+      <section class="template-product template-product--reverse">
+        <div class="container" data-transform="fadeUp">
           <div class="template-product__inner">
 
-            <div class="template-product__head">
+            <div class="template-product__head" data-transform="revealRotate" data-splitting="words">
               <h4>
                 Хаммам
               </h4>
-              <p>
+              <p data-transform="fade">
                 Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
                 войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные кровати, а
                 также диван-кровать. Балкон, выходящий на северо-восток, позволяет наслаждаться утренним солнцем и
@@ -215,7 +219,7 @@
             <div class="template-product__body">
 
               <div class="template-product__body-items">
-                <div class="template-product__body-item">
+                <div class="template-product__body-item" data-transform="fade">
                   <h5>
                     30 человек
                   </h5>
@@ -223,7 +227,7 @@
                     Максимальная вместимость
                   </p>
                 </div>
-                <div class="template-product__body-item">
+                <div class="template-product__body-item" data-transform="fade">
                   <h5>
                     220м<sup>2</sup>
                   </h5>
@@ -232,12 +236,14 @@
                   </p>
                 </div>
               </div>
-              <div class="template-product__body-btns">
+              <div class="template-product__body-btns" data-transform="fade">
                 <a class="btn btn--black" href="/">
+                  <span class="scale"></span>
                   <i class="icon-play"></i>
                   Видео про хаммам
                 </a>
                 <a class="btn btn--gray" href="/">
+                  <span class="scale"></span>
                   <span class="menu__foot-icon">
                     <i class="icon-3d"></i>
                   </span>
@@ -252,22 +258,22 @@
                 <div class="swiper template-product__slider--big border">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/hammam-item-1.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/hammam-item-2.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/hammam-item-3.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/hammam-item-4.png" alt="">
                       </div>
                     </div>
@@ -275,9 +281,11 @@
                   <div class="swiper-pagination"></div>
                 </div>
                 <div class="swiper-button-prev swiper-button-alt template-product-button-prev">
+                  <span class="scale"></span>
                   <i class="icon-arrow-left"></i>
                 </div>
                 <div class="swiper-button-next swiper-button-alt template-product-button-next">
+                  <span class="scale"></span>
                   <i class="icon-arrow-right"></i>
                 </div>
               </div>
@@ -313,15 +321,15 @@
         </div>
       </section>
 
-      <section class="template-product" data-transform="fadeUp">
-        <div class="container">
+      <section class="template-product">
+        <div class="container" data-transform="fadeUp">
           <div class="template-product__inner">
 
-            <div class="template-product__head">
+            <div class="template-product__head" data-transform="revealRotate" data-splitting="words">
               <h4>
                 СПА
               </h4>
-              <p>
+              <p data-transform="fade">
                 Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
                 войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные кровати, а
                 также диван-кровать. Балкон, выходящий на северо-восток, позволяет наслаждаться утренним солнцем и
@@ -332,7 +340,7 @@
             <div class="template-product__body">
 
               <div class="template-product__body-items">
-                <div class="template-product__body-item">
+                <div class="template-product__body-item" data-transform="fade">
                   <h5>
                     30 человек
                   </h5>
@@ -340,7 +348,7 @@
                     Максимальная вместимость
                   </p>
                 </div>
-                <div class="template-product__body-item">
+                <div class="template-product__body-item" data-transform="fade">
                   <h5>
                     220м<sup>2</sup>
                   </h5>
@@ -349,12 +357,14 @@
                   </p>
                 </div>
               </div>
-              <div class="template-product__body-btns">
+              <div class="template-product__body-btns" data-transform="fade">
                 <a class="btn btn--black" href="/">
+                  <span class="scale"></span>
                   <i class="icon-play"></i>
                   Видео о СПА
                 </a>
                 <a class="btn btn--gray" href="/">
+                  <span class="scale"></span>
                   <span class="menu__foot-icon">
                     <i class="icon-3d"></i>
                   </span>
@@ -369,22 +379,22 @@
                 <div class="swiper template-product__slider--big border">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/spa-item-1.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/spa-item-2.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/spa-item-3.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/spa-item-4.png" alt="">
                       </div>
                     </div>
@@ -392,9 +402,11 @@
                   <div class="swiper-pagination"></div>
                 </div>
                 <div class="swiper-button-prev swiper-button-alt template-product-button-prev">
+                  <span class="scale"></span>
                   <i class="icon-arrow-left"></i>
                 </div>
                 <div class="swiper-button-next swiper-button-alt template-product-button-next">
+                  <span class="scale"></span>
                   <i class="icon-arrow-right"></i>
                 </div>
               </div>
@@ -430,15 +442,15 @@
         </div>
       </section>
 
-      <section class="template-product template-product--reverse" data-transform="fadeUp">
-        <div class="container">
+      <section class="template-product template-product--reverse">
+        <div class="container" data-transform="fadeUp">
           <div class="template-product__inner">
 
-            <div class="template-product__head">
+            <div class="template-product__head" data-transform="revealRotate" data-splitting="words">
               <h4>
                 Тренажерный зал
               </h4>
-              <p>
+              <p data-transform="fade">
                 Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
                 войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные кровати, а
                 также диван-кровать. Балкон, выходящий на северо-восток, позволяет наслаждаться утренним солнцем и
@@ -449,7 +461,7 @@
             <div class="template-product__body">
 
               <div class="template-product__body-items">
-                <div class="template-product__body-item">
+                <div class="template-product__body-item" data-transform="fade">
                   <h5>
                     30 человек
                   </h5>
@@ -457,7 +469,7 @@
                     Максимальная вместимость
                   </p>
                 </div>
-                <div class="template-product__body-item">
+                <div class="template-product__body-item" data-transform="fade">
                   <h5>
                     220м<sup>2</sup>
                   </h5>
@@ -466,12 +478,14 @@
                   </p>
                 </div>
               </div>
-              <div class="template-product__body-btns">
+              <div class="template-product__body-btns" data-transform="fade">
                 <a class="btn btn--black" href="/">
+                  <span class="scale"></span>
                   <i class="icon-play"></i>
                   Видео о тренажерном зале
                 </a>
                 <a class="btn btn--gray" href="/">
+                  <span class="scale"></span>
                   <span class="menu__foot-icon">
                     <i class="icon-3d"></i>
                   </span>
@@ -486,22 +500,22 @@
                 <div class="swiper template-product__slider--big border">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/gym-item-1.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/gym-item-2.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/gym-item-3.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/gym-item-4.png" alt="">
                       </div>
                     </div>
@@ -509,9 +523,11 @@
                   <div class="swiper-pagination"></div>
                 </div>
                 <div class="swiper-button-prev swiper-button-alt template-product-button-prev">
+                  <span class="scale"></span>
                   <i class="icon-arrow-left"></i>
                 </div>
                 <div class="swiper-button-next swiper-button-alt template-product-button-next">
+                  <span class="scale"></span>
                   <i class="icon-arrow-right"></i>
                 </div>
               </div>

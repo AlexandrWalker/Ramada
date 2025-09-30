@@ -486,6 +486,10 @@
     @include md {
       gap: 2rem;
     }
+
+    h4 {
+      overflow: hidden;
+    }
   }
 
   &__items {
@@ -533,6 +537,7 @@
       bottom: 2rem;
       left: 2rem;
       border: 0.1rem solid var(--gray-30);
+      pointer-events: none;
 
       @include md {
         display: none;
@@ -604,6 +609,10 @@
         gap: 1.5rem;
         overflow: hidden;
       }
+    }
+
+    &-inner {
+      overflow: hidden;
     }
 
     &-wrap {

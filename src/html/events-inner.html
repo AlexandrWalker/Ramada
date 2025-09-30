@@ -3,7 +3,7 @@
 @@include('blocks/head.html', {"title": "RAMADA"})
 
 <body>
-  <div class="wrapper offers-special-page">
+  <div class="wrapper inner-page offers-special-page">
     <!-- Шапка -->
     @@include('./blocks/header.html')
     <main class="main">
@@ -63,22 +63,22 @@
 
       </section>
 
-      <section id="secondSection" class="template-product" data-transform="fadeUp">
-        <div class="container">
+      <section id="secondSection" class="template-product">
+        <div class="container" data-transform="fadeUp">
           <div class="template-product__inner">
 
-            <div class="template-product__head">
+            <div class="template-product__head" data-transform="revealRotate" data-splitting="words">
               <h4>
                 Заголовок блока
               </h4>
-              <p>
+              <p data-transform="fadeUp">
                 Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
                 войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные кровати, а
                 также диван-кровать.
               </p>
             </div>
 
-            <div class="template-product__body">
+            <div class="template-product__body" data-transform="fadeUp">
               <div class="template-product__body-title">
                 <h5>
                   Заголовок списка
@@ -107,7 +107,7 @@
                   В формировании направлений
                 </li>
               </ul>
-              <div class="template-product__body-price">
+              <div class="template-product__body-price" data-transform="fadeUp">
                 <h6>
                   от 180 000 ₽
                 </h6>
@@ -116,6 +116,7 @@
                 </p>
               </div>
               <a class="btn btn--accent" href="/">
+                <span class="scale"></span>
                 <span data-text="Узнать подробнее" data-text-mob="Подробнее"></span>
               </a>
             </div>
@@ -126,22 +127,22 @@
                 <div class="swiper template-product__slider--big border">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/events-inner-item-1.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/events-inner-item-2.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/events-inner-item-3.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/events-inner-item-4.png" alt="">
                       </div>
                     </div>
@@ -149,9 +150,11 @@
                   <div class="swiper-pagination"></div>
                 </div>
                 <div class="swiper-button-prev swiper-button-alt template-product-button-prev">
+                  <span class="scale"></span>
                   <i class="icon-arrow-left"></i>
                 </div>
                 <div class="swiper-button-next swiper-button-alt template-product-button-next">
+                  <span class="scale"></span>
                   <i class="icon-arrow-right"></i>
                 </div>
               </div>
@@ -187,55 +190,55 @@
         </div>
       </section>
 
-      <section class="events-desc" data-transform="fadeUp">
-        <div class="container">
+      <section class="events-desc">
+        <div class="container" data-transform="fadeUp">
           <div class="events-desc__inner">
             <div class="events-desc__img border" data-animation="parallax-img">
               <img src="./images/temp/events-inner-desc.png" alt="">
             </div>
             <div class="events-desc__block">
-              <div class="events-desc__head">
+              <div class="events-desc__head" data-transform="revealRotate" data-splitting="words">
                 <h4>
                   Есть что предложить
                 </h4>
-                <p>
+                <p data-transform="fadeUp">
                   Товарищи! начало повседневной работы по формированию позиции позволяет выполнять важные задания по
                   разработке дальнейших направлений развития.
                 </p>
               </div>
               <div class="events-desc__body">
-                <div class="events-desc__body-item">
-                  <img src="./images/temp/events-inner-icon-1.svg" alt="">
+                <div class="events-desc__body-item" data-transform="fadeUp">
+                  <i class="icon-events-inner-icon-1"></i>
                   <p>
                     Загородная резиденция
                   </p>
                 </div>
-                <div class="events-desc__body-item">
-                  <img src="./images/temp/events-inner-icon-2.svg" alt="">
+                <div class="events-desc__body-item" data-transform="fadeUp">
+                  <i class="icon-events-inner-icon-2"></i>
                   <p>
                     Два ресторана
                   </p>
                 </div>
-                <div class="events-desc__body-item">
-                  <img src="./images/temp/events-inner-icon-3.svg" alt="">
+                <div class="events-desc__body-item" data-transform="fadeUp">
+                  <i class="icon-events-inner-icon-3"></i>
                   <p>
                     Три конференц зала
                   </p>
                 </div>
-                <div class="events-desc__body-item">
-                  <img src="./images/temp/events-inner-icon-4.svg" alt="">
+                <div class="events-desc__body-item" data-transform="fadeUp">
+                  <i class="icon-events-inner-icon-4"></i>
                   <p>
                     Кейтеринг
                   </p>
                 </div>
-                <div class="events-desc__body-item">
-                  <img src="./images/temp/events-inner-icon-5.svg" alt="">
+                <div class="events-desc__body-item" data-transform="fadeUp">
+                  <i class="icon-events-inner-icon-5"></i>
                   <p>
                     Мероприятий под ключ
                   </p>
                 </div>
-                <div class="events-desc__body-item">
-                  <img src="./images/temp/events-inner-icon-6.svg" alt="">
+                <div class="events-desc__body-item" data-transform="fadeUp">
+                  <i class="icon-events-inner-icon-6"></i>
                   <p>
                     Размещение гостей
                   </p>
@@ -252,6 +255,8 @@
       @@include('blocks/callback.html', {"title": "Забронировать", "cover": "./images/temp/callback-cover.png", "formFile": "false"})
 
       @@include('blocks/offers.html')
+
+      @@include('blocks/reviews-gosti.html')
 
     </main>
     <!-- Подвал -->

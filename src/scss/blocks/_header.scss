@@ -258,7 +258,8 @@
 
       &:hover {
         --btn-border-radius: calc(var(--btn-height) / 2);
-
+        --btn-background: var(--accent);
+        
         padding: 1.8rem 0;
         border-radius: var(--btn-border-radius);
 

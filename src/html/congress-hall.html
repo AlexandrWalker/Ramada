@@ -3,7 +3,7 @@
 @@include('blocks/head.html', {"title": "RAMADA"})
 
 <body>
-  <div class="wrapper hall-page">
+  <div class="wrapper inner-page hall-page">
     <!-- Шапка -->
     @@include('./blocks/header.html')
     <main class="main">
@@ -75,15 +75,15 @@
 
       </section>
 
-      <section id="shishkinHall" class="template-product" data-transform="fadeUp">
-        <div class="container">
+      <section id="shishkinHall" class="template-product">
+        <div class="container" data-transform="fadeUp">
           <div class="template-product__inner">
 
-            <div class="template-product__head">
+            <div class="template-product__head" data-transform="revealRotate" data-splitting="words">
               <h4>
                 Шишкин
               </h4>
-              <p>
+              <p data-transform="fade">
                 Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
                 войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные кровати, а
                 также диван-кровать. Балкон, выходящий на северо-восток, позволяет наслаждаться утренним солнцем и
@@ -94,7 +94,7 @@
             <div class="template-product__body">
 
               <div class="template-product__body-items">
-                <div class="template-product__body-item">
+                <div class="template-product__body-item" data-transform="fade">
                   <h5>
                     30 человек
                   </h5>
@@ -102,7 +102,7 @@
                     Максимальная вместимость
                   </p>
                 </div>
-                <div class="template-product__body-item">
+                <div class="template-product__body-item" data-transform="fade">
                   <h5>
                     220м<sup>2</sup>
                   </h5>
@@ -111,12 +111,14 @@
                   </p>
                 </div>
               </div>
-              <div class="template-product__body-btns">
+              <div class="template-product__body-btns" data-transform="fade">
                 <a class="btn btn--black" href="/">
+                  <span class="scale"></span>
                   <i class="icon-play"></i>
                   Видео о зале
                 </a>
-                <a class="btn btn--accent" href="/">
+                <a class="btn btn--accent" href="/Ramada/sosnovyi.html">
+                  <span class="scale"></span>
                   Подробнее
                 </a>
               </div>
@@ -128,22 +130,22 @@
                 <div class="swiper template-product__slider--big border">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/hall-page-item-1.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/hall-page-item-1.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/hall-page-item-1.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/hall-page-item-1.png" alt="">
                       </div>
                     </div>
@@ -151,9 +153,11 @@
                   <div class="swiper-pagination"></div>
                 </div>
                 <div class="swiper-button-prev swiper-button-alt template-product-button-prev">
+                  <span class="scale"></span>
                   <i class="icon-arrow-left"></i>
                 </div>
                 <div class="swiper-button-next swiper-button-alt template-product-button-next">
+                  <span class="scale"></span>
                   <i class="icon-arrow-right"></i>
                 </div>
               </div>
@@ -189,15 +193,15 @@
         </div>
       </section>
 
-      <section id="sosnovyiHall" class="template-product template-product--reverse" data-transform="fadeUp">
-        <div class="container">
+      <section id="sosnovyiHall" class="template-product template-product--reverse">
+        <div class="container" data-transform="fadeUp">
           <div class="template-product__inner">
 
-            <div class="template-product__head">
+            <div class="template-product__head" data-transform="revealRotate" data-splitting="words">
               <h4>
                 Сосновый
               </h4>
-              <p>
+              <p data-transform="fade">
                 Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
                 войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные кровати, а
                 также диван-кровать. Балкон, выходящий на северо-восток, позволяет наслаждаться утренним солнцем и
@@ -208,7 +212,7 @@
             <div class="template-product__body">
 
               <div class="template-product__body-items">
-                <div class="template-product__body-item">
+                <div class="template-product__body-item" data-transform="fade">
                   <h5>
                     30 человек
                   </h5>
@@ -216,7 +220,7 @@
                     Максимальная вместимость
                   </p>
                 </div>
-                <div class="template-product__body-item">
+                <div class="template-product__body-item" data-transform="fade">
                   <h5>
                     220м<sup>2</sup>
                   </h5>
@@ -225,12 +229,14 @@
                   </p>
                 </div>
               </div>
-              <div class="template-product__body-btns">
+              <div class="template-product__body-btns" data-transform="fade">
                 <a class="btn btn--black" href="/">
+                  <span class="scale"></span>
                   <i class="icon-play"></i>
                   Видео о зале
                 </a>
-                <a class="btn btn--accent" href="/">
+                <a class="btn btn--accent" href="/Ramada/sosnovyi.html">
+                  <span class="scale"></span>
                   Подробнее
                 </a>
               </div>
@@ -242,22 +248,22 @@
                 <div class="swiper template-product__slider--big border">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/hall-page-item-2.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/hall-page-item-2.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/hall-page-item-2.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/hall-page-item-2.png" alt="">
                       </div>
                     </div>
@@ -265,9 +271,11 @@
                   <div class="swiper-pagination"></div>
                 </div>
                 <div class="swiper-button-prev swiper-button-alt template-product-button-prev">
+                  <span class="scale"></span>
                   <i class="icon-arrow-left"></i>
                 </div>
                 <div class="swiper-button-next swiper-button-alt template-product-button-next">
+                  <span class="scale"></span>
                   <i class="icon-arrow-right"></i>
                 </div>
               </div>
@@ -303,15 +311,15 @@
         </div>
       </section>
 
-      <section id="kedrovyiHall" class="template-product" data-transform="fadeUp">
-        <div class="container">
+      <section id="kedrovyiHall" class="template-product">
+        <div class="container" data-transform="fadeUp">
           <div class="template-product__inner">
 
-            <div class="template-product__head">
+            <div class="template-product__head" data-transform="revealRotate" data-splitting="words">
               <h4>
                 Кедровый
               </h4>
-              <p>
+              <p data-transform="fade">
                 Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
                 войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные кровати, а
                 также диван-кровать. Балкон, выходящий на северо-восток, позволяет наслаждаться утренним солнцем и
@@ -322,7 +330,7 @@
             <div class="template-product__body">
 
               <div class="template-product__body-items">
-                <div class="template-product__body-item">
+                <div class="template-product__body-item" data-transform="fade">
                   <h5>
                     30 человек
                   </h5>
@@ -330,7 +338,7 @@
                     Максимальная вместимость
                   </p>
                 </div>
-                <div class="template-product__body-item">
+                <div class="template-product__body-item" data-transform="fade">
                   <h5>
                     220м<sup>2</sup>
                   </h5>
@@ -339,12 +347,14 @@
                   </p>
                 </div>
               </div>
-              <div class="template-product__body-btns">
+              <div class="template-product__body-btns" data-transform="fade">
                 <a class="btn btn--black" href="/">
+                  <span class="scale"></span>
                   <i class="icon-play"></i>
                   Видео о зале
                 </a>
-                <a class="btn btn--accent" href="/">
+                <a class="btn btn--accent" href="/Ramada/sosnovyi.html">
+                  <span class="scale"></span>
                   Подробнее
                 </a>
               </div>
@@ -356,22 +366,22 @@
                 <div class="swiper template-product__slider--big border">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/hall-page-item-3.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/hall-page-item-3.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/hall-page-item-3.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/hall-page-item-3.png" alt="">
                       </div>
                     </div>
@@ -379,9 +389,11 @@
                   <div class="swiper-pagination"></div>
                 </div>
                 <div class="swiper-button-prev swiper-button-alt template-product-button-prev">
+                  <span class="scale"></span>
                   <i class="icon-arrow-left"></i>
                 </div>
                 <div class="swiper-button-next swiper-button-alt template-product-button-next">
+                  <span class="scale"></span>
                   <i class="icon-arrow-right"></i>
                 </div>
               </div>

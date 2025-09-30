@@ -15,7 +15,7 @@
   <!-- title -->
   <title>RAMADA</title>
   <!-- icons -->
-  <link rel="stylesheet" href="icons/ramadaIconsStyle.css">
+  <link rel="stylesheet" href="icons/style.css">
   <!-- styles -->
   <link rel="stylesheet" href="./libs/fancybox/fancybox.css">
   <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css">
@@ -26,9 +26,12 @@
 </head>
 
 <body>
-  <div class="wrapper">
+  <div class="wrapper inner-page">
     <!-- Шапка -->
-    <header id="header" class="header">
+    <div class="preloader">
+  <img class="preloader__img" src="./images/temp/preloader.gif" alt="">
+</div>
+<header id="header" class="header">
   <div class="container container--fluid">
     <div class="header__inner">
 
@@ -36,6 +39,7 @@
         <div class="header__container container">
           <div class="header__left">
             <button class="burger-btn btn btn--black">
+              <span class="scale"></span>
               <span></span>
               <i class="icon-burger"></i>
               <i class="icon-menu"></i>
@@ -45,11 +49,13 @@
             <button class="btn btn--accent btn--icon">
               <i class="icon-3d"></i>
               <i class="pulse"></i>
+              <span class="scale"></span>
             </button>
-            <button class="btn btn--accent btn--icon">
+            <butaton class="btn btn--accent btn--icon">
               <i class="icon-play"></i>
               <i class="pulse"></i>
-            </button>
+              <span class="scale"></span>
+            </butaton>
           </div>
 
           <div class="header__wrap">
@@ -88,6 +94,7 @@
             <button class="header__btn btn btn--accent" data-fancybox href="#feedback">
               <i class="icon-book"></i>
               <i class="pulse"></i>
+              <span class="scale"></span>
               <span data-text="Забронировать номер" data-text-mob="Забронировать"></span>
             </button>
           </div>
@@ -177,10 +184,12 @@
       <div class="menu__head">
         <div class="menu__head-btns">
           <button class="btn btn--accent btn--icon">
+            <span class="scale"></span>
             <i class="icon-3d"></i>
             <i class="pulse"></i>
           </button>
           <button class="btn btn--accent btn--icon">
+            <span class="scale"></span>
             <i class="icon-play"></i>
             <i class="pulse"></i>
           </button>
@@ -730,11 +739,11 @@
 
             <div class="studio__box" data-transform="fadeUp">
               <div class="studio__content">
-                <div class="studio__content-head">
+                <div class="studio__content-head" data-transform="revealRotate" data-splitting="words">
                   <h4>
                     Об этом номере
                   </h4>
-                  <p>
+                  <p data-transform="fade">
                     Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
                     войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные
                     кровати,
@@ -743,7 +752,7 @@
                   </p>
                 </div>
                 <div class="studio__content-items">
-                  <div class="studio__content-item">
+                  <div class="studio__content-item" data-transform="fade">
                     <h5>
                       Семейный номер
                     </h5>
@@ -751,7 +760,7 @@
                       Для семьи с детьми на 3-4 человека
                     </p>
                   </div>
-                  <div class="studio__content-item">
+                  <div class="studio__content-item" data-transform="fade">
                     <h5>
                       220м2
                     </h5>
@@ -760,99 +769,118 @@
                     </p>
                   </div>
                 </div>
-                <div class="studio__content-btns">
+                <div class="studio__content-btns" data-transform="fade">
                   <a class="studio__content-btn btn btn--gray" href="/">
+                    <span class="scale"></span>
                     <span class="menu__foot-icon">
                       <i class="icon-3d"></i>
                     </span>
                     Совершить 3d-тур
                   </a>
                   <a class="studio__content-btn btn btn--black" href="/">
+                    <span class="scale"></span>
                     <i class="icon-play"></i>
                     Видео о номере
                   </a>
                   <a class="studio__content-btn btn btn--accent" href="/">
+                    <span class="scale"></span>
                     Забронировать сейчас
                   </a>
                 </div>
               </div>
               <div class="studio__terms">
-                <div class="studio__terms-title">
+                <div class="studio__terms-title" data-transform="fade">
                   <h5>
                     Условия в номере
                   </h5>
                 </div>
                 <div class="studio__terms-items">
                   <div class="studio__terms-row">
-                    <div class="studio__terms-item">
-                      <i class="icon-services-wifi"></i>
-                      <span>
-                        Wi-fi
-                      </span>
+                    <div class="studio__terms-wrap">
+                      <div class="studio__terms-item" data-transform="fadeUpRotate">
+                        <i class="icon-services-wifi"></i>
+                        <span>
+                          Wi-fi
+                        </span>
+                      </div>
                     </div>
-                    <div class="studio__terms-item">
-                      <i class="icon-services-tv"></i>
-                      <span>
-                        Спутниковое ТВ
-                      </span>
+                    <div class="studio__terms-wrap">
+                      <div class="studio__terms-item" data-transform="fadeUpRotate">
+                        <i class="icon-services-tv"></i>
+                        <span>
+                          Спутниковое ТВ
+                        </span>
+                      </div>
                     </div>
-                    <div class="studio__terms-item">
-                      <i class="icon-services-microwave"></i>
-                      <span>
-                        Микроволновая печь
-                      </span>
+                    <div class="studio__terms-wrap">
+                      <div class="studio__terms-item" data-transform="fadeUpRotate">
+                        <i class="icon-services-microwave"></i>
+                        <span>
+                          Микроволновая печь
+                        </span>
+                      </div>
                     </div>
-                    <div class="studio__terms-item">
-                      <i class="icon-services-electric-kettle"></i>
-                      <span>
-                        Электрочайник
-                      </span>
+                    <div class="studio__terms-wrap">
+                      <div class="studio__terms-item" data-transform="fadeUpRotate">
+                        <i class="icon-services-electric-kettle"></i>
+                        <span>
+                          Электрочайник
+                        </span>
+                      </div>
                     </div>
-                    <div class="studio__terms-item">
-                      <i class="icon-services-garderob"></i>
-                      <span>
-                        Гардероб
-                      </span>
+                    <div class="studio__terms-wrap">
+                      <div class="studio__terms-item" data-transform="fadeUpRotate">
+                        <i class="icon-services-garderob"></i>
+                        <span>
+                          Гардероб
+                        </span>
+                      </div>
                     </div>
-                    <div class="studio__terms-item">
-                      <i class="icon-services-condicioner"></i>
-                      <span>
-                        Кондиционер
-                      </span>
+                    <div class="studio__terms-wrap">
+                      <div class="studio__terms-item" data-transform="fadeUpRotate">
+                        <i class="icon-services-condicioner"></i>
+                        <span>
+                          Кондиционер
+                        </span>
+                      </div>
                     </div>
-                    <div class="studio__terms-item">
-                      <i class="icon-services-holodilnik"></i>
-                      <span>
-                        Холодильник
-                      </span>
+                    <div class="studio__terms-wrap">
+                      <div class="studio__terms-item" data-transform="fadeUpRotate">
+                        <i class="icon-services-holodilnik"></i>
+                        <span>
+                          Холодильник
+                        </span>
+                      </div>
                     </div>
-                    <div class="studio__terms-item">
-                      <i class="icon-services-board"></i>
-                      <span>
-                        Утюг и гладильная доска
-                      </span>
+                    <div class="studio__terms-wrap">
+                      <div class="studio__terms-item" data-transform="fadeUpRotate">
+                        <i class="icon-services-board"></i>
+                        <span>
+                          Утюг и гладильная доска
+                        </span>
+                      </div>
                     </div>
                   </div>
                   <div class="studio__terms-row">
-                    <div class="studio__terms-item">
+                    <div class="studio__terms-item" data-transform="fadeUpRotate">
                       <i class="icon-services-coffee-machine"></i>
                       <span>
                         Кофемашина
                       </span>
                     </div>
-                    <div class="studio__terms-item">
+                    <div class="studio__terms-item" data-transform="fadeUpRotate">
                       <i class="icon-services-master-bedroom"></i>
                       <span>
                         Мастер-спальня
                       </span>
                     </div>
-                    <div class="studio__terms-item">
+                    <div class="studio__terms-item" data-transform="fadeUpRotate">
                       <i class="icon-services-places"></i>
                       <span>
                         До 3-х мест
                       </span>
                     </div>
-                    <div class="studio__terms-item">
+                    <div class="studio__terms-item" data-transform="fadeUpRotate">
                       <i class="icon-services-kids-bedroom"></i>
                       <span>
                         Детская кровать
@@ -867,77 +895,79 @@
               <div class="swiper studio__slider--big">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-1.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-2.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-3.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-1.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-2.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-3.png" alt="">
                     </div>
                   </div>
                 </div>
                 <div class="swiper-button-tran swiper-button-prev studio-button-prev">
+                  <span class="scale"></span>
                   <i class="icon-arrow-left"></i>
                 </div>
                 <div class="swiper-button-tran swiper-button-next studio-button-next">
+                  <span class="scale"></span>
                   <i class="icon-arrow-right"></i>
                 </div>
               </div>
               <div class="swiper studio__slider--min">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-2.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-3.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-1.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-2.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-3.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-1.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-2.png" alt="">
                     </div>
                   </div>
@@ -960,11 +990,12 @@
           </h4>
         </div>
         <a class="btn btn--accent" href="/Ramada/reviews.html">
+          <span class="scale"></span>
           Все отзывы
         </a>
       </div>
 
-      <div class="reviews__body">
+      <div class="reviews__body" data-transform="fadeUp">
         <div class="swiper reviews__slider">
           <div class="swiper-wrapper">
             <div class="swiper-slide reviews__slide">
@@ -1000,6 +1031,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -1041,6 +1073,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -1082,6 +1115,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -1123,6 +1157,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -1164,6 +1199,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -1205,6 +1241,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -1246,6 +1283,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -1287,6 +1325,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -1328,6 +1367,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -1369,6 +1409,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -1410,6 +1451,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -1451,6 +1493,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -1464,14 +1507,17 @@
           <div class="swiper-pagination"></div>
         </div>
         <div class="swiper-button-prev reviews-button-prev">
+          <span class="scale"></span>
           <i class="icon-arrow-left"></i>
         </div>
         <div class="swiper-button-next reviews-button-next">
+          <span class="scale"></span>
           <i class="icon-arrow-right"></i>
         </div>
       </div>
 
       <a class="reviews__btn btn btn--accent" href="/Ramada/reviews.html">
+        <span class="scale"></span>
         Все отзывы
       </a>
 
@@ -1490,11 +1536,12 @@
           </h4>
         </div>
         <a class="btn btn--accent" href="/Ramada/rooms.html">
+          <span class="scale"></span>
           Все номера
         </a>
       </div>
 
-      <div class="booking__body">
+      <div class="booking__body" data-transform="fadeUp">
         <div class="swiper booking__body--slider">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -1540,6 +1587,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1591,6 +1639,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1642,6 +1691,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1693,6 +1743,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1744,6 +1795,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1795,6 +1847,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1846,6 +1899,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1897,6 +1951,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1948,6 +2003,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1999,6 +2055,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -2050,6 +2107,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -2101,6 +2159,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -2114,14 +2173,17 @@
           <div class="swiper-pagination"></div>
         </div>
         <div class="swiper-button-prev booking-button-prev">
+          <span class="scale"></span>
           <i class="icon-arrow-left"></i>
         </div>
         <div class="swiper-button-next booking-button-next">
+          <span class="scale"></span>
           <i class="icon-arrow-right"></i>
         </div>
       </div>
 
       <a class="booking__btn btn btn--accent" href="/Ramada/rooms.html">
+        <span class="scale"></span>
         Все номера
       </a>
 
@@ -2152,9 +2214,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Номерной фонд
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -2198,9 +2260,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/congress-hall.html">
                   Конгресс - холл
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -2232,9 +2294,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/restaurant.html">
                   Рестораны
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -2256,9 +2318,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/offers-special.html">
                   Пакеты
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -2320,9 +2382,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/events.html">
                   Мероприятия
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -2359,9 +2421,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Отель
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -2401,9 +2463,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Информация
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -2576,6 +2638,7 @@
       </p>
     </div>
     <button class="plate__btn btn btn--white-alt" onclick="checkCookies()">
+      <span class="scale"></span>
       Понятно
     </button>
   </div>
@@ -2609,6 +2672,7 @@
       </div>
       <div class="form-foot">
         <button class="form-btn btn btn--accent" type="button">
+          <span class="scale"></span>
           Отправить
         </button>
         <div class="form-group form-text">

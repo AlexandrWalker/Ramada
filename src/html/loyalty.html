@@ -3,7 +3,7 @@
 @@include('blocks/head.html', {"title": "RAMADA"})
 
 <body>
-  <div class="wrapper loyalty-page">
+  <div class="wrapper inner-page loyalty-page">
     <!-- Шапка -->
     @@include('./blocks/header.html')
     <main class="main">
@@ -60,12 +60,12 @@
         <div class="container">
           <div class="programm__inner">
             <div class="programm__head">
-              <div class="programm__head-title">
+              <div class="programm__head-title" data-transform="revealRotate" data-splitting="words">
                 <h3>
                   О программе
                 </h3>
               </div>
-              <div class="programm__head-text">
+              <div class="programm__head-text" data-transform="fadeUp">
                 <p>
                   Бронируйте номера на нашем официальном сайте или по телефону через Отдел бронирования отеля,
                   накапливайте ночи, получайте скидки и привилегии!
@@ -79,7 +79,7 @@
               <div class="programm__items accordion-parent" data-transform="fadeUp">
                 @@loop('./elements/programm-item.html', './data/programm-items.json')
               </div>
-              <div class="programm__ps">
+              <div class="programm__ps" data-transform="fadeUp">
                 <span>
                   * Считаются только ночи, прожитые по бронированиям, совершенным на официальном сайте
                   <a href="https://ramadanovosibirsk.com/">https://ramadanovosibirsk.com/</a> или через отдел
@@ -97,7 +97,7 @@
                   *** Процент, который гости могут оплатить баллами – 20%.
                 </span>
               </div>
-              <div class="programm__content">
+              <div class="programm__content" data-transform="fadeUp">
                 <h5>
                   Правила и условия программы лояльности
                 </h5>

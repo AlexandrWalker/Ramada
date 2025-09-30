@@ -15,7 +15,7 @@
   <!-- title -->
   <title>RAMADA</title>
   <!-- icons -->
-  <link rel="stylesheet" href="icons/ramadaIconsStyle.css">
+  <link rel="stylesheet" href="icons/style.css">
   <!-- styles -->
   <link rel="stylesheet" href="./libs/fancybox/fancybox.css">
   <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css">
@@ -28,7 +28,10 @@
 <body>
   <div class="wrapper contacts-page">
     <!-- Шапка -->
-    <header id="header" class="header">
+    <div class="preloader">
+  <img class="preloader__img" src="./images/temp/preloader.gif" alt="">
+</div>
+<header id="header" class="header">
   <div class="container container--fluid">
     <div class="header__inner">
 
@@ -36,6 +39,7 @@
         <div class="header__container container">
           <div class="header__left">
             <button class="burger-btn btn btn--black">
+              <span class="scale"></span>
               <span></span>
               <i class="icon-burger"></i>
               <i class="icon-menu"></i>
@@ -45,11 +49,13 @@
             <button class="btn btn--accent btn--icon">
               <i class="icon-3d"></i>
               <i class="pulse"></i>
+              <span class="scale"></span>
             </button>
-            <button class="btn btn--accent btn--icon">
+            <butaton class="btn btn--accent btn--icon">
               <i class="icon-play"></i>
               <i class="pulse"></i>
-            </button>
+              <span class="scale"></span>
+            </butaton>
           </div>
 
           <div class="header__wrap">
@@ -88,6 +94,7 @@
             <button class="header__btn btn btn--accent" data-fancybox href="#feedback">
               <i class="icon-book"></i>
               <i class="pulse"></i>
+              <span class="scale"></span>
               <span data-text="Забронировать номер" data-text-mob="Забронировать"></span>
             </button>
           </div>
@@ -177,10 +184,12 @@
       <div class="menu__head">
         <div class="menu__head-btns">
           <button class="btn btn--accent btn--icon">
+            <span class="scale"></span>
             <i class="icon-3d"></i>
             <i class="pulse"></i>
           </button>
           <button class="btn btn--accent btn--icon">
+            <span class="scale"></span>
             <i class="icon-play"></i>
             <i class="pulse"></i>
           </button>
@@ -678,7 +687,7 @@
           <div class="contacts__inner">
 
             <div class="contacts__content">
-              <div class="contacts__item">
+              <div class="contacts__item" data-transform="fadeUp">
                 <div class="contacts__item-suptitle">
                   <p>
                     Служба Бронирования:
@@ -688,7 +697,7 @@
                   +7 (383) 388–95–71
                 </a>
               </div>
-              <div class="contacts__item">
+              <div class="contacts__item" data-transform="fadeUp">
                 <div class="contacts__item-suptitle">
                   <p>
                     Адрес:
@@ -699,7 +708,6 @@
                     Новосибирск, ул. Победы, 55
                   </h6>
                 </div>
-
                 <div class="route__wrap">
                   <div class="route btn btn--black">
                     <div class="route__head">
@@ -727,9 +735,8 @@
                     </div>
                   </div>
                 </div>
-
               </div>
-              <div class="contacts__item">
+              <div class="contacts__item" data-transform="fadeUp">
                 <div class="contacts__item-suptitle">
                   <p>
                     Эл. почта:
@@ -739,7 +746,7 @@
                   info@ramadanovosibirsk.com
                 </a>
               </div>
-              <div class="contacts__item">
+              <div class="contacts__item" data-transform="fadeUp">
                 <div class="contacts__item-suptitle">
                   <p>
                     Социальные сети:
@@ -760,7 +767,7 @@
                   </a>
                 </div>
               </div>
-              <div class="contacts__item">
+              <div class="contacts__item" data-transform="fadeUp">
                 <div class="contacts__item-suptitle">
                   <p>
                     Реквизиты
@@ -816,11 +823,12 @@
         </div>
       </section>
 
-      <section class="callback" data-transform="fadeUp">
+      <!-- <section class="callback" data-transform="fadeUp"> -->
+<section class="callback">
   <div class="container">
-    <div class="callback__inner">
+    <div class="callback__inner" data-transform="fadeUp">
       <div class="callback__wrap">
-        <div class="callback__head">
+        <div class="callback__head" data-transform="revealRotate" data-splitting="words">
           <h4>
             Свяжитесь с нами
           </h4>
@@ -865,6 +873,7 @@
             </div>
             <div class="form-foot">
               <button class="form-btn btn btn--accent" type="button">
+                <span class="scale"></span>
                 Отправить
               </button>
               <div class="form-text">
@@ -907,9 +916,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Номерной фонд
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -953,9 +962,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/congress-hall.html">
                   Конгресс - холл
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -987,9 +996,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/restaurant.html">
                   Рестораны
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1011,9 +1020,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/offers-special.html">
                   Пакеты
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1075,9 +1084,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/events.html">
                   Мероприятия
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1114,9 +1123,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Отель
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1156,9 +1165,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Информация
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1331,6 +1340,7 @@
       </p>
     </div>
     <button class="plate__btn btn btn--white-alt" onclick="checkCookies()">
+      <span class="scale"></span>
       Понятно
     </button>
   </div>
@@ -1364,6 +1374,7 @@
       </div>
       <div class="form-foot">
         <button class="form-btn btn btn--accent" type="button">
+          <span class="scale"></span>
           Отправить
         </button>
         <div class="form-group form-text">

@@ -15,7 +15,7 @@
   <!-- title -->
   <title>RAMADA</title>
   <!-- icons -->
-  <link rel="stylesheet" href="icons/ramadaIconsStyle.css">
+  <link rel="stylesheet" href="icons/style.css">
   <!-- styles -->
   <link rel="stylesheet" href="./libs/fancybox/fancybox.css">
   <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css">
@@ -28,7 +28,10 @@
 <body>
   <div class="wrapper main-page">
     <!-- Шапка -->
-    <header id="header" class="header">
+    <div class="preloader">
+  <img class="preloader__img" src="./images/temp/preloader.gif" alt="">
+</div>
+<header id="header" class="header">
   <div class="container container--fluid">
     <div class="header__inner">
 
@@ -36,6 +39,7 @@
         <div class="header__container container">
           <div class="header__left">
             <button class="burger-btn btn btn--black">
+              <span class="scale"></span>
               <span></span>
               <i class="icon-burger"></i>
               <i class="icon-menu"></i>
@@ -45,11 +49,13 @@
             <button class="btn btn--accent btn--icon">
               <i class="icon-3d"></i>
               <i class="pulse"></i>
+              <span class="scale"></span>
             </button>
-            <button class="btn btn--accent btn--icon">
+            <butaton class="btn btn--accent btn--icon">
               <i class="icon-play"></i>
               <i class="pulse"></i>
-            </button>
+              <span class="scale"></span>
+            </butaton>
           </div>
 
           <div class="header__wrap">
@@ -88,6 +94,7 @@
             <button class="header__btn btn btn--accent" data-fancybox href="#feedback">
               <i class="icon-book"></i>
               <i class="pulse"></i>
+              <span class="scale"></span>
               <span data-text="Забронировать номер" data-text-mob="Забронировать"></span>
             </button>
           </div>
@@ -177,10 +184,12 @@
       <div class="menu__head">
         <div class="menu__head-btns">
           <button class="btn btn--accent btn--icon">
+            <span class="scale"></span>
             <i class="icon-3d"></i>
             <i class="pulse"></i>
           </button>
           <button class="btn btn--accent btn--icon">
+            <span class="scale"></span>
             <i class="icon-play"></i>
             <i class="pulse"></i>
           </button>
@@ -694,11 +703,12 @@
                 <div class="swiper-wrapper">
                   <div class="swiper-slide offer__body-slide">
                     <div class="offer__body-item">
-                      <div class="offer__body-img border">
+                      <div class="offer__body-img border" data-animation="parallax-img">
                         <img src="./images/offer/offer-1.png" alt="">
                       </div>
                       <a class="offer__body-link" href="/">
                         <span class="btn btn--accent btn--icon">
+                          <span class="scale"></span>
                           <i class="icon-play"></i>
                         </span>
                       </a>
@@ -706,11 +716,12 @@
                   </div>
                   <div class="swiper-slide offer__body-slide">
                     <div class="offer__body-item">
-                      <div class="offer__body-img border">
+                      <div class="offer__body-img border" data-animation="parallax-img">
                         <img src="./images/offer/offer-1.png" alt="">
                       </div>
                       <a class="offer__body-link" href="/">
                         <span class="btn btn--accent btn--icon">
+                          <span class="scale"></span>
                           <i class="icon-play"></i>
                         </span>
                       </a>
@@ -718,11 +729,12 @@
                   </div>
                   <div class="swiper-slide offer__body-slide">
                     <div class="offer__body-item">
-                      <div class="offer__body-img border">
+                      <div class="offer__body-img border" data-animation="parallax-img">
                         <img src="./images/offer/offer-1.png" alt="">
                       </div>
                       <a class="offer__body-link" href="/">
                         <span class="btn btn--accent btn--icon">
+                          <span class="scale"></span>
                           <i class="icon-play"></i>
                         </span>
                       </a>
@@ -731,9 +743,11 @@
                 </div>
               </div>
               <div class="swiper-button-prev swiper-button-alt offer-button-prev">
+                <span class="scale"></span>
                 <i class="icon-arrow-left"></i>
               </div>
               <div class="swiper-button-next swiper-button-alt offer-button-next">
+                <span class="scale"></span>
                 <i class="icon-arrow-right"></i>
               </div>
             </div>
@@ -899,7 +913,8 @@
                   </div>
                 </div>
               </div>
-              <a class="rest__btn btn btn--accent" href="/">
+              <a class="rest__btn btn btn--accent" href="/Ramada/rooms.html">
+                <span class="scale"></span>
                 <i class="pulse"></i>
                 Все номера
               </a>
@@ -949,6 +964,7 @@
                           </p>
                         </div>
                         <a class="diversity__item-btn btn btn--white-alt" href="/">
+                          <span class="scale"></span>
                           Подробнее
                         </a>
                       </div>
@@ -971,6 +987,7 @@
                           </p>
                         </div>
                         <a class="diversity__item-btn btn btn--white-alt" href="/">
+                          <span class="scale"></span>
                           Подробнее
                         </a>
                       </div>
@@ -993,6 +1010,7 @@
                           </p>
                         </div>
                         <a class="diversity__item-btn btn btn--white-alt" href="/">
+                          <span class="scale"></span>
                           Подробнее
                         </a>
                       </div>
@@ -1015,6 +1033,7 @@
                           </p>
                         </div>
                         <a class="diversity__item-btn btn btn--white-alt" href="/">
+                          <span class="scale"></span>
                           Подробнее
                         </a>
                       </div>
@@ -1037,6 +1056,7 @@
                           </p>
                         </div>
                         <a class="diversity__item-btn btn btn--white-alt" href="/">
+                          <span class="scale"></span>
                           Подробнее
                         </a>
                       </div>
@@ -1059,6 +1079,7 @@
                           </p>
                         </div>
                         <a class="diversity__item-btn btn btn--white-alt" href="/">
+                          <span class="scale"></span>
                           Подробнее
                         </a>
                       </div>
@@ -1160,7 +1181,8 @@
                       </p>
                     </div>
                   </div>
-                  <a class="hall__item-btn btn btn--white-gray" href="/">
+                  <a class="hall__item-btn btn btn--white-gray" href="/Ramada/congress-hall.html#sosnovyiHall">
+                    <span class="scale"></span>
                     Подробнее
                   </a>
                 </div>
@@ -1186,7 +1208,8 @@
                       </p>
                     </div>
                   </div>
-                  <a class="hall__item-btn btn btn--white-gray" href="/">
+                  <a class="hall__item-btn btn btn--white-gray" href="/Ramada/congress-hall.html#shishkinHall">
+                    <span class="scale"></span>
                     Подробнее
                   </a>
                 </div>
@@ -1212,7 +1235,8 @@
                       </p>
                     </div>
                   </div>
-                  <a class="hall__item-btn btn btn--white-gray" href="/">
+                  <a class="hall__item-btn btn btn--white-gray" href="/Ramada/congress-hall.html#kedrovyiHall">
+                    <span class="scale"></span>
                     Подробнее
                   </a>
                 </div>
@@ -1244,14 +1268,11 @@
 
             <div class="resta__block border">
               <div class="resta__block-img" data-animation="parallax-img">
-                <!-- <img src="./images/restaurants/leto-bg.png" alt=""> -->
-
                 <picture>
                   <source media="(min-width: 601px)" srcset="./images/restaurants/leto-bg.png" type="image/png">
                   <source media="(max-width: 600px)" srcset="./images/restaurants/leto-mob-bg.png" type="image/png">
                   <img src="./images/restaurants/leto-bg.png" alt="">
                 </picture>
-
               </div>
               <div class="resta__block-logo">
                 <img src="./images/restaurants/leto.svg" alt="">
@@ -1265,7 +1286,8 @@
                     Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
                   </p>
                 </div>
-                <a class="resta__block-btn btn btn--blur" href="/">
+                <a class="resta__block-btn btn btn--blur" href="/Ramada/restaurant.html">
+                  <span class="scale"></span>
                   Подробнее
                 </a>
               </div>
@@ -1273,14 +1295,11 @@
 
             <div class="resta__block border">
               <div class="resta__block-img" data-animation="parallax-img">
-                <!-- <img src="./images/restaurants/seasons-bg.png" alt=""> -->
-
                 <picture>
                   <source media="(min-width: 601px)" srcset="./images/restaurants/seasons-bg.png" type="image/png">
                   <source media="(max-width: 600px)" srcset="./images/restaurants/seasons-mob-bg.png" type="image/png">
                   <img src="./images/restaurants/seasons-bg.png" alt="">
                 </picture>
-
               </div>
               <div class="resta__block-logo">
                 <img src="./images/restaurants/seasons.svg" alt="">
@@ -1294,7 +1313,8 @@
                     Позиции позволяет выполнять важные задания по разработке дальнейших направлений развития.
                   </p>
                 </div>
-                <a class="resta__block-btn btn btn--blur" href="/">
+                <a class="resta__block-btn btn btn--blur" href="/Ramada/restaurant.html">
+                  <span class="scale"></span>
                   Подробнее
                 </a>
               </div>
@@ -1329,7 +1349,7 @@
                     </span>
                   </div>
                 </div>
-                <a class="events__block-content" href="#!">
+                <a class="events__block-content" href="/Ramada/events-inner.html">
                   <div class="events__block-title" data-transform="fade" data-rotation="true">
                     <h5>
                       Примерный длинный заголовок на обложке в три строки
@@ -1425,14 +1445,11 @@
                                 <span>13</span>
                                 <div class="tooltip">
                                   <div class="tooltip__close">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                      xmlns="http://www.w3.org/2000/svg">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                                       <rect x="1.36132" y="15.0156" width="19.3051" height="0.693278" rx="0.346639"
-                                        transform="rotate(-45 1.36132 15.0156)" fill="#1A1919" stroke="#1A1919"
-                                        stroke-width="0.693278" />
+                                        transform="rotate(-45 1.36132 15.0156)" stroke-width="0.693278" />
                                       <rect x="1.85938" y="1.36913" width="19.3051" height="0.693278" rx="0.346639"
-                                        transform="rotate(45 1.85938 1.36913)" fill="#1A1919" stroke="#1A1919"
-                                        stroke-width="0.693278" />
+                                        transform="rotate(45 1.85938 1.36913)" stroke-width="0.693278" />
                                     </svg>
                                   </div>
                                   <div class="tooltip__items">
@@ -1960,6 +1977,7 @@
                   </div>
                 </div>
                 <div class="swiper-button-next calendar-button-next">
+                  <span class="scale"></span>
                   <i class="icon-arrow-right"></i>
                 </div>
               </div>
@@ -2001,6 +2019,7 @@
         </p>
       </div>
       <div class="btn btn--white-gray">
+        <span class="scale"></span>
         Подробнее
       </div>
     </div>
@@ -2022,6 +2041,7 @@
         </p>
       </div>
       <div class="btn btn--white-gray">
+        <span class="scale"></span>
         Подробнее
       </div>
     </div>
@@ -2043,6 +2063,7 @@
         </p>
       </div>
       <div class="btn btn--white-gray">
+        <span class="scale"></span>
         Подробнее
       </div>
     </div>
@@ -2064,6 +2085,7 @@
         </p>
       </div>
       <div class="btn btn--white-gray">
+        <span class="scale"></span>
         Подробнее
       </div>
     </div>
@@ -2085,6 +2107,7 @@
         </p>
       </div>
       <div class="btn btn--white-gray">
+        <span class="scale"></span>
         Подробнее
       </div>
     </div>
@@ -2106,6 +2129,7 @@
         </p>
       </div>
       <div class="btn btn--white-gray">
+        <span class="scale"></span>
         Подробнее
       </div>
     </div>
@@ -2118,9 +2142,11 @@
                   <div class="swiper-pagination"></div>
                 </div>
                 <div class="swiper-button-prev events-button-prev">
+                  <span class="scale"></span>
                   <i class="icon-arrow-left"></i>
                 </div>
                 <div class="swiper-button-next events-button-next">
+                  <span class="scale"></span>
                   <i class="icon-arrow-right"></i>
                 </div>
               </div>
@@ -2148,7 +2174,7 @@
 
             <div class="fitness__items">
 
-              <a class="fitness__item" href="/">
+              <a class="fitness__item" href="/Ramada/thermal-zone.html">
                 <div class="fitness__item-head">
                   <div class="fitness__item-count">
                     <h6>
@@ -2169,6 +2195,7 @@
                       </p>
                     </div>
                     <div class="btn btn--blur">
+                      <span class="scale"></span>
                       Подробнее
                     </div>
                   </div>
@@ -2182,7 +2209,7 @@
                 </picture>
               </a>
 
-              <a class="fitness__item" href="/">
+              <a class="fitness__item" href="/Ramada/thermal-zone.html">
                 <div class="fitness__item-head">
                   <div class="fitness__item-count">
                     <h6>
@@ -2203,6 +2230,7 @@
                       </p>
                     </div>
                     <div class="btn btn--blur">
+                      <span class="scale"></span>
                       Подробнее
                     </div>
                   </div>
@@ -2216,7 +2244,7 @@
                 </picture>
               </a>
 
-              <a class="fitness__item" href="/">
+              <a class="fitness__item" href="/Ramada/thermal-zone.html">
                 <div class="fitness__item-head">
                   <div class="fitness__item-count">
                     <h6>
@@ -2237,6 +2265,7 @@
                       </p>
                     </div>
                     <div class="btn btn--blur">
+                      <span class="scale"></span>
                       Подробнее
                     </div>
                   </div>
@@ -2250,7 +2279,7 @@
                 </picture>
               </a>
 
-              <a class="fitness__item" href="/">
+              <a class="fitness__item" href="/Ramada/thermal-zone.html">
                 <div class="fitness__item-head">
                   <div class="fitness__item-count">
                     <h6>
@@ -2271,6 +2300,7 @@
                       </p>
                     </div>
                     <div class="btn btn--blur">
+                      <span class="scale"></span>
                       Подробнее
                     </div>
                   </div>
@@ -2302,7 +2332,7 @@
               <div class="swiper entert__body--slider">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-  <a class="entert__item" href="/">
+  <a class="entert__item" href="/Ramada/entertainment.html">
     <div class="entert__item-img border" data-animation="parallax-img">
       <img src="./images/entert/entert-1.png" alt="Велопрогулки">
     </div>
@@ -2325,12 +2355,13 @@
         </div>
       </div>
       <div class="btn btn--white-gray">
+        <span class="scale"></span>
         Подробнее
       </div>
     </div>
   </a>
 </div><div class="swiper-slide">
-  <a class="entert__item" href="/">
+  <a class="entert__item" href="/Ramada/entertainment.html">
     <div class="entert__item-img border" data-animation="parallax-img">
       <img src="./images/entert/entert-2.png" alt="Футбол">
     </div>
@@ -2353,12 +2384,13 @@
         </div>
       </div>
       <div class="btn btn--white-gray">
+        <span class="scale"></span>
         Подробнее
       </div>
     </div>
   </a>
 </div><div class="swiper-slide">
-  <a class="entert__item" href="/">
+  <a class="entert__item" href="/Ramada/entertainment.html">
     <div class="entert__item-img border" data-animation="parallax-img">
       <img src="./images/entert/entert-3.png" alt="Дендропарк">
     </div>
@@ -2381,12 +2413,13 @@
         </div>
       </div>
       <div class="btn btn--white-gray">
+        <span class="scale"></span>
         Подробнее
       </div>
     </div>
   </a>
 </div><div class="swiper-slide">
-  <a class="entert__item" href="/">
+  <a class="entert__item" href="/Ramada/entertainment.html">
     <div class="entert__item-img border" data-animation="parallax-img">
       <img src="./images/entert/entert-4.png" alt="Каток">
     </div>
@@ -2409,12 +2442,13 @@
         </div>
       </div>
       <div class="btn btn--white-gray">
+        <span class="scale"></span>
         Подробнее
       </div>
     </div>
   </a>
 </div><div class="swiper-slide">
-  <a class="entert__item" href="/">
+  <a class="entert__item" href="/Ramada/entertainment.html">
     <div class="entert__item-img border" data-animation="parallax-img">
       <img src="./images/entert/entert-1.png" alt="Велопрогулки">
     </div>
@@ -2437,12 +2471,13 @@
         </div>
       </div>
       <div class="btn btn--white-gray">
+        <span class="scale"></span>
         Подробнее
       </div>
     </div>
   </a>
 </div><div class="swiper-slide">
-  <a class="entert__item" href="/">
+  <a class="entert__item" href="/Ramada/entertainment.html">
     <div class="entert__item-img border" data-animation="parallax-img">
       <img src="./images/entert/entert-2.png" alt="Футбол">
     </div>
@@ -2465,12 +2500,13 @@
         </div>
       </div>
       <div class="btn btn--white-gray">
+        <span class="scale"></span>
         Подробнее
       </div>
     </div>
   </a>
 </div><div class="swiper-slide">
-  <a class="entert__item" href="/">
+  <a class="entert__item" href="/Ramada/entertainment.html">
     <div class="entert__item-img border" data-animation="parallax-img">
       <img src="./images/entert/entert-3.png" alt="Дендропарк">
     </div>
@@ -2493,12 +2529,13 @@
         </div>
       </div>
       <div class="btn btn--white-gray">
+        <span class="scale"></span>
         Подробнее
       </div>
     </div>
   </a>
 </div><div class="swiper-slide">
-  <a class="entert__item" href="/">
+  <a class="entert__item" href="/Ramada/entertainment.html">
     <div class="entert__item-img border" data-animation="parallax-img">
       <img src="./images/entert/entert-4.png" alt="Каток">
     </div>
@@ -2521,6 +2558,7 @@
         </div>
       </div>
       <div class="btn btn--white-gray">
+        <span class="scale"></span>
         Подробнее
       </div>
     </div>
@@ -2531,9 +2569,11 @@
                 <div class="swiper-pagination"></div>
 
                 <div class="swiper-button-prev entert-button-prev">
+                  <span class="scale"></span>
                   <i class="icon-arrow-left"></i>
                 </div>
                 <div class="swiper-button-next entert-button-next">
+                  <span class="scale"></span>
                   <i class="icon-arrow-right"></i>
                 </div>
 
@@ -2554,11 +2594,12 @@
           </h4>
         </div>
         <a class="btn btn--accent" href="/Ramada/reviews.html">
+          <span class="scale"></span>
           Все отзывы
         </a>
       </div>
 
-      <div class="reviews__body">
+      <div class="reviews__body" data-transform="fadeUp">
         <div class="swiper reviews__slider">
           <div class="swiper-wrapper">
             <div class="swiper-slide reviews__slide">
@@ -2594,6 +2635,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -2635,6 +2677,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -2676,6 +2719,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -2717,6 +2761,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -2758,6 +2803,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -2799,6 +2845,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -2840,6 +2887,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -2881,6 +2929,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -2922,6 +2971,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -2963,6 +3013,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -3004,6 +3055,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -3045,6 +3097,7 @@
         </div>
       </div>
       <a class="reviews__item-btn btn btn--white-gray" href="/">
+        <span class="scale"></span>
         <span data-text="Весь отзыв" data-text-mob="Подробнее"></span>
       </a>
       <a class="link" href="/">
@@ -3058,14 +3111,17 @@
           <div class="swiper-pagination"></div>
         </div>
         <div class="swiper-button-prev reviews-button-prev">
+          <span class="scale"></span>
           <i class="icon-arrow-left"></i>
         </div>
         <div class="swiper-button-next reviews-button-next">
+          <span class="scale"></span>
           <i class="icon-arrow-right"></i>
         </div>
       </div>
 
       <a class="reviews__btn btn btn--accent" href="/Ramada/reviews.html">
+        <span class="scale"></span>
         Все отзывы
       </a>
 
@@ -3096,9 +3152,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Номерной фонд
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -3142,9 +3198,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/congress-hall.html">
                   Конгресс - холл
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -3176,9 +3232,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/restaurant.html">
                   Рестораны
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -3200,9 +3256,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/offers-special.html">
                   Пакеты
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -3264,9 +3320,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/events.html">
                   Мероприятия
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -3303,9 +3359,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Отель
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -3345,9 +3401,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Информация
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -3520,6 +3576,7 @@
       </p>
     </div>
     <button class="plate__btn btn btn--white-alt" onclick="checkCookies()">
+      <span class="scale"></span>
       Понятно
     </button>
   </div>
@@ -3553,6 +3610,7 @@
       </div>
       <div class="form-foot">
         <button class="form-btn btn btn--accent" type="button">
+          <span class="scale"></span>
           Отправить
         </button>
         <div class="form-group form-text">

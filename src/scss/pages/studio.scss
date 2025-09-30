@@ -205,6 +205,10 @@
       }
     }
 
+    &-wrap {
+      overflow: hidden;
+    }
+
     &-item {
       display: flex;
       align-items: center;

@@ -9,11 +9,12 @@
           </h2>
         </div>
         <a class="btn btn--accent" href="/Ramada/offers-special.html">
+          <span class="scale"></span>
           Все предложения
         </a>
       </div>
 
-      <div class="offers__body">
+      <div class="offers__body" data-transform="fadeUp">
         <div class="swiper offers__slider">
           <div class="swiper-wrapper">
             @@loop('./../elements/offers-slide-item.html', './data/offers-items.json')
@@ -21,14 +22,17 @@
           <div class="swiper-pagination"></div>
         </div>
         <div class="swiper-button-prev offers-button-prev">
+          <span class="scale"></span>
           <i class="icon-arrow-left"></i>
         </div>
         <div class="swiper-button-next offers-button-next">
+          <span class="scale"></span>
           <i class="icon-arrow-right"></i>
         </div>
       </div>
 
       <a class="offers__btn btn btn--accent" href="/Ramada/offers-special.html">
+        <span class="scale"></span>
         Все предложения
       </a>
 

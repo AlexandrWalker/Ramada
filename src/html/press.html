@@ -29,7 +29,7 @@
 
         <div class="container">
           <div class="template__inner">
-            <div class="template__title">
+            <div class="template__title" data-transform="revealRotate" data-splitting="words">
               <h1>
                 Пресс-центр
               </h1>
@@ -75,7 +75,7 @@
                 </div>
               </div>
             </div>
-            <div class="press__items">
+            <div class="press__items" data-transform="fadeUp">
               @@loop('./elements/press-item.html', './data/press-items.json')
             </div>
           </div>

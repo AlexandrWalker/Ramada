@@ -35,6 +35,14 @@
   margin: 0 0.3rem;
 }
 
+.swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: unset;
+  transform: unset;
+}
+
 /* Кнопка слайдера */
 [class^="swiper-button-"],
 [class*=" swiper-button-"] {
@@ -77,7 +85,7 @@
 
       &::before {
         border-color: var(--accent);
-        background-color: var(--accent);
+        // background-color: var(--accent);
       }
     }
   }
@@ -104,6 +112,28 @@
     font-size: var(--swiper-font-size);
     transition: all 0.3s ease;
     z-index: 1;
+  }
+
+  .scale {
+    top: var(--swiper-button-padding);
+    right: var(--swiper-button-padding);
+    bottom: var(--swiper-button-padding);
+    left: var(--swiper-button-padding);
+    border-radius: 50%;
+    background-color: var(--swiper-button-bg);
+    transition: all 0.5s ease;
+  }
+
+  &:hover {
+
+    @include dosm {
+
+      .scale {
+        transform: scale(100%);
+        background-color: var(--swiper-button-bg);
+        background-color: var(--accent);
+      }
+    }
   }
 }
 

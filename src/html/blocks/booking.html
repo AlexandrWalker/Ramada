@@ -9,11 +9,12 @@
           </h4>
         </div>
         <a class="btn btn--accent" href="/Ramada/rooms.html">
+          <span class="scale"></span>
           Все номера
         </a>
       </div>
 
-      <div class="booking__body">
+      <div class="booking__body" data-transform="fadeUp">
         <div class="swiper booking__body--slider">
           <div class="swiper-wrapper">
             @@loop('./../elements/rooms-slide-item.html', './data/rooms-items.json')
@@ -21,14 +22,17 @@
           <div class="swiper-pagination"></div>
         </div>
         <div class="swiper-button-prev booking-button-prev">
+          <span class="scale"></span>
           <i class="icon-arrow-left"></i>
         </div>
         <div class="swiper-button-next booking-button-next">
+          <span class="scale"></span>
           <i class="icon-arrow-right"></i>
         </div>
       </div>
 
       <a class="booking__btn btn btn--accent" href="/Ramada/rooms.html">
+        <span class="scale"></span>
         Все номера
       </a>
 

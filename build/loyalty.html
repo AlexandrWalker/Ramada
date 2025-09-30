@@ -15,7 +15,7 @@
   <!-- title -->
   <title>RAMADA</title>
   <!-- icons -->
-  <link rel="stylesheet" href="icons/ramadaIconsStyle.css">
+  <link rel="stylesheet" href="icons/style.css">
   <!-- styles -->
   <link rel="stylesheet" href="./libs/fancybox/fancybox.css">
   <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css">
@@ -26,9 +26,12 @@
 </head>
 
 <body>
-  <div class="wrapper loyalty-page">
+  <div class="wrapper inner-page loyalty-page">
     <!-- Шапка -->
-    <header id="header" class="header">
+    <div class="preloader">
+  <img class="preloader__img" src="./images/temp/preloader.gif" alt="">
+</div>
+<header id="header" class="header">
   <div class="container container--fluid">
     <div class="header__inner">
 
@@ -36,6 +39,7 @@
         <div class="header__container container">
           <div class="header__left">
             <button class="burger-btn btn btn--black">
+              <span class="scale"></span>
               <span></span>
               <i class="icon-burger"></i>
               <i class="icon-menu"></i>
@@ -45,11 +49,13 @@
             <button class="btn btn--accent btn--icon">
               <i class="icon-3d"></i>
               <i class="pulse"></i>
+              <span class="scale"></span>
             </button>
-            <button class="btn btn--accent btn--icon">
+            <butaton class="btn btn--accent btn--icon">
               <i class="icon-play"></i>
               <i class="pulse"></i>
-            </button>
+              <span class="scale"></span>
+            </butaton>
           </div>
 
           <div class="header__wrap">
@@ -88,6 +94,7 @@
             <button class="header__btn btn btn--accent" data-fancybox href="#feedback">
               <i class="icon-book"></i>
               <i class="pulse"></i>
+              <span class="scale"></span>
               <span data-text="Забронировать номер" data-text-mob="Забронировать"></span>
             </button>
           </div>
@@ -177,10 +184,12 @@
       <div class="menu__head">
         <div class="menu__head-btns">
           <button class="btn btn--accent btn--icon">
+            <span class="scale"></span>
             <i class="icon-3d"></i>
             <i class="pulse"></i>
           </button>
           <button class="btn btn--accent btn--icon">
+            <span class="scale"></span>
             <i class="icon-play"></i>
             <i class="pulse"></i>
           </button>
@@ -692,12 +701,12 @@
         <div class="container">
           <div class="programm__inner">
             <div class="programm__head">
-              <div class="programm__head-title">
+              <div class="programm__head-title" data-transform="revealRotate" data-splitting="words">
                 <h3>
                   О программе
                 </h3>
               </div>
-              <div class="programm__head-text">
+              <div class="programm__head-text" data-transform="fadeUp">
                 <p>
                   Бронируйте номера на нашем официальном сайте или по телефону через Отдел бронирования отеля,
                   накапливайте ночи, получайте скидки и привилегии!
@@ -730,6 +739,7 @@
           <li>Регистрация: <span>приветственные 500 баллов</span></li><li>Количество ночей: 0</li>
         </ul>
         <a class="programm__item-btn btn btn--white-gray" href="/">
+          <span class="scale"></span>
           Участвовать
         </a>
       </div>
@@ -756,6 +766,7 @@
           <li>От 5 ночей проживания, 1 000 баллов</li><li>Начисление 250 баллов/ночь</li><li>1 парковочное место</li><li>WIFI комплементарный</li>
         </ul>
         <a class="programm__item-btn btn btn--white-gray" href="/">
+          <span class="scale"></span>
           Участвовать
         </a>
       </div>
@@ -782,6 +793,7 @@
           <li>От 15 ночей, 2 000 баллов</li><li>Начисление 300 баллов/ночь</li><li>1 парковочное место</li><li>WIFI комплементарный</li><li>Приветственный комплимент от отеля</li>
         </ul>
         <a class="programm__item-btn btn btn--white-gray" href="/">
+          <span class="scale"></span>
           Участвовать
         </a>
       </div>
@@ -808,6 +820,7 @@
           <li>От 35 ночей проживания, 4 000 баллов</li><li>Начисление 350 баллов/ночь</li><li>1 парковочное место</li><li>WIFI комплементарный</li><li>Возможность ПВ до 14:00 (при наличии номеров)</li><li>Комплементарный апгрейд (при наличии номеров)</li><li>Приветственный комплимент от отеля</li>
         </ul>
         <a class="programm__item-btn btn btn--white-gray" href="/">
+          <span class="scale"></span>
           Участвовать
         </a>
       </div>
@@ -834,6 +847,7 @@
           <li>От 55 ночей, 6 000 баллов</li><li>Начисление 400 баллов/ночь</li><li>1 парковочное место</li><li>WIFI комплементарный</li><li>Возможность ПВ до 16:00 (при наличии номеров)</li><li>Комплементарный апгрейд (при наличии номеров)</li><li>Приветственный комплимент от отеля</li><li>Комплементарный завтрак (до 2 гостей)</li>
         </ul>
         <a class="programm__item-btn btn btn--white-gray" href="/">
+          <span class="scale"></span>
           Участвовать
         </a>
       </div>
@@ -841,7 +855,7 @@
   </div>
 </div>
               </div>
-              <div class="programm__ps">
+              <div class="programm__ps" data-transform="fadeUp">
                 <span>
                   * Считаются только ночи, прожитые по бронированиям, совершенным на официальном сайте
                   <a href="https://ramadanovosibirsk.com/">https://ramadanovosibirsk.com/</a> или через отдел
@@ -859,7 +873,7 @@
                   *** Процент, который гости могут оплатить баллами – 20%.
                 </span>
               </div>
-              <div class="programm__content">
+              <div class="programm__content" data-transform="fadeUp">
                 <h5>
                   Правила и условия программы лояльности
                 </h5>
@@ -927,11 +941,12 @@
         </div>
       </section>
 
-      <section class="callback" data-transform="fadeUp">
+      <!-- <section class="callback" data-transform="fadeUp"> -->
+<section class="callback">
   <div class="container">
-    <div class="callback__inner">
+    <div class="callback__inner" data-transform="fadeUp">
       <div class="callback__wrap">
-        <div class="callback__head">
+        <div class="callback__head" data-transform="revealRotate" data-splitting="words">
           <h4>
             Оставьте заявку
           </h4>
@@ -976,6 +991,7 @@
             </div>
             <div class="form-foot">
               <button class="form-btn btn btn--accent" type="button">
+                <span class="scale"></span>
                 Отправить
               </button>
               <div class="form-text">
@@ -1018,9 +1034,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Номерной фонд
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1064,9 +1080,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/congress-hall.html">
                   Конгресс - холл
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1098,9 +1114,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/restaurant.html">
                   Рестораны
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1122,9 +1138,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/offers-special.html">
                   Пакеты
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1186,9 +1202,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/events.html">
                   Мероприятия
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1225,9 +1241,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Отель
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1267,9 +1283,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Информация
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1442,6 +1458,7 @@
       </p>
     </div>
     <button class="plate__btn btn btn--white-alt" onclick="checkCookies()">
+      <span class="scale"></span>
       Понятно
     </button>
   </div>
@@ -1475,6 +1492,7 @@
       </div>
       <div class="form-foot">
         <button class="form-btn btn btn--accent" type="button">
+          <span class="scale"></span>
           Отправить
         </button>
         <div class="form-group form-text">

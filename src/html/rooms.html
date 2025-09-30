@@ -29,7 +29,7 @@
 
         <div class="container">
           <div class="template__inner">
-            <div class="template__title">
+            <div class="template__title" data-transform="revealRotate" data-splitting="words">
               <h1>
                 Номера
               </h1>
@@ -88,7 +88,7 @@
             </div>
 
             <!-- <div class="rooms__items" data-isotope='{ "itemSelector": ".rooms__item", "layoutMode": "fitRows" }'> -->
-            <div class="rooms__items">
+            <div class="rooms__items" data-transform="fadeUp">
               @@loop('./elements/rooms-item.html', './data/rooms-items.json')
             </div>
           </div>

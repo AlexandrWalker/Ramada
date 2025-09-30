@@ -68,6 +68,7 @@
 
     &-suptitle {
       color: var(--accent);
+      overflow: hidden;
     }
 
     &-title {
@@ -443,12 +444,14 @@
   img {
     width: 100%;
     min-width: 120%;
-    height: 120% !important;
-    margin-top: -10%;
+    height: 150% !important;
+    margin-top: -25%;
     margin-left: -10%;
     object-fit: cover;
 
     @include sm {
+      height: 120% !important;
+      margin-top: -10%;
       // height: 100% !important;
       // margin-top: unset;
     }
@@ -458,6 +461,10 @@
 [data-transform="fadeUp"] {
   // position: sticky;
   // top: 5rem;
+}
+
+.inner-page section:nth-child(2) {
+  padding-top: 6rem;
 }
 
 section.sticky {

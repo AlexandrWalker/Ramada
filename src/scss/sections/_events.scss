@@ -209,12 +209,14 @@
       // }
 
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
       transition: all 0.3s ease;
 
       &.swiper-slide-active,
       &.swiper-slide-next {
         opacity: 1;
+        visibility: visible;
         pointer-events: all;
       }
     }
@@ -342,27 +344,6 @@
 
       position: relative;
 
-      span {
-        
-        .target & {
-          width: 100%;
-          // height: 100%;
-          align-content: center;
-          position: relative;
-
-          &::before {
-            content: "";
-            display: block;
-            width: 100%;
-            height: 3rem;
-            position: absolute;
-            top: 100%;
-            left: 0;
-
-          }
-        }
-      }
-
       &:not(:empty) {
         cursor: pointer;
       }
@@ -404,6 +385,22 @@
 
         &:hover {
           border-color: var(--black);
+        }
+
+        &>span {
+          width: 100%;
+          align-content: center;
+          position: relative;
+
+          &::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 3rem;
+            position: absolute;
+            top: 100%;
+            left: 0;
+          }
         }
       }
     }

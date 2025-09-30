@@ -7,13 +7,23 @@
   height: auto;
   background-color: var(--white);
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
   transition: all 0.3s ease;
+
+  cursor: default;
+  text-align: left;
+
+  position: absolute;
+  top: calc(100% + 2.1rem);
+  left: 0;
+  z-index: 1;
 
   .target:hover & {
 
     @include domd {
       opacity: 1;
+      visibility: visible;
       pointer-events: all;
     }
   }
@@ -22,16 +32,23 @@
 
     @include md {
       opacity: 1;
+      visibility: visible;
       pointer-events: all;
     }
   }
 
-  text-align: left;
+  @include sm {
+    border-color: transparent;
+    position: fixed;
+    // top: var(--container-padding);
+    top: 0;
+    left: 50%;
+    z-index: 100;
+    transform: translateX(-50%);
 
-  position: absolute;
-  top: calc(100% + 2.1rem);
-  left: 0;
-  z-index: 1;
+    width: 100%;
+    min-height: 100%;
+  }
 
   &::before,
   &::after {
@@ -43,6 +60,10 @@
     border: 1rem solid transparent;
     border-bottom: 1rem solid var(--accent);
     border-left: 1rem solid var(--accent);
+
+    @include sm {
+      display: none;
+    }
   }
 
   &::after {
@@ -59,9 +80,15 @@
     right: 1rem;
     cursor: pointer;
 
+    &:hover svg {
+      stroke: var(--accent);
+    }
+
     svg {
       width: 1.5rem;
       height: 1.5rem;
+      stroke: var(--black);
+      transition: all 0.3s ease;
     }
   }
 
@@ -77,7 +104,7 @@
     gap: 1rem;
 
     span {
-      font-weight: 400;
+      font-weight: 350;
       font-size: 1.2rem;
       line-height: 120%;
       color: var(--accent);

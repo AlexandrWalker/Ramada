@@ -111,10 +111,10 @@
         padding: 1rem;
       }
 
-      img {
-        width: 5rem;
-        height: 5rem;
-        // background-color: var(--gray);
+      i {
+        --font-size: 5rem;
+
+        color: var(--accent);
 
         @include sm {}
       }

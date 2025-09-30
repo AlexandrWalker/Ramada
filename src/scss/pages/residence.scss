@@ -118,6 +118,7 @@
 
   &__slider {
     width: 100%;
+    overflow: visible;
 
     @include md {
       overflow: visible;
@@ -129,15 +130,20 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
 
     @include md {
       position: relative;
       opacity: 0;
+      pointer-events: all;
       transition: all 0.3s ease;
     }
 
     &.swiper-slide-active {
       opacity: 1;
+      pointer-events: all;
     }
 
     .template-product__slider--big {

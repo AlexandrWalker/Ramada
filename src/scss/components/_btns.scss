@@ -91,6 +91,28 @@
     pointer-events: none;
   }
 
+  &:hover {
+
+    @include dosm {
+
+      .scale {
+        transform: scale(100%);
+        background-color: var(--btn-background);
+      }
+    }
+  }
+
+  .scale {
+    top: var(--btn-first-padding);
+    right: var(--btn-first-padding);
+    bottom: var(--btn-first-padding);
+    left: var(--btn-first-padding);
+    border-radius: 2.4rem;
+    z-index: -1;
+    background-color: var(--btn-background);
+    transition: all 0.5s ease;
+  }
+
   &--accent {
     // --btn-padding-x: 3.6rem;
 
@@ -106,8 +128,12 @@
     &:hover {
 
       @include dosm {
-        --btn-background: var(--black);
         --btn-border-color: var(--black);
+
+        .scale {
+          --btn-background: var(--black);
+          transform: scale(101%);
+        }
       }
     }
 
@@ -133,11 +159,14 @@
 
       @include dosm {
         --btn-color: var(--white);
-        --btn-background: var(--gray);
         --btn-border-color: var(--gray);
 
         &::after {
           border-color: var(--white-30);
+        }
+
+        .scale {
+          --btn-background: var(--gray);
         }
       }
     }
@@ -154,11 +183,14 @@
 
         @include dosm {
           --btn-color: var(--white);
-          --btn-background: var(--accent);
           --btn-border-color: var(--accent);
 
           &::after {
             border-color: var(--white-o-50);
+          }
+
+          .scale {
+            --btn-background: var(--accent);
           }
         }
       }
@@ -189,11 +221,14 @@
 
       @include dosm {
         --btn-color: var(--white);
-        --btn-background: var(--gray);
         --btn-border-color: var(--gray);
 
         &::after {
           border-color: var(--white-30);
+        }
+
+        .scale {
+          --btn-background: var(--gray);
         }
       }
     }
@@ -210,11 +245,14 @@
 
         @include dosm {
           --btn-color: var(--white);
-          --btn-background: var(--accent);
           --btn-border-color: var(--accent);
 
           &::after {
             border-color: var(--white-o-50);
+          }
+
+          .scale {
+            --btn-background: var(--accent);
           }
         }
       }
@@ -239,10 +277,13 @@
 
       @include dosm {
         --btn-color: var(--white);
-        --btn-background: var(--black);
 
         &::after {
           border-color: var(--gray-50);
+        }
+
+        .scale {
+          --btn-background: var(--black);
         }
       }
     }
@@ -255,8 +296,11 @@
     &:hover {
 
       @include dosm {
-        --btn-background: var(--accent);
         --btn-border-color: var(--accent);
+
+        .scale {
+          --btn-background: var(--accent);
+        }
       }
     }
   }
@@ -277,6 +321,10 @@
         --btn-color: var(--white);
         --btn-background: var(--gray);
         --btn-border-color: var(--gray);
+
+        .scale {
+          --btn-background: var(--gray);
+        }
       }
     }
   }
@@ -330,6 +378,10 @@
 
         &::after {
           border-color: var(--gray);
+        }
+
+        .scale {
+          --btn-background: var(--black);
         }
 
         // .pulse::before {

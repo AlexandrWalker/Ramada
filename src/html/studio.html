@@ -3,7 +3,7 @@
 @@include('blocks/head.html', {"title": "RAMADA"})
 
 <body>
-  <div class="wrapper">
+  <div class="wrapper inner-page">
     <!-- Шапка -->
     @@include('./blocks/header.html')
     <main class="main">
@@ -98,11 +98,11 @@
 
             <div class="studio__box" data-transform="fadeUp">
               <div class="studio__content">
-                <div class="studio__content-head">
+                <div class="studio__content-head" data-transform="revealRotate" data-splitting="words">
                   <h4>
                     Об этом номере
                   </h4>
-                  <p>
+                  <p data-transform="fade">
                     Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
                     войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные
                     кровати,
@@ -111,7 +111,7 @@
                   </p>
                 </div>
                 <div class="studio__content-items">
-                  <div class="studio__content-item">
+                  <div class="studio__content-item" data-transform="fade">
                     <h5>
                       Семейный номер
                     </h5>
@@ -119,7 +119,7 @@
                       Для семьи с детьми на 3-4 человека
                     </p>
                   </div>
-                  <div class="studio__content-item">
+                  <div class="studio__content-item" data-transform="fade">
                     <h5>
                       220м2
                     </h5>
@@ -128,99 +128,118 @@
                     </p>
                   </div>
                 </div>
-                <div class="studio__content-btns">
+                <div class="studio__content-btns" data-transform="fade">
                   <a class="studio__content-btn btn btn--gray" href="/">
+                    <span class="scale"></span>
                     <span class="menu__foot-icon">
                       <i class="icon-3d"></i>
                     </span>
                     Совершить 3d-тур
                   </a>
                   <a class="studio__content-btn btn btn--black" href="/">
+                    <span class="scale"></span>
                     <i class="icon-play"></i>
                     Видео о номере
                   </a>
                   <a class="studio__content-btn btn btn--accent" href="/">
+                    <span class="scale"></span>
                     Забронировать сейчас
                   </a>
                 </div>
               </div>
               <div class="studio__terms">
-                <div class="studio__terms-title">
+                <div class="studio__terms-title" data-transform="fade">
                   <h5>
                     Условия в номере
                   </h5>
                 </div>
                 <div class="studio__terms-items">
                   <div class="studio__terms-row">
-                    <div class="studio__terms-item">
-                      <i class="icon-services-wifi"></i>
-                      <span>
-                        Wi-fi
-                      </span>
+                    <div class="studio__terms-wrap">
+                      <div class="studio__terms-item" data-transform="fadeUpRotate">
+                        <i class="icon-services-wifi"></i>
+                        <span>
+                          Wi-fi
+                        </span>
+                      </div>
                     </div>
-                    <div class="studio__terms-item">
-                      <i class="icon-services-tv"></i>
-                      <span>
-                        Спутниковое ТВ
-                      </span>
+                    <div class="studio__terms-wrap">
+                      <div class="studio__terms-item" data-transform="fadeUpRotate">
+                        <i class="icon-services-tv"></i>
+                        <span>
+                          Спутниковое ТВ
+                        </span>
+                      </div>
                     </div>
-                    <div class="studio__terms-item">
-                      <i class="icon-services-microwave"></i>
-                      <span>
-                        Микроволновая печь
-                      </span>
+                    <div class="studio__terms-wrap">
+                      <div class="studio__terms-item" data-transform="fadeUpRotate">
+                        <i class="icon-services-microwave"></i>
+                        <span>
+                          Микроволновая печь
+                        </span>
+                      </div>
                     </div>
-                    <div class="studio__terms-item">
-                      <i class="icon-services-electric-kettle"></i>
-                      <span>
-                        Электрочайник
-                      </span>
+                    <div class="studio__terms-wrap">
+                      <div class="studio__terms-item" data-transform="fadeUpRotate">
+                        <i class="icon-services-electric-kettle"></i>
+                        <span>
+                          Электрочайник
+                        </span>
+                      </div>
                     </div>
-                    <div class="studio__terms-item">
-                      <i class="icon-services-garderob"></i>
-                      <span>
-                        Гардероб
-                      </span>
+                    <div class="studio__terms-wrap">
+                      <div class="studio__terms-item" data-transform="fadeUpRotate">
+                        <i class="icon-services-garderob"></i>
+                        <span>
+                          Гардероб
+                        </span>
+                      </div>
                     </div>
-                    <div class="studio__terms-item">
-                      <i class="icon-services-condicioner"></i>
-                      <span>
-                        Кондиционер
-                      </span>
+                    <div class="studio__terms-wrap">
+                      <div class="studio__terms-item" data-transform="fadeUpRotate">
+                        <i class="icon-services-condicioner"></i>
+                        <span>
+                          Кондиционер
+                        </span>
+                      </div>
                     </div>
-                    <div class="studio__terms-item">
-                      <i class="icon-services-holodilnik"></i>
-                      <span>
-                        Холодильник
-                      </span>
+                    <div class="studio__terms-wrap">
+                      <div class="studio__terms-item" data-transform="fadeUpRotate">
+                        <i class="icon-services-holodilnik"></i>
+                        <span>
+                          Холодильник
+                        </span>
+                      </div>
                     </div>
-                    <div class="studio__terms-item">
-                      <i class="icon-services-board"></i>
-                      <span>
-                        Утюг и гладильная доска
-                      </span>
+                    <div class="studio__terms-wrap">
+                      <div class="studio__terms-item" data-transform="fadeUpRotate">
+                        <i class="icon-services-board"></i>
+                        <span>
+                          Утюг и гладильная доска
+                        </span>
+                      </div>
                     </div>
                   </div>
                   <div class="studio__terms-row">
-                    <div class="studio__terms-item">
+                    <div class="studio__terms-item" data-transform="fadeUpRotate">
                       <i class="icon-services-coffee-machine"></i>
                       <span>
                         Кофемашина
                       </span>
                     </div>
-                    <div class="studio__terms-item">
+                    <div class="studio__terms-item" data-transform="fadeUpRotate">
                       <i class="icon-services-master-bedroom"></i>
                       <span>
                         Мастер-спальня
                       </span>
                     </div>
-                    <div class="studio__terms-item">
+                    <div class="studio__terms-item" data-transform="fadeUpRotate">
                       <i class="icon-services-places"></i>
                       <span>
                         До 3-х мест
                       </span>
                     </div>
-                    <div class="studio__terms-item">
+                    <div class="studio__terms-item" data-transform="fadeUpRotate">
                       <i class="icon-services-kids-bedroom"></i>
                       <span>
                         Детская кровать
@@ -235,77 +254,79 @@
               <div class="swiper studio__slider--big">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-1.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-2.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-3.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-1.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-2.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-3.png" alt="">
                     </div>
                   </div>
                 </div>
                 <div class="swiper-button-tran swiper-button-prev studio-button-prev">
+                  <span class="scale"></span>
                   <i class="icon-arrow-left"></i>
                 </div>
                 <div class="swiper-button-tran swiper-button-next studio-button-next">
+                  <span class="scale"></span>
                   <i class="icon-arrow-right"></i>
                 </div>
               </div>
               <div class="swiper studio__slider--min">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-2.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-3.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-1.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-2.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-3.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-1.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="studio__slider-item border">
+                    <div class="studio__slider-item border" data-animation="parallax-img">
                       <img src="./images/temp/rooms-item-2.png" alt="">
                     </div>
                   </div>
