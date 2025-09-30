@@ -15,7 +15,7 @@
   <!-- title -->
   <title>RAMADA</title>
   <!-- icons -->
-  <link rel="stylesheet" href="icons/ramadaIconsStyle.css">
+  <link rel="stylesheet" href="icons/style.css">
   <!-- styles -->
   <link rel="stylesheet" href="./libs/fancybox/fancybox.css">
   <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css">
@@ -26,9 +26,12 @@
 </head>
 
 <body>
-  <div class="wrapper offers-special-page">
+  <div class="wrapper inner-page offers-special-page">
     <!-- Шапка -->
-    <header id="header" class="header">
+    <div class="preloader">
+  <img class="preloader__img" src="./images/temp/preloader.gif" alt="">
+</div>
+<header id="header" class="header">
   <div class="container container--fluid">
     <div class="header__inner">
 
@@ -36,6 +39,7 @@
         <div class="header__container container">
           <div class="header__left">
             <button class="burger-btn btn btn--black">
+              <span class="scale"></span>
               <span></span>
               <i class="icon-burger"></i>
               <i class="icon-menu"></i>
@@ -45,11 +49,13 @@
             <button class="btn btn--accent btn--icon">
               <i class="icon-3d"></i>
               <i class="pulse"></i>
+              <span class="scale"></span>
             </button>
-            <button class="btn btn--accent btn--icon">
+            <butaton class="btn btn--accent btn--icon">
               <i class="icon-play"></i>
               <i class="pulse"></i>
-            </button>
+              <span class="scale"></span>
+            </butaton>
           </div>
 
           <div class="header__wrap">
@@ -88,6 +94,7 @@
             <button class="header__btn btn btn--accent" data-fancybox href="#feedback">
               <i class="icon-book"></i>
               <i class="pulse"></i>
+              <span class="scale"></span>
               <span data-text="Забронировать номер" data-text-mob="Забронировать"></span>
             </button>
           </div>
@@ -177,10 +184,12 @@
       <div class="menu__head">
         <div class="menu__head-btns">
           <button class="btn btn--accent btn--icon">
+            <span class="scale"></span>
             <i class="icon-3d"></i>
             <i class="pulse"></i>
           </button>
           <button class="btn btn--accent btn--icon">
+            <span class="scale"></span>
             <i class="icon-play"></i>
             <i class="pulse"></i>
           </button>
@@ -695,15 +704,15 @@
 
       </section>
 
-      <section id="secondSection" class="template-product" data-transform="fadeUp">
-        <div class="container">
+      <section id="secondSection" class="template-product">
+        <div class="container" data-transform="fadeUp">
           <div class="template-product__inner">
 
-            <div class="template-product__head">
+            <div class="template-product__head" data-transform="revealRotate" data-splitting="words">
               <h4>
                 Что входит
               </h4>
-              <p>
+              <p data-transform="fadeUp">
                 Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
                 войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные кровати,
                 а также диван-кровать.
@@ -711,12 +720,12 @@
             </div>
 
             <div class="template-product__body">
-              <div class="template-product__body-title">
+              <div class="template-product__body-title" data-transform="fadeUp">
                 <h5>
                   Заголовок списка
                 </h5>
               </div>
-              <ul>
+              <ul data-transform="fadeUp">
                 <li>
                   Не следует, однако забывать, что реализация
                 </li>
@@ -739,7 +748,7 @@
                   В формировании направлений
                 </li>
               </ul>
-              <div class="template-product__body-price">
+              <div class="template-product__body-price" data-transform="fadeUp">
                 <h6>
                   от 10 000 ₽
                 </h6>
@@ -748,6 +757,7 @@
                 </p>
               </div>
               <a class="btn btn--accent" href="/">
+                <span class="scale"></span>
                 <span data-text="Узнать точную стоимость" data-text-mob="Подробнее"></span>
               </a>
             </div>
@@ -758,22 +768,22 @@
                 <div class="swiper template-product__slider--big border">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/offers-special-inner-item-1.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/offers-special-inner-item-2.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/offers-special-inner-item-3.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/offers-special-inner-item-4.png" alt="">
                       </div>
                     </div>
@@ -781,9 +791,11 @@
                   <div class="swiper-pagination"></div>
                 </div>
                 <div class="swiper-button-prev swiper-button-alt template-product-button-prev">
+                  <span class="scale"></span>
                   <i class="icon-arrow-left"></i>
                 </div>
                 <div class="swiper-button-next swiper-button-alt template-product-button-next">
+                  <span class="scale"></span>
                   <i class="icon-arrow-right"></i>
                 </div>
               </div>
@@ -819,14 +831,14 @@
         </div>
       </section>
 
-      <section class="offers-desc" data-transform="fadeUp">
-        <div class="container">
+      <section class="offers-desc">
+        <div class="container" data-transform="fadeUp">
           <div class="offers-desc__inner">
-            <div class="offers-desc__head">
+            <div class="offers-desc__head" data-transform="revealRotate" data-splitting="words">
               <h4>
                 Для кого подойдет
               </h4>
-              <p>
+              <p data-transform="fadeUp">
                 Товарищи! начало повседневной работы по формированию позиции позволяет выполнять важные задания по
                 разработке дальнейших направлений развития. Идейные соображения высшего порядка, а также реализация
                 намеченных плановых заданий в значительной степени обуславливает создание соответствующий условий
@@ -834,7 +846,7 @@
               </p>
             </div>
             <div class="offers-desc__body">
-              <div class="offers-desc__body-item">
+              <div class="offers-desc__body-item" data-transform="fadeUp">
                 <h5>
                   30 человек
                 </h5>
@@ -842,7 +854,7 @@
                   Максимальная вместимость
                 </p>
               </div>
-              <div class="offers-desc__body-item">
+              <div class="offers-desc__body-item" data-transform="fadeUp">
                 <h5>
                   220м<sup>2</sup>
                 </h5>
@@ -850,7 +862,7 @@
                   Общая площадь зала
                 </p>
               </div>
-              <div class="offers-desc__body-item">
+              <div class="offers-desc__body-item" data-transform="fadeUp">
                 <h5>
                   220м<sup>2</sup>
                 </h5>
@@ -866,11 +878,12 @@
         </div>
       </section>
 
-      <section class="callback" data-transform="fadeUp">
+      <!-- <section class="callback" data-transform="fadeUp"> -->
+<section class="callback">
   <div class="container">
-    <div class="callback__inner">
+    <div class="callback__inner" data-transform="fadeUp">
       <div class="callback__wrap">
-        <div class="callback__head">
+        <div class="callback__head" data-transform="revealRotate" data-splitting="words">
           <h4>
             Забронировать
           </h4>
@@ -915,6 +928,7 @@
             </div>
             <div class="form-foot">
               <button class="form-btn btn btn--accent" type="button">
+                <span class="scale"></span>
                 Отправить
               </button>
               <div class="form-text">
@@ -945,11 +959,12 @@
           </h2>
         </div>
         <a class="btn btn--accent" href="/Ramada/offers-special.html">
+          <span class="scale"></span>
           Все предложения
         </a>
       </div>
 
-      <div class="offers__body">
+      <div class="offers__body" data-transform="fadeUp">
         <div class="swiper offers__slider">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -1221,14 +1236,17 @@
           <div class="swiper-pagination"></div>
         </div>
         <div class="swiper-button-prev offers-button-prev">
+          <span class="scale"></span>
           <i class="icon-arrow-left"></i>
         </div>
         <div class="swiper-button-next offers-button-next">
+          <span class="scale"></span>
           <i class="icon-arrow-right"></i>
         </div>
       </div>
 
       <a class="offers__btn btn btn--accent" href="/Ramada/offers-special.html">
+        <span class="scale"></span>
         Все предложения
       </a>
 
@@ -1259,9 +1277,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Номерной фонд
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1305,9 +1323,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/congress-hall.html">
                   Конгресс - холл
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1339,9 +1357,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/restaurant.html">
                   Рестораны
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1363,9 +1381,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/offers-special.html">
                   Пакеты
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1427,9 +1445,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/events.html">
                   Мероприятия
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1466,9 +1484,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Отель
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1508,9 +1526,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Информация
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1683,6 +1701,7 @@
       </p>
     </div>
     <button class="plate__btn btn btn--white-alt" onclick="checkCookies()">
+      <span class="scale"></span>
       Понятно
     </button>
   </div>
@@ -1716,6 +1735,7 @@
       </div>
       <div class="form-foot">
         <button class="form-btn btn btn--accent" type="button">
+          <span class="scale"></span>
           Отправить
         </button>
         <div class="form-group form-text">

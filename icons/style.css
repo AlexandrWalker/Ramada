@@ -1,19 +1,18 @@
-/* Стили для установки иконок */
 @font-face {
-  font-family: 'RamadaIcons';
-  src: url('fonts/RamadaIcons.eot?lh1dah');
-  src: url('fonts/RamadaIcons.eot?lh1dah#iefix') format('embedded-opentype'),
-    url('fonts/RamadaIcons.ttf?lh1dah') format('truetype'),
-    url('fonts/RamadaIcons.woff?lh1dah') format('woff'),
-    url('fonts/RamadaIcons.svg?lh1dah#RamadaIcons') format('svg');
+  font-family: 'RamadaIconFonts';
+  src:  url('fonts/RamadaIconFonts.eot?5jpv15');
+  src:  url('fonts/RamadaIconFonts.eot?5jpv15#iefix') format('embedded-opentype'),
+    url('fonts/RamadaIconFonts.ttf?5jpv15') format('truetype'),
+    url('fonts/RamadaIconFonts.woff?5jpv15') format('woff'),
+    url('fonts/RamadaIconFonts.svg?5jpv15#RamadaIconFonts') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
-  font-family: 'RamadaIcons' !important;
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'RamadaIconFonts' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -21,195 +20,184 @@
   text-transform: none;
   line-height: 1;
 
+  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-chevron-link:before {
-  content: "\e900";
+.icon-hh-icon:before {
+  content: "\e92c";
+  color: #fff;
 }
-
-.icon-route:before {
-  content: "\e901";
+.icon-gis-icon:before {
+  content: "\e92d";
+  color: #c40d3c;
 }
-
-.icon-elem-pool:before {
-  content: "\e902";
+.icon-share:before {
+  content: "\e92e";
 }
-
-.icon-elem-tablichka:before {
-  content: "\e903";
+.icon-copy-fill:before {
+  content: "\e92f";
 }
-
-.icon-elem-bed:before {
-  content: "\e904";
+.icon-person:before {
+  content: "\e930";
 }
-
-.icon-elem-phen:before {
-  content: "\e905";
+.icon-3d:before {
+  content: "\e932";
 }
-
-.icon-geo:before {
-  content: "\e906";
-}
-
-.icon-mail:before {
-  content: "\e907";
-}
-
-.icon-arrow-right:before {
-  content: "\e908";
-}
-
-.icon-arrow-left:before {
-  content: "\e909";
-}
-
-.icon-chevron-right:before {
-  content: "\e90a";
-}
-
-.icon-chevron-left:before {
-  content: "\e90b";
-}
-
-.icon-chevron-top:before {
-  content: "\e90c";
-}
-
-.icon-chevron-down:before {
-  content: "\e90d";
-}
-
-.icon-services-kids-bedroom:before {
-  content: "\e90e";
-}
-
-.icon-services-places:before {
-  content: "\e90f";
-}
-
-.icon-services-master-bedroom:before {
-  content: "\e910";
-}
-
-.icon-services-coffee-machine:before {
-  content: "\e911";
-}
-
-.icon-services-board:before {
-  content: "\e912";
-}
-
-.icon-services-holodilnik:before {
-  content: "\e913";
-}
-
-.icon-services-condicioner:before {
-  content: "\e914";
-}
-
-.icon-services-garderob:before {
-  content: "\e915";
-}
-
-.icon-services-electric-kettle:before {
-  content: "\e916";
-}
-
-.icon-services-tv:before {
-  content: "\e917";
-}
-
-.icon-services-microwave:before {
-  content: "\e918";
-}
-
-.icon-services-wifi:before {
-  content: "\e919";
-}
-
 .icon-area:before {
-  content: "\e91a";
+  content: "\e933";
 }
-
-.icon-places:before {
-  content: "\e91b";
+.icon-arrow-left:before {
+  content: "\e934";
 }
-
-.icon-star:before {
-  content: "\e91c";
+.icon-arrow-right:before {
+  content: "\e935";
 }
-
+.icon-book:before {
+  content: "\e936";
+}
 .icon-burger:before {
-  content: "\e91d";
+  content: "\e937";
 }
-
 .icon-caplya .path1:before {
-  content: "\e91e";
+  content: "\e938";
   color: rgb(196, 13, 60);
 }
-
 .icon-caplya .path2:before {
-  content: "\e91f";
+  content: "\e939";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-
-.icon-solo:before {
-  content: "\e920";
+.icon-chevron-down:before {
+  content: "\e93a";
 }
-
-.icon-friends:before {
-  content: "\e921";
+.icon-chevron-left:before {
+  content: "\e93b";
 }
-
-.icon-para:before {
-  content: "\e922";
+.icon-chevron-link:before {
+  content: "\e93c";
 }
-
-.icon-family:before {
-  content: "\e923";
+.icon-chevron-right:before {
+  content: "\e93d";
 }
-
-.icon-delovoy:before {
-  content: "\e924";
+.icon-chevron-top:before {
+  content: "\e93e";
 }
-
 .icon-close:before {
-  content: "\e925";
+  content: "\e93f";
 }
-
-.icon-book:before {
-  content: "\e926";
+.icon-delovoy:before {
+  content: "\e940";
 }
-
+.icon-elem-bed:before {
+  content: "\e941";
+}
+.icon-elem-phen:before {
+  content: "\e942";
+}
+.icon-elem-pool:before {
+  content: "\e943";
+}
+.icon-elem-tablichka:before {
+  content: "\e944";
+}
+.icon-family:before {
+  content: "\e945";
+}
+.icon-friends:before {
+  content: "\e946";
+}
+.icon-geo:before {
+  content: "\e947";
+}
+.icon-mail:before {
+  content: "\e948";
+}
 .icon-menu:before {
-  content: "\e927";
+  content: "\e949";
 }
-
+.icon-para:before {
+  content: "\e94a";
+}
 .icon-pdf:before {
-  content: "\e928";
+  content: "\e94b";
 }
-
+.icon-places:before {
+  content: "\e94c";
+}
 .icon-play:before {
-  content: "\e929";
+  content: "\e94d";
 }
-
-.icon-3d:before {
-  content: "\e92a";
+.icon-route:before {
+  content: "\e94e";
 }
-
-.icon-vk:before {
-  content: "\e92b";
+.icon-services-board:before {
+  content: "\e94f";
 }
-
+.icon-services-coffee-machine:before {
+  content: "\e950";
+}
+.icon-services-condicioner:before {
+  content: "\e951";
+}
+.icon-services-electric-kettle:before {
+  content: "\e952";
+}
+.icon-services-garderob:before {
+  content: "\e953";
+}
+.icon-services-holodilnik:before {
+  content: "\e954";
+}
+.icon-services-kids-bedroom:before {
+  content: "\e955";
+}
+.icon-services-master-bedroom:before {
+  content: "\e956";
+}
+.icon-services-microwave:before {
+  content: "\e957";
+}
+.icon-services-places:before {
+  content: "\e958";
+}
+.icon-services-tv:before {
+  content: "\e959";
+}
+.icon-services-wifi:before {
+  content: "\e95a";
+}
+.icon-solo:before {
+  content: "\e95b";
+}
+.icon-star:before {
+  content: "\e95c";
+}
 .icon-telegram:before {
-  content: "\e92c";
+  content: "\e95d";
 }
-
+.icon-vk:before {
+  content: "\e95e";
+}
 .icon-whatsapp:before {
-  content: "\e92d";
+  content: "\e95f";
 }
-
-/* ./Стили для иконок */
+.icon-events-inner-icon-1:before {
+  content: "\e960";
+}
+.icon-events-inner-icon-2:before {
+  content: "\e961";
+}
+.icon-events-inner-icon-3:before {
+  content: "\e962";
+}
+.icon-events-inner-icon-4:before {
+  content: "\e963";
+}
+.icon-events-inner-icon-5:before {
+  content: "\e964";
+}
+.icon-events-inner-icon-6:before {
+  content: "\e965";
+}

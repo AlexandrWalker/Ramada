@@ -15,7 +15,7 @@
   <!-- title -->
   <title>RAMADA</title>
   <!-- icons -->
-  <link rel="stylesheet" href="icons/ramadaIconsStyle.css">
+  <link rel="stylesheet" href="icons/style.css">
   <!-- styles -->
   <link rel="stylesheet" href="./libs/fancybox/fancybox.css">
   <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css">
@@ -26,9 +26,12 @@
 </head>
 
 <body>
-  <div class="wrapper sosnovyi-page">
+  <div class="wrapper inner-page sosnovyi-page">
     <!-- Шапка -->
-    <header id="header" class="header">
+    <div class="preloader">
+  <img class="preloader__img" src="./images/temp/preloader.gif" alt="">
+</div>
+<header id="header" class="header">
   <div class="container container--fluid">
     <div class="header__inner">
 
@@ -36,6 +39,7 @@
         <div class="header__container container">
           <div class="header__left">
             <button class="burger-btn btn btn--black">
+              <span class="scale"></span>
               <span></span>
               <i class="icon-burger"></i>
               <i class="icon-menu"></i>
@@ -45,11 +49,13 @@
             <button class="btn btn--accent btn--icon">
               <i class="icon-3d"></i>
               <i class="pulse"></i>
+              <span class="scale"></span>
             </button>
-            <button class="btn btn--accent btn--icon">
+            <butaton class="btn btn--accent btn--icon">
               <i class="icon-play"></i>
               <i class="pulse"></i>
-            </button>
+              <span class="scale"></span>
+            </butaton>
           </div>
 
           <div class="header__wrap">
@@ -88,6 +94,7 @@
             <button class="header__btn btn btn--accent" data-fancybox href="#feedback">
               <i class="icon-book"></i>
               <i class="pulse"></i>
+              <span class="scale"></span>
               <span data-text="Забронировать номер" data-text-mob="Забронировать"></span>
             </button>
           </div>
@@ -177,10 +184,12 @@
       <div class="menu__head">
         <div class="menu__head-btns">
           <button class="btn btn--accent btn--icon">
+            <span class="scale"></span>
             <i class="icon-3d"></i>
             <i class="pulse"></i>
           </button>
           <button class="btn btn--accent btn--icon">
+            <span class="scale"></span>
             <i class="icon-play"></i>
             <i class="pulse"></i>
           </button>
@@ -707,15 +716,15 @@
 
       </section>
 
-      <section class="template-product" data-transform="fadeUp">
-        <div class="container">
+      <section class="template-product">
+        <div class="container" data-transform="fadeUp">
           <div class="template-product__inner">
 
-            <div class="template-product__head">
+            <div class="template-product__head" data-transform="revealRotate" data-splitting="words">
               <h4>
                 Сосновый
               </h4>
-              <p>
+              <p data-transform="fade">
                 Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
                 войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные кровати, а
                 также диван-кровать. Балкон, выходящий на северо-восток, позволяет наслаждаться утренним солнцем и
@@ -726,7 +735,7 @@
             <div class="template-product__body">
 
               <div class="template-product__body-items">
-                <div class="template-product__body-item">
+                <div class="template-product__body-item" data-transform="fade">
                   <h5>
                     30 человек
                   </h5>
@@ -734,7 +743,7 @@
                     Максимальная вместимость
                   </p>
                 </div>
-                <div class="template-product__body-item">
+                <div class="template-product__body-item" data-transform="fade">
                   <h5>
                     220м<sup>2</sup>
                   </h5>
@@ -743,18 +752,21 @@
                   </p>
                 </div>
               </div>
-              <div class="template-product__body-btns">
+              <div class="template-product__body-btns" data-transform="fade">
                 <a class="btn btn--gray" href="/">
+                  <span class="scale"></span>
                   <span class="menu__foot-icon">
                     <i class="icon-3d"></i>
                   </span>
                   Совершить 3d-тур
                 </a>
                 <a class="btn btn--black" href="/">
+                  <span class="scale"></span>
                   <i class="icon-play"></i>
                   Видео о зале
                 </a>
                 <a class="btn btn--accent" href="/">
+                  <span class="scale"></span>
                   Забронировать
                 </a>
               </div>
@@ -766,22 +778,22 @@
                 <div class="swiper template-product__slider--big border">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/hall-page-item-1.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/hall-page-item-1.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/hall-page-item-1.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item">
+                      <div class="template-product__slider-item" data-animation="parallax-img">
                         <img src="./images/temp/hall-page-item-1.png" alt="">
                       </div>
                     </div>
@@ -789,9 +801,11 @@
                   <div class="swiper-pagination"></div>
                 </div>
                 <div class="swiper-button-prev swiper-button-alt template-product-button-prev">
+                  <span class="scale"></span>
                   <i class="icon-arrow-left"></i>
                 </div>
                 <div class="swiper-button-next swiper-button-alt template-product-button-next">
+                  <span class="scale"></span>
                   <i class="icon-arrow-right"></i>
                 </div>
               </div>
@@ -827,15 +841,15 @@
         </div>
       </section>
 
-      <section class="template-product template-product--seating" data-transform="fadeUp">
-        <div class="container">
+      <section class="template-product template-product--seating">
+        <div class="container" data-transform="fadeUp">
           <div class="template-product__inner">
 
-            <div class="template-product__head">
+            <div class="template-product__head" data-transform="revealRotate" data-splitting="words">
               <h4>
                 Виды рассадок
               </h4>
-              <p>
+              <p data-transform="fadeUp">
                 Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
                 войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные кровати, а
                 также диван-кровать. Балкон, выходящий на северо-восток, позволяет наслаждаться утренним солнцем и
@@ -844,7 +858,7 @@
             </div>
 
             <div class="template-product__body">
-              <div class="template-product__body-items seating-list">
+              <div class="template-product__body-items seating-list" data-transform="fadeUp">
                 <ul>
                   <li class="seating-active">
                     ТЕАТР (50 ЧЕЛ)
@@ -870,12 +884,14 @@
                 </ul>
               </div>
 
-              <div class="template-product__control transfer-elem-1">
+              <div class="template-product__control transfer-elem-1" data-transform="fadeUp">
                 <div class="swiper-button-prev seating-button-prev">
+                  <span class="scale"></span>
                   <i class="icon-arrow-left"></i>
                 </div>
                 <div class="swiper-pagination--seating"></div>
                 <div class="swiper-button-next seating-button-next">
+                  <span class="scale"></span>
                   <i class="icon-arrow-right"></i>
                 </div>
               </div>
@@ -980,19 +996,19 @@
         </div>
       </section>
 
-      <section class="equipment" data-transform="fadeUp">
-        <div class="container">
+      <section class="equipment">
+        <div class="container" data-transform="fadeUp">
           <div class="equipment__inner">
-            <div class="equipment__head">
+            <div class="equipment__head" data-transform="revealRotate" data-splitting="words">
               <h4>
                 Оборудование и услуги
               </h4>
-              <p>
+              <p data-transform="fadeUp">
                 Мы возьмем организацию вашего мероприятия и питания на себя, чтобы вы сосредоточились на главном. Для
                 вашего удобства предлагаем конференц-пакеты с кофе-брейком и сет-ланчем на весь день или на пол дня.
               </p>
             </div>
-            <div class="equipment__items accordion-parent">
+            <div class="equipment__items accordion-parent" data-transform="fadeUp">
               <div class="equipment__item accordion">
                 <div class="equipment__item-head">
                   <h5>
@@ -1002,59 +1018,77 @@
                 </div>
                 <div class="equipment__item-body accordion-body">
                   <div class="equipment__item-content">
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-wifi"></i>
-                      <p>
-                        Аудиовизуальное оборудование
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-wifi"></i>
+                        <p>
+                          Аудиовизуальное оборудование
+                        </p>
+                      </div>
                     </div>
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-tv"></i>
-                      <p>
-                        Система Polycom для видеоконференций
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-tv"></i>
+                        <p>
+                          Система Polycom для видеоконференций
+                        </p>
+                      </div>
                     </div>
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-microwave"></i>
-                      <p>
-                        ЖК-панель
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-microwave"></i>
+                        <p>
+                          ЖК-панель
+                        </p>
+                      </div>
                     </div>
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-electric-kettle"></i>
-                      <p>
-                        LCD-проектор
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-electric-kettle"></i>
+                        <p>
+                          LCD-проектор
+                        </p>
+                      </div>
                     </div>
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-garderob"></i>
-                      <p>
-                        Микрофон
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-garderob"></i>
+                        <p>
+                          Микрофон
+                        </p>
+                      </div>
                     </div>
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-condicioner"></i>
-                      <p>
-                        Поставщик услуг телевизионных съемок
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-condicioner"></i>
+                        <p>
+                          Поставщик услуг телевизионных съемок
+                        </p>
+                      </div>
                     </div>
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-holodilnik"></i>
-                      <p>
-                        Сцена: портативная
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-holodilnik"></i>
+                        <p>
+                          Сцена: портативная
+                        </p>
+                      </div>
                     </div>
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-board"></i>
-                      <p>
-                        Телевизор
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-board"></i>
+                        <p>
+                          Телевизор
+                        </p>
+                      </div>
                     </div>
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-microwave"></i>
-                      <p>
-                        Банкетное оборудование
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-microwave"></i>
+                        <p>
+                          Банкетное оборудование
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1068,35 +1102,45 @@
                 </div>
                 <div class="equipment__item-body accordion-body">
                   <div class="equipment__item-content">
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-wifi"></i>
-                      <p>
-                        Видеоконференции
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-wifi"></i>
+                        <p>
+                          Видеоконференции
+                        </p>
+                      </div>
                     </div>
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-tv"></i>
-                      <p>
-                        Декоратор
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-tv"></i>
+                        <p>
+                          Декоратор
+                        </p>
+                      </div>
                     </div>
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-microwave"></i>
-                      <p>
-                        Копировальные услуги
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-microwave"></i>
+                        <p>
+                          Копировальные услуги
+                        </p>
+                      </div>
                     </div>
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-electric-kettle"></i>
-                      <p>
-                        Специалист по аудиовизуальному оборудованию
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-electric-kettle"></i>
+                        <p>
+                          Специалист по аудиовизуальному оборудованию
+                        </p>
+                      </div>
                     </div>
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-garderob"></i>
-                      <p>
-                        Фотограф
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-garderob"></i>
+                        <p>
+                          Фотограф
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1110,47 +1154,61 @@
                 </div>
                 <div class="equipment__item-body accordion-body">
                   <div class="equipment__item-content">
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-wifi"></i>
-                      <p>
-                        Бизнес завтрак
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-wifi"></i>
+                        <p>
+                          Бизнес завтрак
+                        </p>
+                      </div>
                     </div>
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-tv"></i>
-                      <p>
-                        Кофе-брейк
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-tv"></i>
+                        <p>
+                          Кофе-брейк
+                        </p>
+                      </div>
                     </div>
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-microwave"></i>
-                      <p>
-                        Обед
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-microwave"></i>
+                        <p>
+                          Обед
+                        </p>
+                      </div>
                     </div>
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-electric-kettle"></i>
-                      <p>
-                        Ужин
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-electric-kettle"></i>
+                        <p>
+                          Ужин
+                        </p>
+                      </div>
                     </div>
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-garderob"></i>
-                      <p>
-                        Банкет
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-garderob"></i>
+                        <p>
+                          Банкет
+                        </p>
+                      </div>
                     </div>
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-condicioner"></i>
-                      <p>
-                        Фуршет
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-condicioner"></i>
+                        <p>
+                          Фуршет
+                        </p>
+                      </div>
                     </div>
-                    <div class="equipment__item-wrap">
-                      <i class="icon-services-condicioner"></i>
-                      <p>
-                        Выездной кейтеринг
-                      </p>
+                    <div class="equipment__item-inner">
+                      <div class="equipment__item-wrap" data-transform="fadeUpRotate">
+                        <i class="icon-services-condicioner"></i>
+                        <p>
+                          Выездной кейтеринг
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1160,11 +1218,12 @@
         </div>
       </section>
 
-      <section class="callback" data-transform="fadeUp">
+      <!-- <section class="callback" data-transform="fadeUp"> -->
+<section class="callback">
   <div class="container">
-    <div class="callback__inner">
+    <div class="callback__inner" data-transform="fadeUp">
       <div class="callback__wrap">
-        <div class="callback__head">
+        <div class="callback__head" data-transform="revealRotate" data-splitting="words">
           <h4>
             Оставить заявку
           </h4>
@@ -1209,6 +1268,7 @@
             </div>
             <div class="form-foot">
               <button class="form-btn btn btn--accent" type="button">
+                <span class="scale"></span>
                 Отправить
               </button>
               <div class="form-text">
@@ -1228,13 +1288,13 @@
   </div>
 </section>
 
-      <section class="gallery" data-transform="fadeUp">
-        <div class="container">
+      <section class="gallery">
+        <div class="container" data-transform="fadeUp">
           <div class="gallery__inner">
 
             <div class="gallery__head">
               <div class="general__head">
-                <div class="general__head-title">
+                <div class="general__head-title" data-transform="revealRotate" data-splitting="words">
                   <h3>
                     Галерея мероприятий
                   </h3>
@@ -1245,13 +1305,13 @@
                   <div class="swiper-wrapper">
                     <div class="swiper-slide gallery__slide">
                       <div class="gallery__slide-item">
-                        <div class="gallery__block-title">
+                        <div class="gallery__block-title" data-transform="fadeUp">
                           <h5>
                             Большая
                             пышная свадьба
                           </h5>
                         </div>
-                        <div class="gallery__block-wrap">
+                        <div class="gallery__block-wrap" data-transform="fadeUp">
                           <div class="gallery__block-name">
                             <p>
                               Ресторан:
@@ -1272,7 +1332,7 @@
                             </p>
                           </div>
                         </div>
-                        <div class="gallery__block-items">
+                        <div class="gallery__block-items" data-transform="fadeUp">
                           <div class="gallery__block-item">
                             <h4>
                               50
@@ -1291,20 +1351,21 @@
                             </p>
                           </div>
                         </div>
-                        <a class="btn btn--accent" href="/">
+                        <a class="btn btn--accent" href="/" data-transform="fadeUp">
+                          <span class="scale"></span>
                           Заказать мероприятие
                         </a>
                       </div>
                     </div>
                     <div class="swiper-slide gallery__slide">
                       <div class="gallery__slide-item">
-                        <div class="gallery__block-title">
+                        <div class="gallery__block-title" data-transform="fadeUp">
                           <h5>
                             Большая
                             пышная свадьба
                           </h5>
                         </div>
-                        <div class="gallery__block-wrap">
+                        <div class="gallery__block-wrap" data-transform="fadeUp">
                           <div class="gallery__block-name">
                             <p>
                               Ресторан:
@@ -1321,7 +1382,7 @@
                             </p>
                           </div>
                         </div>
-                        <div class="gallery__block-items">
+                        <div class="gallery__block-items" data-transform="fadeUp">
                           <div class="gallery__block-item">
                             <h4>
                               40
@@ -1340,20 +1401,21 @@
                             </p>
                           </div>
                         </div>
-                        <a class="btn btn--accent" href="/">
+                        <a class="btn btn--accent" href="/" data-transform="fadeUp">
+                          <span class="scale"></span>
                           Заказать мероприятие
                         </a>
                       </div>
                     </div>
                     <div class="swiper-slide gallery__slide">
                       <div class="gallery__slide-item">
-                        <div class="gallery__block-title">
+                        <div class="gallery__block-title" data-transform="fadeUp">
                           <h5>
                             Большая
                             пышная свадьба
                           </h5>
                         </div>
-                        <div class="gallery__block-wrap">
+                        <div class="gallery__block-wrap" data-transform="fadeUp">
                           <div class="gallery__block-name">
                             <p>
                               Ресторан:
@@ -1374,7 +1436,7 @@
                             </p>
                           </div>
                         </div>
-                        <div class="gallery__block-items">
+                        <div class="gallery__block-items" data-transform="fadeUp">
                           <div class="gallery__block-item">
                             <h4>
                               50
@@ -1393,20 +1455,21 @@
                             </p>
                           </div>
                         </div>
-                        <a class="btn btn--accent" href="/">
+                        <a class="btn btn--accent" href="/" data-transform="fadeUp">
+                          <span class="scale"></span>
                           Заказать мероприятие
                         </a>
                       </div>
                     </div>
                     <div class="swiper-slide gallery__slide">
                       <div class="gallery__slide-item">
-                        <div class="gallery__block-title">
+                        <div class="gallery__block-title" data-transform="fadeUp">
                           <h5>
                             Большая
                             пышная свадьба
                           </h5>
                         </div>
-                        <div class="gallery__block-wrap">
+                        <div class="gallery__block-wrap" data-transform="fadeUp">
                           <div class="gallery__block-name">
                             <p>
                               Ресторан:
@@ -1423,7 +1486,7 @@
                             </p>
                           </div>
                         </div>
-                        <div class="gallery__block-items">
+                        <div class="gallery__block-items" data-transform="fadeUp">
                           <div class="gallery__block-item">
                             <h4>
                               40
@@ -1442,20 +1505,21 @@
                             </p>
                           </div>
                         </div>
-                        <a class="btn btn--accent" href="/">
+                        <a class="btn btn--accent" href="/" data-transform="fadeUp">
+                          <span class="scale"></span>
                           Заказать мероприятие
                         </a>
                       </div>
                     </div>
                     <div class="swiper-slide gallery__slide">
                       <div class="gallery__slide-item">
-                        <div class="gallery__block-title">
+                        <div class="gallery__block-title" data-transform="fadeUp">
                           <h5>
                             Большая
                             пышная свадьба
                           </h5>
                         </div>
-                        <div class="gallery__block-wrap">
+                        <div class="gallery__block-wrap" data-transform="fadeUp">
                           <div class="gallery__block-name">
                             <p>
                               Ресторан:
@@ -1476,7 +1540,7 @@
                             </p>
                           </div>
                         </div>
-                        <div class="gallery__block-items">
+                        <div class="gallery__block-items" data-transform="fadeUp">
                           <div class="gallery__block-item">
                             <h4>
                               50
@@ -1495,7 +1559,8 @@
                             </p>
                           </div>
                         </div>
-                        <a class="btn btn--accent" href="/">
+                        <a class="btn btn--accent" href="/" data-transform="fadeUp">
+                          <span class="scale"></span>
                           Заказать мероприятие
                         </a>
                       </div>
@@ -1509,27 +1574,27 @@
               <div class="swiper gallery__body--slider border">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <div class="gallery__body-item">
+                    <div class="gallery__body-item" data-animation="parallax-img">
                       <img src="./images/temp/gallery-item-1.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="gallery__body-item">
+                    <div class="gallery__body-item" data-animation="parallax-img">
                       <img src="./images/temp/gallery-item-1.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="gallery__body-item">
+                    <div class="gallery__body-item" data-animation="parallax-img">
                       <img src="./images/temp/gallery-item-1.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="gallery__body-item">
+                    <div class="gallery__body-item" data-animation="parallax-img">
                       <img src="./images/temp/gallery-item-1.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="gallery__body-item">
+                    <div class="gallery__body-item" data-animation="parallax-img">
                       <img src="./images/temp/gallery-item-1.png" alt="">
                     </div>
                   </div>
@@ -1542,11 +1607,13 @@
               </div>
               <div class="swiper-pagination swiper-pagination--gallery"></div>
               <div class="swiper-button-next gallery-button-next btn-arrow">
+                <span class="scale"></span>
                 <i class="icon-arrow-right"></i>
               </div>
             </div>
 
             <a class="gallery__btn btn btn--accent" href="/">
+              <span class="scale"></span>
               Заказать мероприятие
             </a>
 
@@ -1577,9 +1644,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Номерной фонд
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1623,9 +1690,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/congress-hall.html">
                   Конгресс - холл
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1657,9 +1724,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/restaurant.html">
                   Рестораны
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1681,9 +1748,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/offers-special.html">
                   Пакеты
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1745,9 +1812,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/events.html">
                   Мероприятия
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1784,9 +1851,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Отель
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1826,9 +1893,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Информация
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -2001,6 +2068,7 @@
       </p>
     </div>
     <button class="plate__btn btn btn--white-alt" onclick="checkCookies()">
+      <span class="scale"></span>
       Понятно
     </button>
   </div>
@@ -2034,6 +2102,7 @@
       </div>
       <div class="form-foot">
         <button class="form-btn btn btn--accent" type="button">
+          <span class="scale"></span>
           Отправить
         </button>
         <div class="form-group form-text">

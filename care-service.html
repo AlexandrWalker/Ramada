@@ -15,7 +15,7 @@
   <!-- title -->
   <title>RAMADA</title>
   <!-- icons -->
-  <link rel="stylesheet" href="icons/ramadaIconsStyle.css">
+  <link rel="stylesheet" href="icons/style.css">
   <!-- styles -->
   <link rel="stylesheet" href="./libs/fancybox/fancybox.css">
   <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css">
@@ -28,7 +28,10 @@
 <body>
   <div class="wrapper care-page">
     <!-- Шапка -->
-    <header id="header" class="header">
+    <div class="preloader">
+  <img class="preloader__img" src="./images/temp/preloader.gif" alt="">
+</div>
+<header id="header" class="header">
   <div class="container container--fluid">
     <div class="header__inner">
 
@@ -36,6 +39,7 @@
         <div class="header__container container">
           <div class="header__left">
             <button class="burger-btn btn btn--black">
+              <span class="scale"></span>
               <span></span>
               <i class="icon-burger"></i>
               <i class="icon-menu"></i>
@@ -45,11 +49,13 @@
             <button class="btn btn--accent btn--icon">
               <i class="icon-3d"></i>
               <i class="pulse"></i>
+              <span class="scale"></span>
             </button>
-            <button class="btn btn--accent btn--icon">
+            <butaton class="btn btn--accent btn--icon">
               <i class="icon-play"></i>
               <i class="pulse"></i>
-            </button>
+              <span class="scale"></span>
+            </butaton>
           </div>
 
           <div class="header__wrap">
@@ -88,6 +94,7 @@
             <button class="header__btn btn btn--accent" data-fancybox href="#feedback">
               <i class="icon-book"></i>
               <i class="pulse"></i>
+              <span class="scale"></span>
               <span data-text="Забронировать номер" data-text-mob="Забронировать"></span>
             </button>
           </div>
@@ -177,10 +184,12 @@
       <div class="menu__head">
         <div class="menu__head-btns">
           <button class="btn btn--accent btn--icon">
+            <span class="scale"></span>
             <i class="icon-3d"></i>
             <i class="pulse"></i>
           </button>
           <button class="btn btn--accent btn--icon">
+            <span class="scale"></span>
             <i class="icon-play"></i>
             <i class="pulse"></i>
           </button>
@@ -661,7 +670,7 @@
 
         <div class="container">
           <div class="template__inner">
-            <div class="template__title">
+            <div class="template__title" data-transform="revealRotate" data-splitting="words">
               <h1>
                 Служба заботы
               </h1>
@@ -674,7 +683,7 @@
         <div class="container">
           <div class="care__inner">
             <div class="care__wrap">
-              <div class="care__head">
+              <div class="care__head" data-transform="fadeUp">
                 <h4>
                   Дорогой гость!
                 </h4>
@@ -687,9 +696,9 @@
               <div class="care__body">
 
                 <form class="care__form" action="#">
-                  <div class="care__block">
+                  <div class="care__block" data-transform="fadeUp">
                     <div class="care__items">
-                      <div class="care__item">
+                      <div class="care__item" data-transform="fadeUp">
                         <h6>
                           Насколько вероятно, что вы порекомендуете нас вашим друзьям? <span>*</span>
                         </h6>
@@ -779,8 +788,7 @@
                           </p>
                         </div>
                       </div>
-
-                      <div class="care__item care__item--type">
+                      <div class="care__item care__item--type" data-transform="fadeUp">
                         <h6>
                           Каков тип вашей поездки?
                         </h6>
@@ -826,13 +834,13 @@
                       </div>
                     </div>
                   </div>
-                  <div class="care__block">
+                  <div class="care__block" data-transform="fadeUp">
                     <h5>
                       Пожалуйста, оцените Ваше недавнее пребывание
                       в отеле согласно следующим пунктам:
                     </h5>
                     <div class="care__items">
-                      <div class="care__item">
+                      <div class="care__item" data-transform="fadeUp">
                         <h6>
                           Дизайн и оформление <span>*</span>
                         </h6>
@@ -901,7 +909,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="care__item">
+                      <div class="care__item" data-transform="fadeUp">
                         <h6>
                           Техническое состояние отеля и номерного фонда <span>*</span>
                         </h6>
@@ -980,7 +988,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="care__item">
+                      <div class="care__item" data-transform="fadeUp">
                         <h6>
                           Чистота <span>*</span>
                         </h6>
@@ -1049,7 +1057,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="care__item">
+                      <div class="care__item" data-transform="fadeUp">
                         <h6>
                           Процесс заселения и выселения <span>*</span>
                         </h6>
@@ -1118,7 +1126,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="care__item">
+                      <div class="care__item" data-transform="fadeUp">
                         <h6>
                           Обслуживание персонала <span>*</span>
                         </h6>
@@ -1199,13 +1207,13 @@
                       </div>
                     </div>
                   </div>
-                  <div class="care__block">
+                  <div class="care__block" data-transform="fadeUp">
                     <h5>
                       Говоря о качестве услуг и сервиса, которые были предложены Вам в Отеле Рамада, пожалуйста, дайте
                       оценку следующим категориям:
                     </h5>
                     <div class="care__items">
-                      <div class="care__item">
+                      <div class="care__item" data-transform="fadeUp">
                         <h6>
                           Фитнес-центр <span>*</span>
                         </h6>
@@ -1283,7 +1291,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="care__item">
+                      <div class="care__item" data-transform="fadeUp">
                         <h6>
                           Ресторан «Сезоны» - качество блюд <span>*</span>
                         </h6>
@@ -1372,7 +1380,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="care__item">
+                      <div class="care__item" data-transform="fadeUp">
                         <h6>
                           Ресторан «Сезоны» - качество обслуживания <span>*</span>
                         </h6>
@@ -1461,7 +1469,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="care__item">
+                      <div class="care__item" data-transform="fadeUp">
                         <h6>
                           Ресторан «Лето» - качество блюд <span>*</span>
                         </h6>
@@ -1550,7 +1558,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="care__item">
+                      <div class="care__item" data-transform="fadeUp">
                         <h6>
                           Ресторан «Лето» - качество обслуживания <span>*</span>
                         </h6>
@@ -1639,7 +1647,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="care__item">
+                      <div class="care__item" data-transform="fadeUp">
                         <h6>
                           Доставка еды и напитков в номер - качество блюд <span>*</span>
                         </h6>
@@ -1718,7 +1726,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="care__item">
+                      <div class="care__item" data-transform="fadeUp">
                         <h6>
                           Доставка еды и напитков в номер - качество обслуживания <span>*</span>
                         </h6>
@@ -1810,12 +1818,12 @@
                     </div>
                   </div>
                   <div class="callback__wrap">
-                    <div class="callback__head">
+                    <div class="callback__head" data-transform="revealRotate" data-splitting="words">
                       <h5>
                         Подтвердите отзыв
                       </h5>
                     </div>
-                    <div class="callback__body">
+                    <div class="callback__body" data-transform="fadeUp">
                       <form class="form" action="#">
                         <div class="form__inner">
                           <div class="form-group">
@@ -1854,6 +1862,7 @@
                         </div>
                         <div class="form-foot">
                           <button class="form-btn btn btn--accent" type="button">
+                            <span class="scale"></span>
                             Отправить
                           </button>
                           <div class="form-text">
@@ -1898,9 +1907,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Номерной фонд
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1944,9 +1953,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/congress-hall.html">
                   Конгресс - холл
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1978,9 +1987,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/restaurant.html">
                   Рестораны
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -2002,9 +2011,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/offers-special.html">
                   Пакеты
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -2066,9 +2075,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/events.html">
                   Мероприятия
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -2105,9 +2114,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Отель
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -2147,9 +2156,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Информация
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -2322,6 +2331,7 @@
       </p>
     </div>
     <button class="plate__btn btn btn--white-alt" onclick="checkCookies()">
+      <span class="scale"></span>
       Понятно
     </button>
   </div>
@@ -2355,6 +2365,7 @@
       </div>
       <div class="form-foot">
         <button class="form-btn btn btn--accent" type="button">
+          <span class="scale"></span>
           Отправить
         </button>
         <div class="form-group form-text">

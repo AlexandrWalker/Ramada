@@ -15,7 +15,7 @@
   <!-- title -->
   <title>RAMADA</title>
   <!-- icons -->
-  <link rel="stylesheet" href="icons/ramadaIconsStyle.css">
+  <link rel="stylesheet" href="icons/style.css">
   <!-- styles -->
   <link rel="stylesheet" href="./libs/fancybox/fancybox.css">
   <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css">
@@ -26,9 +26,12 @@
 </head>
 
 <body>
-  <div class="wrapper entertainment-page">
+  <div class="wrapper inner-page entertainment-page">
     <!-- Шапка -->
-    <header id="header" class="header">
+    <div class="preloader">
+  <img class="preloader__img" src="./images/temp/preloader.gif" alt="">
+</div>
+<header id="header" class="header">
   <div class="container container--fluid">
     <div class="header__inner">
 
@@ -36,6 +39,7 @@
         <div class="header__container container">
           <div class="header__left">
             <button class="burger-btn btn btn--black">
+              <span class="scale"></span>
               <span></span>
               <i class="icon-burger"></i>
               <i class="icon-menu"></i>
@@ -45,11 +49,13 @@
             <button class="btn btn--accent btn--icon">
               <i class="icon-3d"></i>
               <i class="pulse"></i>
+              <span class="scale"></span>
             </button>
-            <button class="btn btn--accent btn--icon">
+            <butaton class="btn btn--accent btn--icon">
               <i class="icon-play"></i>
               <i class="pulse"></i>
-            </button>
+              <span class="scale"></span>
+            </butaton>
           </div>
 
           <div class="header__wrap">
@@ -88,6 +94,7 @@
             <button class="header__btn btn btn--accent" data-fancybox href="#feedback">
               <i class="icon-book"></i>
               <i class="pulse"></i>
+              <span class="scale"></span>
               <span data-text="Забронировать номер" data-text-mob="Забронировать"></span>
             </button>
           </div>
@@ -177,10 +184,12 @@
       <div class="menu__head">
         <div class="menu__head-btns">
           <button class="btn btn--accent btn--icon">
+            <span class="scale"></span>
             <i class="icon-3d"></i>
             <i class="pulse"></i>
           </button>
           <button class="btn btn--accent btn--icon">
+            <span class="scale"></span>
             <i class="icon-play"></i>
             <i class="pulse"></i>
           </button>
@@ -705,32 +714,32 @@
 
       </section>
 
-      <section class="template-box" data-transform="fadeUp">
-        <div class="container">
+      <section class="template-box">
+        <div class="container" data-transform="fadeUp">
           <div class="template-box__inner">
             <div class="template-box__img border" data-animation="parallax-img">
               <img src="./images/temp/entertainment-item-1.png" alt="">
             </div>
             <div class="template-box__block">
               <div class="general__block" data-transform="fade">
-                <div class="general__block-suptitle">
+                <div class="general__block-suptitle" data-transform="revealRotate" data-splitting="words">
                   <h5>
                     Велопрогулки
                   </h5>
                 </div>
-                <div class="general__block-title">
+                <div class="general__block-title" data-transform="fade">
                   <h6>
                     Примерный заголовок торгового предложения в две строки
                   </h6>
                 </div>
-                <div class="general__block-text">
+                <div class="general__block-text" data-transform="fade">
                   <p>
                     Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
                     войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные
                     кровати, а также диван-кровать.
                   </p>
                 </div>
-                <div class="general__block-wrap">
+                <div class="general__block-wrap" data-transform="fade">
                   <h5>
                     Горные велосипеды
                   </h5>
@@ -738,7 +747,7 @@
                     Примерное описание велосипеда очень кратко
                   </p>
                 </div>
-                <div class="general__block-wrap">
+                <div class="general__block-wrap" data-transform="fade">
                   <h5>
                     20 км
                   </h5>
@@ -752,29 +761,29 @@
         </div>
       </section>
 
-      <section class="template-box template-box--reverse" data-transform="fadeUp">
-        <div class="container">
+      <section class="template-box template-box--reverse">
+        <div class="container" data-transform="fadeUp">
           <div class="template-box__inner">
             <div class="template-box__block">
               <div class="general__block" data-transform="fade">
-                <div class="general__block-suptitle">
+                <div class="general__block-suptitle" data-transform="revealRotate" data-splitting="words">
                   <h5>
                     прогулки по Дендропарку
                   </h5>
                 </div>
-                <div class="general__block-title">
+                <div class="general__block-title" data-transform="fadeUp">
                   <h6>
                     Примерный заголовок торгового предложения в две строки
                   </h6>
                 </div>
-                <div class="general__block-text">
+                <div class="general__block-text" data-transform="fadeUp">
                   <p>
                     Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
                     войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные
                     кровати, а также диван-кровать.
                   </p>
                 </div>
-                <div class="general__block-wrap">
+                <div class="general__block-wrap" data-transform="fadeUp">
                   <h5>
                     Преимущество услуги
                   </h5>
@@ -782,7 +791,7 @@
                     Примерное описание автомобиля очень кратко
                   </p>
                 </div>
-                <div class="general__block-wrap">
+                <div class="general__block-wrap" data-transform="fadeUp">
                   <h5>
                     Еще про услугу
                   </h5>
@@ -799,32 +808,32 @@
         </div>
       </section>
 
-      <section class="template-box" data-transform="fadeUp">
-        <div class="container">
+      <section class="template-box">
+        <div class="container" data-transform="fadeUp">
           <div class="template-box__inner">
             <div class="template-box__img border" data-animation="parallax-img">
               <img src="./images/temp/entertainment-item-3.png" alt="">
             </div>
             <div class="template-box__block">
               <div class="general__block" data-transform="fade">
-                <div class="general__block-suptitle">
+                <div class="general__block-suptitle" data-transform="revealRotate" data-splitting="words">
                   <h5>
                     Футбол
                   </h5>
                 </div>
-                <div class="general__block-title">
+                <div class="general__block-title" data-transform="fadeUp">
                   <h6>
                     Примерный заголовок торгового предложения в две строки
                   </h6>
                 </div>
-                <div class="general__block-text">
+                <div class="general__block-text" data-transform="fadeUp">
                   <p>
                     Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
                     войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные
                     кровати, а также диван-кровать.
                   </p>
                 </div>
-                <div class="general__block-wrap">
+                <div class="general__block-wrap" data-transform="fadeUp">
                   <h5>
                     Преимущество услуги
                   </h5>
@@ -832,7 +841,7 @@
                     Еда из двух ресторанов на выбор
                   </p>
                 </div>
-                <div class="general__block-wrap">
+                <div class="general__block-wrap" data-transform="fadeUp">
                   <h5>
                     Еще про услугу
                   </h5>
@@ -846,29 +855,29 @@
         </div>
       </section>
 
-      <section class="template-box template-box--reverse" data-transform="fadeUp">
-        <div class="container">
+      <section class="template-box template-box--reverse">
+        <div class="container" data-transform="fadeUp">
           <div class="template-box__inner">
             <div class="template-box__block">
               <div class="general__block" data-transform="fade">
-                <div class="general__block-suptitle">
+                <div class="general__block-suptitle" data-transform="revealRotate" data-splitting="words">
                   <h5>
                     Зимний каток на территории отеля
                   </h5>
                 </div>
-                <div class="general__block-title">
+                <div class="general__block-title" data-transform="fadeUp">
                   <h6>
                     Примерный заголовок торгового предложения в две строки
                   </h6>
                 </div>
-                <div class="general__block-text">
+                <div class="general__block-text" data-transform="fadeUp">
                   <p>
                     Наши стандартные двухместные номера с красивым местным сосновым деревом и типичными швейцарскими
                     войлочными украшениями предлагают двуспальную кровать размера Queen Size или две односпальные
                     кровати, а также диван-кровать.
                   </p>
                 </div>
-                <div class="general__block-wrap">
+                <div class="general__block-wrap" data-transform="fadeUp">
                   <h5>
                     Преимущество услуги
                   </h5>
@@ -876,7 +885,7 @@
                     Примерное описание автомобиля очень кратко
                   </p>
                 </div>
-                <div class="general__block-wrap">
+                <div class="general__block-wrap" data-transform="fadeUp">
                   <h5>
                     Еще про услугу
                   </h5>
@@ -904,11 +913,12 @@
           </h4>
         </div>
         <a class="btn btn--accent" href="/Ramada/rooms.html">
+          <span class="scale"></span>
           Все номера
         </a>
       </div>
 
-      <div class="booking__body">
+      <div class="booking__body" data-transform="fadeUp">
         <div class="swiper booking__body--slider">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -954,6 +964,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1005,6 +1016,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1056,6 +1068,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1107,6 +1120,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1158,6 +1172,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1209,6 +1224,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1260,6 +1276,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1311,6 +1328,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1362,6 +1380,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1413,6 +1432,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1464,6 +1484,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1515,6 +1536,7 @@
         </div>
       </div>
       <a class="btn btn--white-gray" href="/Ramada/studio.html">
+        <span class="scale"></span>
         Выбрать
       </a>
       <a class="link" href="/Ramada/studio.html">
@@ -1528,14 +1550,17 @@
           <div class="swiper-pagination"></div>
         </div>
         <div class="swiper-button-prev booking-button-prev">
+          <span class="scale"></span>
           <i class="icon-arrow-left"></i>
         </div>
         <div class="swiper-button-next booking-button-next">
+          <span class="scale"></span>
           <i class="icon-arrow-right"></i>
         </div>
       </div>
 
       <a class="booking__btn btn btn--accent" href="/Ramada/rooms.html">
+        <span class="scale"></span>
         Все номера
       </a>
 
@@ -1566,9 +1591,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Номерной фонд
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1612,9 +1637,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/congress-hall.html">
                   Конгресс - холл
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1646,9 +1671,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/restaurant.html">
                   Рестораны
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1670,9 +1695,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/offers-special.html">
                   Пакеты
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1734,9 +1759,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/events.html">
                   Мероприятия
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1773,9 +1798,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Отель
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1815,9 +1840,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Информация
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1990,6 +2015,7 @@
       </p>
     </div>
     <button class="plate__btn btn btn--white-alt" onclick="checkCookies()">
+      <span class="scale"></span>
       Понятно
     </button>
   </div>
@@ -2023,6 +2049,7 @@
       </div>
       <div class="form-foot">
         <button class="form-btn btn btn--accent" type="button">
+          <span class="scale"></span>
           Отправить
         </button>
         <div class="form-group form-text">

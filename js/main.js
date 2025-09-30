@@ -1,3 +1,19 @@
+const TIME_TO_WAIT = 4;
+const preloader = document.querySelector('.preloader');
+const removePreloader = function () {
+  preloader.classList.add("none");
+  preloader.removeEventListener('transitionend', removePreloader);
+};
+const hidePreloader = function () {
+  preloader.classList.add("hidden");
+  preloader.addEventListener('transitionend', removePreloader);
+};
+if (preloader) {
+  window.addEventListener('load', (event) => {
+    hidePreloader()
+  });
+}
+
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -97,6 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
+      dynamicBullets: true,
+      dynamicMainBullets: 1,
     },
   });
 
@@ -139,6 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
+      dynamicBullets: true,
+      dynamicMainBullets: 1,
     },
     breakpoints: {
       601: {
@@ -168,6 +188,8 @@ document.addEventListener('DOMContentLoaded', () => {
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
+      dynamicBullets: true,
+      dynamicMainBullets: 1,
     },
     breakpoints: {
       381: {
@@ -201,6 +223,8 @@ document.addEventListener('DOMContentLoaded', () => {
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
+      dynamicBullets: true,
+      dynamicMainBullets: 1,
     },
     breakpoints: {
       601: {
@@ -216,6 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
     spaceBetween: 10,
     speed: 600,
     loop: true,
+    loopAdditionalSlides: 1,
     mousewheel: {
       forceToAxis: true,
     },
@@ -226,15 +251,19 @@ document.addEventListener('DOMContentLoaded', () => {
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
+      dynamicBullets: true,
+      dynamicMainBullets: 1,
     },
     breakpoints: {
       601: {
         slidesPerView: 2,
         spaceBetween: 20,
+        loopAdditionalSlides: 2,
       },
       835: {
         slidesPerView: 3,
         spaceBetween: 20,
+        loopAdditionalSlides: 3,
       },
     },
   });
@@ -252,6 +281,8 @@ document.addEventListener('DOMContentLoaded', () => {
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
+      dynamicBullets: true,
+      dynamicMainBullets: 1,
     },
     effect: 'fade',
     fadeEffect: {
@@ -275,6 +306,8 @@ document.addEventListener('DOMContentLoaded', () => {
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
+      dynamicBullets: true,
+      dynamicMainBullets: 1,
     },
     breakpoints: {
       381: {
@@ -345,6 +378,8 @@ document.addEventListener('DOMContentLoaded', () => {
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
+      dynamicBullets: true,
+      dynamicMainBullets: 1,
     },
     breakpoints: {
       601: {
@@ -361,7 +396,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const residenceSliderDesc = new Swiper(".residence__slider", {
     slidesPerGroup: 1,
     slidesPerView: 1,
-    spaceBetween: 20,
+    spaceBetween: 60,
     loop: true,
     speed: 600,
     navigation: {
@@ -374,6 +409,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // },
     mousewheel: false,
     grabCursor: false,
+    breakpoints: {
+      835: {
+        spaceBetween: 20,
+      }
+    },
   });
 
   const templateProducts = document.querySelectorAll('.template-product');
@@ -543,8 +583,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   galleryBlockSlider.controller.control = galleryBodySlider;
   galleryBodySlider.controller.control = galleryBlockSlider;
-
-
 
   /**
    * Расчёт ширины скроллбара старницы и добавление отступа в body при октрытии попапов
@@ -811,9 +849,132 @@ document.addEventListener('DOMContentLoaded', () => {
    * 
    * Анимация главного блока
    */
+  const templatePrimary = document.querySelector('.template--primary');
+  if (templatePrimary) {
+    const templateBg = templatePrimary.querySelector('.template__bg');
+    const templateSuptitle = templatePrimary.querySelector('.template__suptitle');
+    const templateTitle = templatePrimary.querySelector('.template__title');
+    const templateBodyIcons = templatePrimary.querySelector('.template__body-icons');
+    const templateBodyDown = templatePrimary.querySelector('.template__body-down');
+
+    const templatePrimaryHeight = templatePrimary.offsetHeight;
+    console.log(templatePrimaryHeight);
+
+    const tl = gsap.timeline({
+      paused: true
+    });
+
+    tl.from(templatePrimary, {
+      ease: "none",
+      scrollTrigger: {
+        trigger: templatePrimary,
+        start: `top 0%`,
+        end: 'bottom bottom',
+        pin: true,
+        pinSpacing: false,
+        scrub: true,
+        invalidateOnRefresh: true,
+      },
+      // onComplete: function () {
+      //   templatePrimary.classList.add('animatedClass');
+      // },
+    });
+
+    if (templateBg) {
+      tl.from(templateBg, {
+        opacity: 0,
+        duration: .5,
+        ease: "ease",
+        stagger: {
+          amount: .3
+        }
+      });
+      scrollTriggerPlayer(templateBg, tl)
+    }
+
+    if (templateSuptitle) {
+      tl.from(templateSuptitle, {
+        opacity: 0,
+        y: '-50',
+        duration: .5,
+        ease: "ease",
+        stagger: {
+          amount: .3
+        }
+      });
+      scrollTriggerPlayer(templateSuptitle, tl)
+    }
+
+    if (templateTitle) {
+      tl.from(templateTitle, {
+        opacity: 0,
+        y: '-50',
+        duration: .5,
+        ease: "ease",
+        stagger: {
+          amount: .3
+        }
+      });
+      scrollTriggerPlayer(templateTitle, tl)
+    }
+
+    if (templateBodyIcons) {
+      tl.from(templateBodyIcons, {
+        opacity: 0,
+        y: '-50',
+        duration: .5,
+        ease: "ease",
+        stagger: {
+          amount: .3
+        }
+      });
+      scrollTriggerPlayer(templateBodyIcons, tl)
+    }
+
+    if (templateBodyDown) {
+      tl.fromTo(templateBodyDown, {
+        opacity: 0,
+        y: '-50',
+      }, {
+        opacity: 1,
+        y: '0',
+        duration: .3,
+        ease: "ease",
+        stagger: {
+          amount: .3
+        }
+      });
+      scrollTriggerPlayer(templateBodyDown, tl)
+    }
+  }
+
+  const foreachItem = document.querySelector('.foreach-items');
+  if (foreachItem) {
+    const items = foreachItem.querySelectorAll('.foreach-items>a.offers__item')
+    items.forEach(item => {
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.fromTo(item, {
+        opacity: 0,
+        y: '-50',
+      }, {
+        opacity: 1,
+        y: '0',
+        duration: .3,
+        ease: "power1.out",
+        stagger: {
+          amount: .3,
+        }
+      });
+      scrollTriggerPlayer(item, tl)
+    });
+  }
+
   const hero = document.getElementById('hero');
   if (hero) {
     $(window).on('resize load', function () {
+
       // if (window.innerWidth > '834' && window.innerWidth != '834') {
 
       //   const smoothImgY = '-50%';
@@ -1011,7 +1172,43 @@ document.addEventListener('DOMContentLoaded', () => {
           heroBtnBottomAfter
         );
       } else {
-        return;
+        // return;
+        // gsap.from(hero, {
+        //   ease: "none",
+        //   scrollTrigger: {
+        //     trigger: hero,
+        //     start: `top +=${heroHeight / heroTop} `,
+        //     end: () => `+=${heroHeight}`,
+        //     pin: true,
+        //     scrub: true,
+        //     invalidateOnRefresh: true,
+        //   },
+        //   onComplete: function () {
+        //     hero.classList.add('animatedClass');
+        //   },
+        // });
+        const header = document.querySelector('header');
+        const headerHeight = header.offsetHeight;
+        const heroHeight = hero.offsetHeight;
+        const heroTop = 4.7;
+        gsap.from(hero, {
+          ease: "none",
+          scrollTrigger: {
+            trigger: hero,
+            // start: `top +=${heroHeight / heroTop} `,
+            start: `top +=${headerHeight} `,
+            end: () => `+=${heroHeight}`,
+            // start: `top 0%`,
+            // end: 'bottom bottom',
+            pin: true,
+            pinSpacing: false,
+            scrub: true,
+            invalidateOnRefresh: true,
+          },
+          onComplete: function () {
+            hero.classList.add('animatedClass');
+          },
+        });
       }
     });
   }
@@ -1055,7 +1252,23 @@ document.addEventListener('DOMContentLoaded', () => {
           heroBtnBottomAfter
         );
       } else {
-        return;
+        const header = document.querySelector('header');
+        const headerHeight = header.offsetHeight;
+        const restaurantHeight = restaurant.offsetHeight;
+        gsap.from(restaurant, {
+          ease: "none",
+          scrollTrigger: {
+            trigger: restaurant,
+            start: `top +=${headerHeight} `,
+            end: () => `+=${restaurantHeight}`,
+            pin: true,
+            scrub: true,
+            invalidateOnRefresh: true,
+          },
+          onComplete: function () {
+            restaurant.classList.add('animatedClass');
+          },
+        });
       }
     });
   }
@@ -1319,6 +1532,7 @@ document.addEventListener('DOMContentLoaded', () => {
       //   });
       // }
 
+      // } else if (window.innerWidth <= '834' && window.innerWidth > '600' && window.innerWidth != '600') {
     } else if (window.innerWidth <= '834' && window.innerWidth > '600' && window.innerWidth != '600') {
       const parallaxImgBoxes = document.querySelectorAll('[data-animation="parallax-box"]');
       if (parallaxImgBoxes != 0) {
@@ -1536,7 +1750,7 @@ document.addEventListener('DOMContentLoaded', () => {
           },
           {
             y: '10%',
-            scale: 0.9,
+            scale: 1,
             scrollTrigger: {
               trigger: parallaxImgContainer,
               start: 'top 90%',
@@ -1566,6 +1780,30 @@ document.addEventListener('DOMContentLoaded', () => {
         );
       });
     }
+
+    const fadeUpRotateItems = document.querySelectorAll('[data-transform="fadeUpRotate"]');
+    fadeUpRotateItems.forEach(fadeUpRotateItem => {
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.fromTo(fadeUpRotateItem,
+        {
+          y: '150%',
+          opacity: 0,
+          rotate: '20deg',
+          transformOrigin: "0 50%"
+        },
+        {
+          y: '0',
+          opacity: 1,
+          rotate: '0',
+          duration: 1,
+          delay: 0.2,
+          ease: "power4.out",
+        },
+      );
+      scrollTriggerPlayer(fadeUpRotateItem, tl)
+    });
 
     // const creepingBlock = document.querySelector('[data-animation="creeping"]');
     // if (creepingBlock) {
@@ -1695,145 +1933,39 @@ document.addEventListener('DOMContentLoaded', () => {
           },
           onComplete: function () {
             fadeUp.classList.add('sticky');
+            // fadeUp.parentNode.classList.add('sticky');
+            // observer.unobserve(blockToAnimate); // Отключаем наблюдение, если не нужно многократное срабатывание
           },
         });
         scrollTriggerPlayer(fadeUp, tl)
       });
     }
-
-    const templatePrimary = document.querySelector('.template--primary');
-    if (templatePrimary) {
-      const templateBg = templatePrimary.querySelector('.template__bg');
-      const templateSuptitle = templatePrimary.querySelector('.template__suptitle');
-      const templateTitle = templatePrimary.querySelector('.template__title');
-      const templateBodyIcons = templatePrimary.querySelector('.template__body-icons');
-      const templateBodyDown = templatePrimary.querySelector('.template__body-down');
-
-      const tl = gsap.timeline({
-        paused: true
-      });
-
-      if (templateBg) {
-        tl.from(templateBg, {
-          opacity: 0,
-          duration: .5,
-          ease: "ease",
-          stagger: {
-            amount: .3
-          }
-        });
-        scrollTriggerPlayer(templateBg, tl)
-      }
-
-      if (templateSuptitle) {
-        tl.from(templateSuptitle, {
-          opacity: 0,
-          y: '-50',
-          duration: .5,
-          ease: "ease",
-          stagger: {
-            amount: .3
-          }
-        });
-        scrollTriggerPlayer(templateSuptitle, tl)
-      }
-
-      if (templateTitle) {
-        tl.from(templateTitle, {
-          opacity: 0,
-          y: '-50',
-          duration: .5,
-          ease: "ease",
-          stagger: {
-            amount: .3
-          }
-        });
-        scrollTriggerPlayer(templateTitle, tl)
-      }
-
-      if (templateBodyIcons) {
-        tl.from(templateBodyIcons, {
-          opacity: 0,
-          y: '-50',
-          duration: .5,
-          ease: "ease",
-          stagger: {
-            amount: .3
-          }
-        });
-        scrollTriggerPlayer(templateBodyIcons, tl)
-      }
-
-      if (templateBodyDown) {
-        tl.fromTo(templateBodyDown, {
-          opacity: 0,
-          y: '-50',
-        }, {
-          opacity: 1,
-          y: '0',
-          duration: .3,
-          ease: "ease",
-          stagger: {
-            amount: .3
-          }
-        });
-        scrollTriggerPlayer(templateBodyDown, tl)
-      }
-    }
-
-    const foreachItem = document.querySelector('.foreach-items');
-    if (foreachItem) {
-      const items = foreachItem.querySelectorAll('.foreach-items>a.offers__item')
-      items.forEach(item => {
-        const tl = gsap.timeline({
-          paused: true
-        });
-        tl.fromTo(item, {
-          opacity: 0,
-          y: '-50',
-        }, {
-          opacity: 1,
-          y: '0',
-          duration: .3,
-          ease: "power1.out",
-          stagger: {
-            amount: .3,
-          }
-        });
-        scrollTriggerPlayer(item, tl)
-      });
-    }
-
-
-
-    /**
-     * 
-     * @param {Элемент от которого начинается Анимация} triggerElement 
-     * @param {*} timeline 
-     * @param {*} onEnterStart 
-     */
-    function scrollTriggerPlayer(triggerElement, timeline, onEnterStart = "top 95%") {
-      ScrollTrigger.create({
-        trigger: triggerElement,
-        start: "top bottom",
-        onLeaveBack: () => {
-          timeline.progress(1);
-          timeline.pause()
-        }
-      });
-      ScrollTrigger.create({
-        trigger: triggerElement,
-        start: onEnterStart,
-        onEnter: () => timeline.play()
-      })
-    }
-    gsap.registerPlugin(ScrollTrigger);
-
   });
 
+  /**
+   * 
+   * @param {Элемент от которого начинается Анимация} triggerElement 
+   * @param {*} timeline 
+   * @param {*} onEnterStart 
+   */
+  function scrollTriggerPlayer(triggerElement, timeline, onEnterStart = "top 95%") {
+    ScrollTrigger.create({
+      trigger: triggerElement,
+      start: "top bottom",
+      onLeaveBack: () => {
+        timeline.progress(1);
+        timeline.pause()
+      }
+    });
+    ScrollTrigger.create({
+      trigger: triggerElement,
+      start: onEnterStart,
+      onEnter: () => timeline.play()
+    })
+  }
+  gsap.registerPlugin(ScrollTrigger);
+
   window.addEventListener('resize scroll load', function () { ScrollTrigger.refresh() });
-
-
 
   // function menuItemAnim() {
   //   const asd = document.querySelectorAll('.menu__item');
@@ -1893,7 +2025,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const transfer = document.querySelector('.transfer-elem-1');
   if (transfer) {
     $(window).on('resize load', function () {
-      if (window.innerWidth <= '834') {
+      if (window.innerWidth <= 834) {
         if (document.querySelector('.transfer-pos-1')) {
           new TransferElements(
             {
@@ -1985,24 +2117,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const calendarTargets = document.querySelectorAll('.target');
   if (calendarTargets.length > 0) {
     calendarTargets.forEach(calendarTarget => {
+      const targetElement = calendarTarget.querySelector('span')
       const tooltip = calendarTarget.querySelector('.tooltip')
       const tooltipClose = calendarTarget.querySelector('.tooltip__close')
 
-      calendarTarget.addEventListener('click', () => {
+      targetElement.addEventListener('click', () => {
         calendarTarget.classList.add('show');
       })
+
+      tooltipClose.addEventListener('click', function () {
+        if (calendarTarget.classList.contains('show')) {
+          calendarTarget.classList.remove('show');
+        }
+      });
 
       document.addEventListener('click', (event) => {
         if (!tooltip.contains(event.target) && !calendarTarget.contains(event.target)) {
           calendarTarget.classList.remove('show');
         }
       });
-
-      // tooltipClose.addEventListener('click', function () {
-      //   if (calendarTarget.classList.contains('show')) {
-      //     calendarTarget.classList.remove('show');
-      //   }
-      // });
     });
   }
 

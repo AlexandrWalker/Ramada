@@ -15,7 +15,7 @@
   <!-- title -->
   <title>RAMADA</title>
   <!-- icons -->
-  <link rel="stylesheet" href="icons/ramadaIconsStyle.css">
+  <link rel="stylesheet" href="icons/style.css">
   <!-- styles -->
   <link rel="stylesheet" href="./libs/fancybox/fancybox.css">
   <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css">
@@ -28,7 +28,10 @@
 <body>
   <div class="wrapper career-inner-page">
     <!-- Шапка -->
-    <header id="header" class="header">
+    <div class="preloader">
+  <img class="preloader__img" src="./images/temp/preloader.gif" alt="">
+</div>
+<header id="header" class="header">
   <div class="container container--fluid">
     <div class="header__inner">
 
@@ -36,6 +39,7 @@
         <div class="header__container container">
           <div class="header__left">
             <button class="burger-btn btn btn--black">
+              <span class="scale"></span>
               <span></span>
               <i class="icon-burger"></i>
               <i class="icon-menu"></i>
@@ -45,11 +49,13 @@
             <button class="btn btn--accent btn--icon">
               <i class="icon-3d"></i>
               <i class="pulse"></i>
+              <span class="scale"></span>
             </button>
-            <button class="btn btn--accent btn--icon">
+            <butaton class="btn btn--accent btn--icon">
               <i class="icon-play"></i>
               <i class="pulse"></i>
-            </button>
+              <span class="scale"></span>
+            </butaton>
           </div>
 
           <div class="header__wrap">
@@ -88,6 +94,7 @@
             <button class="header__btn btn btn--accent" data-fancybox href="#feedback">
               <i class="icon-book"></i>
               <i class="pulse"></i>
+              <span class="scale"></span>
               <span data-text="Забронировать номер" data-text-mob="Забронировать"></span>
             </button>
           </div>
@@ -177,10 +184,12 @@
       <div class="menu__head">
         <div class="menu__head-btns">
           <button class="btn btn--accent btn--icon">
+            <span class="scale"></span>
             <i class="icon-3d"></i>
             <i class="pulse"></i>
           </button>
           <button class="btn btn--accent btn--icon">
+            <span class="scale"></span>
             <i class="icon-play"></i>
             <i class="pulse"></i>
           </button>
@@ -667,7 +676,7 @@
         <div class="container">
           <div class="template__inner">
 
-            <div class="template__title">
+            <div class="template__title" data-transform="revealRotate" data-splitting="words">
               <h1>
                 Менеджер по продажам
               </h1>
@@ -682,7 +691,7 @@
         <div class="container">
           <div class="career__inner">
 
-            <div class="career__content">
+            <div class="career__content" data-transform="fadeUp">
               <p>
                 В связи с расширением ищем в наш дружный коллектив специалиста для развития гостиничных услуг. Нам нужен
                 активный, амбициозный и коммуникабельный сотрудник, готовый развиваться в сфере продаж и клиентского
@@ -701,12 +710,12 @@
               </p>
             </div>
 
-            <div class="career__body">
+            <div class="career__body" data-transform="fadeUp">
               <h5>
                 О вакансии
               </h5>
               <div class="career__list">
-                <div class="career__list-item career__list-item--primary">
+                <div class="career__list-item career__list-item--primary" data-transform="fadeUp">
                   <h6>
                     Обязательно
                   </h6>
@@ -722,7 +731,7 @@
                     </li>
                   </ul>
                 </div>
-                <div class="career__list-item">
+                <div class="career__list-item" data-transform="fadeUp">
                   <h6>
                     Приветствуется
                   </h6>
@@ -738,7 +747,7 @@
                     </li>
                   </ul>
                 </div>
-                <div class="career__list-item">
+                <div class="career__list-item" data-transform="fadeUp">
                   <h6>
                     Условия труда
                   </h6>
@@ -764,6 +773,7 @@
             </div>
 
             <a class="btn btn--accent" href="/">
+              <span class="scale"></span>
               <img src="./images/icon/hh-icon.svg" alt="">
               Откликнуться на вакансию
             </a>
@@ -794,9 +804,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Номерной фонд
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -840,9 +850,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/congress-hall.html">
                   Конгресс - холл
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -874,9 +884,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/restaurant.html">
                   Рестораны
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -898,9 +908,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/offers-special.html">
                   Пакеты
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -962,9 +972,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/Ramada/events.html">
                   Мероприятия
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1001,9 +1011,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Отель
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1043,9 +1053,9 @@
             </div>
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <p>
+                <a href="/">
                   Информация
-                </p>
+                </a>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
@@ -1218,6 +1228,7 @@
       </p>
     </div>
     <button class="plate__btn btn btn--white-alt" onclick="checkCookies()">
+      <span class="scale"></span>
       Понятно
     </button>
   </div>
@@ -1251,6 +1262,7 @@
       </div>
       <div class="form-foot">
         <button class="form-btn btn btn--accent" type="button">
+          <span class="scale"></span>
           Отправить
         </button>
         <div class="form-group form-text">
