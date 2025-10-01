@@ -2,7 +2,15 @@
 
 .offers-special {
 
-  &-page {}
+  &-page {
+
+    .template-product__body-title {
+
+      h5 {
+        font-size: 2.5rem;
+      }
+    }
+  }
 
 }
 

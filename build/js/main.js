@@ -1,7 +1,8 @@
-const TIME_TO_WAIT = 4;
+const html = document.documentElement;
+
 const preloader = document.querySelector('.preloader');
 const removePreloader = function () {
-  preloader.classList.add("none");
+  preloader.classList.add("preloader-none");
   preloader.removeEventListener('transitionend', removePreloader);
 };
 const hidePreloader = function () {
@@ -17,6 +18,12 @@ if (preloader) {
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  setTimeout(() => {
+    document.documentElement.classList.remove('preloaderDownload');
+  }, 800);
+
+  const checkEditMode = document.querySelector('.bx-panel-toggle-on') ?? null;
 
   /**
    * Инициализация Lenis
@@ -1645,6 +1652,7 @@ document.addEventListener('DOMContentLoaded', () => {
         opacity: 0,
         y: "50",
         duration: .5,
+        delay: .5,
         ease: "ease",
         stagger: {
           amount: .3

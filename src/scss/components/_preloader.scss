@@ -1,3 +1,9 @@
+@use './../mixins' as *;
+
+.preloaderDownload body {
+  overflow: hidden;
+}
+
 .preloader {
   display: flex;
   justify-content: center;
@@ -9,10 +15,13 @@
   bottom: 0;
   z-index: 100000;
   background: var(--white);
+  background: var(--accent);
+  clip-path: inset(0 0 0 0);
+  will-change: clip-path;
 
   &.hidden {
-    opacity: 0;
-    transition: opacity 2s;
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 1s;
   }
 
   &.none {
@@ -20,8 +29,13 @@
   }
 
   &__img {
-    width: 5rem;
-    height: 5rem;
-    object-fit: cover;
+    // width: 5rem;
+    width: auto;
+    height: 10rem;
+    object-fit: contain;
+
+    @include md {
+      height: 5rem;
+    }
   }
 }

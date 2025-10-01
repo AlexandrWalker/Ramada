@@ -1,5 +1,23 @@
 @use './../mixins' as *;
 
+.events-inner {
+
+  &-page {
+
+    .template-product__body ul {
+      margin-bottom: 2rem;
+
+      @include md {
+        margin-bottom: 5rem;
+      }
+
+      @include sm {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
 .events-desc {
 
   &__inner {
