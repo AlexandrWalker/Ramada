@@ -1,9 +1,5 @@
 @use './../mixins' as *;
 
-.preloaderDownload body {
-  overflow: hidden;
-}
-
 .preloader {
   display: flex;
   justify-content: center;
