@@ -323,13 +323,15 @@ gulp.task('fontsStyle', () => {
           let fontWeight = fontFileName.split('-')[1] ? fontFileName.split('-')[1] : fontFileName;
           if (fontWeight.toLowerCase() === 'thin') {
             fontWeight = 100;
-          } else if (fontWeight.toLowerCase() === 'extralight') {
+          } else if (fontWeight.toLowerCase() === 'extralight' || fontWeight.toLowerCase() === 'ultralight') {
             fontWeight = 200;
           } else if (fontWeight.toLowerCase() === 'light') {
             fontWeight = 300;
+          } else if (fontWeight.toLowerCase() === 'book') {
+            fontWeight = 350;
           } else if (fontWeight.toLowerCase() === 'medium') {
             fontWeight = 500;
-          } else if (fontWeight.toLowerCase() === 'semibold') {
+          } else if (fontWeight.toLowerCase() === 'semibold' || fontWeight.toLowerCase() === 'demibold') {
             fontWeight = 600;
           } else if (fontWeight.toLowerCase() === 'bold') {
             fontWeight = 700;
@@ -337,6 +339,8 @@ gulp.task('fontsStyle', () => {
             fontWeight = 800;
           } else if (fontWeight.toLowerCase() === 'black') {
             fontWeight = 900;
+          } else if (fontWeight.toLowerCase() === 'гltra') {
+            fontWeight = 1000;
           } else {
             fontWeight = 400;
           }

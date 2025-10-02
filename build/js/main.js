@@ -1,34 +1,31 @@
 /**
  * Прелоадер
  */
+const preloader = document.querySelector('.preloader');
+const removePreloader = function () {
+  preloader.classList.add("preloader-none");
+  document.documentElement.classList.remove('no-scroll');
+  preloader.removeEventListener('transitionend', removePreloader);
+};
+const hidePreloader = function () {
+  preloader.classList.add("hidden");
+  document.documentElement.classList.add('no-scroll');
+  preloader.addEventListener('transitionend', removePreloader);
+};
+if (preloader) {
+  window.addEventListener('load', (event) => {
+    hidePreloader()
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  const preloader = document.querySelector('.preloader');
-  const removePreloader = function () {
-    preloader.classList.add("preloader-none");
-    document.documentElement.classList.remove('no-scroll');
-    preloader.removeEventListener('transitionend', removePreloader);
-  };
-  const hidePreloader = function () {
-    preloader.classList.add("hidden");
-    document.documentElement.classList.add('no-scroll');
-    preloader.addEventListener('transitionend', removePreloader);
-  };
-  if (preloader) {
-    window.addEventListener('load', (event) => {
-      hidePreloader()
-    });
-  }
-});
 
-/**
- * Подключение ScrollTrigger
- */
-gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
-
-
-
-window.addEventListener('load', () => {
   const checkEditMode = document.querySelector('.bx-panel-toggle-on') ?? null;
+
+  /**
+   * Подключение ScrollTrigger
+   */
+  gsap.registerPlugin(ScrollTrigger);
 
   /**
    * Инициализация Lenis
@@ -627,18 +624,23 @@ window.addEventListener('load', () => {
     const elements = document.querySelectorAll('.burger-menu__list a');
     const html = document.documentElement;
 
-    // Переключает видимость меню.
+    /**
+     * Переключает видимость меню.
+     */
     const toggleMenu = () => {
       const isOpened = burgerBtn.classList.toggle('burger-btn--opened');
       burgerMenu.classList.toggle('burger-menu--opened', isOpened);
       lenis.stop();
       header.classList.toggle('show');
+      // menuItemAnim();
 
       const width = getScrollbarWidth();
       document.body.style.paddingRight = width + 'px';
     };
 
-    // Закрывает меню.
+    /**
+     * Закрывает меню.
+     */
     const closeMenu = () => {
       burgerBtn.classList.remove('burger-btn--opened');
       burgerMenu.classList.remove('burger-menu--opened');
@@ -680,7 +682,7 @@ window.addEventListener('load', () => {
   /**
    * Добавляет класс для бургер кнопки для смены стиля
    */
-  $(window).on('resize load', function () {
+  $(window).on('resize', function () {
     if (window.innerWidth <= '834') {
       const burgerClose = document.querySelector('.burger-close');
 
@@ -691,7 +693,7 @@ window.addEventListener('load', () => {
   });
 
   /**
-   * Управляет поведением header при скролле
+   * Управляет поведением меню-бургера.
    */
   function headerFunc() {
     const header = document.getElementById('header');
@@ -735,6 +737,7 @@ window.addEventListener('load', () => {
             } else {
               accordionContainer.classList.remove('activated');
             }
+            // ScrollTrigger.refresh();
 
             window.addEventListener('keydown', (e) => {
               if (e.key === "Escape") {
@@ -800,9 +803,9 @@ window.addEventListener('load', () => {
   }
 
   /**
-   * Управляет классами кнопки закрытия бургер меню
+   * Смена класса для кнопки закрытия бургер меню
    */
-  $(window).on('resize load', function () {
+  $(window).on('resize', function () {
     if (window.innerWidth < '600' && window.innerWidth != '600') {
       const burgerClose = document.querySelector('.burger-close');
       burgerClose.classList.add('btn');
@@ -811,8 +814,7 @@ window.addEventListener('load', () => {
   });
 
   /**
-   * Фильтр для страницы с отзывами.
-   * Смена корпоративных и персональных отзывов
+   * Смена отзывов через фильтр
    */
   let filter = document.querySelector('.filter');
   if (filter) {
@@ -842,9 +844,8 @@ window.addEventListener('load', () => {
    */
   const transfer = document.querySelector('.transfer-elem-1');
   if (transfer) {
-    $(window).on('resize load', function () {
+    $(window).on('resize', function () {
       if (window.innerWidth <= 834) {
-
         if (document.querySelector('.transfer-pos-1')) {
           new TransferElements(
             {
@@ -857,7 +858,6 @@ window.addEventListener('load', () => {
             }
           );
         }
-
       }
     });
   }
@@ -887,7 +887,7 @@ window.addEventListener('load', () => {
   }
 
   /**
-   *  Копирование реквезитов - Copyboard
+   *  Copyboard
    */
   const copyButton = document.querySelector(".contacts__item-copy");
   const copyText = document.querySelector(".contacts__item-text");
@@ -902,7 +902,7 @@ window.addEventListener('load', () => {
   }
 
   /**
-   * Инициализация Fancybox
+   * Инициализация Fabcybox
    */
   Fancybox.bind('[data-fancybox]', {
     Html: {
@@ -918,9 +918,6 @@ window.addEventListener('load', () => {
     }
   });
 
-  /**
-   * Открытие выпадашки для календаря
-   */
   // const calendarTargets = document.querySelectorAll('.target');
   // if (calendarTargets.length > 0) {
   //   calendarTargets.forEach(calendarTarget => {
@@ -932,11 +929,11 @@ window.addEventListener('load', () => {
   //       calendarTarget.classList.add('show');
   //     })
 
-  //     // tooltipClose.addEventListener('click', function () {
-  //     //   if (calendarTarget.classList.contains('show')) {
-  //     //     calendarTarget.classList.remove('show');
-  //     //   }
-  //     // });
+  //     tooltipClose.addEventListener('click', function () {
+  //       if (calendarTarget.classList.contains('show')) {
+  //         calendarTarget.classList.remove('show');
+  //       }
+  //     });
 
   //     document.addEventListener('click', (event) => {
   //       if (!tooltip.contains(event.target) && !calendarTarget.contains(event.target)) {
@@ -950,10 +947,9 @@ window.addEventListener('load', () => {
    * Скрипт для блока со скролом
    */
   const hall = document.querySelector('.hall');
-
   if (hall) {
     var len = $('.hall__item').length;
-    $(window).on('resize load', function () {
+    $(window).on('resize', function () {
 
       if (window.innerWidth < "834") {
         scroll = 0;
@@ -1159,751 +1155,8 @@ window.addEventListener('load', () => {
 
   /**
    * GSAP
+   * 
    */
-  const hero = document.getElementById('hero');
-  if (hero) {
-    $(window).on('resize load', function () {
-
-      if (window.innerWidth > 834) {
-
-        const smoothImgY = '-50%';
-
-        const smoothImgTopBefore = '26rem';
-        const smoothImgTopAfter = '30rem';
-
-        const heroHeight = hero.offsetHeight;
-        const heroTop = 4.7;
-
-        const h1TitleFsBefore = '20rem';
-        const h1TitleFsAfter = '14rem';
-
-        const pTitleFontSizeBefore = '10rem';
-        const pTitleLeftPosBefore = '79.5rem';
-        const pTitleTopPosBefore = '6.8rem';
-        const pTitleColorBefore = '#1A1919';
-
-        const pTitleFontSizeAfter = '6rem';
-        const pTitleLeftPosAfter = '55.5rem';
-        const pTitleTopPosAfter = '5.7rem';
-        const pTitleColorAfter = '#ffffff';
-
-        const heroHeadGapBefore = '3rem';
-        const heroHeadGapAfter = '8rem';
-
-        const heroBtnBottomBefore = '-3rem';
-        const heroBtnBottomAfter = '1.3rem';
-
-        heroAnimate(smoothImgY,
-          smoothImgTopBefore,
-          smoothImgTopAfter,
-          heroHeight,
-          heroTop,
-          h1TitleFsBefore,
-          h1TitleFsAfter,
-          pTitleFontSizeBefore,
-          pTitleLeftPosBefore,
-          pTitleTopPosBefore,
-          pTitleColorBefore,
-          pTitleFontSizeAfter,
-          pTitleLeftPosAfter,
-          pTitleTopPosAfter,
-          pTitleColorAfter,
-          heroHeadGapBefore,
-          heroHeadGapAfter,
-          heroBtnBottomBefore,
-          heroBtnBottomAfter
-        );
-      } else {
-        const header = document.querySelector('header');
-        const headerHeight = header.offsetHeight;
-        const heroHeight = hero.offsetHeight;
-        gsap.from(hero, {
-          ease: "none",
-          scrollTrigger: {
-            trigger: hero,
-            start: `top +=${headerHeight} `,
-            end: () => `+=${heroHeight}`,
-            pin: true,
-            pinSpacing: false,
-            scrub: true,
-            preventOverlaps: true,
-            invalidateOnRefresh: true,
-          },
-          onComplete: function () {
-            hero.classList.add('animatedClass');
-          },
-        });
-      }
-
-    });
-  }
-
-  const restaurant = document.getElementById('restaurant');
-  if (restaurant) {
-    $(window).on('resize load', function () {
-
-      if (window.innerWidth > 834) {
-
-        const smoothImgY = '-50%';
-
-        const smoothImgTopBefore = '20.8rem';
-        const smoothImgTopAfter = '30rem';
-
-        const heroHeight = restaurant.offsetHeight;
-        const heroTop = 4.7;
-
-        const h1TitleFsBefore = '20rem';
-        const h1TitleFsAfter = '14rem';
-        const h1TitleGapBefore = '55.5rem';
-        const h1TitleGapAfter = '37.5rem';
-
-        const heroHeadGapBefore = '3rem';
-        const heroHeadGapAfter = '8rem';
-
-        const heroBtnBottomBefore = '-3rem';
-        const heroBtnBottomAfter = '1.3rem';
-
-        restaurantAnimate(smoothImgY,
-          smoothImgTopBefore,
-          smoothImgTopAfter,
-          heroHeight,
-          heroTop,
-          h1TitleFsBefore,
-          h1TitleFsAfter,
-          h1TitleGapBefore,
-          h1TitleGapAfter,
-          heroHeadGapBefore,
-          heroHeadGapAfter,
-          heroBtnBottomBefore,
-          heroBtnBottomAfter
-        );
-      } else {
-        const header = document.querySelector('header');
-        const headerHeight = header.offsetHeight;
-        const restaurantHeight = restaurant.offsetHeight;
-        gsap.from(restaurant, {
-          ease: "none",
-          scrollTrigger: {
-            trigger: restaurant,
-            start: `top +=${headerHeight} `,
-            end: () => `+=${restaurantHeight}`,
-            pin: true,
-            pinSpacing: false,
-            scrub: true,
-            preventOverlaps: true,
-            invalidateOnRefresh: true,
-          },
-          onComplete: function () {
-            restaurant.classList.add('animatedClass');
-          },
-        });
-      }
-
-    });
-  }
-
-  function heroAnimate(smoothImgY, smoothImgTopBefore, smoothImgTopAfter, heroHeight, heroTop, h1TitleFsBefore, h1TitleFsAfter, pTitleFontSizeBefore, pTitleLeftPosBefore, pTitleTopPosBefore, pTitleColorBefore, pTitleFontSizeAfter, pTitleLeftPosAfter, pTitleTopPosAfter, pTitleColorAfter, heroHeadGapBefore, heroHeadGapAfter, heroBtnBottomBefore, heroBtnBottomAfter
-  ) {
-    const hero = document.getElementById('hero');
-    const heroHead = hero.querySelector('.hero__head');
-
-    const smoothImg = hero.querySelector('[data-animation="smooth-img"]');
-    const heroTitle = hero.querySelector('[data-animation="hero-title"]');
-    const heroBtn = hero.querySelector('[data-animation="hero-btn"]');
-
-    const h1Title = heroTitle.querySelector('h1');
-    const pTitle = heroTitle.querySelector('p');
-    const spanTitle = heroTitle.querySelector('span');
-
-    gsap.from(hero, {
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: `top +=${heroHeight / heroTop} `,
-        end: () => `+=${heroHeight}`,
-        pin: true,
-        scrub: true,
-        preventOverlaps: true,
-        invalidateOnRefresh: true,
-      },
-      onComplete: function () {
-        hero.classList.add('animatedClass');
-      },
-    });
-
-    gsap.fromTo(smoothImg, {
-      "--top": smoothImgTopBefore,
-      scale: 1,
-    }, {
-      "--top": smoothImgTopAfter,
-      y: smoothImgY,
-      scale: 1.263,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
-        scrub: true,
-        preventOverlaps: true,
-        invalidateOnRefresh: true,
-      },
-    });
-
-    gsap.fromTo(h1Title, {
-      "--fontsize": h1TitleFsBefore,
-    }, {
-      "--fontsize": h1TitleFsAfter,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
-        scrub: true,
-        preventOverlaps: true,
-        invalidateOnRefresh: true,
-      },
-    });
-
-    gsap.fromTo(pTitle, {
-      "--fontsize": pTitleFontSizeBefore,
-      "--left-pos": pTitleLeftPosBefore,
-      "--top-pos": pTitleTopPosBefore,
-      "--color": pTitleColorBefore,
-    }, {
-      "--fontsize": pTitleFontSizeAfter,
-      "--left-pos": pTitleLeftPosAfter,
-      "--top-pos": pTitleTopPosAfter,
-      "--color": pTitleColorAfter,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
-        scrub: true,
-        preventOverlaps: true,
-        invalidateOnRefresh: true,
-      },
-    });
-
-    gsap.fromTo(spanTitle, {
-      "--color": "#C40D3C",
-    }, {
-      "--color": "#ffffff",
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
-        scrub: true,
-        preventOverlaps: true,
-        invalidateOnRefresh: true,
-      },
-    });
-
-    gsap.fromTo(heroHead, {
-      "--gap": heroHeadGapBefore,
-    }, {
-      "--gap": heroHeadGapAfter,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
-        scrub: true,
-        preventOverlaps: true,
-        invalidateOnRefresh: true,
-      },
-    });
-
-    gsap.fromTo(heroBtn, {
-      "--btn-bottom": heroBtnBottomBefore,
-    }, {
-      "--btn-bottom": heroBtnBottomAfter,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
-        scrub: true,
-        preventOverlaps: true,
-        invalidateOnRefresh: true,
-      },
-    });
-  }
-
-  function restaurantAnimate(smoothImgY, smoothImgTopBefore, smoothImgTopAfter, heroHeight, heroTop, h1TitleFsBefore, h1TitleFsAfter, h1TitleGapBefore, h1TitleGapAfter, heroHeadGapBefore, heroHeadGapAfter, heroBtnBottomBefore, heroBtnBottomAfter
-  ) {
-    const hero = document.getElementById('restaurant');
-    const heroHead = restaurant.querySelector('.hero__head');
-
-    const smoothImg = restaurant.querySelector('[data-animation="smooth-img"]');
-    const heroTitle = restaurant.querySelector('[data-animation="hero-title"]');
-    const heroBtn = restaurant.querySelector('[data-animation="hero-btn"]');
-
-    const h1Title = heroTitle.querySelector('h1');
-    const spanTitle = heroTitle.querySelector('span');
-
-    gsap.from(hero, {
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: `top +=${heroHeight / heroTop} `,
-        end: () => `+=${heroHeight}`,
-        pin: true,
-        scrub: true,
-        preventOverlaps: true,
-        invalidateOnRefresh: true,
-      },
-      onComplete: function () {
-        hero.classList.add('animatedClass');
-      },
-    });
-
-    gsap.fromTo(smoothImg, {
-      "--top": smoothImgTopBefore,
-      scale: 1,
-    }, {
-      "--top": smoothImgTopAfter,
-      y: smoothImgY,
-      scale: 1.263,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
-        scrub: true,
-        preventOverlaps: true,
-        invalidateOnRefresh: true,
-      },
-    });
-
-    gsap.fromTo(h1Title, {
-      "--fontsize": h1TitleFsBefore,
-      "--gap": h1TitleGapBefore,
-    }, {
-      "--fontsize": h1TitleFsAfter,
-      "--gap": h1TitleGapAfter,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
-        scrub: true,
-        preventOverlaps: true,
-        invalidateOnRefresh: true,
-      },
-    });
-
-    gsap.fromTo(spanTitle, {
-      "--color": "#C40D3C",
-    }, {
-      "--color": "#ffffff",
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
-        scrub: true,
-        preventOverlaps: true,
-        invalidateOnRefresh: true,
-      },
-    });
-
-    gsap.fromTo(heroHead, {
-      "--gap": heroHeadGapBefore,
-    }, {
-      "--gap": heroHeadGapAfter,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
-        scrub: true,
-        preventOverlaps: true,
-        invalidateOnRefresh: true,
-      },
-    });
-
-    gsap.fromTo(heroBtn, {
-      "--btn-bottom": heroBtnBottomBefore,
-    }, {
-      "--btn-bottom": heroBtnBottomAfter,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
-        scrub: true,
-        preventOverlaps: true,
-        invalidateOnRefresh: true,
-      },
-    });
-  }
-
-  $(window).on('resize load', function () {
-    if (window.innerWidth > 834) {
-      const footer = document.getElementById('footer');
-      if (footer) {
-        gsap.from(footer, {
-          ease: "none",
-          scrollTrigger: {
-            trigger: footer,
-            start: `top 90%`,
-            end: `top top`,
-            scrub: true,
-            preventOverlaps: true,
-            invalidateOnRefresh: true,
-          },
-          onStart: function () {
-            footer.classList.add('animatedClass');
-          },
-        });
-      }
-    } else if (window.innerWidth <= 834 && window.innerWidth > 600) {
-      const parallaxImgBoxes = document.querySelectorAll('[data-animation="parallax-box"]');
-      if (parallaxImgBoxes.length > 0) {
-        parallaxImgBoxes.forEach(parallaxImgBox => {
-
-          if (parallaxImgBox.classList.contains('leaf--4')) {
-            gsap.fromTo(parallaxImgBox,
-              { y: '20%' },
-              {
-                y: '-35%',
-                scrollTrigger: {
-                  trigger: parallaxImgBox,
-                  start: 'top 90%',
-                  end: 'bottom top',
-                  scrub: true,
-                  preventOverlaps: true,
-                  invalidateOnRefresh: true,
-                },
-              }
-            );
-          } else if (parallaxImgBox.classList.contains('leaf--2')) {
-            gsap.fromTo(parallaxImgBox,
-              { y: '15%' },
-              {
-                y: '60%',
-                scrollTrigger: {
-                  trigger: parallaxImgBox,
-                  start: 'top 90%',
-                  end: 'bottom top',
-                  scrub: true,
-                  preventOverlaps: true,
-                  invalidateOnRefresh: true,
-                },
-              }
-            );
-          }
-
-        });
-      }
-    }
-  });
-
-  if (!checkEditMode) {
-    /**
-     * Разбиение текста по буквам
-     */
-    const titleChars = document.querySelectorAll('[data-splitting="chars"]');
-    titleChars.forEach(titleChar => {
-      const char = new SplitType(titleChar, { types: 'words, chars' });
-    });
-
-    /**
-     * Разбиение текста по словам
-     */
-    const titleWords = document.querySelectorAll('[data-splitting="words"]');
-    titleWords.forEach(titleWord => {
-      const word1 = new SplitType(titleWord.querySelector('h1'), { types: 'words, words' });
-      const word2 = new SplitType(titleWord.querySelector('h2'), { types: 'words, words' });
-      const word3 = new SplitType(titleWord.querySelector('h3'), { types: 'words, words' });
-      const word4 = new SplitType(titleWord.querySelector('h4'), { types: 'words, words' });
-      const word5 = new SplitType(titleWord.querySelector('h5'), { types: 'words, words' });
-    });
-
-    /**
-     * Разбиение текста по строкам
-     */
-    const titleLines = document.querySelectorAll('[data-splitting="lines"]');
-    titleLines.forEach(titleLine => {
-      const line = new SplitType(titleLine, { types: 'words, lines' });
-    });
-  }
-
-  const parallaxItem = document.querySelector('[data-animation="parallax-img"]');
-  if (parallaxItem) {
-    const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
-    parallaxImgContainers.forEach(parallaxImgContainer => {
-
-      const image = parallaxImgContainer.querySelector('img');
-
-      gsap.fromTo(image,
-        {
-          y: '-10%',
-          scale: 0.9,
-        },
-        {
-          y: '10%',
-          scale: 1,
-          scrollTrigger: {
-            trigger: parallaxImgContainer,
-            start: 'top 90%',
-            end: 'bottom top',
-            scrub: true,
-            preventOverlaps: true,
-            invalidateOnRefresh: true,
-          },
-        }
-      );
-    });
-  }
-
-  const parallaxBlock = document.querySelector('[data-animation="parallax-block"]');
-  if (parallaxBlock) {
-    const parallaxImgBlocks = document.querySelectorAll('[data-animation="parallax-block"]');
-    parallaxImgBlocks.forEach(parallaxImgBlock => {
-
-      gsap.fromTo(parallaxImgBlock,
-        { y: '-8%' },
-        {
-          y: '8%',
-          scrollTrigger: {
-            trigger: parallaxImgBlock,
-            start: 'top 90%',
-            end: 'bottom top',
-            scrub: true,
-            preventOverlaps: true,
-            invalidateOnRefresh: true,
-          },
-        }
-      );
-    });
-  }
-
-  const parallaxImgBoxes = document.querySelectorAll('[data-animation="parallax-box"]');
-  if (parallaxImgBoxes != 0) {
-    parallaxImgBoxes.forEach(parallaxImgBox => {
-
-      if (parallaxImgBox.classList.contains('leaf--2')) {
-        gsap.fromTo(parallaxImgBox,
-          { y: '15%' },
-          {
-            y: '60%',
-            scrollTrigger: {
-              trigger: parallaxImgBox,
-              start: 'top 90%',
-              end: 'bottom top',
-              scrub: true,
-              preventOverlaps: true,
-              invalidateOnRefresh: true,
-            },
-          }
-        );
-      } else {
-        gsap.fromTo(parallaxImgBox,
-          { y: '20%' },
-          {
-            y: '-35%',
-            scrollTrigger: {
-              trigger: parallaxImgBox,
-              start: 'top 90%',
-              end: 'bottom top',
-              scrub: true,
-              preventOverlaps: true,
-              invalidateOnRefresh: true,
-            },
-          }
-        );
-      }
-    });
-  }
-
-  const revealItems = document.querySelectorAll('[data-transform="reveal"]');
-  if (revealItems.lenght > 0) {
-    revealItems.forEach(revealItem => {
-
-      const revealItemTags = revealItem.querySelector("h1");
-      const word = revealItemTags.querySelectorAll("div.word");
-
-      const tl = gsap.timeline({
-        paused: true
-      });
-
-      tl.from(word, {
-        opacity: 0,
-        y: "50",
-        duration: .5,
-        delay: .5,
-        ease: "ease",
-        stagger: {
-          amount: .3
-        }
-      });
-      scrollTriggerPlayer(revealItem, tl)
-    });
-  }
-
-  const revealRotateItems = document.querySelectorAll('[data-transform="revealRotate"]');
-  if (revealRotateItems.lenght > 0) {
-    revealRotateItems.forEach(revealRotateItem => {
-
-      const word = revealRotateItem.querySelectorAll("div.word");
-
-      const tl = gsap.timeline({
-        paused: true
-      });
-
-      tl.from(word, {
-        opacity: 0,
-        y: "100",
-        rotationZ: 15,
-        duration: .5,
-        ease: "ease",
-        stagger: {
-          amount: .4
-        }
-      });
-      scrollTriggerPlayer(revealRotateItem, tl)
-    });
-  }
-
-  const fadeInItems = document.querySelectorAll('[data-transform="fadeIn"]');
-  if (fadeInItems.lenght > 0) {
-    fadeInItems.forEach(fadeInItem => {
-
-      const chars = fadeInItem.querySelectorAll("div.char");
-
-      const tl = gsap.timeline({
-        paused: true
-      });
-
-      tl.from(chars, {
-        opacity: 0,
-        duration: .3,
-        ease: "power1.out",
-        stagger: {
-          amount: .3
-        }
-      });
-      scrollTriggerPlayer(fadeInItem, tl)
-    });
-  }
-
-  const fadeItems = document.querySelectorAll('[data-transform="fade"]');
-  if (fadeItems.lenght > 0) {
-    fadeItems.forEach(fadeItem => {
-
-      if (fadeItem.getAttribute('data-rotation')) {
-
-        const tl = gsap.timeline({
-          paused: true
-        });
-
-        tl.from(fadeItem, {
-          opacity: 0,
-          y: "100",
-          rotationZ: 10,
-          duration: .8,
-          delay: .3,
-          ease: "ease",
-          stagger: {
-            amount: .8
-          }
-        });
-        scrollTriggerPlayer(fadeItem, tl)
-
-      } else {
-
-        const tl = gsap.timeline({
-          paused: true
-        });
-
-        tl.from(fadeItem, {
-          opacity: 0,
-          y: "20",
-          duration: .8,
-          delay: .3,
-          ease: "ease",
-          stagger: {
-            amount: .8
-          }
-        });
-        scrollTriggerPlayer(fadeItem, tl)
-      }
-    });
-  }
-
-  const scaleItems = document.querySelectorAll('[data-transform="scale"]');
-  if (scaleItems.lenght > 0) {
-    scaleItems.forEach(scaleItem => {
-
-      const tl = gsap.timeline({
-        paused: true
-      });
-
-      tl.from(scaleItem, {
-        opacity: 0,
-        scale: 0.8,
-        duration: .5,
-        ease: "ease",
-        stagger: {
-          amount: .8
-        }
-      });
-      scrollTriggerPlayer(scaleItem, tl)
-    });
-  }
-
-  const fadeUpRotateItems = document.querySelectorAll('[data-transform="fadeUpRotate"]');
-  if (fadeUpRotateItems.lenght > 0) {
-    fadeUpRotateItems.forEach(fadeUpRotateItem => {
-
-      const tl = gsap.timeline({
-        paused: true
-      });
-
-      tl.fromTo(fadeUpRotateItem,
-        {
-          y: '150%',
-          opacity: 0,
-          rotate: '20deg',
-          transformOrigin: "0 50%"
-        },
-        {
-          y: '0',
-          opacity: 1,
-          rotate: '0',
-          duration: 1,
-          delay: 0.2,
-          ease: "power4.out",
-        },
-      );
-      scrollTriggerPlayer(fadeUpRotateItem, tl)
-    });
-  }
-
-  const fadeUps = document.querySelectorAll('[data-transform="fadeUp"]');
-  if (fadeUps.length > 0) {
-    fadeUps.forEach(fadeUp => {
-
-      const tl = gsap.timeline({
-        paused: true
-      });
-
-      tl.from(fadeUp, {
-        opacity: 0,
-        y: "100",
-        duration: .5,
-        ease: "ease",
-        stagger: {
-          amount: .3
-        },
-      });
-      scrollTriggerPlayer(fadeUp, tl)
-    });
-  }
-
   const templatePrimary = document.querySelector('.template--primary');
   if (templatePrimary) {
     const templateBg = templatePrimary.querySelector('.template__bg');
@@ -1912,17 +1165,25 @@ window.addEventListener('load', () => {
     const templateBodyIcons = templatePrimary.querySelector('.template__body-icons');
     const templateBodyDown = templatePrimary.querySelector('.template__body-down');
 
+    const templatePrimaryHeight = templatePrimary.offsetHeight;
+    console.log(templatePrimaryHeight);
+
     const tl = gsap.timeline({
       paused: true
     });
 
     tl.from(templatePrimary, {
       ease: "none",
-      stagger: {
-        amount: .3
-      }
+      scrollTrigger: {
+        trigger: templatePrimary,
+        start: `top 0%`,
+        end: 'bottom bottom',
+        pin: true,
+        pinSpacing: false,
+        scrub: true,
+
+      },
     });
-    scrollTriggerPlayer(templatePrimary, tl, onEnterStart = "top 0%", onEnterEnd = "bottom bottom", pin = true, scrub = true)
 
     if (templateBg) {
       tl.from(templateBg, {
@@ -1996,11 +1257,9 @@ window.addEventListener('load', () => {
   if (foreachItem) {
     const items = foreachItem.querySelectorAll('.foreach-items>a.offers__item')
     items.forEach(item => {
-
       const tl = gsap.timeline({
         paused: true
       });
-
       tl.fromTo(item, {
         opacity: 0,
         y: '-50',
@@ -2017,7 +1276,699 @@ window.addEventListener('load', () => {
     });
   }
 
-  function scrollTriggerPlayer(triggerElement, timeline, onEnterStart = "top 95%", onEnterEnd = "bottom center", pin = false, pinSpacing = false, scrub = false) {
+  /**
+   * Анимация первого блока гл. страницы
+   */
+  const hero = document.getElementById('hero');
+  if (hero) {
+    $(window).on('resize', function () {
+      heroAnimateFunc();
+    });
+    heroAnimateFunc();
+  }
+
+  function heroAnimate(smoothImgY, smoothImgTopBefore, smoothImgTopAfter, heroHeight, heroTop, h1TitleFsBefore, h1TitleFsAfter, pTitleFontSizeBefore, pTitleLeftPosBefore, pTitleTopPosBefore, pTitleColorBefore, pTitleFontSizeAfter, pTitleLeftPosAfter, pTitleTopPosAfter, pTitleColorAfter, heroHeadGapBefore, heroHeadGapAfter, heroBtnBottomBefore, heroBtnBottomAfter
+  ) {
+    const hero = document.getElementById('hero');
+    const heroHead = hero.querySelector('.hero__head');
+
+    const smoothImg = hero.querySelector('[data-animation="smooth-img"]');
+    const heroTitle = hero.querySelector('[data-animation="hero-title"]');
+    const heroBtn = hero.querySelector('[data-animation="hero-btn"]');
+
+    const h1Title = heroTitle.querySelector('h1');
+    const pTitle = heroTitle.querySelector('p');
+    const spanTitle = heroTitle.querySelector('span');
+
+    gsap.from(hero, {
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `top +=${heroHeight / heroTop} `,
+        end: () => `+=${heroHeight}`,
+        pin: true,
+        scrub: true,
+      },
+      onComplete: function () {
+        hero.classList.add('animatedClass');
+      },
+    });
+
+    gsap.fromTo(smoothImg, {
+      "--top": smoothImgTopBefore,
+      scale: 1,
+    }, {
+      "--top": smoothImgTopAfter,
+      y: smoothImgY,
+      scale: 1.263,
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
+        scrub: true,
+
+      },
+    });
+
+    gsap.fromTo(h1Title, {
+      "--fontsize": h1TitleFsBefore,
+    }, {
+      "--fontsize": h1TitleFsAfter,
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
+        scrub: true,
+
+      },
+    });
+
+    gsap.fromTo(pTitle, {
+      "--fontsize": pTitleFontSizeBefore,
+      "--left-pos": pTitleLeftPosBefore,
+      "--top-pos": pTitleTopPosBefore,
+      "--color": pTitleColorBefore,
+    }, {
+      "--fontsize": pTitleFontSizeAfter,
+      "--left-pos": pTitleLeftPosAfter,
+      "--top-pos": pTitleTopPosAfter,
+      "--color": pTitleColorAfter,
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
+        scrub: true,
+
+      },
+    });
+
+    gsap.fromTo(spanTitle, {
+      "--color": "#C40D3C",
+    }, {
+      "--color": "#ffffff",
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
+        scrub: true,
+
+      },
+    });
+
+    gsap.fromTo(heroHead, {
+      "--gap": heroHeadGapBefore,
+    }, {
+      "--gap": heroHeadGapAfter,
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
+        scrub: true,
+
+      },
+    });
+
+    gsap.fromTo(heroBtn, {
+      "--btn-bottom": heroBtnBottomBefore,
+    }, {
+      "--btn-bottom": heroBtnBottomAfter,
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
+        scrub: true,
+
+      },
+    });
+  }
+
+  function heroAnimateFunc() {
+    if (window.innerWidth > 834) {
+
+      const smoothImgY = '-50%';
+
+      const smoothImgTopBefore = '26rem';
+      const smoothImgTopAfter = '30rem';
+
+      const heroHeight = hero.offsetHeight;
+      const heroTop = 4.7;
+
+      const h1TitleFsBefore = '20rem';
+      const h1TitleFsAfter = '14rem';
+
+      const pTitleFontSizeBefore = '10rem';
+      const pTitleLeftPosBefore = '79.5rem';
+      const pTitleTopPosBefore = '6.8rem';
+      const pTitleColorBefore = '#1A1919';
+
+      const pTitleFontSizeAfter = '6rem';
+      const pTitleLeftPosAfter = '55.5rem';
+      const pTitleTopPosAfter = '5.7rem';
+      const pTitleColorAfter = '#ffffff';
+
+      const heroHeadGapBefore = '3rem';
+      const heroHeadGapAfter = '8rem';
+
+      const heroBtnBottomBefore = '-3rem';
+      const heroBtnBottomAfter = '1.3rem';
+
+      heroAnimate(smoothImgY,
+        smoothImgTopBefore,
+        smoothImgTopAfter,
+        heroHeight,
+        heroTop,
+        h1TitleFsBefore,
+        h1TitleFsAfter,
+        pTitleFontSizeBefore,
+        pTitleLeftPosBefore,
+        pTitleTopPosBefore,
+        pTitleColorBefore,
+        pTitleFontSizeAfter,
+        pTitleLeftPosAfter,
+        pTitleTopPosAfter,
+        pTitleColorAfter,
+        heroHeadGapBefore,
+        heroHeadGapAfter,
+        heroBtnBottomBefore,
+        heroBtnBottomAfter
+      );
+    } else {
+      const header = document.querySelector('header');
+      const headerHeight = header.offsetHeight;
+      const heroHeight = hero.offsetHeight;
+      console.log(heroHeight);
+      gsap.from(hero, {
+        ease: "none",
+        scrollTrigger: {
+          trigger: hero,
+          start: `top +=${headerHeight} `,
+          end: () => `+=${heroHeight}`,
+          pin: true,
+          pinSpacing: false,
+          scrub: true,
+          invalidateOnRefresh: true,
+        },
+        onComplete: function () {
+          hero.classList.add('animatedClass');
+        },
+      });
+    }
+  }
+
+  /**
+   * Анимация первого блока стр. Рестораны
+   */
+  const restaurant = document.getElementById('restaurant');
+  if (restaurant) {
+    $(window).on('resize', function () {
+      restaurantAnimateFunc();
+    });
+    restaurantAnimateFunc();
+  }
+
+  function restaurantAnimate(smoothImgY, smoothImgTopBefore, smoothImgTopAfter, heroHeight, heroTop, h1TitleFsBefore, h1TitleFsAfter, h1TitleGapBefore, h1TitleGapAfter, heroHeadGapBefore, heroHeadGapAfter, heroBtnBottomBefore, heroBtnBottomAfter
+  ) {
+    const hero = document.getElementById('restaurant');
+    const heroHead = restaurant.querySelector('.hero__head');
+
+    const smoothImg = restaurant.querySelector('[data-animation="smooth-img"]');
+    const heroTitle = restaurant.querySelector('[data-animation="hero-title"]');
+    const heroBtn = restaurant.querySelector('[data-animation="hero-btn"]');
+
+    const h1Title = heroTitle.querySelector('h1');
+    const spanTitle = heroTitle.querySelector('span');
+
+    gsap.from(hero, {
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `top +=${heroHeight / heroTop} `,
+        end: () => `+=${heroHeight}`,
+        pin: true,
+        scrub: true,
+      },
+      onComplete: function () {
+        hero.classList.add('animatedClass');
+      },
+    });
+
+    gsap.fromTo(smoothImg, {
+      "--top": smoothImgTopBefore,
+      scale: 1,
+    }, {
+      "--top": smoothImgTopAfter,
+      y: smoothImgY,
+      scale: 1.263,
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
+        scrub: true,
+
+      },
+    });
+
+    gsap.fromTo(h1Title, {
+      "--fontsize": h1TitleFsBefore,
+      "--gap": h1TitleGapBefore,
+    }, {
+      "--fontsize": h1TitleFsAfter,
+      "--gap": h1TitleGapAfter,
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
+        scrub: true,
+
+      },
+    });
+
+    gsap.fromTo(spanTitle, {
+      "--color": "#C40D3C",
+    }, {
+      "--color": "#ffffff",
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
+        scrub: true,
+
+      },
+    });
+
+    gsap.fromTo(heroHead, {
+      "--gap": heroHeadGapBefore,
+    }, {
+      "--gap": heroHeadGapAfter,
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
+        scrub: true,
+
+      },
+    });
+
+    gsap.fromTo(heroBtn, {
+      "--btn-bottom": heroBtnBottomBefore,
+    }, {
+      "--btn-bottom": heroBtnBottomAfter,
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
+        scrub: true,
+
+      },
+    });
+  }
+
+  function restaurantAnimateFunc() {
+    if (window.innerWidth > 834) {
+
+      const smoothImgY = '-50%';
+
+      const smoothImgTopBefore = '20.8rem';
+      const smoothImgTopAfter = '30rem';
+
+      const heroHeight = restaurant.offsetHeight;
+      const heroTop = 4.7;
+
+      const h1TitleFsBefore = '20rem';
+      const h1TitleFsAfter = '14rem';
+      const h1TitleGapBefore = '55.5rem';
+      const h1TitleGapAfter = '37.5rem';
+
+      const heroHeadGapBefore = '3rem';
+      const heroHeadGapAfter = '8rem';
+
+      const heroBtnBottomBefore = '-3rem';
+      const heroBtnBottomAfter = '1.3rem';
+
+      restaurantAnimate(smoothImgY,
+        smoothImgTopBefore,
+        smoothImgTopAfter,
+        heroHeight,
+        heroTop,
+        h1TitleFsBefore,
+        h1TitleFsAfter,
+        h1TitleGapBefore,
+        h1TitleGapAfter,
+        heroHeadGapBefore,
+        heroHeadGapAfter,
+        heroBtnBottomBefore,
+        heroBtnBottomAfter
+      );
+    } else {
+      const header = document.querySelector('header');
+      const headerHeight = header.offsetHeight;
+      const restaurantHeight = restaurant.offsetHeight;
+      gsap.from(restaurant, {
+        ease: "none",
+        scrollTrigger: {
+          trigger: restaurant,
+          start: `top +=${headerHeight} `,
+          end: () => `+=${restaurantHeight}`,
+          pin: true,
+          scrub: true,
+          invalidateOnRefresh: true,
+        },
+        onComplete: function () {
+          restaurant.classList.add('animatedClass');
+        },
+      });
+    }
+  }
+
+  $(window).on('resize', function () {
+
+    if (window.innerWidth > '834') {
+      const footer = document.getElementById('footer');
+      if (footer) {
+        gsap.from(footer, {
+          ease: "none",
+          scrollTrigger: {
+            trigger: footer,
+            start: `top 90%`,
+            end: `top top`,
+            scrub: true,
+          },
+          onStart: function () {
+            footer.classList.add('animatedClass');
+          },
+        });
+      }
+    } else if (window.innerWidth <= 834 && window.innerWidth > 600) {
+      const parallaxImgBoxes = document.querySelectorAll('[data-animation="parallax-box"]');
+      if (parallaxImgBoxes != 0) {
+        parallaxImgBoxes.forEach(parallaxImgBox => {
+          if (parallaxImgBox.classList.contains('leaf--4')) {
+            gsap.fromTo(parallaxImgBox,
+              { y: '20%' },
+              {
+                y: '-35%',
+                scrollTrigger: {
+                  trigger: parallaxImgBox,
+                  start: 'top 90%',
+                  end: 'bottom top',
+                  scrub: true,
+                },
+              }
+            );
+          } else if (parallaxImgBox.classList.contains('leaf--2')) {
+            gsap.fromTo(parallaxImgBox,
+              { y: '15%' },
+              {
+                y: '60%',
+                scrollTrigger: {
+                  trigger: parallaxImgBox,
+                  start: 'top 90%',
+                  end: 'bottom top',
+                  scrub: true,
+                },
+              }
+            );
+          }
+        });
+      }
+    }
+
+    /**
+     * Разбиение текста по буквам
+     */
+    const titleChars = document.querySelectorAll('[data-splitting="chars"]');
+    titleChars.forEach(titleChar => {
+      const char = new SplitType(titleChar, { types: 'words, chars' });
+    });
+
+    /**
+     * Разбиение текста по словам
+     */
+    const titleWords = document.querySelectorAll('[data-splitting="words"]');
+    titleWords.forEach(titleWord => {
+      const word1 = new SplitType(titleWord.querySelector('h1'), { types: 'words, words' });
+      const word2 = new SplitType(titleWord.querySelector('h2'), { types: 'words, words' });
+      const word3 = new SplitType(titleWord.querySelector('h3'), { types: 'words, words' });
+      const word4 = new SplitType(titleWord.querySelector('h4'), { types: 'words, words' });
+      const word5 = new SplitType(titleWord.querySelector('h5'), { types: 'words, words' });
+    });
+
+    /**
+     * Разбиение текста по строкам
+     */
+    const titleLines = document.querySelectorAll('[data-splitting="lines"]');
+    titleLines.forEach(titleLine => {
+      const line = new SplitType(titleLine, { types: 'words, lines' });
+    });
+
+  });
+
+  $(window).on('resize', function () {
+
+    const revealItems = document.querySelectorAll('[data-transform="reveal"]');
+    revealItems.forEach(revealItem => {
+      const revealItemTags = revealItem.querySelector("h1");
+      const word = revealItemTags.querySelectorAll("div.word");
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(word, {
+        opacity: 0,
+        y: "50",
+        duration: .5,
+        delay: .5,
+        ease: "ease",
+        stagger: {
+          amount: .3
+        }
+      });
+      scrollTriggerPlayer(revealItem, tl)
+    });
+
+    const revealRotateItems = document.querySelectorAll('[data-transform="revealRotate"]');
+    revealRotateItems.forEach(revealRotateItem => {
+      const word = revealRotateItem.querySelectorAll("div.word");
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(word, {
+        opacity: 0,
+        y: "100",
+        rotationZ: 15,
+        duration: .5,
+        ease: "ease",
+        stagger: {
+          amount: .4
+        }
+      });
+      scrollTriggerPlayer(revealRotateItem, tl)
+    });
+
+    const fadeInItems = document.querySelectorAll('[data-transform="fadeIn"]');
+    fadeInItems.forEach(fadeInItem => {
+      const chars = fadeInItem.querySelectorAll("div.char");
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(chars, {
+        opacity: 0,
+        duration: .3,
+        ease: "power1.out",
+        stagger: {
+          amount: .3
+        }
+      });
+      scrollTriggerPlayer(fadeInItem, tl)
+    });
+
+    const fadeItems = document.querySelectorAll('[data-transform="fade"]');
+    fadeItems.forEach(fadeItem => {
+      const tl = gsap.timeline({
+        paused: true
+      });
+      if (fadeItem.getAttribute('data-rotation')) {
+        tl.from(fadeItem, {
+          opacity: 0,
+          y: "100",
+          rotationZ: 10,
+          duration: .8,
+          delay: .3,
+          ease: "ease",
+          stagger: {
+            amount: .8
+          }
+        });
+      } else {
+        tl.from(fadeItem, {
+          opacity: 0,
+          y: "20",
+          duration: .8,
+          delay: .3,
+          ease: "ease",
+          stagger: {
+            amount: .8
+          }
+        });
+      }
+      scrollTriggerPlayer(fadeItem, tl)
+    });
+
+    const scaleItems = document.querySelectorAll('[data-transform="scale"]');
+    scaleItems.forEach(scaleItem => {
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(scaleItem, {
+        opacity: 0,
+        scale: 0.8,
+        duration: .5,
+        ease: "ease",
+        stagger: {
+          amount: .8
+        }
+      });
+      scrollTriggerPlayer(scaleItem, tl)
+    });
+
+    const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
+    if (parallaxImgContainers.length > 0) {
+      parallaxImgContainers.forEach(parallaxImgContainer => {
+        const image = parallaxImgContainer.querySelector('img');
+        gsap.fromTo(image,
+          {
+            y: '-10%',
+            scale: 0.9,
+          },
+          {
+            y: '10%',
+            scale: 1,
+            scrollTrigger: {
+              trigger: parallaxImgContainer,
+              start: 'top 90%',
+              end: 'bottom top',
+              scrub: true,
+            },
+          }
+        );
+      });
+    }
+
+    const parallaxBlock = document.querySelector('[data-animation="parallax-block"]');
+    if (parallaxBlock) {
+      const parallaxImgBlocks = document.querySelectorAll('[data-animation="parallax-block"]');
+      parallaxImgBlocks.forEach(parallaxImgBlock => {
+        gsap.fromTo(parallaxImgBlock,
+          { y: '-8%' },
+          {
+            y: '8%',
+            scrollTrigger: {
+              trigger: parallaxImgBlock,
+              start: 'top 90%',
+              end: 'bottom top',
+              scrub: true,
+            },
+          }
+        );
+      });
+    }
+
+    const fadeUpRotateItems = document.querySelectorAll('[data-transform="fadeUpRotate"]');
+    fadeUpRotateItems.forEach(fadeUpRotateItem => {
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.fromTo(fadeUpRotateItem,
+        {
+          y: '150%',
+          opacity: 0,
+          rotate: '20deg',
+          transformOrigin: "0 50%"
+        },
+        {
+          y: '0',
+          opacity: 1,
+          rotate: '0',
+          duration: 1,
+          delay: 0.2,
+          ease: "power4.out",
+        },
+      );
+      scrollTriggerPlayer(fadeUpRotateItem, tl)
+    });
+
+    const parallaxImgBoxes = document.querySelectorAll('[data-animation="parallax-box"]');
+    if (parallaxImgBoxes != 0) {
+      parallaxImgBoxes.forEach(parallaxImgBox => {
+
+        if (parallaxImgBox.classList.contains('leaf--2')) {
+          gsap.fromTo(parallaxImgBox,
+            { y: '15%' },
+            {
+              y: '60%',
+              scrollTrigger: {
+                trigger: parallaxImgBox,
+                start: 'top 90%',
+                end: 'bottom top',
+                scrub: true,
+              },
+            }
+          );
+        } else {
+          gsap.fromTo(parallaxImgBox,
+            { y: '20%' },
+            {
+              y: '-35%',
+              scrollTrigger: {
+                trigger: parallaxImgBox,
+                start: 'top 90%',
+                end: 'bottom top',
+                scrub: true,
+              },
+            }
+          );
+        }
+
+      });
+    }
+
+    const fadeUps = document.querySelectorAll('[data-transform="fadeUp"]');
+    if (fadeUps.length > 0) {
+      fadeUps.forEach(fadeUp => {
+        const tl = gsap.timeline({
+          paused: true
+        });
+        tl.from(fadeUp, {
+          opacity: 0,
+          y: "100",
+          duration: .5,
+          ease: "ease",
+          stagger: {
+            amount: .3
+          },
+          onComplete: function () {
+            fadeUp.classList.add('sticky');
+            // fadeUp.parentNode.classList.add('sticky');
+            // observer.unobserve(blockToAnimate); // Отключаем наблюдение, если не нужно многократное срабатывание
+          },
+        });
+        scrollTriggerPlayer(fadeUp, tl)
+      });
+    }
+
+  });
+
+  function scrollTriggerPlayer(triggerElement, timeline, onEnterStart = "top 95%") {
     ScrollTrigger.create({
       trigger: triggerElement,
       start: "top bottom",
@@ -2029,25 +1980,17 @@ window.addEventListener('load', () => {
     ScrollTrigger.create({
       trigger: triggerElement,
       start: onEnterStart,
-      end: onEnterEnd,
-      pin: pin,
-      pinSpacing: pinSpacing,
-      scrub: scrub,
-      preventOverlaps: true,
-      invalidateOnRefresh: true,
+      scrub: true,
       onEnter: () => timeline.play()
     })
   }
 
-  gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
+  // gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
-  window.addEventListener('resize', ScrollTrigger.refresh());
+  $(window).on('resize', function () { ScrollTrigger.refresh() });
 
 });
 
-/**
- * checkCookies
- */
 function checkCookies() {
   document.cookie = 'COOKIE_ACCEPT=1;path=\'/\';expires:' + (new Date(new Date().getTime() + 86400e3 * 365).toUTCString());
   document.getElementById('plate-cookie').style.transform = 'translateX(100%)';
