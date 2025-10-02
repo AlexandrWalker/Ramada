@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  lenis.on('scroll', ScrollTrigger.update);
+  lenis.on('resize scroll', ScrollTrigger.update);
+
   gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
   });
@@ -1971,6 +1972,7 @@ document.addEventListener('DOMContentLoaded', () => {
       onEnter: () => timeline.play()
     })
   }
+  
   gsap.registerPlugin(ScrollTrigger);
 
   window.addEventListener('resize scroll load', function () { ScrollTrigger.refresh() });
