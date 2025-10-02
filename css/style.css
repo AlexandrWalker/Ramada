@@ -129,18 +129,18 @@ img {
 }
 
 @font-face {
-  font-family: TTTricks;
-  font-display: swap;
-  src: url("../fonts/TTTricks-Black.woff2") format("woff2"), url("../fonts/TTTricks-Black.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
   font-family: Gotham;
   font-display: swap;
   src: url("../fonts/Gotham-Ultra.woff2") format("woff2"), url("../fonts/Gotham-Ultra.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TTTricks;
+  font-display: swap;
+  src: url("../fonts/TTTricks-Black.woff2") format("woff2"), url("../fonts/TTTricks-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -2093,10 +2093,6 @@ body {
     left: -1rem;
     opacity: 0;
   }
-}
-
-.preloaderDownload body {
-  overflow: hidden;
 }
 
 .preloader {
