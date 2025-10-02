@@ -12,7 +12,7 @@
   }
 
   @include sm {
-    background: unset;
+    background: var(--white-gray);
     padding: 4rem 0;
   }
 

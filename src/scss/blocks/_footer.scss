@@ -119,6 +119,25 @@
       }
     }
 
+    .menu__foot-btn {
+
+      &:hover {
+
+        .scale {
+          --btn-background: var(--white);
+        }
+      }
+
+      .scale {
+        z-index: 1;
+      }
+    }
+
+    .menu__foot-wrap {
+      position: relative;
+      z-index: 2;
+    }
+
     .menu__foot-suptitle {
       font-size: 1.2rem;
       color: var(--gray);

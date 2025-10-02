@@ -694,14 +694,21 @@
       border-radius: 10rem;
       padding: 1rem;
       transition: all 0.5s ease;
+      position: relative;
 
       @include md {
         display: none;
       }
 
       &:hover:not(.menu__route) {
-        background-color: var(--white);
+        // background-color: var(--white);
         border-color: var(--white);
+
+
+        .scale {
+          --btn-background: var(--white);
+          transform: scale(101%);
+        }
       }
 
       &--presentation {
@@ -709,6 +716,17 @@
         @include md {
           display: block;
         }
+      }
+
+      .scale {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 2.4rem;
+        z-index: -1;
+        background-color: var(--btn-background);
+        transition: all 0.5s ease;
       }
     }
 

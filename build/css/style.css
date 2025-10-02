@@ -91,14 +91,6 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -109,6 +101,14 @@ img {
   font-display: swap;
   src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
   font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -129,18 +129,18 @@ img {
 }
 
 @font-face {
-  font-family: Gotham;
-  font-display: swap;
-  src: url("../fonts/Gotham-Ultra.woff2") format("woff2"), url("../fonts/Gotham-Ultra.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
   font-family: TTTricks;
   font-display: swap;
   src: url("../fonts/TTTricks-Black.woff2") format("woff2"), url("../fonts/TTTricks-Black.woff") format("woff");
   font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Ultra.woff2") format("woff2"), url("../fonts/Gotham-Ultra.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -2661,6 +2661,19 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   gap: 5rem;
 }
 
+.footer__body .menu__foot-btn:hover .scale {
+  --btn-background: var(--white);
+}
+
+.footer__body .menu__foot-btn .scale {
+  z-index: 1;
+}
+
+.footer__body .menu__foot-wrap {
+  position: relative;
+  z-index: 2;
+}
+
 .footer__body .menu__foot-suptitle {
   font-size: 1.2rem;
   color: var(--gray);
@@ -3526,11 +3539,30 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   padding: 1rem;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  position: relative;
 }
 
 .menu__foot-btn:hover:not(.menu__route) {
-  background-color: var(--white);
   border-color: var(--white);
+}
+
+.menu__foot-btn:hover:not(.menu__route) .scale {
+  --btn-background: var(--white);
+  -webkit-transform: scale(101%);
+  -ms-transform: scale(101%);
+  transform: scale(101%);
+}
+
+.menu__foot-btn .scale {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 2.4rem;
+  z-index: -1;
+  background-color: var(--btn-background);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .menu__foot-wrap {
@@ -14920,7 +14952,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   }
 
   .hall {
-    background: unset;
+    background: var(--white-gray);
     padding: 4rem 0;
   }
 
