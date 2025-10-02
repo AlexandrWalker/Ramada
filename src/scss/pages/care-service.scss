@@ -124,8 +124,11 @@
         &:hover:not(.care__radio-head .form-radio) {
 
           &+label {
-            color: var(--white);
-            background-color: var(--black);
+
+            @include dosm {
+              color: var(--white);
+              background-color: var(--black);
+            }
           }
         }
 

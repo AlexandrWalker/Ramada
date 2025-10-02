@@ -140,16 +140,46 @@
       height: 6rem;
       border-radius: 50%;
       border: 0.1rem solid var(--black-10);
+      position: relative;
+      transition: all 0.5s ease;
 
       &:hover {
 
-        i {
-          color: var(--accent);
+        @include dosm {
+          border-color: transparent;
+
+          i {
+            color: var(--white);
+          }
+
+          .scale {
+            transform: scale(100%);
+            background-color: var(--accent);
+          }
+        }
+
+        @include sm {
+          i {
+            color: var(--white);
+          }
         }
       }
 
       i {
         --font-size: 6rem;
+
+        z-index: 1;
+      }
+
+      .scale {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 50%;
+        z-index: -1;
+        background-color: var(--btn-background);
+        transition: all 0.5s ease;
       }
     }
   }

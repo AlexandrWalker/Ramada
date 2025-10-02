@@ -124,11 +124,15 @@
 
       .btn {
         --btn-padding-x: 3rem;
+        --btn-scale-background: var(--accent);
+
 
         &:hover {
-          --btn-color: var(--white);
-          --btn-background: var(--accent);
-          --btn-border-color: var(--accent);
+
+          @include dosm {
+            --btn-color: var(--white);
+            --btn-border-color: var(--accent);
+          }
         }
 
         @include sm {

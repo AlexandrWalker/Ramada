@@ -628,6 +628,36 @@
             @include md {
               border-color: var(--black-30);
             }
+
+            .scle {
+
+            }
+          }
+        }
+      }
+
+      .btn--white-gray {
+        transition-delay: 0.2s !important;
+
+        &::after {
+          transition-delay: 0s !important;
+        }
+
+        &:hover {
+          --btn-color: var(--black) !important;
+          transition-delay: 0.2s !important;
+
+          &::before {
+            background: transparent !important;
+          }
+
+          &::after {
+            transition-delay: 0s !important;
+            border-color: var(--black-30) !important;
+          }
+
+          .scale {
+            --btn-scale-background: var(--white);
           }
         }
       }

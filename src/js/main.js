@@ -4,12 +4,12 @@
 const preloader = document.querySelector('.preloader');
 const removePreloader = function () {
   preloader.classList.add("preloader-none");
-  document.documentElement.classList.remove('no-scroll');
+  // document.documentElement.classList.remove('no-scroll');
   preloader.removeEventListener('transitionend', removePreloader);
 };
 const hidePreloader = function () {
   preloader.classList.add("hidden");
-  document.documentElement.classList.add('no-scroll');
+  // document.documentElement.classList.add('no-scroll');
   preloader.addEventListener('transitionend', removePreloader);
 };
 if (preloader) {
@@ -1639,6 +1639,7 @@ document.addEventListener('DOMContentLoaded', () => {
           start: `top +=${headerHeight} `,
           end: () => `+=${restaurantHeight}`,
           pin: true,
+          pinSpacing: false,
           scrub: true,
           invalidateOnRefresh: true,
         },

@@ -159,6 +159,8 @@
       transition: all 1s ease;
 
       .btn {
+        --btn-padding-x: 4rem;
+
         transform: translateY(-200%);
         opacity: 0;
         pointer-events: none;
@@ -168,11 +170,16 @@
           color: var(--black);
 
           &::before {
-            background-color: var(--white);
+            // background-color: var(--white);
           }
 
           &::after {
             border-color: var(--black-50);
+          }
+
+          .scale {
+            --btn-scale-background: var(--white);
+
           }
         }
 

@@ -218,6 +218,14 @@
         --btn-padding-x: 4.5rem;
       }
 
+      &:hover {
+        --btn-color: var(--black);
+
+        &::after {
+          border-color: var(--black-30);
+        }
+      }
+
       .resta__block:hover & {
         opacity: 1;
         pointer-events: all;

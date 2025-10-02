@@ -742,13 +742,36 @@
     height: var(--news-share-size);
     border-radius: 50%;
     border: 0.1rem solid var(--black-10);
+    position: relative;
 
     @include md {
       --news-share-size: 5rem;
     }
 
     &:hover {
-      color: var(--accent);
+
+      i {
+        color: var(--accent);
+      }
+
+      @include dosm {
+
+        i {
+          color: var(--white);
+        }
+
+        .scale {
+          transform: scale(100%);
+        }
+      }
+    }
+
+    .scale {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transition: all .3s ease;
     }
 
     i {

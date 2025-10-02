@@ -9,6 +9,7 @@
   --btn-padding-x: 2.2rem;
   --btn-color: var(--white);
   --btn-background: var(--accent);
+  --btn-scale-background: var(--accent);
   --btn-border-radius: 10rem;
   --btn-border-color: var(--accent);
   --btn-border-width: 0.5px;
@@ -97,24 +98,25 @@
 
       .scale {
         transform: scale(100%);
-        background-color: var(--btn-background);
       }
     }
   }
 
   .scale {
+    position: absolute;
     top: var(--btn-first-padding);
     right: var(--btn-first-padding);
     bottom: var(--btn-first-padding);
     left: var(--btn-first-padding);
-    border-radius: 2.4rem;
     z-index: -1;
-    background-color: var(--btn-background);
+    border-radius: 2.4rem;
+    background-color: var(--btn-scale-background);
     transition: all 0.5s ease;
+    pointer-events: none;
   }
 
   &--accent {
-    // --btn-padding-x: 3.6rem;
+    --btn-scale-background: var(--black);
 
     &:not(.btn--icon) {
       --btn-padding-x: 3.6rem;
@@ -128,11 +130,11 @@
     &:hover {
 
       @include dosm {
+        --btn-scale-background: var(--black);
         --btn-border-color: var(--black);
 
         .scale {
-          --btn-background: var(--black);
-          transform: scale(101%);
+          transform: scale(100%);
         }
       }
     }
@@ -149,6 +151,7 @@
   &--white {
     --btn-color: var(--black);
     --btn-background: var(--white);
+    --btn-scale-background: var(--gray);
     --btn-border-color: var(--black-10);
 
     &::after {
@@ -164,16 +167,13 @@
         &::after {
           border-color: var(--white-30);
         }
-
-        .scale {
-          --btn-background: var(--gray);
-        }
       }
     }
 
     &.btn--icon {
       --btn-color: var(--black);
       --btn-border-color: var(--gray-30);
+      --btn-scale-background: var(--accent);
 
       &::after {
         border-color: var(--gray-10);
@@ -188,10 +188,6 @@
           &::after {
             border-color: var(--white-o-50);
           }
-
-          .scale {
-            --btn-background: var(--accent);
-          }
         }
       }
     }
@@ -200,6 +196,7 @@
   &--white-gray {
     --btn-color: var(--accent);
     --btn-background: var(--white-gray);
+    --btn-scale-background: var(--gray);
     --btn-border-color: var(--black-10);
 
     &:not(.header__lang-btn) {
@@ -215,9 +212,7 @@
       border-color: var(--black-30);
     }
 
-    .entert__item:hover &,
-    .events__other-item:hover &,
-    &:hover {
+    .entert__item:hover & {
 
       @include dosm {
         --btn-color: var(--white);
@@ -228,7 +223,41 @@
         }
 
         .scale {
-          --btn-background: var(--gray);
+          transform: scale(100%);
+        }
+      }
+    }
+
+    .events__other-item:hover & {
+      --btn-scale-background: none;
+
+      @include dosm {
+        --btn-color: var(--white);
+        --btn-border-color: var(--gray);
+
+        &::after {
+          border-color: var(--white-30);
+        }
+
+        .scale {
+          transform: scale(100%);
+        }
+      }
+    }
+
+    &:hover {
+      --btn-scale-background: var(--gray);
+
+      @include dosm {
+        --btn-color: var(--white);
+        --btn-border-color: var(--gray);
+
+        &::after {
+          border-color: var(--white-30);
+        }
+
+        .scale {
+          transform: scale(100%);
         }
       }
     }
@@ -236,6 +265,7 @@
     &.btn--icon {
       --btn-color: var(--black);
       --btn-border-color: var(--gray-30);
+      --btn-scale-background: var(--accent);
 
       &::after {
         border-color: var(--gray-10);
@@ -250,10 +280,6 @@
           &::after {
             border-color: var(--white-o-50);
           }
-
-          .scale {
-            --btn-background: var(--accent);
-          }
         }
       }
     }
@@ -262,6 +288,7 @@
   &--white-alt {
     --btn-color: var(--black);
     --btn-background: var(--white);
+    --btn-scale-background: var(--black);
     --btn-border-color: var(--white);
     --btn-padding-x: 4rem;
 
@@ -281,26 +308,19 @@
         &::after {
           border-color: var(--gray-50);
         }
-
-        .scale {
-          --btn-background: var(--black);
-        }
       }
     }
   }
 
   &--black {
     --btn-background: var(--black);
+    --btn-scale-background: var(--accent);
     --btn-border-color: var(--black);
 
     &:hover {
 
       @include dosm {
         --btn-border-color: var(--accent);
-
-        .scale {
-          --btn-background: var(--accent);
-        }
       }
     }
   }
@@ -308,6 +328,7 @@
   &--gray {
     --btn-color: var(--black);
     --btn-background: var(--gray-light);
+    --btn-scale-background: var(--gray);
     --btn-border-color: var(--black-10);
 
     &::after {
@@ -319,12 +340,7 @@
 
       @include dosm {
         --btn-color: var(--white);
-        --btn-background: var(--gray);
         --btn-border-color: var(--gray);
-
-        .scale {
-          --btn-background: var(--gray);
-        }
       }
     }
   }
@@ -332,6 +348,7 @@
   &--blur {
     --btn-color: var(--white);
     --btn-background: rgba(255, 255, 255, 0.24);
+    --btn-scale-background: var(--white);
     --btn-border-color: var(--white-30);
 
     backdrop-filter: blur(0.8rem);
@@ -348,6 +365,7 @@
   &--icon {
     --btn-width: var(--btn-height);
     --btn-border-radius: 50%;
+    --btn-scale-background: var(--black);
 
     @include sm {
       --btn-padding-x: 1rem;
@@ -378,10 +396,6 @@
 
         &::after {
           border-color: var(--gray);
-        }
-
-        .scale {
-          --btn-background: var(--black);
         }
 
         // .pulse::before {
@@ -476,7 +490,7 @@
         }
 
         .scale {
-          transform: scale(101%);
+          transform: scale(100%);
         }
       }
     }
@@ -513,7 +527,7 @@
           }
 
           .scale {
-            transform: scale(101%);
+            transform: scale(100%);
           }
         }
       }

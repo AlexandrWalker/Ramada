@@ -115,16 +115,31 @@
         --social-link-color: var(--gray);
       }
 
-      &:hover {
-        --social-link-color: var(--accent);
+      .scale {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transition: all 0.3s ease;
+      }
 
-        background-color: var(--white);
+      &:hover {
 
         @include sm {
+          --social-link-color: var(--accent);
           background-color: var(--accent);
 
           i {
             color: var(--white);
+          }
+        }
+
+        @include dosm {
+          --social-link-color: var(--accent);
+
+          .scale {
+            background-color: var(--white);
+            transform: scale(100%);
           }
         }
       }
@@ -823,9 +838,23 @@
       height: 5rem;
       border-radius: 50%;
       border: 0.05rem solid var(--black);
+      position: relative;
 
       &:hover {
-        color: var(--accent);
+
+        @include dosm {
+          color: var(--white);
+          border-color: transparent;
+
+          .scale {
+            transform: scale(100%);
+          }
+        }
+
+        @include sm {
+          color: var(--accent);
+        }
+
         // color: var(--white);
         // border-color: var(--accent);
         // background-color: var(--accent);
@@ -833,6 +862,17 @@
 
       i {
         font-size: 5rem;
+      }
+
+      .scale {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 50%;
+        z-index: -1;
+        background-color: var(--accent);
+        transition: all 0.5s ease;
       }
     }
   }

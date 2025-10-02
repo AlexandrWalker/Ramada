@@ -30,6 +30,13 @@
   }
 }
 
+.swiper-thumbs {
+
+  .swiper-slide {
+    cursor: pointer;
+  }
+}
+
 .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
   margin: 0 0.3rem;
@@ -130,7 +137,6 @@
 
       .scale {
         transform: scale(100%);
-        background-color: var(--swiper-button-bg);
         background-color: var(--accent);
       }
     }
