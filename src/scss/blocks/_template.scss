@@ -363,6 +363,8 @@
       margin-bottom: calc(6.5rem + 2rem);
 
       @include md {
+        position: relative;
+        top: unset !important;
         margin-bottom: calc(13rem + 3rem);
       }
 

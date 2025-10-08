@@ -164,7 +164,7 @@
 
     @include md {
       width: 100%;
-      padding: 3rem 3rem 3rem 8rem;
+      padding: 3rem 3rem 3rem 6rem;
     }
 
     @include sm {
@@ -202,6 +202,7 @@
 
       @include sm {
         gap: 1rem;
+        width: 100%;
       }
     }
 

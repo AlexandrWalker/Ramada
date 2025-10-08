@@ -1171,18 +1171,38 @@ document.addEventListener('DOMContentLoaded', () => {
       paused: true
     });
 
-    tl.from(templatePrimary, {
-      ease: "none",
-      scrollTrigger: {
-        trigger: templatePrimary,
-        start: `top 0%`,
-        end: 'bottom bottom',
-        pin: true,
-        pinSpacing: false,
-        scrub: true,
+    if (!templatePrimary.classList.contains('template--plugin')) {
 
-      },
-    });
+      tl.from(templatePrimary, {
+        ease: "none",
+        scrollTrigger: {
+          trigger: templatePrimary,
+          start: `top 0%`,
+          end: 'bottom bottom',
+          pin: true,
+          pinSpacing: false,
+          scrub: true,
+        },
+      });
+
+    } else {
+
+      $(window).on('resize load', function () {
+        if (window.innerWidth > '834') {
+          tl.from(templatePrimary, {
+            ease: "none",
+            scrollTrigger: {
+              trigger: templatePrimary,
+              start: `top 0%`,
+              end: 'bottom bottom',
+              pin: true,
+              pinSpacing: false,
+              scrub: true,
+            },
+          });
+        }
+      });
+    }
 
     if (templateBg) {
       tl.from(templateBg, {
