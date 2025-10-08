@@ -91,14 +91,6 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
   font-weight: 350;
   font-style: normal;
@@ -109,6 +101,14 @@ img {
   font-display: swap;
   src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
   font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -171,16 +171,16 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/TTTricks-Regular.woff2") format("woff2"), url("../fonts/TTTricks-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Regular.woff2") format("woff2"), url("../fonts/TTTricks-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -11167,6 +11167,8 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   }
 
   .inner-page .template--plugin {
+    position: relative;
+    top: unset !important;
     margin-bottom: 16rem;
   }
 
@@ -12539,7 +12541,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .studio__terms {
     width: 100%;
-    padding: 3rem 3rem 3rem 8rem;
+    padding: 3rem 3rem 3rem 6rem;
   }
 
   .studio__terms-title {
@@ -14869,6 +14871,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .studio__terms-row {
     gap: 1rem;
+    width: 100%;
   }
 
   .studio__slider {
