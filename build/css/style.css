@@ -91,8 +91,8 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -107,8 +107,8 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
@@ -163,6 +163,14 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
+  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TTTricks;
+  font-display: swap;
   src: url("../fonts/TTTricks-ExtraBold.woff2") format("woff2"), url("../fonts/TTTricks-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -173,14 +181,6 @@ img {
   font-display: swap;
   src: url("../fonts/TTTricks-Regular.woff2") format("woff2"), url("../fonts/TTTricks-Regular.woff") format("woff");
   font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: TTTricks;
-  font-display: swap;
-  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
-  font-weight: 300;
   font-style: normal;
 }
 
@@ -9186,6 +9186,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .offer__body-item {
   position: relative;
+  height: 100%;
 }
 
 .offer__body-item img {
@@ -9193,6 +9194,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+}
+
+.offer__body-img {
+  height: 100%;
 }
 
 .offer__body-link {
@@ -9226,6 +9231,76 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   grid-column: 2/3;
   grid-row: 2/3;
   padding: 0 0 var(--offer-padding-bottom) var(--offer-padding-left);
+}
+
+.offer__body--slider {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.offer__body--slider .swiper-wrapper {
+  -webkit-transition: none !important;
+  transition: none !important;
+  -webkit-transform: none !important;
+  -ms-transform: none !important;
+  transform: none !important;
+}
+
+.slider__slides {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+}
+
+/* Slide / clip-path / zoom logic */
+
+.offer__body-slide {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: inset(0 100% 0 0);
+  -webkit-transition: clip-path 0.8s ease;
+  transition: clip-path 0.8s ease;
+}
+
+.offer__body-slide.s--prev {
+  clip-path: inset(0 0 0 100%);
+}
+
+.offer__body-slide.s--active {
+  z-index: 1;
+  clip-path: inset(0 0 0 0);
+}
+
+/* inner = holds image and zoom transition */
+
+.offer__body-item {
+  overflow: hidden;
+}
+
+.offer__body-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform 0.8s ease;
+  transition: -webkit-transform 0.8s ease;
+  transition: transform 0.8s ease;
+  transition: transform 0.8s ease, -webkit-transform 0.8s ease;
+}
+
+.offer__body-item::before {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
 .offers {
@@ -12961,9 +13036,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   }
 
   .offer__body {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
+    aspect-ratio: 365/407;
   }
 
   .offer__body .btn {
