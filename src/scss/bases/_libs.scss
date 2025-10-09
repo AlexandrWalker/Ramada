@@ -48,6 +48,10 @@
   margin-left: auto;
   justify-content: unset;
   transform: unset;
+
+  .rooms__item--slider & {
+    transform: translateX(-50%);
+  }
 }
 
 /* Кнопка слайдера */
@@ -215,8 +219,16 @@
     right: 2rem;
 
     svg {
-      transform: scale(1.1);
       stroke: var(--black);
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+
+      svg {
+        transform: scale(1.1);
+        stroke: var(--accent);
+      }
     }
   }
 }

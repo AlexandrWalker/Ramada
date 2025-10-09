@@ -127,7 +127,7 @@
         --btn-scale-background: var(--accent);
 
 
-        &:hover {
+        .rooms__item:hover & {
 
           @include dosm {
             --btn-color: var(--white);

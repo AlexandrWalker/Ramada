@@ -19,25 +19,25 @@
   left: 0;
   z-index: 1;
 
-  .target:hover & {
+  // .target:hover & {
 
-    @include domd {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: all;
-    }
-  }
+  //   @include domd {
+  //     opacity: 1;
+  //     visibility: visible;
+  //     pointer-events: all;
+  //   }
+  // }
 
   .target.show & {
 
-    @include md {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: all;
-    }
+    // @include md {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    // }
   }
 
-  @include sm {
+  @include md {
     border-color: transparent;
     position: fixed;
     // top: var(--container-padding);
@@ -50,28 +50,38 @@
     min-height: 100%;
   }
 
-  &::before,
-  &::after {
+  &::before {
     content: '';
+    display: block;
+    width: 2.2rem;
+    height: 2rem;
     position: absolute;
     left: 1.3rem;
     top: -2rem;
-    bottom: 100%;
-    border: 1rem solid transparent;
-    border-bottom: 1rem solid var(--accent);
-    border-left: 1rem solid var(--accent);
+    z-index: 1;
+    background-color: var(--accent);
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
 
-    @include sm {
+    @include md {
       display: none;
     }
   }
 
   &::after {
-    border-bottom: 1rem solid var(--white);
-    border-left: 0.9rem solid var(--white);
-    top: -1.9rem;
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
     left: 1.4rem;
-    bottom: calc(100% - 0.1rem);
+    top: -1.9rem;
+    z-index: 2;
+    background-color: var(--white);
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+
+    @include md {
+      display: none;
+    }
   }
 
   &__close {
@@ -123,5 +133,14 @@
         text-decoration: none;
       }
     }
+  }
+}
+
+#tooltipPopup {
+  padding: 2rem 2rem 3rem;
+
+  .is-close-button {
+    top: 0.5rem;
+    right: 0.5rem;
   }
 }

@@ -172,14 +172,14 @@
   top: 0;
   width: 100%;
   height: 100%;
-  -webkit-clip-path: inset(0 100% 0 0);
-  clip-path: inset(0 100% 0 0);
+  -webkit-clip-path: inset(0 0 0 100%);
+  clip-path: inset(0 0 0 100%);
   transition: clip-path 0.8s ease;
 }
 
 .offer__body-slide.s--prev {
-  -webkit-clip-path: inset(0 0 0 100%);
-  clip-path: inset(0 0 0 100%);
+  -webkit-clip-path: inset(0 100% 0 0);
+  clip-path: inset(0 100% 0 0);
 }
 
 .offer__body-slide.s--active {

@@ -163,16 +163,16 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/TTTricks-ExtraBold.woff2") format("woff2"), url("../fonts/TTTricks-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-ExtraBold.woff2") format("woff2"), url("../fonts/TTTricks-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -952,6 +952,13 @@ sup {
   transform: unset;
 }
 
+.rooms__item--slider .swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+.rooms__item--slider .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
 /* Кнопка слайдера */
 
 [class^=swiper-button-],
@@ -1080,10 +1087,16 @@ sup {
 }
 
 .fancybox__container .is-close-button svg {
+  stroke: var(--black);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.fancybox__container .is-close-button:hover svg {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
-  stroke: var(--black);
+  stroke: var(--accent);
 }
 
 /* Reset and base styles  */
@@ -2306,24 +2319,36 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   z-index: 1;
 }
 
-.tooltip::before,
-.tooltip::after {
+.target.show .tooltip {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.tooltip::before {
   content: "";
+  display: block;
+  width: 2.2rem;
+  height: 2rem;
   position: absolute;
   left: 1.3rem;
   top: -2rem;
-  bottom: 100%;
-  border: 1rem solid transparent;
-  border-bottom: 1rem solid var(--accent);
-  border-left: 1rem solid var(--accent);
+  z-index: 1;
+  background-color: var(--accent);
+  clip-path: polygon(0 0, 0 100%, 100% 100%);
 }
 
 .tooltip::after {
-  border-bottom: 1rem solid var(--white);
-  border-left: 0.9rem solid var(--white);
-  top: -1.9rem;
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
   left: 1.4rem;
-  bottom: calc(100% - 0.1rem);
+  top: -1.9rem;
+  z-index: 2;
+  background-color: var(--white);
+  clip-path: polygon(0 0, 0 100%, 100% 100%);
 }
 
 .tooltip__close {
@@ -2387,6 +2412,15 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 .tooltip__item a:hover {
   color: var(--accent);
   text-decoration: none;
+}
+
+#tooltipPopup {
+  padding: 2rem 2rem 3rem;
+}
+
+#tooltipPopup .is-close-button {
+  top: 0.5rem;
+  right: 0.5rem;
 }
 
 /* Modules */
@@ -2652,7 +2686,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   -webkit-transition: all 2s linear;
   transition: all 2s linear;
   position: absolute;
-  top: 0.1rem;
+  top: 0;
   left: 0;
 }
 
@@ -2773,6 +2807,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .footer__item .accordion-body {
   display: unset;
+  overflow: visible;
 }
 
 .footer__item-head {
@@ -2835,7 +2870,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   flex-direction: column;
   gap: 2rem;
   gap: 0;
-  overflow: hidden;
 }
 
 .footer__item-list a {
@@ -7879,7 +7913,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .booking .rooms__item:hover {
-  border-color: var(--gray);
+  border-color: var(--accent);
 }
 
 .booking .rooms__item--slider {
@@ -8326,6 +8360,14 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   pointer-events: all;
 }
 
+.events__calendar-slide.swiper-slide-active {
+  z-index: 2;
+}
+
+.events__calendar-slide.swiper-slide-next {
+  z-index: 1;
+}
+
 .events__calendar-item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8589,36 +8631,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   transition: all 0.5s ease;
   -webkit-transition-delay: 0.2s;
   transition-delay: 0.2s;
-}
-
-.events__other-content .btn--white-gray {
-  -webkit-transition-delay: 0.2s !important;
-  transition-delay: 0.2s !important;
-}
-
-.events__other-content .btn--white-gray::after {
-  -webkit-transition-delay: 0s !important;
-  transition-delay: 0s !important;
-}
-
-.events__other-content .btn--white-gray:hover {
-  --btn-color: var(--black) !important;
-  -webkit-transition-delay: 0.2s !important;
-  transition-delay: 0.2s !important;
-}
-
-.events__other-content .btn--white-gray:hover::before {
-  background: transparent !important;
-}
-
-.events__other-content .btn--white-gray:hover::after {
-  -webkit-transition-delay: 0s !important;
-  transition-delay: 0s !important;
-  border-color: var(--black-30) !important;
-}
-
-.events__other-content .btn--white-gray:hover .scale {
-  --btn-scale-background: var(--white);
 }
 
 .events__other-suptitle {
@@ -9262,13 +9274,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   top: 0;
   width: 100%;
   height: 100%;
-  clip-path: inset(0 100% 0 0);
+  clip-path: inset(0 0 0 100%);
   -webkit-transition: clip-path 0.8s ease;
   transition: clip-path 0.8s ease;
 }
 
 .offer__body-slide.s--prev {
-  clip-path: inset(0 0 0 100%);
+  clip-path: inset(0 100% 0 0);
 }
 
 .offer__body-slide.s--active {
@@ -9952,15 +9964,18 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     border-color: var(--white-o-50);
   }
 
+  .rooms__item:hover .btn--white-gray,
   .entert__item:hover .btn--white-gray {
     --btn-color: var(--white);
     --btn-border-color: var(--gray);
   }
 
+  .rooms__item:hover .btn--white-gray::after,
   .entert__item:hover .btn--white-gray::after {
     border-color: var(--white-30);
   }
 
+  .rooms__item:hover .btn--white-gray .scale,
   .entert__item:hover .btn--white-gray .scale {
     -webkit-transform: scale(100%);
     -ms-transform: scale(100%);
@@ -10149,19 +10164,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     background-color: var(--accent);
   }
 
-  .rooms__item-body .btn:hover {
+  .rooms__item:hover .rooms__item-body .btn {
     --btn-color: var(--white);
     --btn-border-color: var(--accent);
   }
 }
 
 @media (min-width: 835px) {
-  .target:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-  }
-
   .care .callback__wrap {
     padding: 0;
   }
@@ -10583,10 +10592,25 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     font-size: 1.4rem;
   }
 
-  .target.show .tooltip {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
+  .tooltip {
+    border-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 100;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 100%;
+    min-height: 100%;
+  }
+
+  .tooltip::before {
+    display: none;
+  }
+
+  .tooltip::after {
+    display: none;
   }
 
   .burger-close {
@@ -10715,6 +10739,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .footer__item .accordion-body {
     display: grid;
+    overflow: hidden;
   }
 
   .footer__item-head {
@@ -10782,6 +10807,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .footer__item-head.accordion-active + .accordion-body {
     padding-top: 2rem;
+  }
+
+  .footer__item-list {
+    overflow: hidden;
   }
 
   .footer__item-list a {
@@ -13485,24 +13514,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   main li:not(.breadcrumbs li, .template-product__body li) {
     margin-bottom: 1rem;
-  }
-
-  .tooltip {
-    border-color: transparent;
-    position: fixed;
-    top: 0;
-    left: 50%;
-    z-index: 100;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    width: 100%;
-    min-height: 100%;
-  }
-
-  .tooltip::before,
-  .tooltip::after {
-    display: none;
   }
 
   .burger-btn {
