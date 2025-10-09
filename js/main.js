@@ -46,35 +46,102 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   const swiper = document.querySelector('.swiper');
   if (swiper) {
-    const offerBodySlider = new Swiper(".offer__body--slider", {
-      slidesPerGroup: 1,
+    // const offerBodySlider = new Swiper(".offer__body--slider", {
+    //   slidesPerGroup: 1,
+    //   slidesPerView: 1,
+    //   spaceBetween: 0,
+    //   loop: true,
+    //   speed: 600,
+    //   effect: 'fade',
+    //   fadeEffect: {
+    //     crossFade: true
+    //   },
+    //   // grabCursor: true,
+    //   // effect: "creative",
+    //   // creativeEffect: {
+    //   //   prev: {
+    //   //     shadow: true,
+    //   //     translate: ["-20%", 0, -1],
+    //   //   },
+    //   //   next: {
+    //   //     translate: ["100%", 0, 0],
+    //   //   },
+    //   // },
+    //   mousewheel: {
+    //     forceToAxis: true,
+    //   },
+    //   navigation: {
+    //     nextEl: ".offer-button-next",
+    //     prevEl: ".offer-button-prev",
+    //   },
+    // });
+
+    const offerBodySlider = new Swiper('.offer__body--slider', {
       slidesPerView: 1,
-      spaceBetween: 0,
-      loop: true,
-      speed: 600,
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true
-      },
-      // grabCursor: true,
-      // effect: "creative",
-      // creativeEffect: {
-      //   prev: {
-      //     shadow: true,
-      //     translate: ["-20%", 0, -1],
-      //   },
-      //   next: {
-      //     translate: ["100%", 0, 0],
-      //   },
-      // },
-      mousewheel: {
-        forceToAxis: true,
-      },
-      navigation: {
-        nextEl: ".offer-button-next",
-        prevEl: ".offer-button-prev",
-      },
+      loop: false,
+      speed: 0,
+      initialSlide: 0,
+      allowTouchMove: false
     });
+
+    const $controls = document.querySelectorAll('.offer-button');
+    const slidingAT = 800;
+    let slidingBlocked = false;
+
+    $controls.forEach($el => {
+      $el.addEventListener('click', controlClickHandler);
+    });
+
+    function controlClickHandler() {
+      if (slidingBlocked) return;
+      slidingBlocked = true;
+
+      const $control = this;
+      const isRight = $control.classList.contains('offer-button-next');
+      const currentIndex = offerBodySlider.activeIndex;
+      let index = currentIndex + (isRight ? -1 : 1);
+      if (index < 0) index = offerBodySlider.slides.length - 1;
+      if (index >= offerBodySlider.slides.length) index = 0;
+
+      const $newActive = offerBodySlider.slides[index];
+      const $curActive = offerBodySlider.slides[currentIndex];
+
+      $curActive.classList.remove('s--active', 's--active-prev');
+
+      const newImg = $newActive.querySelector('img');
+      const curImg = $curActive.querySelector('img');
+
+      newImg.style.transition = 'none';
+      newImg.style.transform = 'scale(1.3)';
+      newImg.getBoundingClientRect();
+
+      $newActive.classList.add('s--active');
+      if (!isRight) $newActive.classList.add('s--active-prev');
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          newImg.style.transition = 'transform 0.8s ease';
+          newImg.style.transform = 'scale(1)';
+        });
+      });
+
+      if (curImg) {
+        curImg.style.transition = 'transform 0.2s ease';
+        curImg.style.transform = 'scale(1)';
+      }
+
+      const $oldPrev = document.querySelector('.offer__body-slide.s--prev');
+      if ($oldPrev) $oldPrev.classList.remove('s--prev');
+      let prevIndex = index - 1;
+      if (prevIndex < 0) prevIndex = offerBodySlider.slides.length - 1;
+      offerBodySlider.slides[prevIndex].classList.add('s--prev');
+
+      offerBodySlider.slideTo(index, 0);
+
+      setTimeout(() => {
+        slidingBlocked = false;
+      }, slidingAT);
+    }
 
     const offerContentSlider = new Swiper(".offer__content--slider", {
       slidesPerGroup: 1,
