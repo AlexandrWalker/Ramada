@@ -2,14 +2,19 @@
  * Прелоадер
  */
 const preloader = document.querySelector('.preloader');
+
+// let time = window.performance.timing.domComplete / 1000000000000
+// const loader = document.getElementById('loader');
+// loader.style.setProperty('--time', time + 's')
+
 const removePreloader = function () {
   preloader.classList.add("preloader-none");
-  // document.documentElement.classList.remove('no-scroll');
+  document.documentElement.classList.remove('no-scroll');
   preloader.removeEventListener('transitionend', removePreloader);
 };
 const hidePreloader = function () {
   preloader.classList.add("hidden");
-  // document.documentElement.classList.add('no-scroll');
+  document.documentElement.classList.add('no-scroll');
   preloader.addEventListener('transitionend', removePreloader);
 };
 if (preloader) {
@@ -95,58 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
     $controls.forEach($el => {
       $el.addEventListener('click', () => controlClickHandler($el.classList.contains('offer-button-next')));
     });
-
-
-    // function controlClickHandler() {
-    //   if (slidingBlocked) return;
-    //   slidingBlocked = true;
-
-    //   const $control = this;
-    //   const isRight = $control.classList.contains('offer-button-next');
-    //   const currentIndex = offerBodySlider.activeIndex;
-    //   let index = currentIndex + (isRight ? -1 : 1);
-    //   if (index < 0) index = offerBodySlider.slides.length - 1;
-    //   if (index >= offerBodySlider.slides.length) index = 0;
-
-    //   const $newActive = offerBodySlider.slides[index];
-    //   const $curActive = offerBodySlider.slides[currentIndex];
-
-    //   $curActive.classList.remove('s--active', 's--active-prev');
-
-    //   const newImg = $newActive.querySelector('img');
-    //   const curImg = $curActive.querySelector('img');
-
-    //   newImg.style.transition = 'none';
-    //   newImg.style.transform = 'scale(1.3)';
-    //   newImg.getBoundingClientRect();
-
-    //   $newActive.classList.add('s--active');
-    //   if (!isRight) $newActive.classList.add('s--active-prev');
-
-    //   requestAnimationFrame(() => {
-    //     requestAnimationFrame(() => {
-    //       newImg.style.transition = 'transform 0.8s ease';
-    //       newImg.style.transform = 'scale(1)';
-    //     });
-    //   });
-
-    //   if (curImg) {
-    //     curImg.style.transition = 'transform 0.2s ease';
-    //     curImg.style.transform = 'scale(1)';
-    //   }
-
-    //   const $oldPrev = document.querySelector('.offer__body-slide.s--prev');
-    //   if ($oldPrev) $oldPrev.classList.remove('s--prev');
-    //   let prevIndex = index - 1;
-    //   if (prevIndex < 0) prevIndex = offerBodySlider.slides.length - 1;
-    //   offerBodySlider.slides[prevIndex].classList.add('s--prev');
-
-    //   offerBodySlider.slideTo(index, 0);
-
-    //   setTimeout(() => {
-    //     slidingBlocked = false;
-    //   }, slidingAT);
-    // }
 
     function controlClickHandler(isRight) {
       if (slidingBlocked) return;
@@ -919,7 +872,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Закрытие меню при клике вне области меню и бургера
     document.addEventListener('click', (event) => {
-      if (!burgerMenu.contains(event.target) && !burgerBtn.contains(event.target)) {
+      if (!burgerMenu.contains(event.target) && !burgerBtn.contains(event.target) && !header.contains(event.target)) {
         closeMenu();
       }
     });

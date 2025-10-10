@@ -91,8 +91,8 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -101,22 +101,6 @@ img {
   font-display: swap;
   src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
   font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
-  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
-  font-weight: 500;
   font-style: normal;
 }
 
@@ -147,14 +131,6 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Bold.woff2") format("woff2"), url("../fonts/TTTricks-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: TTTricks;
-  font-display: swap;
   src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
@@ -179,8 +155,32 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
+  src: url("../fonts/TTTricks-Bold.woff2") format("woff2"), url("../fonts/TTTricks-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TTTricks;
+  font-display: swap;
   src: url("../fonts/TTTricks-Regular.woff2") format("woff2"), url("../fonts/TTTricks-Regular.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
@@ -2046,7 +2046,7 @@ body {
   transform-origin: center center;
   pointer-events: none;
   opacity: 0;
-  border: 0.1rem solid var(--btn-background);
+  border: 0.1rem solid var(--btn-scale-background);
   border-radius: var(--btn-border-radius);
   background-color: transparent;
   -webkit-transition: all 0.3s ease;
@@ -2183,6 +2183,53 @@ body {
   height: 10rem;
   -o-object-fit: contain;
   object-fit: contain;
+}
+
+.loader {
+  --time: 3s;
+  display: inline-block;
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 10rem;
+  line-height: 100%;
+  letter-spacing: 0.2rem;
+  color: var(--accent);
+  position: relative;
+}
+
+.loader::after {
+  content: "Ramada";
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-animation: animloader var(--time) ease-in infinite;
+  animation: animloader var(--time) ease-in infinite;
+  color: var(--white);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@-webkit-keyframes animloader {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes animloader {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
 }
 
 /* Главный заголовок страницы */
@@ -10562,6 +10609,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .preloader__img {
     height: 5rem;
+  }
+
+  .loader {
+    font-size: 5rem;
   }
 
   h1 {
