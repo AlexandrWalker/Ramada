@@ -143,6 +143,10 @@
       grid-row: 3/4;
       padding-top: 1rem;
     }
+
+    .swiper-slide {
+      transition-duration: 0.6s !important;
+    }
   }
 }
 
