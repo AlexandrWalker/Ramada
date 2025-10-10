@@ -1,27 +1,29 @@
 /**
  * Прелоадер
  */
-const preloader = document.querySelector('.preloader');
+window.addEventListener('load', () => {
+  const preloader = document.querySelector('.preloader');
 
-// let time = window.performance.timing.domComplete / 1000000000000
-// const loader = document.getElementById('loader');
-// loader.style.setProperty('--time', time + 's')
+  // let time = window.performance.timing.domComplete / 1000000000000
+  // const loader = document.getElementById('loader');
+  // loader.style.setProperty('--time', time + 's')
 
-const removePreloader = function () {
-  preloader.classList.add("preloader-none");
-  document.documentElement.classList.remove('no-scroll');
-  preloader.removeEventListener('transitionend', removePreloader);
-};
-const hidePreloader = function () {
-  preloader.classList.add("hidden");
-  document.documentElement.classList.add('no-scroll');
-  preloader.addEventListener('transitionend', removePreloader);
-};
-if (preloader) {
-  window.addEventListener('load', (event) => {
-    hidePreloader()
-  });
-}
+  const removePreloader = function () {
+    preloader.classList.add("preloader-none");
+    document.documentElement.classList.remove('no-scroll');
+    preloader.removeEventListener('transitionend', removePreloader);
+  };
+  const hidePreloader = function () {
+    preloader.classList.add("hidden");
+    document.documentElement.classList.add('no-scroll');
+    preloader.addEventListener('transitionend', removePreloader);
+  };
+  if (preloader) {
+    window.addEventListener('load', (event) => {
+      hidePreloader()
+    });
+  }
+});
 
 document.addEventListener('DOMContentLoaded', () => {
 
