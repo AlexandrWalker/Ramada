@@ -1,7 +1,6 @@
 /**
  * Прелоадер
  */
-window.addEventListener('load', () => {
   const preloader = document.querySelector('.preloader');
 
   // let time = window.performance.timing.domComplete / 1000000000000
@@ -23,7 +22,7 @@ window.addEventListener('load', () => {
       hidePreloader()
     });
   }
-});
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
