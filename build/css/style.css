@@ -91,24 +91,8 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
   font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
   font-style: normal;
 }
 
@@ -131,6 +115,22 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
   src: url("../fonts/Gotham-Ultra.woff2") format("woff2"), url("../fonts/Gotham-Ultra.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -139,16 +139,16 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Black.woff2") format("woff2"), url("../fonts/TTTricks-Black.woff") format("woff");
-  font-weight: 900;
+  src: url("../fonts/TTTricks-Bold.woff2") format("woff2"), url("../fonts/TTTricks-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Bold.woff2") format("woff2"), url("../fonts/TTTricks-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/TTTricks-Black.woff2") format("woff2"), url("../fonts/TTTricks-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -171,16 +171,16 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/TTTricks-Regular.woff2") format("woff2"), url("../fonts/TTTricks-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Regular.woff2") format("woff2"), url("../fonts/TTTricks-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -4581,12 +4581,77 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .template-product__slider--big {
+  position: relative;
   margin-bottom: 2rem;
   /* hack */
 }
 
+.template-product__slider--big .swiper-wrapper {
+  height: 100%;
+  -webkit-transform: none !important;
+  -ms-transform: none !important;
+  transform: none !important;
+  position: relative;
+  aspect-ratio: 622/660;
+}
+
+.template-product__slider--big .swiper-slide {
+  -webkit-transition: clip-path 1.2s ease, -webkit-transform 0.8s ease 0.8s;
+  transition: clip-path 1.2s ease, -webkit-transform 0.8s ease 0.8s;
+  transition: clip-path 1.2s ease, transform 0.8s ease 0.8s;
+  transition: clip-path 1.2s ease, transform 0.8s ease 0.8s, -webkit-transform 0.8s ease 0.8s;
+  overflow: hidden;
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  position: absolute;
+  left: 0;
+  top: 0;
+  clip-path: inset(0 0 0 100%);
+  width: 100%;
+  height: 100%;
+}
+
+.template-product__slider--big .swiper-slide-active {
+  z-index: 2;
+  clip-path: inset(0 0 0 0);
+  -webkit-transition: clip-path 0.8s ease, -webkit-transform 0.8s ease;
+  transition: clip-path 0.8s ease, -webkit-transform 0.8s ease;
+  transition: clip-path 0.8s ease, transform 0.8s ease;
+  transition: clip-path 0.8s ease, transform 0.8s ease, -webkit-transform 0.8s ease;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.template-product__slider--big .swiper-slide-prev {
+  z-index: 1;
+  clip-path: inset(0 100% 0 0);
+}
+
+.template-product__slider--big .swiper-slide-next {
+  z-index: 1;
+}
+
 .template-product__slider--mini {
   height: 13.7rem;
+}
+
+.template-product__slider--seating .swiper-pagination--seating {
+  display: none;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  bottom: 3rem;
+  z-index: 1;
+}
+
+.template-product__slider--seating .swiper-pagination--seating .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+  background: var(--gray);
 }
 
 .template-product__slider .swiper-pagination {
@@ -7566,6 +7631,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   height: 100%;
 }
 
+.gallery__block--slider .swiper-slide {
+  -webkit-transition-duration: 0.6s !important;
+  transition-duration: 0.6s !important;
+}
+
 .gallery__block-title {
   color: var(--accent);
   margin-bottom: 3rem;
@@ -7641,6 +7711,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .gallery__body {
+  aspect-ratio: 674/628;
   position: relative;
 }
 
@@ -7656,10 +7727,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 .gallery__body .btn-arrow i {
   --font-size: 10rem;
   --swiper-font-size: 10rem;
-}
-
-.gallery__body .swiper-pagination {
-  display: none;
 }
 
 .gallery__body .fraction {
@@ -7688,6 +7755,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .gallery__btn {
+  display: none;
+}
+
+.gallery .swiper-pagination {
   display: none;
 }
 
@@ -9238,7 +9309,8 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .offer__body--slider {
-  overflow: hidden;
+  height: 100%;
+  overflow: visible;
   position: relative;
   z-index: 1;
 }
@@ -9246,6 +9318,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 .offer__body-item {
   position: relative;
   height: 100%;
+  overflow: hidden;
 }
 
 .offer__body-item img {
@@ -9297,29 +9370,26 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   transition-duration: 0.6s !important;
 }
 
-.offer__body--slider {
+.slider {
   position: relative;
-  height: 100%;
-  overflow: hidden;
-}
-
-.offer__body--slider .swiper-wrapper {
-  -webkit-transition: none !important;
-  transition: none !important;
-  -webkit-transform: none !important;
-  -ms-transform: none !important;
-  transform: none !important;
+  overflow: visible;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
 }
 
 .slider__slides {
   z-index: 1;
   position: relative;
   height: 100%;
+  -webkit-transition: none !important;
+  transition: none !important;
+  -webkit-transform: none !important;
+  -ms-transform: none !important;
+  transform: none !important;
+  /* Slide / clip-path / zoom logic */
 }
 
-/* Slide / clip-path / zoom logic */
-
-.offer__body-slide {
+.slider__slides .swiper-slide {
   overflow: hidden;
   position: absolute;
   left: 0;
@@ -9329,24 +9399,20 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   clip-path: inset(0 0 0 100%);
   -webkit-transition: clip-path 0.8s ease;
   transition: clip-path 0.8s ease;
+  /* inner = holds image and zoom transition */
 }
 
-.offer__body-slide.s--prev {
+.slider__slides .swiper-slide.s--prev {
+  z-index: 1;
   clip-path: inset(0 100% 0 0);
 }
 
-.offer__body-slide.s--active {
-  z-index: 1;
+.slider__slides .swiper-slide.s--active {
+  z-index: 2;
   clip-path: inset(0 0 0 0);
 }
 
-/* inner = holds image and zoom transition */
-
-.offer__body-item {
-  overflow: hidden;
-}
-
-.offer__body-item img {
+.slider__slides .swiper-slide img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -9358,13 +9424,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   transition: -webkit-transform 0.8s ease;
   transition: transform 0.8s ease;
   transition: transform 0.8s ease, -webkit-transform 0.8s ease;
-}
-
-.offer__body-item::before {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 2;
 }
 
 .offers {
@@ -11515,9 +11574,9 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     position: absolute;
     top: 50%;
     z-index: 2;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%) !important;
+    -ms-transform: translateY(-50%) !important;
+    transform: translateY(-50%) !important;
     width: 100%;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
@@ -13350,6 +13409,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     --container-width: 70.8rem;
   }
 
+  .sosnovyi-page .template-product__control {
+    width: 100%;
+  }
+
   .restaurant-page .hero {
     margin-bottom: 12.2rem;
   }
@@ -13375,7 +13438,14 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     display: none;
   }
 
-  .gallery__body .swiper-pagination {
+  .gallery__btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+  }
+
+  .gallery .swiper-pagination {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -13963,7 +14033,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 1rem;
   }
 
-  .template-product--seating .template-product__body {
+  .template-product--seating .template-product__body-items {
     display: none;
   }
 
@@ -14017,6 +14087,12 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 3rem;
   }
 
+  .template-product__slider--seating .swiper-pagination--seating {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
   .template-product__slider .swiper-pagination {
     bottom: 2.5rem;
   }
@@ -14044,6 +14120,9 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   }
 
   .sosnovyi-page .template-product__control .swiper-pagination-fraction {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     bottom: 2rem;
   }
 
@@ -14954,13 +15033,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .gallery__body .border::after {
     border-width: 1rem;
-  }
-
-  .gallery__btn {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
   }
 
   .studio__inner {

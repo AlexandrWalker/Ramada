@@ -78,7 +78,8 @@
     }
 
     &--slider {
-      overflow: hidden;
+      height: 100%;
+      overflow: visible;
       position: relative;
       z-index: 1;
     }
@@ -86,6 +87,7 @@
     &-item {
       position: relative;
       height: 100%;
+      overflow: hidden;
 
       img {
         width: 100%;
@@ -150,67 +152,50 @@
   }
 }
 
-
-.offer__body--slider {
+.slider {
   position: relative;
-  height: 100%;
-  overflow: hidden;
-}
+  overflow: visible;
+  touch-action: pan-y;
 
-.offer__body--slider .swiper-wrapper {
-  transition: none !important;
-  transform: none !important;
-}
+  &__slides {
+    z-index: 1;
+    position: relative;
+    height: 100%;
+    transition: none !important;
+    transform: none !important;
 
-.slider__slides {
-  z-index: 1;
-  position: relative;
-  height: 100%;
-}
+    /* Slide / clip-path / zoom logic */
+    .swiper-slide {
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-clip-path: inset(0 0 0 100%);
+      clip-path: inset(0 0 0 100%);
+      transition: clip-path 0.8s ease;
 
-/* Slide / clip-path / zoom logic */
-.offer__body-slide {
-  overflow: hidden;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-clip-path: inset(0 0 0 100%);
-  clip-path: inset(0 0 0 100%);
-  transition: clip-path 0.8s ease;
-}
+      &.s--prev {
+        z-index: 1;
+        -webkit-clip-path: inset(0 100% 0 0);
+        clip-path: inset(0 100% 0 0);
+      }
 
-.offer__body-slide.s--prev {
-  -webkit-clip-path: inset(0 100% 0 0);
-  clip-path: inset(0 100% 0 0);
-}
+      &.s--active {
+        z-index: 2;
+        -webkit-clip-path: inset(0 0 0 0);
+        clip-path: inset(0 0 0 0);
+      }
 
-.offer__body-slide.s--active {
-  z-index: 1;
-  -webkit-clip-path: inset(0 0 0 0);
-  clip-path: inset(0 0 0 0);
+      /* inner = holds image and zoom transition */
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1);
+        transition: transform 0.8s ease;
+      }
+    }
+  }
 }
-
-/* inner = holds image and zoom transition */
-.offer__body-item {
-  overflow: hidden;
-}
-
-.offer__body-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1);
-  transition: transform 0.8s ease;
-}
-
-.offer__body-item::before {
-  // content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 2;
-}
-
-.offer__body--slider .swiper-slide {}

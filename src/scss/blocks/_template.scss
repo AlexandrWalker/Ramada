@@ -426,6 +426,12 @@
         justify-content: space-between;
 
         @include sm {
+          // display: none;
+        }
+      }
+
+      .template-product__body-items {
+        @include sm {
           display: none;
         }
       }
@@ -808,6 +814,8 @@
       @include md {
         order: 2;
       }
+
+      .sosnovyi-page & {}
     }
 
     &__slider {
@@ -893,6 +901,8 @@
       }
 
       &--big {
+        position: relative;
+
         margin-bottom: 2rem;
 
         @include md {
@@ -904,6 +914,44 @@
         @include sm {
           margin-bottom: 3rem;
         }
+
+        .swiper-wrapper {
+          height: 100%;
+          transform: none !important;
+          position: relative;
+
+          aspect-ratio: 622/660;
+        }
+
+        .swiper-slide {
+          transition: clip-path 1.2s ease, transform 0.8s ease 0.8s;
+          overflow: hidden;
+          transform: scale(1.2);
+
+          position: absolute;
+          left: 0;
+          top: 0;
+
+          clip-path: inset(0 0 0 100%);
+          width: 100%;
+          height: 100%;
+
+          &-active {
+            z-index: 2;
+            clip-path: inset(0 0 0 0);
+            transition: clip-path 0.8s ease, transform 0.8s ease;
+            transform: scale(1);
+          }
+
+          &-prev {
+            z-index: 1;
+            clip-path: inset(0 100% 0 0);
+          }
+
+          &-next {
+            z-index: 1;
+          }
+        }
       }
 
       &--mini {
@@ -911,6 +959,27 @@
 
         @include md {
           display: none;
+        }
+      }
+
+      &--seating {
+
+        .swiper-pagination--seating {
+          display: none;
+          justify-content: center;
+          align-items: center;
+
+          position: absolute;
+          bottom: 3rem;
+          z-index: 1;
+
+          @include sm {
+            display: flex;
+          }
+
+          .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+            background: var(--gray);
+          }
         }
       }
 
@@ -990,9 +1059,13 @@
           position: absolute;
           top: 50%;
           z-index: 2;
-          transform: translateY(-50%);
+          transform: translateY(-50%) !important;
           width: 100%;
           justify-content: space-between;
+        }
+
+        @include xmd {
+          width: 100%;
         }
 
         @include sm {
@@ -1020,6 +1093,7 @@
           }
 
           @include sm {
+            display: flex;
             bottom: 2rem;
           }
         }
