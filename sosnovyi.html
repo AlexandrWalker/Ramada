@@ -784,26 +784,26 @@
             <div class="template-product__content">
 
               <div class="template-product__slider">
-                <div class="swiper template-product__slider--big border">
+                <div class="swiper template-product__slider--big">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item" data-animation="parallax-img">
+                      <div class="template-product__slider-item border">
                         <img src="./images/temp/hall-page-item-1.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item" data-animation="parallax-img">
-                        <img src="./images/temp/hall-page-item-1.png" alt="">
+                      <div class="template-product__slider-item border">
+                        <img src="./images/temp/hall-page-item-2.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item" data-animation="parallax-img">
-                        <img src="./images/temp/hall-page-item-1.png" alt="">
+                      <div class="template-product__slider-item border">
+                        <img src="./images/temp/hall-page-item-3.png" alt="">
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="template-product__slider-item" data-animation="parallax-img">
-                        <img src="./images/temp/hall-page-item-1.png" alt="">
+                      <div class="template-product__slider-item border">
+                        <img src="./images/temp/hall-page-item-2.png" alt="">
                       </div>
                     </div>
                   </div>
@@ -996,6 +996,7 @@
                       </div>
                     </div>
                   </div>
+                  <!-- <div class="swiper-pagination--seating"></div> -->
                 </div>
               </div>
 
@@ -1310,7 +1311,7 @@
                 </div>
               </div>
               <div class="gallery__block">
-                <div class="swiper gallery__block--slider">
+                <div class="swiper swiper__control gallery__block--slider">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide gallery__slide">
                       <div class="gallery__slide-item">
@@ -1580,30 +1581,30 @@
             </div>
 
             <div class="gallery__body">
-              <div class="swiper gallery__body--slider border">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="gallery__body-item" data-animation="parallax-img">
+              <div class="swiper slider gallery__body--slider border">
+                <div class="swiper-wrapper slider__slides">
+                  <div class="swiper-slide s--active">
+                    <div class="gallery__body-item">
                       <img src="./images/temp/gallery-item-1.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="gallery__body-item" data-animation="parallax-img">
+                    <div class="gallery__body-item">
                       <img src="./images/temp/gallery-item-1.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="gallery__body-item" data-animation="parallax-img">
+                    <div class="gallery__body-item">
                       <img src="./images/temp/gallery-item-1.png" alt="">
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="gallery__body-item" data-animation="parallax-img">
+                    <div class="gallery__body-item">
                       <img src="./images/temp/gallery-item-1.png" alt="">
                     </div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="gallery__body-item" data-animation="parallax-img">
+                  <div class="swiper-slide s--prev">
+                    <div class="gallery__body-item">
                       <img src="./images/temp/gallery-item-1.png" alt="">
                     </div>
                   </div>
@@ -1613,14 +1614,13 @@
                   /
                   <span class="fraction-total"></span>
                 </div>
-              </div>
-              <div class="swiper-pagination swiper-pagination--gallery"></div>
-              <div class="swiper-button-next gallery-button-next btn-arrow">
-                <span class="scale"></span>
-                <i class="icon-arrow-right"></i>
+                <div class="swiper-button-next slider__control gallery-button-next btn-arrow">
+                  <span class="scale"></span>
+                  <i class="icon-arrow-right"></i>
+                </div>
               </div>
             </div>
-
+            <div class="swiper-pagination swiper-pagination--gallery"></div>
             <a class="gallery__btn btn btn--accent" href="/">
               <span class="scale"></span>
               Заказать мероприятие

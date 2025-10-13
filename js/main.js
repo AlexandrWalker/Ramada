@@ -82,74 +82,69 @@ document.addEventListener('DOMContentLoaded', () => {
     //   },
     // });
 
-    const offerSlider = document.querySelector('.offer__body--slider');
-    if (offerSlider) {
-      const offerBodySlider = new Swiper(offerSlider, {
+    function initCustomSwiper(selector) {
+      const swiper = new Swiper(selector, {
         slidesPerView: 1,
         loop: false,
         speed: 0,
         initialSlide: 0,
         allowTouchMove: false,
-        touchEvents: {
-          prevent: true
+
+        init: false,
+
+        pagination: {
+          el: ".swiper-pagination--gallery",
+          clickable: true,
+          // type: "fraction",
         },
       });
 
-      const $controls = document.querySelectorAll('.offer-button');
+      const container = document.querySelector(selector);
+      const controls = container.querySelectorAll('.slider__control');
       const slidingAT = 800;
       let slidingBlocked = false;
 
-      // Attach click handlers to controls (pass direction)
-      $controls.forEach($el => {
-        $el.addEventListener('click', () => controlClickHandler($el.classList.contains('offer-button-next')));
+      controls.forEach(el => {
+        el.addEventListener('click', () =>
+          handleControlClick(el.classList.contains('swiper-button-next'))
+        );
       });
 
-      function controlClickHandler(isRight) {
+      function handleControlClick(isRight) {
         if (slidingBlocked) return;
         slidingBlocked = true;
 
-        const currentIndex = offerBodySlider.activeIndex;
+        const currentIndex = swiper.activeIndex;
+        let index = isRight ? currentIndex + 1 : currentIndex - 1;
 
-        // Slide index depending on direction
-        let index;
-        if (isRight) {
-          // Right control -> next slide
-          index = currentIndex + 1;
-          if (index >= offerBodySlider.slides.length) index = 0;
-        } else {
-          // Left control -> previous slide
-          index = currentIndex - 1;
-          if (index < 0) index = offerBodySlider.slides.length - 1;
-        }
+        if (index >= swiper.slides.length) index = 0;
+        if (index < 0) index = swiper.slides.length - 1;
 
         animateTo(index, isRight);
       }
 
-      // Extracted animation logic so we can call it from swipe handlers too
       function animateTo(index, isRight) {
-        const $newActive = offerBodySlider.slides[index];
-        const $curActive = offerBodySlider.slides[offerBodySlider.activeIndex];
+        const newActive = swiper.slides[index];
+        const curActive = swiper.slides[swiper.activeIndex];
 
-        if (!$newActive || !$curActive) {
+        if (!newActive || !curActive) {
           slidingBlocked = false;
           return;
         }
 
-        $curActive.classList.remove('s--active', 's--active-prev');
+        curActive.classList.remove('s--active', 's--active-prev');
 
-        const newImg = $newActive.querySelector('img');
-        const curImg = $curActive.querySelector('img');
+        const newImg = newActive.querySelector('img');
+        const curImg = curActive.querySelector('img');
 
-        // Prepare new image zoom start
         if (newImg) {
           newImg.style.transition = 'none';
           newImg.style.transform = 'scale(1.3)';
-          // force layout
-          newImg.getBoundingClientRect();
+          newImg.getBoundingClientRect(); // force layout
         }
 
-        $newActive.classList.add('s--active');
-        if (!isRight) $newActive.classList.add('s--active-prev'); // slide flowing correctly if moving left
+        newActive.classList.add('s--active');
+        if (!isRight) newActive.classList.add('s--active-prev');
 
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
@@ -165,47 +160,42 @@ document.addEventListener('DOMContentLoaded', () => {
           curImg.style.transform = 'scale(1)';
         }
 
-        const $oldPrev = document.querySelector('.offer__body-slide.s--prev');
-        if ($oldPrev) $oldPrev.classList.remove('s--prev');
+        const oldPrev = container.querySelector('.swiper-slide.s--prev');
+        if (oldPrev) oldPrev.classList.remove('s--prev');
 
         let prevIndex = index - 1;
-        if (prevIndex < 0) prevIndex = offerBodySlider.slides.length - 1;
-        offerBodySlider.slides[prevIndex].classList.add('s--prev');
+        if (prevIndex < 0) prevIndex = swiper.slides.length - 1;
+        swiper.slides[prevIndex].classList.add('s--prev');
 
-        // Inform Swiper of the new active index but keep JS-driven transition (duration 0)
-        offerBodySlider.slideTo(index, 0);
+        swiper.slideTo(index, 0);
 
         setTimeout(() => {
           slidingBlocked = false;
         }, slidingAT);
       }
 
-      // --- Swipe detection (touch + pointer). We do a lightweight implementation and trigger animateTo() ---
+      // Swipe detection
       let startX = null;
-      const threshold = 50; // minimum px to count as swipe (tweakable)
-      const sliderEl = document.querySelector('.offer__body--slider');
+      const threshold = 50;
 
-      // Touch events for mobile
-      sliderEl.addEventListener('touchstart', (e) => {
+      container.addEventListener('touchstart', e => {
         if (e.touches && e.touches[0]) startX = e.touches[0].clientX;
       }, { passive: true });
 
-      sliderEl.addEventListener('touchend', (e) => {
+      container.addEventListener('touchend', e => {
         if (startX === null) return;
-        const endX = (e.changedTouches && e.changedTouches[0]) ? e.changedTouches[0].clientX : null;
-        if (endX === null) { startX = null; return; }
+        const endX = e.changedTouches?.[0]?.clientX ?? null;
+        if (endX === null) return;
         handleSwipe(startX, endX);
         startX = null;
       });
 
-      // Pointer events for desktop dragging (mouse/touch stylus)
-      sliderEl.addEventListener('pointerdown', (e) => {
-        // only left mouse button
+      container.addEventListener('pointerdown', e => {
         if (e.pointerType === 'mouse' && e.button !== 0) return;
         startX = e.clientX;
       });
 
-      sliderEl.addEventListener('pointerup', (e) => {
+      container.addEventListener('pointerup', e => {
         if (startX === null) return;
         handleSwipe(startX, e.clientX);
         startX = null;
@@ -213,44 +203,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
       function handleSwipe(sx, ex) {
         const dx = ex - sx;
-        if (Math.abs(dx) < threshold) return; // not enough movement
-
-        if (dx < 0) {
-          // swipe left -> go next
-          controlClickHandler(true);
-        } else {
-          // swipe right -> go prev
-          controlClickHandler(false);
-        }
+        if (Math.abs(dx) < threshold) return;
+        dx < 0 ? handleControlClick(true) : handleControlClick(false);
       }
 
-      // Optional: keyboard arrows
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight') controlClickHandler(true);
-        if (e.key === 'ArrowLeft') controlClickHandler(false);
+      // Keyboard
+      document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight') handleControlClick(true);
+        if (e.key === 'ArrowLeft') handleControlClick(false);
       });
 
-      const offerContentSlider = new Swiper(".offer__content--slider", {
-        slidesPerGroup: 1,
-        slidesPerView: 1,
-        spaceBetween: 0,
-        loop: true,
-        speed: 600,
-        effect: 'fade',
-        fadeEffect: {
-          crossFade: true
-        },
-        grabCursor: false,
-        mousewheel: false,
-        allowTouchMove: false,
-        touchEvents: {
-          prevent: true
-        },
-      });
-
-      offerBodySlider.controller.control = offerContentSlider;
-      offerContentSlider.controller.control = offerBodySlider;
+      const fraction = container.querySelector('.fraction');
+      if (fraction) {
+        fractionCustomSlider(swiper);
+      } else {
+        controlCustomSwiper(swiper);
+      }
     }
+
+    const swiperControl = new Swiper(".swiper__control", {
+      slidesPerGroup: 1,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      speed: 600,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      grabCursor: false,
+      mousewheel: false,
+      allowTouchMove: false,
+      touchEvents: {
+        prevent: true
+      },
+    });
 
     const diversityHeadSlider = new Swiper(".diversity__head--slider", {
       slidesPerGroup: 1,
@@ -604,6 +591,7 @@ document.addEventListener('DOMContentLoaded', () => {
       slidesPerGroup: 1,
       slidesPerView: 1,
       spaceBetween: 60,
+      autoHeight: true,
       loop: true,
       speed: 600,
       navigation: {
@@ -622,6 +610,7 @@ document.addEventListener('DOMContentLoaded', () => {
       breakpoints: {
         835: {
           spaceBetween: 20,
+          autoHeight: false,
         }
       },
     });
@@ -653,8 +642,8 @@ document.addEventListener('DOMContentLoaded', () => {
           const templateSliderMini = new Swiper(slider1, {
             slidesPerView: 3,
             spaceBetween: 10,
-            speed: 600,
-            loop: true,
+            speed: 800,
+            // loop: true,
             grabCursor: false,
             mousewheel: false,
             watchSlidesProgress: true,
@@ -671,8 +660,8 @@ document.addEventListener('DOMContentLoaded', () => {
           const templateSliderBig = new Swiper(slider2, {
             slidesPerView: 1,
             spaceBetween: 0,
-            speed: 600,
-            loop: true,
+            speed: 800,
+            // loop: true,
             grabCursor: true,
             mousewheel: {
               forceToAxis: true,
@@ -744,57 +733,40 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    const galleryBlockSlider = new Swiper(".gallery__block--slider", {
-      slidesPerGroup: 1,
-      slidesPerView: 1,
-      spaceBetween: 20,
-      loop: true,
-      speed: 600,
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true
-      },
-      grabCursor: false,
-      mousewheel: false,
-      allowTouchMove: false,
-      touchEvents: {
-        prevent: true
-      },
-    });
+    // const galleryBodySlider = new Swiper(".gallery__body--slider", {
+    //   slidesPerGroup: 1,
+    //   slidesPerView: 1,
+    //   spaceBetween: 0,
+    //   loop: true,
+    //   init: false,
+    //   speed: 600,
+    //   mousewheel: {
+    //     forceToAxis: true,
+    //   },
+    //   navigation: {
+    //     nextEl: ".gallery-button-next",
+    //   },
+    //   pagination: {
+    //     el: ".swiper-pagination--gallery",
+    //     clickable: true,
+    //     // type: "fraction",
+    //   },
+    //   touchEvents: {
+    //     prevent: true
+    //   },
+    //   breakpoints: {
+    //     601: {
+    //       spaceBetween: 20,
+    //     }
+    //   },
+    // });
 
-    const galleryBodySlider = new Swiper(".gallery__body--slider", {
-      slidesPerGroup: 1,
-      slidesPerView: 1,
-      spaceBetween: 0,
-      loop: true,
-      init: false,
-      speed: 600,
-      mousewheel: {
-        forceToAxis: true,
-      },
-      navigation: {
-        nextEl: ".gallery-button-next",
-      },
-      pagination: {
-        el: ".swiper-pagination--gallery",
-        clickable: true,
-        // type: "fraction",
-      },
-      touchEvents: {
-        prevent: true
-      },
-      breakpoints: {
-        601: {
-          spaceBetween: 20,
-        }
-      },
-    });
+    function fractionCustomSlider(swiper) {
+      swiper.on("slideChange afterInit init", function () {
 
-    galleryBodySlider.on("slideChange afterInit init", function () {
+        let currentSlide = this.realIndex + 1;
 
-      let currentSlide = this.realIndex + 1;
-
-      document.querySelector('.fraction').innerHTML = `
+        document.querySelector('.fraction').innerHTML = `
       <span class="fraction-current">
       ${currentSlide < 10 ? currentSlide : currentSlide}
       </span> 
@@ -802,12 +774,31 @@ document.addEventListener('DOMContentLoaded', () => {
       <span class="fraction-total">
         ${this.slides.length}
       </span>`;
-    });
+      });
 
-    galleryBodySlider.init();
+      swiper.init();
 
-    galleryBlockSlider.controller.control = galleryBodySlider;
-    galleryBodySlider.controller.control = galleryBlockSlider;
+      controlCustomSwiper(swiper);
+    }
+
+    // galleryBlockSlider.controller.control = galleryBodySlider;
+    // galleryBodySlider.controller.control = galleryBlockSlider;
+
+    const offerBodySider = document.querySelector('.offer__body--slider');
+    if (offerBodySider) {
+      initCustomSwiper('.offer__body--slider');
+    }
+
+    const galleryBodySlider = document.querySelector('.gallery__body--slider');
+    if (galleryBodySlider) {
+      initCustomSwiper('.gallery__body--slider');
+    }
+
+    function controlCustomSwiper(swiper) {
+      swiper.init();
+      swiper.controller.control = swiperControl;
+      swiperControl.controller.control = swiper;
+    }
   }
 
   /**
@@ -1057,7 +1048,7 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   const transfer = document.querySelector('.transfer-elem-1');
   if (transfer) {
-    $(window).on('resize', function () {
+    $(window).on('resize load', function () {
       if (window.innerWidth <= 834) {
         if (document.querySelector('.transfer-pos-1')) {
           new TransferElements(
