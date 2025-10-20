@@ -91,8 +91,24 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
   src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
   font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -115,22 +131,6 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Ultra.woff2") format("woff2"), url("../fonts/Gotham-Ultra.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -139,16 +139,16 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Bold.woff2") format("woff2"), url("../fonts/TTTricks-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/TTTricks-Black.woff2") format("woff2"), url("../fonts/TTTricks-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Black.woff2") format("woff2"), url("../fonts/TTTricks-Black.woff") format("woff");
-  font-weight: 900;
+  src: url("../fonts/TTTricks-Bold.woff2") format("woff2"), url("../fonts/TTTricks-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -171,16 +171,16 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Regular.woff2") format("woff2"), url("../fonts/TTTricks-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/TTTricks-Regular.woff2") format("woff2"), url("../fonts/TTTricks-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -1249,6 +1249,9 @@ body {
   --container-padding: 20rem;
   --container-width: 152rem;
   --header-height: 16.4rem;
+  /* делаем ширину карточки адаптивной, максимум 383px */
+  --card-max-w: 38.3rem;
+  --card-aspect: 247/383;
   --white: #ffffff;
   --white-13: rgba(255, 255, 255, 0.13);
   --white-30: rgba(255, 255, 255, 0.3);
@@ -8244,6 +8247,8 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .entert {
   padding: 7rem 0 4.5rem;
+  /* add */
+  /* /add */
 }
 
 .entert__inner {
@@ -8273,6 +8278,12 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .entert__body--slider {
+  /* add */
+  width: 100%;
+  overflow: visible;
+  -webkit-transition: padding 220ms ease;
+  transition: padding 220ms ease;
+  /* /add */
   overflow: visible;
 }
 
@@ -8344,6 +8355,27 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .entert__item-title h4 {
   line-height: 120%;
+}
+
+.entert .swiper-slide {
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  will-change: transform;
+  /* add */
+  width: clamp(26rem, 60vw, var(--card-max-w)) !important;
+  /* адаптив */
+  overflow: hidden;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  /* /add */
 }
 
 .entert .swiper-pagination {
