@@ -8,6 +8,10 @@
   --container-width: 152rem;
   --header-height: 16.4rem;
 
+  /* делаем ширину карточки адаптивной, максимум 383px */
+  --card-max-w: 38.3rem;
+  --card-aspect: 247/383;
+
   --white: #ffffff;
   --white-13: rgba(255, 255, 255, 0.13);
   --white-30: rgba(255, 255, 255, 0.3);

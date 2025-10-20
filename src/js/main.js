@@ -410,42 +410,272 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     });
 
-    const entertBodySlider = new Swiper(".entert__body--slider", {
-      slidesPerGroup: 1,
-      slidesPerView: 1,
-      spaceBetween: 10,
-      speed: 600,
-      loop: true,
-      loopAdditionalSlides: 1,
-      mousewheel: {
-        forceToAxis: true,
-      },
-      navigation: {
-        prevEl: ".entert-button-prev",
-        nextEl: ".entert-button-next",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        dynamicBullets: true,
-        dynamicMainBullets: 1,
-      },
-      touchEvents: {
-        prevent: true
-      },
-      breakpoints: {
-        601: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-          loopAdditionalSlides: 2,
+    // ---------------------------
+    // Global state
+    // ---------------------------
+    let isSliding = false;    // transition ongoing flag
+    let slideQueue = 0;       // queued slide actions count
+    let lastNav = null;       // last navigation params {dir, speed}
+    const entert = document.querySelector('.entert');
+
+    // ---------------------------
+    // Swiper init
+    // ---------------------------
+    if (entert) {
+      const swiper = new Swiper('.entert__body--slider', {
+        slidesPerView: '3.7',
+        spaceBetween: 15,
+        centeredSlides: false,
+        centeredSlidesBounds: true,
+        slidesOffsetBefore: 0,
+        slidesOffsetAfter: 0,
+        loop: false,
+        centerInsufficientSlides: true,
+
+        freeMode: {
+          enabled: false,
+          momentum: false,
+          momentumBounce: false,
+          sticky: true,
         },
-        835: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-          loopAdditionalSlides: 3,
+
+        speed: 500,
+        simulateTouch: true,
+        watchOverflow: true,
+
+        mousewheel: {
+          forceToAxis: true,
+          sensitivity: 1,
+          releaseOnEdges: true
         },
-      },
-    });
+
+        navigation: {
+          nextEl: '.entert-button-next',
+          prevEl: '.entert-button-prev'
+        },
+
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+
+        on: {
+          init: function () {
+            // ոչ մի dynamic padding հաշվարկ — թող սլայդերը նստեն կոնտեյների եզրերին
+          },
+
+          imagesReady: function () { /* optional */ },
+
+          slideChange: function () {
+            console.log("Ակտիվ ինդեքսը՝", this.realIndex);
+            if (this.realIndex === 8) {
+              console.log("✅ Мы достигли последнего слайда.");
+            }
+            if (this.realIndex === 3) {
+              console.log("✅ Мы достигли точки невозврата.");
+            }
+          },
+
+          // երբ transition սկսվում է
+          slideChangeTransitionStart: function () {
+            isSliding = true;
+          },
+
+          // երբ transition ավարտվում է
+          slideChangeTransitionEnd: function () {
+            const swiper_wrapper = entert.querySelector('.swiper-wrapper');
+            const style = window.getComputedStyle(swiper_wrapper);
+            const matrix = style.transform || style.webkitTransform;
+            const slideWidth = swiper.slides[0] ? swiper.slides[0].offsetWidth : 0;
+
+            // ապահով կետ՝ նշել որ տրանսյուշն ավարտվեց
+            isSliding = false;
+
+            // քո տարօրինակ teleport/rewind կարգը (թույլատրում ենք ըստ օրինակի)
+            if (this.realIndex === 0 && this.previousIndex > 0) {
+              console.log("➡️ Հետ գալու սահմանը հասավ, տեղափոխվում ենք 4-րդ սլայդին առանց անիմացիայի");
+              // վերացնել հերթերը, որպեսզի անհամապատասխան չմնան
+              slideQueue = 0;
+              swiper.slideTo(4, 0);
+            }
+
+            if (this.realIndex === 8) {
+              console.log("➡️ Հասանք վերջին սլայդին, տեղափոխվում ենք 4-րդ սլայդին առանց անիմացիայի");
+              slideQueue = 0;
+              swiper.slideTo(4, 0);
+            }
+
+            // matrix հատուկ գիշիկ — որքանը ուզած է, թող լինի
+            if (matrix.includes("-3389.54")) {
+              swiper.setTranslate(-slideWidth * 4.47);
+            }
+
+            // եթե հերթում դեռ կան slide-եր — փորձենք մեկը սկսել հաջորդը (փոքր ուշացում՝ որպեսզի isSliding-ը կայուն թողնենք)
+            if (slideQueue > 0 && lastNav) {
+              // փոքր setTimeout, որպեսզի isSliding հասցնի false-ը հաստատվել
+              setTimeout(() => processQueue(), 30);
+            }
+          }
+        }
+      });
+
+      let isTouching = false;
+
+      swiper.el.addEventListener('touchstart', () => {
+        isTouching = true;
+        swiper.params.freeMode.enabled = true;  // ✅ միացնում ենք
+      });
+
+      swiper.el.addEventListener('touchend', () => {
+        isTouching = false;
+        swiper.params.freeMode.enabled = false; // 🔇 անջատում ենք
+      });
+
+      swiper.el.addEventListener('wheel', (e) => {
+        if (e.ctrlKey || Math.abs(e.deltaX) > 0) {
+          swiper.params.freeMode.enabled = true;
+          clearTimeout(swiper._freeModeTimeout);
+          swiper._freeModeTimeout = setTimeout(() => {
+            swiper.params.freeMode.enabled = false;
+          }, 400); // 0.4 վայրկյան հետո անջատում ենք
+        }
+      });
+      // ---------------------------
+      // Process queue — կտարի 1 slide միանգամից
+      // ---------------------------
+      function processQueue() {
+        if (!lastNav) return;
+        if (slideQueue <= 0) return;
+        if (isSliding) return; // սպասում ենք մինչև ավարտվի ընթացողը
+
+        // վերցնում ենք մեկ քայլ (առաջիկա)
+        slideQueue = Math.max(0, slideQueue - 1);
+        const { dir, speed } = lastNav;
+
+        if (dir === 'next') {
+          swiper.slideNext(speed);
+        } else {
+          swiper.slidePrev(speed);
+        }
+        // հաջորդ քայլը կժամանի slideChangeTransitionEnd ից հետո (թվարկելով processQueue)
+      }
+
+      // ---------------------------
+      // Ստեղ ամենավերջում միացնել ենք slideChangeTransitionStart/End նորից,
+      // որպեսզի գրավենք ցանկացած տեղից կատարված slide-ները
+      // (եթե ուզում ես կարող էիր ավելացնել սա վերևի on տիրույթում — առկա է այնտեղ արդեն)
+      // ---------------------------
+      swiper.on('slideChangeTransitionStart', () => { isSliding = true; });
+      swiper.on('slideChangeTransitionEnd', () => { isSliding = false; });
+
+
+      // ---------------------------
+      // "Темп нажатий" լոգիկան (nav արագ multiple slide քաշքշուկներին)
+      // օգտագործում է очередь՝ որպեսզի մեծ քանակի արագ սեղմումները հաջորդվեն հերթով
+      // ---------------------------
+      (function tempoNav() {
+        const nextBtn = document.querySelector('.entert-button-next');
+        const prevBtn = document.querySelector('.entert-button-prev');
+        let clickTimes = [];
+        const WINDOW_MS = 800;
+
+        function recordAndDecide() {
+          const now = Date.now();
+          clickTimes = clickTimes.filter(t => now - t < WINDOW_MS);
+          clickTimes.push(now);
+          const clicks = clickTimes.length;
+          if (clicks >= 5) return { slides: Math.min(4, clicks - 1), speed: 180 };
+          if (clicks >= 3) return { slides: 2, speed: 260 };
+          if (clicks === 2) return { slides: 1, speed: 340 };
+          return { slides: 1, speed: 200 };
+        }
+
+        function navHandler(dir) {
+          const { slides, speed } = recordAndDecide();
+
+          // Եթե հիմա մի transition է ընթացքի մեջ՝ հերթով կուտակենք
+          lastNav = { dir, speed };
+
+          // queue++ համապատասխան slides քանակով
+          slideQueue += slides;
+
+          // անմիջապես փորձենք processQueue անել՝ եթե հնարավոր է
+          processQueue();
+        }
+
+        // if (nextBtn) {
+        //   let nextHoldTimer = null, nextInterval = null;
+        //   nextBtn.addEventListener('mousedown', () => {
+        //     let holdCount = 0;
+        //     // մի կարճ single click behavior (միությունը կլինի navHandler('next'))
+        //     // Բայց երբ մայուս-պահես — սկսվում է interval
+        //     nextHoldTimer = setTimeout(() => {
+        //       nextInterval = setInterval(() => {
+        //         navHandler('next');
+        //         holdCount++;
+        //       }, Math.max(80, 300 - holdCount * 20));
+        //     }, 300);
+        //   });
+        //   nextBtn.addEventListener('mouseup', () => { clearTimeout(nextHoldTimer); clearInterval(nextInterval); });
+        //   nextBtn.addEventListener('mouseleave', () => { clearTimeout(nextHoldTimer); clearInterval(nextInterval); });
+        //   // սովորական click
+        //   nextBtn.addEventListener('click', (e) => { e.preventDefault(); navHandler('next'); });
+        // }
+
+        // if (prevBtn) {
+        //   let prevHoldTimer = null, prevInterval = null;
+        //   prevBtn.addEventListener('mousedown', () => {
+        //     let holdCount = 0;
+        //     prevHoldTimer = setTimeout(() => {
+        //       prevInterval = setInterval(() => {
+        //         navHandler('prev');
+        //         holdCount++;
+        //       }, Math.max(80, 300 - holdCount * 20));
+        //     }, 300);
+        //   });
+        //   prevBtn.addEventListener('mouseup', () => { clearTimeout(prevHoldTimer); clearInterval(prevInterval); });
+        //   prevBtn.addEventListener('mouseleave', () => { clearTimeout(prevHoldTimer); clearInterval(prevInterval); });
+        //   prevBtn.addEventListener('click', (e) => { e.preventDefault(); navHandler('prev'); });
+        // }
+      })();
+    }
+
+    // const entertBodySlider = new Swiper(".entert__body--slider", {
+    //   slidesPerGroup: 1,
+    //   slidesPerView: 1,
+    //   spaceBetween: 10,
+    //   speed: 600,
+    //   loop: true,
+    //   loopAdditionalSlides: 1,
+    //   mousewheel: {
+    //     forceToAxis: true,
+    //   },
+    //   navigation: {
+    //     prevEl: ".entert-button-prev",
+    //     nextEl: ".entert-button-next",
+    //   },
+    //   pagination: {
+    //     el: ".swiper-pagination",
+    //     clickable: true,
+    //     dynamicBullets: true,
+    //     dynamicMainBullets: 1,
+    //   },
+    //   touchEvents: {
+    //     prevent: true
+    //   },
+    //   breakpoints: {
+    //     601: {
+    //       slidesPerView: 2,
+    //       spaceBetween: 20,
+    //       loopAdditionalSlides: 2,
+    //     },
+    //     835: {
+    //       slidesPerView: 3,
+    //       spaceBetween: 20,
+    //       loopAdditionalSlides: 3,
+    //     },
+    //   },
+    // });
 
     const roomsItemSlider = new Swiper(".rooms__item--slider", {
       slidesPerGroup: 1,
