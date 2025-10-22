@@ -132,26 +132,4 @@
       display: none;
     }
   }
-
-  /* add */
-  .swiper-slide {
-    width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    will-change: transform;
-
-    /* add */
-    width: clamp(26rem, 60vw, var(--card-max-w)) !important;
-    /* адаптив */
-    overflow: hidden;
-    flex-shrink: 0;
-    /* /add */
-  }
-
-  /* /add */
-
-  .swiper-pagination {
-    margin-top: 3rem;
-  }
 }

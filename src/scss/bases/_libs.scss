@@ -54,6 +54,11 @@
   }
 }
 
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  pointer-events: all;
+}
+
 /* Кнопка слайдера */
 [class^="swiper-button-"],
 [class*=" swiper-button-"] {

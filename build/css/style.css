@@ -91,8 +91,8 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -107,16 +107,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
@@ -959,6 +959,11 @@ sup {
   transform: translateX(-50%);
 }
 
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  pointer-events: all;
+}
+
 /* Кнопка слайдера */
 
 [class^=swiper-button-],
@@ -1239,8 +1244,16 @@ body {
   overflow: hidden;
 }
 
+.html-no-scroll {
+  overflow: hidden !important;
+  --f-scrollbar-compensate: 0px;
+  max-height: 100vh;
+}
+
 .no-scroll {
-  overflow-y: hidden;
+  overflow: hidden !important;
+  overscroll-behavior-y: none;
+  max-height: 100vh;
 }
 
 :root {
@@ -8247,8 +8260,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .entert {
   padding: 7rem 0 4.5rem;
-  /* add */
-  /* /add */
 }
 
 .entert__inner {
@@ -8355,31 +8366,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .entert__item-title h4 {
   line-height: 120%;
-}
-
-.entert .swiper-slide {
-  width: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  will-change: transform;
-  /* add */
-  width: clamp(26rem, 60vw, var(--card-max-w)) !important;
-  /* адаптив */
-  overflow: hidden;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  /* /add */
-}
-
-.entert .swiper-pagination {
-  margin-top: 3rem;
 }
 
 .events {
