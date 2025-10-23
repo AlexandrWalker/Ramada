@@ -91,14 +91,6 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
@@ -107,16 +99,24 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -11391,6 +11391,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     min-height: 57.8rem;
   }
 
+  .inner-page .template--primary {
+    position: relative;
+    top: unset !important;
+  }
+
   .template--primary .template__inner {
     --template-padding-b: 2rem;
   }
@@ -12778,7 +12783,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .studio__terms {
     width: 100%;
-    padding: 3rem 3rem 3rem 6rem;
+    padding: 3rem 3rem 3rem 3rem;
   }
 
   .studio__terms-title {
@@ -14004,7 +14009,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   }
 
   .template__plugin {
-    height: 31rem;
+    max-height: 31rem;
     height: auto;
     aspect-ratio: 353/309;
     bottom: -11rem;
@@ -14012,6 +14017,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .template__plugin img {
     aspect-ratio: 353/309;
+    aspect-ratio: unset;
+    width: auto;
+    height: 100%;
+    margin: 0 auto;
   }
 
   .template--primary {
@@ -15698,6 +15707,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   .logo {
     width: 100%;
     height: auto;
+  }
+
+  .template__body-icons {
+    gap: 2rem 4rem;
   }
 
   .press__item {
