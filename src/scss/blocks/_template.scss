@@ -127,6 +127,10 @@
         justify-content: center;
         gap: 2rem 6rem;
       }
+
+      @include xxs {
+        gap: 2rem 4rem;
+      }
     }
 
     &-icon {
@@ -207,7 +211,8 @@
       // margin-bottom: calc(-9rem - var(--template-padding-b));
       // transform: translateY(calc(9rem + var(--template-padding-b)));
 
-      height: 31rem;
+
+      max-height: 31rem;
       height: auto;
       aspect-ratio: 353/309;
       bottom: -11rem;
@@ -226,6 +231,10 @@
 
       @include sm {
         aspect-ratio: 353/309;
+        aspect-ratio: unset;
+        width: auto;
+        height: 100%;
+        margin: 0 auto;
       }
     }
   }
@@ -270,13 +279,21 @@
     // }
 
     .inner-page & {
-      position: fixed;
-      top: var(--header-height) !important;
-      right: 0 !important;
-      left: 0 !important;
-      z-index: 1;
-      transform: unset !important;
-      margin-bottom: 0;
+
+      // @include domd {
+        position: fixed;
+        top: var(--header-height) !important;
+        right: 0 !important;
+        left: 0 !important;
+        z-index: 1;
+        transform: unset !important;
+        margin-bottom: 0;
+      // }
+
+      @include md {
+        position: relative;
+        top: unset !important;
+      }
     }
 
     .template {
