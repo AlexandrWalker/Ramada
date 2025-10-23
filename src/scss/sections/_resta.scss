@@ -219,10 +219,12 @@
       }
 
       &:hover {
-        --btn-color: var(--black);
+        @include domd {
+          --btn-color: var(--black);
 
-        &::after {
-          border-color: var(--black-30);
+          &::after {
+            border-color: var(--black-30);
+          }
         }
       }
 

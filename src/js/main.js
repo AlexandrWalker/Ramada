@@ -817,7 +817,7 @@ document.addEventListener('DOMContentLoaded', () => {
       slidesPerGroup: 1,
       slidesPerView: 1,
       spaceBetween: 60,
-      autoHeight: true,
+      // autoHeight: true,
       loop: true,
       speed: 600,
       navigation: {
@@ -1076,19 +1076,19 @@ document.addEventListener('DOMContentLoaded', () => {
       let isTouching = false;
 
       swiperSlider.el.addEventListener('touchstart', () => {
-        console.log('touchstart');
+        // console.log('touchstart');
         isTouching = true;
         swiperSlider.params.freeMode.enabled = true;  // ✅ միացնում ենք
       });
 
       swiperSlider.el.addEventListener('touchend', () => {
-        console.log('touchend');
+        // console.log('touchend');
         isTouching = false;
         swiperSlider.params.freeMode.enabled = false; // 🔇 անջատում ենք
       });
 
       swiperSlider.el.addEventListener('wheel', (e) => {
-        console.log('wheel');
+        // console.log('wheel');
         if (e.ctrlKey || Math.abs(e.deltaX) > 0) {
           swiperSlider.params.freeMode.enabled = true;
           clearTimeout(swiperSlider._freeModeTimeout);
