@@ -1,7 +1,6 @@
 @use './../mixins' as *;
 
 .hero {
-  max-width: calc(100dvw - 2rem) !important;
   padding-bottom: 0;
   height: 77rem;
   min-height: unset;
@@ -12,6 +11,10 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center center;
+
+  @include domd {
+    max-width: calc(100dvw - 2rem) !important;
+  }
 
   @include md {
     // height: 44.7rem;
