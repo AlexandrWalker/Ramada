@@ -1850,7 +1850,7 @@ document.addEventListener('DOMContentLoaded', () => {
     heroAnimateFunc();
   }
 
-  function heroAnimate(smoothImgY, smoothImgTopBefore, smoothImgTopAfter, heroHeight, heroTop, h1TitleFsBefore, h1TitleFsAfter, pTitleFontSizeBefore, pTitleLeftPosBefore, pTitleTopPosBefore, pTitleColorBefore, pTitleFontSizeAfter, pTitleLeftPosAfter, pTitleTopPosAfter, pTitleColorAfter, heroHeadGapBefore, heroHeadGapAfter, heroBtnBottomBefore, heroBtnBottomAfter
+  function heroAnimate(smoothImgY, smoothImgTopBefore, smoothImgTopAfter, heroHeight, heroTop, h1TitleFsBefore, h1TitleFsAfter, h1TitleSvgBefore, h1TitleSvgAfter, pTitleFontSizeBefore, pTitleLeftPosBefore, pTitleTopPosBefore, pTitleColorBefore, pTitleFontSizeAfter, pTitleLeftPosAfter, pTitleTopPosAfter, pTitleColorAfter, heroHeadGapBefore, heroHeadGapAfter, heroBtnBottomBefore, heroBtnBottomAfter
   ) {
     const hero = document.getElementById('hero');
     const heroHead = hero.querySelector('.hero__head');
@@ -1860,6 +1860,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroBtn = hero.querySelector('[data-animation="hero-btn"]');
 
     const h1Title = heroTitle.querySelector('h1');
+    const svgTitle = heroTitle.querySelector('svg');
     const pTitle = heroTitle.querySelector('p');
     const spanTitle = heroTitle.querySelector('span');
 
@@ -1898,6 +1899,20 @@ document.addEventListener('DOMContentLoaded', () => {
       "--fontsize": h1TitleFsBefore,
     }, {
       "--fontsize": h1TitleFsAfter,
+      ease: "none",
+      scrollTrigger: {
+        trigger: hero,
+        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
+        end: () => `+=${heroHeight}`,
+        scrub: true,
+
+      },
+    });
+    
+    gsap.fromTo(svgTitle, {
+      "--height": h1TitleSvgBefore,
+    }, {
+      "--height": h1TitleSvgAfter,
       ease: "none",
       scrollTrigger: {
         trigger: hero,
@@ -1985,9 +2000,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const h1TitleFsBefore = '20rem';
       const h1TitleFsAfter = '14rem';
 
+      const h1TitleSvgBefore = '14.3rem';
+      const h1TitleSvgAfter = '9.3rem';
+
       const pTitleFontSizeBefore = '10rem';
       const pTitleLeftPosBefore = '79.5rem';
-      const pTitleTopPosBefore = '6.8rem';
+      const pTitleTopPosBefore = '6.7rem';
       const pTitleColorBefore = '#1A1919';
 
       const pTitleFontSizeAfter = '6rem';
@@ -2008,6 +2026,8 @@ document.addEventListener('DOMContentLoaded', () => {
         heroTop,
         h1TitleFsBefore,
         h1TitleFsAfter,
+        h1TitleSvgBefore,
+        h1TitleSvgAfter,
         pTitleFontSizeBefore,
         pTitleLeftPosBefore,
         pTitleTopPosBefore,

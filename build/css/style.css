@@ -18,6 +18,7 @@ body {
   font-size: 1.6rem;
   line-height: 120%;
   color: var(--black);
+  overflow-x: hidden;
 }
 
 .wrapper {
@@ -91,24 +92,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
   font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -123,16 +116,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Thin.woff2") format("woff2"), url("../fonts/Gotham-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
 @font-face {
-  font-family: TTTricks;
+  font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/TTTricks-Black.woff2") format("woff2"), url("../fonts/TTTricks-Black.woff") format("woff");
-  font-weight: 900;
+  src: url("../fonts/Gotham-Thin.woff2") format("woff2"), url("../fonts/Gotham-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -141,6 +134,14 @@ img {
   font-display: swap;
   src: url("../fonts/Gotham-Ultra.woff2") format("woff2"), url("../fonts/Gotham-Ultra.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TTTricks;
+  font-display: swap;
+  src: url("../fonts/TTTricks-Black.woff2") format("woff2"), url("../fonts/TTTricks-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -163,16 +164,16 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-ExtraBold.woff2") format("woff2"), url("../fonts/TTTricks-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/TTTricks-ExtraBold.woff2") format("woff2"), url("../fonts/TTTricks-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -9143,9 +9144,18 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .hero__title h1 span {
-  color: var(--color);
   /* Для анимации fadeIn */
   overflow: hidden;
+}
+
+.hero__title h1 svg {
+  width: auto;
+  height: var(--height);
+  -o-object-fit: contain;
+  object-fit: contain;
+  margin-left: 1.4rem;
+  margin-bottom: -0.3rem;
+  fill: var(--color);
 }
 
 .hero__title p {
@@ -10201,10 +10211,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .events__other-item:hover .events__other-content .btn::after {
     border-color: var(--white-o-50);
-  }
-
-  .hero {
-    max-width: calc(100dvw - 2rem) !important;
   }
 
   .resta__block:hover .resta__block-img {
@@ -13052,6 +13058,12 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     color: var(--accent);
   }
 
+  .hero__title h1 svg {
+    height: 7.793764988vw;
+    margin-left: 0.7rem;
+    fill: var(--accent);
+  }
+
   .hero__title p {
     font-size: 4rem;
     top: 2.7rem;
@@ -15288,6 +15300,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-left: -0.6rem;
   }
 
+  .hero__title h1 svg {
+    height: 4.7rem;
+    margin-bottom: 0;
+  }
+
   .hero__title p {
     font-size: 2rem;
     position: static;
@@ -15605,6 +15622,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .hero__title h1 {
     font-size: 5rem;
+  }
+
+  .hero__title h1 svg {
+    height: 3.9rem;
   }
 
   .hero__bg {

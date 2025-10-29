@@ -13,7 +13,7 @@
   background-position: center center;
 
   @include domd {
-    max-width: calc(100dvw - 2rem) !important;
+    // max-width: calc(100dvw - 2rem) !important;
   }
 
   @include md {
@@ -132,13 +132,37 @@
       }
 
       span {
-        color: var(--color);
-
         /* Для анимации fadeIn */
         overflow: hidden;
 
         @include md {
           color: var(--accent);
+        }
+      }
+
+      svg {
+        width: auto;
+        height: var(--height);
+        object-fit: contain;
+
+        margin-left: 1.4rem;
+        margin-bottom: -0.3rem;
+
+        fill: var(--color);
+
+        @include md {
+          height: calc(100vw/(834/65));
+          margin-left: 0.7rem;
+          fill: var(--accent);
+        }
+
+        @include sm {
+          height: 4.7rem;
+          margin-bottom: 0;
+        }
+
+        @include xxs {
+          height: 3.9rem;
         }
       }
     }
