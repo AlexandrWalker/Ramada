@@ -33,6 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   gsap.registerPlugin(ScrollTrigger);
 
+  // Отключаем реакцию ScrollTrigger на изменение высоты окна на мобильных
+  ScrollTrigger.config({ ignoreMobileResize: true });
+
+  // Фиксированная высота видимой области (устойчивая на iOS Safari)
+  const vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+
   /**
    * Инициализация Lenis
    */
@@ -2574,7 +2580,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
-  $(window).on('resize', function () { ScrollTrigger.refresh() });
+  // $(window).on('resize', function () { ScrollTrigger.refresh() });
+
+  // === iOS-safe ScrollTrigger refresh handler ===
+  (function () {
+    let resizeTimer;
+    let lastWidth = window.innerWidth;
+    let lastHeight = window.innerHeight;
+
+    // Функция для стабильного пересчёта
+    const safeRefresh = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        const currentWidth = window.innerWidth;
+        const currentHeight = window.innerHeight;
+
+        // Проверяем — реально ли изменился размер экрана
+        const widthChanged = Math.abs(currentWidth - lastWidth) > 50;
+        const heightChanged = Math.abs(currentHeight - lastHeight) > 150;
+
+        if (widthChanged || heightChanged) {
+          lastWidth = currentWidth;
+          lastHeight = currentHeight;
+          ScrollTrigger.refresh();
+        }
+      }, 250); // debounce 250ms — достаточно для всех платформ
+    };
+
+    // Реакция на изменение ориентации (особенно важно для iOS)
+    window.addEventListener('orientationchange', () => {
+      setTimeout(() => ScrollTrigger.refresh(), 300);
+    });
+
+    // Реакция на реальный resize, но фильтруем “мусорные” вызовы
+    window.addEventListener('resize', safeRefresh);
+  })();
+
+
 
   const calendarTargets = document.querySelectorAll('.target');
   if (calendarTargets.length > 0) {
