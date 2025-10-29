@@ -1851,7 +1851,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const hero = document.getElementById('hero');
   if (hero) {
     $(window).on('resize', function () {
-      heroAnimateFunc();
+      if (window.innerWidth > 834) {
+        heroAnimateFunc();
+      };
     });
     heroAnimateFunc();
   }
