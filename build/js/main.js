@@ -1908,7 +1908,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       },
     });
-    
+
     gsap.fromTo(svgTitle, {
       "--height": h1TitleSvgBefore,
     }, {
