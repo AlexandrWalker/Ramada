@@ -2004,7 +2004,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const h1TitleSvgAfter = '9.3rem';
 
       const pTitleFontSizeBefore = '10rem';
-      const pTitleLeftPosBefore = '79.5rem';
+      // const pTitleLeftPosBefore = '79.5rem';
+      const pTitleLeftPosBefore = '82rem';
       const pTitleTopPosBefore = '6.7rem';
       const pTitleColorBefore = '#1A1919';
 
