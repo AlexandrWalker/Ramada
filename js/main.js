@@ -1409,6 +1409,102 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /**
+   * Скрипт для тултипов блока Территория и инфраструктура 
+   */
+  (function infraFunc() {
+    const infra = document.getElementById('infra');
+
+    if (!infra) return;
+
+    const tooltip = document.getElementById('infraTooltip');
+    const img = tooltip.querySelector('img');
+    const title = tooltip.querySelector('h6');
+    const text = tooltip.querySelector('p');
+
+    const isTouch = window.matchMedia('(hover: none)').matches;
+    const GAP = 40;
+    const PADDING = 30;
+
+    const points = infra.querySelectorAll('.infra-point');
+
+    points.forEach(point => {
+      const show = () => {
+        tooltip.classList.remove('active');
+
+        img.src = point.dataset.img;
+        title.textContent = point.dataset.title;
+        text.textContent = point.dataset.text;
+
+        // временно показываем tooltip для вычисления размеров
+        tooltip.style.visibility = 'hidden';
+        tooltip.style.display = 'block';
+
+        requestAnimationFrame(() => {
+          positionTooltip(point);
+          tooltip.style.visibility = '';
+          tooltip.classList.add('active');
+        });
+      };
+
+      const hide = () => {
+        tooltip.classList.remove('active');
+      };
+
+      if (isTouch) {
+        point.addEventListener('click', e => {
+          e.stopPropagation();
+          show();
+        });
+        document.addEventListener('click', hide);
+      } else {
+        point.addEventListener('mouseenter', show);
+        point.addEventListener('mouseleave', hide);
+      }
+    });
+
+    function positionTooltip(point) {
+      const infraRect = infra.getBoundingClientRect();
+      const pointRect = point.getBoundingClientRect();
+
+      // размер tooltip актуален после render
+      const tooltipRect = tooltip.getBoundingClientRect();
+
+      const x = pointRect.left - infraRect.left + pointRect.width / 2;
+      const y = pointRect.top - infraRect.top + pointRect.height / 2;
+
+      const spaceTop = y;
+      const spaceBottom = infraRect.height - y;
+      const spaceLeft = x;
+      const spaceRight = infraRect.width - x;
+
+      // вертикаль — преимущественно снизу
+      let vertical;
+      if (spaceBottom >= tooltipRect.height + GAP) vertical = 'bottom';
+      else if (spaceTop >= tooltipRect.height + GAP) vertical = 'top';
+      else vertical = spaceBottom > spaceTop ? 'bottom' : 'top';
+
+      // горизонталь — где больше места
+      const horizontal = spaceRight > spaceLeft ? 'right' : 'left';
+
+      // вертикальное смещение
+      const top = vertical === 'top'
+        ? y - tooltipRect.height - GAP
+        : y + GAP;
+
+      // горизонтальное выравнивание
+      const left = horizontal === 'right'
+        ? x
+        : x - tooltipRect.width;
+
+      // защита от выхода за контейнер
+      tooltip.style.top = Math.max(PADDING, Math.min(top, infraRect.height - tooltipRect.height - PADDING)) + 'px';
+      tooltip.style.left = Math.max(PADDING, Math.min(left, infraRect.width - tooltipRect.width - PADDING)) + 'px';
+
+      tooltip.dataset.side = `${vertical}-${horizontal}`;
+    }
+  })();
+
+  /**
    * Инициализация TransferElements
    */
   const transfer = document.querySelector('.transfer-elem-1');
