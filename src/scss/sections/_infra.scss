@@ -1,0 +1,196 @@
+@use './../mixins' as *;
+
+.infra {
+  padding-bottom: 0;
+
+  @include sm {
+    padding-bottom: 3.5rem;
+  }
+
+  .general__head {
+    text-align: right;
+    color: var(--white);
+
+    position: absolute;
+    right: var(--container-padding);
+    bottom: 8rem;
+    z-index: 1;
+
+    @include md {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 3rem;
+
+      bottom: 7rem;
+    }
+
+    @include sm {
+      text-align: left;
+      color: inherit;
+
+      gap: 1.5rem;
+      align-items: flex-start;
+
+      position: static;
+    }
+
+    &-title {
+      margin-bottom: 0;
+    }
+
+    &-text {
+      color: var(--white);
+
+      max-width: 31.5rem;
+
+      @include domd {
+        display: none;
+      }
+
+      @include sm {
+        color: inherit;
+      }
+    }
+  }
+
+  &__inner {
+
+    @include sm {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 3rem;
+    }
+  }
+
+  &__map {
+    position: relative;
+    width: calc(var(--container-width) + (var(--container-padding) * 2));
+    margin: 0 0 0 calc(var(--container-padding) * -1);
+
+    @include md {
+      height: 69.9rem;
+    }
+
+    @include sm {
+      width: 100vw;
+      height: 33rem;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+/* ===== POINTS ===== */
+.infra-point {
+  position: absolute;
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.5s linear;
+  // transform: translate(-50%, -50%);
+
+  @include md {
+    display: none;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+/* ===== TOOLTIP ===== */
+.infra__tooltip {
+  position: absolute;
+  width: 29.6rem;
+  padding: 1rem;
+  background-color: var(--white);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .5s ease;
+  z-index: 10;
+
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  img {
+    width: 100%;
+    height: 17.3rem;
+    object-fit: cover;
+    display: block;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 1rem 2.4rem 1rem;
+
+    h6 {
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: unset;
+    }
+
+    p {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+/* ===== ARROW ===== */
+.infra__tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* top-right */
+.infra__tooltip[data-side="top-right"] .infra__tooltip-arrow {
+  bottom: -2.4rem;
+  left: 1rem;
+  border-left: 0 solid transparent;
+  border-right: 1.5rem solid transparent;
+  border-top: 4rem solid #fff;
+  transform: rotate(45deg);
+}
+
+/* top-left */
+.infra__tooltip[data-side="top-left"] .infra__tooltip-arrow {
+  bottom: -2.4rem;
+  right: 1rem;
+  border-left: 1.5rem solid transparent;
+  border-right: 0 solid transparent;
+  border-top: 4rem solid #fff;
+  transform: rotate(-45deg);
+}
+
+/* bottom-right */
+.infra__tooltip[data-side="bottom-right"] .infra__tooltip-arrow {
+  top: -2.4rem;
+  left: 1rem;
+  border-left: 0 solid transparent;
+  border-right: 1.5rem solid transparent;
+  border-bottom: 4rem solid #fff;
+  transform: rotate(315deg);
+}
+
+/* bottom-left */
+.infra__tooltip[data-side="bottom-left"] .infra__tooltip-arrow {
+  top: -2.4rem;
+  right: 1rem;
+  border-left: 1.5rem solid transparent;
+  border-right: 0 solid transparent;
+  border-bottom: 4rem solid #fff;
+  transform: rotate(45deg);
+}
