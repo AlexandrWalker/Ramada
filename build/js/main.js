@@ -1905,103 +1905,80 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function heroAnimateFunc() {
-    const hero = document.getElementById('hero');
     if (!hero) return;
 
-    // === 1. Очищаем старые ScrollTrigger и GSAP анимации ===
-    ScrollTrigger.getAll().forEach(st => st.kill());
+    // Удаляем старые ScrollTrigger'ы и твины для hero
+    ScrollTrigger.getAll().forEach(st => {
+      if (st.trigger && hero.contains(st.trigger)) st.kill();
+    });
     gsap.killTweensOf(hero);
+    gsap.killTweensOf(hero.querySelectorAll('*'));
 
-    // === 3. Обработка ресайза с дебаунсом ===
-    const setupAnimation = () => {
-      if (window.innerWidth > 834) {
-        // Для десктопа
-        const smoothImgY = '-50%';
-        const smoothImgTopBefore = '26rem';
-        const smoothImgTopAfter = '30rem';
-        const heroHeight = hero.offsetHeight;
-        const heroTop = 4.7;
+    if (window.innerWidth > 834) {
+      const smoothImgY = '-50%';
+      const smoothImgTopBefore = '26rem';
+      const smoothImgTopAfter = '30rem';
+      const heroHeight = hero.offsetHeight;
+      const heroTop = 4.7;
+      const h1TitleFsBefore = '20rem';
+      const h1TitleFsAfter = '14rem';
+      const h1TitleSvgBefore = '14.3rem';
+      const h1TitleSvgAfter = '9.3rem';
+      const pTitleFontSizeBefore = '10rem';
+      const pTitleLeftPosBefore = '82rem';
+      const pTitleTopPosBefore = '6.7rem';
+      const pTitleColorBefore = '#1A1919';
+      const pTitleFontSizeAfter = '6rem';
+      const pTitleLeftPosAfter = '55.5rem';
+      const pTitleTopPosAfter = '5.7rem';
+      const pTitleColorAfter = '#ffffff';
+      const heroHeadGapBefore = '3rem';
+      const heroHeadGapAfter = '8rem';
+      const heroBtnBottomBefore = '-3rem';
+      const heroBtnBottomAfter = '1.3rem';
 
-        const h1TitleFsBefore = '20rem';
-        const h1TitleFsAfter = '14rem';
-        const h1TitleSvgBefore = '14.3rem';
-        const h1TitleSvgAfter = '9.3rem';
+      heroAnimate(
+        smoothImgY,
+        smoothImgTopBefore,
+        smoothImgTopAfter,
+        heroHeight,
+        heroTop,
+        h1TitleFsBefore,
+        h1TitleFsAfter,
+        h1TitleSvgBefore,
+        h1TitleSvgAfter,
+        pTitleFontSizeBefore,
+        pTitleLeftPosBefore,
+        pTitleTopPosBefore,
+        pTitleColorBefore,
+        pTitleFontSizeAfter,
+        pTitleLeftPosAfter,
+        pTitleTopPosAfter,
+        pTitleColorAfter,
+        heroHeadGapBefore,
+        heroHeadGapAfter,
+        heroBtnBottomBefore,
+        heroBtnBottomAfter
+      );
+    } else {
+      const headerHeight = document.querySelector('header').offsetHeight;
+      const heroHeight = hero.offsetHeight;
 
-        const pTitleFontSizeBefore = '10rem';
-        const pTitleLeftPosBefore = '82rem';
-        const pTitleTopPosBefore = '6.7rem';
-        const pTitleColorBefore = '#1A1919';
-        const pTitleFontSizeAfter = '6rem';
-        const pTitleLeftPosAfter = '55.5rem';
-        const pTitleTopPosAfter = '5.7rem';
-        const pTitleColorAfter = '#ffffff';
-
-        const heroHeadGapBefore = '3rem';
-        const heroHeadGapAfter = '8rem';
-        const heroBtnBottomBefore = '-3rem';
-        const heroBtnBottomAfter = '1.3rem';
-
-        heroAnimate(
-          smoothImgY,
-          smoothImgTopBefore,
-          smoothImgTopAfter,
-          heroHeight,
-          heroTop,
-          h1TitleFsBefore,
-          h1TitleFsAfter,
-          h1TitleSvgBefore,
-          h1TitleSvgAfter,
-          pTitleFontSizeBefore,
-          pTitleLeftPosBefore,
-          pTitleTopPosBefore,
-          pTitleColorBefore,
-          pTitleFontSizeAfter,
-          pTitleLeftPosAfter,
-          pTitleTopPosAfter,
-          pTitleColorAfter,
-          heroHeadGapBefore,
-          heroHeadGapAfter,
-          heroBtnBottomBefore,
-          heroBtnBottomAfter
-        );
-      } else {
-        // Для мобильных
-        const header = document.querySelector('header');
-        const headerHeight = header ? header.offsetHeight : 0;
-        const heroHeight = hero.offsetHeight;
-
-        gsap.from(hero, {
-          ease: "none",
-          scrollTrigger: {
-            trigger: hero,
-            start: `top +=${headerHeight}`,
-            end: () => `+=${heroHeight}`,
-            pin: true,
-            pinSpacing: false,
-            scrub: true,
-            invalidateOnRefresh: true, // === 2. Пересчёт ScrollTrigger при ресайзе ===
-          },
-          onComplete: () => {
-            hero.classList.add('animatedClass');
-          },
-        });
-      }
-    };
-
-    setupAnimation();
+      gsap.from(hero, {
+        ease: "none",
+        scrollTrigger: {
+          trigger: hero,
+          start: `top +=${headerHeight}`,
+          end: () => `+=${heroHeight}`,
+          pin: true,
+          pinSpacing: false,
+          scrub: true,
+          invalidateOnRefresh: true,
+        },
+        onComplete: () => hero.classList.add('animatedClass'),
+      });
+    }
   }
-
-  // === Ресайз-хендлер с дебаунсом ===
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      heroAnimateFunc();
-    }, 200);
-  });
-
-  // Инициализация при загрузке
-  heroAnimateFunc();
 
   /**
    * Анимация первого блока стр. Рестораны
@@ -2014,29 +1991,29 @@ document.addEventListener('DOMContentLoaded', () => {
     restaurantAnimateFunc();
   }
 
-  function restaurantAnimate(smoothImgY, smoothImgTopBefore, smoothImgTopAfter, heroHeight, heroTop, h1TitleFsBefore, h1TitleFsAfter, h1TitleGapBefore, h1TitleGapAfter, heroHeadGapBefore, heroHeadGapAfter, heroBtnBottomBefore, heroBtnBottomAfter
+  function restaurantAnimate(smoothImgY, smoothImgTopBefore, smoothImgTopAfter, restaurantHeight, restaurantTop, h1TitleFsBefore, h1TitleFsAfter, h1TitleGapBefore, h1TitleGapAfter, restaurantHeadGapBefore, restaurantHeadGapAfter, restaurantBtnBottomBefore, restaurantBtnBottomAfter
   ) {
-    const hero = document.getElementById('restaurant');
-    const heroHead = restaurant.querySelector('.hero__head');
+    const restaurant = document.getElementById('restaurant');
+    const restaurantHead = restaurant.querySelector('.hero__head');
 
     const smoothImg = restaurant.querySelector('[data-animation="smooth-img"]');
-    const heroTitle = restaurant.querySelector('[data-animation="hero-title"]');
-    const heroBtn = restaurant.querySelector('[data-animation="hero-btn"]');
+    const restaurantTitle = restaurant.querySelector('[data-animation="hero-title"]');
+    const restaurantBtn = restaurant.querySelector('[data-animation="hero-btn"]');
 
-    const h1Title = heroTitle.querySelector('h1');
-    const spanTitle = heroTitle.querySelector('span');
+    const h1Title = restaurantTitle.querySelector('h1');
+    const spanTitle = restaurantTitle.querySelector('span');
 
-    gsap.from(hero, {
+    gsap.from(restaurant, {
       ease: "none",
       scrollTrigger: {
-        trigger: hero,
-        start: `top +=${heroHeight / heroTop} `,
-        end: () => `+=${heroHeight}`,
+        trigger: restaurant,
+        start: `top +=${restaurantHeight / restaurantTop} `,
+        end: () => `+=${restaurantHeight}`,
         pin: true,
         scrub: true,
       },
       onComplete: function () {
-        hero.classList.add('animatedClass');
+        restaurant.classList.add('animatedClass');
       },
     });
 
@@ -2049,9 +2026,9 @@ document.addEventListener('DOMContentLoaded', () => {
       scale: 1.263,
       ease: "none",
       scrollTrigger: {
-        trigger: hero,
-        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
+        trigger: restaurant,
+        start: `${-(restaurantHeight / restaurantTop) + ((restaurantHeight / restaurantTop) / 1.01)} +=${restaurantHeight / restaurantTop}`,
+        end: () => `+=${restaurantHeight}`,
         scrub: true,
 
       },
@@ -2065,9 +2042,9 @@ document.addEventListener('DOMContentLoaded', () => {
       "--gap": h1TitleGapAfter,
       ease: "none",
       scrollTrigger: {
-        trigger: hero,
-        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
+        trigger: restaurant,
+        start: `${-(restaurantHeight / restaurantTop) + ((restaurantHeight / restaurantTop) / 1.01)} +=${restaurantHeight / restaurantTop}`,
+        end: () => `+=${restaurantHeight}`,
         scrub: true,
 
       },
@@ -2079,37 +2056,37 @@ document.addEventListener('DOMContentLoaded', () => {
       "--color": "#ffffff",
       ease: "none",
       scrollTrigger: {
-        trigger: hero,
-        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
+        trigger: restaurant,
+        start: `${-(restaurantHeight / restaurantTop) + ((restaurantHeight / restaurantTop) / 1.01)} +=${restaurantHeight / restaurantTop}`,
+        end: () => `+=${restaurantHeight}`,
         scrub: true,
 
       },
     });
 
-    gsap.fromTo(heroHead, {
-      "--gap": heroHeadGapBefore,
+    gsap.fromTo(restaurantHead, {
+      "--gap": restaurantHeadGapBefore,
     }, {
-      "--gap": heroHeadGapAfter,
+      "--gap": restaurantHeadGapAfter,
       ease: "none",
       scrollTrigger: {
-        trigger: hero,
-        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
+        trigger: restaurant,
+        start: `${-(restaurantHeight / restaurantTop) + ((restaurantHeight / restaurantTop) / 1.01)} +=${restaurantHeight / restaurantTop}`,
+        end: () => `+=${restaurantHeight}`,
         scrub: true,
 
       },
     });
 
-    gsap.fromTo(heroBtn, {
-      "--btn-bottom": heroBtnBottomBefore,
+    gsap.fromTo(restaurantBtn, {
+      "--btn-bottom": restaurantBtnBottomBefore,
     }, {
-      "--btn-bottom": heroBtnBottomAfter,
+      "--btn-bottom": restaurantBtnBottomAfter,
       ease: "none",
       scrollTrigger: {
-        trigger: hero,
-        start: `${-(heroHeight / heroTop) + ((heroHeight / heroTop) / 1.01)} +=${heroHeight / heroTop}`,
-        end: () => `+=${heroHeight}`,
+        trigger: restaurant,
+        start: `${-(restaurantHeight / restaurantTop) + ((restaurantHeight / restaurantTop) / 1.01)} +=${restaurantHeight / restaurantTop}`,
+        end: () => `+=${restaurantHeight}`,
         scrub: true,
 
       },
@@ -2117,86 +2094,64 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function restaurantAnimateFunc() {
-    const restaurant = document.getElementById('restaurant');
     if (!restaurant) return;
 
-    // === 1. Очищаем старые ScrollTrigger и GSAP анимации ===
-    ScrollTrigger.getAll().forEach(st => st.kill());
+    // Удаляем старые ScrollTrigger'ы и твины для restaurant
+    ScrollTrigger.getAll().forEach(st => {
+      if (st.trigger && restaurant.contains(st.trigger)) st.kill();
+    });
     gsap.killTweensOf(restaurant);
+    gsap.killTweensOf(restaurant.querySelectorAll('*'));
 
-    // === 3. Обработка ресайза с дебаунсом ===
-    const setupAnimation = () => {
-      if (window.innerWidth > 834) {
-        // Для десктопа
-        const smoothImgY = '-50%';
-        const smoothImgTopBefore = '20.8rem';
-        const smoothImgTopAfter = '30rem';
-        const heroHeight = restaurant.offsetHeight;
-        const heroTop = 4.7;
+    if (window.innerWidth > 834) {
+      const smoothImgY = '-50%';
+      const smoothImgTopBefore = '20.8rem';
+      const smoothImgTopAfter = '30rem';
+      const restaurantHeight = restaurant.offsetHeight;
+      const restaurantTop = 4.7;
+      const h1TitleFsBefore = '20rem';
+      const h1TitleFsAfter = '14rem';
+      const h1TitleGapBefore = '55.5rem';
+      const h1TitleGapAfter = '37.5rem';
+      const restaurantHeadGapBefore = '3rem';
+      const restaurantHeadGapAfter = '8rem';
+      const restaurantBtnBottomBefore = '-3rem';
+      const restaurantBtnBottomAfter = '1.3rem';
 
-        const h1TitleFsBefore = '20rem';
-        const h1TitleFsAfter = '14rem';
-        const h1TitleGapBefore = '55.5rem';
-        const h1TitleGapAfter = '37.5rem';
+      restaurantAnimate(
+        smoothImgY,
+        smoothImgTopBefore,
+        smoothImgTopAfter,
+        restaurantHeight,
+        restaurantTop,
+        h1TitleFsBefore,
+        h1TitleFsAfter,
+        h1TitleGapBefore,
+        h1TitleGapAfter,
+        restaurantHeadGapBefore,
+        restaurantHeadGapAfter,
+        restaurantBtnBottomBefore,
+        restaurantBtnBottomAfter
+      );
+    } else {
+      const headerHeight = document.querySelector('header').offsetHeight;
+      const restaurantHeight = restaurant.offsetHeight;
 
-        const heroHeadGapBefore = '3rem';
-        const heroHeadGapAfter = '8rem';
-        const heroBtnBottomBefore = '-3rem';
-        const heroBtnBottomAfter = '1.3rem';
-
-        restaurantAnimate(
-          smoothImgY,
-          smoothImgTopBefore,
-          smoothImgTopAfter,
-          heroHeight,
-          heroTop,
-          h1TitleFsBefore,
-          h1TitleFsAfter,
-          h1TitleGapBefore,
-          h1TitleGapAfter,
-          heroHeadGapBefore,
-          heroHeadGapAfter,
-          heroBtnBottomBefore,
-          heroBtnBottomAfter
-        );
-      } else {
-        // Для мобильных
-        const header = document.querySelector('header');
-        const headerHeight = header ? header.offsetHeight : 0;
-        const restaurantHeight = restaurant.offsetHeight;
-
-        gsap.from(restaurant, {
-          ease: "none",
-          scrollTrigger: {
-            trigger: restaurant,
-            start: `top +=${headerHeight}`,
-            end: () => `+=${restaurantHeight}`,
-            pin: true,
-            pinSpacing: false,
-            scrub: true,
-            invalidateOnRefresh: true, // === 2. Пересчёт ScrollTrigger при ресайзе ===
-          },
-          onComplete: () => {
-            restaurant.classList.add('animatedClass');
-          },
-        });
-      }
-    };
-
-    setupAnimation();
+      gsap.from(restaurant, {
+        ease: "none",
+        scrollTrigger: {
+          trigger: restaurant,
+          start: `top +=${headerHeight}`,
+          end: () => `+=${restaurantHeight}`,
+          pin: true,
+          pinSpacing: false,
+          scrub: true,
+          invalidateOnRefresh: true,
+        },
+        onComplete: () => restaurant.classList.add('animatedClass'),
+      });
+    }
   }
-
-  // === Ресайз-хендлер с дебаунсом ===
-  let restaurantResizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(restaurantResizeTimer);
-    restaurantResizeTimer = setTimeout(() => {
-      restaurantAnimateFunc();
-    }, 200);
-  });
-
-  // Инициализация при загрузке
-  restaurantAnimateFunc();
 
   $(window).on('resize', function () {
     resizeObserverAnimation()
