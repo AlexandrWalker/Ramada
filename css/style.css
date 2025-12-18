@@ -3336,7 +3336,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   min-width: 115.5rem;
   position: relative;
   z-index: 2;
-  background-image: url(./../images/menu/bg.png);
+  background-image: url(./../images/menu/bg.jpg);
   background-repeat: no-repeat;
   background-size: var(--menu-body-width) 100%;
   background-position: var(--menu-head-width) center;
