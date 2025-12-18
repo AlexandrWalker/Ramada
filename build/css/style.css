@@ -156,16 +156,16 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-ExtraBold.woff2") format("woff2"), url("../fonts/TTTricks-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/TTTricks-ExtraBold.woff2") format("woff2"), url("../fonts/TTTricks-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -722,30 +722,19 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-  cursor: pointer;
-}
-
-.sort__icon i {
-  --font-size: 3rem;
-  color: var(--accent);
   width: 1rem;
-  height: 1rem;
-}
-
-.sort__icon i:first-child {
-  -webkit-transform: scale(-1, -1);
-  -ms-transform: scale(-1, -1);
-  transform: scale(-1, -1);
+  height: 1.4rem;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAxMSAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0wLjUwMDc4MSA0LjcwMDJMNC41MzQ1OCAwLjg0MzI1OUM1LjAxMjk3IDAuMzg1ODQxIDUuNzg4NTkgMC4zODU4NDEgNi4yNjY5OSAwLjg0MzI1OUwxMC4zMDA4IDQuNzAwMiIgc3Ryb2tlPSIjQzQwRDNDIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4NCjxwYXRoIGQ9Ik0wLjUwMDc4MSAxMC4yOTk4TDQuNTM0NTggMTQuMTU2N0M1LjAxMjk3IDE0LjYxNDIgNS43ODg1OSAxNC42MTQyIDYuMjY2OTkgMTQuMTU2N0wxMC4zMDA4IDEwLjI5OTgiIHN0cm9rZT0iI0M0MEQzQyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+DQo8L3N2Zz4NCg==);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
 }
 
 /* Стили для блока Поделиться */
@@ -13703,9 +13692,9 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     content: attr(data-text-mob);
   }
 
-  .sort__icon i {
-    --font-size: 2rem;
+  .sort__icon {
     width: 0.7rem;
+    height: 0.9rem;
   }
 
   sup {
