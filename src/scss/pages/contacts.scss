@@ -159,8 +159,9 @@
         }
 
         @include sm {
+          
           i {
-            color: var(--white);
+            color: var(--accent);
           }
         }
       }

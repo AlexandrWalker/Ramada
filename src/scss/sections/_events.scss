@@ -349,11 +349,12 @@
       line-height: 100%;
       text-align: center;
       color: var(--gray);
+      cursor: default;
 
       position: relative;
 
       &:not(:empty) {
-        cursor: pointer;
+        cursor: default;
       }
 
       @include xxl {
@@ -365,15 +366,16 @@
       }
 
       &:not(:empty, .today):hover {
-        font-weight: 700;
-        color: var(--accent);
-        border-color: var(--black);
+        // font-weight: 700;
+        // color: var(--accent);
+        // border-color: var(--black);
       }
 
       &.today {
         color: var(--white);
         background-color: var(--accent);
         border-color: var(--accent);
+        cursor: pointer;
 
         &:hover {
           font-weight: 350;
@@ -385,6 +387,7 @@
         font-weight: 700;
         color: var(--accent);
         border-color: var(--accent);
+        cursor: pointer;
 
         @include xxl {
           font-weight: 350;
@@ -392,6 +395,7 @@
         }
 
         &:hover {
+          font-weight: 700;
           border-color: var(--black);
         }
 

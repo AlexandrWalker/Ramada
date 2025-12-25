@@ -610,11 +610,15 @@
         gap: 0;
       }
 
-      &-title {
+      &-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
         // margin-bottom: 2rem;
 
         @include md {
           margin-bottom: 1.5rem;
+          gap: 1.5rem;
         }
 
         h5 {

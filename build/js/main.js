@@ -272,9 +272,9 @@ document.addEventListener('DOMContentLoaded', () => {
       mousewheel: {
         forceToAxis: true,
       },
-      navigation: {
-        nextEl: ".calendar-button-next",
-      },
+      // navigation: {
+      //   nextEl: ".calendar-button-next",
+      // },
       touchEvents: {
         prevent: true
       },
@@ -1057,17 +1057,17 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * Расчёт ширины скроллбара старницы и добавление отступа в body при октрытии попапов
    */
-  function getScrollbarWidth() {
-    const div = document.createElement('div');
-    div.style.overflowY = 'scroll';
-    div.style.width = '100px';
-    div.style.height = '100px';
-    div.style.visibility = 'hidden';
-    document.body.appendChild(div);
-    const scrollbarWidth = div.offsetWidth - div.clientWidth;
-    document.body.removeChild(div);
-    return scrollbarWidth;
-  }
+  // function getScrollbarWidth() {
+  //   const div = document.createElement('div');
+  //   div.style.overflowY = 'scroll';
+  //   div.style.width = '100px';
+  //   div.style.height = '100px';
+  //   div.style.visibility = 'hidden';
+  //   document.body.appendChild(div);
+  //   const scrollbarWidth = div.offsetWidth - div.clientWidth;
+  //   document.body.removeChild(div);
+  //   return scrollbarWidth;
+  // }
 
   /**
    * Управляет поведением меню-бургера.
@@ -1078,62 +1078,73 @@ document.addEventListener('DOMContentLoaded', () => {
     const burgerMenu = document.querySelector('.burger-menu');
     const burgerClose = document.querySelector('.burger-close');
     const overlay = document.querySelector('.burger-overlay');
-    const elements = document.querySelectorAll('.burger-menu__list a');
-    const html = document.documentElement;
+    const links = document.querySelectorAll('.burger-menu__list a');
 
-    /**
-     * Переключает видимость меню.
-     */
-    const toggleMenu = () => {
-      const isOpened = burgerBtn.classList.toggle('burger-btn--opened');
-      burgerMenu.classList.toggle('burger-menu--opened', isOpened);
+    if (!burgerBtn || !burgerMenu) return;
+
+    let isOpen = false;
+
+    const openMenu = () => {
+      if (isOpen) return;
+
+      isOpen = true;
+      burgerBtn.classList.add('burger-btn--opened');
+      burgerMenu.classList.add('burger-menu--opened');
+      header?.classList.add('show');
+
       lenis.stop();
-      header.classList.toggle('show');
-      // menuItemAnim();
 
-      const width = getScrollbarWidth();
-      document.body.style.paddingRight = width + 'px';
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.paddingRight = scrollbarWidth + 'px';
     };
 
-    /**
-     * Закрывает меню.
-     */
     const closeMenu = () => {
+      if (!isOpen) return;
+
+      isOpen = false;
       burgerBtn.classList.remove('burger-btn--opened');
       burgerMenu.classList.remove('burger-menu--opened');
-      header.classList.remove('show');
-      lenis.start();
+      header?.classList.remove('show');
 
-      document.body.style.paddingRight = 0;
+      lenis.start();
+      document.body.style.paddingRight = '';
     };
 
-    // Открытие/закрытие меню по клику на бургер
-    burgerBtn.addEventListener('click', () => {
-      toggleMenu();
-      if (html.classList.contains('lenis-stopped')) {
-        lenis.start();
-      }
+    // Клик по бургеру
+    burgerBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      isOpen ? closeMenu() : openMenu();
     });
 
-    // Закрытие меню по клику на кнопку закрытия или на overlay
-    [burgerClose, overlay].forEach((element) => element.addEventListener('click', closeMenu));
-
-    // Закрытие меню при клике вне области меню и бургера
-    document.addEventListener('click', (event) => {
-      if (!burgerMenu.contains(event.target) && !burgerBtn.contains(event.target) && !header.contains(event.target)) {
-        closeMenu();
-      }
+    // Кнопка закрытия и overlay
+    [burgerClose, overlay].forEach(el => {
+      el?.addEventListener('click', closeMenu);
     });
 
-    // Закрытие меню при нажатии на кнопку "Esc"
+    // Закрытие по клику на ссылку
+    links.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Esc
     window.addEventListener('keydown', (e) => {
-      if (e.key === "Escape") {
+      if (e.key === 'Escape') {
         closeMenu();
       }
     });
 
-    elements.forEach((element) => element.addEventListener('click', closeMenu));
+    // Клик вне меню
+    document.addEventListener('click', (e) => {
+      if (
+        isOpen &&
+        !burgerMenu.contains(e.target) &&
+        !burgerBtn.contains(e.target)
+      ) {
+        closeMenu();
+      }
+    });
   })();
+
 
   /**
    * Добавляет класс для бургер кнопки для смены стиля
@@ -2306,7 +2317,6 @@ document.addEventListener('DOMContentLoaded', () => {
       gsap.fromTo(targetEl, fromProps, { ...toProps, scrollTrigger: { trigger: el, start: 'top 90%', end: 'bottom top', scrub: true } });
     });
   });
-
 
   // === iOS-safe ScrollTrigger refresh handler ===
   (function () {
