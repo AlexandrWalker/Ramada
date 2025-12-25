@@ -94,7 +94,7 @@
                 </ul>
               </div>
             </div>
-            <button class="header__btn btn btn--accent" data-fancybox href="#feedback">
+            <button class="header__btn btn btn--accent">
               <i class="icon-book"></i>
               <i class="pulse"></i>
               <span class="scale"></span>
@@ -693,18 +693,20 @@
           <div class="reviews__inner">
             <div class="filter">
               <div class="filter__items">
-                <div class="filter__item" data-reviews="corp">
+                <label class="filter__item" data-reviews="corp">
+                  <input type="radio" name="reviews-filter" class="filter__input">
                   <span class="clone">
                     <span class="clone--text">Корпоративные клиенты</span>
                     <span class="clone--text">Корпоративные клиенты</span>
                   </span>
-                </div>
-                <div class="filter__item filter__item--active" data-reviews="gosti">
+                </label>
+                <label class="filter__item filter__item--active" data-reviews="gosti">
+                  <input type="radio" name="reviews-filter" class="filter__input" checked>
                   <span class="clone">
                     <span class="clone--text">Гости отеля</span>
                     <span class="clone--text">Гости отеля</span>
                   </span>
-                </div>
+                </label>
               </div>
             </div>
 
@@ -1976,9 +1978,9 @@
           <div class="footer__col">
             <div class="footer__item">
               <div class="footer__item-head accordion">
-                <a href="/">
+                <p>
                   Отель
-                </a>
+                </p>
                 <i class="icon-chevron-down"></i>
               </div>
               <div class="footer__item-body accordion-body">
