@@ -1,10 +1,10 @@
 @font-face {
-  font-family: 'RamadaIconFonts';
-  src:  url('fonts/RamadaIconFonts.eot?5jpv15');
-  src:  url('fonts/RamadaIconFonts.eot?5jpv15#iefix') format('embedded-opentype'),
-    url('fonts/RamadaIconFonts.ttf?5jpv15') format('truetype'),
-    url('fonts/RamadaIconFonts.woff?5jpv15') format('woff'),
-    url('fonts/RamadaIconFonts.svg?5jpv15#RamadaIconFonts') format('svg');
+  font-family: 'RamadaIconFont';
+  src:  url('fonts/RamadaIconFont.eot?u75esl');
+  src:  url('fonts/RamadaIconFont.eot?u75esl#iefix') format('embedded-opentype'),
+    url('fonts/RamadaIconFont.ttf?u75esl') format('truetype'),
+    url('fonts/RamadaIconFont.woff?u75esl') format('woff'),
+    url('fonts/RamadaIconFont.svg?u75esl#RamadaIconFont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -12,7 +12,7 @@
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'RamadaIconFonts' !important;
+  font-family: 'RamadaIconFont' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -25,179 +25,208 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-hh-icon:before {
-  content: "\e92c";
-  color: #fff;
+.icon-max:before {
+  content: "\e90f";
 }
 .icon-gis-icon:before {
-  content: "\e92d";
-  color: #c40d3c;
-}
-.icon-share:before {
-  content: "\e92e";
-}
-.icon-copy-fill:before {
-  content: "\e92f";
-}
-.icon-person:before {
-  content: "\e930";
+  content: "\e900";
 }
 .icon-3d:before {
-  content: "\e932";
+  content: "\e901";
 }
 .icon-area:before {
-  content: "\e933";
+  content: "\e902";
 }
 .icon-arrow-left:before {
-  content: "\e934";
+  content: "\e903";
 }
 .icon-arrow-right:before {
-  content: "\e935";
+  content: "\e904";
 }
 .icon-book:before {
-  content: "\e936";
+  content: "\e905";
 }
 .icon-burger:before {
-  content: "\e937";
+  content: "\e906";
 }
 .icon-caplya .path1:before {
-  content: "\e938";
+  content: "\e907";
   color: rgb(196, 13, 60);
 }
 .icon-caplya .path2:before {
-  content: "\e939";
+  content: "\e908";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
 .icon-chevron-down:before {
-  content: "\e93a";
+  content: "\e909";
 }
 .icon-chevron-left:before {
-  content: "\e93b";
+  content: "\e90a";
 }
 .icon-chevron-link:before {
-  content: "\e93c";
+  content: "\e90b";
 }
 .icon-chevron-right:before {
-  content: "\e93d";
+  content: "\e90c";
 }
 .icon-chevron-top:before {
-  content: "\e93e";
+  content: "\e90d";
 }
 .icon-close:before {
-  content: "\e93f";
+  content: "\e90e";
+}
+.icon-copy-fill:before {
+  content: "\e910";
 }
 .icon-delovoy:before {
-  content: "\e940";
+  content: "\e911";
 }
 .icon-elem-bed:before {
-  content: "\e941";
+  content: "\e912";
 }
 .icon-elem-phen:before {
-  content: "\e942";
+  content: "\e913";
 }
 .icon-elem-pool:before {
-  content: "\e943";
+  content: "\e914";
 }
 .icon-elem-tablichka:before {
-  content: "\e944";
+  content: "\e915";
+}
+.icon-events-avtorkaya-kuhnya:before {
+  content: "\e916";
+}
+.icon-events-banketnoe-menu:before {
+  content: "\e917";
+}
+.icon-events-basseyn:before {
+  content: "\e918";
+}
+.icon-events-catering:before {
+  content: "\e919";
+}
+.icon-events-dva-restorana:before {
+  content: "\e91a";
+}
+.icon-events-infrastructura:before {
+  content: "\e91b";
+}
+.icon-events-panoramnye-okna:before {
+  content: "\e91c";
+}
+.icon-events-parkovka:before {
+  content: "\e91d";
+}
+.icon-events-personal-manager:before {
+  content: "\e91e";
+}
+.icon-events-prostornye-nomera:before {
+  content: "\e91f";
+}
+.icon-events-raspolozhenie:before {
+  content: "\e920";
+}
+.icon-events-razmeshcheniye-gostey:before {
+  content: "\e921";
+}
+.icon-events-special-tariffs:before {
+  content: "\e922";
+}
+.icon-events-territoriya:before {
+  content: "\e923";
+}
+.icon-events-tri-konferens-zala:before {
+  content: "\e924";
+}
+.icon-events-vremya:before {
+  content: "\e925";
 }
 .icon-family:before {
-  content: "\e945";
+  content: "\e926";
 }
 .icon-friends:before {
-  content: "\e946";
+  content: "\e927";
 }
 .icon-geo:before {
-  content: "\e947";
+  content: "\e928";
 }
 .icon-mail:before {
-  content: "\e948";
+  content: "\e92a";
 }
 .icon-menu:before {
-  content: "\e949";
+  content: "\e92b";
 }
 .icon-para:before {
-  content: "\e94a";
+  content: "\e92c";
 }
 .icon-pdf:before {
-  content: "\e94b";
+  content: "\e92d";
+}
+.icon-person:before {
+  content: "\e92e";
 }
 .icon-places:before {
-  content: "\e94c";
+  content: "\e92f";
 }
 .icon-play:before {
-  content: "\e94d";
+  content: "\e930";
 }
 .icon-route:before {
-  content: "\e94e";
+  content: "\e931";
 }
 .icon-services-board:before {
-  content: "\e94f";
+  content: "\e932";
 }
 .icon-services-coffee-machine:before {
-  content: "\e950";
+  content: "\e933";
 }
 .icon-services-condicioner:before {
-  content: "\e951";
+  content: "\e934";
 }
 .icon-services-electric-kettle:before {
-  content: "\e952";
+  content: "\e935";
 }
 .icon-services-garderob:before {
-  content: "\e953";
+  content: "\e936";
 }
 .icon-services-holodilnik:before {
-  content: "\e954";
+  content: "\e937";
 }
 .icon-services-kids-bedroom:before {
-  content: "\e955";
+  content: "\e938";
 }
 .icon-services-master-bedroom:before {
-  content: "\e956";
+  content: "\e939";
 }
 .icon-services-microwave:before {
-  content: "\e957";
+  content: "\e93a";
 }
 .icon-services-places:before {
-  content: "\e958";
+  content: "\e93b";
 }
 .icon-services-tv:before {
-  content: "\e959";
+  content: "\e93c";
 }
 .icon-services-wifi:before {
-  content: "\e95a";
+  content: "\e93d";
+}
+.icon-share:before {
+  content: "\e93e";
+  color: #d11242;
 }
 .icon-solo:before {
-  content: "\e95b";
+  content: "\e93f";
 }
 .icon-star:before {
-  content: "\e95c";
+  content: "\e941";
 }
 .icon-telegram:before {
-  content: "\e95d";
+  content: "\e942";
 }
 .icon-vk:before {
-  content: "\e95e";
+  content: "\e943";
 }
 .icon-whatsapp:before {
-  content: "\e95f";
-}
-.icon-events-inner-icon-1:before {
-  content: "\e960";
-}
-.icon-events-inner-icon-2:before {
-  content: "\e961";
-}
-.icon-events-inner-icon-3:before {
-  content: "\e962";
-}
-.icon-events-inner-icon-4:before {
-  content: "\e963";
-}
-.icon-events-inner-icon-5:before {
-  content: "\e964";
-}
-.icon-events-inner-icon-6:before {
-  content: "\e965";
+  content: "\e944";
 }

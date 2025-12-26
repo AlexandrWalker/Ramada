@@ -42,9 +42,18 @@
   }
 
   li {
+    position: relative;
 
     i {
       --font-size: 1.4rem;
+    }
+
+    &:hover {
+
+      .nav__drop {
+        grid-template-rows: 1fr;
+        padding: 0.75rem 2rem;
+      }
     }
   }
 
@@ -67,6 +76,52 @@
       height: fit-content;
 
       font-size: 1.2rem;
+    }
+
+    &:hover {
+
+      i {
+        color: var(--black);
+      }
+    }
+  }
+
+  &__drop {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: all 0.5s ease;
+    width: calc(100% + 6rem);
+    padding: 0 2rem;
+    background-color: var(--white);
+    overflow: hidden;
+    border-top: 0.1rem solid var(--accent);
+
+    position: absolute;
+    // top: calc(100% + 0.1rem);
+    top: 100%;
+    left: -2rem;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      overflow: hidden;
+    }
+
+    a {
+      padding: 0.75rem 1rem;
+
+      font-weight: 350;
+      font-size: 1.4rem;
+      line-height: 120%;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--black);
+
+      &:hover {
+        color: var(--accent);
+      }
     }
   }
 }

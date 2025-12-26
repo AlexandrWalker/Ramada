@@ -87,6 +87,31 @@
 
     ul {
       margin-bottom: 2rem;
+
+      ul {
+        margin-bottom: 0;
+
+        li {
+
+          &::before {
+            height: 0.1rem;
+            top: 0.8rem;
+          }
+        }
+      }
+    }
+
+    ol {
+      margin-bottom: 2rem;
+
+      li {
+        padding-left: 0 !important;
+        margin-left: 2.3rem;
+
+        &::before {
+          display: none !important;
+        }
+      }
     }
 
     li:not(.breadcrumbs li, .template-product__body li) {

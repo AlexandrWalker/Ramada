@@ -230,10 +230,7 @@
     }
 
     .swiper-button-next {
-
-      @include md {
-        display: none;
-      }
+      display: none;
     }
 
     &-item {
@@ -641,9 +638,7 @@
               border-color: var(--black-30);
             }
 
-            .scale {
-
-            }
+            .scale {}
           }
         }
       }
