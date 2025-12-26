@@ -267,14 +267,11 @@ document.addEventListener('DOMContentLoaded', () => {
       slidesPerGroup: 1,
       slidesPerView: 1,
       spaceBetween: 20,
-      loop: true,
+      watchOverflow: true,
       speed: 600,
       mousewheel: {
         forceToAxis: true,
       },
-      // navigation: {
-      //   nextEl: ".calendar-button-next",
-      // },
       touchEvents: {
         prevent: true
       },

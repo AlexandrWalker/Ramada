@@ -108,16 +108,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -130,18 +130,18 @@ img {
 }
 
 @font-face {
-  font-family: TTTricks;
-  font-display: swap;
-  src: url("../fonts/TTTricks-Black.woff2") format("woff2"), url("../fonts/TTTricks-Black.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
   font-family: Gotham;
   font-display: swap;
   src: url("../fonts/Gotham-Ultra.woff2") format("woff2"), url("../fonts/Gotham-Ultra.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TTTricks;
+  font-display: swap;
+  src: url("../fonts/TTTricks-Black.woff2") format("woff2"), url("../fonts/TTTricks-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -164,16 +164,16 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/TTTricks-ExtraBold.woff2") format("woff2"), url("../fonts/TTTricks-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-ExtraBold.woff2") format("woff2"), url("../fonts/TTTricks-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/TTTricks-Light.woff2") format("woff2"), url("../fonts/TTTricks-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -3810,7 +3810,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .menu__foot-link i {
-  font-size: 5rem;
+  --font-size: 5rem;
 }
 
 .menu__foot-link .scale {
@@ -3940,8 +3940,17 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   gap: 6rem;
 }
 
+.nav li {
+  position: relative;
+}
+
 .nav li i {
   --font-size: 1.4rem;
+}
+
+.nav li:hover .nav__drop {
+  grid-template-rows: 1fr;
+  padding: 0.75rem 2rem;
 }
 
 .nav a {
@@ -3960,6 +3969,54 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   text-transform: uppercase;
   color: var(--accent);
   white-space: nowrap;
+}
+
+.nav a:hover i {
+  color: var(--black);
+}
+
+.nav__drop {
+  display: grid;
+  grid-template-rows: 0fr;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  width: calc(100% + 6rem);
+  padding: 0 2rem;
+  background-color: var(--white);
+  overflow: hidden;
+  border-top: 0.1rem solid var(--accent);
+  position: absolute;
+  top: 100%;
+  left: -2rem;
+}
+
+.nav__drop ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  gap: 0;
+  overflow: hidden;
+}
+
+.nav__drop a {
+  padding: 0.75rem 1rem;
+  font-weight: 350;
+  font-size: 1.4rem;
+  line-height: 120%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+.nav__drop a:hover {
+  color: var(--accent);
 }
 
 .plate {
@@ -7419,6 +7476,28 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   margin-bottom: 2rem;
 }
 
+.rules__content ul ul {
+  margin-bottom: 0;
+}
+
+.rules__content ul ul li::before {
+  height: 0.1rem;
+  top: 0.8rem;
+}
+
+.rules__content ol {
+  margin-bottom: 2rem;
+}
+
+.rules__content ol li {
+  padding-left: 0 !important;
+  margin-left: 2.3rem;
+}
+
+.rules__content ol li::before {
+  display: none !important;
+}
+
 .rules__content a {
   font-weight: 700;
   color: var(--accent);
@@ -8410,6 +8489,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .events__calendar-slide.swiper-slide-next {
   z-index: 1;
+}
+
+.events__calendar .swiper-button-next {
+  display: none;
 }
 
 .events__calendar-item {
@@ -13026,10 +13109,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .events__calendar {
     grid-column: 2/3;
-  }
-
-  .events__calendar .swiper-button-next {
-    display: none;
   }
 
   .events__calendar-item {
