@@ -64,7 +64,7 @@
       padding: 1.6rem 2.7rem 1.6rem;
     }
 
-    &:not(.invalid):hover,
+    &:not(.has-error .form-input):hover,
     &.filled {
       border-color: var(--gray);
 
@@ -222,19 +222,6 @@
     bottom: -1.2rem;
   }
 
-  .invalid {
-    border-color: var(--accent) !important;
-    color: var(--accent) !important;
-
-    &+label {
-      color: var(--accent) !important;
-
-      &+.form-error {
-        // display: block;
-      }
-    }
-  }
-
   &-foot {
     display: flex;
     flex-direction: column;
@@ -328,5 +315,21 @@
         flex-shrink: 0;
       }
     }
+  }
+}
+
+.has-error {
+
+  .form-input {
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+  }
+
+  .form-label {
+    color: var(--accent) !important;
+  }
+
+  .form-error {
+    // display: block;
   }
 }

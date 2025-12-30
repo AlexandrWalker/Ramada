@@ -237,3 +237,18 @@
     }
   }
 }
+
+.with-fancybox {
+
+  .header {
+    right: calc(var(--f-body-margin, 0px) + var(--f-scrollbar-compensate, 0px));
+  }
+}
+
+.burger-menu--open {
+
+  body,
+  .header {
+    right: calc(var(--f-body-margin, 0px) + var(--f-scrollbar-compensate, 0px));
+  }
+}
