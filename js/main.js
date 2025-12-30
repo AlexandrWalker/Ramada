@@ -22,11 +22,15 @@
     return header ? header.getBoundingClientRect().height : 0;
   }
 
-  // --- Lenis init (заморожен) ---
-  const lenis = new Lenis({
-    smooth: true,
-    autoResize: false
-  });
+  // --- Lenis init (глобальный) ---
+  if (!window.lenis) {
+    window.lenis = new Lenis({
+      smooth: true,
+      autoResize: false
+    });
+  }
+
+  const lenis = window.lenis;
 
   lenis.stop();
 
@@ -66,7 +70,7 @@
               requestAnimationFrame(() => {
                 lenis.scrollTo(target, {
                   offset: -getHeaderOffset(),
-                  immediate: false // плавная прокрутка
+                  immediate: false
                 });
               });
             });
@@ -101,10 +105,9 @@
 
     lenis.scrollTo(target, {
       offset: -getHeaderOffset(),
-      immediate: false // плавная прокрутка
+      immediate: false
     });
 
-    // обновляем URL без скачка
     history.replaceState(null, '', targetId);
   });
 })();
@@ -1164,17 +1167,17 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * Расчёт ширины скроллбара старницы и добавление отступа в body при октрытии попапов
    */
-  // function getScrollbarWidth() {
-  //   const div = document.createElement('div');
-  //   div.style.overflowY = 'scroll';
-  //   div.style.width = '100px';
-  //   div.style.height = '100px';
-  //   div.style.visibility = 'hidden';
-  //   document.body.appendChild(div);
-  //   const scrollbarWidth = div.offsetWidth - div.clientWidth;
-  //   document.body.removeChild(div);
-  //   return scrollbarWidth;
-  // }
+  function getScrollbarWidth() {
+    const div = document.createElement('div');
+    div.style.overflowY = 'scroll';
+    div.style.width = '100px';
+    div.style.height = '100px';
+    div.style.visibility = 'hidden';
+    document.body.appendChild(div);
+    const scrollbarWidth = div.offsetWidth - div.clientWidth;
+    document.body.removeChild(div);
+    return scrollbarWidth;
+  }
 
   /**
    * Управляет поведением меню-бургера.
@@ -1199,10 +1202,11 @@ document.addEventListener('DOMContentLoaded', () => {
       burgerMenu.classList.add('burger-menu--opened');
       header?.classList.add('show');
 
-      lenis.stop();
+      window.lenis?.stop();
 
-      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      const scrollbarWidth = getScrollbarWidth();
       document.body.style.paddingRight = scrollbarWidth + 'px';
+      header.style.right = scrollbarWidth + 'px';
     };
 
     const closeMenu = () => {
@@ -1213,8 +1217,10 @@ document.addEventListener('DOMContentLoaded', () => {
       burgerMenu.classList.remove('burger-menu--opened');
       header?.classList.remove('show');
 
-      lenis.start();
+      window.lenis?.start();
+
       document.body.style.paddingRight = '';
+      header.style.right = '';
     };
 
     // Клик по бургеру
@@ -2043,7 +2049,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const h1TitleSvgBefore = '14.3rem';
       const h1TitleSvgAfter = '9.3rem';
       const pTitleFontSizeBefore = '10rem';
-      const pTitleLeftPosBefore = '82rem';
+
+      const scrollbarWidth = getScrollbarWidth();
+      const rootFontSize = parseFloat(
+        getComputedStyle(document.documentElement).fontSize
+      );
+      const pTitleLeftPosBefore = 82 - scrollbarWidth / rootFontSize + 'rem';
+      
       const pTitleTopPosBefore = '6.7rem';
       const pTitleColorBefore = '#1A1919';
       const pTitleFontSizeAfter = '6rem';

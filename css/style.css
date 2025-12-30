@@ -92,16 +92,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -1098,6 +1098,15 @@ sup {
   stroke: var(--accent);
 }
 
+.with-fancybox .header {
+  right: calc(var(--f-body-margin, 0px) + var(--f-scrollbar-compensate, 0px));
+}
+
+.burger-menu--open body,
+.burger-menu--open .header {
+  right: calc(var(--f-body-margin, 0px) + var(--f-scrollbar-compensate, 0px));
+}
+
 /* Reset and base styles  */
 
 * {
@@ -1761,12 +1770,12 @@ body {
   color: var(--black);
 }
 
-.form-input:not(.invalid):hover,
+.form-input:not(.has-error .form-input):hover,
 .form-input.filled {
   border-color: var(--gray);
 }
 
-.form-input:not(.invalid):hover + .form-label,
+.form-input:not(.has-error .form-input):hover + .form-label,
 .form-input.filled + .form-label {
   color: var(--gray);
 }
@@ -1894,15 +1903,6 @@ body {
   bottom: -1.2rem;
 }
 
-.form .invalid {
-  border-color: var(--accent) !important;
-  color: var(--accent) !important;
-}
-
-.form .invalid + label {
-  color: var(--accent) !important;
-}
-
 .form-foot {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2001,6 +2001,15 @@ body {
   transition: all 0.3s ease;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+}
+
+.has-error .form-input {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+.has-error .form-label {
+  color: var(--accent) !important;
 }
 
 /* Стили для иконок */
