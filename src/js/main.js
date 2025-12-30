@@ -1,24 +1,113 @@
 /**
  * Preloader
  */
-const preloader = document.querySelector('.preloader');
+(() => {
+  const HEADER_SELECTOR = '.header';
+  const preloader = document.querySelector('.preloader');
 
-document.documentElement.classList.add('html-no-scroll');
-document.body.classList.add('no-scroll');
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
 
-window.addEventListener('load', () => {
-  preloader.addEventListener(
-    'transitionend',
-    () => {
-      document.documentElement.classList.remove('html-no-scroll');
-      document.body.classList.remove('no-scroll');
-      preloader.classList.add('preloader-none');
-    },
-    { once: true }
-  );
+  const initialHash = window.location.hash;
+  if (initialHash) {
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+  }
 
-  preloader.classList.add('hidden');
-});
+  document.documentElement.classList.add('html-no-scroll');
+  document.body.classList.add('no-scroll');
+
+  function getHeaderOffset() {
+    const header = document.querySelector(HEADER_SELECTOR);
+    return header ? header.getBoundingClientRect().height : 0;
+  }
+
+  // --- Lenis init (заморожен) ---
+  const lenis = new Lenis({
+    smooth: true,
+    autoResize: false
+  });
+
+  lenis.stop();
+
+  lenis.on('scroll', ScrollTrigger.update);
+
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
+
+  gsap.ticker.lagSmoothing(0);
+
+  // adaptive header
+  const header = document.querySelector(HEADER_SELECTOR);
+  if (header) {
+    new ResizeObserver(() => {
+      ScrollTrigger.refresh();
+    }).observe(header);
+  }
+
+  // --- scroll to hash on page load ---
+  window.addEventListener('load', () => {
+    if (!preloader) return;
+
+    preloader.addEventListener(
+      'transitionend',
+      () => {
+        document.documentElement.classList.remove('html-no-scroll');
+        document.body.classList.remove('no-scroll');
+        preloader.classList.add('preloader-none');
+
+        lenis.resize();
+
+        if (initialHash) {
+          const target = document.querySelector(initialHash);
+          if (target && !target.closest('[data-lenis-prevent]')) {
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                lenis.scrollTo(target, {
+                  offset: -getHeaderOffset(),
+                  immediate: false // плавная прокрутка
+                });
+              });
+            });
+          }
+        }
+
+        ScrollTrigger.refresh();
+        lenis.start();
+
+        if (initialHash) {
+          history.replaceState(null, '', initialHash);
+        }
+      },
+      { once: true }
+    );
+
+    preloader.classList.add('hidden');
+  });
+
+  // --- smooth scroll for anchor links ---
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+
+    const targetId = link.getAttribute('href');
+    if (!targetId || targetId === '#') return;
+
+    const target = document.querySelector(targetId);
+    if (!target || target.closest('[data-lenis-prevent]')) return;
+
+    e.preventDefault();
+
+    lenis.scrollTo(target, {
+      offset: -getHeaderOffset(),
+      immediate: false // плавная прокрутка
+    });
+
+    // обновляем URL без скачка
+    history.replaceState(null, '', targetId);
+  });
+})();
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -60,28 +149,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // });
   // gsap.ticker.lagSmoothing(0);
 
-  const lenis = new Lenis();
+  /**
+   * Lenis + ScrollTrigger + hash + adaptive header + lazy-load
+   * Вставить один раз после подключения GSAP, ScrollTrigger и Lenis
+   */
 
-  lenis.on('resize scroll', ScrollTrigger.update);
-
-  gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
-  });
-
-  gsap.ticker.lagSmoothing(0);
-
-  const hash = window.location.hash;
-
-  if (hash) {
-    const target = document.querySelector(hash);
-
-    if (target) {
-      requestAnimationFrame(() => {
-        lenis.scrollTo(target);
-        ScrollTrigger.refresh();
-      });
-    }
-  }
+  /**
+   * Absolute fix: disable native anchor scroll
+   * Lenis + ScrollTrigger + adaptive header + lazy-load
+   */
 
   /**
    * ---------------------------

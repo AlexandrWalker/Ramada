@@ -21,7 +21,9 @@
   }
 
   &.none {
-    display: none;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
   }
 
   &__img {
