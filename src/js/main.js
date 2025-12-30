@@ -38,16 +38,50 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * Инициализация Lenis
    */
-  const lenis = new Lenis({
-    anchors: {
-      offset: 0,
-    }
-  });
+  // const lenis = new Lenis();
+
+  // if (hash) {
+  //   const target = document.querySelector(hash);
+
+  //   if (target) {
+  //     requestAnimationFrame(() => {
+  //       lenis.scrollTo(target, {
+  //         immediate: false
+  //       });
+
+  //       ScrollTrigger.refresh();
+  //     });
+  //   }
+  // }
+
+  // lenis.on('resize scroll', ScrollTrigger.update);
+  // gsap.ticker.add((time) => {
+  //   lenis.raf(time * 1000);
+  // });
+  // gsap.ticker.lagSmoothing(0);
+
+  const lenis = new Lenis();
+
   lenis.on('resize scroll', ScrollTrigger.update);
+
   gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
   });
+
   gsap.ticker.lagSmoothing(0);
+
+  const hash = window.location.hash;
+
+  if (hash) {
+    const target = document.querySelector(hash);
+
+    if (target) {
+      requestAnimationFrame(() => {
+        lenis.scrollTo(target);
+        ScrollTrigger.refresh();
+      });
+    }
+  }
 
   /**
    * ---------------------------
