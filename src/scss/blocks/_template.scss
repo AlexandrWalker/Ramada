@@ -17,7 +17,7 @@
   }
 
   &__container {
-    position: relative;
+    // position: relative;
   }
 
   &__bg {
@@ -283,13 +283,13 @@
     .inner-page & {
 
       // @include domd {
-        position: fixed;
-        top: var(--header-height) !important;
-        right: 0 !important;
-        left: 0 !important;
-        z-index: 1;
-        transform: unset !important;
-        margin-bottom: 0;
+      position: fixed;
+      top: var(--header-height) !important;
+      right: 0 !important;
+      left: 0 !important;
+      z-index: 1;
+      transform: unset !important;
+      margin-bottom: 0;
       // }
 
       @include md {
@@ -298,9 +298,11 @@
       }
     }
 
-    .template {
+    .container {
+      position: relative;
+    }
 
-      &__container {}
+    .template {
 
       &__inner {
         --template-padding-t: 7rem;
