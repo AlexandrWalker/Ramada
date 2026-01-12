@@ -163,17 +163,17 @@ document.addEventListener('DOMContentLoaded', () => {
    */
 
   /**
-   * ---------------------------
-   * Global state
-   * ---------------------------
-   */
-  let isSliding = false;    // transition ongoing flag
-  let slideQueue = 0;       // queued slide actions count
-  let lastNav = null;       // last navigation params {dir, speed}
-  /**
    * Инициализация слайдеров
    */
   if (document.querySelector('.swiper')) {
+    /**
+     * ---------------------------
+     * Global state
+     * ---------------------------
+     */
+    let isSliding = false;    // transition ongoing flag
+    let slideQueue = 0;       // queued slide actions count
+    let lastNav = null;       // last navigation params {dir, speed}
 
     function initCustomSwiper(selector) {
       const swiper = new Swiper(selector, {
@@ -182,9 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
         speed: 0,
         initialSlide: 0,
         allowTouchMove: false,
-
         init: false,
-
         pagination: {
           el: ".swiper-pagination--gallery",
           clickable: true,
@@ -232,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (newImg) {
           newImg.style.transition = 'none';
           newImg.style.transform = 'scale(1.3)';
-          newImg.getBoundingClientRect(); // force layout
+          newImg.getBoundingClientRect();
         }
 
         newActive.classList.add('s--active');
@@ -266,17 +264,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }, slidingAT);
       }
 
-      // Swipe detection
       let startX = null;
       const threshold = 50;
 
       container.addEventListener('touchstart', e => {
-        if (e.touches && e.touches[0]) startX = e.touches[0].clientX;
+        if (e.touches?.[0]) startX = e.touches[0].clientX;
       }, { passive: true });
 
       container.addEventListener('touchend', e => {
         if (startX === null) return;
-        const endX = e.changedTouches?.[0]?.clientX ?? null;
+        const endX = e.changedTouches?.[0]?.clientX;
         if (endX === null) return;
         handleSwipe(startX, endX);
         startX = null;
@@ -299,7 +296,6 @@ document.addEventListener('DOMContentLoaded', () => {
         dx < 0 ? handleControlClick(true) : handleControlClick(false);
       }
 
-      // Keyboard
       document.addEventListener('keydown', e => {
         if (e.key === 'ArrowRight') handleControlClick(true);
         if (e.key === 'ArrowLeft') handleControlClick(false);
@@ -309,27 +305,40 @@ document.addEventListener('DOMContentLoaded', () => {
       if (fraction) {
         fractionCustomSlider(swiper);
       } else {
-        controlCustomSwiper(swiper);
+        swiper.init();
       }
+
+      return swiper;
     }
 
-    const swiperControl = new Swiper(".swiper__control", {
-      slidesPerGroup: 1,
-      slidesPerView: 1,
-      spaceBetween: 0,
-      loop: true,
-      speed: 600,
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true
-      },
-      grabCursor: false,
-      mousewheel: false,
-      allowTouchMove: false,
-      touchEvents: {
-        prevent: true
-      },
-    });
+    function controlCustomSwiper(swiper) {
+      if (!document.querySelector('.swiper__control')) return;
+      if (!swiperControl) return;
+
+      swiper.controller.control = swiperControl;
+      swiperControl.controller.control = swiper;
+    }
+
+    function fractionCustomSlider(swiper) {
+      swiper.on("slideChange afterInit init", function () {
+        const currentSlide = this.realIndex + 1;
+        document.querySelector('.fraction').innerHTML = `
+        <span class="fraction-current">${currentSlide}</span> /
+        <span class="fraction-total">${this.slides.length}</span>`;
+      });
+      swiper.init();
+    }
+
+    const swiperControl = document.querySelector('.swiper__control')
+      ? new Swiper(".swiper__control", {
+        slidesPerView: 1,
+        loop: true,
+        speed: 600,
+        effect: 'fade',
+        fadeEffect: { crossFade: true },
+        allowTouchMove: false,
+      })
+      : null;
 
     const diversityHeadSlider = new Swiper(".diversity__head--slider", {
       slidesPerGroup: 1,
@@ -1051,7 +1060,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const galleryBodySlider = document.querySelector('.gallery__body--slider');
     if (galleryBodySlider) {
-      initCustomSwiper('.gallery__body--slider');
+      const gallerySwiper = initCustomSwiper('.gallery__body--slider');
+      controlCustomSwiper(gallerySwiper);
     }
 
     function controlCustomSwiper(swiper) {
@@ -1838,6 +1848,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollTriggerPlayer(item.el, tl);
     });
 
+    // фыв
     ScrollTrigger.matchMedia({
       "(min-width: 835px)": function () {
         tl.from(templatePrimary, {
@@ -2055,7 +2066,7 @@ document.addEventListener('DOMContentLoaded', () => {
         getComputedStyle(document.documentElement).fontSize
       );
       const pTitleLeftPosBefore = 82 - scrollbarWidth / rootFontSize + 'rem';
-      
+
       const pTitleTopPosBefore = '6.7rem';
       const pTitleColorBefore = '#1A1919';
       const pTitleFontSizeAfter = '6rem';
@@ -2457,6 +2468,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (widthChanged || heightChanged) {
           lastWidth = currentWidth;
           lastHeight = currentHeight;
+          console.log('refresh');
           ScrollTrigger.refresh();
         }
       }, 250); // debounce 250ms — достаточно для всех платформ

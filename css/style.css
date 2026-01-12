@@ -92,16 +92,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
@@ -4151,10 +4151,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   padding-bottom: 4rem;
 }
 
-.template__container {
-  position: relative;
-}
-
 .template__bg {
   position: absolute;
   top: 0;
@@ -4361,6 +4357,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   -ms-transform: unset !important;
   transform: unset !important;
   margin-bottom: 0;
+}
+
+.template--primary .container {
+  position: relative;
 }
 
 .template--primary .template__inner {
@@ -9583,11 +9583,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   grid-column: 2/3;
   grid-row: 2/3;
   padding: 0 0 var(--offer-padding-bottom) var(--offer-padding-left);
-}
-
-.offer__content .swiper-slide {
-  -webkit-transition-duration: 0.6s !important;
-  transition-duration: 0.6s !important;
 }
 
 .slider {
