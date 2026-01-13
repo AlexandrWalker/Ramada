@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('blocks/head.html', {"title": "RAMADA"})
+
+<body>
+  <div class="wrapper">
+    <!-- Шапка -->
+    @@include('./blocks/header.html')
+    <main class="main">
+
+      <section class="notfound">
+        <div class="container">
+          <div class="notfound__inner">
+
+            <div class="notfound__text">
+              <h3>
+                Похоже эта страница
+                <div>не работает</div>. Зато мы работаем круглосуточно
+              </h3>
+            </div>
+
+            <a class="notfound__btn btn btn--white" href="/">
+              <span class="scale"></span>
+              На главную
+            </a>
+
+            <div class="notfound__wrap">
+              <span>
+                404
+              </span>
+              <h2>
+                страница
+              </h2>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <!-- Подвал -->
+    @@include('blocks/footer.html')

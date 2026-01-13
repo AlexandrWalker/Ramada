@@ -79,7 +79,8 @@
     gap: 7rem;
     width: 50%;
     height: 100dvh;
-
+    overflow: hidden;
+    
     position: relative;
 
     @include md {
@@ -98,6 +99,7 @@
       width: 100%;
       height: 100%;
       transition: all 3s linear;
+      transform: scale(1);
 
       position: absolute;
       top: 0;

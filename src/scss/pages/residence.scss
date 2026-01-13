@@ -153,7 +153,9 @@
       }
     }
 
-    .template-box__block {}
+    .template-box--reverse & {
+      flex-direction: row-reverse;
+    }
 
     &-btns {
       display: none;

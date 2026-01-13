@@ -97,7 +97,7 @@
   }
 
   &__title {
-    overflow: hidden;
+    // overflow: hidden;
 
     .news-page & {
       max-width: 88rem;
@@ -283,7 +283,8 @@
     .inner-page & {
 
       // @include domd {
-      position: fixed;
+      // position: fixed;
+      position: sticky;
       top: var(--header-height) !important;
       right: 0 !important;
       left: 0 !important;
@@ -375,7 +376,8 @@
     }
 
     .inner-page & {
-      position: fixed;
+      // position: fixed;
+      position: sticky;
       top: var(--header-height) !important;
       right: 0 !important;
       left: 0 !important;
@@ -420,6 +422,7 @@
     &--reverse {
 
       .template-product__inner {
+
         grid-template-columns: 50% calc(50% - 15rem);
       }
 
@@ -1184,9 +1187,10 @@
       }
 
       .template-box--reverse & {
+        flex-direction: row-reverse;
 
         @include md {
-          flex-direction: column-reverse;
+          flex-direction: column;
         }
       }
     }

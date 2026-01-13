@@ -1,0 +1,86 @@
+@use './../mixins' as *;
+
+.notfound {
+  background-color: var(--accent);
+  padding: 10rem 0 7.5rem;
+
+  @include md {
+    padding: 3rem 0 5rem;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    color: var(--white);
+  }
+
+  &__text {
+    max-width: 110rem;
+    margin-bottom: 3rem;
+
+    text-transform: uppercase;
+
+    @include md {
+      max-width: 100%;
+      padding: 0 1rem;
+      margin-bottom: 2rem;
+    }
+
+    * {
+
+      @include md {
+        font-size: 3rem;
+      }
+    }
+
+    div {
+      display: inline-block;
+    }
+  }
+
+  &__btn {
+    --btn-color: var(--accent);
+    --btn-padding-x: 3.8rem;
+
+    margin-bottom: 2rem;
+
+    @include md {
+      margin-bottom: 1rem;
+    }
+
+    &:hover {
+      --btn-color: var(--white);
+      --btn-scale-background: var(--black);
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    text-transform: uppercase;
+
+    span {
+      margin-top: 1rem;
+      margin-bottom: -4rem;
+
+      font-family: var(--second-family);
+      font-weight: 400;
+      font-size: 27rem;
+      line-height: 100%;
+      text-align: center;
+      color: var(--white);
+
+      @include md {
+        margin-bottom: -2rem;
+
+        font-size: 15rem;
+      }
+    }
+  }
+}

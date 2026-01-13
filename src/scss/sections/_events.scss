@@ -503,6 +503,7 @@
       display: block;
       border: 0.1rem solid var(--gray-50);
       transition: all 0.3s ease;
+      height: 100%;
 
       position: relative;
 
@@ -552,9 +553,9 @@
       align-items: center;
       text-align: center;
       padding: 8rem 3rem 6rem;
-      // background-color: var(--white);
       border: 2rem solid var(--white-gray);
       transition: all 0.8s ease;
+      height: 100%;
 
       position: relative;
       z-index: 3;

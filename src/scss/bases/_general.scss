@@ -456,6 +456,10 @@
       // margin-top: unset;
     }
   }
+
+  &.certificates__cover img {
+    margin-top: -10%;
+  }
 }
 
 .inner-page section:nth-child(2) {
@@ -752,7 +756,8 @@
 
       @include dosm {
 
-        i {
+        i,
+        i::before {
           color: var(--white);
         }
 

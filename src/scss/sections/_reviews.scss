@@ -105,6 +105,7 @@
   }
 
   &__item {
+    height: 100%;
     padding: 2rem;
     border: 0.05rem solid var(--gray-30);
     text-align: center;
@@ -134,11 +135,13 @@
     &-body {
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       align-items: center;
       gap: 5rem;
       padding: 6rem 3rem 10rem;
       background-color: var(--white-gray-second);
-
+      height: 100%;
+      
       position: relative;
 
       @include md {
