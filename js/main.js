@@ -128,41 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
 
   /**
-   * Инициализация Lenis
-   */
-  // const lenis = new Lenis();
-
-  // if (hash) {
-  //   const target = document.querySelector(hash);
-
-  //   if (target) {
-  //     requestAnimationFrame(() => {
-  //       lenis.scrollTo(target, {
-  //         immediate: false
-  //       });
-
-  //       ScrollTrigger.refresh();
-  //     });
-  //   }
-  // }
-
-  // lenis.on('resize scroll', ScrollTrigger.update);
-  // gsap.ticker.add((time) => {
-  //   lenis.raf(time * 1000);
-  // });
-  // gsap.ticker.lagSmoothing(0);
-
-  /**
-   * Lenis + ScrollTrigger + hash + adaptive header + lazy-load
-   * Вставить один раз после подключения GSAP, ScrollTrigger и Lenis
-   */
-
-  /**
-   * Absolute fix: disable native anchor scroll
-   * Lenis + ScrollTrigger + adaptive header + lazy-load
-   */
-
-  /**
    * Инициализация слайдеров
    */
   if (document.querySelector('.swiper')) {
@@ -345,6 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
       slidesPerView: 1,
       spaceBetween: 0,
       loop: true,
+      centeredSlides: true,
       speed: 600,
       effect: 'fade',
       fadeEffect: {
@@ -1849,21 +1815,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // фыв
-    ScrollTrigger.matchMedia({
-      "(min-width: 835px)": function () {
-        tl.from(templatePrimary, {
-          ease: "none",
-          scrollTrigger: {
-            trigger: templatePrimary,
-            start: "top 0%",
-            end: "bottom bottom",
-            pin: true,
-            pinSpacing: false,
-            scrub: true,
-          },
-        });
-      }
-    });
+    // ScrollTrigger.matchMedia({
+    //   "(min-width: 835px)": function () {
+    //     tl.from(templatePrimary, {
+    //       ease: "none",
+    //       scrollTrigger: {
+    //         trigger: templatePrimary,
+    //         start: "top 0%",
+    //         end: "bottom bottom",
+    //         pin: true,
+    //         pinSpacing: false,
+    //         scrub: true,
+    //       },
+    //     });
+    //   }
+    // });
   }
 
   const foreachItem = document.querySelector('.foreach-items');
