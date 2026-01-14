@@ -100,16 +100,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
+  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -10301,6 +10301,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   gap: 4rem;
 }
 
+.site-map__item-title p,
 .site-map__item-title a {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -10310,6 +10311,24 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   font-size: 2.5rem;
   line-height: 120%;
   color: var(--accent);
+  position: relative;
+}
+
+.site-map__item-title a::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0.05rem;
+  border-radius: 0.025rem;
+  background-color: var(--accent);
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .site-map__item-list {
@@ -10692,6 +10711,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .resta__block-btn:hover::after {
     border-color: var(--black-30);
+  }
+
+  .site-map__item-title a:hover::before {
+    width: 100%;
   }
 }
 
@@ -13835,6 +13858,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 2rem;
   }
 
+  .site-map__item-title p,
   .site-map__item-title a {
     font-size: 1.6rem;
   }
