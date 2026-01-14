@@ -92,8 +92,8 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -124,16 +124,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Ultra.woff2") format("woff2"), url("../fonts/Gotham-Ultra.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Gotham-Ultra.woff2") format("woff2"), url("../fonts/Gotham-Ultra.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -505,6 +505,7 @@ img {
   object-fit: cover;
 }
 
+[data-animation=parallax-img].career__cover img,
 [data-animation=parallax-img].certificates__cover img {
   margin-top: -10%;
 }
@@ -7045,6 +7046,14 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 .dishes__item-wrap .link {
   gap: 0.7rem;
   color: var(--accent);
+}
+
+.dishes__item-wrap .link:hover {
+  color: var(--black);
+}
+
+.dishes__item-wrap .link:hover i {
+  background-color: var(--black);
 }
 
 .dishes__item-wrap .link i {
