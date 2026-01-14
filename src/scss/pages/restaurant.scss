@@ -363,6 +363,14 @@
           font-size: 1.2rem;
         }
 
+        &:hover {
+          color: var(--black);
+
+          i {
+            background-color: var(--black);
+          }
+        }
+
         i {
           font-size: 1.6rem;
           font-weight: 700;

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'RamadaIconFont';
-  src:  url('fonts/RamadaIconFont.eot?u75esl');
-  src:  url('fonts/RamadaIconFont.eot?u75esl#iefix') format('embedded-opentype'),
-    url('fonts/RamadaIconFont.ttf?u75esl') format('truetype'),
-    url('fonts/RamadaIconFont.woff?u75esl') format('woff'),
-    url('fonts/RamadaIconFont.svg?u75esl#RamadaIconFont') format('svg');
+  src:  url('fonts/RamadaIconFont.eot?doel6o');
+  src:  url('fonts/RamadaIconFont.eot?doel6o#iefix') format('embedded-opentype'),
+    url('fonts/RamadaIconFont.ttf?doel6o') format('truetype'),
+    url('fonts/RamadaIconFont.woff?doel6o') format('woff'),
+    url('fonts/RamadaIconFont.svg?doel6o#RamadaIconFont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,208 +25,324 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-max:before {
-  content: "\e90f";
-}
-.icon-gis-icon:before {
+.icon-photographer:before {
   content: "\e900";
 }
-.icon-3d:before {
+.icon-decorator:before {
   content: "\e901";
 }
-.icon-area:before {
+.icon-tech-support:before {
   content: "\e902";
 }
-.icon-arrow-left:before {
+.icon-video-conference:before {
   content: "\e903";
 }
-.icon-arrow-right:before {
+.icon-catering:before {
   content: "\e904";
 }
-.icon-book:before {
+.icon-lcd-panel:before {
   content: "\e905";
 }
-.icon-burger:before {
+.icon-notebooks-pens:before {
   content: "\e906";
 }
-.icon-caplya .path1:before {
+.icon-podium:before {
   content: "\e907";
+}
+.icon-plasma-tv-stand:before {
+  content: "\e908";
+}
+.icon-water:before {
+  content: "\e909";
+}
+.icon-laser-pointer:before {
+  content: "\e90a";
+}
+.icon-gooseneck-mic:before {
+  content: "\e90b";
+}
+.icon-clicker:before {
+  content: "\e90c";
+}
+.icon-laptop:before {
+  content: "\e90d";
+}
+.icon-flipchart:before {
+  content: "\e90e";
+}
+.icon-microphone:before {
+  content: "\e90f";
+}
+.icon-sound-system:before {
+  content: "\e910";
+}
+.icon-projector:before {
+  content: "\e911";
+}
+.icon-screen:before {
+  content: "\e912";
+}
+.icon-hair-dryer:before {
+  content: "\e913";
+}
+.icon-toiletries:before {
+  content: "\e914";
+}
+.icon-shower-cabin:before {
+  content: "\e915";
+}
+.icon-aqua-zone:before {
+  content: "\e916";
+}
+.icon-bathrobe:before {
+  content: "\e917";
+}
+.icon-washing-machine:before {
+  content: "\e918";
+}
+.icon-tableware:before {
+  content: "\e919";
+}
+.icon-kettle:before {
+  content: "\e91a";
+}
+.icon-microwave:before {
+  content: "\e91b";
+}
+.icon-cooktop:before {
+  content: "\e91c";
+}
+.icon-fridge:before {
+  content: "\e91d";
+}
+.icon-sofa-bed:before {
+  content: "\e91e";
+}
+.icon-iron-board:before {
+  content: "\e91f";
+}
+.icon-air-conditioner:before {
+  content: "\e920";
+}
+.icon-work-area:before {
+  content: "\e921";
+}
+.icon-wi-fi:before {
+  content: "\e922";
+}
+.icon-tv:before {
+  content: "\e923";
+}
+.icon-single-beds:before {
+  content: "\e924";
+}
+.icon-double-bed:before {
+  content: "\e925";
+}
+.icon-max:before {
+  content: "\e926";
+}
+.icon-events-tri-konferens-zala:before {
+  content: "\e927";
+}
+.icon-events-special-tariffs:before {
+  content: "\e928";
+}
+.icon-events-prostornye-nomera:before {
+  content: "\e929";
+}
+.icon-events-parkovka:before {
+  content: "\e92a";
+}
+.icon-events-personal-manager:before {
+  content: "\e92b";
+}
+.icon-events-raspolozhenie:before {
+  content: "\e92c";
+}
+.icon-events-avtorkaya-kuhnya:before {
+  content: "\e92d";
+}
+.icon-events-panoramnye-okna:before {
+  content: "\e92e";
+}
+.icon-events-basseyn:before {
+  content: "\e92f";
+}
+.icon-events-infrastructura:before {
+  content: "\e930";
+}
+.icon-events-vremya:before {
+  content: "\e931";
+}
+.icon-events-catering:before {
+  content: "\e932";
+}
+.icon-events-banketnoe-menu:before {
+  content: "\e933";
+}
+.icon-events-dva-restorana:before {
+  content: "\e934";
+}
+.icon-events-razmeshcheniye-gostey:before {
+  content: "\e935";
+}
+.icon-events-territoriya:before {
+  content: "\e936";
+}
+.icon-hh-icon:before {
+  content: "\e938";
+}
+.icon-gis-icon:before {
+  content: "\e939";
+}
+.icon-share:before {
+  content: "\e93a";
+}
+.icon-copy-fill:before {
+  content: "\e93b";
+}
+.icon-person:before {
+  content: "\e93c";
+}
+.icon-3d:before {
+  content: "\e93e";
+}
+.icon-area:before {
+  content: "\e93f";
+}
+.icon-arrow-left:before {
+  content: "\e940";
+}
+.icon-arrow-right:before {
+  content: "\e941";
+}
+.icon-book:before {
+  content: "\e942";
+}
+.icon-burger:before {
+  content: "\e943";
+}
+.icon-caplya .path1:before {
+  content: "\e944";
   color: rgb(196, 13, 60);
 }
 .icon-caplya .path2:before {
-  content: "\e908";
+  content: "\e945";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
 .icon-chevron-down:before {
-  content: "\e909";
+  content: "\e946";
 }
 .icon-chevron-left:before {
-  content: "\e90a";
+  content: "\e947";
 }
 .icon-chevron-link:before {
-  content: "\e90b";
+  content: "\e948";
 }
 .icon-chevron-right:before {
-  content: "\e90c";
+  content: "\e949";
 }
 .icon-chevron-top:before {
-  content: "\e90d";
+  content: "\e94a";
 }
 .icon-close:before {
-  content: "\e90e";
-}
-.icon-copy-fill:before {
-  content: "\e910";
+  content: "\e94b";
 }
 .icon-delovoy:before {
-  content: "\e911";
+  content: "\e94c";
 }
 .icon-elem-bed:before {
-  content: "\e912";
+  content: "\e94d";
 }
 .icon-elem-phen:before {
-  content: "\e913";
+  content: "\e94e";
 }
 .icon-elem-pool:before {
-  content: "\e914";
+  content: "\e94f";
 }
 .icon-elem-tablichka:before {
-  content: "\e915";
-}
-.icon-events-avtorkaya-kuhnya:before {
-  content: "\e916";
-}
-.icon-events-banketnoe-menu:before {
-  content: "\e917";
-}
-.icon-events-basseyn:before {
-  content: "\e918";
-}
-.icon-events-catering:before {
-  content: "\e919";
-}
-.icon-events-dva-restorana:before {
-  content: "\e91a";
-}
-.icon-events-infrastructura:before {
-  content: "\e91b";
-}
-.icon-events-panoramnye-okna:before {
-  content: "\e91c";
-}
-.icon-events-parkovka:before {
-  content: "\e91d";
-}
-.icon-events-personal-manager:before {
-  content: "\e91e";
-}
-.icon-events-prostornye-nomera:before {
-  content: "\e91f";
-}
-.icon-events-raspolozhenie:before {
-  content: "\e920";
-}
-.icon-events-razmeshcheniye-gostey:before {
-  content: "\e921";
-}
-.icon-events-special-tariffs:before {
-  content: "\e922";
-}
-.icon-events-territoriya:before {
-  content: "\e923";
-}
-.icon-events-tri-konferens-zala:before {
-  content: "\e924";
-}
-.icon-events-vremya:before {
-  content: "\e925";
+  content: "\e950";
 }
 .icon-family:before {
-  content: "\e926";
+  content: "\e951";
 }
 .icon-friends:before {
-  content: "\e927";
+  content: "\e952";
 }
 .icon-geo:before {
-  content: "\e928";
+  content: "\e953";
 }
 .icon-mail:before {
-  content: "\e92a";
+  content: "\e954";
 }
 .icon-menu:before {
-  content: "\e92b";
+  content: "\e955";
 }
 .icon-para:before {
-  content: "\e92c";
+  content: "\e956";
 }
 .icon-pdf:before {
-  content: "\e92d";
-}
-.icon-person:before {
-  content: "\e92e";
+  content: "\e957";
 }
 .icon-places:before {
-  content: "\e92f";
+  content: "\e958";
 }
 .icon-play:before {
-  content: "\e930";
+  content: "\e959";
 }
 .icon-route:before {
-  content: "\e931";
+  content: "\e95a";
 }
 .icon-services-board:before {
-  content: "\e932";
+  content: "\e95b";
 }
 .icon-services-coffee-machine:before {
-  content: "\e933";
+  content: "\e95c";
 }
 .icon-services-condicioner:before {
-  content: "\e934";
+  content: "\e95d";
 }
 .icon-services-electric-kettle:before {
-  content: "\e935";
+  content: "\e95e";
 }
 .icon-services-garderob:before {
-  content: "\e936";
+  content: "\e95f";
 }
 .icon-services-holodilnik:before {
-  content: "\e937";
+  content: "\e960";
 }
 .icon-services-kids-bedroom:before {
-  content: "\e938";
+  content: "\e961";
 }
 .icon-services-master-bedroom:before {
-  content: "\e939";
+  content: "\e962";
 }
 .icon-services-microwave:before {
-  content: "\e93a";
+  content: "\e963";
 }
 .icon-services-places:before {
-  content: "\e93b";
+  content: "\e964";
 }
 .icon-services-tv:before {
-  content: "\e93c";
+  content: "\e965";
 }
 .icon-services-wifi:before {
-  content: "\e93d";
-}
-.icon-share:before {
-  content: "\e93e";
-  color: #d11242;
+  content: "\e966";
 }
 .icon-solo:before {
-  content: "\e93f";
+  content: "\e967";
 }
 .icon-star:before {
-  content: "\e941";
+  content: "\e968";
 }
 .icon-telegram:before {
-  content: "\e942";
+  content: "\e969";
 }
 .icon-vk:before {
-  content: "\e943";
+  content: "\e96a";
 }
 .icon-whatsapp:before {
-  content: "\e944";
+  content: "\e96b";
 }
