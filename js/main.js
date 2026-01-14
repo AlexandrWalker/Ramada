@@ -30,6 +30,24 @@
     });
   }
 
+  if (window.lenis) {
+    ScrollTrigger.scrollerProxy(document.body, {
+      scrollTop(value) {
+        if (arguments.length) {
+          window.lenis.scrollTo(value, { immediate: true });
+        }
+        return window.lenis.scroll;
+      },
+      getBoundingClientRect() {
+        return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+      },
+      pinType: document.body.style.transform ? "transform" : "fixed"
+    });
+
+    window.lenis.on('scroll', ScrollTrigger.update);
+    ScrollTrigger.defaults({ scroller: document.body });
+  }
+
   const lenis = window.lenis;
 
   lenis.stop();
@@ -1180,9 +1198,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       window.lenis?.stop();
 
-      const scrollbarWidth = getScrollbarWidth();
-      document.body.style.paddingRight = scrollbarWidth + 'px';
-      header.style.right = scrollbarWidth + 'px';
+      if (!window.lenis) {
+        const scrollbarWidth = getScrollbarWidth();
+        document.body.style.paddingRight = scrollbarWidth + 'px';
+        header.style.right = scrollbarWidth + 'px';
+      }
     };
 
     const closeMenu = () => {
@@ -1602,7 +1622,7 @@ document.addEventListener('DOMContentLoaded', () => {
             var element = document.querySelector('.active');
             var h = element.clientHeight / 200;
             var distanceToTop = $activeBlock.offset().top - $(window).scrollTop();
-            var top = window.pageYOffset;
+            var top = window.lenis ? window.lenis.scroll : window.pageYOffset;
 
             // Scroll direction checks
             if (scroll > top) {
@@ -1690,7 +1710,7 @@ document.addEventListener('DOMContentLoaded', () => {
             var element = hall.querySelector('.active');
             var h = element.clientHeight / 200;
             var distanceToTop = $activeBlock.offset().top - $(window).scrollTop() - 69;
-            var top = window.pageYOffset;
+            var top = window.lenis ? window.lenis.scroll : window.pageYOffset;
 
             const hallCover = $('.hall__cover');
 
