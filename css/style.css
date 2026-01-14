@@ -13848,6 +13848,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .site-map__content {
     grid-template-columns: repeat(1, 1fr);
+    gap: 3rem;
   }
 
   .site-map__items {
