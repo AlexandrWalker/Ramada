@@ -252,3 +252,19 @@
     right: calc(var(--f-body-margin, 0px) + var(--f-scrollbar-compensate, 0px));
   }
 }
+
+.has-iframe {
+
+  &.fancybox__slide.has-close-btn {
+    padding-top: 5.4rem;
+  }
+
+  .is-close-button {
+    top: -4.4rem;
+    right: 0;
+
+    svg {
+      stroke: var(--white);
+    }
+  }
+}

@@ -281,9 +281,14 @@
     margin-bottom: 2rem;
 
     @include md {
+      margin-bottom: 4rem;
+    }
+
+    @include sm {
+      justify-content: center;
       flex-wrap: wrap;
       gap: 1rem;
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
     }
   }
 
@@ -294,30 +299,38 @@
     width: calc((100% / 3) - (4rem / 3));
 
     @include md {
-      width: 100%;
-      text-align: left;
-      padding: 1rem;
+      padding: 0;
+      border: 0;
+    }
+
+    @include sm {
+      width: calc((100% / 2) - (1rem / 2));
+    }
+
+    &:last-child {
+
+      @include sm {
+        width: 100%;
+      }
     }
 
     &-wrap {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 5rem;
+      // gap: 5rem;
+      gap: 2rem;
       padding: 6rem 4rem;
       background-color: var(--white);
       position: relative;
 
       @include md {
-        flex-direction: row;
-        gap: 4.4rem;
-        padding: 4rem;
+        gap: 1rem;
+        padding: 1.5rem 4rem 2rem;
       }
 
       @include sm {
-        align-items: flex-start;
-        gap: 2.4rem;
-        padding: 1.5rem;
+        padding: 1.5rem 2rem 2rem 2rem;
       }
 
       &::before {
@@ -337,6 +350,37 @@
           left: 0.5rem;
         }
       }
+
+      .link {
+        gap: 0.7rem;
+
+        color: var(--accent);
+
+        @include md {
+          flex-direction: column;
+          gap: 0.5rem;
+
+          font-size: 1.2rem;
+        }
+
+        i {
+          font-size: 1.6rem;
+          font-weight: 700;
+          color: var(--white);
+
+          background-color: var(--accent);
+        }
+      }
+
+      .general__block {
+        gap: 5rem;
+
+        @include md {
+          gap: 1rem;
+          width: 100%;
+          max-width: 10.8rem;
+        }
+      }
     }
 
     &-img {
@@ -346,13 +390,8 @@
       flex-shrink: 0;
 
       @include md {
-        max-width: 13.4rem;
-        height: 12.2rem;
-      }
-
-      @include sm {
-        width: 9rem;
-        height: auto;
+        max-width: 13rem;
+        height: 12rem;
       }
 
       img {
@@ -367,29 +406,22 @@
       &__block {
         align-items: center;
 
-        @include md {
-          align-items: flex-start;
-        }
-
-        @include sm {
-          padding-top: 1rem;
-          gap: 1rem;
-        }
-
         &-title {
           padding: 2rem 0;
           max-width: 17.2rem;
           width: 100%;
+          text-align: center;
 
           @include md {
-            padding: 0;
-            border: 0;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
           }
 
           h6 {
 
-            @include sm {
-              font-size: 1.6rem;
+            @include md {
+              font-size: 1.4rem;
             }
           }
         }

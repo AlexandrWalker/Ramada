@@ -1560,6 +1560,7 @@ document.addEventListener('DOMContentLoaded', () => {
    * Инициализация Fabcybox
    */
   Fancybox.bind('[data-fancybox]', {
+    wrapCSS: "hrusti",
     Html: {
       autoSize: false,
     },

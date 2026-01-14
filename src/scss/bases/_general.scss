@@ -110,11 +110,7 @@
     &-wrap {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
-
-      @include md {
-        gap: 1rem;
-      }
+      gap: 1rem;
 
       h5 {
         color: var(--accent);
