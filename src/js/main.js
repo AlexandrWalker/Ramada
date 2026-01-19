@@ -1449,6 +1449,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const attr = $(this).data('reviews');
         $.get('./ajax/reviews-' + attr + '.html', function (data) {
           $('.reviews__items').html(data)
+          $('.reviews__item').addClass('reviews__item--' + attr)
         })
       })
     } else {

@@ -92,14 +92,6 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
@@ -116,8 +108,8 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -126,6 +118,14 @@ img {
   font-display: swap;
   src: url("../fonts/Gotham-Thin.woff2") format("woff2"), url("../fonts/Gotham-Thin.woff") format("woff");
   font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
@@ -7267,39 +7267,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   gap: 2rem;
 }
 
-.reviews__items--corp .reviews__item {
-  width: calc(50% - 1rem);
-  height: auto;
-}
-
-.reviews__items--corp .reviews__item-content {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.reviews__items--corp .reviews__item-body {
-  padding: 6rem 1.5rem;
-}
-
-.reviews__items--corp .reviews__item-date {
-  max-width: 57.5rem;
-  text-transform: uppercase;
-}
-
-.reviews__items--corp .reviews__item-text {
-  max-width: 57.5rem;
-}
-
-.reviews__items--corp .reviews__item .link {
-  font-size: 1.2rem;
-}
-
-.reviews__items--corp .reviews__item .link i {
-  --font-size: 1.6rem;
-  font-size: var(--font-size);
-}
-
 @-webkit-keyframes opacity {
   from {
     opacity: 0;
@@ -10150,6 +10117,39 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   text-align: center;
 }
 
+.reviews__item.reviews__item--corp {
+  width: calc(50% - 1rem);
+  height: auto;
+}
+
+.reviews__item.reviews__item--corp-content {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.reviews__item.reviews__item--corp-body {
+  padding: 6rem 1.5rem;
+}
+
+.reviews__item.reviews__item--corp-date {
+  max-width: 57.5rem;
+  text-transform: uppercase;
+}
+
+.reviews__item.reviews__item--corp-text {
+  max-width: 57.5rem;
+}
+
+.reviews__item.reviews__item--corp .link {
+  font-size: 1.2rem;
+}
+
+.reviews__item.reviews__item--corp .link i {
+  --font-size: 1.6rem;
+  font-size: var(--font-size);
+}
+
 .reviews__item-logo {
   width: 13.7rem;
   height: auto;
@@ -12924,35 +12924,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     width: calc(50% - 1rem);
   }
 
-  .reviews__items--corp .reviews__item {
-    padding: 0;
-    border: 0;
-  }
-
-  .reviews__items--corp .reviews__item-body {
-    gap: 3rem;
-    padding: 3.5rem 1.5rem;
-  }
-
-  .reviews__items--corp .reviews__item-body::before {
-    top: 0.5rem;
-    right: 0.5rem;
-    bottom: 0.5rem;
-    left: 0.5rem;
-  }
-
-  .reviews__items--corp .reviews__item-date br {
-    display: none;
-  }
-
-  .reviews__items--corp .reviews__item-date p {
-    font-size: 1.2rem;
-  }
-
-  .reviews__items--corp .reviews__item-name h6 {
-    font-size: 1.4rem;
-  }
-
   .rooms__item {
     gap: 0;
     padding: 0;
@@ -13832,6 +13803,35 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .reviews__item {
     padding: 1rem;
+  }
+
+  .reviews__item.reviews__item--corp {
+    padding: 0;
+    border: 0;
+  }
+
+  .reviews__item.reviews__item--corp-body {
+    gap: 3rem;
+    padding: 3.5rem 1.5rem;
+  }
+
+  .reviews__item.reviews__item--corp-body::before {
+    top: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
+  }
+
+  .reviews__item.reviews__item--corp-date br {
+    display: none;
+  }
+
+  .reviews__item.reviews__item--corp-date p {
+    font-size: 1.2rem;
+  }
+
+  .reviews__item.reviews__item--corp-name h6 {
+    font-size: 1.4rem;
   }
 
   .reviews__item-logo {
@@ -15432,26 +15432,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 1rem;
   }
 
-  .reviews__items--corp .reviews__item {
-    width: 100%;
-  }
-
-  .reviews__items--corp .reviews__item-body {
-    gap: 1.5rem;
-  }
-
-  .reviews__items--corp .reviews__item-date {
-    max-width: 29rem;
-  }
-
-  .reviews__items--corp .reviews__item-name h6 {
-    font-size: 1.2rem;
-  }
-
-  .reviews__items--corp .reviews__item-text {
-    max-width: 31rem;
-  }
-
   .rooms__items {
     gap: 1rem;
   }
@@ -16113,6 +16093,26 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   .reviews__item {
     padding: 0;
     border: 0;
+  }
+
+  .reviews__item.reviews__item--corp {
+    width: 100%;
+  }
+
+  .reviews__item.reviews__item--corp-body {
+    gap: 1.5rem;
+  }
+
+  .reviews__item.reviews__item--corp-date {
+    max-width: 29rem;
+  }
+
+  .reviews__item.reviews__item--corp-name h6 {
+    font-size: 1.2rem;
+  }
+
+  .reviews__item.reviews__item--corp-text {
+    max-width: 31rem;
   }
 
   .reviews__item-body {
