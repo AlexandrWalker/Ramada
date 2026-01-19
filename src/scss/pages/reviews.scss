@@ -23,6 +23,7 @@
 
       &__item {
         width: calc(33.33333% - 1.33333rem);
+        height: auto;
         animation: opacity 0.5s forwards;
 
         @include md {
@@ -54,6 +55,7 @@
 
       .reviews__item {
         width: calc(50% - 1rem);
+        height: auto;
 
         @include md {
           padding: 0;

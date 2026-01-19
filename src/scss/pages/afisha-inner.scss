@@ -3,6 +3,13 @@
 .afisha {
   height: 100%;
 
+  &-page {
+    
+    .template__title {
+      max-width: 140rem;
+    }
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;

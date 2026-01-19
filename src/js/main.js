@@ -1384,6 +1384,57 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /**
+   * Сохранение позиции при переходе на другую страницу
+   */
+  (() => {
+    const isHome = document.body.classList.contains('main-page');
+    if (!isHome) return;
+
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    // сохраняем позицию ТОЛЬКО при уходе С главной
+    window.addEventListener('pagehide', (e) => {
+      // если страница реально уходит (а не обновляется)
+      if (!e.persisted) {
+        history.replaceState(
+          { __homeScrollY: window.scrollY },
+          ''
+        );
+      }
+    });
+
+    // восстанавливаем позицию ТОЛЬКО при возврате НА главную
+    window.addEventListener('pageshow', (e) => {
+      if (!e.persisted) return;
+
+      const state = history.state;
+      if (!state || typeof state.__homeScrollY !== 'number') return;
+
+      const restore = () => {
+        if (!window.lenis) return false;
+
+        window.lenis.scrollTo(state.__homeScrollY, {
+          immediate: true
+        });
+
+        return true;
+      };
+
+      if (restore()) return;
+
+      const raf = () => {
+        if (!restore()) {
+          requestAnimationFrame(raf);
+        }
+      };
+
+      requestAnimationFrame(raf);
+    });
+  })();
+
+  /**
    * Смена отзывов через фильтр
    */
   let filter = document.querySelector('.filter');
@@ -2395,7 +2446,7 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   const transformMap = [
     { selector: '[data-transform="reveal"]', target: "h1 div.word", anim: { opacity: 0, y: 50 }, stagger: 0.3, delay: 0.5 },
-    { selector: '[data-transform="revealRotate"]', target: "div.word", anim: { opacity: 0, y: 100, rotationZ: 15 }, stagger: 0.4 },
+    { selector: '[data-transform="revealRotate"]', target: "div.word", anim: { opacity: 0, y: 100, rotationZ: 15 }, stagger: 0.2 },
     { selector: '[data-transform="fadeIn"]', target: "div.char", anim: { opacity: 0, duration: 0.3, ease: "power1.out" }, stagger: 0.025 },
     {
       selector: '[data-transform="fade"]', target: null, anim: el => el.getAttribute('data-rotation')
