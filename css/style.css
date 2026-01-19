@@ -92,8 +92,8 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -108,16 +108,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
@@ -210,7 +210,6 @@ img {
   text-transform: uppercase;
   margin-bottom: 4rem;
   /* Для анимации fadeIn */
-  overflow: hidden;
 }
 
 .general__head-text {
@@ -2758,11 +2757,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .callback__head {
   text-transform: uppercase;
-  overflow: hidden;
-}
-
-.callback__head h4 {
-  overflow: hidden;
 }
 
 .callback__cover {
@@ -4527,10 +4521,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   grid-row: 1/2;
 }
 
-.template-product__head h4 {
-  overflow: hidden;
-}
-
 .template-product__body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4991,6 +4981,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .afisha {
   height: 100%;
+}
+
+.afisha-page .template__title {
+  max-width: 140rem;
 }
 
 .afisha__inner {
@@ -7145,10 +7139,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   gap: 3rem;
 }
 
-.equipment__head h4 {
-  overflow: hidden;
-}
-
 .equipment__items {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7259,6 +7249,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .reviews-page .reviews__item {
   width: calc(33.33333% - 1.33333rem);
+  height: auto;
   -webkit-animation: opacity 0.5s forwards;
   animation: opacity 0.5s forwards;
 }
@@ -7278,6 +7269,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .reviews__items--corp .reviews__item {
   width: calc(50% - 1rem);
+  height: auto;
 }
 
 .reviews__items--corp .reviews__item-content {
@@ -8100,10 +8092,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 5rem;
-}
-
-.booking__head-title {
-  overflow: hidden;
 }
 
 .booking__body {
