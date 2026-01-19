@@ -23,8 +23,6 @@ body {
   line-height: 120%;
   color: var(--black);
 
-  overflow-x: hidden;
-
   @include md {
     font-size: 1.4rem;
   }

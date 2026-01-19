@@ -1384,11 +1384,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /**
-   * Сохранение позиции при переходе на другую страницу
+   * Сохранение позиции при переходе на другую страницу. Кроме бразуера Firefox
    */
   (() => {
-    const isHome = document.body.classList.contains('main-page');
+    const isHome = document.querySelector('.wrapper').classList.contains('main-page');
+
     if (!isHome) return;
+
+    // Точная проверка Firefox
+    const ua = navigator.userAgent;
+    const isFirefox = ua.indexOf('Firefox') > -1 && ua.indexOf('Seamonkey') === -1;
+    if (isFirefox) return;
 
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
@@ -1396,7 +1402,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // сохраняем позицию ТОЛЬКО при уходе С главной
     window.addEventListener('pagehide', (e) => {
-      // если страница реально уходит (а не обновляется)
       if (!e.persisted) {
         history.replaceState(
           { __homeScrollY: window.scrollY },
