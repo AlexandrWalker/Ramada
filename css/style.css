@@ -18,7 +18,6 @@ body {
   font-size: 1.6rem;
   line-height: 120%;
   color: var(--black);
-  overflow-x: hidden;
 }
 
 .wrapper {
@@ -100,8 +99,8 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
@@ -116,16 +115,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Thin.woff2") format("woff2"), url("../fonts/Gotham-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
+  src: url("../fonts/Gotham-Thin.woff2") format("woff2"), url("../fonts/Gotham-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -156,16 +155,16 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/TTTricks-ExtraBold.woff2") format("woff2"), url("../fonts/TTTricks-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-ExtraBold.woff2") format("woff2"), url("../fonts/TTTricks-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
