@@ -3,7 +3,11 @@
  */
 (() => {
   const HEADER_SELECTOR = '.header';
+  const MAIN_SELECTOR = '.wrapper.main-page';
+  const STORAGE_KEY = 'main_scroll_y';
   const preloader = document.querySelector('.preloader');
+
+  const isMainPage = () => document.querySelector(MAIN_SELECTOR);
 
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
@@ -41,7 +45,7 @@
       getBoundingClientRect() {
         return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
       },
-      pinType: document.body.style.transform ? "transform" : "fixed"
+      pinType: document.body.style.transform ? 'transform' : 'fixed'
     });
 
     window.lenis.on('scroll', ScrollTrigger.update);
@@ -51,8 +55,6 @@
   const lenis = window.lenis;
 
   lenis.stop();
-
-  lenis.on('scroll', ScrollTrigger.update);
 
   gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
@@ -68,7 +70,29 @@
     }).observe(header);
   }
 
-  // --- scroll to hash on page load ---
+  // --- сохраняем позицию при уходе с главной ---
+  window.addEventListener('pagehide', () => {
+    if (!isMainPage()) return;
+    if (!window.lenis) return;
+
+    sessionStorage.setItem(STORAGE_KEY, window.lenis.scroll);
+  });
+
+  // --- сброс позиции при прямом заходе на главную ---
+  window.addEventListener('pageshow', (e) => {
+    if (!isMainPage()) return;
+
+    // прямой заход → удаляем сохранённую позицию
+    if (!e.persisted) {
+      sessionStorage.removeItem(STORAGE_KEY);
+      // дополнительно сброс скролла на верх
+      if (window.lenis) {
+        window.lenis.scrollTo(0, { immediate: true });
+      }
+    }
+  });
+
+  // --- scroll restore / hash after preload ---
   window.addEventListener('load', () => {
     if (!preloader) return;
 
@@ -81,6 +105,7 @@
 
         lenis.resize();
 
+        // 1. hash имеет приоритет
         if (initialHash) {
           const target = document.querySelector(initialHash);
           if (target && !target.closest('[data-lenis-prevent]')) {
@@ -95,6 +120,14 @@
           }
         }
 
+        // 2. восстановление своей позиции при back (если hash нет)
+        if (!initialHash && isMainPage()) {
+          const saved = sessionStorage.getItem(STORAGE_KEY);
+          if (saved !== null) {
+            lenis.scrollTo(Number(saved), { immediate: true });
+          }
+        }
+
         ScrollTrigger.refresh();
         lenis.start();
 
@@ -106,6 +139,21 @@
     );
 
     preloader.classList.add('hidden');
+  });
+
+  // --- восстановление при bfcache (back/forward) ---
+  window.addEventListener('pageshow', (e) => {
+    if (!e.persisted) return;
+    if (!isMainPage()) return;
+    if (!window.lenis) return;
+    if (initialHash) return;
+
+    const saved = sessionStorage.getItem(STORAGE_KEY);
+    if (saved === null) return;
+
+    window.lenis.scrollTo(Number(saved), {
+      immediate: true
+    });
   });
 
   // --- smooth scroll for anchor links ---
@@ -128,6 +176,7 @@
 
     history.replaceState(null, '', targetId);
   });
+
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -172,10 +221,20 @@ document.addEventListener('DOMContentLoaded', () => {
         },
       });
 
+      swiper.on('slideChange', () => {
+        animateByIndices(prevIndex, swiper.activeIndex);
+        prevIndex = swiper.activeIndex;
+      });
+
+      swiper.on('slideChangeTransitionEnd', () => {
+        slidingBlocked = false;
+      });
+
       const container = document.querySelector(selector);
       const controls = container.querySelectorAll('.slider__control');
       const slidingAT = 800;
       let slidingBlocked = false;
+      let prevIndex = 0;
 
       controls.forEach(el => {
         el.addEventListener('click', () =>
@@ -185,25 +244,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
       function handleControlClick(isRight) {
         if (slidingBlocked) return;
+
         slidingBlocked = true;
 
-        const currentIndex = swiper.activeIndex;
-        let index = isRight ? currentIndex + 1 : currentIndex - 1;
+        const index = isRight
+          ? swiper.activeIndex + 1
+          : swiper.activeIndex - 1;
 
-        if (index >= swiper.slides.length) index = 0;
-        if (index < 0) index = swiper.slides.length - 1;
-
-        animateTo(index, isRight);
+        swiper.slideTo(
+          index < 0 ? swiper.slides.length - 1 :
+            index >= swiper.slides.length ? 0 :
+              index,
+          0
+        );
       }
 
-      function animateTo(index, isRight) {
-        const newActive = swiper.slides[index];
-        const curActive = swiper.slides[swiper.activeIndex];
+      function animateByIndices(from, to) {
+        if (from === to) return;
 
-        if (!newActive || !curActive) {
-          slidingBlocked = false;
-          return;
-        }
+        const isRight = to > from || (from === swiper.slides.length - 1 && to === 0);
+
+        const newActive = swiper.slides[to];
+        const curActive = swiper.slides[from];
+
+        if (!newActive || !curActive) return;
 
         curActive.classList.remove('s--active', 's--active-prev');
 
@@ -236,15 +300,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const oldPrev = container.querySelector('.swiper-slide.s--prev');
         if (oldPrev) oldPrev.classList.remove('s--prev');
 
-        let prevIndex = index - 1;
-        if (prevIndex < 0) prevIndex = swiper.slides.length - 1;
-        swiper.slides[prevIndex].classList.add('s--prev');
-
-        swiper.slideTo(index, 0);
-
-        setTimeout(() => {
-          slidingBlocked = false;
-        }, slidingAT);
+        let prev = to - 1;
+        if (prev < 0) prev = swiper.slides.length - 1;
+        swiper.slides[prev].classList.add('s--prev');
       }
 
       let startX = null;
@@ -285,9 +343,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       const fraction = container.querySelector('.fraction');
+
       if (fraction) {
+        swiper.slides[0]?.classList.add('s--active');
         fractionCustomSlider(swiper);
       } else {
+        swiper.slides[0]?.classList.add('s--active');
         swiper.init();
       }
 
@@ -320,6 +381,10 @@ document.addEventListener('DOMContentLoaded', () => {
         effect: 'fade',
         fadeEffect: { crossFade: true },
         allowTouchMove: false,
+        navigation: {
+          prevEl: '.swiper-control-button-prev',
+          nextEl: '.swiper-control-button-next',
+        },
       })
       : null;
 
@@ -1556,6 +1621,18 @@ document.addEventListener('DOMContentLoaded', () => {
         breakpoints: {
           600: {
             targetElement: document.querySelector('.concept__body')
+          }
+        },
+      }
+    );
+  }
+  if (document.querySelector('.gallery__inner')) {
+    new TransferElements(
+      {
+        sourceElement: document.querySelector('.gallery__title'),
+        breakpoints: {
+          834: {
+            targetElement: document.querySelector('.gallery__inner')
           }
         },
       }
