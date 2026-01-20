@@ -11,6 +11,24 @@
 
   display: none;
 
+  &#thanks {
+    padding: 3rem 6rem 3rem 5rem;
+    max-width: 63.4rem;
+
+    @include md {
+      padding: 5rem 2rem 4rem 2rem;
+      max-width: 26.5rem;
+    }
+
+    .fancybox__container .is-close-button {
+
+      @include md {
+        top: 1rem;
+        right: 1rem;
+      }
+    }
+  }
+
   @include md {
     gap: 3rem;
     padding: 5rem 1rem 2rem;
