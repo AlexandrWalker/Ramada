@@ -107,16 +107,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
+  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -5915,6 +5915,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   right: 0;
   left: 0;
   z-index: 1;
+  pointer-events: none;
 }
 
 .contacts__map-pic {
@@ -5942,6 +5943,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
   position: absolute;
+  pointer-events: all;
 }
 
 .contacts__map-item:hover {
