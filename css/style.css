@@ -91,6 +91,14 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
+  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
   src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -115,8 +123,8 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Gotham-Thin.woff2") format("woff2"), url("../fonts/Gotham-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -125,14 +133,6 @@ img {
   font-display: swap;
   src: url("../fonts/Gotham-Ultra.woff2") format("woff2"), url("../fonts/Gotham-Ultra.woff") format("woff");
   font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
-  src: url("../fonts/Gotham-Thin.woff2") format("woff2"), url("../fonts/Gotham-Thin.woff") format("woff");
-  font-weight: 100;
   font-style: normal;
 }
 
@@ -4121,6 +4121,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   max-width: 71.4rem;
   width: 100%;
   display: none;
+}
+
+.popup#thanks {
+  padding: 3rem 6rem 3rem 5rem;
+  max-width: 63.4rem;
 }
 
 .popup__head {
@@ -11755,6 +11760,16 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     right: calc(var(--btn-first-padding) + var(--btn-second-padding));
     bottom: calc(var(--btn-first-padding) + var(--btn-second-padding));
     left: calc(var(--btn-first-padding) + var(--btn-second-padding));
+  }
+
+  .popup#thanks {
+    padding: 5rem 2rem 4rem 2rem;
+    max-width: 26.5rem;
+  }
+
+  .popup#thanks .fancybox__container .is-close-button {
+    top: 1rem;
+    right: 1rem;
   }
 
   .popup {
