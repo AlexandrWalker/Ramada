@@ -4,9 +4,6 @@
 (() => {
   const HEADER_SELECTOR = '.header';
   const preloader = document.querySelector('.preloader');
-  const SCROLL_KEY = 'home-scroll-position';
-
-  const IS_MAIN_PAGE = !!document.querySelector('.wrapper.main-page');
 
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
@@ -25,7 +22,7 @@
     return header ? header.getBoundingClientRect().height : 0;
   }
 
-  // --- Lenis init ---
+  // --- Lenis init (глобальный) ---
   if (!window.lenis) {
     window.lenis = new Lenis({
       smooth: true,
@@ -42,14 +39,9 @@
         return window.lenis.scroll;
       },
       getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight
-        };
+        return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
       },
-      pinType: document.body.style.transform ? 'transform' : 'fixed'
+      pinType: document.body.style.transform ? "transform" : "fixed"
     });
 
     window.lenis.on('scroll', ScrollTrigger.update);
@@ -60,13 +52,15 @@
 
   lenis.stop();
 
+  lenis.on('scroll', ScrollTrigger.update);
+
   gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
   });
 
   gsap.ticker.lagSmoothing(0);
 
-  // --- adaptive header ---
+  // adaptive header
   const header = document.querySelector(HEADER_SELECTOR);
   if (header) {
     new ResizeObserver(() => {
@@ -74,29 +68,7 @@
     }).observe(header);
   }
 
-  // --- save scroll position (only main page) ---
-  window.addEventListener('pagehide', () => {
-    if (!IS_MAIN_PAGE) return;
-
-    sessionStorage.setItem(
-      SCROLL_KEY,
-      Math.round(lenis.scroll)
-    );
-  });
-
-  // --- restore flag ---
-  let restoreScrollValue = null;
-
-  window.addEventListener('pageshow', () => {
-    if (!IS_MAIN_PAGE) return;
-
-    const saved = sessionStorage.getItem(SCROLL_KEY);
-    if (saved !== null) {
-      restoreScrollValue = Number(saved);
-    }
-  });
-
-  // --- after preloader ---
+  // --- scroll to hash on page load ---
   window.addEventListener('load', () => {
     if (!preloader) return;
 
@@ -109,30 +81,15 @@
 
         lenis.resize();
 
-        // RESTORE scroll has priority
-        if (restoreScrollValue !== null) {
-          requestAnimationFrame(() => {
-            lenis.scrollTo(restoreScrollValue, {
-              immediate: true,
-              lock: true
-            });
-
-            ScrollTrigger.refresh();
-            lenis.start();
-          });
-
-          restoreScrollValue = null;
-          return;
-        }
-
-        // HASH scroll
         if (initialHash) {
           const target = document.querySelector(initialHash);
           if (target && !target.closest('[data-lenis-prevent]')) {
             requestAnimationFrame(() => {
-              lenis.scrollTo(target, {
-                offset: -getHeaderOffset(),
-                immediate: false
+              requestAnimationFrame(() => {
+                lenis.scrollTo(target, {
+                  offset: -getHeaderOffset(),
+                  immediate: false
+                });
               });
             });
           }
@@ -151,7 +108,7 @@
     preloader.classList.add('hidden');
   });
 
-  // --- smooth anchor scroll ---
+  // --- smooth scroll for anchor links ---
   document.addEventListener('click', (e) => {
     const link = e.target.closest('a[href^="#"]');
     if (!link) return;
@@ -1425,62 +1382,6 @@ document.addEventListener('DOMContentLoaded', () => {
       burgerClose.classList.add('btn--black');
     }
   });
-
-  /**
-   * Сохранение позиции при переходе на другую страницу. Кроме бразуера Firefox
-   */
-  // (() => {
-  //   const isHome = document.querySelector('.wrapper').classList.contains('main-page');
-
-  //   if (!isHome) return;
-
-  //   // Точная проверка Firefox
-  //   const ua = navigator.userAgent;
-  //   const isFirefox = ua.indexOf('Firefox') > -1 && ua.indexOf('Seamonkey') === -1;
-  //   if (isFirefox) return;
-
-  //   if ('scrollRestoration' in history) {
-  //     history.scrollRestoration = 'manual';
-  //   }
-
-  //   // сохраняем позицию ТОЛЬКО при уходе С главной
-  //   window.addEventListener('pagehide', (e) => {
-  //     if (!e.persisted) {
-  //       history.replaceState(
-  //         { __homeScrollY: window.scrollY },
-  //         ''
-  //       );
-  //     }
-  //   });
-
-  //   // восстанавливаем позицию ТОЛЬКО при возврате НА главную
-  //   window.addEventListener('pageshow', (e) => {
-  //     if (!e.persisted) return;
-
-  //     const state = history.state;
-  //     if (!state || typeof state.__homeScrollY !== 'number') return;
-
-  //     const restore = () => {
-  //       if (!window.lenis) return false;
-
-  //       window.lenis.scrollTo(state.__homeScrollY, {
-  //         immediate: true
-  //       });
-
-  //       return true;
-  //     };
-
-  //     if (restore()) return;
-
-  //     const raf = () => {
-  //       if (!restore()) {
-  //         requestAnimationFrame(raf);
-  //       }
-  //     };
-
-  //     requestAnimationFrame(raf);
-  //   });
-  // })();
 
   /**
    * Смена отзывов через фильтр
