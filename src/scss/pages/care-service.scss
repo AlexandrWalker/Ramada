@@ -295,6 +295,24 @@
       &-label {
         background-color: var(--white);
       }
+
+      &-file {
+
+        &+.form-label,
+        &+.form-label p {
+          
+          @include sm {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      &-group--file {
+
+        @include sm {
+          gap: 0.5rem;
+        }
+      }
     }
   }
 }
