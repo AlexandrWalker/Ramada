@@ -859,32 +859,6 @@ sup {
   }
 }
 
-/* Фракция слайдера */
-// .fraction {
-//   display: flex;
-//   justify-content: center;
-//   align-items: flex-end;
-//   width: 13rem;
-//   height: 13rem;
-//   padding: 2.5rem 0;
-//   background-color: var(--primary-accent);
-//   font-weight: 400;
-//   font-size: 5rem;
-//   line-height: 100%;
-//   vertical-align: bottom;
-//   position: absolute;
-//   top: unset;
-//   bottom: 1rem;
-//   right: 0;
-//   left: unset;
-//   z-index: 1;
-
-//   &-current {
-//     font-size: 10rem;
-//     line-height: 80%;
-//   }
-// }
-
 @keyframes one {
   100% {
     stroke-dashoffset: 0;
@@ -902,12 +876,3 @@ sup {
     stroke-dashoffset: 0;
   }
 }
-
-// .footer[data-animation="creeping"] {
-//   position: fixed;
-//   bottom: -100%;
-//   left: 0;
-//   width: 100%;
-//   z-index: 10;
-//   transition: 0s;
-// }
