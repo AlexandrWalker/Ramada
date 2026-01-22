@@ -210,7 +210,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function initCustomSwiper(selector) {
       const swiper = new Swiper(selector, {
         slidesPerView: 1,
-        loop: false,
+        // loop: false,
+        loop: true,
         speed: 0,
         initialSlide: 0,
         allowTouchMove: false,

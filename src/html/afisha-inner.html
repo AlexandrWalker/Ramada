@@ -239,7 +239,94 @@
         </div>
       </section>
 
-      @@include('blocks/callback.html', {"title": "Записаться", "cover": "./images/temp/callback-cover.png", "formFile": "false"})
+      <section class="callback">
+        <div class="container">
+          <div class="callback__inner" data-transform="fadeUp">
+            <div class="callback__wrap">
+              <div class="callback__head" data-transform="revealRotate" data-splitting="words">
+                <h4>
+                  Записаться
+                </h4>
+              </div>
+              <div class="callback__body">
+                <form class="form" action="#">
+                  <div class="form__inner">
+                    <div class="form-group has-error">
+                      <input id="form_name" class="form-input" type="text" required>
+                      <label for="form_name" class="form-label">
+                        Ваше имя*
+                      </label>
+                      <span class="form-error">
+                        Поле заполнено неверно
+                      </span>
+                    </div>
+                    <div class="form-group">
+                      <input id="form_tel" class="form-input" type="tel" required>
+                      <label for="form_tel" class="form-label">
+                        Телефон*
+                      </label>
+                      <span class="form-error">
+                        Поле заполнено неверно
+                      </span>
+                    </div>
+                    <div class="form-group">
+                      <input id="form_mail" class="form-input" type="email">
+                      <label for="form_mail" class="form-label">
+                        Эл. почта
+                      </label>
+                      <span class="form-error">
+                        Поле заполнено неверно
+                      </span>
+                    </div>
+                    <div class="form-group">
+                      <textarea id="form_comment" class="form-textarea" name="comment" rows="8"></textarea>
+                      <label for="form_comment" class="form-label">
+                        Комментарий
+                      </label>
+                    </div>
+
+                  </div>
+                  <div class="form-foot">
+                    <button class="form-btn btn btn--accent" type="button">
+                      <span class="scale"></span>
+                      Отправить
+                    </button>
+                    <div class="form-foot__wrap">
+                      <div class="form-group form-text">
+                        <input id="form-checkbox-1" class="form-checkbox" type="checkbox" required>
+                        <label for="form-checkbox-1">
+                          <div class="form-checkbox--item"></div>
+                          <p>
+                            Я согласен на <a href="/Ramada/policy.html">обработку персональных данных</a>
+                          </p>
+                        </label>
+                      </div>
+                      <div class="form-group form-text">
+                        <input id="form-checkbox-2" class="form-checkbox" type="checkbox">
+                        <label for="form-checkbox-2">
+                          <div class="form-checkbox--item"></div>
+                          <p>
+                            Я согласен на <a href="/Ramada/policy.html">рекламные уведомления</a>
+                          </p>
+                        </label>
+                      </div>
+                      <div class="form-text">
+                        <p>
+                          Нажимая на кнопку, Вы соглашаетесь с обработкой персональных данный в рамках <a
+                            href="/Ramada/policy.html">Политики персональных данных </a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="callback__cover border" data-animation="parallax-img">
+              <img src="./images/temp/callback-cover.png" alt="">
+            </div>
+          </div>
+        </div>
+      </section>
 
       @@include('blocks/booking.html', {"title": "Забронируйте номер"})
 
