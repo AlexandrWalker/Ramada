@@ -45,7 +45,23 @@
     }
   }
 
-  &__slider {}
+  &__slider {
+
+    .offers {
+
+      &__item {
+        height: 100%;
+      }
+
+      &__content {
+        
+
+        .link {
+          margin-top: auto;
+        }
+      }
+    }
+  }
 
   &__item {
     display: flex;
@@ -67,16 +83,25 @@
 
   &__img {
     width: 100%;
-    height: auto;
+    height: 29.3rem;
     aspect-ratio: 453/293;
+
+    @include md {
+      height: 19.8rem;
+    }
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: calc(100% - 29.3rem - 4rem);
 
     text-align: center;
+
+    @include md {
+      min-height: calc(100% - 19.8rem - 3rem);
+    }
 
     &-title {
       color: var(--accent);
@@ -100,6 +125,10 @@
       @include md {
         margin-bottom: 3rem;
       }
+    }
+
+    .link {
+      margin-top: auto;
     }
   }
 

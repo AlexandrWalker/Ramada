@@ -200,14 +200,26 @@
       aspect-ratio: unset;
     }
 
+    @include xxxl {
+      bottom: -12rem;
+    }
+
+    @include xlg {
+      bottom: -30rem;
+    }
+
+    @include lg {
+      bottom: -36rem;
+    }
+
     @include md {
       // margin-bottom: calc(-13rem - var(--template-padding-b));
       // transform: translateY(calc(13rem + var(--template-padding-b)));
 
-      height: 21rem;
       height: auto;
       aspect-ratio: 674/210;
       bottom: -13rem;
+      bottom: -16rem;
     }
 
     @include sm {
@@ -217,6 +229,11 @@
       max-height: 31rem;
       height: auto;
       aspect-ratio: 353/309;
+      bottom: -11rem;
+      bottom: -22rem;
+    }
+
+    @include xsm {
       bottom: -11rem;
     }
 
@@ -385,6 +402,18 @@
       transform: unset !important;
       margin-bottom: calc(6.5rem + 2rem);
 
+      @include xxxl {
+        margin-bottom: 13rem;
+      }
+
+      @include xlg {
+        margin-bottom: 31rem;
+      }
+
+      @include lg {
+        margin-bottom: 36rem;
+      }
+
       @include md {
         position: relative;
         top: unset !important;
@@ -393,6 +422,14 @@
 
       @include sm {
         margin-bottom: calc(9rem + 4rem);
+      }
+
+      @include xsm {
+        margin-bottom: calc(9rem + 8rem);
+      }
+
+      @include xxxs {
+        margin-bottom: calc(9rem + 10rem);
       }
     }
 

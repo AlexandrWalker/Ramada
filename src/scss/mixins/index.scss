@@ -1,5 +1,11 @@
 @use 'sass:math';
 
+@mixin xxxl() {
+  @media (max-width: 1486px) {
+    @content;
+  }
+}
+
 @mixin xxl() {
   @media (max-width: 1440px) {
     @content;
@@ -8,6 +14,12 @@
 
 @mixin xl() {
   @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin xlg() {
+  @media (max-width: 1153px) {
     @content;
   }
 }
@@ -48,6 +60,12 @@
   }
 }
 
+@mixin xsm() {
+  @media (max-width: 455px) {
+    @content;
+  }
+}
+
 @mixin xs() {
   @media (max-width: 420px) {
     @content;
@@ -56,6 +74,12 @@
 
 @mixin xxs() {
   @media (max-width: 372px) {
+    @content;
+  }
+}
+
+@mixin xxxs() {
+  @media (max-width: 365px) {
     @content;
   }
 }
