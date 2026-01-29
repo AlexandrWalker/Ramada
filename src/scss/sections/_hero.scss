@@ -224,8 +224,8 @@
     }
 
     @include xs {
-      // max-width: 25.4rem;
-      max-width: 19.4rem;
+      // max-width: 19.4rem;
+      max-width: 28rem;
     }
 
     h4 {
@@ -245,6 +245,19 @@
 
       @include xs {
         -webkit-line-clamp: 4;
+      }
+    }
+
+    i {
+      --font-size: 1.5rem;
+
+      display: inline-flex;
+      position: relative;
+      top: -2.3rem;
+
+      @include md {
+        --font-size: 0.8rem;
+        top: -0.7rem;
       }
     }
   }
