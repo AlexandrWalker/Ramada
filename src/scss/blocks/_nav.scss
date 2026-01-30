@@ -57,6 +57,7 @@
     }
   }
 
+  p,
   a {
     display: flex;
     align-items: center;
@@ -70,6 +71,7 @@
     text-transform: uppercase;
     color: var(--accent);
     white-space: nowrap;
+    cursor: pointer;
 
     @include md {
       padding: 1.6rem 0;

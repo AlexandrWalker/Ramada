@@ -13,16 +13,19 @@
   &__body {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-    max-width: 56.5rem;
+    gap: 1.5rem;
+    max-width: 35.2rem;
     width: 100%;
     height: fit-content;
-    padding: 3rem 7.5rem 3rem 2.5rem;
+    padding: 3rem 2rem 2rem 2rem;
     background-color: var(--accent);
 
     @include md {
-      gap: 1.5rem;
       padding: 1.5rem 3rem 1.5rem 2rem;
+    }
+
+    @include sm {
+      max-width: 100%;
     }
   }
 
@@ -32,6 +35,14 @@
     a {
       font-weight: 700;
       text-decoration: underline;
+    }
+
+    p {
+      font-size: 1.4rem;
+
+      @include md {
+        font-size: 1.2rem;
+      }
     }
   }
 

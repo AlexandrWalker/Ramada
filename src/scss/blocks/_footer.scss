@@ -289,8 +289,10 @@
   &__items {
     display: grid;
     // grid-template-columns: 23.5rem 23.5rem 33.5rem;
-    grid-template-columns: 21.267% 21.267% 30.317%;
-    gap: 5rem 15rem;
+    // grid-template-columns: 21.267% 21.267% 30.317%;
+    grid-template-columns: repeat(3, 1fr);
+    // gap: 5rem 15rem;
+    gap: 5rem 5rem;
 
     @include md {
       display: flex;
@@ -306,7 +308,8 @@
   &__col {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    // gap: 5rem;
+    gap: 2.25rem;
 
     @include md {
       gap: 2rem;
@@ -331,7 +334,7 @@
   &__item {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.25rem;
 
     @include md {
       gap: 0;
@@ -489,7 +492,7 @@
         display: block;
         width: fit-content;
         height: fit-content;
-        padding: 1rem 0;
+        padding: 0.75rem 0;
 
         white-space: nowrap;
 
@@ -513,7 +516,7 @@
           border-radius: 0.025rem;
           background-color: var(--black);
           position: absolute;
-          bottom: 1.1rem;
+          bottom: 0.9rem;
           left: 50%;
           transform: translate(-50%);
           transition: all 0.3s ease-in-out;

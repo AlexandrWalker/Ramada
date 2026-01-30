@@ -124,7 +124,12 @@
       color: var(--accent);
 
       h4 {
+        font-size: 3.5rem;
         line-height: 120%;
+
+        @include md {
+          font-size: 2rem;
+        }
       }
     }
   }

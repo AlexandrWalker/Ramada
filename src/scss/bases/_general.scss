@@ -825,6 +825,7 @@ sup {
     }
   }
 
+  .nav p:hover &,
   .nav a:hover & {
 
     @include dosm {
