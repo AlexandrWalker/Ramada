@@ -137,19 +137,12 @@
     flex-direction: column;
     gap: 4rem;
     width: calc(100% - 87.8rem - 15rem);
-    // width: calc(100% - 87.8rem - 15rem - var(--container-padding) *2);
     height: fit-content;
     padding: 5rem 3rem 6rem;
     background-color: var(--white);
 
     position: sticky;
-    // position: fixed;
-    // top: 6rem;
-    // top: calc(var(--header-height) + 1rem);
     top: 1rem;
-    // top: calc(var(--header-height) + 11.3rem);
-    // right: var(--container-padding);
-    // left: auto;
 
     @include md {
       display: none;
