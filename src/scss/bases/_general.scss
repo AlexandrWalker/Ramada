@@ -33,9 +33,6 @@
       text-transform: uppercase;
       margin-bottom: 4rem;
 
-      /* Для анимации fadeIn */
-      // overflow: hidden;
-
       @include md {
         margin-bottom: 3rem;
       }
@@ -68,7 +65,6 @@
 
     &-suptitle {
       color: var(--accent);
-      overflow: hidden;
     }
 
     &-title {
