@@ -91,14 +91,6 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -107,16 +99,24 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
+  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -4956,6 +4956,26 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   margin-bottom: 2rem;
 }
 
+.template-box__attr-head.accordion-active i {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.template-box__attr-head h6 {
+  font-family: var(--second-family);
+  font-weight: 300;
+}
+
+.template-box__attr-head i {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background-color: var(--accent);
+  font-size: 1.2rem;
+  color: var(--white);
+}
+
 .template-box__attr-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6863,6 +6883,32 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 .residence__slider {
   width: 100%;
   overflow: visible;
+}
+
+.residence__slider .general__block .btn {
+  margin-top: 0;
+}
+
+.residence__slider .general__block-subtext h5 {
+  font-family: var(--font-family);
+  font-weight: 700;
+  color: var(--black);
+}
+
+.residence__slider .general__block-list p {
+  font-weight: 350;
+}
+
+.residence__slider .general__block-suptitle {
+  max-width: 100%;
+}
+
+.residence__slider .general__block-text {
+  color: var(--black);
+}
+
+.residence__slider .template-product__body-price {
+  margin-bottom: 0;
 }
 
 .residence__slide {
@@ -15487,6 +15533,14 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .residence-page .template-product__slider--big {
     margin-bottom: 1rem;
+  }
+
+  .residence__slider .general__block-subtext h5 {
+    font-size: 1.4rem;
+  }
+
+  .residence__slider .general__block-list {
+    gap: 2rem;
   }
 
   .residence__slide-btns .swiper-button-prev {

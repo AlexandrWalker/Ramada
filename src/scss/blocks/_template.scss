@@ -1265,6 +1265,25 @@
 
         &.accordion-active {
           margin-bottom: 2rem;
+
+          i {
+            transform: rotate(180deg);
+          }
+        }
+
+        h6 {
+          font-family: var(--second-family);
+          font-weight: 300;
+        }
+
+        i {
+          width: 2.4rem;
+          height: 2.4rem;
+          border-radius: 50%;
+          background-color: var(--accent);
+
+          font-size: 1.2rem;
+          color: var(--white);
         }
       }
 

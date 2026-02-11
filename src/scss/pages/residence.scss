@@ -38,11 +38,6 @@
 
     .template-product {
 
-      // @include sm {
-      //   overflow: visible;
-      //   z-index: 3;
-      // }
-
       .template-box__inner {
 
         @include md {
@@ -122,6 +117,52 @@
 
     @include md {
       overflow: visible;
+    }
+
+    .general__block {
+
+      .btn {
+        margin-top: 0;
+      }
+
+      &-subtext {
+
+        h5 {
+          font-family: var(--font-family);
+          font-weight: 700;
+          color: var(--black);
+
+          @include sm {
+            font-size: 1.4rem;
+          }
+        }
+      }
+
+      &-list {
+
+        @include sm {
+          gap: 2rem;
+        }
+
+        p {
+          font-weight: 350;
+        }
+      }
+
+      &-suptitle {
+        max-width: 100%;
+      }
+
+      &-text {
+        color: var(--black);
+      }
+    }
+
+    .template-product {
+
+      &__body-price {
+        margin-bottom: 0;
+      }
     }
   }
 
