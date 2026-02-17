@@ -16,6 +16,17 @@
     &-title {
       color: var(--accent);
       overflow: hidden;
+
+      h2 {
+        font-family: var(--second-family);
+        font-weight: 300;
+        font-size: 6rem;
+        line-height: 110%;
+
+        @include md {
+          font-size: 5rem;
+        }
+      }
     }
 
     &-text {
@@ -182,19 +193,16 @@
     &-title {
       color: var(--accent);
 
+      @include md {
+        font-size: 2.5rem;
+      }
+
       @include sm {
         color: inherit;
         transition: all 0.3s ease;
 
         .accordion-active & {
           color: var(--accent);
-        }
-      }
-
-      h5 {
-
-        @include md {
-          font-size: 2.5rem;
         }
       }
     }
@@ -251,7 +259,7 @@
     display: flex;
     flex-direction: column;
 
-    h5 {
+    .h5 {
       color: var(--accent);
       margin-bottom: 3rem;
 

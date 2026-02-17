@@ -13,14 +13,14 @@
     display: flex;
     flex-direction: column;
 
-    h5 {
+    .h5 {
 
       @include md {
         font-size: 2.5rem;
       }
     }
 
-    h6 {
+    .h6 {
       font-family: var(--second-family);
       font-weight: 300;
       font-size: 2.5rem;
@@ -132,7 +132,7 @@
         padding: 2rem 2rem 3rem;
       }
 
-      h6 {
+      .h6 {
         color: var(--accent);
         margin-bottom: 2.5rem;
 

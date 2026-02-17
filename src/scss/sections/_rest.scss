@@ -93,11 +93,8 @@
 
   .general__head-title {
 
-    h3 {
-
-      @include sm {
-        font-size: 3.5rem;
-      }
+    @include sm {
+      font-size: 3.5rem;
     }
   }
 
@@ -174,10 +171,6 @@
       flex-direction: column;
       gap: 3rem;
     }
-
-    &-title {}
-
-    &-text {}
   }
 
   &__feat {
@@ -214,13 +207,10 @@
 
     &-count {
       color: var(--accent);
+      line-height: 110%;
 
-      h4 {
-        line-height: 110%;
-
-        @include md {
-          font-size: 3.5rem;
-        }
+      @include md {
+        font-size: 3.5rem;
       }
     }
 

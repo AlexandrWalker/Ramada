@@ -110,7 +110,7 @@
     }
 
     h1 {
-      display: flex;
+      display: flex !important;
       flex-direction: column;
       gap: 0.5rem;
       margin-left: -1.4rem;
@@ -214,9 +214,24 @@
     padding-left: 13rem;
     max-width: 86rem;
 
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    overflow: hidden;
+
+    color: var(--white);
+    font-family: var(--second-family);
+    font-weight: 300;
+    font-size: 5rem;
+    line-height: 120%;
+
     @include md {
       padding-left: 7.7rem;
       max-width: 36.7rem;
+
+      font-size: 2rem;
     }
 
     @include xmd {
@@ -224,28 +239,9 @@
     }
 
     @include xs {
-      // max-width: 19.4rem;
       max-width: 28rem;
-    }
 
-    h4 {
-      -webkit-line-clamp: 3;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -o-text-overflow: clip;
-      text-overflow: clip;
-      overflow: hidden;
-
-      line-height: 120%;
-      color: var(--white);
-
-      @include md {
-        font-size: 2rem;
-      }
-
-      @include xs {
-        -webkit-line-clamp: 4;
-      }
+      -webkit-line-clamp: 4;
     }
 
     i {

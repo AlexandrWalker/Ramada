@@ -26,13 +26,9 @@
     }
 
     &-title {
-      // overflow: hidden;
 
-      h4 {
-
-        @include md {
-          font-size: 3.5rem;
-        }
+      @include md {
+        font-size: 3.5rem;
       }
     }
 

@@ -37,13 +37,10 @@
 
   &__head {
     text-transform: uppercase;
+    line-height: 100%;
 
-    h5 {
-      line-height: 100%;
-
-      @include md {
-        font-size: 2.5rem;
-      }
+    @include md {
+      font-size: 2.5rem;
     }
   }
 
@@ -55,10 +52,6 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
-
-      @include md {
-        // gap: 1rem;
-      }
     }
 
     &-group {

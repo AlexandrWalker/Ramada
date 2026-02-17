@@ -10,13 +10,11 @@
 
     .general__block-subtext {
 
-      h5 {
-        font-size: 2.5rem;
-        color: var(--accent);
+      font-size: 2.5rem;
+      color: var(--accent);
 
-        @include md {
-          font-size: 2rem;
-        }
+      @include md {
+        font-size: 2rem;
       }
     }
 
@@ -127,14 +125,12 @@
 
       &-subtext {
 
-        h5 {
-          font-family: var(--font-family);
-          font-weight: 700;
-          color: var(--black);
+        font-family: var(--font-family);
+        font-weight: 700;
+        color: var(--black);
 
-          @include sm {
-            font-size: 1.4rem;
-          }
+        @include sm {
+          font-size: 1.4rem;
         }
       }
 
@@ -151,6 +147,10 @@
 
       &-suptitle {
         max-width: 100%;
+
+        @include sm {
+          font-size: 2rem;
+        }
       }
 
       &-text {

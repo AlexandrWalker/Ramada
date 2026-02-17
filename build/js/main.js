@@ -1657,7 +1657,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const tooltip = document.getElementById('infraTooltip');
     const img = tooltip.querySelector('img');
-    const title = tooltip.querySelector('h6');
+    const title = tooltip.querySelector('.infra__tooltip-title');
     const text = tooltip.querySelector('p');
 
     const isTouch = window.matchMedia('(hover: none)').matches;
@@ -2591,17 +2591,146 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /**
+   * ===============================================================================================
+   */
+  // function splitElement(el, types) {
+  //   if (el.dataset.splitInit) return;
+
+  //   new SplitType(el, { types });
+  //   el.dataset.splitInit = "true";
+  // }
+
+  // const splittingMap = {
+  //   chars: el => splitElement(el, 'words, chars'),
+  //   lines: el => splitElement(el, 'words, lines'),
+  //   words: el => splitElement(el, 'words')
+  // };
+
+  // Object.entries(splittingMap).forEach(([key, fn]) => {
+  //   document
+  //     .querySelectorAll(`[data-splitting="${key}"]`)
+  //     .forEach(fn);
+  // });
+
+  // function scrollTriggerPlayer(triggerElement, timeline, start = "top 95%") {
+
+  //   ScrollTrigger.create({
+  //     trigger: triggerElement,
+  //     start: "top bottom",
+  //     onLeaveBack: () => {
+  //       timeline.progress(1);
+  //       timeline.pause();
+  //     }
+  //   });
+
+  //   ScrollTrigger.create({
+  //     trigger: triggerElement,
+  //     start: start,
+  //     onEnter: () => timeline.play(),
+  //     scrub: false
+  //   });
+  // }
+
+
+  // function createTimeline(container, elements, animProps, stagger = 0.3, delay = 0) {
+
+  //   if (!elements || !elements.length) return;
+
+  //   const tl = gsap.timeline({ paused: true });
+
+  //   tl.from(elements, {
+  //     ...animProps,
+  //     stagger,
+  //     delay
+  //   });
+
+  //   scrollTriggerPlayer(container, tl);
+  // }
+
+  // const transformMap = [
+  //   {
+  //     selector: '[data-transform="reveal"]',
+  //     target: ".word",
+  //     anim: { opacity: 0, y: 50 },
+  //     stagger: 0.3,
+  //     delay: 0.5
+  //   },
+
+  //   {
+  //     selector: '[data-transform="revealRotate"]',
+  //     target: ".word",
+  //     anim: { opacity: 0, y: 100, rotationZ: 15 },
+  //     stagger: 0.2
+  //   },
+
+  //   {
+  //     selector: '[data-transform="fadeIn"]',
+  //     target: ".char",
+  //     anim: { opacity: 0, duration: 0.3, ease: "power1.out" },
+  //     stagger: 0.025
+  //   },
+
+  //   {
+  //     selector: '[data-transform="fade"]',
+  //     target: null,
+  //     anim: el =>
+  //       el.getAttribute('data-rotation')
+  //         ? { opacity: 0, y: 100, rotationZ: 10, duration: 0.8, delay: 0.3, ease: "power1.out" }
+  //         : { opacity: 0, y: 20, duration: 0.8, delay: 0.3, ease: "power1.out" },
+  //     stagger: 0.8
+  //   },
+
+  //   {
+  //     selector: '[data-transform="scale"]',
+  //     target: null,
+  //     anim: { opacity: 0, scale: 0.8, duration: 0.5, ease: "power1.out" },
+  //     stagger: 0.8
+  //   },
+
+  //   {
+  //     selector: '[data-transform="fadeUpRotate"]',
+  //     target: null,
+  //     anim: {
+  //       y: "150%",
+  //       opacity: 0,
+  //       rotate: 20,
+  //       transformOrigin: "0 50%",
+  //       duration: 1,
+  //       delay: 0.2,
+  //       ease: "power4.out"
+  //     },
+  //     stagger: 0.05
+  //   },
+
+  //   {
+  //     selector: '[data-transform="fadeUp"]',
+  //     target: null,
+  //     anim: {
+  //       opacity: 0,
+  //       y: 100,
+  //       duration: 0.5,
+  //       ease: "power1.out"
+  //     },
+  //     stagger: 0.3
+  //   }
+  // ];
+  /**
+   * ===============================================================================================
+   */
+
+  /**
    * Универсальное разбиение текста
    */
   const splittingMap = {
     'chars': el => new SplitType(el, { types: 'words, chars' }),
     'lines': el => new SplitType(el, { types: 'words, lines' }),
-    'words': el => {
-      const headings = el.querySelectorAll('h1, h2, h3, h4, h5');
-      headings.forEach(heading => {
-        if (heading) new SplitType(heading, { types: 'words, words' });
-      });
-    }
+    'words': el => new SplitType(el, { types: 'words, words' }),
+    // 'words': el => {
+    //   const headings = el.querySelectorAll('*');
+    //   headings.forEach(heading => {
+    //     if (heading) new SplitType(heading, { types: 'words, words' });
+    //   });
+    // }
   };
 
   Object.keys(splittingMap).forEach(key => {
@@ -2645,7 +2774,7 @@ document.addEventListener('DOMContentLoaded', () => {
    * Универсальная анимация для data-transform
    */
   const transformMap = [
-    { selector: '[data-transform="reveal"]', target: "h1 div.word", anim: { opacity: 0, y: 50 }, stagger: 0.3, delay: 0.5 },
+    { selector: '[data-transform="reveal"]', target: "div.word", anim: { opacity: 0, y: 50 }, stagger: 0.3, delay: 0.5 },
     { selector: '[data-transform="revealRotate"]', target: "div.word", anim: { opacity: 0, y: 100, rotationZ: 15 }, stagger: 0.2 },
     { selector: '[data-transform="fadeIn"]', target: "div.char", anim: { opacity: 0, duration: 0.3, ease: "power1.out" }, stagger: 0.025 },
     {

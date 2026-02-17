@@ -577,8 +577,7 @@
         }
       }
 
-      h4 {
-        // overflow: hidden;
+      &-title {
 
         @include md {
           font-size: 3.5rem;
@@ -608,14 +607,13 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        // margin-bottom: 2rem;
 
         @include md {
           margin-bottom: 1.5rem;
           gap: 1.5rem;
         }
 
-        h5 {
+        .h5 {
 
           @include md {
             font-size: 2.5rem;
@@ -638,7 +636,7 @@
           padding: 2rem;
         }
 
-        h6 {
+        span {
           font-weight: 350;
           font-size: 5rem;
           line-height: 100%;
@@ -682,7 +680,11 @@
           gap: 1rem;
         }
 
-        h5 {
+        span {
+          font-family: var(--second-family);
+          font-weight: 300;
+          font-size: 3.5rem;
+          line-height: 90%;
           color: var(--accent);
 
           @include md {
@@ -875,12 +877,14 @@
       &-title {
         text-align: center;
 
-        h5 {
+        span {
+          font-family: var(--second-family);
+          font-weight: 300;
+          font-size: 3.5rem;
+          line-height: 90%;
 
           @include md {
-            .sosnovyi-page & {
-              font-size: 2.5rem;
-            }
+            font-size: 2.5rem;
           }
         }
       }
@@ -1247,13 +1251,21 @@
       @include sm {
         padding: 2rem;
         transition: all 0.5s ease-in-out;
-
-        /*new*/
         height: fit-content;
       }
 
       &-head {
         display: none;
+
+        font-family: var(--second-family);
+        font-weight: 300;
+        font-size: 2.4rem;
+        line-height: 120%;
+        letter-spacing: 0.1em;
+
+        @include md {
+          font-size: 2rem;
+        }
 
         @include sm {
           display: flex;
@@ -1269,11 +1281,6 @@
           i {
             transform: rotate(180deg);
           }
-        }
-
-        h6 {
-          font-family: var(--second-family);
-          font-weight: 300;
         }
 
         i {

@@ -49,15 +49,12 @@
       /* Для анимации fadeIn */
       overflow: hidden;
 
-      h4 {
+      @include md {
+        font-size: 4rem;
+      }
 
-        @include md {
-          font-size: 4rem;
-        }
-
-        @include sm {
-          font-size: 2.5rem;
-        }
+      @include sm {
+        font-size: 2.5rem;
       }
     }
 
@@ -177,15 +174,12 @@
 
       &-name {
 
-        h6 {
+        @include md {
+          font-size: 1.4rem;
+        }
 
-          @include md {
-            font-size: 1.4rem;
-          }
-
-          @include sm {
-            font-size: 1.2rem;
-          }
+        @include sm {
+          font-size: 1.2rem;
         }
       }
 
@@ -367,19 +361,14 @@
     &-name {
       text-transform: uppercase;
 
-      @include sm {
-        padding: 0 0.5rem;
+      @include md {
+        font-size: 1.4rem;
       }
 
-      h6 {
+      @include sm {
+        padding: 0 0.5rem;
 
-        @include md {
-          font-size: 1.4rem;
-        }
-
-        @include sm {
-          font-size: 1.2rem;
-        }
+        font-size: 1.2rem;
       }
     }
 

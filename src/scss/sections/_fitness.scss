@@ -33,15 +33,12 @@
       /* Для анимации fadeIn */
       overflow: hidden;
 
-      h2 {
+      @include md {
+        font-size: 3rem;
+      }
 
-        @include md {
-          font-size: 3rem;
-        }
-
-        @include sm {
-          text-transform: uppercase;
-        }
+      @include sm {
+        text-transform: uppercase;
       }
     }
   }
@@ -110,9 +107,7 @@
       border-top: 0.1rem solid var(--white-o-50);
       border-bottom: 0.1rem solid var(--white-o-50);
 
-      h6 {
-        font-weight: 700;
-      }
+      font-weight: 700;
 
       @include md {
         padding: 1rem 0;
@@ -134,12 +129,10 @@
 
     &-title {
 
-      h5 {
-        line-height: 120%;
+      line-height: 120%;
 
-        @include sm {
-          font-size: 2.5rem;
-        }
+      @include sm {
+        font-size: 2.5rem;
       }
 
       br {

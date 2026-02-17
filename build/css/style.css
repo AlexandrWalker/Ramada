@@ -91,8 +91,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -107,16 +115,8 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
-  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -147,16 +147,16 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Bold.woff2") format("woff2"), url("../fonts/TTTricks-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/TTTricks-Bold.woff2") format("woff2"), url("../fonts/TTTricks-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -229,6 +229,13 @@ img {
   color: var(--accent);
 }
 
+.general__block-suptitle h2 {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 3.5rem;
+  line-height: 90%;
+}
+
 .general__block-title {
   padding: 3rem 0;
   border-top: 0.1rem solid var(--black);
@@ -274,7 +281,7 @@ img {
   gap: 1rem;
 }
 
-.general__block-wrap h5 {
+.general__block-wrap .h5 {
   color: var(--accent);
   line-height: 110%;
 }
@@ -2308,6 +2315,7 @@ body {
 
 /* Главный заголовок страницы */
 
+.h1,
 h1 {
   font-family: var(--second-family);
   font-weight: 300;
@@ -2317,6 +2325,7 @@ h1 {
 
 /* Повторяет стиль главного заголовка */
 
+.h2,
 h2 {
   font-family: var(--second-family);
   font-weight: 300;
@@ -2324,8 +2333,16 @@ h2 {
   line-height: 110%;
 }
 
+.h2-restyle h2 {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 5rem;
+  line-height: 90%;
+}
+
 /* Заголовок */
 
+.h3,
 h3 {
   font-family: var(--second-family);
   font-weight: 300;
@@ -2335,6 +2352,7 @@ h3 {
 
 /* Второй заголовок */
 
+.h4,
 h4 {
   font-family: var(--second-family);
   font-weight: 300;
@@ -2344,6 +2362,7 @@ h4 {
 
 /* Подзаголовки и заголовки дочерних блоков */
 
+.h5,
 h5 {
   font-family: var(--second-family);
   font-weight: 300;
@@ -2353,6 +2372,7 @@ h5 {
 
 /* Выделенный текст, надзаголовок и подзаголовок */
 
+.h6,
 h6 {
   font-weight: 900;
   font-size: 2.4rem;
@@ -2371,11 +2391,17 @@ p {
 
 /* Акцентирование текста цветом фуксия */
 
+.h1 span,
 h1 span,
+.h2 span,
 h2 span,
+.h3 span,
 h3 span,
+.h4 span,
 h4 span,
+.h5 span,
 h5 span,
+.h6 span,
 h6 span {
   color: var(--accent);
 }
@@ -3549,18 +3575,18 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   height: 100%;
 }
 
-.menu__item-head h6,
-.menu__item-head a {
-  font-weight: 700;
-  font-size: 2rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.menu__item-head i {
   color: inherit;
   -webkit-transition: all var(--menu-transition-time) ease-in-out;
   transition: all var(--menu-transition-time) ease-in-out;
 }
 
-.menu__item-head i {
+.menu__item-title {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 120%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: inherit;
   -webkit-transition: all var(--menu-transition-time) ease-in-out;
   transition: all var(--menu-transition-time) ease-in-out;
@@ -4184,9 +4210,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .popup__head {
   text-transform: uppercase;
-}
-
-.popup__head h5 {
   line-height: 100%;
 }
 
@@ -4615,7 +4638,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   margin-bottom: 2rem;
 }
 
-.template-product__body-price h6 {
+.template-product__body-price span {
   font-weight: 350;
   font-size: 5rem;
   line-height: 100%;
@@ -4652,7 +4675,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   gap: 2rem;
 }
 
-.template-product__body-item h5 {
+.template-product__body-item span {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 3.5rem;
+  line-height: 90%;
   color: var(--accent);
 }
 
@@ -4743,6 +4770,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .template-product__slider-title {
   text-align: center;
+}
+
+.template-product__slider-title span {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 3.5rem;
+  line-height: 90%;
 }
 
 .template-product__slider-subtitle {
@@ -4950,6 +4984,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .template-box__attr-head {
   display: none;
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 2.4rem;
+  line-height: 120%;
+  letter-spacing: 0.1em;
 }
 
 .template-box__attr-head.accordion-active {
@@ -4960,11 +4999,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
-}
-
-.template-box__attr-head h6 {
-  font-family: var(--second-family);
-  font-weight: 300;
 }
 
 .template-box__attr-head i {
@@ -5154,7 +5188,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   gap: 2rem;
 }
 
-.afisha__block-wrap h5 {
+.afisha__block-wrap .h5 {
   font-size: 2.5rem;
   line-height: 120%;
 }
@@ -5167,7 +5201,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   color: var(--accent);
 }
 
-.afisha__block-wrap:last-child h5 {
+.afisha__block-wrap:last-child .h5 {
   font-size: 3.5rem;
 }
 
@@ -5180,7 +5214,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   grid-row: 2/3;
 }
 
-.afisha__body h4 {
+.afisha__body .h4 {
   margin-bottom: 4rem;
 }
 
@@ -5235,7 +5269,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   max-width: 87.7rem;
 }
 
-.care__head h4 {
+.care__head-title {
   color: var(--accent);
 }
 
@@ -5250,7 +5284,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   gap: 3rem;
 }
 
-.care__block h5 {
+.care__block-title {
   line-height: 110%;
   color: var(--accent);
 }
@@ -5292,7 +5326,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   gap: 2rem;
 }
 
-.care__item h6 {
+.care__item .h6 {
   letter-spacing: normal;
   font-weight: 700;
   font-size: 2.5rem;
@@ -5429,7 +5463,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   gap: 3rem;
 }
 
-.care .callback__head h5 {
+.care .callback__head {
   text-transform: none;
   color: var(--accent);
 }
@@ -5500,7 +5534,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   flex-direction: column;
 }
 
-.career__inner h6 {
+.career__inner .h6 {
   font-family: var(--second-family);
   font-weight: 300;
   font-size: 2.5rem;
@@ -5590,7 +5624,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   background-color: var(--white);
 }
 
-.career__body-item h6 {
+.career__body-item .h6 {
   color: var(--accent);
   margin-bottom: 2.5rem;
 }
@@ -5900,7 +5934,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   gap: 0.5rem;
 }
 
-.contacts__item-title h6 {
+.contacts__item-title {
   font-weight: 350;
   font-size: 2.5rem;
   color: var(--accent);
@@ -6309,6 +6343,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   overflow: hidden;
 }
 
+.programm__head-title h2 {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 6rem;
+  line-height: 110%;
+}
+
 .programm__head-text {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6478,7 +6519,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   flex-direction: column;
 }
 
-.programm__content h5 {
+.programm__content .h5 {
   color: var(--accent);
   margin-bottom: 3rem;
 }
@@ -6536,11 +6577,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   color: var(--accent);
 }
 
-.news__content h2,
-.news__content h3,
-.news__content h4,
-.news__content h5,
-.news__content h6 {
+.news__content .h2,
+.news__content .h3,
+.news__content .h4,
+.news__content .h5,
+.news__content .h6 {
   line-height: 100%;
   margin-bottom: 2rem;
 }
@@ -6673,6 +6714,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   color: var(--gray);
 }
 
+.offers-desc__head-title * {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 5rem;
+  line-height: 90%;
+}
+
 .offers-desc__body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6703,7 +6751,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   gap: 2rem;
 }
 
-.offers-desc__body-item h5 {
+.offers-desc__body-item span {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 3.5rem;
+  line-height: 90%;
   color: var(--accent);
 }
 
@@ -6715,6 +6767,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .offers-special-page .template-product__body-title h5 {
   font-size: 2.5rem;
+}
+
+.offers-special-page .template-product__head-title * {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 5rem;
+  line-height: 90%;
 }
 
 .template-block__items .offers__item {
@@ -6810,14 +6869,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .press__item-title {
-  color: var(--accent);
   margin-bottom: 2rem;
-  text-transform: uppercase;
-}
-
-.press__item-title h6 {
   font-weight: 700;
   font-size: 2rem;
+  color: var(--accent);
+  text-transform: uppercase;
 }
 
 .press__item-text {
@@ -6828,7 +6884,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   background-color: var(--white);
 }
 
-.residence-page .general__block-subtext h5 {
+.residence-page .general__block-subtext {
   font-size: 2.5rem;
   color: var(--accent);
 }
@@ -6889,7 +6945,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   margin-top: 0;
 }
 
-.residence__slider .general__block-subtext h5 {
+.residence__slider .general__block-subtext {
   font-family: var(--font-family);
   font-weight: 700;
   color: var(--black);
@@ -7214,6 +7270,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   text-transform: capitalize;
 }
 
+.dishes .general__head-title h2 {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 6rem;
+  line-height: 110%;
+}
+
 .equipment__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7236,6 +7299,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   -ms-flex-direction: column;
   flex-direction: column;
   gap: 3rem;
+}
+
+.equipment__head-title h2 {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 5rem;
+  line-height: 90%;
 }
 
 .equipment__items {
@@ -7282,6 +7352,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   grid-template-rows: 1fr;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+}
+
+.equipment__item-head h3 {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 3.5rem;
+  line-height: 90%;
 }
 
 .equipment__item-head i {
@@ -7495,12 +7572,9 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .rooms__item-title {
-  color: var(--accent);
   margin-bottom: 2rem;
-}
-
-.rooms__item-title h5 {
   line-height: 120%;
+  color: var(--accent);
 }
 
 .rooms__item-content {
@@ -7796,6 +7870,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   margin-bottom: 5rem;
 }
 
+.studio__content-title * {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 5rem;
+  line-height: 90%;
+}
+
 .studio__content-items {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7822,7 +7903,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   gap: 2rem;
 }
 
-.studio__content-item h5 {
+.studio__content-item--title * {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 3.5rem;
+  line-height: 90%;
   color: var(--accent);
 }
 
@@ -7878,6 +7963,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   width: 62rem;
   padding: 4rem;
   background-color: var(--white-gray);
+}
+
+.studio__terms-title * {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 3.5rem;
+  line-height: 90%;
 }
 
 .studio__terms-items {
@@ -8334,12 +8426,9 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .entert__item-title {
-  color: var(--accent);
-}
-
-.entert__item-title h4 {
   font-size: 3.5rem;
   line-height: 120%;
+  color: var(--accent);
 }
 
 .events {
@@ -8409,7 +8498,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   text-transform: lowercase;
 }
 
-.events__block-title h5 {
+.events__block-title {
   line-height: 110%;
 }
 
@@ -8497,7 +8586,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .events__calendar-month {
-  font-weight: 700;
+  font-weight: 900;
   font-size: 2.4rem;
   line-height: 110%;
   letter-spacing: 0.1em;
@@ -8633,7 +8722,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   grid-column: 2/4;
 }
 
-.events__box h6 {
+.events__box-title {
   font-weight: 900;
   font-size: 2.4rem;
   line-height: 120%;
@@ -8641,11 +8730,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   text-transform: uppercase;
 }
 
-.events__box p {
+.events__box-text {
   color: var(--gray);
 }
 
-.events__other .general__head-title h5 {
+.events__other .general__head-title {
   text-transform: none;
 }
 
@@ -8889,9 +8978,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   padding: 1.5rem 0;
   border-top: 0.1rem solid var(--white-o-50);
   border-bottom: 0.1rem solid var(--white-o-50);
-}
-
-.fitness__item-count h6 {
   font-weight: 700;
 }
 
@@ -8909,7 +8995,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   gap: 3rem;
 }
 
-.fitness__item-title h5 {
+.fitness__item-title {
   line-height: 120%;
 }
 
@@ -9127,7 +9213,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   border-left: 0.1rem solid var(--gray-30);
 }
 
-.gallery__block-item h4 {
+.gallery__block-item span {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 5rem;
+  line-height: 90%;
   color: var(--accent);
   white-space: nowrap;
 }
@@ -9303,17 +9393,18 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .hall__item .over {
   position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #ebebf1;
+  pointer-events: none;
+  opacity: 0;
   -webkit-transition: opacity 0.8s, -webkit-transform 0.3s;
   transition: opacity 0.8s, -webkit-transform 0.3s;
   transition: opacity 0.8s, transform 0.3s;
   transition: opacity 0.8s, transform 0.3s, -webkit-transform 0.3s;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #ebebf1;
-  opacity: 0;
 }
 
 .hall__item-img {
@@ -9344,7 +9435,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   color: var(--gray);
 }
 
-.hall__item-title h5 {
+.hall__item-title {
   line-height: 120%;
   color: var(--accent);
 }
@@ -9429,9 +9520,9 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .hero__title h1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -9478,16 +9569,16 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 .hero__text {
   padding-left: 13rem;
   max-width: 86rem;
-}
-
-.hero__text h4 {
   -webkit-line-clamp: 3;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   text-overflow: clip;
   overflow: hidden;
-  line-height: 120%;
   color: var(--white);
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 5rem;
+  line-height: 120%;
 }
 
 .hero__text i {
@@ -9607,14 +9698,14 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   padding: 2rem 1rem 2.4rem 1rem;
 }
 
-.infra__tooltip-content h6 {
+.infra__tooltip-content p {
+  font-size: 1.4rem;
+}
+
+.infra__tooltip-title {
   font-weight: 700;
   font-size: 1.6rem;
   letter-spacing: unset;
-}
-
-.infra__tooltip-content p {
-  font-size: 1.4rem;
 }
 
 /* ===== ARROW ===== */
@@ -9768,7 +9859,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   text-transform: uppercase;
 }
 
-.offer__head h4 {
+.offer__head-title {
   line-height: 110%;
 }
 
@@ -9908,6 +9999,17 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   margin-bottom: 4rem;
 }
 
+.offers__head-head {
+  text-transform: uppercase;
+}
+
+.offers__head-head * {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 5rem;
+  line-height: 90%;
+}
+
 .offers__body {
   position: relative;
 }
@@ -9960,14 +10062,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .offers__content-title {
-  color: var(--accent);
-  text-transform: uppercase;
   margin-bottom: 2rem;
-}
-
-.offers__content-title h6 {
   font-weight: 700;
   font-size: 2rem;
+  color: var(--accent);
+  text-transform: uppercase;
 }
 
 .offers__content-text {
@@ -10109,9 +10208,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .rest__feat-count {
   color: var(--accent);
-}
-
-.rest__feat-count h4 {
   line-height: 110%;
 }
 
@@ -10247,7 +10343,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   color: var(--white);
 }
 
-.resta__block-content h4 {
+.resta__block-content * {
   line-height: 120%;
 }
 
@@ -11086,12 +11182,16 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 3rem;
   }
 
-  .general__head-title h3 {
+  .general__head-title.h3 {
     font-size: 4rem;
   }
 
   .general__block {
     gap: 2rem;
+  }
+
+  .general__block-suptitle h2 {
+    font-size: 2.5rem;
   }
 
   .general__block-title {
@@ -11102,7 +11202,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 1.7rem;
   }
 
-  .general__block-wrap h5 {
+  .general__block-wrap .h5 {
     font-size: 2.5rem;
   }
 
@@ -11335,26 +11435,36 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     font-size: 5rem;
   }
 
+  .h1,
   h1 {
     font-size: 4rem;
   }
 
+  .h2,
   h2 {
     font-size: 4rem;
   }
 
+  .h2-restyle h2 {
+    font-size: 2.5rem;
+  }
+
+  .h3,
   h3 {
     font-size: 5rem;
   }
 
+  .h4,
   h4 {
     font-size: 2.5rem;
   }
 
+  .h5,
   h5 {
     font-size: 1.6rem;
   }
 
+  .h6,
   h6 {
     font-size: 2rem;
   }
@@ -11804,16 +11914,15 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     padding-top: 2rem;
   }
 
-  .menu__item-head h6,
-  .menu__item-head a {
-    font-size: 1.4rem;
-    line-height: 2rem;
-  }
-
   .menu__item-head i {
     -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+  }
+
+  .menu__item-title {
+    font-size: 1.4rem;
+    line-height: 2rem;
   }
 
   .menu__item-body {
@@ -11986,7 +12095,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     max-width: 35.3rem;
   }
 
-  .popup__head h5 {
+  .popup__head {
     font-size: 2.5rem;
   }
 
@@ -12142,7 +12251,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 0;
   }
 
-  .template-product__head h4 {
+  .template-product__head-title {
     font-size: 3.5rem;
   }
 
@@ -12158,7 +12267,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 1.5rem;
   }
 
-  .template-product__body-wrap h5 {
+  .template-product__body-wrap .h5 {
     font-size: 2.5rem;
   }
 
@@ -12167,7 +12276,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     padding: 2rem;
   }
 
-  .template-product__body-price h6 {
+  .template-product__body-price span {
     font-size: 3.5rem;
   }
 
@@ -12180,7 +12289,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 1rem;
   }
 
-  .template-product__body-item h5 {
+  .template-product__body-item span {
     font-size: 3.5rem;
   }
 
@@ -12224,7 +12333,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin: 0 auto;
   }
 
-  .sosnovyi-page .template-product__slider-title h5 {
+  .template-product__slider-title span {
     font-size: 2.5rem;
   }
 
@@ -12321,6 +12430,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .template-box__attr {
     padding: 3rem 7rem;
+  }
+
+  .template-box__attr-head {
+    font-size: 2rem;
   }
 
   .template-box__attr-list {
@@ -12424,7 +12537,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     display: none;
   }
 
-  .afisha__block-wrap h5 {
+  .afisha__block-wrap .h5 {
     font-size: 3.5rem;
   }
 
@@ -12434,7 +12547,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     order: 2;
   }
 
-  .afisha__body h4 {
+  .afisha__body .h4 {
     font-size: 3.5rem;
     margin-bottom: 2rem;
   }
@@ -12466,7 +12579,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 2rem;
   }
 
-  .care__block h5 {
+  .care__block-title {
     font-size: 2.5rem;
   }
 
@@ -12478,7 +12591,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 2rem;
   }
 
-  .care__item h6 {
+  .care__item .h6 {
     font-size: 1.6rem;
   }
 
@@ -12506,7 +12619,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     width: fit-content;
   }
 
-  .care .callback__head h5 {
+  .care .callback__head {
     font-size: 3.5rem;
   }
 
@@ -12527,11 +12640,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     padding: 3rem;
   }
 
-  .career__inner h5 {
+  .career__inner .h5 {
     font-size: 2.5rem;
   }
 
-  .career__inner h6 {
+  .career__inner .h6 {
     font-size: 2rem;
   }
 
@@ -12560,7 +12673,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     transform: unset;
   }
 
-  .certificates h5 {
+  .certificates .h5 {
     font-size: 2.5rem;
   }
 
@@ -12650,7 +12763,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 0.6rem;
   }
 
-  .contacts__item-title h6 {
+  .contacts__item-title {
     font-size: 2rem;
   }
 
@@ -12717,6 +12830,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 4rem;
   }
 
+  .programm__head-title h2 {
+    font-size: 5rem;
+  }
+
   .programm__item {
     width: calc(50% - 2rem);
     padding: 1.6rem 1rem 1rem;
@@ -12737,7 +12854,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     top: -0.6rem;
   }
 
-  .programm__item-title h5 {
+  .programm__item-title {
     font-size: 2.5rem;
   }
 
@@ -12749,7 +12866,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 3rem;
   }
 
-  .programm__content h5 {
+  .programm__content .h5 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
   }
@@ -12771,11 +12888,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     font-size: 1.4rem;
   }
 
-  .news__content h2,
-  .news__content h3,
-  .news__content h4,
-  .news__content h5,
-  .news__content h6 {
+  .news__content .h2,
+  .news__content .h3,
+  .news__content .h4,
+  .news__content .h5,
+  .news__content .h6 {
     font-size: 2.5rem;
   }
 
@@ -12822,6 +12939,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 3rem;
   }
 
+  .offers-desc__head-title * {
+    font-size: 2.5rem;
+  }
+
   .offers-desc__body {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -12845,7 +12966,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     width: calc(50% - 1.5rem);
   }
 
-  .offers-desc__body-item h5 {
+  .offers-desc__body-item span {
     font-size: 3.5rem;
   }
 
@@ -12853,6 +12974,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     -webkit-box-ordinal-group: 3;
     -ms-flex-order: 2;
     order: 2;
+  }
+
+  .offers-special-page .template-product__head-title * {
+    font-size: 2.5rem;
   }
 
   .template-block__items .offers__item {
@@ -12888,7 +13013,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 2rem;
   }
 
-  .press__item-title h6 {
+  .press__item-title {
     font-size: 1.6rem;
   }
 
@@ -12896,7 +13021,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 3rem;
   }
 
-  .residence-page .general__block-subtext h5 {
+  .residence-page .general__block-subtext {
     font-size: 2rem;
   }
 
@@ -13050,7 +13175,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     padding-top: 0;
   }
 
-  .concept__head h3 {
+  .concept__head {
     font-size: 2.5rem;
     text-transform: unset;
   }
@@ -13131,6 +13256,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     aspect-ratio: 444/413;
   }
 
+  .dishes .general__head-title h2 {
+    font-size: 5rem;
+  }
+
   .equipment__inner {
     padding: 4rem 8rem;
     gap: 3rem;
@@ -13138,6 +13267,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .equipment__head {
     gap: 2rem;
+  }
+
+  .equipment__head-title h2 {
+    font-size: 2.5rem;
   }
 
   .equipment__items {
@@ -13171,7 +13304,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     align-items: center;
   }
 
-  .equipment__item-head h5 {
+  .equipment__item-head h3 {
     font-size: 2.5rem;
   }
 
@@ -13218,9 +13351,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .rooms__item-title {
     margin-bottom: 1.5rem;
-  }
-
-  .rooms__item-title h5 {
     font-size: 2rem;
   }
 
@@ -13326,6 +13456,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 3rem;
   }
 
+  .studio__content-title * {
+    font-size: 2.5rem;
+  }
+
   .studio__content-items {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -13341,7 +13475,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 1.5rem;
   }
 
-  .studio__content-item h5 {
+  .studio__content-item--title * {
     font-size: 2.5rem;
   }
 
@@ -13356,6 +13490,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .studio__terms-title {
     display: none;
+  }
+
+  .studio__terms-title * {
+    font-size: 1.6rem;
   }
 
   .studio__terms-row {
@@ -13400,7 +13538,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 3.5rem;
   }
 
-  .booking__head-title h4 {
+  .booking__head-title {
     font-size: 3.5rem;
   }
 
@@ -13428,9 +13566,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   .diversity__item-title {
     width: 75%;
     margin-bottom: 2rem;
-  }
-
-  .diversity__item-title h5 {
     font-size: 2.5rem;
   }
 
@@ -13451,7 +13586,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     height: 100%;
   }
 
-  .diversity .general__head-title h3 {
+  .diversity .general__head-title {
     font-size: 5rem;
   }
 
@@ -13479,7 +13614,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 2rem;
   }
 
-  .entert__item-title h4 {
+  .entert__item-title {
     font-size: 2rem;
   }
 
@@ -13492,7 +13627,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     padding-bottom: 4rem;
   }
 
-  .events .general__head-title h4 {
+  .events .general__head-title {
     font-size: 4rem;
   }
 
@@ -13516,13 +13651,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     font-size: 2rem;
   }
 
+  .events__block-title {
+    font-size: 2.4rem;
+  }
+
   .events__block-content {
     gap: 2.5rem;
     padding: 2rem 1rem 3rem 2rem;
-  }
-
-  .events__block-content h5 {
-    font-size: 2.4rem;
   }
 
   .events__calendar {
@@ -13554,11 +13689,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     grid-column: 1/3;
   }
 
-  .events__box h6 {
+  .events__box-title {
     font-size: 2rem;
   }
 
-  .events__other .general__head-title h5 {
+  .events__other .general__head-title {
     font-size: 4rem;
   }
 
@@ -13631,7 +13766,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     transform: none;
   }
 
-  .fitness__head-title h2 {
+  .fitness__head-title {
     font-size: 3rem;
   }
 
@@ -13699,9 +13834,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .gallery .general__head-title {
     margin-bottom: 2rem;
-  }
-
-  .gallery .general__head-title * {
     font-size: 3.5rem;
   }
 
@@ -13729,9 +13861,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .gallery__block-title {
     margin-bottom: 2rem;
-  }
-
-  .gallery__block-title * {
     font-size: 2.5rem;
   }
 
@@ -13747,6 +13876,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .gallery__block-item {
     padding-left: 1rem;
+  }
+
+  .gallery__block-item span {
+    font-size: 2.5rem;
   }
 
   .gallery__block-btns {
@@ -13796,7 +13929,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     --hall-item-width: 28.8rem;
   }
 
-  .hall__item-title h5 {
+  .hall__item-title {
     font-size: 2.5rem;
   }
 
@@ -13843,9 +13976,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   .hero__text {
     padding-left: 7.7rem;
     max-width: 36.7rem;
-  }
-
-  .hero__text h4 {
     font-size: 2rem;
   }
 
@@ -13890,9 +14020,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     max-width: 100%;
     padding: 0 1rem;
     margin-bottom: 2rem;
-  }
-
-  .notfound__text * {
     font-size: 3rem;
   }
 
@@ -13941,6 +14068,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     display: none;
   }
 
+  .offers__head-head * {
+    font-size: 2.5rem;
+  }
+
   .offers__body {
     margin-bottom: 2rem;
   }
@@ -13958,7 +14089,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     min-height: calc(100% - 19.8rem - 3rem);
   }
 
-  .offers__content-title h6 {
+  .offers__content-title {
     font-size: 1.6rem;
   }
 
@@ -14027,7 +14158,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 2rem 1.6rem;
   }
 
-  .rest__feat-count h4 {
+  .rest__feat-count {
     font-size: 3.5rem;
   }
 
@@ -14044,11 +14175,8 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    text-transform: capitalize;
-  }
-
-  .resta__title h3 {
     font-size: 4rem;
+    text-transform: capitalize;
   }
 
   .resta__block {
@@ -14088,7 +14216,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 3rem;
   }
 
-  .reviews__head-title h4 {
+  .reviews__head-title {
     font-size: 4rem;
   }
 
@@ -14135,7 +14263,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     font-size: 1.2rem;
   }
 
-  .reviews__item.reviews__item--corp-name h6 {
+  .reviews__item.reviews__item--corp-name {
     font-size: 1.4rem;
   }
 
@@ -14170,7 +14298,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     font-size: 1.2rem;
   }
 
-  .reviews__item-name h6 {
+  .reviews__item-name {
     font-size: 1.4rem;
   }
 
@@ -14289,6 +14417,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 @media (max-width: 600px) {
   .general__head-title {
     margin-bottom: 2rem;
+  }
+
+  .general__block-suptitle h2 {
+    font-size: 2rem;
   }
 
   .general__block-list {
@@ -14429,10 +14561,12 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     display: none;
   }
 
+  .h1,
   h1 {
     font-size: 3.5rem;
   }
 
+  .h2,
   h2 {
     font-size: 3rem;
   }
@@ -14742,8 +14876,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     padding: 0 0 1.5rem 0;
   }
 
-  .menu__item-head h6,
-  .menu__item-head a {
+  .menu__item-title {
     font-size: 1.2rem;
   }
 
@@ -14891,15 +15024,15 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 2rem;
   }
 
-  .template-product__head h4 {
+  .template-product__head-title {
     font-size: 3rem;
   }
 
-  .template-product__body-price h6 {
+  .template-product__body-price span {
     font-size: 3rem;
   }
 
-  .template-product__body-item h5 {
+  .template-product__body-item span {
     font-size: 2.5rem;
   }
 
@@ -14991,7 +15124,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     padding: 2rem;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    /*new*/
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
@@ -15080,11 +15212,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 2rem;
   }
 
-  .afisha__block-head h5 {
+  .afisha__block-head {
     font-size: 2.5rem;
   }
 
-  .afisha__block-wrap h5 {
+  .afisha__block-wrap .h5 {
     font-size: 2.5rem;
   }
 
@@ -15096,7 +15228,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 1rem;
   }
 
-  .afisha__block-wrap:last-child h5 {
+  .afisha__block-wrap:last-child .h5 {
     font-size: 2.5rem;
   }
 
@@ -15104,7 +15236,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     grid-column: 1/2;
   }
 
-  .afisha__body h4 {
+  .afisha__body .h4 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
   }
@@ -15135,7 +15267,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 2rem;
   }
 
-  .care .callback__head h5 {
+  .care .callback__head {
     font-size: 2.5rem;
   }
 
@@ -15192,7 +15324,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     padding: 2rem 2rem 3rem;
   }
 
-  .career__body-item h6 {
+  .career__body-item .h6 {
     margin-bottom: 2rem;
   }
 
@@ -15408,11 +15540,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 3rem;
   }
 
-  .news__content h2,
-  .news__content h3,
-  .news__content h4,
-  .news__content h5,
-  .news__content h6 {
+  .news__content .h2,
+  .news__content .h3,
+  .news__content .h4,
+  .news__content .h5,
+  .news__content .h6 {
     margin-bottom: 1rem;
   }
 
@@ -15456,7 +15588,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     width: 100%;
   }
 
-  .offers-desc__body-item h5 {
+  .offers-desc__body-item span {
     font-size: 2.5rem;
   }
 
@@ -15497,13 +15629,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 1.5rem;
   }
 
-  .press__item-title h6 {
-    font-weight: 900;
-    font-size: 1.2rem;
-  }
-
   .press__item-title {
     margin-bottom: 1.5rem;
+    font-weight: 900;
+    font-size: 1.2rem;
   }
 
   .press__item-text {
@@ -15535,12 +15664,16 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 1rem;
   }
 
-  .residence__slider .general__block-subtext h5 {
+  .residence__slider .general__block-subtext {
     font-size: 1.4rem;
   }
 
   .residence__slider .general__block-list {
     gap: 2rem;
+  }
+
+  .residence__slider .general__block-suptitle {
+    font-size: 2rem;
   }
 
   .residence__slide-btns .swiper-button-prev {
@@ -15659,7 +15792,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 2rem;
   }
 
-  .concept__head h3 {
+  .concept__head {
     font-size: 3.5rem;
   }
 
@@ -15751,7 +15884,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 2rem;
   }
 
-  .equipment__item-head h5 {
+  .equipment__item-head h3 {
     font-size: 1.6rem;
   }
 
@@ -15847,7 +15980,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 1rem;
   }
 
-  .studio__content-item h5 {
+  .studio__content-item--title * {
     font-size: 2rem;
   }
 
@@ -15958,9 +16091,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   .diversity__item-title {
     width: 100%;
     margin-bottom: 3rem;
-  }
-
-  .diversity__item-title h5 {
     font-size: 3.5rem;
   }
 
@@ -16008,7 +16138,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin: 0;
   }
 
-  .events .general__head-title h4 {
+  .events .general__head-title {
     font-size: 3rem;
   }
 
@@ -16033,13 +16163,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     left: 4rem;
   }
 
+  .events__block-title {
+    font-size: 2.5rem;
+  }
+
   .events__block-content {
     gap: 2rem;
     padding: 3rem 2rem 2rem 2rem;
-  }
-
-  .events__block-content h5 {
-    font-size: 2.5rem;
   }
 
   .events__calendar {
@@ -16053,7 +16183,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     height: fit-content;
   }
 
-  .events__calendar-month h6 {
+  .events__calendar-month {
     font-weight: 700;
   }
 
@@ -16064,7 +16194,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 1.5rem;
   }
 
-  .events__other .general__head-title h5 {
+  .events__other .general__head-title {
     font-size: 2.5rem;
   }
 
@@ -16088,11 +16218,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     --btn-padding-x: 2.5rem;
   }
 
-  .fitness__head-title h2 {
+  .fitness__head-title {
     text-transform: uppercase;
   }
 
-  .fitness__item-title h5 {
+  .fitness__item-title {
     font-size: 2.5rem;
   }
 
@@ -16178,7 +16308,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 3rem;
   }
 
-  .hall .general__head-title h3 {
+  .hall .general__head-title {
     font-size: 3rem;
   }
 
@@ -16378,7 +16508,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     border-color: var(--white);
   }
 
-  .rest .general__head-title h3 {
+  .rest .general__head-title {
     font-size: 3.5rem;
   }
 
@@ -16431,11 +16561,8 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    text-transform: uppercase;
-  }
-
-  .resta__title h3 {
     font-size: 3rem;
+    text-transform: uppercase;
   }
 
   .resta__block {
@@ -16456,7 +16583,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 2.5rem;
   }
 
-  .reviews__head-title h4 {
+  .reviews__head-title {
     font-size: 2.5rem;
   }
 
@@ -16485,7 +16612,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     max-width: 29rem;
   }
 
-  .reviews__item.reviews__item--corp-name h6 {
+  .reviews__item.reviews__item--corp-name {
     font-size: 1.2rem;
   }
 
@@ -16530,9 +16657,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .reviews__item-name {
     padding: 0 0.5rem;
-  }
-
-  .reviews__item-name h6 {
     font-size: 1.2rem;
   }
 
@@ -16593,9 +16717,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .hero__text {
     max-width: 28rem;
-  }
-
-  .hero__text h4 {
     -webkit-line-clamp: 4;
   }
 

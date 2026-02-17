@@ -59,6 +59,20 @@
       }
     }
 
+    &-title {
+
+      * {
+        font-family: var(--second-family);
+        font-weight: 300;
+        font-size: 5rem;
+        line-height: 90%;
+
+        @include md {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
     &-items {
       display: flex;
       flex-direction: column;
@@ -99,15 +113,22 @@
         gap: 1rem;
       }
 
-      h5 {
-        color: var(--accent);
+      &--title {
 
-        @include md {
-          font-size: 2.5rem;
-        }
+        * {
+          font-family: var(--second-family);
+          font-weight: 300;
+          font-size: 3.5rem;
+          line-height: 90%;
+          color: var(--accent);
 
-        @include sm {
-          font-size: 2rem;
+          @include md {
+            font-size: 2.5rem;
+          }
+
+          @include sm {
+            font-size: 2rem;
+          }
         }
       }
     }
@@ -175,6 +196,17 @@
 
       @include md {
         display: none;
+      }
+
+      * {
+        font-family: var(--second-family);
+        font-weight: 300;
+        font-size: 3.5rem;
+        line-height: 90%;
+
+        @include md {
+          font-size: 1.6rem;
+        }
       }
     }
 

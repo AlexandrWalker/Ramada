@@ -94,22 +94,15 @@
       @include md {
         width: 75%;
         margin-bottom: 2rem;
+
+        font-size: 2.5rem;
       }
 
       @include sm {
         width: 100%;
         margin-bottom: 3rem;
-      }
 
-      h5 {
-
-        @include md {
-          font-size: 2.5rem;
-        }
-
-        @include sm {
-          font-size: 3.5rem;
-        }
+        font-size: 3.5rem;
       }
     }
 
@@ -211,19 +204,6 @@
         transition: all 0.6s ease;
       }
 
-      // .border {
-
-      //   &::before {
-      //     opacity: 0;
-      //     visibility: hidden;
-      //   }
-
-      //   &::after {
-      //     opacity: 0;
-      //     visibility: hidden;
-      //   }
-      // }
-
       &.swiper-slide-active {
         opacity: 1;
 
@@ -231,19 +211,6 @@
           opacity: 0;
           visibility: hidden;
         }
-
-        // .border {
-
-        //   &::before {
-        //     opacity: 1;
-        //     visibility: visible;
-        //   }
-
-        //   &::after {
-        //     opacity: 1;
-        //     visibility: visible;
-        //   }
-        // }
       }
     }
 
@@ -289,15 +256,12 @@
   .general__head-title {
     text-transform: none;
 
-    @include sm {
-      margin-bottom: 4rem;
+    @include md {
+      font-size: 5rem;
     }
 
-    h3 {
-
-      @include md {
-        font-size: 5rem;
-      }
+    @include sm {
+      margin-bottom: 4rem;
     }
   }
 

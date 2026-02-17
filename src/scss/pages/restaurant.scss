@@ -200,16 +200,13 @@
   &__head {
     color: var(--accent);
 
-    h3 {
+    @include md {
+      font-size: 2.5rem;
+      text-transform: unset;
+    }
 
-      @include md {
-        font-size: 2.5rem;
-        text-transform: unset;
-      }
-
-      @include sm {
-        font-size: 3.5rem;
-      }
+    @include sm {
+      font-size: 3.5rem;
     }
   }
 
@@ -271,8 +268,6 @@
 .dishes {
   background: var(--white-gray);
   padding-bottom: 0;
-
-  &__inner {}
 
   &__items {
     display: flex;
@@ -490,6 +485,17 @@
 
       &-title {
         text-transform: capitalize;
+
+        h2 {
+          font-family: var(--second-family);
+          font-weight: 300;
+          font-size: 6rem;
+          line-height: 110%;
+
+          @include md {
+            font-size: 5rem;
+          }
+        }
       }
     }
   }
@@ -527,8 +533,18 @@
       gap: 2rem;
     }
 
-    h4 {
-      // overflow: hidden;
+    &-title {
+
+      h2 {
+        font-family: var(--second-family);
+        font-weight: 300;
+        font-size: 5rem;
+        line-height: 90%;
+
+        @include md {
+          font-size: 2.5rem;
+        }
+      }
     }
   }
 
@@ -608,7 +624,11 @@
         align-items: center;
       }
 
-      h5 {
+      h3 {
+        font-family: var(--second-family);
+        font-weight: 300;
+        font-size: 3.5rem;
+        line-height: 90%;
 
         @include md {
           font-size: 2.5rem;
@@ -637,8 +657,6 @@
         }
       }
     }
-
-    &-body {}
 
     &-content {
       display: flex;

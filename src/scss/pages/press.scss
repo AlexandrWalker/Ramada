@@ -144,26 +144,22 @@
     }
 
     &-title {
-      color: var(--accent);
       margin-bottom: 2rem;
+
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--accent);
       text-transform: uppercase;
 
-      h6 {
-        font-weight: 700;
-        font-size: 2rem;
-
-        @include md {
-          font-size: 1.6rem;
-        }
-
-        @include sm {
-          font-weight: 900;
-          font-size: 1.2rem;
-        }
+      @include md {
+        font-size: 1.6rem;
       }
 
       @include sm {
         margin-bottom: 1.5rem;
+
+        font-weight: 900;
+        font-size: 1.2rem;
       }
     }
 

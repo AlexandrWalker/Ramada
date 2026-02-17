@@ -27,13 +27,8 @@
       max-width: 100%;
       padding: 0 1rem;
       margin-bottom: 2rem;
-    }
 
-    * {
-
-      @include md {
-        font-size: 3rem;
-      }
+      font-size: 3rem;
     }
 
     div {

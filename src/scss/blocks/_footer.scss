@@ -24,7 +24,6 @@
     transition: all 2s linear;
 
     position: absolute;
-    // top: 0.1rem;
     top: 0;
     left: 0;
 
@@ -46,10 +45,6 @@
     top: -64.3rem;
     right: -1.26rem;
     left: unset;
-    // top: -31%;
-    // right: -6.075%;
-    // bottom: -23.82%;
-    // left: -1.4%;
     z-index: -1;
 
     @include md {
@@ -88,7 +83,6 @@
 
     &.activated {
 
-      // @include dosm {
       @include md {
 
         .footer__item-head:not(.accordion-active) {
@@ -169,7 +163,6 @@
           gap: 4rem 10rem;
 
           @include xxl {
-            // gap: 2rem 10rem;
             gap: 3rem 10rem;
           }
 
@@ -185,7 +178,6 @@
         &-item {
 
           @include xxl {
-            // gap: 1.5rem;
             gap: 2rem;
           }
 
@@ -291,7 +283,6 @@
     // grid-template-columns: 23.5rem 23.5rem 33.5rem;
     // grid-template-columns: 21.267% 21.267% 30.317%;
     grid-template-columns: repeat(3, 1fr);
-    // gap: 5rem 15rem;
     gap: 5rem 5rem;
 
     @include md {
@@ -308,7 +299,6 @@
   &__col {
     display: flex;
     flex-direction: column;
-    // gap: 5rem;
     gap: 2.25rem;
 
     @include md {
@@ -390,7 +380,6 @@
       p {
         font-weight: 700;
         font-size: 1.6rem;
-        // text-decoration: underline;
         text-transform: uppercase;
         color: var(--accent);
 

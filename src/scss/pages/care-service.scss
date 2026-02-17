@@ -34,7 +34,6 @@
   }
 
   &__wrap {
-    // max-width: 87.7rem;
     width: 100%;
   }
 
@@ -50,12 +49,10 @@
       margin-bottom: 2rem;
     }
 
-    h4 {
+    &-title {
       color: var(--accent);
     }
   }
-
-  &__body {}
 
   &__block {
     display: flex;
@@ -66,7 +63,7 @@
       gap: 2rem;
     }
 
-    h5 {
+    &-title {
       line-height: 110%;
       color: var(--accent);
 
@@ -109,7 +106,7 @@
     flex-direction: column;
     gap: 2rem;
 
-    h6 {
+    .h6 {
       letter-spacing: normal;
       font-weight: 700;
       font-size: 2.5rem;
@@ -266,18 +263,15 @@
   }
 
   .callback__head {
+    text-transform: none;
+    color: var(--accent);
 
-    h5 {
-      text-transform: none;
-      color: var(--accent);
+    @include md {
+      font-size: 3.5rem;
+    }
 
-      @include md {
-        font-size: 3.5rem;
-      }
-
-      @include sm {
-        font-size: 2.5rem;
-      }
+    @include sm {
+      font-size: 2.5rem;
     }
   }
 
@@ -300,7 +294,7 @@
 
         &+.form-label,
         &+.form-label p {
-          
+
           @include sm {
             font-size: 1rem;
           }

@@ -4,7 +4,7 @@
   height: 100%;
 
   &-page {
-    
+
     .template__title {
       max-width: 140rem;
     }
@@ -165,11 +165,8 @@
         display: none;
       }
 
-      h5 {
-
-        @include sm {
-          font-size: 2.5rem;
-        }
+      @include sm {
+        font-size: 2.5rem;
       }
     }
 
@@ -178,7 +175,7 @@
       flex-direction: column;
       gap: 2rem;
 
-      h5 {
+      .h5 {
         font-size: 2.5rem;
         line-height: 120%;
 
@@ -209,7 +206,7 @@
           gap: 1rem;
         }
 
-        h5 {
+        .h5 {
           font-size: 3.5rem;
 
           @include sm {
@@ -240,7 +237,7 @@
       grid-column: 1/2;
     }
 
-    h4 {
+    .h4 {
       margin-bottom: 4rem;
 
       @include md {
