@@ -20,7 +20,8 @@ body {
   font-family: var(--font-family);
   font-weight: 350;
   font-size: 1.6rem;
-  line-height: 120%;
+  // line-height: 120%;
+  line-height: 140%;
   color: var(--black);
 
   @include md {

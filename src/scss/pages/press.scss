@@ -76,7 +76,7 @@
     flex-direction: column;
     gap: 4rem;
     width: calc(33.33333% - 1.33333rem);
-    height: 100%;
+    height: auto;
     padding: 2rem 2rem 4rem;
     background-color: var(--white);
     border: 0.1rem solid transparent;
@@ -112,7 +112,16 @@
 
     &-head {
       width: 100%;
+      height: 29.3rem;
       aspect-ratio: 453/293;
+
+      @include md {
+        height: 19.8rem;
+      }
+
+      @include sm {
+        height: 11.1rem;
+      }
     }
 
     &-body {
@@ -121,13 +130,16 @@
       align-items: center;
       text-align: center;
       padding: 0 4.4rem;
+      height: calc(100% - 29.3rem - 4rem);
 
       @include md {
         padding: 0;
+        height: calc(100% - 19.8rem - 3rem);
       }
 
       @include sm {
         padding: 2rem 1rem;
+        height: calc(100% - 11.1rem);
       }
     }
 
@@ -182,6 +194,7 @@
     }
 
     .link {
+      margin-top: auto;
 
       @include sm {
         font-size: 1.2rem;
