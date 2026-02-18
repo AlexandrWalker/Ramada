@@ -16,7 +16,7 @@ body {
   font-family: var(--font-family);
   font-weight: 350;
   font-size: 1.6rem;
-  line-height: 120%;
+  line-height: 140%;
   color: var(--black);
 }
 
@@ -99,6 +99,14 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
   src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
@@ -115,8 +123,8 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Gotham-Regular.woff2") format("woff2"), url("../fonts/Gotham-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -125,14 +133,6 @@ img {
   font-display: swap;
   src: url("../fonts/Gotham-Thin.woff2") format("woff2"), url("../fonts/Gotham-Thin.woff") format("woff");
   font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
-  src: url("../fonts/Gotham-Ultra.woff2") format("woff2"), url("../fonts/Gotham-Ultra.woff") format("woff");
-  font-weight: 400;
   font-style: normal;
 }
 
@@ -147,16 +147,16 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/TTTricks-Bold.woff2") format("woff2"), url("../fonts/TTTricks-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Bold.woff2") format("woff2"), url("../fonts/TTTricks-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -2386,7 +2386,7 @@ p {
   font-family: var(--font-family);
   font-weight: 350;
   font-size: 1.6rem;
-  line-height: 120%;
+  line-height: 140%;
 }
 
 /* Акцентирование текста цветом фуксия */
@@ -6824,7 +6824,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   flex-direction: column;
   gap: 4rem;
   width: calc(33.33333% - 1.33333rem);
-  height: 100%;
+  height: auto;
   padding: 2rem 2rem 4rem;
   background-color: var(--white);
   border: 0.1rem solid transparent;
@@ -6846,6 +6846,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .press__item-head {
   width: 100%;
+  height: 29.3rem;
   aspect-ratio: 453/293;
 }
 
@@ -6862,6 +6863,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   align-items: center;
   text-align: center;
   padding: 0 4.4rem;
+  height: calc(100% - 29.3rem - 4rem);
 }
 
 .press__item-date {
@@ -6878,6 +6880,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .press__item-text {
   margin-bottom: 4rem;
+}
+
+.press__item .link {
+  margin-top: auto;
 }
 
 .residence-page .booking {
@@ -13005,8 +13011,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     padding: 1rem 1rem 3rem;
   }
 
+  .press__item-head {
+    height: 19.8rem;
+  }
+
   .press__item-body {
     padding: 0;
+    height: calc(100% - 19.8rem - 3rem);
   }
 
   .press__item-date {
@@ -15621,8 +15632,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     padding: 0;
   }
 
+  .press__item-head {
+    height: 11.1rem;
+  }
+
   .press__item-body {
     padding: 2rem 1rem;
+    height: calc(100% - 11.1rem);
   }
 
   .press__item-date {
