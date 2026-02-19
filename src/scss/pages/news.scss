@@ -44,12 +44,13 @@
 
   &__content {
 
-    .h2,
-    .h3,
-    .h4,
-    .h5,
-    .h6 {
+    .h2, h2,
+    .h3, h3,
+    .h4, h4,
+    .h5, h5,
+    .h6, h6 {
       line-height: 100%;
+
       margin-bottom: 2rem;
 
       @include md {
@@ -129,7 +130,7 @@
     &-title {
       color: var(--accent);
 
-      h5 {
+      .h5 {
 
         @include md {
           font-size: 2.5rem;
@@ -151,6 +152,15 @@
       border-bottom: 0.1rem solid var(--gray-30);
 
       &:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      &:nth-child(n+5) {
+        display: none;
+      }
+
+      &:nth-child(4) {
         padding-bottom: 0;
         border-bottom: 0;
       }

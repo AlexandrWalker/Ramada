@@ -91,14 +91,6 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -107,16 +99,24 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
+  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -147,16 +147,16 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Bold.woff2") format("woff2"), url("../fonts/TTTricks-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/TTTricks-Bold.woff2") format("woff2"), url("../fonts/TTTricks-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -1064,6 +1064,7 @@ sup {
 .swiper-button-alt::before {
   border-color: var(--white);
   background-color: var(--white-o-50);
+  -webkit-backdrop-filter: blur(2.1rem);
   backdrop-filter: blur(2.1rem);
 }
 
@@ -1541,10 +1542,12 @@ body {
   --btn-background: rgba(255, 255, 255, 0.24);
   --btn-scale-background: var(--white);
   --btn-border-color: var(--white-30);
+  -webkit-backdrop-filter: blur(0.8rem);
   backdrop-filter: blur(0.8rem);
 }
 
 .btn--blur::before {
+  -webkit-backdrop-filter: blur(0.8rem);
   backdrop-filter: blur(0.8rem);
 }
 
@@ -3469,6 +3472,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   content: "";
   min-height: 100dvh;
   background: var(--white-80);
+  -webkit-backdrop-filter: blur(1.3rem);
   backdrop-filter: blur(1.3rem);
   opacity: 0;
   pointer-events: none;
@@ -6519,7 +6523,16 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   flex-direction: column;
 }
 
-.programm__content .h5 {
+.programm__content .h2,
+.programm__content h2,
+.programm__content .h3,
+.programm__content h3,
+.programm__content .h4,
+.programm__content h4,
+.programm__content .h5,
+.programm__content h5,
+.programm__content .h6,
+.programm__content h6 {
   color: var(--accent);
   margin-bottom: 3rem;
 }
@@ -6578,10 +6591,15 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .news__content .h2,
+.news__content h2,
 .news__content .h3,
+.news__content h3,
 .news__content .h4,
+.news__content h4,
 .news__content .h5,
-.news__content .h6 {
+.news__content h5,
+.news__content .h6,
+.news__content h6 {
   line-height: 100%;
   margin-bottom: 2rem;
 }
@@ -6656,6 +6674,15 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .news__side-item:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.news__side-item:nth-child(n+5) {
+  display: none;
+}
+
+.news__side-item:nth-child(4) {
   padding-bottom: 0;
   border-bottom: 0;
 }
@@ -7678,14 +7705,28 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   flex-direction: column;
 }
 
+.rules__content .h4,
 .rules__content h4 {
   text-transform: none;
   color: var(--accent);
-  margin-bottom: 3rem;
 }
 
+.rules__content .h4:not(:first-child),
 .rules__content h4:not(:first-child) {
   margin-top: 1rem;
+}
+
+.rules__content .h2,
+.rules__content h2,
+.rules__content .h3,
+.rules__content h3,
+.rules__content .h4,
+.rules__content h4,
+.rules__content .h5,
+.rules__content h5,
+.rules__content .h6,
+.rules__content h6 {
+  margin-bottom: 3rem;
 }
 
 .rules__content p {
@@ -8130,6 +8171,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 .booking [class^=swiper-button-],
 .booking [class*=" swiper-button-"] {
   --swiper-button-bg: var(--white-o-50);
+  -webkit-backdrop-filter: blur(2.1rem);
   backdrop-filter: blur(2.1rem);
 }
 
@@ -10305,6 +10347,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .resta__block:hover .resta__block-img::before {
+  -webkit-backdrop-filter: blur(0);
   backdrop-filter: blur(0);
 }
 
@@ -11000,6 +11043,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .events__other-item:hover .events__other-content .btn {
     --btn-border-color: var(--white-30);
+    -webkit-backdrop-filter: blur(0.8rem);
     backdrop-filter: blur(0.8rem);
   }
 
@@ -11023,6 +11067,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   }
 
   .resta__block-img::before {
+    -webkit-backdrop-filter: blur(0.7rem);
     backdrop-filter: blur(0.7rem);
   }
 
@@ -12540,7 +12585,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   }
 
   .afisha__block-head {
-    display: none;
+    gap: 2rem;
   }
 
   .afisha__block-wrap .h5 {
@@ -12872,7 +12917,16 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 3rem;
   }
 
-  .programm__content .h5 {
+  .programm__content .h2,
+  .programm__content h2,
+  .programm__content .h3,
+  .programm__content h3,
+  .programm__content .h4,
+  .programm__content h4,
+  .programm__content .h5,
+  .programm__content h5,
+  .programm__content .h6,
+  .programm__content h6 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
   }
@@ -12895,10 +12949,15 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   }
 
   .news__content .h2,
+  .news__content h2,
   .news__content .h3,
+  .news__content h3,
   .news__content .h4,
+  .news__content h4,
   .news__content .h5,
-  .news__content .h6 {
+  .news__content h5,
+  .news__content .h6,
+  .news__content h6 {
     font-size: 2.5rem;
   }
 
@@ -12912,7 +12971,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     padding: 3rem 3rem 4rem;
   }
 
-  .news__side-title h5 {
+  .news__side-title .h5 {
     font-size: 2.5rem;
   }
 
@@ -13403,12 +13462,22 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     width: 100%;
   }
 
-  .rules__content h4 {
-    margin-bottom: 2rem;
-  }
-
+  .rules__content .h4:not(:first-child),
   .rules__content h4:not(:first-child) {
     margin-top: 0;
+  }
+
+  .rules__content .h2,
+  .rules__content h2,
+  .rules__content .h3,
+  .rules__content h3,
+  .rules__content .h4,
+  .rules__content h4,
+  .rules__content .h5,
+  .rules__content h5,
+  .rules__content .h6,
+  .rules__content h6 {
+    margin-bottom: 2rem;
   }
 
   .rules__content li:not(.breadcrumbs li, .template-product__body li) {
@@ -15552,10 +15621,15 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   }
 
   .news__content .h2,
+  .news__content h2,
   .news__content .h3,
+  .news__content h3,
   .news__content .h4,
+  .news__content h4,
   .news__content .h5,
-  .news__content .h6 {
+  .news__content h5,
+  .news__content .h6,
+  .news__content h6 {
     margin-bottom: 1rem;
   }
 

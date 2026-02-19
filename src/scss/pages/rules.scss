@@ -55,14 +55,9 @@
     display: flex;
     flex-direction: column;
 
-    h4 {
+    .h4, h4 {
       text-transform: none;
       color: var(--accent);
-      margin-bottom: 3rem;
-
-      @include md {
-        margin-bottom: 2rem;
-      }
 
       &:not(:first-child) {
         margin-top: 1rem;
@@ -70,6 +65,23 @@
         @include md {
           margin-top: 0;
         }
+      }
+    }
+
+    .h2,
+    h2,
+    .h3,
+    h3,
+    .h4,
+    h4,
+    .h5,
+    h5,
+    .h6,
+    h6 {
+      margin-bottom: 3rem;
+
+      @include md {
+        margin-bottom: 2rem; 
       }
     }
 

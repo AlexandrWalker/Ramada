@@ -162,7 +162,8 @@
       gap: 3rem;
 
       @include md {
-        display: none;
+        // display: none;
+        gap: 2rem;
       }
 
       @include sm {
