@@ -2858,26 +2858,28 @@ document.addEventListener('DOMContentLoaded', () => {
       const tooltip = calendarTarget.querySelector('.tooltip');
       const tooltipClose = calendarTarget.querySelector('.tooltip__close');
 
-      targetElement.addEventListener('click', () => {
-        if (window.innerWidth > 834) {
-          calendarTarget.classList.add('show');
-        } else {
-          calendarTarget.setAttribute('data-fancybox', '');
-          calendarTarget.setAttribute('href', '#tooltipPopup');
-          tooltipInner(calendarTarget);
-        }
-      });
+      if (tooltip) {
+        targetElement.addEventListener('click', () => {
+          if (window.innerWidth > 834) {
+            calendarTarget.classList.add('show');
+          } else {
+            calendarTarget.setAttribute('data-fancybox', '');
+            calendarTarget.setAttribute('href', '#tooltipPopup');
+            tooltipInner(calendarTarget);
+          }
+        });
 
-      tooltipClose.addEventListener('click', () => {
-        calendarTarget.classList.remove('show');
-      });
+        tooltipClose.addEventListener('click', () => {
+          calendarTarget.classList.remove('show');
+        });
+      }
     });
 
     // Один глобальный обработчик для закрытия всех тултипов при клике вне
     document.addEventListener('click', (event) => {
       calendarTargets.forEach(calendarTarget => {
         const tooltip = calendarTarget.querySelector('.tooltip');
-        if (!tooltip.contains(event.target) && !calendarTarget.contains(event.target)) {
+        if (tooltip && !tooltip.contains(event.target) && !calendarTarget.contains(event.target)) {
           calendarTarget.classList.remove('show');
         }
       });
