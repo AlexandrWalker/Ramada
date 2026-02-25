@@ -286,21 +286,6 @@
       }
     }
 
-    &:required {
-
-      &+label {
-
-        p {
-          color: var(--accent);
-
-          &::after {
-            content: "*";
-            font-size: 1.4rem;
-          }
-        }
-      }
-    }
-
     &+label {
       display: flex;
       flex-direction: row;
@@ -356,7 +341,18 @@
     color: var(--accent) !important;
   }
 
-  .form-error {
-    // display: block;
+  .form-checkbox {
+
+    &+label {
+
+      p {
+        color: var(--accent);
+
+        &::after {
+          content: "*";
+          font-size: 1.4rem;
+        }
+      }
+    }
   }
 }

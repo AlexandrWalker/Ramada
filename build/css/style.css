@@ -91,8 +91,8 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -107,16 +107,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -1987,15 +1987,6 @@ body {
   background-color: var(--accent);
 }
 
-.form-checkbox:required + label p {
-  color: var(--accent);
-}
-
-.form-checkbox:required + label p::after {
-  content: "*";
-  font-size: 1.4rem;
-}
-
 .form-checkbox + label {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2064,6 +2055,15 @@ body {
 
 .has-error .form-label {
   color: var(--accent) !important;
+}
+
+.has-error .form-checkbox + label p {
+  color: var(--accent);
+}
+
+.has-error .form-checkbox + label p::after {
+  content: "*";
+  font-size: 1.4rem;
 }
 
 /* Стили для иконок */
