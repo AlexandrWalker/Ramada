@@ -121,7 +121,12 @@
     }
 
     &.filled:not(:focus, :hover, :target) {
+      border-color: var(--gray);
       color: var(--gray);
+
+      &+.form-label {
+        color: var(--gray);
+      }
     }
   }
 
@@ -276,6 +281,21 @@
 
           &::after {
             background-color: var(--accent);
+          }
+        }
+      }
+    }
+
+    &:required {
+
+      &+label {
+
+        p {
+          color: var(--accent);
+
+          &::after {
+            content: "*";
+            font-size: 1.4rem;
           }
         }
       }

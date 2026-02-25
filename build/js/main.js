@@ -1610,6 +1610,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // function setupFormValidation(formSelector) {
+  //   const forms = document.querySelectorAll(formSelector);
+
+  //   forms.forEach(form => {
+  //     const formBtn = form.querySelector('button');
+  //     if (!formBtn) return;
+
+  //     const requiredInputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+
+  //     function updateButtonState() {
+  //       const allFilled = Array.from(requiredInputs).every(input => {
+  //         if (input.type === 'checkbox' || input.type === 'radio') {
+  //           return input.checked;
+  //         }
+  //         return input.value.trim() !== '';
+  //       });
+  //       formBtn.disabled = !allFilled;
+  //     }
+
+  //     // Отслеживаем изменения
+  //     requiredInputs.forEach(input => {
+  //       input.addEventListener('input', updateButtonState);
+  //       input.addEventListener('change', updateButtonState);
+  //     });
+
+  //     // Первоначальная проверка
+  //     updateButtonState();
+
+  //     // Сохраняем функцию для возможного вызова извне
+  //     form.updateButtonState = updateButtonState;
+  //   });
+  // }
+  // // Инициализация для всех форм с классом .form
+  // setupFormValidation('.form');
+
   /**
    * Смена класса для кнопки закрытия бургер меню
    */
