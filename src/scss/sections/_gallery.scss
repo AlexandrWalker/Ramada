@@ -119,6 +119,21 @@
       }
     }
 
+    &-text {
+
+      p {
+        margin-bottom: 2rem;
+
+        @include md {
+          margin-bottom: 1.5rem;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
     &-name {
       display: flex;
       flex-direction: row;
@@ -256,12 +271,16 @@
   }
 
   &__body {
-    aspect-ratio: 674/628;
 
     position: relative;
 
     @include md {
       grid-row: 2/3;
+      height: calc(100vw/(834/628));
+    }
+
+    @include sm {
+      height: calc(100vw/(393/284));
     }
 
     .swiper-button-prev {

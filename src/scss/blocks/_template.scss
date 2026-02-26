@@ -1373,6 +1373,10 @@
         &-suptitle {
           text-transform: uppercase;
 
+          h2 {
+            line-height: 110%;
+          }
+
           h5 {
 
             @include md {

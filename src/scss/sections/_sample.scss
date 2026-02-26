@@ -1,0 +1,29 @@
+@use './../mixins' as *;
+
+.sample {
+
+  &__inner {
+    padding: 5rem 0;
+    border-top: 0.1rem solid var(--gray-50);
+    border-bottom: 0.1rem solid var(--gray-50);
+
+    @include md {
+      gap: 1.5rem;
+
+      padding: 0;
+      border: 0;
+    }
+  }
+
+  &__body {
+    color: var(--black-50);
+  }
+
+  p {
+    margin-bottom: 2rem;
+
+    @include md {
+      margin-bottom: 1rem;
+    }
+  }
+}

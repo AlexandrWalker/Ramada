@@ -99,16 +99,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
+  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -2350,6 +2350,14 @@ h2 {
   line-height: 110%;
 }
 
+.sample .h2,
+.sample h2 {
+  font-family: var(--font-family);
+  line-height: 120%;
+  font-weight: 700;
+  font-size: 3.5rem;
+}
+
 .h2-restyle h2 {
   font-family: var(--second-family);
   font-weight: 300;
@@ -2367,6 +2375,13 @@ h3 {
   line-height: 110%;
 }
 
+.sample .h3,
+.sample h3 {
+  font-family: var(--font-family);
+  line-height: 120%;
+  letter-spacing: unset;
+}
+
 /* Второй заголовок */
 
 .h4,
@@ -2375,6 +2390,13 @@ h4 {
   font-weight: 300;
   font-size: 5rem;
   line-height: 90%;
+}
+
+.sample .h4,
+.sample h4 {
+  font-family: var(--font-family);
+  line-height: 120%;
+  letter-spacing: unset;
 }
 
 /* Подзаголовки и заголовки дочерних блоков */
@@ -2387,6 +2409,13 @@ h5 {
   line-height: 90%;
 }
 
+.sample .h5,
+.sample h5 {
+  font-family: var(--font-family);
+  line-height: 120%;
+  letter-spacing: unset;
+}
+
 /* Выделенный текст, надзаголовок и подзаголовок */
 
 .h6,
@@ -2395,6 +2424,13 @@ h6 {
   font-size: 2.4rem;
   line-height: 120%;
   letter-spacing: 0.1em;
+}
+
+.sample .h6,
+.sample h6 {
+  font-family: var(--font-family);
+  line-height: 120%;
+  letter-spacing: unset;
 }
 
 /* Текст внутри блока */
@@ -2421,6 +2457,21 @@ h5 span,
 .h6 span,
 h6 span {
   color: var(--accent);
+}
+
+.sample .h1,
+.sample h1,
+.sample .h2,
+.sample h2,
+.sample .h3,
+.sample h3,
+.sample .h4,
+.sample h4,
+.sample .h5,
+.sample h5,
+.sample .h6,
+.sample h6 {
+  margin-bottom: 2rem;
 }
 
 /* Надзаголовок с обводкой */
@@ -4044,6 +4095,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .nav__container::-webkit-scrollbar {
+  display: none;
   width: 0;
   height: 0;
   padding: 0;
@@ -4058,13 +4110,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 3rem;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 0 1rem;
 }
 
 .nav li {
@@ -5073,6 +5125,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .template-box .general__block-suptitle {
   text-transform: uppercase;
+}
+
+.template-box .general__block-suptitle h2 {
+  line-height: 110%;
 }
 
 .template-box .template-product__content {
@@ -6945,8 +7001,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .residence-page .template-product .template-box__block {
-  padding: 4rem 8rem 5rem;
-  padding: 6rem 13rem;
+  padding: 6rem 13rem 11rem;
 }
 
 .residence-page .template-product .template-box__block::before {
@@ -6954,10 +7009,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   right: 2rem;
   bottom: 2rem;
   left: 2rem;
-}
-
-.residence-page .template-product__slider--big {
-  aspect-ratio: 750/652;
 }
 
 .residence .general__block-suptitle {
@@ -7004,6 +7055,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .residence__slider .general__block-suptitle {
   max-width: 100%;
+  line-height: 110%;
 }
 
 .residence__slider .general__block-text {
@@ -7012,6 +7064,18 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .residence__slider .template-product__body-price {
   margin-bottom: 0;
+}
+
+.residence__slider .template-product__slider {
+  height: calc(100% - 16.5rem);
+}
+
+.residence__slider .template-product__slider--big {
+  height: calc(100% - 2rem);
+}
+
+.residence__slider .template-product__slider--big .swiper-wrapper {
+  aspect-ratio: unset;
 }
 
 .residence__slide {
@@ -7048,11 +7112,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .residence__slide-btns .swiper-button-prev {
-  left: -15.5rem;
+  left: -10.5rem;
 }
 
 .residence__slide-btns .swiper-button-next {
-  right: -15.5rem;
+  right: -10.5rem;
 }
 
 .residence__items {
@@ -9224,6 +9288,14 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   margin-bottom: 3rem;
 }
 
+.gallery__block-text p {
+  margin-bottom: 2rem;
+}
+
+.gallery__block-text p:last-child {
+  margin-bottom: 0;
+}
+
 .gallery__block-name {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9331,7 +9403,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .gallery__body {
-  aspect-ratio: 674/628;
   position: relative;
 }
 
@@ -10471,6 +10542,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   position: relative;
 }
 
+.reviews__slide .reviews__item.reviews__item--corp {
+  height: 100%;
+}
+
 .reviews__item {
   height: 100%;
   padding: 2rem;
@@ -10660,6 +10735,20 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .reviews .swiper-pagination {
   margin-top: 4rem;
+}
+
+.sample__inner {
+  padding: 5rem 0;
+  border-top: 0.1rem solid var(--gray-50);
+  border-bottom: 0.1rem solid var(--gray-50);
+}
+
+.sample__body {
+  color: var(--black-50);
+}
+
+.sample p {
+  margin-bottom: 2rem;
 }
 
 .site-map__content {
@@ -11512,6 +11601,12 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     font-size: 4rem;
   }
 
+  .sample .h2,
+  .sample h2 {
+    font-size: 2rem;
+    line-height: 100%;
+  }
+
   .h2-restyle h2 {
     font-size: 2.5rem;
   }
@@ -11519,6 +11614,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   .h3,
   h3 {
     font-size: 5rem;
+  }
+
+  .sample .h3,
+  .sample h3 {
+    font-size: 3rem;
   }
 
   .h4,
@@ -11538,6 +11638,21 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   p {
     font-size: 1.4rem;
+  }
+
+  .sample .h1,
+  .sample h1,
+  .sample .h2,
+  .sample h2,
+  .sample .h3,
+  .sample h3,
+  .sample .h4,
+  .sample h4,
+  .sample .h5,
+  .sample h5,
+  .sample .h6,
+  .sample h6 {
+    margin-bottom: 1.5rem;
   }
 
   .tooltip {
@@ -13123,6 +13238,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     -webkit-box-ordinal-group: 3;
     -ms-flex-order: 2;
     order: 2;
+    padding: 4rem 8rem 5.5rem;
   }
 
   .residence-page .template-product .template-product__content {
@@ -13141,6 +13257,14 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .residence__slider {
     overflow: visible;
+  }
+
+  .residence__slider .template-product__slider {
+    height: 100%;
+  }
+
+  .residence__slider .template-product__slider--big {
+    height: 100%;
   }
 
   .residence__slide {
@@ -13960,6 +14084,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     font-size: 2.5rem;
   }
 
+  .gallery__block-text p {
+    margin-bottom: 1.5rem;
+  }
+
   .gallery__block-wrap {
     gap: 1.5rem;
     margin-bottom: 3rem;
@@ -13991,6 +14119,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .gallery__body {
     grid-row: 2/3;
+    height: 75.2997601918vw;
   }
 
   .gallery__body .swiper-button-prev {
@@ -14406,6 +14535,16 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .reviews .swiper-pagination {
     margin-top: 2rem;
+  }
+
+  .sample__inner {
+    gap: 1.5rem;
+    padding: 0;
+    border: 0;
+  }
+
+  .sample p {
+    margin-bottom: 1rem;
   }
 
   .site-map__content {
@@ -16374,6 +16513,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-top: auto;
     margin-left: auto;
     font-size: 1.2rem;
+  }
+
+  .gallery__body {
+    height: 72.2646310433vw;
   }
 
   .gallery__body .swiper-button-prev {

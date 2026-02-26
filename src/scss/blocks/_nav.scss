@@ -14,6 +14,7 @@
   &__container {
 
     &::-webkit-scrollbar {
+      display: none;
       width: 0;
       height: 0;
       padding: 0;
@@ -29,9 +30,13 @@
   ul {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
-    gap: 3rem;
+    
+    // justify-content: center;
+    // gap: 0 3rem;
+
+    justify-content: space-between;
+    gap: 0 1rem;
 
     @include md {
       justify-content: flex-start;

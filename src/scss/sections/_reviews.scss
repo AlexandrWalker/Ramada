@@ -92,6 +92,10 @@
     @include sm {
       max-width: 17.2rem;
     }
+
+    .reviews__item.reviews__item--corp {
+      height: 100%;
+    }
   }
 
   &__item {

@@ -44,11 +44,13 @@
       }
 
       .template-box__block {
-        padding: 4rem 8rem 5rem;
-        padding: 6rem 13rem;
+        // padding: 4rem 8rem 5rem;
+        // padding: 6rem 13rem;
+        padding: 6rem 13rem 11rem;
 
         @include md {
           order: 2;
+          padding: 4rem 8rem 5.5rem;
         }
 
         @include sm {
@@ -71,7 +73,7 @@
       }
 
       &__slider--big {
-        aspect-ratio: 750/652;
+        // aspect-ratio: 750/652;
 
         @include md {
           margin-bottom: 0;
@@ -148,6 +150,8 @@
       &-suptitle {
         max-width: 100%;
 
+        line-height: 110%;
+
         @include sm {
           font-size: 2rem;
         }
@@ -162,6 +166,26 @@
 
       &__body-price {
         margin-bottom: 0;
+      }
+
+      &__slider {
+        height: calc(100% - 16.5rem);
+
+        @include md {
+          height: 100%;
+        }
+      }
+
+      &__slider--big {
+        height: calc(100% - 2rem);
+
+        @include md {
+          height: 100%;
+        }
+
+        .swiper-wrapper {
+          aspect-ratio: unset;
+        }
       }
     }
   }
@@ -209,7 +233,7 @@
       }
 
       .swiper-button-prev {
-        left: -15.5rem;
+        left: -10.5rem;
 
         @include sm {
           position: relative;
@@ -221,7 +245,7 @@
       }
 
       .swiper-button-next {
-        right: -15.5rem;
+        right: -10.5rem;
 
         @include sm {
           position: relative;
@@ -367,13 +391,6 @@
       &:not(.swiper-button-alt) {
         display: none;
       }
-    }
-
-    &:hover {
-
-      // i {
-      //   color: var(--white);
-      // }
     }
   }
 }
