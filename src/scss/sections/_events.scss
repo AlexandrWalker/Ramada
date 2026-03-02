@@ -333,12 +333,6 @@
         font-size: 1.4rem;
       }
 
-      &:not(:empty, .today):hover {
-        // font-weight: 700;
-        // color: var(--accent);
-        // border-color: var(--black);
-      }
-
       &.today.target,
       &.today {
         color: var(--white);
@@ -428,6 +422,20 @@
 
       @include sm {
         font-size: 2.5rem;
+      }
+
+      h2 {
+        font-family: var(--second-family);
+        font-weight: 300;
+        font-size: 5rem;
+        line-height: 110%;
+
+        @include md {
+          font-size: 3rem;
+        }
+        @include sm {
+          font-size: 2.5rem;
+        }
       }
     }
 

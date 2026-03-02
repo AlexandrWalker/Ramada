@@ -147,16 +147,16 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Bold.woff2") format("woff2"), url("../fonts/TTTricks-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/TTTricks-Bold.woff2") format("woff2"), url("../fonts/TTTricks-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -281,7 +281,10 @@ img {
   gap: 1rem;
 }
 
-.general__block-wrap .h5 {
+.general__block-wrap span {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 3.5rem;
   color: var(--accent);
   line-height: 110%;
 }
@@ -4393,6 +4396,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   border-bottom: 0.1rem solid var(--white-30);
 }
 
+.template__suptitle p {
+  font-weight: 900;
+  font-size: 2.4rem;
+  line-height: 120%;
+  letter-spacing: 0.1em;
+}
+
 .news-page .template__title {
   max-width: 88rem;
 }
@@ -4540,7 +4550,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   margin-bottom: 15rem;
 }
 
-.template--primary .template__suptitle h6 {
+.template--primary .template__suptitle p {
   font-weight: 350;
 }
 
@@ -5608,6 +5618,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   flex-direction: column;
 }
 
+.career__inner h2 {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 3.5rem;
+  line-height: 90%;
+}
+
 .career__inner .h6 {
   font-family: var(--second-family);
   font-weight: 300;
@@ -6591,6 +6608,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.programm__content h2 {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 3.5rem;
+  line-height: 110%;
 }
 
 .programm__content .h2,
@@ -7783,17 +7807,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   flex-direction: column;
 }
 
-.rules__content .h4,
-.rules__content h4 {
-  text-transform: none;
-  color: var(--accent);
-}
-
-.rules__content .h4:not(:first-child),
-.rules__content h4:not(:first-child) {
-  margin-top: 1rem;
-}
-
 .rules__content .h2,
 .rules__content h2,
 .rules__content .h3,
@@ -7805,6 +7818,19 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 .rules__content .h6,
 .rules__content h6 {
   margin-bottom: 3rem;
+}
+
+.rules__content h2 {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 5rem;
+  line-height: 90%;
+  text-transform: none;
+  color: var(--accent);
+}
+
+.rules__content h2:not(:first-child) {
+  margin-top: 1rem;
 }
 
 .rules__content p {
@@ -7875,6 +7901,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .rules__side-title {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 3.5rem;
+  line-height: 90%;
   color: var(--accent);
 }
 
@@ -8864,6 +8894,13 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .events__other .general__head-title {
   text-transform: none;
+}
+
+.events__other .general__head-title h2 {
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 5rem;
+  line-height: 110%;
 }
 
 .events__other .swiper-pagination {
@@ -11358,7 +11395,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 1.7rem;
   }
 
-  .general__block-wrap .h5 {
+  .general__block-wrap span {
     font-size: 2.5rem;
   }
 
@@ -12318,6 +12355,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     width: 27rem;
   }
 
+  .template__suptitle p {
+    font-size: 2rem;
+  }
+
   .news-page .template__title {
     max-width: 44rem;
   }
@@ -12822,6 +12863,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     padding: 3rem;
   }
 
+  .career__inner h2 {
+    font-size: 2.5rem;
+  }
+
   .career__inner .h5 {
     font-size: 2.5rem;
   }
@@ -13046,6 +13091,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .programm__ps {
     margin-bottom: 3rem;
+  }
+
+  .programm__content h2 {
+    font-size: 2.5rem;
   }
 
   .programm__content .h2,
@@ -13602,11 +13651,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     width: 100%;
   }
 
-  .rules__content .h4:not(:first-child),
-  .rules__content h4:not(:first-child) {
-    margin-top: 0;
-  }
-
   .rules__content .h2,
   .rules__content h2,
   .rules__content .h3,
@@ -13620,12 +13664,24 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 2rem;
   }
 
+  .rules__content h2:not(:first-child) {
+    margin-top: 0;
+  }
+
+  .rules__content h2 {
+    font-size: 2.5rem;
+  }
+
   .rules__content li:not(.breadcrumbs li, .template-product__body li) {
     margin-bottom: 1.5rem;
   }
 
   .rules__side {
     display: none;
+  }
+
+  .rules__side-title {
+    font-size: 1.6rem;
   }
 
   .sosnovyi-page .template-product__inner:not(.template-product--seating .template-product__inner) {
@@ -13915,6 +13971,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .events__other .general__head-title {
     font-size: 4rem;
+  }
+
+  .events__other .general__head-title h2 {
+    font-size: 3rem;
   }
 
   .events__other .swiper-button-prev {
@@ -15210,7 +15270,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     padding: 1.5rem 0;
   }
 
-  .template--primary .template__suptitle h6 {
+  .template--primary .template__suptitle p {
     font-size: 1.6rem;
   }
 
@@ -16440,6 +16500,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   }
 
   .events__other .general__head-title {
+    font-size: 2.5rem;
+  }
+
+  .events__other .general__head-title h2 {
     font-size: 2.5rem;
   }
 

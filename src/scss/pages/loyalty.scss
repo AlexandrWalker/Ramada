@@ -259,11 +259,27 @@
     display: flex;
     flex-direction: column;
 
-    .h2, h2,
-    .h3, h3,
-    .h4, h4,
-    .h5, h5,
-    .h6, h6 {
+    h2 {
+      font-family: var(--second-family);
+      font-weight: 300;
+      font-size: 3.5rem;
+      line-height: 110%;
+
+      @include md {
+        font-size: 2.5rem;
+      }
+    }
+
+    .h2,
+    h2,
+    .h3,
+    h3,
+    .h4,
+    h4,
+    .h5,
+    h5,
+    .h6,
+    h6 {
       color: var(--accent);
       margin-bottom: 3rem;
 
