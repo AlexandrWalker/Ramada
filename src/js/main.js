@@ -2185,7 +2185,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroTitle = hero.querySelector('[data-animation="hero-title"]');
     const heroBtn = hero.querySelector('[data-animation="hero-btn"]');
 
-    const h1Title = heroTitle.querySelector('h1');
+    const h1Title = heroTitle.querySelector('h2');
     const svgTitle = heroTitle.querySelector('svg');
     const pTitle = heroTitle.querySelector('p');
     const spanTitle = heroTitle.querySelector('span');

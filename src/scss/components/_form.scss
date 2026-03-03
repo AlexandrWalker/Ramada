@@ -271,7 +271,11 @@
   }
 
   &-checkbox {
-    display: none;
+    /*display: none;*/
+    visibility: hidden;
+    position: absolute;
+    top: -99999px;
+    left: -999999px;
 
     &:checked {
 
@@ -328,6 +332,11 @@
       }
     }
   }
+}
+
+.checkbox {
+  position: relative;
+  overflow: hidden;
 }
 
 .has-error {

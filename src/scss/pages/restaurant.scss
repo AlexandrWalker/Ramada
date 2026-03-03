@@ -75,13 +75,25 @@
         }
 
         h1 {
-          font-size: 20rem;
-          text-align: right;
+          display: flex !important;
+          flex-direction: column;
           gap: var(--gap);
+          margin-left: -1.4rem;
+
+          font-family: var(--second-family);
+          font-weight: 300;
+          font-size: 20rem;
+          line-height: 90%;
+          color: var(--white);
+          text-align: right;
+
+          will-change: font-size;
 
           @include md {
             font-size: 8rem;
             gap: 25.7rem;
+
+            margin-left: -0.7rem;
           }
 
           @include xmd {
@@ -93,6 +105,45 @@
             text-align: left;
             gap: 1.4rem;
             margin-left: 0;
+          }
+
+          @include xxs {
+            font-size: 5rem;
+          }
+
+          span {
+            /* Для анимации fadeIn */
+            overflow: hidden;
+
+            @include md {
+              color: var(--accent);
+            }
+          }
+
+          svg {
+            width: auto;
+            height: var(--height);
+            object-fit: contain;
+
+            margin-left: 1.4rem;
+            margin-bottom: -0.3rem;
+
+            fill: var(--color);
+
+            @include md {
+              height: calc(100vw/(834/65));
+              margin-left: 0.7rem;
+              fill: var(--accent);
+            }
+
+            @include sm {
+              height: 4.7rem;
+              margin-bottom: 0;
+            }
+
+            @include xxs {
+              height: 3.9rem;
+            }
           }
         }
       }
@@ -315,6 +366,7 @@
       align-items: center;
       // gap: 5rem;
       gap: 2rem;
+      height: 100%;
       padding: 6rem 4rem;
       background-color: var(--white);
       position: relative;
@@ -377,6 +429,8 @@
 
       .general__block {
         gap: 5rem;
+        justify-content: space-between;
+        height: 100%;
 
         @include md {
           gap: 1rem;

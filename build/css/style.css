@@ -91,14 +91,6 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
   font-weight: 350;
   font-style: normal;
@@ -107,16 +99,24 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -147,16 +147,16 @@ img {
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/TTTricks-Bold.woff2") format("woff2"), url("../fonts/TTTricks-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: TTTricks;
   font-display: swap;
-  src: url("../fonts/TTTricks-Bold.woff2") format("woff2"), url("../fonts/TTTricks-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/TTTricks-DemiBold.woff2") format("woff2"), url("../fonts/TTTricks-DemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -1546,12 +1546,12 @@ body {
   --btn-scale-background: var(--white);
   --btn-border-color: var(--white-30);
   -webkit-backdrop-filter: blur(0.8rem);
-  backdrop-filter: blur(0.8rem);
+backdrop-filter: blur(0.8rem);
 }
 
 .btn--blur::before {
   -webkit-backdrop-filter: blur(0.8rem);
-  backdrop-filter: blur(0.8rem);
+backdrop-filter: blur(0.8rem);
 }
 
 .btn--blur::after {
@@ -1983,7 +1983,11 @@ body {
 }
 
 .form-checkbox {
-  display: none;
+  /*display: none;*/
+  visibility: hidden;
+  position: absolute;
+  top: -99999px;
+  left: -999999px;
 }
 
 .form-checkbox:checked + label .form-checkbox--item::after {
@@ -2049,6 +2053,11 @@ body {
   transition: all 0.3s ease;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+}
+
+.checkbox {
+  position: relative;
+  overflow: hidden;
 }
 
 .has-error .form-input {
@@ -7234,9 +7243,37 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 }
 
 .restaurant-page .hero__title h1 {
-  font-size: 20rem;
-  text-align: right;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   gap: var(--gap);
+  margin-left: -1.4rem;
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 20rem;
+  line-height: 90%;
+  color: var(--white);
+  text-align: right;
+  will-change: font-size;
+}
+
+.restaurant-page .hero__title h1 span {
+  /* Для анимации fadeIn */
+  overflow: hidden;
+}
+
+.restaurant-page .hero__title h1 svg {
+  width: auto;
+  height: var(--height);
+  -o-object-fit: contain;
+  object-fit: contain;
+  margin-left: 1.4rem;
+  margin-bottom: -0.3rem;
+  fill: var(--color);
 }
 
 .restaurant-page .hero__bg {
@@ -7311,6 +7348,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   -ms-flex-align: center;
   align-items: center;
   gap: 2rem;
+  height: 100%;
   padding: 6rem 4rem;
   background-color: var(--white);
   position: relative;
@@ -7349,6 +7387,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .dishes__item-wrap .general__block {
   gap: 5rem;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .dishes__item-img {
@@ -9691,7 +9733,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   position: relative;
 }
 
-.hero__title h1 {
+.hero__title h2 {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -9709,12 +9751,12 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   will-change: font-size;
 }
 
-.hero__title h1 span {
+.hero__title h2 span {
   /* Для анимации fadeIn */
   overflow: hidden;
 }
 
-.hero__title h1 svg {
+.hero__title h2 svg {
   width: auto;
   height: var(--height);
   -o-object-fit: contain;
@@ -11186,7 +11228,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   .events__other-item:hover .events__other-content .btn {
     --btn-border-color: var(--white-30);
     -webkit-backdrop-filter: blur(0.8rem);
-    backdrop-filter: blur(0.8rem);
+backdrop-filter: blur(0.8rem);
   }
 
   .events__other-item:hover .events__other-content .btn::before {
@@ -13402,6 +13444,17 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   .restaurant-page .hero__title h1 {
     font-size: 8rem;
     gap: 25.7rem;
+    margin-left: -0.7rem;
+  }
+
+  .restaurant-page .hero__title h1 span {
+    color: var(--accent);
+  }
+
+  .restaurant-page .hero__title h1 svg {
+    height: 7.793764988vw;
+    margin-left: 0.7rem;
+    fill: var(--accent);
   }
 
   .restaurant-page .hero__bg {
@@ -14236,16 +14289,16 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     top: 5.6rem;
   }
 
-  .hero__title h1 {
+  .hero__title h2 {
     font-size: 8rem;
     margin-left: -0.7rem;
   }
 
-  .hero__title h1 span {
+  .hero__title h2 span {
     color: var(--accent);
   }
 
-  .hero__title h1 svg {
+  .hero__title h2 svg {
     height: 7.793764988vw;
     margin-left: 0.7rem;
     fill: var(--accent);
@@ -16062,6 +16115,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-left: 0;
   }
 
+  .restaurant-page .hero__title h1 svg {
+    height: 4.7rem;
+    margin-bottom: 0;
+  }
+
   .restaurant-page .hero__bg {
     --top: 8.4rem;
     height: -webkit-fit-content;
@@ -16682,12 +16740,12 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 1rem;
   }
 
-  .hero__title h1 {
+  .hero__title h2 {
     font-size: 6rem;
     margin-left: -0.6rem;
   }
 
-  .hero__title h1 svg {
+  .hero__title h2 svg {
     height: 4.7rem;
     margin-bottom: 0;
   }
@@ -17052,6 +17110,14 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     width: 100%;
   }
 
+  .restaurant-page .hero__title h1 {
+    font-size: 5rem;
+  }
+
+  .restaurant-page .hero__title h1 svg {
+    height: 3.9rem;
+  }
+
   .reviews-page .reviews__item {
     width: 100%;
   }
@@ -17064,11 +17130,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     padding: 2rem 1rem 1.5rem;
   }
 
-  .hero__title h1 {
+  .hero__title h2 {
     font-size: 5rem;
   }
 
-  .hero__title h1 svg {
+  .hero__title h2 svg {
     height: 3.9rem;
   }
 
