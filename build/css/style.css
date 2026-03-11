@@ -99,16 +99,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
+  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -10826,18 +10826,16 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   margin-top: 4rem;
 }
 
-.sample__inner {
-  padding: 5rem 0;
-  border-top: 0.1rem solid var(--gray-50);
-  border-bottom: 0.1rem solid var(--gray-50);
-}
-
 .sample__body {
   color: var(--black-50);
 }
 
 .sample p {
   margin-bottom: 2rem;
+}
+
+.sample p:last-child {
+  margin-bottom: 0;
 }
 
 .site-map__content {
