@@ -91,22 +91,6 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
-  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -117,6 +101,22 @@ img {
   font-display: swap;
   src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
   font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -1546,12 +1546,12 @@ body {
   --btn-scale-background: var(--white);
   --btn-border-color: var(--white-30);
   -webkit-backdrop-filter: blur(0.8rem);
-backdrop-filter: blur(0.8rem);
+  backdrop-filter: blur(0.8rem);
 }
 
 .btn--blur::before {
   -webkit-backdrop-filter: blur(0.8rem);
-backdrop-filter: blur(0.8rem);
+  backdrop-filter: blur(0.8rem);
 }
 
 .btn--blur::after {
@@ -3250,6 +3250,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   pointer-events: none;
 }
 
+.header__container {
+  --container-width: 184rem;
+  --container-padding: 4rem;
+}
+
 .header__content {
   padding: 2.8rem 0 2.7rem;
   border-bottom: 0.1rem solid var(--accent);
@@ -4106,6 +4111,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   border-bottom: 0.1rem solid var(--accent);
 }
 
+.nav__container {
+  --container-width: 184rem;
+  --container-padding: 4rem;
+}
+
 .nav__container::-webkit-scrollbar {
   display: none;
   width: 0;
@@ -4122,12 +4132,12 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   gap: 0 1rem;
 }
 
@@ -11228,7 +11238,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   .events__other-item:hover .events__other-content .btn {
     --btn-border-color: var(--white-30);
     -webkit-backdrop-filter: blur(0.8rem);
-backdrop-filter: blur(0.8rem);
+    backdrop-filter: blur(0.8rem);
   }
 
   .events__other-item:hover .events__other-content .btn::before {
@@ -12031,6 +12041,10 @@ backdrop-filter: blur(0.8rem);
     display: none;
   }
 
+  .header__container {
+    --container-padding: 8rem;
+  }
+
   .header__content {
     padding: 1.5rem 0;
   }
@@ -12287,6 +12301,7 @@ backdrop-filter: blur(0.8rem);
   }
 
   .nav__container {
+    --container-padding: 8rem;
     overflow-x: auto;
     padding: 0;
   }
@@ -13025,6 +13040,7 @@ backdrop-filter: blur(0.8rem);
     gap: 2rem;
     padding: 3rem;
     background-color: var(--white);
+    width: 100%;
   }
 
   .contacts__item-link {
@@ -14693,6 +14709,14 @@ backdrop-filter: blur(0.8rem);
     --container-width: 70.8rem;
   }
 
+  .header__container {
+    --container-padding: 3rem;
+  }
+
+  .nav__container {
+    --container-padding: 3rem;
+  }
+
   .sosnovyi-page .template-product__control {
     width: 100%;
   }
@@ -15063,6 +15087,10 @@ backdrop-filter: blur(0.8rem);
     z-index: 201;
   }
 
+  .header__container {
+    --container-padding: 2rem;
+  }
+
   .header.show .header__content {
     border-color: transparent;
   }
@@ -15274,6 +15302,10 @@ backdrop-filter: blur(0.8rem);
 
   .nav {
     display: none;
+  }
+
+  .nav__container {
+    --container-padding: 2rem;
   }
 
   .plate__body {
