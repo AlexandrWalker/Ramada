@@ -12,6 +12,8 @@
   }
 
   &__container {
+    --container-width: 184rem;
+    --container-padding: 4rem;
 
     &::-webkit-scrollbar {
       display: none;
@@ -22,20 +24,26 @@
     }
 
     @include md {
+      --container-padding: 8rem;
+      
       overflow-x: auto;
       padding: 0;
+    }
+
+    @include xmd {
+      --container-padding: 3rem;
+    }
+
+    @include sm {
+      --container-padding: 2rem;
     }
   }
 
   ul {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    
-    // justify-content: center;
-    // gap: 0 3rem;
-
     justify-content: space-between;
+    align-items: center;
     gap: 0 1rem;
 
     @include md {

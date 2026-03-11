@@ -25,6 +25,23 @@
     pointer-events: none;
   }
 
+  &__container {
+    --container-width: 184rem;
+    --container-padding: 4rem;
+
+    @include md {
+      --container-padding: 8rem;
+    }
+
+    @include xmd {
+      --container-padding: 3rem;
+    }
+
+    @include sm {
+      --container-padding: 2rem;
+    }
+  }
+
   &__content {
     padding: 2.8rem 0 2.7rem;
     border-bottom: 0.1rem solid var(--accent);
