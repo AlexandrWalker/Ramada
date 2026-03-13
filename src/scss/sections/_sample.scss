@@ -1,6 +1,11 @@
 @use './../mixins' as *;
 
 .sample {
+  padding-top: 5rem;
+
+  @include md {
+    padding-top: 4rem;
+  }
 
   &__inner {
     // padding: 5rem 0;
