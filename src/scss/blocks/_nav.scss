@@ -105,7 +105,8 @@
     display: grid;
     grid-template-rows: 0fr;
     transition: all 0.5s ease;
-    width: calc(100% + 6rem);
+    min-width: calc(100% + 6rem);
+    width: max-content;
     padding: 0 2rem;
     background-color: var(--white);
     overflow: hidden;
