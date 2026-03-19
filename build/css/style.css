@@ -107,16 +107,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
+  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -2715,6 +2715,17 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   --burger-close-width: 2.5rem;
   --burger-close-height: 0.35rem;
   --burger-close-color: var(--white);
+  --btn-width: fit-content;
+  --btn-height: 5.6rem;
+  --btn-first-padding: 0.3rem;
+  --btn-second-padding: 0.4rem;
+  --btn-padding-x: 2.2rem;
+  --btn-color: var(--white);
+  --btn-background: var(--black);
+  --btn-scale-background: var(--accent);
+  --btn-border-radius: 10rem;
+  --btn-border-color: var(--black);
+  --btn-border-width: 0.5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2728,6 +2739,53 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   margin-top: -1rem;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  position: relative;
+}
+
+.burger-close .scale {
+  position: absolute;
+  top: var(--btn-first-padding);
+  right: var(--btn-first-padding);
+  bottom: var(--btn-first-padding);
+  left: var(--btn-first-padding);
+  z-index: -1;
+  border-radius: 2.4rem;
+  background-color: var(--btn-scale-background);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.burger-close::before {
+  content: "";
+  border-radius: var(--btn-border-radius);
+  background: var(--btn-background);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  position: absolute;
+  top: var(--btn-first-padding);
+  right: var(--btn-first-padding);
+  bottom: var(--btn-first-padding);
+  left: var(--btn-first-padding);
+  z-index: -1;
+  display: none;
+}
+
+.burger-close::after {
+  content: "";
+  border: var(--btn-border-width) solid var(--white-o-50);
+  border-radius: var(--btn-border-radius);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  position: absolute;
+  top: calc(var(--btn-first-padding) + var(--btn-first-padding));
+  right: calc(var(--btn-first-padding) + var(--btn-second-padding));
+  bottom: calc(var(--btn-first-padding) + var(--btn-first-padding));
+  left: calc(var(--btn-first-padding) + var(--btn-second-padding));
+  z-index: -1;
+  display: none;
 }
 
 .burger-close .icon-close {
@@ -2737,7 +2795,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   display: none;
 }
 
-.burger-close span {
+.burger-close span:not(span.scale) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2752,7 +2810,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   position: relative;
 }
 
-.burger-close span::before {
+.burger-close span:not(span.scale)::before {
   content: "";
   display: block;
   width: var(--burger-close-width);
@@ -2766,7 +2824,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   transition: all 0.3s ease;
 }
 
-.burger-close span::after {
+.burger-close span:not(span.scale)::after {
   content: "";
   display: block;
   width: var(--burger-close-width);
@@ -2805,6 +2863,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .burger-menu--opened .menu__foot {
   padding: 10.6rem 5.6rem;
+  padding: 4rem 5.6rem;
 }
 
 .burger-menu--opened .burger-overlay {
@@ -3544,6 +3603,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   background-size: var(--menu-body-width) 100%;
   background-position: var(--menu-head-width) center;
   padding: 7.6rem 0;
+  padding: 2.2rem 0;
 }
 
 .menu__body.activated::before {
@@ -3609,6 +3669,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   align-items: center;
   width: 100%;
   height: 8rem;
+  height: 7rem;
   padding: 0 8rem 0 8.8rem;
   -webkit-transition: all var(--menu-transition-time) ease-in-out;
   transition: all var(--menu-transition-time) ease-in-out;
@@ -3746,7 +3807,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 5rem;
+  gap: 4rem;
   padding: 5rem 0;
   background-color: var(--black);
   min-width: 58.5rem;
@@ -4001,6 +4062,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   height: 5rem;
   border-radius: 50%;
   border: 0.05rem solid var(--black);
+  color: var(--black);
   position: relative;
 }
 
@@ -11168,6 +11230,12 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     --burger-close-color: var(--black);
   }
 
+  .burger-close:hover .scale {
+    -webkit-transform: scale(100%);
+    -ms-transform: scale(100%);
+    transform: scale(100%);
+  }
+
   .menu__head-link:hover {
     --social-link-color: var(--accent);
   }
@@ -11776,6 +11844,20 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     width: var(--burger-close-width);
     padding: 0;
     margin-top: 0;
+    border-radius: var(--btn-border-radius);
+    border: var(--btn-border-width) solid var(--btn-border-color);
+  }
+
+  .burger-close::before {
+    display: block;
+    right: var(--btn-first-padding);
+    left: var(--btn-first-padding);
+  }
+
+  .burger-close::after {
+    display: block;
+    right: calc(var(--btn-first-padding) * 2);
+    left: calc(var(--btn-first-padding) * 2);
   }
 
   .burger-close .icon-close {
@@ -11788,7 +11870,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     height: var(--font-size);
   }
 
-  .burger-close span {
+  .burger-close span:not(span.scale) {
     display: none;
   }
 

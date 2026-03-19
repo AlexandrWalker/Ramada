@@ -147,6 +147,18 @@
   --burger-close-height: 0.35rem;
   --burger-close-color: var(--white);
 
+  --btn-width: fit-content;
+  --btn-height: 5.6rem;
+  --btn-first-padding: 0.3rem;
+  --btn-second-padding: 0.4rem;
+  --btn-padding-x: 2.2rem;
+  --btn-color: var(--white);
+  --btn-background: var(--black);
+  --btn-scale-background: var(--accent);
+  --btn-border-radius: 10rem;
+  --btn-border-color: var(--black);
+  --btn-border-width: 0.5px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,11 +167,30 @@
 
   transition: all 0.3s ease;
 
+  position: relative;
+
   &:hover {
 
     @include dosm {
       --burger-close-color: var(--black);
+
+      .scale {
+        transform: scale(100%);
+      }
     }
+  }
+
+  .scale {
+    position: absolute;
+    top: var(--btn-first-padding);
+    right: var(--btn-first-padding);
+    bottom: var(--btn-first-padding);
+    left: var(--btn-first-padding);
+    z-index: -1;
+    border-radius: 2.4rem;
+    background-color: var(--btn-scale-background);
+    transition: all 0.5s ease;
+    pointer-events: none;
   }
 
   @include md {
@@ -169,6 +200,8 @@
     width: var(--burger-close-width);
     padding: 0;
     margin-top: 0;
+    border-radius: var(--btn-border-radius);
+    border: var(--btn-border-width) solid var(--btn-border-color);
 
     &:hover {
 
@@ -185,6 +218,52 @@
   @include sm {
     display: flex;
     position: relative;
+  }
+
+  &::before {
+    content: "";
+    border-radius: var(--btn-border-radius);
+    background: var(--btn-background);
+    transition: all 0.3s ease;
+    pointer-events: none;
+
+    position: absolute;
+    top: var(--btn-first-padding);
+    right: var(--btn-first-padding);
+    bottom: var(--btn-first-padding);
+    left: var(--btn-first-padding);
+    z-index: -1;
+
+    display: none;
+
+    @include md {
+      display: block;
+      right: var(--btn-first-padding);
+      left: var(--btn-first-padding);
+    }
+  }
+
+  &::after {
+    content: "";
+    border: var(--btn-border-width) solid var(--white-o-50);
+    border-radius: var(--btn-border-radius);
+    transition: all 0.3s ease;
+    pointer-events: none;
+
+    position: absolute;
+    top: calc(var(--btn-first-padding) + var(--btn-first-padding));
+    right: calc(var(--btn-first-padding) + var(--btn-second-padding));
+    bottom: calc(var(--btn-first-padding) + var(--btn-first-padding));
+    left: calc(var(--btn-first-padding) + var(--btn-second-padding));
+    z-index: -1;
+
+    display: none;
+
+    @include md {
+      display: block;
+      right: calc(var(--btn-first-padding) * 2);
+      left: calc(var(--btn-first-padding) * 2);
+    }
   }
 
   &::before {
@@ -231,7 +310,7 @@
     }
   }
 
-  span {
+  span:not(span.scale) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -328,6 +407,7 @@
       &__foot {
         // padding: 5rem 5.6rem;
         padding: 10.6rem 5.6rem;
+        padding: 4rem 5.6rem;
 
         @include md {
           padding: 3rem 8rem 4rem;

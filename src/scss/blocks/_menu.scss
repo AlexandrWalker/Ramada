@@ -182,6 +182,7 @@
     background-position: var(--menu-head-width) center;
 
     padding: 7.6rem 0;
+    padding: 2.2rem 0;
 
     @include md {
       min-width: unset;
@@ -300,6 +301,7 @@
       align-items: center;
       width: 100%;
       height: 8rem;
+      height: 7rem;
       padding: 0 8rem 0 8.8rem;
       transition: all var(--menu-transition-time) ease-in-out;
 
@@ -515,7 +517,7 @@
   &__foot {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 4rem;
     padding: 5rem 0;
     background-color: var(--black);
     min-width: 58.5rem;
@@ -837,6 +839,7 @@
       height: 5rem;
       border-radius: 50%;
       border: 0.05rem solid var(--black);
+      color: var(--black);
       position: relative;
 
       &:hover {
