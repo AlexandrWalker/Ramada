@@ -91,14 +91,6 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
@@ -123,14 +115,6 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Thin.woff2") format("woff2"), url("../fonts/Gotham-Thin.woff") format("woff");
   font-weight: 100;
   font-style: normal;
@@ -148,6 +132,22 @@ img {
   font-family: TTTricks;
   font-display: swap;
   src: url("../fonts/TTTricks-Bold.woff2") format("woff2"), url("../fonts/TTTricks-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -6695,48 +6695,108 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  gap: 2rem;
 }
 
-.programm__content h2 {
+.programm__content-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: var(--white);
+  padding: 4rem 4rem 4rem 4rem;
+}
+
+.programm__content-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.programm__content-head i {
+  --font-size: 3rem;
+  border: 0.05rem solid var(--gray-30);
+  border-radius: 50%;
+  font-size: 1.8rem;
+  color: var(--accent);
+}
+
+.programm__content-head.accordion-active {
+  margin-bottom: 3rem;
+}
+
+.programm__content-head.accordion-active i {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.programm__content-title {
   font-family: var(--second-family);
   font-weight: 300;
   font-size: 3.5rem;
   line-height: 110%;
+  color: var(--accent);
 }
 
-.programm__content .h2,
-.programm__content h2,
-.programm__content .h3,
-.programm__content h3,
-.programm__content .h4,
-.programm__content h4,
-.programm__content .h5,
-.programm__content h5,
-.programm__content .h6,
-.programm__content h6 {
+.programm__content-body {
+  max-width: 128rem;
+}
+
+.programm__content-body .h2,
+.programm__content-body h2,
+.programm__content-body .h3,
+.programm__content-body h3,
+.programm__content-body .h4,
+.programm__content-body h4,
+.programm__content-body .h5,
+.programm__content-body h5,
+.programm__content-body .h6,
+.programm__content-body h6 {
   color: var(--accent);
   margin-bottom: 3rem;
 }
 
-.programm__content p {
+.programm__content-body p {
   margin-bottom: 2rem;
 }
 
-.programm__content p:last-child {
+.programm__content-body p:last-child {
   margin-bottom: 0;
 }
 
-.programm__content ul {
+.programm__content-body ul {
   margin-bottom: 2rem;
 }
 
-.programm__content a {
+.programm__content-body a {
   color: var(--accent);
   border-bottom: 0.1rem solid transparent;
 }
 
-.programm__content a:hover {
+.programm__content-body a:hover {
   border-color: var(--accent);
+}
+
+.programm__content-wrap {
+  overflow: hidden;
 }
 
 .news__inner {
@@ -13241,20 +13301,20 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 3rem;
   }
 
-  .programm__content h2 {
+  .programm__content-title {
     font-size: 2.5rem;
   }
 
-  .programm__content .h2,
-  .programm__content h2,
-  .programm__content .h3,
-  .programm__content h3,
-  .programm__content .h4,
-  .programm__content h4,
-  .programm__content .h5,
-  .programm__content h5,
-  .programm__content .h6,
-  .programm__content h6 {
+  .programm__content-body .h2,
+  .programm__content-body h2,
+  .programm__content-body .h3,
+  .programm__content-body h3,
+  .programm__content-body .h4,
+  .programm__content-body h4,
+  .programm__content-body .h5,
+  .programm__content-body h5,
+  .programm__content-body .h6,
+  .programm__content-body h6 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
   }
@@ -15946,7 +16006,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   }
 
   .programm__item-content {
-    gap: 0;
+    gap: 2rem;
     border: 0;
     padding: 0;
   }
@@ -15983,6 +16043,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   }
 
   .programm__item-wrap {
+    gap: 2.4rem;
     overflow: hidden;
   }
 
@@ -16005,9 +16066,31 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     color: var(--accent);
   }
 
+  .programm__item-btn:hover {
+    --btn-color: var(--black);
+    --btn-scale-background: var(--gray);
+    --btn-border-color: var(--black-10);
+  }
+
   .programm__ps {
     margin-bottom: 2rem;
     font-size: 1.2rem;
+  }
+
+  .programm__content-item {
+    padding: 2rem;
+  }
+
+  .programm__content-head.accordion-active {
+    margin-bottom: 2rem;
+  }
+
+  .programm__content-body p {
+    margin-bottom: 1.5rem;
+  }
+
+  .programm__content-body ul {
+    margin-bottom: 1.5rem;
   }
 
   .news__inner {

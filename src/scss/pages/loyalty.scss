@@ -83,7 +83,7 @@
       }
 
       @include sm {
-        gap: 0;
+        gap: 2rem;
         border: 0;
         padding: 0;
       }
@@ -159,6 +159,7 @@
       }
 
       @include sm {
+        gap: 2.4rem;
         overflow: hidden;
       }
     }
@@ -216,6 +217,12 @@
         --btn-color: var(--white);
         --btn-scale-background: var(--accent);
         --btn-border-color: var(--accent);
+
+        @include sm {
+          --btn-color: var(--black);
+          --btn-scale-background: var(--gray);
+          --btn-border-color: var(--black-10);
+        }
       }
     }
 
@@ -258,56 +265,117 @@
   &__content {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
 
-    h2 {
+    &-item {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--white);
+      padding: 4rem 4rem 4rem 4rem;
+
+      @include sm {
+        padding: 2rem;
+      }
+    }
+
+    &-head {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0;
+      transition: all 0.5s ease;
+
+      i {
+        --font-size: 3rem;
+
+        border: 0.05rem solid var(--gray-30);
+        border-radius: 50%;
+
+        font-size: 1.8rem;
+        color: var(--accent);
+      }
+
+      &.accordion-active {
+        margin-bottom: 3rem;
+
+        @include sm {
+          margin-bottom: 2rem;
+        }
+
+        i {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &-title {
       font-family: var(--second-family);
       font-weight: 300;
       font-size: 3.5rem;
       line-height: 110%;
+      color: var(--accent);
 
       @include md {
         font-size: 2.5rem;
       }
     }
 
-    .h2,
-    h2,
-    .h3,
-    h3,
-    .h4,
-    h4,
-    .h5,
-    h5,
-    .h6,
-    h6 {
-      color: var(--accent);
-      margin-bottom: 3rem;
+    &-body {
+      max-width: 128rem;
 
-      @include md {
-        font-size: 2.5rem;
+      .h2,
+      h2,
+      .h3,
+      h3,
+      .h4,
+      h4,
+      .h5,
+      h5,
+      .h6,
+      h6 {
+        color: var(--accent);
+        margin-bottom: 3rem;
+
+        @include md {
+          font-size: 2.5rem;
+          margin-bottom: 2rem;
+        }
+      }
+
+      p {
         margin-bottom: 2rem;
+
+        @include sm {
+          margin-bottom: 1.5rem;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      ul {
+        margin-bottom: 2rem;
+
+        @include sm {
+          margin-bottom: 1.5rem;
+        }
+      }
+
+      a {
+        color: var(--accent);
+        border-bottom: 0.1rem solid transparent;
+
+        &:hover {
+          border-color: var(--accent);
+        }
       }
     }
 
-    p {
-      margin-bottom: 2rem;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    ul {
-      margin-bottom: 2rem;
-    }
-
-    a {
-      color: var(--accent);
-      border-bottom: 0.1rem solid transparent;
-
-      &:hover {
-        border-color: var(--accent);
-      }
+    &-wrap {
+      overflow: hidden;
     }
   }
 }
