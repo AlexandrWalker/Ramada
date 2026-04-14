@@ -478,7 +478,9 @@
         color: var(--gray);
         position: relative;
 
-        display: block;
+        display: flex;
+        align-items: center;
+        gap: 0.5ch;
         width: fit-content;
         height: fit-content;
         padding: 0.75rem 0;
@@ -513,6 +515,13 @@
           @include md {
             display: none;
           }
+        }
+
+        i {
+          --font-size: 1.6rem;
+
+          line-height: 100%;
+          color: var(--accent);
         }
       }
 

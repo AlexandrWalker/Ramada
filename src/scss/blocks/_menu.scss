@@ -228,10 +228,12 @@
   &__list {
     display: flex;
     flex-direction: column;
+    // justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    height: fit-content;
 
-    justify-content: center;
+    // height: fit-content;
+    height: auto;
 
     position: relative;
 
@@ -456,7 +458,9 @@
       }
 
       a {
-        display: block;
+        display: flex;
+        align-items: center;
+        gap: 0.5ch;
         width: 100%;
 
         font-weight: 700;
@@ -476,6 +480,17 @@
 
         &:hover {
           color: var(--accent);
+        }
+      }
+
+      i {
+        --font-size: 2.4rem;
+
+        line-height: 100%;
+        color: var(--accent);
+
+        @include md {
+          --font-size: 1.6rem;
         }
       }
 

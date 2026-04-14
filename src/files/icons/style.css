@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'RamadaIconFont';
-  src:  url('fonts/RamadaIconFont.eot?en8ess');
-  src:  url('fonts/RamadaIconFont.eot?en8ess#iefix') format('embedded-opentype'),
-    url('fonts/RamadaIconFont.ttf?en8ess') format('truetype'),
-    url('fonts/RamadaIconFont.woff?en8ess') format('woff'),
-    url('fonts/RamadaIconFont.svg?en8ess#RamadaIconFont') format('svg');
+  src:  url('fonts/RamadaIconFont.eot?nh1l8f');
+  src:  url('fonts/RamadaIconFont.eot?nh1l8f#iefix') format('embedded-opentype'),
+    url('fonts/RamadaIconFont.ttf?nh1l8f') format('truetype'),
+    url('fonts/RamadaIconFont.woff?nh1l8f') format('woff'),
+    url('fonts/RamadaIconFont.svg?nh1l8f#RamadaIconFont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,339 +25,345 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-mobile-bar:before {
+.icon-star-menu:before {
   content: "\e900";
 }
-.icon-gastro-dinner:before {
+.icon-share-fill:before {
   content: "\e901";
 }
-.icon-master-classes:before {
+.icon-mobile-bar:before {
   content: "\e902";
 }
-.icon-headset:before {
+.icon-gastro-dinner:before {
   content: "\e903";
 }
-.icon-catering-main:before {
+.icon-master-classes:before {
   content: "\e904";
 }
-.icon-photographer:before {
+.icon-headset:before {
   content: "\e905";
 }
-.icon-decorator:before {
+.icon-catering-main:before {
   content: "\e906";
 }
-.icon-tech-support:before {
+.icon-photographer:before {
   content: "\e907";
 }
-.icon-video-conference:before {
+.icon-decorator:before {
   content: "\e908";
 }
-.icon-catering:before {
+.icon-tech-support:before {
   content: "\e909";
 }
-.icon-lcd-panel:before {
+.icon-video-conference:before {
   content: "\e90a";
 }
-.icon-notebooks-pens:before {
+.icon-catering:before {
   content: "\e90b";
 }
-.icon-podium:before {
+.icon-lcd-panel:before {
   content: "\e90c";
 }
-.icon-plasma-tv-stand:before {
+.icon-notebooks-pens:before {
   content: "\e90d";
 }
-.icon-water:before {
+.icon-podium:before {
   content: "\e90e";
 }
-.icon-laser-pointer:before {
+.icon-plasma-tv-stand:before {
   content: "\e90f";
 }
-.icon-gooseneck-mic:before {
+.icon-water:before {
   content: "\e910";
 }
-.icon-clicker:before {
+.icon-laser-pointer:before {
   content: "\e911";
 }
-.icon-laptop:before {
+.icon-gooseneck-mic:before {
   content: "\e912";
 }
-.icon-flipchart:before {
+.icon-clicker:before {
   content: "\e913";
 }
-.icon-microphone:before {
+.icon-laptop:before {
   content: "\e914";
 }
-.icon-sound-system:before {
+.icon-flipchart:before {
   content: "\e915";
 }
-.icon-projector:before {
+.icon-microphone:before {
   content: "\e916";
 }
-.icon-screen:before {
+.icon-sound-system:before {
   content: "\e917";
 }
-.icon-hair-dryer:before {
+.icon-projector:before {
   content: "\e918";
 }
-.icon-toiletries:before {
+.icon-screen:before {
   content: "\e919";
 }
-.icon-shower-cabin:before {
+.icon-hair-dryer:before {
   content: "\e91a";
 }
-.icon-aqua-zone:before {
+.icon-toiletries:before {
   content: "\e91b";
 }
-.icon-bathrobe:before {
+.icon-shower-cabin:before {
   content: "\e91c";
 }
-.icon-washing-machine:before {
+.icon-aqua-zone:before {
   content: "\e91d";
 }
-.icon-tableware:before {
+.icon-bathrobe:before {
   content: "\e91e";
 }
-.icon-kettle:before {
+.icon-washing-machine:before {
   content: "\e91f";
 }
-.icon-microwave:before {
+.icon-tableware:before {
   content: "\e920";
 }
-.icon-cooktop:before {
+.icon-kettle:before {
   content: "\e921";
 }
-.icon-fridge:before {
+.icon-microwave:before {
   content: "\e922";
 }
-.icon-sofa-bed:before {
+.icon-cooktop:before {
   content: "\e923";
 }
-.icon-iron-board:before {
+.icon-fridge:before {
   content: "\e924";
 }
-.icon-air-conditioner:before {
+.icon-sofa-bed:before {
   content: "\e925";
 }
-.icon-work-area:before {
+.icon-iron-board:before {
   content: "\e926";
 }
-.icon-wi-fi:before {
+.icon-air-conditioner:before {
   content: "\e927";
 }
-.icon-tv:before {
+.icon-work-area:before {
   content: "\e928";
 }
-.icon-single-beds:before {
+.icon-wi-fi:before {
   content: "\e929";
 }
-.icon-double-bed:before {
+.icon-tv:before {
   content: "\e92a";
 }
-.icon-max:before {
+.icon-single-beds:before {
   content: "\e92b";
 }
-.icon-events-tri-konferens-zala:before {
+.icon-double-bed:before {
   content: "\e92c";
 }
-.icon-events-special-tariffs:before {
+.icon-max:before {
   content: "\e92d";
 }
-.icon-events-prostornye-nomera:before {
+.icon-events-tri-konferens-zala:before {
   content: "\e92e";
 }
-.icon-events-parkovka:before {
+.icon-events-special-tariffs:before {
   content: "\e92f";
 }
-.icon-events-personal-manager:before {
+.icon-events-prostornye-nomera:before {
   content: "\e930";
 }
-.icon-events-raspolozhenie:before {
+.icon-events-parkovka:before {
   content: "\e931";
 }
-.icon-events-avtorkaya-kuhnya:before {
+.icon-events-personal-manager:before {
   content: "\e932";
 }
-.icon-events-panoramnye-okna:before {
+.icon-events-raspolozhenie:before {
   content: "\e933";
 }
-.icon-events-basseyn:before {
+.icon-events-avtorkaya-kuhnya:before {
   content: "\e934";
 }
-.icon-events-infrastructura:before {
+.icon-events-panoramnye-okna:before {
   content: "\e935";
 }
-.icon-events-vremya:before {
+.icon-events-basseyn:before {
   content: "\e936";
 }
-.icon-events-catering:before {
+.icon-events-infrastructura:before {
   content: "\e937";
 }
-.icon-events-banketnoe-menu:before {
+.icon-events-vremya:before {
   content: "\e938";
 }
-.icon-events-dva-restorana:before {
+.icon-events-catering:before {
   content: "\e939";
 }
-.icon-events-razmeshcheniye-gostey:before {
+.icon-events-banketnoe-menu:before {
   content: "\e93a";
 }
-.icon-events-territoriya:before {
+.icon-events-dva-restorana:before {
   content: "\e93b";
 }
-.icon-hh-icon:before {
+.icon-events-razmeshcheniye-gostey:before {
+  content: "\e93c";
+}
+.icon-events-territoriya:before {
   content: "\e93d";
 }
-.icon-gis-icon:before {
-  content: "\e93e";
-}
-.icon-share:before {
+.icon-hh-icon:before {
   content: "\e93f";
 }
-.icon-copy-fill:before {
+.icon-gis-icon:before {
   content: "\e940";
 }
-.icon-person:before {
+.icon-share:before {
   content: "\e941";
 }
-.icon-3d:before {
+.icon-copy-fill:before {
+  content: "\e942";
+}
+.icon-person:before {
   content: "\e943";
 }
-.icon-area:before {
-  content: "\e944";
-}
-.icon-arrow-left:before {
+.icon-3d:before {
   content: "\e945";
 }
-.icon-arrow-right:before {
+.icon-area:before {
   content: "\e946";
 }
-.icon-book:before {
+.icon-arrow-left:before {
   content: "\e947";
 }
-.icon-burger:before {
+.icon-arrow-right:before {
   content: "\e948";
 }
-.icon-caplya .path1:before {
+.icon-book:before {
   content: "\e949";
+}
+.icon-burger:before {
+  content: "\e94a";
+}
+.icon-caplya .path1:before {
+  content: "\e94b";
   color: rgb(196, 13, 60);
 }
 .icon-caplya .path2:before {
-  content: "\e94a";
+  content: "\e94c";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
 .icon-chevron-down:before {
-  content: "\e94b";
-}
-.icon-chevron-left:before {
-  content: "\e94c";
-}
-.icon-chevron-link:before {
   content: "\e94d";
 }
-.icon-chevron-right:before {
+.icon-chevron-left:before {
   content: "\e94e";
 }
-.icon-chevron-top:before {
+.icon-chevron-link:before {
   content: "\e94f";
 }
-.icon-close:before {
+.icon-chevron-right:before {
   content: "\e950";
 }
-.icon-delovoy:before {
+.icon-chevron-top:before {
   content: "\e951";
 }
-.icon-elem-bed:before {
+.icon-close:before {
   content: "\e952";
 }
-.icon-elem-phen:before {
+.icon-delovoy:before {
   content: "\e953";
 }
-.icon-elem-pool:before {
+.icon-elem-bed:before {
   content: "\e954";
 }
-.icon-elem-tablichka:before {
+.icon-elem-phen:before {
   content: "\e955";
 }
-.icon-family:before {
+.icon-elem-pool:before {
   content: "\e956";
 }
-.icon-friends:before {
+.icon-elem-tablichka:before {
   content: "\e957";
 }
-.icon-geo:before {
+.icon-family:before {
   content: "\e958";
 }
-.icon-mail:before {
+.icon-friends:before {
   content: "\e959";
 }
-.icon-menu:before {
+.icon-geo:before {
   content: "\e95a";
 }
-.icon-para:before {
+.icon-mail:before {
   content: "\e95b";
 }
-.icon-pdf:before {
+.icon-menu:before {
   content: "\e95c";
 }
-.icon-places:before {
+.icon-para:before {
   content: "\e95d";
 }
-.icon-play:before {
+.icon-pdf:before {
   content: "\e95e";
 }
-.icon-route:before {
+.icon-places:before {
   content: "\e95f";
 }
-.icon-services-board:before {
+.icon-play:before {
   content: "\e960";
 }
-.icon-services-coffee-machine:before {
+.icon-route:before {
   content: "\e961";
 }
-.icon-services-condicioner:before {
+.icon-services-board:before {
   content: "\e962";
 }
-.icon-services-electric-kettle:before {
+.icon-services-coffee-machine:before {
   content: "\e963";
 }
-.icon-services-garderob:before {
+.icon-services-condicioner:before {
   content: "\e964";
 }
-.icon-services-holodilnik:before {
+.icon-services-electric-kettle:before {
   content: "\e965";
 }
-.icon-services-kids-bedroom:before {
+.icon-services-garderob:before {
   content: "\e966";
 }
-.icon-services-master-bedroom:before {
+.icon-services-holodilnik:before {
   content: "\e967";
 }
-.icon-services-microwave:before {
+.icon-services-kids-bedroom:before {
   content: "\e968";
 }
-.icon-services-places:before {
+.icon-services-master-bedroom:before {
   content: "\e969";
 }
-.icon-services-tv:before {
+.icon-services-microwave:before {
   content: "\e96a";
 }
-.icon-services-wifi:before {
+.icon-services-places:before {
   content: "\e96b";
 }
-.icon-solo:before {
+.icon-services-tv:before {
   content: "\e96c";
 }
-.icon-star:before {
+.icon-services-wifi:before {
   content: "\e96d";
 }
-.icon-telegram:before {
+.icon-solo:before {
   content: "\e96e";
 }
-.icon-vk:before {
+.icon-star:before {
   content: "\e96f";
 }
-.icon-whatsapp:before {
+.icon-telegram:before {
   content: "\e970";
+}
+.icon-vk:before {
+  content: "\e971";
+}
+.icon-whatsapp:before {
+  content: "\e972";
 }
