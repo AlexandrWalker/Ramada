@@ -757,10 +757,6 @@ document.addEventListener('DOMContentLoaded', () => {
         prevent: true
       },
       breakpoints: {
-        381: {
-          slidesPerView: 2,
-          spaceBetween: 10,
-        },
         601: {
           slidesPerView: 2,
           spaceBetween: 20,

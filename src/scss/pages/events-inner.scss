@@ -28,7 +28,8 @@
 
   &__block {
     width: calc(50% - 1rem);
-    padding: 5rem 13rem 3rem;
+    // padding: 5rem 13rem 3rem;
+    padding: 5rem 6.4rem 3rem;
     background-color: var(--white);
 
     @include xxl {
@@ -118,9 +119,10 @@
     &-item {
       display: flex;
       flex-direction: column;
-      gap: 7rem;
-      width: calc(50% - 1rem);
-      padding: 2rem;
+      justify-content: space-between;
+      gap: 3.4rem;
+      width: calc((100% / 3) - (4rem / 3));
+      padding: 1rem;
       border: 0.1rem solid var(--black-20);
 
       @include sm {
@@ -135,6 +137,13 @@
         color: var(--accent);
 
         @include sm {}
+      }
+
+      p {
+        font-size: 1.2rem;
+        line-height: 120%;
+
+        max-width: 15rem;
       }
     }
   }
