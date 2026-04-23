@@ -99,8 +99,8 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -115,16 +115,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Gotham-Regular.woff2") format("woff2"), url("../fonts/Gotham-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Regular.woff2") format("woff2"), url("../fonts/Gotham-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -6451,7 +6451,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .events-desc__block {
   width: calc(50% - 1rem);
-  padding: 5rem 13rem 3rem;
+  padding: 5rem 6.4rem 3rem;
   background-color: var(--white);
 }
 
@@ -6492,15 +6492,24 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 7rem;
-  width: calc(50% - 1rem);
-  padding: 2rem;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 3.4rem;
+  width: calc(33.3333333333% - 1.3333333333rem);
+  padding: 1rem;
   border: 0.1rem solid var(--black-20);
 }
 
 .events-desc__body-item i {
   --font-size: 5rem;
   color: var(--accent);
+}
+
+.events-desc__body-item p {
+  font-size: 1.2rem;
+  line-height: 120%;
+  max-width: 15rem;
 }
 
 .events-desc__img {
@@ -17199,7 +17208,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   }
 
   .reviews__slide {
-    max-width: 17.2rem;
+    max-width: 28rem;
   }
 
   .reviews__item {
