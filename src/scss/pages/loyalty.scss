@@ -2,16 +2,48 @@
 
 .programm {
 
+  @include md {
+    padding-top: 4rem !important;
+  }
+
+  @include sm {
+    padding-top: 3rem !important;
+  }
+
+  &--second {
+    padding-top: 0 !important;
+
+    @include md {
+      padding-top: 0 !important;
+    }
+
+    @include sm {
+      padding-top: 0 !important;
+    }
+
+    .programm__head-title {
+      color: var(--black);
+    }
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
     gap: 4rem;
+
+    @include md {
+      gap: 2rem;
+    }
   }
 
   &__head {
     display: flex;
     flex-direction: column;
     gap: 3rem;
+
+    @include md {
+      gap: 2rem;
+    }
 
     &-title {
       color: var(--accent);
@@ -20,11 +52,15 @@
       h2 {
         font-family: var(--second-family);
         font-weight: 300;
-        font-size: 6rem;
+        font-size: 5rem;
         line-height: 110%;
 
         @include md {
-          font-size: 5rem;
+          font-size: 3.5rem;
+        }
+
+        @include md {
+          font-size: 2.5rem;
         }
       }
     }
@@ -271,11 +307,6 @@
       display: flex;
       flex-direction: column;
       background-color: var(--white);
-      padding: 4rem 4rem 4rem 4rem;
-
-      @include sm {
-        padding: 2rem;
-      }
     }
 
     &-head {
@@ -284,8 +315,13 @@
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
+      padding: 4rem 4rem 4rem 4rem;
       margin-bottom: 0;
       transition: all 0.5s ease;
+
+      @include sm {
+        padding: 2rem;
+      }
 
       i {
         --font-size: 3rem;
@@ -299,13 +335,23 @@
 
       &.accordion-active {
         margin-bottom: 3rem;
+        padding: 4rem 4rem 0 4rem;
 
         @include sm {
           margin-bottom: 2rem;
+          padding: 2rem 2rem 0 2rem;
         }
 
         i {
           transform: rotate(180deg);
+        }
+
+        &+.programm__content-body {
+          padding: 0 4rem 4rem 4rem;
+
+          @include sm {
+            padding: 0 2rem 2rem 2rem;
+          }
         }
       }
     }
@@ -315,15 +361,31 @@
       font-weight: 300;
       font-size: 3.5rem;
       line-height: 110%;
-      color: var(--accent);
+      // color: var(--accent);
+      color: var(--black);
+      transition: color 0.3s ease;
 
       @include md {
         font-size: 2.5rem;
+      }
+
+      @include sm {
+        font-size: 2rem;
+      }
+
+      .programm__content-item:hover &,
+      .accordion-active & {
+        color: var(--accent);
       }
     }
 
     &-body {
       max-width: 128rem;
+      padding: 0 4rem 0 4rem;
+
+      @include sm {
+        padding: 0 2rem 0 2rem;
+      }
 
       .h2,
       h2,
@@ -371,6 +433,10 @@
         &:hover {
           border-color: var(--accent);
         }
+      }
+
+      span {
+        color: var(--accent);
       }
     }
 

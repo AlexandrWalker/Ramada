@@ -92,14 +92,6 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Gotham;
-  font-display: swap;
   src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
@@ -110,6 +102,14 @@ img {
   font-display: swap;
   src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
   font-weight: 350;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  font-display: swap;
+  src: url("../fonts/Gotham-Bold.woff2") format("woff2"), url("../fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -4578,6 +4578,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 .template__bg {
   width: 100%;
   height: 100%;
+  padding-top: 5.741rem;
   position: absolute;
   top: 0;
   right: 0;
@@ -6789,6 +6790,14 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   margin-bottom: 6rem;
 }
 
+.programm--second {
+  padding-top: 0 !important;
+}
+
+.programm--second .programm__head-title {
+  color: var(--black);
+}
+
 .programm__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6819,7 +6828,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 .programm__head-title h2 {
   font-family: var(--second-family);
   font-weight: 300;
-  font-size: 6rem;
+  font-size: 5rem;
   line-height: 110%;
 }
 
@@ -7003,7 +7012,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   -ms-flex-direction: column;
   flex-direction: column;
   background-color: var(--white);
-  padding: 4rem 4rem 4rem 4rem;
 }
 
 .programm__content-head {
@@ -7021,6 +7029,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   -ms-flex-align: center;
   align-items: center;
   gap: 1rem;
+  padding: 4rem 4rem 4rem 4rem;
   margin-bottom: 0;
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -7037,6 +7046,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .programm__content-head.accordion-active {
   margin-bottom: 3rem;
+  padding: 4rem 4rem 0 4rem;
 }
 
 .programm__content-head.accordion-active i {
@@ -7045,16 +7055,29 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   transform: rotate(180deg);
 }
 
+.programm__content-head.accordion-active + .programm__content-body {
+  padding: 0 4rem 4rem 4rem;
+}
+
 .programm__content-title {
   font-family: var(--second-family);
   font-weight: 300;
   font-size: 3.5rem;
   line-height: 110%;
+  color: var(--black);
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+.programm__content-item:hover .programm__content-title,
+.accordion-active .programm__content-title {
   color: var(--accent);
 }
 
 .programm__content-body {
   max-width: 128rem;
+  padding: 0 4rem 0 4rem;
 }
 
 .programm__content-body .h2,
@@ -7090,6 +7113,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .programm__content-body a:hover {
   border-color: var(--accent);
+}
+
+.programm__content-body span {
+  color: var(--accent);
 }
 
 .programm__content-wrap {
@@ -13152,6 +13179,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     padding-bottom: 3rem;
   }
 
+  .template__bg {
+    padding-top: 3.741rem;
+  }
+
   .template__inner {
     padding-top: 3rem;
   }
@@ -13871,8 +13902,28 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 4rem;
   }
 
+  .programm {
+    padding-top: 4rem !important;
+  }
+
+  .programm--second {
+    padding-top: 0 !important;
+  }
+
+  .programm__inner {
+    gap: 2rem;
+  }
+
+  .programm__head {
+    gap: 2rem;
+  }
+
   .programm__head-title h2 {
-    font-size: 5rem;
+    font-size: 3.5rem;
+  }
+
+  .programm__head-title h2 {
+    font-size: 2.5rem;
   }
 
   .programm__item {
@@ -16662,6 +16713,14 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     margin-bottom: 3rem;
   }
 
+  .programm {
+    padding-top: 3rem !important;
+  }
+
+  .programm--second {
+    padding-top: 0 !important;
+  }
+
   .programm__items {
     gap: 1rem;
     margin-bottom: 2rem;
@@ -16747,12 +16806,25 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     font-size: 1.2rem;
   }
 
-  .programm__content-item {
+  .programm__content-head {
     padding: 2rem;
   }
 
   .programm__content-head.accordion-active {
     margin-bottom: 2rem;
+    padding: 2rem 2rem 0 2rem;
+  }
+
+  .programm__content-head.accordion-active + .programm__content-body {
+    padding: 0 2rem 2rem 2rem;
+  }
+
+  .programm__content-title {
+    font-size: 2rem;
+  }
+
+  .programm__content-body {
+    padding: 0 2rem 0 2rem;
   }
 
   .programm__content-body p {
