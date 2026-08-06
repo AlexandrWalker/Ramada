@@ -136,11 +136,7 @@
     &-btns {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
-
-      @include md {
-        gap: 1rem;
-      }
+      gap: 1rem;
     }
 
     &-btn {
@@ -178,74 +174,132 @@
   &__terms {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 3rem;
     width: 62rem;
     padding: 4rem;
     background-color: var(--white-gray);
 
     @include md {
       width: 100%;
-      padding: 3rem 3rem 3rem 3rem;
+      padding: 3rem;
     }
 
     @include sm {
+      gap: 2rem;
       padding: 2rem;
     }
 
-    &-title {
+    &--active {
 
-      @include md {
-        display: none;
+      @include sm {
+
+        .studio__terms-title {
+
+          color: var(--accent);
+
+          i {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+
+    &-title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      @include sm {
+        transition: color 0.3s ease;
       }
 
       * {
-        font-family: var(--second-family);
-        font-weight: 300;
-        font-size: 3.5rem;
-        line-height: 90%;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 2.4rem;
+        line-height: 110%;
 
         @include md {
           font-size: 1.6rem;
+        }
+      }
+
+      i {
+
+
+        @include dosm {
+          display: none;
         }
       }
     }
 
     &-items {
       display: flex;
-      flex-direction: row;
-      gap: 3rem;
+      flex-direction: column;
+      gap: 2rem;
 
       @include sm {
-        flex-direction: column;
-        gap: 1rem;
+        display: grid;
+        grid-template-rows: 1fr 0fr;
+        gap: 0;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        padding-bottom: 2rem;
+        border-bottom: 0.05rem dashed var(--gray);
+      }
+
+      &:last-child {
+
+        @include sm {
+          padding-bottom: 0;
+          border-bottom: none;
+        }
+      }
+
+      &.studio__terms--active {
+
+        @include sm {
+          grid-template-rows: 1fr auto;
+          gap: 2rem;
+        }
       }
     }
 
     &-row {
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
-
-      width: calc(50% - 1.5rem);
-
-      @include md {
-        gap: 2rem;
-      }
+      column-count: 2;
+      column-gap: 2rem;
 
       @include sm {
-        gap: 1rem;
-        width: 100%;
+        column-count: 1;
+        overflow: hidden;
+        transition: all 0.3s ease;
       }
     }
 
     &-wrap {
+      width: 100%;
+      break-inside: avoid;
+      padding-right: 2rem;
+      margin-bottom: 2rem;
       overflow: hidden;
+
+      @include sm {
+        margin-bottom: 1rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     &-item {
       display: flex;
       align-items: center;
       gap: 2rem;
+
+      font-size: 1.4rem;
+      line-height: 125%;
 
       @include md {
         gap: 1rem;
@@ -293,6 +347,27 @@
       @include sm {
         width: 100%;
       }
+
+      .swiper-pagination {
+
+        position: absolute;
+        bottom: 2.8rem;
+        left: 50%;
+        z-index: 1;
+        transform: translateX(-50%);
+
+        @include dosm {
+          display: none;
+        }
+
+        &-bullet {
+          background-color: var(--white);
+
+          &-active {
+            background-color: var(--accent);
+          }
+        }
+      }
     }
 
     &--min {
@@ -306,7 +381,16 @@
     }
 
     .swiper-button-next {
+      --swiper-button-bg: transparent;
+
+      border-color: var(--white-30);
+
       right: 5rem;
+
+      &::before {
+        border-color: var(--white);
+        border: none;
+      }
 
       @include xxl {
         display: none;
@@ -314,7 +398,16 @@
     }
 
     .swiper-button-prev {
+      --swiper-button-bg: transparent;
+
+      border-color: var(--white-30);
+
       left: 5rem;
+
+      &::before {
+        border-color: var(--white);
+        border: none;
+      }
 
       @include xxl {
         display: none;

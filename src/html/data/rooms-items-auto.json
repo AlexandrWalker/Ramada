@@ -1,0 +1,98 @@
+[
+    {
+        "category": "business",
+        "imgs": "<img class=\"rooms__item-cover--img is-active\" src=\"./images/temp/rooms-item-1.png\" alt=\"Вид 1\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-2.png\" alt=\"Вид 2\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-3.png\" alt=\"Вид 3\">",
+        "title": "Студия Бизнес 2 кровати",
+        "text1": "до 3-х мест",
+        "text2": "53 м²",
+        "link": "/Ramada/studio.html"
+    },
+    {
+        "category": "special",
+        "imgs": "<img class=\"rooms__item-cover--img is-active\" src=\"./images/temp/rooms-item-1.png\" alt=\"Вид 1\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-2.png\" alt=\"Вид 2\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-3.png\" alt=\"Вид 3\">",
+        "title": "Студия Бизнес 2 кровати и два стола",
+        "text1": "до 3-х мест",
+        "text2": "53 м²",
+        "link": "/Ramada/studio.html"
+    },
+    {
+        "category": "wedding",
+        "imgs": "<img class=\"rooms__item-cover--img is-active\" src=\"./images/temp/rooms-item-1.png\" alt=\"Вид 1\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-2.png\" alt=\"Вид 2\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-3.png\" alt=\"Вид 3\">",
+        "title": "Студия Делюкс с балконом",
+        "text1": "до 3-х мест",
+        "text2": "53 м²",
+        "link": "/Ramada/studio.html"
+    },
+    {
+        "category": "otdyh",
+        "imgs": "<img class=\"rooms__item-cover--img is-active\" src=\"./images/temp/rooms-item-1.png\" alt=\"Вид 1\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-2.png\" alt=\"Вид 2\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-3.png\" alt=\"Вид 3\">",
+        "title": "Студия Делюкс с балконом",
+        "text1": "до 3-х мест",
+        "text2": "53 м²",
+        "link": "/Ramada/studio.html"
+    },
+    {
+        "category": "business",
+        "imgs": "<img class=\"rooms__item-cover--img is-active\" src=\"./images/temp/rooms-item-1.png\" alt=\"Вид 1\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-2.png\" alt=\"Вид 2\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-3.png\" alt=\"Вид 3\">",
+        "title": "Студия Бизнес 2 кровати",
+        "text1": "до 3-х мест",
+        "text2": "53 м²",
+        "link": "/Ramada/studio.html"
+    },
+    {
+        "category": "special",
+        "imgs": "<img class=\"rooms__item-cover--img is-active\" src=\"./images/temp/rooms-item-1.png\" alt=\"Вид 1\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-2.png\" alt=\"Вид 2\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-3.png\" alt=\"Вид 3\">",
+        "title": "Студия Бизнес 2 кровати",
+        "text1": "до 3-х мест",
+        "text2": "53 м²",
+        "link": "/Ramada/studio.html"
+    },
+    {
+        "category": "wedding",
+        "imgs": "<img class=\"rooms__item-cover--img is-active\" src=\"./images/temp/rooms-item-1.png\" alt=\"Вид 1\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-2.png\" alt=\"Вид 2\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-3.png\" alt=\"Вид 3\">",
+        "title": "Студия Бизнес 2 кровати",
+        "text1": "до 3-х мест",
+        "text2": "53 м²",
+        "link": "/Ramada/studio.html"
+    },
+    {
+        "category": "otdyh",
+        "imgs": "<img class=\"rooms__item-cover--img is-active\" src=\"./images/temp/rooms-item-1.png\" alt=\"Вид 1\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-2.png\" alt=\"Вид 2\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-3.png\" alt=\"Вид 3\">",
+        "title": "Студия Бизнес 2 кровати",
+        "text1": "до 3-х мест",
+        "text2": "53 м²",
+        "link": "/Ramada/studio.html"
+    },
+    {
+        "category": "business",
+        "imgs": "<img class=\"rooms__item-cover--img is-active\" src=\"./images/temp/rooms-item-1.png\" alt=\"Вид 1\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-2.png\" alt=\"Вид 2\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-3.png\" alt=\"Вид 3\">",
+        "title": "Студия Делюкс с балконом",
+        "text1": "до 3-х мест",
+        "text2": "53 м²",
+        "link": "/Ramada/studio.html"
+    },
+    {
+        "category": "special",
+        "imgs": "<img class=\"rooms__item-cover--img is-active\" src=\"./images/temp/rooms-item-1.png\" alt=\"Вид 1\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-2.png\" alt=\"Вид 2\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-3.png\" alt=\"Вид 3\">",
+        "title": "Студия Делюкс с балконом",
+        "text1": "до 3-х мест",
+        "text2": "53 м²",
+        "link": "/Ramada/studio.html"
+    },
+    {
+        "category": "wedding",
+        "imgs": "<img class=\"rooms__item-cover--img is-active\" src=\"./images/temp/rooms-item-1.png\" alt=\"Вид 1\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-2.png\" alt=\"Вид 2\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-3.png\" alt=\"Вид 3\">",
+        "title": "Студия Бизнес 2 кровати",
+        "text1": "до 3-х мест",
+        "text2": "53 м²",
+        "link": "/Ramada/studio.html"
+    },
+    {
+        "category": "otdyh",
+        "imgs": "<img class=\"rooms__item-cover--img is-active\" src=\"./images/temp/rooms-item-1.png\" alt=\"Вид 1\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-2.png\" alt=\"Вид 2\"><img class=\"rooms__item-cover--img\" src=\"./images/temp/rooms-item-3.png\" alt=\"Вид 3\">",
+        "title": "Студия Бизнес 2 кровати",
+        "text1": "до 3-х мест",
+        "text2": "53 м²",
+        "link": "/Ramada/studio.html"
+    }
+]

@@ -957,6 +957,7 @@ document.addEventListener('DOMContentLoaded', () => {
       loop: false,
       simulateTouch: true,
       watchOverflow: true,
+      noSwipingClass: 'swiper-no-swiping',
 
       freeMode: {
         enabled: false,
@@ -2941,6 +2942,163 @@ document.addEventListener('DOMContentLoaded', () => {
 
       sortIcon.addEventListener('click', toggleSortText);
       sortSpan.addEventListener('click', toggleSortText);
+    });
+  })();
+
+  /**
+   * Функция для выпадающего списка блока studio
+   */
+  (function () {
+    const items = document.querySelectorAll('.studio__terms-items');
+
+    if (!items.length) return;
+
+    items.forEach(item => {
+      item.addEventListener('click', function () {
+        // Работает только на экранах до 600px включительно
+        if (window.innerWidth > 600) return;
+
+        const isActive = this.classList.contains('studio__terms--active');
+
+        // Удаляем активный класс у всех элементов
+        items.forEach(el => {
+          el.classList.remove('studio__terms--active');
+        });
+
+        // Если текущий не был активен — добавляем класс
+        if (!isActive) {
+          this.classList.add('studio__terms--active');
+        }
+      });
+    });
+  })();
+
+  /**
+   * Смена картинок по наведение
+   */
+  (function () {
+    const INIT_ATTR = 'data-gallery-init';
+
+    function initCard(card) {
+      if (card.hasAttribute(INIT_ATTR)) return;
+      card.setAttribute(INIT_ATTR, 'true');
+
+      const cover = card.querySelector('.rooms__item-cover');
+      const imgs = card.querySelectorAll('.rooms__item-cover--img');
+      const dotsEl = card.querySelector('.rooms__item-dots');
+
+      if (!cover || imgs.length <= 1) return;
+
+      cover.addEventListener('dragstart', (e) => e.preventDefault());
+      imgs.forEach(img => img.addEventListener('dragstart', (e) => e.preventDefault()));
+
+      const total = imgs.length;
+      let current = 0;
+      let leaveTimer = null;
+      let isTouchActive = false;
+
+      if (dotsEl) {
+        const fragment = document.createDocumentFragment();
+        imgs.forEach((_, i) => {
+          const dot = document.createElement('span');
+          dot.className = 'rooms__item-dot' + (i === 0 ? ' is-active' : '');
+          fragment.appendChild(dot);
+        });
+        dotsEl.appendChild(fragment);
+      }
+      const dots = dotsEl ? dotsEl.querySelectorAll('.rooms__item-dot') : [];
+
+      function show(index) {
+        index = ((index % total) + total) % total;
+        if (index === current) return;
+
+        imgs[current].classList.remove('is-active');
+        imgs[index].classList.add('is-active');
+
+        if (dots.length) {
+          dots[current]?.classList.remove('is-active');
+          dots[index]?.classList.add('is-active');
+        }
+
+        current = index;
+      }
+
+      cover.addEventListener('mousemove', (e) => {
+        if (isTouchActive) return;
+        const rect = cover.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const zone = Math.floor((x / rect.width) * total);
+        show(Math.min(Math.max(zone, 0), total - 1));
+      });
+
+      cover.addEventListener('mouseleave', () => {
+        if (isTouchActive) return;
+        leaveTimer = setTimeout(() => show(0), 1000);
+      });
+
+      cover.addEventListener('mouseenter', () => {
+        if (isTouchActive) return;
+        clearTimeout(leaveTimer);
+      });
+
+      let startX = 0;
+      let startY = 0;
+      let tracking = false;
+
+      cover.addEventListener('touchstart', (e) => {
+        isTouchActive = true;
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        tracking = true;
+      }, { passive: true });
+
+      cover.addEventListener('touchmove', (e) => {
+        if (!tracking) return;
+        const dx = Math.abs(e.touches[0].clientX - startX);
+        const dy = Math.abs(e.touches[0].clientY - startY);
+
+        if (dx > dy) {
+          e.stopPropagation();
+          if (e.cancelable) e.preventDefault();
+        }
+      }, { passive: false });
+
+      cover.addEventListener('touchend', (e) => {
+        if (!tracking) return;
+        tracking = false;
+
+        const diffX = e.changedTouches[0].clientX - startX;
+        const diffY = e.changedTouches[0].clientY - startY;
+
+        if (Math.abs(diffX) < 30 || Math.abs(diffX) < Math.abs(diffY)) return;
+
+        if (diffX < 0) show(current + 1);
+        else show(current - 1);
+      }, { passive: true });
+    }
+
+    document.querySelectorAll('[data-gallery]').forEach(initCard);
+
+    const observer = new MutationObserver((mutations) => {
+      for (let mutation of mutations) {
+        if (mutation.type === 'attributes') continue;
+
+        for (let node of mutation.addedNodes) {
+          if (node.nodeType !== Node.ELEMENT_NODE) continue;
+
+          if (node.matches('[data-gallery]')) {
+            initCard(node);
+          }
+          const internalGalleries = node.querySelectorAll('[data-gallery]');
+          internalGalleries.forEach(initCard);
+        }
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: false
     });
   })();
 

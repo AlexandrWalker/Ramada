@@ -720,7 +720,8 @@
       &-btns {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        // gap: 2rem;
+        gap: 1rem;
 
         @include md {
           gap: 1rem;

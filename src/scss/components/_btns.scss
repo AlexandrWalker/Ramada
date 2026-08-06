@@ -212,7 +212,7 @@
       border-color: var(--black-30);
     }
 
-    .rooms__item:hover &,
+    // .rooms__item:not(.booking .rooms__item):hover &,
     .entert__item:hover & {
 
       @include dosm {

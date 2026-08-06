@@ -1,355 +1,367 @@
-.icon-events-dva-restorana-2 {
+.icon-pool {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe900;');
 }
-.icon-events-residence {
+.icon-training {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe901;');
 }
-.icon-events-garderob {
+.icon-term {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe902;');
 }
-.icon-events-lounge {
+.icon-area-stroke {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe903;');
 }
-.icon-events-parkovka-2 {
+.icon-rooms {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe904;');
 }
-.icon-events-spa {
+.icon-events-dva-restorana-2 {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe905;');
 }
-.icon-star-menu {
+.icon-events-residence {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe906;');
 }
-.icon-share-fill {
+.icon-events-garderob {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe907;');
 }
-.icon-mobile-bar {
+.icon-events-lounge {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe908;');
 }
-.icon-gastro-dinner {
+.icon-events-parkovka-2 {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe909;');
 }
-.icon-master-classes {
+.icon-events-spa {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe90a;');
 }
-.icon-headset {
+.icon-star-menu {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe90b;');
 }
-.icon-catering-main {
+.icon-share-fill {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe90c;');
 }
-.icon-photographer {
+.icon-mobile-bar {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe90d;');
 }
-.icon-decorator {
+.icon-gastro-dinner {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe90e;');
 }
-.icon-tech-support {
+.icon-master-classes {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe90f;');
 }
-.icon-video-conference {
+.icon-headset {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe910;');
 }
-.icon-catering {
+.icon-catering-main {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe911;');
 }
-.icon-lcd-panel {
+.icon-photographer {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe912;');
 }
-.icon-notebooks-pens {
+.icon-decorator {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe913;');
 }
-.icon-podium {
+.icon-tech-support {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe914;');
 }
-.icon-plasma-tv-stand {
+.icon-video-conference {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe915;');
 }
-.icon-water {
+.icon-catering {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe916;');
 }
-.icon-laser-pointer {
+.icon-lcd-panel {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe917;');
 }
-.icon-gooseneck-mic {
+.icon-notebooks-pens {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe918;');
 }
-.icon-clicker {
+.icon-podium {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe919;');
 }
-.icon-laptop {
+.icon-plasma-tv-stand {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe91a;');
 }
-.icon-flipchart {
+.icon-water {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe91b;');
 }
-.icon-microphone {
+.icon-laser-pointer {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe91c;');
 }
-.icon-sound-system {
+.icon-gooseneck-mic {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe91d;');
 }
-.icon-projector {
+.icon-clicker {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe91e;');
 }
-.icon-screen {
+.icon-laptop {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe91f;');
 }
-.icon-hair-dryer {
+.icon-flipchart {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe920;');
 }
-.icon-toiletries {
+.icon-microphone {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe921;');
 }
-.icon-shower-cabin {
+.icon-sound-system {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe922;');
 }
-.icon-aqua-zone {
+.icon-projector {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe923;');
 }
-.icon-bathrobe {
+.icon-screen {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe924;');
 }
-.icon-washing-machine {
+.icon-hair-dryer {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe925;');
 }
-.icon-tableware {
+.icon-toiletries {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe926;');
 }
-.icon-kettle {
+.icon-shower-cabin {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe927;');
 }
-.icon-microwave {
+.icon-aqua-zone {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe928;');
 }
-.icon-cooktop {
+.icon-bathrobe {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe929;');
 }
-.icon-fridge {
+.icon-washing-machine {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe92a;');
 }
-.icon-sofa-bed {
+.icon-tableware {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe92b;');
 }
-.icon-iron-board {
+.icon-kettle {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe92c;');
 }
-.icon-air-conditioner {
+.icon-microwave {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe92d;');
 }
-.icon-work-area {
+.icon-cooktop {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe92e;');
 }
-.icon-wi-fi {
+.icon-fridge {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe92f;');
 }
-.icon-tv {
+.icon-sofa-bed {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe930;');
 }
-.icon-single-beds {
+.icon-iron-board {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe931;');
 }
-.icon-double-bed {
+.icon-air-conditioner {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe932;');
 }
-.icon-max {
+.icon-work-area {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe933;');
 }
-.icon-events-tri-konferens-zala {
+.icon-wi-fi {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe934;');
 }
-.icon-events-special-tariffs {
+.icon-tv {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe935;');
 }
-.icon-events-prostornye-nomera {
+.icon-single-beds {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe936;');
 }
-.icon-events-parkovka {
+.icon-double-bed {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe937;');
 }
-.icon-events-personal-manager {
+.icon-max {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe938;');
 }
-.icon-events-raspolozhenie {
+.icon-events-tri-konferens-zala {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe939;');
 }
-.icon-events-avtorkaya-kuhnya {
+.icon-events-special-tariffs {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe93a;');
 }
-.icon-events-panoramnye-okna {
+.icon-events-prostornye-nomera {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe93b;');
 }
-.icon-events-basseyn {
+.icon-events-parkovka {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe93c;');
 }
-.icon-events-infrastructura {
+.icon-events-personal-manager {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe93d;');
 }
-.icon-events-vremya {
+.icon-events-raspolozhenie {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe93e;');
 }
-.icon-events-catering {
+.icon-events-avtorkaya-kuhnya {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe93f;');
 }
-.icon-events-banketnoe-menu {
+.icon-events-panoramnye-okna {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe940;');
 }
-.icon-events-dva-restorana {
+.icon-events-basseyn {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe941;');
 }
-.icon-events-razmeshcheniye-gostey {
+.icon-events-infrastructura {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe942;');
 }
-.icon-events-territoriya {
+.icon-events-vremya {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe943;');
 }
-.icon-hh-icon {
+.icon-events-catering {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe944;');
+}
+.icon-events-banketnoe-menu {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe945;');
 }
-.icon-2gis-icon {
+.icon-events-dva-restorana {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe946;');
 }
-.icon-share {
+.icon-events-razmeshcheniye-gostey {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe947;');
 }
-.icon-copy-fill {
+.icon-events-territoriya {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe948;');
 }
-.icon-person {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe949;');
+.icon-gis-icon {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe94a;');
 }
-.icon-3d {
+.icon-share {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe94b;');
 }
-.icon-area {
+.icon-copy-fill {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe94c;');
 }
-.icon-arrow-left {
+.icon-person {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe94d;');
 }
-.icon-arrow-right {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe94e;');
-}
-.icon-book {
+.icon-d {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe94f;');
 }
-.icon-burger {
+.icon-area {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe950;');
 }
-.icon-caplya {
+.icon-arrow-left {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe951;');
 }
-.icon-chevron-down {
+.icon-arrow-right {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe952;');
+}
+.icon-book {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe953;');
 }
-.icon-chevron-left {
+.icon-burger {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe954;');
 }
-.icon-chevron-link {
+.icon-caplya {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe955;');
 }
-.icon-chevron-right {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe956;');
-}
-.icon-chevron-top {
+.icon-chevron-down {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe957;');
 }
-.icon-close {
+.icon-chevron-left {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe958;');
 }
-.icon-delovoy {
+.icon-chevron-link {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe959;');
 }
-.icon-elem-bed {
+.icon-chevron-right {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe95a;');
 }
-.icon-elem-phen {
+.icon-chevron-top {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe95b;');
 }
-.icon-elem-pool {
+.icon-close {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe95c;');
 }
-.icon-elem-tablichka {
+.icon-delovoy {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe95d;');
 }
-.icon-family {
+.icon-elem-bed {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe95e;');
 }
-.icon-friends {
+.icon-elem-phen {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe95f;');
 }
-.icon-geo {
+.icon-elem-pool {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe960;');
 }
-.icon-mail {
+.icon-elem-tablichka {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe961;');
 }
-.icon-menu {
+.icon-family {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe962;');
 }
-.icon-para {
+.icon-friends {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe963;');
 }
-.icon-pdf {
+.icon-geo {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe964;');
 }
-.icon-places {
+.icon-mail {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe965;');
 }
-.icon-play {
+.icon-menu {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe966;');
 }
-.icon-route {
+.icon-para {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe967;');
 }
-.icon-services-board {
+.icon-pdf {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe968;');
 }
-.icon-services-coffee-machine {
+.icon-places {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe969;');
 }
-.icon-services-condicioner {
+.icon-play {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe96a;');
 }
-.icon-services-electric-kettle {
+.icon-route {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe96b;');
 }
-.icon-services-garderob {
+.icon-services-board {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe96c;');
 }
-.icon-services-holodilnik {
+.icon-services-coffee-machine {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe96d;');
 }
-.icon-services-kids-bedroom {
+.icon-services-condicioner {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe96e;');
 }
-.icon-services-master-bedroom {
+.icon-services-electric-kettle {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe96f;');
 }
-.icon-services-microwave {
+.icon-services-garderob {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe970;');
 }
-.icon-services-places {
+.icon-services-holodilnik {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe971;');
 }
-.icon-services-tv {
+.icon-services-kids-bedroom {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe972;');
 }
-.icon-services-wifi {
+.icon-services-master-bedroom {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe973;');
 }
-.icon-solo {
+.icon-services-microwave {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe974;');
 }
-.icon-star {
+.icon-services-places {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe975;');
 }
-.icon-telegram {
+.icon-services-tv {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe976;');
 }
-.icon-vk {
+.icon-services-wifi {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe977;');
 }
-.icon-whatsapp {
+.icon-solo {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe978;');
+}
+.icon-star {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe979;');
+}
+.icon-telegram {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe97a;');
+}
+.icon-vk {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe97b;');
+}
+.icon-whatsapp {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe97c;');
 }
 

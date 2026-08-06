@@ -310,6 +310,24 @@
       color: var(--white);
     }
   }
+
+  &--black {
+    color: var(--black);
+
+    .offers__item:hover &,
+    &:hover {
+      color: var(--accent);
+
+      i {
+        background-color: var(--accent);
+      }
+    }
+
+    i {
+      background-color: var(--black);
+      color: var(--white);
+    }
+  }
 }
 
 /* Листья */

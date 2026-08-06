@@ -133,15 +133,12 @@
 
     &-text {
       max-width: 36.5rem;
-      margin-bottom: 4rem;
-
-      @include md {
-        margin-bottom: 3rem;
-      }
+      margin-bottom: 2rem;
     }
 
-    .link {
+    .btn {
       margin-top: auto;
+      margin-bottom: 2rem;
     }
   }
 

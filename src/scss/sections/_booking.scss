@@ -96,6 +96,10 @@
 
         .btn {
           --btn-padding-x: 3.5rem;
+
+          &--accent {
+            --btn-padding-x: 2.5rem;
+          }
         }
       }
 
