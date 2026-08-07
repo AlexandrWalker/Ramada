@@ -1,5 +1,5 @@
-<a class="rooms__item @@category" href="@@link" data-category="@@category">
-  <div class="rooms__item-slider border">
+<div class="rooms__item @@category" href="@@link" data-category="@@category">
+  <a class="rooms__item-slider border" href="@@link">
     <div class="swiper rooms__item--slider">
       <div class="swiper-wrapper">
         <div class="swiper-slide rooms__item-slide" data-js-hover="0" data-index="0">
@@ -14,11 +14,11 @@
       </div>
       <div class="swiper-pagination"></div>
     </div>
-  </div>
+  </a>
   <div class="rooms__item-body">
-    <div class="rooms__item-title h5">
+    <a class="rooms__item-title h5" href="@@link">
       @@title
-    </div>
+    </a>
     <div class="rooms__item-content">
       <div class="rooms__item-wrap">
         <div class="rooms__item-icon">
@@ -37,13 +37,19 @@
         </div>
       </div>
     </div>
-    <div class="btn btn--white-gray">
-      <span class="scale"></span>
-      Выбрать
+    <div class="rooms__item-btns">
+      <a class="btn btn--white-gray" href="@@link">
+        <span class="scale"></span>
+        Выбрать
+      </a>
+      <a class="btn btn--accent" href="@@link">
+        <span class="scale"></span>
+        Забронировать
+      </a>
     </div>
-    <div class="link">
+    <a class="link" href="@@link">
       <i class="icon-chevron-link"></i>
       Выбрать
-    </div>
+    </a>
   </div>
-</a>
+</div>
