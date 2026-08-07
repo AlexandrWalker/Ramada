@@ -17,13 +17,14 @@
 
   &.hidden {
     clip-path: inset(0 0 100% 0);
-    transition: clip-path 1s;
+    transition: clip-path 1s ease-in-out;
   }
 
-  &.none {
+  &.preloader-none {
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
   }
 
   &__img {

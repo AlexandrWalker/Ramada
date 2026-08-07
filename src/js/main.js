@@ -5,9 +5,10 @@
   const HEADER_SELECTOR = '.header';
   const MAIN_SELECTOR = '.wrapper.main-page';
   const STORAGE_KEY = 'main_scroll_y';
-  const preloader = document.querySelector('.preloader');
 
-  const isMainPage = () => document.querySelector(MAIN_SELECTOR);
+  const preloader = document.querySelector('.preloader');
+  const header = document.querySelector(HEADER_SELECTOR);
+  const isMainPage = !!document.querySelector(MAIN_SELECTOR);
 
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
@@ -22,11 +23,9 @@
   document.body.classList.add('no-scroll');
 
   function getHeaderOffset() {
-    const header = document.querySelector(HEADER_SELECTOR);
     return header ? header.getBoundingClientRect().height : 0;
   }
 
-  // --- Lenis init (глобальный) ---
   if (!window.lenis) {
     window.lenis = new Lenis({
       smooth: true,
@@ -34,13 +33,15 @@
     });
   }
 
-  if (window.lenis) {
+  const lenis = window.lenis;
+
+  if (lenis) {
     ScrollTrigger.scrollerProxy(document.body, {
       scrollTop(value) {
         if (arguments.length) {
-          window.lenis.scrollTo(value, { immediate: true });
+          lenis.scrollTo(value, { immediate: true });
         }
-        return window.lenis.scroll;
+        return lenis.scroll;
       },
       getBoundingClientRect() {
         return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
@@ -48,115 +49,91 @@
       pinType: document.body.style.transform ? 'transform' : 'fixed'
     });
 
-    window.lenis.on('scroll', ScrollTrigger.update);
+    lenis.on('scroll', ScrollTrigger.update);
     ScrollTrigger.defaults({ scroller: document.body });
   }
-
-  const lenis = window.lenis;
 
   lenis.stop();
 
   gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
   });
-
   gsap.ticker.lagSmoothing(0);
 
-  // adaptive header
-  const header = document.querySelector(HEADER_SELECTOR);
   if (header) {
     new ResizeObserver(() => {
       ScrollTrigger.refresh();
     }).observe(header);
   }
 
-  // --- сохраняем позицию при уходе с главной ---
   window.addEventListener('pagehide', () => {
-    if (!isMainPage()) return;
-    if (!window.lenis) return;
-
-    sessionStorage.setItem(STORAGE_KEY, window.lenis.scroll);
+    if (!isMainPage || !lenis) return;
+    sessionStorage.setItem(STORAGE_KEY, lenis.scroll);
   });
 
-  // --- сброс позиции при прямом заходе на главную ---
   window.addEventListener('pageshow', (e) => {
-    if (!isMainPage()) return;
+    if (!isMainPage || !lenis) return;
 
-    // прямой заход → удаляем сохранённую позицию
     if (!e.persisted) {
       sessionStorage.removeItem(STORAGE_KEY);
-      // дополнительно сброс скролла на верх
-      if (window.lenis) {
-        window.lenis.scrollTo(0, { immediate: true });
+      lenis.scrollTo(0, { immediate: true });
+    } else if (!initialHash) {
+      const saved = sessionStorage.getItem(STORAGE_KEY);
+      if (saved !== null) {
+        lenis.scrollTo(Number(saved), { immediate: true });
       }
     }
   });
 
-  // --- scroll restore / hash after preload ---
   window.addEventListener('load', () => {
     if (!preloader) return;
 
-    preloader.addEventListener(
-      'transitionend',
-      () => {
-        document.documentElement.classList.remove('html-no-scroll');
-        document.body.classList.remove('no-scroll');
-        preloader.classList.add('preloader-none');
+    let isInitialized = false;
 
-        lenis.resize();
+    const initPageStructure = () => {
+      if (isInitialized) return;
+      isInitialized = true;
 
-        // 1. hash имеет приоритет
-        if (initialHash) {
-          const target = document.querySelector(initialHash);
-          if (target && !target.closest('[data-lenis-prevent]')) {
-            requestAnimationFrame(() => {
-              requestAnimationFrame(() => {
-                lenis.scrollTo(target, {
-                  offset: -getHeaderOffset(),
-                  immediate: false
-                });
-              });
+      document.documentElement.classList.remove('html-no-scroll');
+      document.body.classList.remove('no-scroll');
+      preloader.classList.add('preloader-none');
+
+      lenis.resize();
+
+      if (initialHash) {
+        const target = document.querySelector(initialHash);
+        if (target && !target.closest('[data-lenis-prevent]')) {
+          requestAnimationFrame(() => {
+            lenis.scrollTo(target, {
+              offset: -getHeaderOffset(),
+              immediate: false
             });
-          }
+          });
         }
-
-        // 2. восстановление своей позиции при back (если hash нет)
-        if (!initialHash && isMainPage()) {
-          const saved = sessionStorage.getItem(STORAGE_KEY);
-          if (saved !== null) {
-            lenis.scrollTo(Number(saved), { immediate: true });
-          }
+        history.replaceState(null, '', initialHash);
+      } 
+      else if (isMainPage) {
+        const saved = sessionStorage.getItem(STORAGE_KEY);
+        if (saved !== null) {
+          lenis.scrollTo(Number(saved), { immediate: true });
         }
+      }
 
-        ScrollTrigger.refresh();
-        lenis.start();
+      ScrollTrigger.refresh();
+      lenis.start();
+    };
 
-        if (initialHash) {
-          history.replaceState(null, '', initialHash);
-        }
-      },
-      { once: true }
-    );
+    preloader.addEventListener('transitionend', (e) => {
+      if (e.propertyName === 'clip-path') {
+        initPageStructure();
+      }
+    });
+
+    setTimeout(initPageStructure, 1200);
 
     preloader.classList.add('hidden');
   });
 
-  // --- восстановление при bfcache (back/forward) ---
-  window.addEventListener('pageshow', (e) => {
-    if (!e.persisted) return;
-    if (!isMainPage()) return;
-    if (!window.lenis) return;
-    if (initialHash) return;
-
-    const saved = sessionStorage.getItem(STORAGE_KEY);
-    if (saved === null) return;
-
-    window.lenis.scrollTo(Number(saved), {
-      immediate: true
-    });
-  });
-
-  // --- smooth scroll for anchor links ---
   document.addEventListener('click', (e) => {
     const link = e.target.closest('a[href^="#"]');
     if (!link) return;
