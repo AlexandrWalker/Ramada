@@ -623,6 +623,25 @@
         gap: 0;
       }
 
+      &:has(.template-product__body-ps) ul {
+        margin-bottom: 0;
+      }
+
+      &-ps {
+        margin-bottom: 4rem;
+
+        font-size: 1.4rem;
+        color: var(--black-30);
+
+        @include md {
+          margin-bottom: 6rem;
+        }
+
+        @include sm {
+          margin-bottom: 2rem;
+        }
+      }
+
       &-wrap {
         display: flex;
         flex-direction: column;
