@@ -5021,6 +5021,16 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   grid-row: 2/3;
 }
 
+.template-product__body:has(.template-product__body-ps) ul {
+  margin-bottom: 0;
+}
+
+.template-product__body-ps {
+  margin-bottom: 4rem;
+  font-size: 1.4rem;
+  color: var(--black-30);
+}
+
 .template-product__body-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13500,6 +13510,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     gap: 0;
   }
 
+  .template-product__body-ps {
+    margin-bottom: 6rem;
+  }
+
   .template-product__body-wrap {
     margin-bottom: 1.5rem;
     gap: 1.5rem;
@@ -16430,6 +16444,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .template-product__head-title {
     font-size: 3rem;
+  }
+
+  .template-product__body-ps {
+    margin-bottom: 2rem;
   }
 
   .template-product__body-price span {
