@@ -108,16 +108,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
+  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
@@ -11525,6 +11525,12 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   text-align: center;
 }
 
+.reviews__item:not(.reviews__item--corp) .reviews__item-body {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
 .reviews__item.reviews__item--corp {
   width: calc(50% - 1rem);
   height: auto;
@@ -11690,6 +11696,15 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
 .reviews__item-text {
   color: var(--gray);
+  display: -moz-box;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  overflow: hidden;
 }
 
 .reviews__item-btn span::before {
@@ -12179,6 +12194,18 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .resta__block-btn:hover::after {
     border-color: var(--black-30);
+  }
+
+  .reviews__item:not(.reviews__item--corp) .reviews__item-body {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 5.6rem 1fr auto auto;
+    grid-template-rows: 5.6rem 1fr auto auto;
+    justify-items: center;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    padding-bottom: 5rem;
   }
 
   .site-map__item-title a:hover::before {
@@ -15669,6 +15696,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     font-size: 1.4rem;
   }
 
+  .reviews__item-btn {
+    margin-top: auto;
+  }
+
   .reviews__btn {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -18309,6 +18340,7 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     display: -ms-flexbox;
     display: flex;
     gap: 0.5rem;
+    margin-top: auto;
     font-size: 1rem;
     color: var(--accent);
   }
