@@ -113,6 +113,21 @@
       border: 0;
     }
 
+    &:not(.reviews__item--corp) {
+
+      .reviews__item-body {
+        justify-content: flex-start;
+
+        @include domd {
+          display: grid;
+          grid-template-rows: 5.6rem 1fr auto auto;
+          justify-items: center;
+          align-items: flex-start;
+          padding-bottom: 5rem;
+        }
+      }
+    }
+
     &.reviews__item--corp {
       width: calc(50% - 1rem);
       height: auto;
@@ -400,6 +415,16 @@
     &-text {
       color: var(--gray);
 
+      display: -moz-box;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      line-clamp: 4;
+      text-overflow: ellipsis;
+      -moz-box-orient: vertical;
+      -webkit-box-orient: vertical;
+      box-orient: vertical;
+      overflow: hidden;
+
       p {
 
         @include sm {
@@ -409,6 +434,10 @@
     }
 
     &-btn {
+
+      @include md {
+        margin-top: auto;
+      }
 
       @include sm {
         display: none;
@@ -432,6 +461,7 @@
       @include sm {
         display: flex;
         gap: 0.5rem;
+        margin-top: auto;
 
         font-size: 1rem;
         color: var(--accent);
