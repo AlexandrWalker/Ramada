@@ -1,367 +1,370 @@
-.icon-pool {
+.icon-balkon {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe900;');
 }
-.icon-training {
+.icon-pool {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe901;');
 }
-.icon-term {
+.icon-training {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe902;');
 }
-.icon-area-stroke {
+.icon-term {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe903;');
 }
-.icon-rooms {
+.icon-area-stroke {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe904;');
 }
-.icon-events-dva-restorana-2 {
+.icon-rooms {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe905;');
 }
-.icon-events-residence {
+.icon-events-dva-restorana-2 {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe906;');
 }
-.icon-events-garderob {
+.icon-events-residence {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe907;');
 }
-.icon-events-lounge {
+.icon-events-garderob {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe908;');
 }
-.icon-events-parkovka-2 {
+.icon-events-lounge {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe909;');
 }
-.icon-events-spa {
+.icon-events-parkovka-2 {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe90a;');
 }
-.icon-star-menu {
+.icon-events-spa {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe90b;');
 }
-.icon-share-fill {
+.icon-star-menu {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe90c;');
 }
-.icon-mobile-bar {
+.icon-share-fill {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe90d;');
 }
-.icon-gastro-dinner {
+.icon-mobile-bar {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe90e;');
 }
-.icon-master-classes {
+.icon-gastro-dinner {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe90f;');
 }
-.icon-headset {
+.icon-master-classes {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe910;');
 }
-.icon-catering-main {
+.icon-headset {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe911;');
 }
-.icon-photographer {
+.icon-catering-main {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe912;');
 }
-.icon-decorator {
+.icon-photographer {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe913;');
 }
-.icon-tech-support {
+.icon-decorator {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe914;');
 }
-.icon-video-conference {
+.icon-tech-support {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe915;');
 }
-.icon-catering {
+.icon-video-conference {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe916;');
 }
-.icon-lcd-panel {
+.icon-catering {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe917;');
 }
-.icon-notebooks-pens {
+.icon-lcd-panel {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe918;');
 }
-.icon-podium {
+.icon-notebooks-pens {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe919;');
 }
-.icon-plasma-tv-stand {
+.icon-podium {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe91a;');
 }
-.icon-water {
+.icon-plasma-tv-stand {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe91b;');
 }
-.icon-laser-pointer {
+.icon-water {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe91c;');
 }
-.icon-gooseneck-mic {
+.icon-laser-pointer {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe91d;');
 }
-.icon-clicker {
+.icon-gooseneck-mic {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe91e;');
 }
-.icon-laptop {
+.icon-clicker {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe91f;');
 }
-.icon-flipchart {
+.icon-laptop {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe920;');
 }
-.icon-microphone {
+.icon-flipchart {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe921;');
 }
-.icon-sound-system {
+.icon-microphone {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe922;');
 }
-.icon-projector {
+.icon-sound-system {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe923;');
 }
-.icon-screen {
+.icon-projector {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe924;');
 }
-.icon-hair-dryer {
+.icon-screen {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe925;');
 }
-.icon-toiletries {
+.icon-hair-dryer {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe926;');
 }
-.icon-shower-cabin {
+.icon-toiletries {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe927;');
 }
-.icon-aqua-zone {
+.icon-shower-cabin {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe928;');
 }
-.icon-bathrobe {
+.icon-aqua-zone {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe929;');
 }
-.icon-washing-machine {
+.icon-bathrobe {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe92a;');
 }
-.icon-tableware {
+.icon-washing-machine {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe92b;');
 }
-.icon-kettle {
+.icon-tableware {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe92c;');
 }
-.icon-microwave {
+.icon-kettle {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe92d;');
 }
-.icon-cooktop {
+.icon-microwave {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe92e;');
 }
-.icon-fridge {
+.icon-cooktop {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe92f;');
 }
-.icon-sofa-bed {
+.icon-fridge {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe930;');
 }
-.icon-iron-board {
+.icon-sofa-bed {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe931;');
 }
-.icon-air-conditioner {
+.icon-iron-board {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe932;');
 }
-.icon-work-area {
+.icon-air-conditioner {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe933;');
 }
-.icon-wi-fi {
+.icon-work-area {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe934;');
 }
-.icon-tv {
+.icon-wi-fi {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe935;');
 }
-.icon-single-beds {
+.icon-tv {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe936;');
 }
-.icon-double-bed {
+.icon-single-beds {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe937;');
 }
-.icon-max {
+.icon-double-bed {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe938;');
 }
-.icon-events-tri-konferens-zala {
+.icon-max {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe939;');
 }
-.icon-events-special-tariffs {
+.icon-events-tri-konferens-zala {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe93a;');
 }
-.icon-events-prostornye-nomera {
+.icon-events-special-tariffs {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe93b;');
 }
-.icon-events-parkovka {
+.icon-events-prostornye-nomera {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe93c;');
 }
-.icon-events-personal-manager {
+.icon-events-parkovka {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe93d;');
 }
-.icon-events-raspolozhenie {
+.icon-events-personal-manager {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe93e;');
 }
-.icon-events-avtorkaya-kuhnya {
+.icon-events-raspolozhenie {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe93f;');
 }
-.icon-events-panoramnye-okna {
+.icon-events-avtorkaya-kuhnya {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe940;');
 }
-.icon-events-basseyn {
+.icon-events-panoramnye-okna {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe941;');
 }
-.icon-events-infrastructura {
+.icon-events-basseyn {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe942;');
 }
-.icon-events-vremya {
+.icon-events-infrastructura {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe943;');
 }
-.icon-events-catering {
+.icon-events-vremya {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe944;');
 }
-.icon-events-banketnoe-menu {
+.icon-events-catering {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe945;');
 }
-.icon-events-dva-restorana {
+.icon-events-banketnoe-menu {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe946;');
 }
-.icon-events-razmeshcheniye-gostey {
+.icon-events-dva-restorana {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe947;');
 }
-.icon-events-territoriya {
+.icon-events-razmeshcheniye-gostey {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe948;');
 }
+.icon-events-territoriya {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe949;');
+}
 .icon-gis-icon {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe94a;');
-}
-.icon-share {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe94b;');
-}
-.icon-copy-fill {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe94c;');
 }
-.icon-person {
+.icon-share {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe94d;');
 }
-.icon-d {
+.icon-copy-fill {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe94e;');
+}
+.icon-person {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe94f;');
 }
-.icon-area {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe950;');
-}
-.icon-arrow-left {
+.icon-d {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe951;');
 }
-.icon-arrow-right {
+.icon-area {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe952;');
 }
-.icon-book {
+.icon-arrow-left {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe953;');
 }
-.icon-burger {
+.icon-arrow-right {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe954;');
 }
-.icon-caplya {
+.icon-book {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe955;');
 }
-.icon-chevron-down {
+.icon-burger {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe956;');
+}
+.icon-caplya {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe957;');
 }
-.icon-chevron-left {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe958;');
-}
-.icon-chevron-link {
+.icon-chevron-down {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe959;');
 }
-.icon-chevron-right {
+.icon-chevron-left {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe95a;');
 }
-.icon-chevron-top {
+.icon-chevron-link {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe95b;');
 }
-.icon-close {
+.icon-chevron-right {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe95c;');
 }
-.icon-delovoy {
+.icon-chevron-top {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe95d;');
 }
-.icon-elem-bed {
+.icon-close {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe95e;');
 }
-.icon-elem-phen {
+.icon-delovoy {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe95f;');
 }
-.icon-elem-pool {
+.icon-elem-bed {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe960;');
 }
-.icon-elem-tablichka {
+.icon-elem-phen {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe961;');
 }
-.icon-family {
+.icon-elem-pool {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe962;');
 }
-.icon-friends {
+.icon-elem-tablichka {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe963;');
 }
-.icon-geo {
+.icon-family {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe964;');
 }
-.icon-mail {
+.icon-friends {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe965;');
 }
-.icon-menu {
+.icon-geo {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe966;');
 }
-.icon-para {
+.icon-mail {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe967;');
 }
-.icon-pdf {
+.icon-menu {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe968;');
 }
-.icon-places {
+.icon-para {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe969;');
 }
-.icon-play {
+.icon-pdf {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe96a;');
 }
-.icon-route {
+.icon-places {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe96b;');
 }
-.icon-services-board {
+.icon-play {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe96c;');
 }
-.icon-services-coffee-machine {
+.icon-route {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe96d;');
 }
-.icon-services-condicioner {
+.icon-services-board {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe96e;');
 }
-.icon-services-electric-kettle {
+.icon-services-coffee-machine {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe96f;');
 }
-.icon-services-garderob {
+.icon-services-condicioner {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe970;');
 }
-.icon-services-holodilnik {
+.icon-services-electric-kettle {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe971;');
 }
-.icon-services-kids-bedroom {
+.icon-services-garderob {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe972;');
 }
-.icon-services-master-bedroom {
+.icon-services-holodilnik {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe973;');
 }
-.icon-services-microwave {
+.icon-services-kids-bedroom {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe974;');
 }
-.icon-services-places {
+.icon-services-master-bedroom {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe975;');
 }
-.icon-services-tv {
+.icon-services-microwave {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe976;');
 }
-.icon-services-wifi {
+.icon-services-places {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe977;');
 }
-.icon-solo {
+.icon-services-tv {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe978;');
 }
-.icon-star {
+.icon-services-wifi {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe979;');
 }
-.icon-telegram {
+.icon-solo {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe97a;');
 }
-.icon-vk {
+.icon-star {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe97b;');
 }
-.icon-whatsapp {
+.icon-telegram {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe97c;');
+}
+.icon-vk {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe97d;');
+}
+.icon-whatsapp {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe97e;');
 }
 
