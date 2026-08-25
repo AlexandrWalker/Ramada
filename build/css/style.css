@@ -124,16 +124,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Regular.woff2") format("woff2"), url("../fonts/Gotham-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Gotham-Thin.woff2") format("woff2"), url("../fonts/Gotham-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Thin.woff2") format("woff2"), url("../fonts/Gotham-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/Gotham-Regular.woff2") format("woff2"), url("../fonts/Gotham-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -2347,9 +2347,6 @@ body {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  -webkit-transition: opacity 0.3s, visibility 0.3s;
-  -o-transition: opacity 0.3s, visibility 0.3s;
-  transition: opacity 0.3s, visibility 0.3s;
 }
 
 .preloader__img {
@@ -8997,9 +8994,18 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   right: 5rem;
 }
 
+.studio__slider .swiper-button-next:hover i {
+  color: var(--white);
+}
+
 .studio__slider .swiper-button-next::before {
   border-color: var(--white);
   border: none;
+  background-color: var(--white);
+}
+
+.studio__slider .swiper-button-next i {
+  color: var(--accent);
 }
 
 .studio__slider .swiper-button-prev {
@@ -9008,9 +9014,18 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   left: 5rem;
 }
 
+.studio__slider .swiper-button-prev:hover i {
+  color: var(--white);
+}
+
 .studio__slider .swiper-button-prev::before {
   border-color: var(--white);
   border: none;
+  background-color: var(--white);
+}
+
+.studio__slider .swiper-button-prev i {
+  color: var(--accent);
 }
 
 .thermal-zone-page .booking {
@@ -12344,14 +12359,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     aspect-ratio: 472/618;
   }
 
-  .studio__slider .swiper-button-next {
-    display: none;
-  }
-
-  .studio__slider .swiper-button-prev {
-    display: none;
-  }
-
   .events__calendar td {
     border-radius: 0.5rem;
   }
@@ -14917,6 +14924,14 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .studio__slider {
     height: 41.3rem;
+  }
+
+  .studio__slider .swiper-button-next {
+    right: 2rem;
+  }
+
+  .studio__slider .swiper-button-prev {
+    left: 2rem;
   }
 
   .thermal-zone-page .template-product {
@@ -17686,6 +17701,14 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .studio__slider--min {
     width: 100%;
+  }
+
+  .studio__slider .swiper-button-next {
+    display: none;
+  }
+
+  .studio__slider .swiper-button-prev {
+    display: none;
   }
 
   .thermal-zone-page .template-product {

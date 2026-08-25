@@ -3,12 +3,10 @@
  */
 (() => {
   const HEADER_SELECTOR = '.header';
-  const MAIN_SELECTOR = '.wrapper.main-page';
-  const STORAGE_KEY = 'main_scroll_y';
+  const STORAGE_KEY = `main_scroll_${window.location.pathname}`;
 
   const preloader = document.querySelector('.preloader');
   const header = document.querySelector(HEADER_SELECTOR);
-  const isMainPage = !!document.querySelector(MAIN_SELECTOR);
 
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
@@ -22,138 +20,129 @@
   document.documentElement.classList.add('html-no-scroll');
   document.body.classList.add('no-scroll');
 
-  function getHeaderOffset() {
-    return header ? header.getBoundingClientRect().height : 0;
-  }
+  const getHeaderOffset = () => header ? header.getBoundingClientRect().height : 0;
 
   if (!window.lenis) {
-    window.lenis = new Lenis({
-      smooth: true,
-      autoResize: false
-    });
+    window.lenis = new Lenis({ smooth: true, autoResize: true });
   }
-
   const lenis = window.lenis;
 
-  if (lenis) {
+  if (lenis && window.ScrollTrigger) {
+    lenis.on('scroll', ScrollTrigger.update);
+
     ScrollTrigger.scrollerProxy(document.body, {
       scrollTop(value) {
-        if (arguments.length) {
-          lenis.scrollTo(value, { immediate: true });
-        }
-        return lenis.scroll;
+        return arguments.length ? lenis.scrollTo(value, { immediate: true }) : lenis.scroll;
       },
       getBoundingClientRect() {
         return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
       },
       pinType: document.body.style.transform ? 'transform' : 'fixed'
     });
-
-    lenis.on('scroll', ScrollTrigger.update);
     ScrollTrigger.defaults({ scroller: document.body });
   }
 
-  lenis.stop();
+  if (lenis) lenis.stop();
 
-  gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
-  });
+  const updateLenis = (time) => lenis.raf(time * 1000);
+  gsap.ticker.add(updateLenis);
   gsap.ticker.lagSmoothing(0);
 
-  if (header) {
-    new ResizeObserver(() => {
-      ScrollTrigger.refresh();
-    }).observe(header);
+  if (header && window.ScrollTrigger) {
+    const resizeObserver = new ResizeObserver(() => ScrollTrigger.refresh());
+    resizeObserver.observe(header);
   }
 
+  const restoreScrollPosition = () => {
+    if (!lenis) return;
+    const saved = sessionStorage.getItem(STORAGE_KEY);
+    if (saved !== null) {
+      lenis.scrollTo(Number(saved), { immediate: true });
+    }
+  };
+
   window.addEventListener('pagehide', () => {
-    if (!isMainPage || !lenis) return;
-    sessionStorage.setItem(STORAGE_KEY, lenis.scroll);
+    if (lenis) sessionStorage.setItem(STORAGE_KEY, lenis.scroll);
   });
 
   window.addEventListener('pageshow', (e) => {
-    if (!isMainPage || !lenis) return;
-
+    if (!lenis) return;
     if (!e.persisted) {
       sessionStorage.removeItem(STORAGE_KEY);
       lenis.scrollTo(0, { immediate: true });
-    } else if (!initialHash) {
-      const saved = sessionStorage.getItem(STORAGE_KEY);
-      if (saved !== null) {
-        lenis.scrollTo(Number(saved), { immediate: true });
-      }
     }
   });
 
-  window.addEventListener('load', () => {
-    if (!preloader) return;
+  let isInitialized = false;
+  const initPageStructure = () => {
+    if (isInitialized) return;
+    isInitialized = true;
 
-    let isInitialized = false;
+    document.documentElement.classList.remove('html-no-scroll');
+    document.body.classList.remove('no-scroll');
 
-    const initPageStructure = () => {
-      if (isInitialized) return;
-      isInitialized = true;
-
-      document.documentElement.classList.remove('html-no-scroll');
-      document.body.classList.remove('no-scroll');
+    if (preloader) {
       preloader.classList.add('preloader-none');
+    }
 
+    if (lenis) {
       lenis.resize();
+      lenis.start();
 
       if (initialHash) {
         const target = document.querySelector(initialHash);
         if (target && !target.closest('[data-lenis-prevent]')) {
           requestAnimationFrame(() => {
-            lenis.scrollTo(target, {
-              offset: -getHeaderOffset(),
-              immediate: false
-            });
+            lenis.scrollTo(target, { offset: -getHeaderOffset(), immediate: false });
           });
         }
         history.replaceState(null, '', initialHash);
-      } 
-      else if (isMainPage) {
-        const saved = sessionStorage.getItem(STORAGE_KEY);
-        if (saved !== null) {
-          lenis.scrollTo(Number(saved), { immediate: true });
-        }
+      } else {
+        restoreScrollPosition();
       }
+    }
 
+    if (window.ScrollTrigger) {
       ScrollTrigger.refresh();
-      lenis.start();
-    };
+    }
+  };
+
+  window.addEventListener('load', () => {
+    if (!preloader) {
+      initPageStructure();
+      return;
+    }
 
     preloader.addEventListener('transitionend', (e) => {
       if (e.propertyName === 'clip-path') {
         initPageStructure();
       }
-    });
-
-    setTimeout(initPageStructure, 1200);
+    }, { once: true });
 
     preloader.classList.add('hidden');
   });
+
+  setTimeout(() => {
+    if (!isInitialized && preloader) {
+      preloader.classList.add('hidden');
+      initPageStructure();
+    }
+  }, 5000);
 
   document.addEventListener('click', (e) => {
     const link = e.target.closest('a[href^="#"]');
     if (!link) return;
 
     const targetId = link.getAttribute('href');
-    if (!targetId || targetId === '#') return;
+    if (targetId === '#') return;
 
     const target = document.querySelector(targetId);
     if (!target || target.closest('[data-lenis-prevent]')) return;
 
     e.preventDefault();
-
-    lenis.scrollTo(target, {
-      offset: -getHeaderOffset(),
-      immediate: false
-    });
-
+    lenis.scrollTo(target, { offset: -getHeaderOffset(), immediate: false });
     history.replaceState(null, '', targetId);
   });
-
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1466,7 +1455,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
-
   /**
    * Добавляет класс для бургер кнопки для смены стиля
    */
@@ -1481,7 +1469,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /**
-   * Управляет поведением меню-бургера.
+   * Управляет поведением шапки
    */
   (function headerFunc() {
     const header = document.getElementById('header');

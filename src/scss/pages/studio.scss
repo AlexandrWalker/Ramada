@@ -387,13 +387,33 @@
 
       right: 5rem;
 
+      &:hover {
+
+        i {
+          color: var(--white);
+        }
+      }
+
       &::before {
         border-color: var(--white);
         border: none;
+        background-color: var(--white);
       }
 
       @include xxl {
+        // display: none;
+      }
+      
+      @include md {
+        right: 2rem;
+      }
+
+      @include sm {
         display: none;
+      }
+
+      i {
+        color: var(--accent);
       }
     }
 
@@ -404,13 +424,33 @@
 
       left: 5rem;
 
+      &:hover {
+
+        i {
+          color: var(--white);
+        }
+      }
+
       &::before {
         border-color: var(--white);
         border: none;
+        background-color: var(--white);
       }
 
       @include xxl {
+        // display: none;
+      }
+
+      @include md {
+        left: 2rem;
+      }
+
+      @include sm {
         display: none;
+      }
+
+      i {
+        color: var(--accent);
       }
     }
   }
