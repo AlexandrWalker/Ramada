@@ -100,16 +100,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
+  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -124,16 +124,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Thin.woff2") format("woff2"), url("../fonts/Gotham-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/Gotham-Regular.woff2") format("woff2"), url("../fonts/Gotham-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Regular.woff2") format("woff2"), url("../fonts/Gotham-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Gotham-Thin.woff2") format("woff2"), url("../fonts/Gotham-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -2314,93 +2314,33 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: var(--accent);
+  -webkit-transform-origin: top center;
+  -ms-transform-origin: top center;
+  transform-origin: top center;
   position: fixed;
-  left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 100000;
-  background: var(--accent);
-  -webkit-clip-path: inset(0 0 0 0);
-          clip-path: inset(0 0 0 0);
-  will-change: clip-path;
-}
-
-.preloader.hidden {
-  -webkit-clip-path: inset(0 0 100% 0);
-          clip-path: inset(0 0 100% 0);
-  -webkit-transition: clip-path 1s ease-in-out;
-  -webkit-transition: -webkit-clip-path 1s ease-in-out;
-  transition: -webkit-clip-path 1s ease-in-out;
-  -o-transition: clip-path 1s ease-in-out;
-  transition: clip-path 1s ease-in-out;
-  transition: clip-path 1s ease-in-out, -webkit-clip-path 1s ease-in-out;
-}
-
-.preloader.preloader-none {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-}
-
-.preloader__img {
-  width: auto;
-  height: 10rem;
-  -o-object-fit: contain;
-  object-fit: contain;
-}
-
-.loader {
-  --time: 3s;
-  display: inline-block;
-  font-family: var(--second-family);
-  font-weight: 300;
-  font-size: 10rem;
-  line-height: 100%;
-  letter-spacing: 0.2rem;
-  color: var(--accent);
-  position: relative;
-}
-
-.loader::after {
-  content: "Ramada";
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-animation: animloader var(--time) ease-in forwards;
-  animation: animloader var(--time) ease-in forwards;
-  color: var(--white);
-  position: absolute;
   left: 0;
-  top: 0;
+  z-index: 9999;
 }
 
-@-webkit-keyframes animloader {
-  0% {
-    width: 0%;
-  }
-
-  100% {
-    width: 100%;
-  }
-}
-
-@keyframes animloader {
-  0% {
-    width: 0%;
-  }
-
-  100% {
-    width: 100%;
-  }
+canvas {
+  display: block;
+  width: 30.3rem;
+  height: 10rem;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: opacity 0.3s ease, visibility 0.3s ease;
+  -o-transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 /* Главный заголовок страницы */
@@ -12656,14 +12596,6 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
     display: none;
   }
 
-  .preloader__img {
-    height: 5rem;
-  }
-
-  .loader {
-    font-size: 5rem;
-  }
-
   .h1,
   h1 {
     font-size: 4rem;
@@ -16042,6 +15974,11 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
 
   .icon-book {
     display: none;
+  }
+
+  canvas {
+    width: 18.2rem;
+    height: 6rem;
   }
 
   .h1,

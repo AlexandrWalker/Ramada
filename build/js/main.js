@@ -1,23 +1,40 @@
 /**
- * Preloader
+ * Подключение ScrollTrigger
  */
-(() => {
+gsap.registerPlugin(ScrollTrigger);
+
+/**
+ * Прелоадер + якорь + инициализация Lenis
+ */
+// Блокируем браузерное восстановление скролла до того как браузер успеет прыгнуть к якорю
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+(function () {
+  const MENU_CLOSE_DURATION = 400;
   const HEADER_SELECTOR = '.header';
   const STORAGE_KEY = `main_scroll_${window.location.pathname}`;
 
-  const preloader = document.querySelector('.preloader');
+  const preloaderEl = document.querySelector('.preloader');
+  const canvas = document.getElementById('logo-canvas');
   const header = document.querySelector(HEADER_SELECTOR);
 
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
+  const PRELOADER_CONFIG = {
+    assets: {
+      logoWhiteSrc: './images/logo/logo-white.svg',
+    },
+    logoWidth: 303,
+    logoHeight: 100,
+    safetyTimeoutMs: 8000,
+  };
 
   const initialHash = window.location.hash;
   if (initialHash) {
     history.replaceState(null, '', window.location.pathname + window.location.search);
   }
 
-  document.documentElement.classList.add('html-no-scroll');
+  document.documentElement.classList.add('html-no-scroll', 'preloader--active');
   document.body.classList.add('no-scroll');
 
   const getHeaderOffset = () => header ? header.getBoundingClientRect().height : 0;
@@ -73,16 +90,32 @@
     }
   });
 
+  let ctx = null;
+  if (canvas) {
+    ctx = canvas.getContext('2d');
+  }
+
+  function initCanvas() {
+    if (!canvas || !ctx) return { logoWidth: PRELOADER_CONFIG.logoWidth, logoHeight: PRELOADER_CONFIG.logoHeight };
+    const { logoWidth, logoHeight } = PRELOADER_CONFIG;
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = logoWidth * dpr;
+    canvas.height = logoHeight * dpr;
+    if (ctx.setTransform) ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpr, dpr);
+    return { logoWidth, logoHeight };
+  }
+
   let isInitialized = false;
   const initPageStructure = () => {
     if (isInitialized) return;
     isInitialized = true;
 
-    document.documentElement.classList.remove('html-no-scroll');
+    document.documentElement.classList.remove('html-no-scroll', 'preloader--active');
     document.body.classList.remove('no-scroll');
 
-    if (preloader) {
-      preloader.classList.add('preloader-none');
+    if (preloaderEl) {
+      preloaderEl.classList.add('preloader-none');
     }
 
     if (lenis) {
@@ -105,54 +138,271 @@
     if (window.ScrollTrigger) {
       ScrollTrigger.refresh();
     }
+    clearSafety();
   };
 
-  window.addEventListener('load', () => {
-    if (!preloader) {
+  const safetyTimer = setTimeout(() => {
+    if (!isInitialized && preloaderEl) {
+      if (preloaderEl.style.display !== 'none') {
+        preloaderEl.style.display = 'none';
+      }
+      initPageStructure();
+    }
+  }, PRELOADER_CONFIG.safetyTimeoutMs);
+
+  function clearSafety() {
+    try { clearTimeout(safetyTimer); } catch (e) { }
+  }
+
+  function hidePreloader() {
+    if (!preloaderEl) {
       initPageStructure();
       return;
     }
+    if (canvas) gsap.set(canvas, { opacity: 0 });
 
-    preloader.addEventListener('transitionend', (e) => {
-      if (e.propertyName === 'clip-path') {
+    gsap.to(preloaderEl, {
+      scaleY: 0,
+      duration: 0.7,
+      ease: 'power2.inOut',
+      transformOrigin: 'top center',
+      onComplete() {
+        preloaderEl.style.display = 'none';
         initPageStructure();
-      }
-    }, { once: true });
+      },
+    });
 
-    preloader.classList.add('hidden');
-  });
-
-  setTimeout(() => {
-    if (!isInitialized && preloader) {
-      preloader.classList.add('hidden');
-      initPageStructure();
+    if (canvas) {
+      gsap.to(canvas, {
+        scaleY: 2,
+        duration: 0.7,
+        ease: 'power2.inOut',
+        transformOrigin: 'bottom center',
+      });
     }
-  }, 5000);
+  }
+
+  function executeOnPageLoad(callback) {
+    if (document.readyState === 'complete') {
+      callback();
+    } else {
+      window.addEventListener('load', function onLoad() {
+        window.removeEventListener('load', onLoad);
+        callback();
+      });
+    }
+  }
+
+  function startSingleLogoPreloader() {
+    if (!canvas || !ctx) {
+      executeOnPageLoad(hidePreloader);
+      return;
+    }
+
+    const { logoWidth, logoHeight } = initCanvas();
+    const logo = new Image();
+
+    logo.onload = () => {
+      ctx.clearRect(0, 0, logoWidth, logoHeight);
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.drawImage(logo, 0, 0, logoWidth, logoHeight);
+      gsap.fromTo(canvas,
+        { opacity: 0.2, scaleY: 0.98 },
+        { opacity: 1, scaleY: 1, duration: 0.4, ease: 'power2.out' }
+      );
+      executeOnPageLoad(hidePreloader);
+    };
+
+    logo.onerror = () => {
+      executeOnPageLoad(hidePreloader);
+    };
+
+    logo.src = PRELOADER_CONFIG.assets.logoWhiteSrc;
+  }
+
+  if (preloaderEl) {
+    startSingleLogoPreloader();
+  } else {
+    executeOnPageLoad(initPageStructure);
+  }
 
   document.addEventListener('click', (e) => {
-    const link = e.target.closest('a[href^="#"]');
+    const link = e.target.closest('a[href]');
     if (!link) return;
+    if (link.hasAttribute('data-fancybox')) return;
 
-    const targetId = link.getAttribute('href');
-    if (targetId === '#') return;
+    const hash = link.hash.slice(1);
+    if (!hash) return;
 
-    const target = document.querySelector(targetId);
+    const target = document.getElementById(hash);
     if (!target || target.closest('[data-lenis-prevent]')) return;
 
     e.preventDefault();
-    lenis.scrollTo(target, { offset: -getHeaderOffset(), immediate: false });
-    history.replaceState(null, '', targetId);
-  });
+    history.pushState(null, null, `#${hash}`);
+
+    const isMenuOpen = document.documentElement.classList.contains('menu--open');
+    if (isMenuOpen) {
+      lenis.stop();
+      setTimeout(() => {
+        lenis.start();
+        lenis.scrollTo(target, { offset: -getHeaderOffset(), duration: 1.5 });
+      }, MENU_CLOSE_DURATION);
+    } else {
+      lenis.scrollTo(target, { offset: -getHeaderOffset(), duration: 1.5 });
+    }
+  }, true);
 })();
+
+/**
+ * Preloader
+ */
+// (() => {
+//   const HEADER_SELECTOR = '.header';
+//   const STORAGE_KEY = `main_scroll_${window.location.pathname}`;
+
+//   const preloader = document.querySelector('.preloader');
+//   const header = document.querySelector(HEADER_SELECTOR);
+
+//   if ('scrollRestoration' in history) {
+//     history.scrollRestoration = 'manual';
+//   }
+
+//   const initialHash = window.location.hash;
+//   if (initialHash) {
+//     history.replaceState(null, '', window.location.pathname + window.location.search);
+//   }
+
+//   document.documentElement.classList.add('html-no-scroll');
+//   document.body.classList.add('no-scroll');
+
+//   const getHeaderOffset = () => header ? header.getBoundingClientRect().height : 0;
+
+//   if (!window.lenis) {
+//     window.lenis = new Lenis({ smooth: true, autoResize: true });
+//   }
+//   const lenis = window.lenis;
+
+//   if (lenis && window.ScrollTrigger) {
+//     lenis.on('scroll', ScrollTrigger.update);
+
+//     ScrollTrigger.scrollerProxy(document.body, {
+//       scrollTop(value) {
+//         return arguments.length ? lenis.scrollTo(value, { immediate: true }) : lenis.scroll;
+//       },
+//       getBoundingClientRect() {
+//         return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+//       },
+//       pinType: document.body.style.transform ? 'transform' : 'fixed'
+//     });
+//     ScrollTrigger.defaults({ scroller: document.body });
+//   }
+
+//   if (lenis) lenis.stop();
+
+//   const updateLenis = (time) => lenis.raf(time * 1000);
+//   gsap.ticker.add(updateLenis);
+//   gsap.ticker.lagSmoothing(0);
+
+//   if (header && window.ScrollTrigger) {
+//     const resizeObserver = new ResizeObserver(() => ScrollTrigger.refresh());
+//     resizeObserver.observe(header);
+//   }
+
+//   const restoreScrollPosition = () => {
+//     if (!lenis) return;
+//     const saved = sessionStorage.getItem(STORAGE_KEY);
+//     if (saved !== null) {
+//       lenis.scrollTo(Number(saved), { immediate: true });
+//     }
+//   };
+
+//   window.addEventListener('pagehide', () => {
+//     if (lenis) sessionStorage.setItem(STORAGE_KEY, lenis.scroll);
+//   });
+
+//   window.addEventListener('pageshow', (e) => {
+//     if (!lenis) return;
+//     if (!e.persisted) {
+//       sessionStorage.removeItem(STORAGE_KEY);
+//       lenis.scrollTo(0, { immediate: true });
+//     }
+//   });
+
+//   let isInitialized = false;
+//   const initPageStructure = () => {
+//     if (isInitialized) return;
+//     isInitialized = true;
+
+//     document.documentElement.classList.remove('html-no-scroll');
+//     document.body.classList.remove('no-scroll');
+
+//     if (preloader) {
+//       preloader.classList.add('preloader-none');
+//     }
+
+//     if (lenis) {
+//       lenis.resize();
+//       lenis.start();
+
+//       if (initialHash) {
+//         const target = document.querySelector(initialHash);
+//         if (target && !target.closest('[data-lenis-prevent]')) {
+//           requestAnimationFrame(() => {
+//             lenis.scrollTo(target, { offset: -getHeaderOffset(), immediate: false });
+//           });
+//         }
+//         history.replaceState(null, '', initialHash);
+//       } else {
+//         restoreScrollPosition();
+//       }
+//     }
+
+//     if (window.ScrollTrigger) {
+//       ScrollTrigger.refresh();
+//     }
+//   };
+
+//   window.addEventListener('load', () => {
+//     if (!preloader) {
+//       initPageStructure();
+//       return;
+//     }
+
+//     preloader.addEventListener('transitionend', (e) => {
+//       if (e.propertyName === 'clip-path') {
+//         initPageStructure();
+//       }
+//     }, { once: true });
+
+//     preloader.classList.add('hidden');
+//   });
+
+//   setTimeout(() => {
+//     if (!isInitialized && preloader) {
+//       preloader.classList.add('hidden');
+//       initPageStructure();
+//     }
+//   }, 5000);
+
+//   document.addEventListener('click', (e) => {
+//     const link = e.target.closest('a[href^="#"]');
+//     if (!link) return;
+
+//     const targetId = link.getAttribute('href');
+//     if (targetId === '#') return;
+
+//     const target = document.querySelector(targetId);
+//     if (!target || target.closest('[data-lenis-prevent]')) return;
+
+//     e.preventDefault();
+//     lenis.scrollTo(target, { offset: -getHeaderOffset(), immediate: false });
+//     history.replaceState(null, '', targetId);
+//   });
+// })();
 
 document.addEventListener('DOMContentLoaded', () => {
 
   const checkEditMode = document.querySelector('.bx-panel-toggle-on') ?? null;
-
-  /**
-   * Подключение ScrollTrigger
-   */
-  gsap.registerPlugin(ScrollTrigger);
 
   // Отключаем реакцию ScrollTrigger на изменение высоты окна на мобильных
   ScrollTrigger.config({ ignoreMobileResize: true });
