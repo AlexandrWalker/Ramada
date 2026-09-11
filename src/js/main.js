@@ -24,8 +24,6 @@ if ('scrollRestoration' in history) {
     assets: {
       logoWhiteSrc: './images/logo/logo-white.svg',
     },
-    logoWidth: 303,
-    logoHeight: 100,
     safetyTimeoutMs: 8000,
   };
 
@@ -45,18 +43,9 @@ if ('scrollRestoration' in history) {
   const lenis = window.lenis;
 
   if (lenis && window.ScrollTrigger) {
-    lenis.on('scroll', ScrollTrigger.update);
-
-    ScrollTrigger.scrollerProxy(document.body, {
-      scrollTop(value) {
-        return arguments.length ? lenis.scrollTo(value, { immediate: true }) : lenis.scroll;
-      },
-      getBoundingClientRect() {
-        return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-      },
-      pinType: document.body.style.transform ? 'transform' : 'fixed'
+    lenis.on('scroll', () => {
+      window.ScrollTrigger.update();
     });
-    ScrollTrigger.defaults({ scroller: document.body });
   }
 
   if (lenis) lenis.stop();
@@ -66,7 +55,7 @@ if ('scrollRestoration' in history) {
   gsap.ticker.lagSmoothing(0);
 
   if (header && window.ScrollTrigger) {
-    const resizeObserver = new ResizeObserver(() => ScrollTrigger.refresh());
+    const resizeObserver = new ResizeObserver(() => window.ScrollTrigger.refresh());
     resizeObserver.observe(header);
   }
 
@@ -96,13 +85,19 @@ if ('scrollRestoration' in history) {
   }
 
   function initCanvas() {
-    if (!canvas || !ctx) return { logoWidth: PRELOADER_CONFIG.logoWidth, logoHeight: PRELOADER_CONFIG.logoHeight };
-    const { logoWidth, logoHeight } = PRELOADER_CONFIG;
+    if (!canvas || !ctx) return { logoWidth: 303, logoHeight: 100 };
+
+    const rect = canvas.getBoundingClientRect();
+    const logoWidth = rect.width || 303;
+    const logoHeight = rect.height || 100;
     const dpr = window.devicePixelRatio || 1;
+
     canvas.width = logoWidth * dpr;
     canvas.height = logoHeight * dpr;
+
     if (ctx.setTransform) ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.scale(dpr, dpr);
+
     return { logoWidth, logoHeight };
   }
 
@@ -136,7 +131,7 @@ if ('scrollRestoration' in history) {
     }
 
     if (window.ScrollTrigger) {
-      ScrollTrigger.refresh();
+      window.ScrollTrigger.refresh();
     }
     clearSafety();
   };
@@ -202,7 +197,7 @@ if ('scrollRestoration' in history) {
     const { logoWidth, logoHeight } = initCanvas();
     const logo = new Image();
 
-    logo.onload = () => {
+    const drawAndSetup = () => {
       ctx.clearRect(0, 0, logoWidth, logoHeight);
       ctx.globalCompositeOperation = 'source-over';
       ctx.drawImage(logo, 0, 0, logoWidth, logoHeight);
@@ -213,11 +208,13 @@ if ('scrollRestoration' in history) {
       executeOnPageLoad(hidePreloader);
     };
 
+    logo.onload = drawAndSetup;
     logo.onerror = () => {
       executeOnPageLoad(hidePreloader);
     };
 
     logo.src = PRELOADER_CONFIG.assets.logoWhiteSrc;
+    if (logo.complete) drawAndSetup();
   }
 
   if (preloaderEl) {
@@ -231,7 +228,10 @@ if ('scrollRestoration' in history) {
     if (!link) return;
     if (link.hasAttribute('data-fancybox')) return;
 
-    const hash = link.hash.slice(1);
+    const href = link.getAttribute('href');
+    if (!href || !href.includes('#')) return;
+
+    const hash = href.split('#')[1];
     if (!hash) return;
 
     const target = document.getElementById(hash);
@@ -240,7 +240,9 @@ if ('scrollRestoration' in history) {
     e.preventDefault();
     history.pushState(null, null, `#${hash}`);
 
-    const isMenuOpen = document.documentElement.classList.contains('menu--open');
+    const burgerMenu = document.querySelector('.burger-menu');
+    const isMenuOpen = burgerMenu ? burgerMenu.classList.contains('burger-menu--opened') : false;
+
     if (isMenuOpen) {
       lenis.stop();
       setTimeout(() => {
