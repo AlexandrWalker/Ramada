@@ -100,16 +100,16 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
-  font-weight: 350;
+  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Light.woff2") format("woff2"), url("../fonts/Gotham-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Gotham-Regular.woff2") format("woff2"), url("../fonts/Gotham-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -124,8 +124,8 @@ img {
 @font-face {
   font-family: Gotham;
   font-display: swap;
-  src: url("../fonts/Gotham-Regular.woff2") format("woff2"), url("../fonts/Gotham-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff");
+  font-weight: 350;
   font-style: normal;
 }
 
@@ -5486,8 +5486,8 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   display: grid;
   -ms-grid-columns: 1fr 2rem 1fr;
   grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: 69.4rem 6rem auto;
-  grid-template-rows: 69.4rem auto;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
   gap: 6rem 2rem;
 }
 
@@ -5501,19 +5501,10 @@ main li:not(.breadcrumbs li, .template-product__body li)::before {
   -ms-grid-column: 3;
 }
 
-.afisha__content > *:nth-child(3) {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-}
-
-.afisha__content > *:nth-child(4) {
-  -ms-grid-row: 3;
-  -ms-grid-column: 3;
-}
-
 .afisha__box {
   position: relative;
   height: 100%;
+  max-height: 69.4rem;
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
