@@ -138,10 +138,7 @@ if ('scrollRestoration' in history) {
 
   const safetyTimer = setTimeout(() => {
     if (!isInitialized && preloaderEl) {
-      if (preloaderEl.style.display !== 'none') {
-        preloaderEl.style.display = 'none';
-      }
-      initPageStructure();
+      hidePreloader();
     }
   }, PRELOADER_CONFIG.safetyTimeoutMs);
 
